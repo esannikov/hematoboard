@@ -1,6 +1,6 @@
 # MedAI · HematoBoard — clinical-reasoning support (CASE-02 demo)
 
-**Live demo:** https://esannikov.github.io/medai-hematoboard-demo/
+**Live demo:** https://esannikov.github.io/hematoboard/
 
 An **auditable clinical-reasoning support surface** for hemato-oncology tumor boards —
 **decision support, not a diagnosis**. It turns a de-identified patient's records
