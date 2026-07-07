@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnostic Graph — CASE-02 · MedAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="med_style.css">
+<style>
+.intro{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);margin-bottom:14px}
+.intro p{font-size:12.5px;color:var(--ink-2);line-height:1.55}
+.intro b.g{color:var(--good)} .intro b.r{color:var(--critical)} .intro b.n{color:var(--gap)}
+.wrap{display:grid;grid-template-columns:1.7fr .9fr;gap:16px}
+@media(max-width:940px){.wrap{grid-template-columns:1fr}}
+.gbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:auto;padding:4px}
+.graph{display:block;width:100%}
+.graph svg{display:block;width:100%;min-width:660px;height:auto}
+.fnode,.hnode{cursor:pointer}
+.flabel{font-size:11px;fill:var(--ink-1)}
+.flabel.linch{fill:var(--ink-0);font-weight:700}
+.fdot{fill:#fff;stroke:var(--ink-3);stroke-width:2}
+.fdot.path{stroke:var(--derived)} .fdot.imaging{stroke:var(--evi)} .fdot.lab{stroke:var(--fact)} .fdot.marker{stroke:var(--attention)}
+.hbox{rx:9;stroke-width:1.5}
+.hlabel{font-size:11.5px;font-weight:700}
+.hrank{font-size:9px;font-family:var(--mono)}
+.edge{fill:none;stroke-width:1.6;opacity:.20;transition:opacity .15s,stroke-width .15s}
+.edge.support{stroke:var(--good)} .edge.refute{stroke:var(--critical)} .edge.neutral{stroke:var(--gap)}
+.edge.hot{opacity:.95;stroke-width:2.6}
+.dim{opacity:.28}
+.side .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:15px 17px;margin-bottom:14px}
+.side h4{font-size:13px;font-weight:800;color:var(--ink-0);margin-bottom:3px}
+.side .rk{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.linkrow{display:flex;gap:8px;align-items:baseline;font-size:12px;padding:5px 0;border-bottom:1px solid var(--line)}
+.linkrow .rel{font-size:8.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;min-width:58px}
+.rel.support{color:var(--good)} .rel.refute{color:var(--critical)} .rel.neutral{color:var(--gap)}
+.linch-note{background:linear-gradient(180deg,#eef8f9,#fff);border:1px solid #a9dbe1;border-radius:12px;padding:12px 14px;font-size:12px;color:var(--ink-1);line-height:1.5}
+.linch-note b{color:var(--evi)}
+.hint{font-size:11px;color:var(--ink-3);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="top">
+ <span class="brand"><b>MedAI</b> · CASE-02</span>
+ <h1>Diagnostic <em>Graph</em></h1>
+ <nav class="nav">
+  <a href="index.html">Hub</a><a href="01_Timeline.html">Timeline</a><a href="02_Consilium.html">Consilium</a>
+  <a href="03_Graph.html" class="on">Graph</a><a href="04_Evidence.html">Evidence</a><a href="05_State.html">State</a><a href="06_Packet.html">Packet</a><a href="07_BodyMap.html">Map</a></nav>
+</div>
+<div class="gov" id="gov"></div>
+
+<div class="intro">
+ <h4 class="sec" style="margin-bottom:4px">Why a graph here — and only here</h4>
+ <p>Most patient data is <b>state</b>, not a network — and state belongs in columns, not "balls and lines" (see State). But a differential <i>is</i> a genuine network: one finding bears on several diagnoses, and each diagnosis rests on several findings. This is that bipartite network. <b class="g">Green</b> = a finding supports a hypothesis · <b class="r">red</b> = argues against · <b class="n">grey</b> = neutral / does-not-discriminate. Click any node to trace it. The two ringed findings are the <b>linchpin</b>: the confirmatory IHC resolves the whole graph. <span style="color:var(--ink-3)">(Pattern precedent: VISTA Architect's graph-DB tumour-board UI; research doc §5.)</span></p>
+</div>
+
+<div class="wrap">
+ <div class="gbox"><div class="graph" id="graph"></div></div>
+ <div class="side" id="side"></div>
+</div>
+
+<div class="foot"><span>A reasoning aid, not a probability model — edges encode the direction of evidence stated in the documents, not a computed likelihood.</span>
+ <span class="mono" style="margin-left:auto">MedAI Workbench · not a diagnosis</span></div>
+
+<script src="med_data.js"></script>
+<script>
+const M=window.MED,G=M.graph;
+document.getElementById("gov").innerHTML=`<span><b>Governance.</b> ${M.case.governance}</span>`;
+const F=G.findings, Hs=G.hypotheses, E=G.edges;
+const rowH=34, padT=54, padB=24;
+const svgH=padT+F.length*rowH+padB;
+const W=760, xF=352, xH=470, hBoxW=250;
+const yF=i=>padT+i*rowH+rowH/2;
+const yH=i=>padT+((i+0.5)/Hs.length)*(F.length*rowH);
+const Fi=Object.fromEntries(F.map((f,i)=>[f.id,{...f,x:xF,y:yF(i),i}]));
+const Hi=Object.fromEntries(Hs.map((h,i)=>[h.id,{...h,x:xH,y:yH(i),i}]));
+const hcol={leading:"var(--evi)",open:"var(--fact)",weak:"var(--ink-3)",refuted:"var(--attention)",excluded:"var(--gap)"};
+let s=`<svg viewBox="0 0 ${W} ${svgH}" xmlns="http://www.w3.org/2000/svg">`;
+/* column captions */
+s+=`<text x="20" y="34" font-size="10" font-weight="800" fill="var(--ink-3)" letter-spacing=".1em">FINDINGS</text>`;
+s+=`<text x="${xH}" y="34" font-size="10" font-weight="800" fill="var(--ink-3)" letter-spacing=".1em">HYPOTHESES</text>`;
+/* edges */
+E.forEach((e,k)=>{const a=Fi[e.f],b=Hi[e.h];if(!a||!b)return;
+ const c=(a.x+b.x)/2;
+ s+=`<path class="edge ${e.rel}" data-f="${e.f}" data-h="${e.h}" id="e${k}"
+   d="M ${a.x} ${a.y} C ${c} ${a.y}, ${c} ${b.y}, ${b.x} ${b.y}"/>`;});
+/* finding nodes */
+F.forEach((f,i)=>{const n=Fi[f.id];
+ s+=`<g class="fnode" data-id="${f.id}">
+  <text class="flabel ${f.linchpin?'linch':''}" x="${xF-14}" y="${n.y+4}" text-anchor="end">${f.label}${f.linchpin?' ◎':''}</text>
+  <circle class="fdot ${f.kind}" cx="${n.x}" cy="${n.y}" r="${f.linchpin?6:4.5}"/>
+  ${f.linchpin?`<circle cx="${n.x}" cy="${n.y}" r="10" fill="none" stroke="var(--evi)" stroke-width="1.4" stroke-dasharray="2 2"/>`:''}
+ </g>`;});
+/* hypothesis nodes */
+Hs.forEach((h,i)=>{const n=Hi[h.id];const col=hcol[h.status]||"var(--fact)";
+ s+=`<g class="hnode" data-id="${h.id}">
+  <rect class="hbox" x="${n.x}" y="${n.y-13}" width="${hBoxW}" height="26" rx="9" fill="#fff" stroke="${col}"/>
+  <text class="hrank" x="${n.x+11}" y="${n.y+4}" fill="${col}">#${h.rank}</text>
+  <text class="hlabel" x="${n.x+30}" y="${n.y+4}" fill="var(--ink-0)">${h.label}</text>
+ </g>`;});
+s+=`</svg>`;
+document.getElementById("graph").innerHTML=s;
+
+const svg=document.getElementById("graph");
+function reset(){svg.querySelectorAll(".edge").forEach(e=>e.classList.remove("hot"));
+ svg.querySelectorAll(".fnode,.hnode").forEach(g=>g.classList.remove("dim"));}
+function selectH(id){reset();
+ const con=new Set();
+ svg.querySelectorAll(`.edge[data-h="${id}"]`).forEach(e=>{e.classList.add("hot");con.add(e.dataset.f);});
+ svg.querySelectorAll(".fnode").forEach(g=>{if(!con.has(g.dataset.id))g.classList.add("dim");});
+ svg.querySelectorAll(".hnode").forEach(g=>{if(g.dataset.id!==id)g.classList.add("dim");});
+ sideH(id,con);}
+function selectF(id){reset();
+ const con=new Set();
+ svg.querySelectorAll(`.edge[data-f="${id}"]`).forEach(e=>{e.classList.add("hot");con.add(e.dataset.h);});
+ svg.querySelectorAll(".hnode").forEach(g=>{if(!con.has(g.dataset.id))g.classList.add("dim");});
+ svg.querySelectorAll(".fnode").forEach(g=>{if(g.dataset.id!==id)g.classList.add("dim");});
+ sideF(id,con);}
+const relOrder={support:0,neutral:1,refute:2};
+function sideH(id,con){const h=Hi[id];
+ const links=E.filter(e=>e.h===id).sort((a,b)=>relOrder[a.rel]-relOrder[b.rel]);
+ document.getElementById("side").innerHTML=`
+  <div class="card"><div class="rk">hypothesis · #${h.rank} · ${h.status}</div><h4>${h.label}</h4>
+   <p style="font-size:11.5px;color:var(--ink-2);margin:6px 0 8px">${links.filter(l=>l.rel==='support').length} for · ${links.filter(l=>l.rel==='refute').length} against · ${links.filter(l=>l.rel==='neutral').length} neutral</p>
+   ${links.map(l=>`<div class="linkrow"><span class="rel ${l.rel}">${l.rel}</span><span>${Fi[l.f].label}</span></div>`).join("")}</div>
+  ${linchCard()}`;}
+function sideF(id,con){const f=Fi[id];
+ const links=E.filter(e=>e.f===id).sort((a,b)=>relOrder[a.rel]-relOrder[b.rel]);
+ document.getElementById("side").innerHTML=`
+  <div class="card"><div class="rk">finding · ${f.kind}${f.linchpin?' · ◎ LINCHPIN':''}</div><h4>${f.label}</h4>
+   <p style="font-size:11.5px;color:var(--ink-2);margin:6px 0 8px">bears on ${links.length} hypotheses:</p>
+   ${links.map(l=>`<div class="linkrow"><span class="rel ${l.rel}">${l.rel}</span><span>${Hi[l.h].label}</span></div>`).join("")}</div>
+  ${linchCard()}`;}
+function linchCard(){return `<div class="linch-note"><b>◎ The linchpin.</b> Both ringed findings are the CD30+/MUM1+/CD15−/EBV− large cells and the paraffin re-review that called them Hodgkin-like. Whether they are Reed-Sternberg cells or reactive immunoblasts flips the leading hypothesis — and the confirmatory IHC panel (CD30/CD15/PAX5/fascin + EBER) resolves it in one specimen. <div class="hint">Click a finding or a hypothesis to trace it. Click here to reset.</div></div>`;}
+svg.querySelectorAll(".hnode").forEach(g=>g.onclick=()=>selectH(g.dataset.id));
+svg.querySelectorAll(".fnode").forEach(g=>g.onclick=()=>selectF(g.dataset.id));
+document.querySelector(".linch-note")&&0;
+/* default: highlight the leading hypothesis */
+selectH("H1");
+document.getElementById("side").addEventListener("click",e=>{if(e.target.closest(".linch-note")){reset();selectH("H1");}});
+</script>
+</body>
+</html>

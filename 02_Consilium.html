@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Consilium — CASE-02 · MedAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="med_style.css">
+<style>
+.q{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);margin-bottom:14px;font-size:13px;color:var(--ink-1);line-height:1.55}
+.q b{color:var(--ink-0)}
+.disc{background:linear-gradient(180deg,#eef8f9,#fff);border:1px solid #a9dbe1;border-radius:14px;padding:16px 18px;margin-bottom:16px;box-shadow:var(--shadow)}
+.disc .lbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--evi);font-weight:800}
+.disc p{font-size:13.5px;line-height:1.55;color:var(--ink-0);margin-top:6px}
+.disc p b{color:var(--evi)}
+.pos{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-left-width:4px;border-radius:14px;padding:15px 18px;box-shadow:var(--shadow)}
+.card.must-resolve{border-left-color:var(--evi);background:linear-gradient(180deg,#fbfeff,#fff)}
+.card.must-not-miss{border-left-color:var(--critical)}
+.card.supported{border-left-color:var(--good)}
+.card.refuted-by-course{border-left-color:var(--attention)}
+.card.largely-excluded,.card.excluded{border-left-color:var(--gap);opacity:.92}
+.card .head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card .rank{font-family:var(--mono);font-size:11px;color:var(--ink-3);font-weight:700}
+.card h3{font-size:15px;font-weight:800;letter-spacing:-.01em}
+.card .badge{font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:99px;margin-left:auto}
+.badge.must-resolve{color:var(--evi);background:#e6f4f6}
+.badge.must-not-miss{color:var(--critical);background:#fdeef1}
+.badge.supported{color:var(--good);background:#e7f5f0}
+.badge.refuted-by-course{color:var(--attention);background:#fdf6ec}
+.badge.largely-excluded,.badge.excluded{color:var(--gap);background:#f1f4f9}
+.card .stance{font-size:12.5px;color:var(--ink-1);line-height:1.55;margin:8px 0 10px}
+.card .row{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline;margin:6px 0}
+.card .row .k{font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);font-weight:700;min-width:92px}
+.card .cr{font-size:12px;color:var(--ink-1)}
+.card .cr.confirm b{color:var(--good)} .card .cr.refute b{color:var(--attention)}
+.evi{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;padding:2px 9px;border-radius:8px;border:1px solid;cursor:help}
+.evi.pmid{color:var(--evi);border-color:#a9dbe1;background:#eef8f9;text-decoration:none}
+a.evi.pmid:hover{background:var(--evi);color:#fff;border-color:transparent;text-decoration:none}
+.evi.guideline{color:#6b4c9a;border-color:#d4c4e9;background:#f3edfa}
+.evi.gap{color:var(--attention);border-color:#f0d3a6;background:#fdf6ec;border-style:dashed}
+.primary-tag{font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--evi);padding:2px 8px;border-radius:99px}
+/* challenge round */
+.chal{margin-top:10px;border-top:1px dashed var(--line-1);padding-top:10px}
+.chal-btn{font-size:10px;font-weight:700;color:var(--ink-2);background:var(--panel-2);border:1px solid var(--line-1);border-radius:99px;padding:3px 11px;cursor:pointer;letter-spacing:.04em;text-transform:uppercase}
+.chal-btn:hover{border-color:var(--evi);color:var(--evi)}
+.chal-body{display:none;margin-top:10px;gap:8px;flex-direction:column}
+.chal-body.open{display:flex}
+.turn{display:flex;gap:8px;font-size:12px;line-height:1.5}
+.turn .who{font-size:8.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;min-width:74px;padding-top:2px}
+.turn.pro .who{color:var(--good)} .turn.opp .who{color:var(--critical)} .turn.res .who{color:var(--evi)}
+.turn .txt{color:var(--ink-1)} .turn.res .txt{color:var(--ink-0);font-weight:600}
+</style>
+</head>
+<body>
+<div class="top">
+ <span class="brand"><b>MedAI</b> · CASE-02</span>
+ <h1>AI <em>Consilium</em></h1>
+ <nav class="nav">
+  <a href="index.html">Hub</a><a href="01_Timeline.html">Timeline</a><a href="02_Consilium.html" class="on">Consilium</a>
+  <a href="03_Graph.html">Graph</a><a href="04_Evidence.html">Evidence</a><a href="05_State.html">State</a><a href="06_Packet.html">Packet</a><a href="07_BodyMap.html">Map</a></nav>
+</div>
+<div class="gov" id="gov"></div>
+
+<div class="q" id="q"></div>
+
+<div class="disc">
+ <div class="lbl">◈ The discriminating step — the output that matters</div>
+ <p id="disc"></p>
+</div>
+
+<div class="panel pad" style="margin-bottom:14px">
+ <h4 class="sec">How to read this consilium</h4>
+ <p style="font-size:12px;color:var(--ink-2);line-height:1.55">A clinical consilium <b>does not prune to one winner</b>. It ranks positions, marks the must-not-miss ones, and names the single step that separates them. Each position also carries a <b>challenge round</b> — its strongest proponent argument, the strongest objection against it, and the test that resolves the clash. This is the debate made <b>safe</b>: the machine never adjudicates; it exposes the argument for the clinician to settle. Evidence is <span class="evi pmid">◆ traced PubMed</span>, <span class="evi guideline">📚 guideline</span>, or an honest <span class="evi gap">◇ gap</span> — never fabricated.</p>
+</div>
+
+<div class="pos" id="pos"></div>
+
+<div class="foot"><span>Positions + challenge rounds built from the real documents and literature traced via PubMed. Decision belongs to the hemato-oncologist.</span>
+ <span class="mono" style="margin-left:auto">MedAI Workbench · not a diagnosis</span></div>
+
+<script src="med_data.js"></script>
+<script>
+const M=window.MED,C=M.consilium;
+document.getElementById("gov").innerHTML=`<span><b>Governance.</b> ${M.case.governance}</span>`;
+document.getElementById("q").innerHTML=`<b>Consilium question.</b> ${C.question}`;
+document.getElementById("disc").innerHTML=C.discriminating_step.replace(/(CD30|CD15|PAX5|MUM1|fascin|EBER|HHV-8|LDH|PET-CT|excisional re-biopsy)/g,"<b>$1</b>");
+const EVI=Object.fromEntries(M.evidence.map(e=>[e.id,e]));
+function eviChip(id){const e=EVI[id];if(!e)return"";
+ if(e.type==="pmid")return `<a class="evi pmid" href="https://pubmed.ncbi.nlm.nih.gov/${e.ref}/" target="_blank" rel="noopener" title="${e.cite}">◆ PMID ${e.ref} ↗</a>`;
+ if(e.type==="guideline")return `<span class="evi guideline" title="${e.cite}">📚 ${e.ref}</span>`;
+ return `<span class="evi gap" title="${e.cite}">◇ ${e.ref}</span>`;}
+document.getElementById("pos").innerHTML=C.positions.map(p=>`
+ <div class="card ${p.flag}">
+  <div class="head"><span class="rank">#${p.rank}</span><h3>${p.label}</h3>
+   ${p.primary?'<span class="primary-tag">best fit</span>':""}
+   <span class="badge ${p.flag}">${p.flag.replace(/-/g," ")}</span></div>
+  <div class="stance">${p.stance}</div>
+  <div class="row"><span class="k">Patient data</span><div style="display:flex;gap:6px;flex-wrap:wrap">${p.data.map(d=>`<span class="chip fact">${d}</span>`).join("")}</div></div>
+  <div class="row"><span class="k">Evidence</span><div style="display:flex;gap:6px;flex-wrap:wrap">${(p.evidence.length?p.evidence.map(eviChip).join(""):'<span class="chip gap">no direct citation — reasoned from case</span>')}</div></div>
+  <div class="row"><span class="k">Confirms it</span><span class="cr confirm"><b>✓</b> ${p.confirms}</span></div>
+  <div class="row"><span class="k">Would refute</span><span class="cr refute"><b>✗</b> ${p.refutes}</span></div>
+  <div class="chal">
+   <button class="chal-btn" data-id="${p.id}">⚔ Challenge round</button>
+   <div class="chal-body" id="ch-${p.id}">
+    <div class="turn pro"><span class="who">Proponent</span><span class="txt">${p.challenge.proponent}</span></div>
+    <div class="turn opp"><span class="who">Opponent</span><span class="txt">${p.challenge.opponent}</span></div>
+    <div class="turn res"><span class="who">Resolver</span><span class="txt">${p.challenge.resolver}</span></div>
+   </div>
+  </div>
+ </div>`).join("");
+document.querySelectorAll(".chal-btn").forEach(b=>b.onclick=()=>{
+ document.getElementById("ch-"+b.dataset.id).classList.toggle("open");});
+</script>
+</body>
+</html>

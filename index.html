@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedAI Workbench — CASE-02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="med_style.css">
+<style>
+.hero{display:grid;grid-template-columns:1.35fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:820px){.hero{grid-template-columns:1fr}}
+.signal{background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
+.signal .lbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--critical);font-weight:800;display:flex;gap:7px;align-items:center}
+.signal .lbl::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--critical)}
+.signal p{font-size:13.5px;line-height:1.6;color:var(--ink-1);margin-top:8px}
+.meta{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);font-size:12.5px;color:var(--ink-1);line-height:1.6}
+.meta b{color:var(--ink-0)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}}
+.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow);transition:var(--t);color:inherit}
+.card:hover{border-color:var(--evi);transform:translateY(-2px);text-decoration:none}
+.card .n{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.card h3{font-size:15.5px;font-weight:800;margin:3px 0 5px;letter-spacing:-.01em}
+.card h3 .em{font-size:17px;margin-right:5px}
+.card p{font-size:12px;color:var(--ink-2);line-height:1.5}
+.card .from{margin-top:8px;font-size:10.5px;color:var(--ink-3);font-style:italic}
+.stat{display:flex;gap:20px;flex-wrap:wrap;margin-top:6px}
+.stat b{font-size:22px;font-weight:800;color:var(--ink-0)}
+.stat span{display:block;font-size:10px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="top">
+ <span class="brand"><b>MedAI</b> · Clinical Reasoning Workbench</span>
+ <h1>CASE-02 · <em>lymphadenopathy workup</em></h1>
+ <span class="case mono" id="case"></span>
+</div>
+<div class="gov" id="gov"></div>
+
+<div class="hero">
+ <div class="signal"><div class="lbl">Signal for clinician review</div><p id="signal"></p></div>
+ <div class="meta" id="meta"></div>
+</div>
+
+<div class="panel pad" style="margin-bottom:16px">
+ <h4 class="sec">At a glance</h4>
+ <div class="stat" id="stat"></div>
+</div>
+
+<div class="cards" id="cards"></div>
+
+<div class="foot">
+ <span>Surfaces over one shared clinical state (<span class="mono">dashboards/med_data.js</span>). Each answers a different question a tumour board asks. New in CASE-02: the <b>Diagnostic Graph</b> (evidence↔hypothesis network) and the patient-facing <b>Disease Map</b>.</span>
+ <span class="mono" style="margin-left:auto">MedAI Workbench · decision support, not a diagnosis</span>
+</div>
+
+<script src="med_data.js"></script>
+<script>
+const M=window.MED;
+document.getElementById("case").textContent=M.case.id+" · built "+M.case.generated;
+document.getElementById("gov").innerHTML=`<span><b>Governance.</b> ${M.case.governance}</span>`;
+document.getElementById("signal").textContent=M.case.signal;
+document.getElementById("meta").innerHTML=`<b>Patient.</b> ${M.case.demographics}<br><br><b>Source.</b> ${M.case.source}`;
+const gaps=M.panel.reduce((a,g)=>a+g.items.filter(i=>!i.present).length,0);
+const pmids=M.evidence.filter(e=>e.type==="pmid").length;
+document.getElementById("stat").innerHTML=`
+ <div><b>14</b><span>months · 31 documents</span></div>
+ <div><b>${M.pathology.length}</b><span>pathology reads (disagree)</span></div>
+ <div><b>${M.imaging.length}</b><span>imaging studies</span></div>
+ <div><b>${M.consilium.positions.length}</b><span>differential positions</span></div>
+ <div><b style="color:var(--attention)">${gaps}</b><span>workup gaps flagged</span></div>
+ <div><b style="color:var(--evi)">${pmids}</b><span>traced citations</span></div>`;
+const CARDS=[
+ ["01_Timeline.html","🕰","Dual-Track Timeline","The pathology reads (oscillating) beside the imaging burden (monotonic). The discordance is the whole case.","The Score → clinical time"],
+ ["02_Consilium.html","⚖️","AI Consilium","Seven ranked positions, each with a structured challenge round (proponent · opponent · resolving test). Names the single discriminating step.","The Loom → tumour board"],
+ ["03_Graph.html","🕸","Diagnostic Graph","The evidence↔hypothesis network: which findings support or refute which diagnoses, and the linchpin that resolves it all.","The Minds → clinical graph"],
+ ["04_Evidence.html","🔬","Evidence X-Ray","Click any claim → its supply chain: patient field → pattern → PubMed. Gaps declared, never fabricated.","The X-Ray → provenance"],
+ ["05_State.html","🧭","Patient State","State by phase, rebuilt from the documents, plus the expected lymphoma workup panel with every gap (LDH, confirmatory IHC, HHV-8, PET).","StoryPole → patient state"],
+ ["06_Packet.html","📄","Board Packet","The board-ready packet with the system speaking in the margins: safety flags, discordances, gaps.","The Manuscript → case doc"],
+ ["07_BodyMap.html","🩻","Disease Map","A patient-facing anatomical map: the documented sites of involvement and the regions checked and cleared. Maps lesions, not hypotheses.","The City → disease map"]];
+document.getElementById("cards").innerHTML=CARDS.map(([href,em,t,d,from])=>
+ `<a class="card" href="${href}"><div class="n">${href.replace(".html","")}</div>
+   <h3><span class="em">${em}</span>${t}</h3><p>${d}</p><div class="from">${from}</div></a>`).join("");
+</script>
+</body>
+</html>

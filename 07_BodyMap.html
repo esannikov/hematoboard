@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disease Map — CASE-02 · MedAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="med_style.css">
+<style>
+.intro{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);margin-bottom:14px}
+.intro p{font-size:12.5px;color:var(--ink-2);line-height:1.55}
+.intro b.r{color:var(--critical)} .intro b.g{color:var(--good)}
+.wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+@media(max-width:900px){.wrap{grid-template-columns:1fr}}
+.figbox{background:linear-gradient(180deg,#fbfdff,#fff);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:8px;display:flex;justify-content:center;position:sticky;top:12px}
+svg.body{width:100%;height:auto;max-height:86vh}
+.dot{cursor:pointer}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--ink-2);margin-top:6px;padding:0 4px}
+.legend i{width:11px;height:11px;border-radius:50%;display:inline-block;margin-right:5px;vertical-align:-1px}
+.side .det{background:var(--panel);border:1px solid var(--line);border-left-width:4px;border-radius:14px;box-shadow:var(--shadow);padding:15px 17px;margin-bottom:14px;min-height:120px}
+.det.involved{border-left-color:var(--critical)} .det.clear{border-left-color:var(--good)} .det.none{border-left-color:var(--line-1)}
+.det .cat{font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-family:var(--mono)}
+.det.involved .cat{color:var(--critical)} .det.clear .cat{color:var(--good)}
+.det h3{font-size:16px;font-weight:800;margin:2px 0 6px}
+.det .find{font-size:12.5px;color:var(--ink-1);background:var(--panel-2);border-radius:8px;padding:8px 10px;margin-bottom:8px;line-height:1.5}
+.det .mean{font-size:13px;color:var(--ink-0);line-height:1.55}
+.det .src{font-size:10.5px;color:var(--ink-3);margin-top:8px;font-family:var(--mono)}
+.list{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:8px}
+.li{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:9px;cursor:pointer;font-size:12.5px}
+.li:hover{background:var(--panel-2)} .li.on{background:#eef8f9}
+.li .num{width:19px;height:19px;border-radius:50%;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.li .nm{font-weight:600;color:var(--ink-0)} .li .sh{color:var(--ink-3);font-size:11px}
+</style>
+</head>
+<body>
+<div class="top">
+ <span class="brand"><b>MedAI</b> · CASE-02</span>
+ <h1>Disease <em>Map</em></h1>
+ <nav class="nav">
+  <a href="index.html">Hub</a><a href="01_Timeline.html">Timeline</a><a href="02_Consilium.html">Consilium</a>
+  <a href="03_Graph.html">Graph</a><a href="04_Evidence.html">Evidence</a><a href="05_State.html">State</a>
+  <a href="06_Packet.html">Packet</a><a href="07_BodyMap.html" class="on">Map</a></nav>
+</div>
+<div class="gov" id="gov"></div>
+
+<div class="intro">
+ <h4 class="sec" style="margin-bottom:4px">A map to explain the case to the patient — where it is, and where we looked</h4>
+ <p>This surface shows <b>what was found, where</b> — the <b class="r">documented sites of involvement</b> (measured on imaging/biopsy) and the <b class="g">sites checked and found clear/benign</b>. It deliberately maps <b>lesions, not hypotheses</b>: which diagnosis this is (Hodgkin vs Castleman vs sarcoidosis) is still being confirmed and lives on the <a href="03_Graph.html">Graph</a> and <a href="02_Consilium.html">Consilium</a>. Here the patient can see the <b>spatial facts</b> — a benign map should never carry a guess dressed as a location. Click a marker or a list item.</p>
+</div>
+
+<div class="wrap">
+ <div class="figbox"><svg class="body" id="body" viewBox="0 8 700 700" xmlns="http://www.w3.org/2000/svg"></svg></div>
+ <div class="side">
+  <div class="det none" id="det">
+   <div class="cat">select a site</div>
+   <h3>Where the disease is — at a glance</h3>
+   <div class="mean">Eight <b style="color:var(--critical)">involved</b> sites (lymph-node regions on both sides of the neck, above the collarbone, the armpit, deep in the pelvis, the groin, the tonsil) plus the <b style="color:var(--critical)">spleen</b>. Five regions were <b style="color:var(--good)">checked and are clear or benign</b> (chest, breasts, liver, stomach, pelvic organs). Click any marker for the plain-language explanation.</div>
+  </div>
+  <div class="legend">
+   <span><i style="background:var(--critical)"></i>Involved — disease documented</span>
+   <span><i style="background:var(--good)"></i>Checked — clear / benign</span>
+   <span style="color:var(--ink-3)">★ = spleen (key organ) · ◉ = where it began</span></div>
+  <div class="list" id="list" style="margin-top:10px"></div>
+ </div>
+</div>
+
+<div class="foot"><span>Every marker traces to a real imaging or pathology report. This shows documented findings, not a diagnosis.</span>
+ <span class="mono" style="margin-left:auto">MedAI Workbench · not a diagnosis</span></div>
+
+<script src="med_data.js"></script>
+<script>
+const M=window.MED;
+document.getElementById("gov").innerHTML=`<span><b>Governance.</b> ${M.case.governance}</span>`;
+/* documented anatomical sites — coords in the image's own pixel space (viewBox 0..700 crops to the organ figure) */
+const SITES=[
+ {id:1, name:"Neck lymph nodes (left)", cat:"involved", origin:true, side:"R", dx:378, dy:250, ly:250,
+  short:"where it began", find:"Left cervical nodes, up to 21×20 mm (Aug 2025) → now bilateral conglomerates up to 43 mm (MSCT Jun 2026). The excisional biopsy was taken here.",
+  mean:"This is where the illness started and the main site. Painful, firm, matted nodes on the left side of the neck first — now involving both sides.", src:"US neck 28.08.25 · MSCT 11.06.26"},
+ {id:2, name:"Neck lymph nodes (right)", cat:"involved", side:"L", dx:292, dy:250, ly:250,
+  short:"later, both sides", find:"Right cervical nodes involved later — level IIa conglomerate 31×35 mm (MSCT Jun 2026).",
+  mean:"The right side of the neck became involved later — the disease spread from one side to both.", src:"MSCT 11.06.26"},
+ {id:3, name:"Above the collarbone (left)", cat:"involved", side:"R", dx:398, dy:312, ly:314,
+  short:"supraclavicular", find:"Left supraclavicular node 15×9 mm (Aug 2025).",
+  mean:"A node just above the left collarbone — part of the same neck chain.", src:"US neck 28.08.25"},
+ {id:4, name:"Tonsil (right)", cat:"involved", side:"L", dx:326, dy:214, ly:188,
+  short:"enlarged", find:"Right palatine tonsil enlarged, 26×26 mm (MSCT Jun 2026).",
+  mean:"The tonsil on the right is enlarged — lymphatic tissue in the throat reacting/involved.", src:"MSCT 11.06.26 · ENT 10.06.26"},
+ {id:5, name:"Armpit lymph nodes (left)", cat:"involved", side:"R", dx:470, dy:388, ly:400,
+  short:"axillary", find:"Left axillary nodes enlarged, up to 25×20 mm (right side minimal, ≤11 mm).",
+  mean:"Enlarged nodes in the left armpit. The right armpit was checked and is essentially normal.", src:"MSCT 11.06.26 · US 09.12.25"},
+ {id:6, name:"Spleen", cat:"involved", key:true, side:"R", dx:412, dy:560, ly:560,
+  short:"enlarged + spots", find:"Enlarged (splenic index 504, normal ≤480) with multiple hypodense foci; grew 147 mm (Sep '25) → progressively larger. Imaging read the spots as infiltration.",
+  mean:"The spleen is part of the lymphatic system. It is enlarged with several spots inside — this means the process is not confined to the neck; it is a body-wide lymphatic problem.", src:"CT 24.09.25 · MSCT 11.06.26"},
+ {id:7, name:"Pelvic lymph nodes (left)", cat:"involved", side:"R", dx:372, dy:772, ly:772,
+  short:"internal iliac", find:"Left internal iliac node 27×19 mm (MSCT Jun 2026); left iliac mass also seen Dec 2025.",
+  mean:"Enlarged nodes deep in the left pelvis — the disease reaches below the diaphragm too.", src:"MSCT 11.06.26 · US pelvis 09.12.25"},
+ {id:8, name:"Groin lymph nodes (left)", cat:"involved", side:"R", dx:402, dy:852, ly:852,
+  short:"largest node", find:"Left inguinal node up to 49×30 mm — the largest measured; enlarged since Sept 2025 (45×19 mm).",
+  mean:"The largest single node, in the left groin. Enlarged from the early days of the illness and still growing.", src:"US groin 23.09.25 · MSCT 11.06.26"},
+ {id:9, name:"Chest — lungs & mediastinum", cat:"clear", side:"L", dx:268, dy:420, ly:425,
+  short:"checked · clear", find:"Lungs clear; no enlarged nodes in the centre of the chest (mediastinum) (CT & MSCT).",
+  mean:"Good news for the patient: the lungs are clear and the centre of the chest has no enlarged nodes.", src:"CT 24.09.25 · MSCT 11.06.26"},
+ {id:10, name:"Breasts", cat:"clear", side:"L", dx:250, dy:486, ly:490,
+  short:"benign", find:"Mammography BI-RADS 0→2; ultrasound: only a small benign cyst (4 mm).",
+  mean:"Breasts were checked with mammography and ultrasound — only a small harmless cyst. Not the cause of the illness.", src:"Mammography 16.09.25 · US breast 03.06.26"},
+ {id:11, name:"Liver", cat:"clear", side:"L", dx:256, dy:556, ly:558,
+  short:"benign", find:"Mildly enlarged; small benign cysts only; no tumour deposits.",
+  mean:"The liver is slightly large with small harmless cysts — no signs of tumour spread.", src:"CT 24.09.25 · MSCT 11.06.26"},
+ {id:12, name:"Stomach", cat:"clear", side:"R", dx:360, dy:604, ly:612,
+  short:"benign", find:"Endoscopy + biopsy: mild chronic gastritis only, H. pylori negative, non-oncologic.",
+  mean:"The stomach was examined from the inside with a camera and biopsy — only mild inflammation, no tumour.", src:"Endoscopy 23.09.25"},
+ {id:13, name:"Uterus & ovaries", cat:"clear", side:"L", dx:330, dy:800, ly:800,
+  short:"normal", find:"Ultrasound + smear normal (NILM); benign polyp/cysts only; colposcopy normal.",
+  mean:"The pelvic organs were checked with ultrasound and a smear — normal, not involved.", src:"Gynaecology 11.06.26 · US pelvis 09.12.25"}];
+
+/* compact on-body label names (full names stay in the list + detail panel) */
+const SL={1:"Neck (L)",2:"Neck (R)",3:"Supraclav.",4:"Tonsil",5:"Armpit (L)",6:"Spleen",7:"Pelvic (L)",8:"Groin (L)",9:"Chest/lungs",10:"Breasts",11:"Liver",12:"Stomach",13:"Pelvis"};
+const CAT={involved:"var(--critical)", clear:"var(--good)"};
+/* GEOMETRY ONLY — tune marker positions here. Coords in a 700×700 space (image scaled to 700).
+   side = which gutter the label sits in (R=right, L=left). dx,dy = dot on the body. ly = label height. */
+const COORDS={
+ 1:{side:"R",dx:398,dy:258,ly:250},
+ 2:{side:"L",dx:352,dy:258,ly:292},
+ 3:{side:"R",dx:430,dy:335,ly:332},
+ 4:{side:"L",dx:372,dy:235,ly:208},
+ 5:{side:"R",dx:495,dy:405,ly:405},
+ 6:{side:"R",dx:445,dy:552,ly:540},
+ 7:{side:"R",dx:410,dy:658,ly:632},
+ 8:{side:"R",dx:418,dy:686,ly:686},
+ 9:{side:"L",dx:378,dy:440,ly:410},
+ 10:{side:"L",dx:300,dy:465,ly:470},
+ 11:{side:"L",dx:305,dy:558,ly:556},
+ 12:{side:"L",dx:400,dy:578,ly:616},
+ 13:{side:"L",dx:375,dy:658,ly:676}};
+let s=`<image href="female_body.png" x="0" y="0" width="700" height="700" preserveAspectRatio="xMidYMid meet"/>`;
+/* leader lines + labels + dots */
+SITES.forEach(o=>{
+ const col=CAT[o.cat], c=COORDS[o.id], side=c.side, dx=c.dx, dy=c.dy, ly=c.ly;
+ const ax = side==="R"?505:195;
+ const lx = side==="R"?514:186;
+ const anchor = side==="R"?"start":"end";
+ s+=`<path d="M ${dx} ${dy} L ${ax} ${ly}" fill="none" stroke="${col}" stroke-width="1.4" opacity=".5"/>`;
+ s+=`<g class="dot" data-id="${o.id}">`;
+ s+=`<rect x="${side==='R'?lx-4:lx-156}" y="${ly-25}" width="160" height="44" rx="8" fill="#fff" stroke="${col}" stroke-opacity=".35"/>`;
+ s+=`<text x="${lx}" y="${ly-6}" text-anchor="${anchor}" font-size="20" font-weight="800" fill="var(--ink-0)">${o.id}. ${SL[o.id]}</text>`;
+ s+=`<text x="${lx}" y="${ly+14}" text-anchor="${anchor}" font-size="16" fill="${col}">${o.origin?'◉ ':''}${o.key?'★ ':''}${o.short}</text>`;
+ s+=`<circle cx="${dx}" cy="${dy}" r="13" fill="${col}" stroke="#fff" stroke-width="3"/>`;
+ s+=`<text x="${dx}" y="${dy+6}" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">${o.id}</text>`;
+ if(o.cat==="involved") s+=`<circle cx="${dx}" cy="${dy}" r="13" fill="none" stroke="${col}" stroke-width="2" opacity=".5"><animate attributeName="r" values="13;22;13" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".5;0;.5" dur="2.4s" repeatCount="indefinite"/></circle>`;
+ s+=`</g>`;});
+document.getElementById("body").innerHTML=s;
+
+/* list */
+document.getElementById("list").innerHTML=SITES.map(o=>
+ `<div class="li" data-id="${o.id}"><span class="num" style="background:${CAT[o.cat]}">${o.id}</span>
+   <span><span class="nm">${o.name}</span> <span class="sh">— ${o.short}</span></span></div>`).join("");
+
+const det=document.getElementById("det");
+function select(id){
+ const o=SITES.find(x=>x.id===id);if(!o)return;
+ det.className="det "+o.cat;
+ det.innerHTML=`<div class="cat">${o.cat==="involved"?"● involved — disease documented":"● checked — clear / benign"}${o.key?" · key organ":""}${o.origin?" · where it began":""}</div>
+  <h3>${o.id}. ${o.name}</h3>
+  <div class="find">${o.find}</div>
+  <div class="mean">${o.mean}</div>
+  <div class="src">Source: ${o.src}</div>`;
+ document.querySelectorAll(".li").forEach(l=>l.classList.toggle("on",+l.dataset.id===id));
+ const NS="http://www.w3.org/2000/svg";
+ document.querySelectorAll(".selpulse").forEach(e=>e.remove());
+ document.querySelectorAll(".dot").forEach(g=>{
+  const on=+g.dataset.id===id, core=g.querySelector("circle");
+  core.setAttribute("r",on?17:13);
+  if(on){
+   const cx=core.getAttribute("cx"), cy=core.getAttribute("cy"), col=CAT[o.cat];
+   const ring=document.createElementNS(NS,"circle");
+   ring.setAttribute("class","selpulse");ring.setAttribute("cx",cx);ring.setAttribute("cy",cy);
+   ring.setAttribute("r",16);ring.setAttribute("fill","none");ring.setAttribute("stroke",col);ring.setAttribute("stroke-width","4");
+   const a1=document.createElementNS(NS,"animate");a1.setAttribute("attributeName","r");a1.setAttribute("values","15;36;15");a1.setAttribute("dur","1.1s");a1.setAttribute("repeatCount","indefinite");
+   const a2=document.createElementNS(NS,"animate");a2.setAttribute("attributeName","opacity");a2.setAttribute("values","1;0;1");a2.setAttribute("dur","1.1s");a2.setAttribute("repeatCount","indefinite");
+   ring.appendChild(a1);ring.appendChild(a2);g.appendChild(ring);
+  }
+ });
+}
+document.querySelectorAll(".dot").forEach(g=>g.onclick=()=>select(+g.dataset.id));
+document.querySelectorAll(".li").forEach(l=>l.onclick=()=>select(+l.dataset.id));
+</script>
+</body>
+</html>

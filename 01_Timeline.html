@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dual-Track Timeline — CASE-02 · MedAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="med_style.css">
+<style>
+.discord{background:linear-gradient(180deg,#fff,#fdf2f4);border:1px solid #f0b8c2;border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.discord h4{color:var(--critical)}
+.discord p{font-size:12.5px;color:var(--ink-1);line-height:1.55;margin-top:6px}
+.track-wrap{overflow-x:auto}
+svg.tl{width:100%;min-width:760px;height:auto;display:block}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:10.5px;color:var(--ink-2);margin-top:8px}
+.legend i{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:5px;vertical-align:-1px}
+.grid{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin-top:16px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:700;padding:7px 9px;border-bottom:1px solid var(--line-1)}
+td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.row:hover{background:#f0f7ff}
+.ev-date{font-family:var(--mono);font-size:11px;color:var(--ink-2);white-space:nowrap}
+.cat{font-size:8.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:99px;color:#fff}
+.cat.path{background:var(--derived)}.cat.imaging{background:var(--evi)}.cat.lab{background:var(--fact)}
+.cat.consult{background:#5b6b85}.cat.marker{background:var(--attention)}.cat.hx{background:var(--ink-3)}
+.ev-t{font-weight:700;color:var(--ink-0)}.ev-d{color:var(--ink-2);font-size:11px}
+tr.f-critical td:first-child{box-shadow:inset 3px 0 0 var(--critical)}
+tr.f-attention td:first-child{box-shadow:inset 3px 0 0 var(--attention)}
+.mini .state-row{display:flex;align-items:baseline;gap:8px;padding:3px 0;font-size:12px}
+.mini .n{color:var(--ink-1);min-width:70px}.mini .v{font-family:var(--mono);font-weight:700}
+</style>
+</head>
+<body>
+<div class="top">
+ <span class="brand"><b>MedAI</b> · CASE-02</span>
+ <h1>Dual-Track <em>Timeline</em></h1>
+ <nav class="nav">
+  <a href="index.html">Hub</a><a href="01_Timeline.html" class="on">Timeline</a><a href="02_Consilium.html">Consilium</a>
+  <a href="03_Graph.html">Graph</a><a href="04_Evidence.html">Evidence</a><a href="05_State.html">State</a><a href="06_Packet.html">Packet</a><a href="07_BodyMap.html">Map</a></nav>
+</div>
+<div class="gov" id="gov"></div>
+
+<div class="discord">
+ <h4 class="sec" style="margin-bottom:2px">The pattern that matters — two timelines that disagree</h4>
+ <p>The <b style="color:var(--derived)">pathology</b> read oscillated (non-diagnostic → <b style="color:var(--good)">reactive</b> → <b style="color:var(--good)">reactive</b> → <b style="color:var(--critical)">possible Hodgkin</b>), while the <b style="color:var(--evi)">imaging</b> burden climbed monotonically the whole time. A benign reactive process does not generalize and grow a spleen over ten months. The shaded band is where the early benign read and the rising imaging <b>diverged</b> — the anchoring trap this case is built to expose.</p>
+</div>
+
+<div class="panel pad" style="margin-bottom:6px">
+ <div class="track-wrap"><svg class="tl" id="tl" viewBox="0 0 900 360"></svg></div>
+ <div class="legend">
+  <span><i style="background:var(--ink-3)"></i>non-diagnostic</span>
+  <span><i style="background:var(--good)"></i>read: reactive/benign</span>
+  <span><i style="background:var(--critical)"></i>read: neoplasm (Hodgkin)</span>
+  <span><i style="background:var(--evi)"></i>imaging: max node (mm)</span>
+  <span style="color:var(--ink-3)">bubble size ∝ node size · ⌾ = spleen</span></div>
+</div>
+
+<div class="grid">
+ <div class="panel pad">
+  <h4 class="sec">Event stream — all 31 documents, one thread</h4>
+  <table id="events"></table>
+ </div>
+ <div>
+  <div class="panel pad mini" style="margin-bottom:16px">
+   <h4 class="sec">Blood — not the story here</h4>
+   <p style="font-size:11.5px;color:var(--ink-2);line-height:1.5;margin-bottom:8px">Unlike CASE-01, the CBC stays near-normal: mild transient leukopenia/lymphopenia and a fluctuating CRP. The disease lives in the nodes and spleen, not the blood — which is itself informative.</p>
+   <div id="labmini"></div>
+  </div>
+  <div class="panel pad">
+   <h4 class="sec">Imaging burden, in words</h4>
+   <div id="imgtrend" style="font-size:12px;color:var(--ink-1);line-height:1.5"></div>
+  </div>
+ </div>
+</div>
+
+<div class="foot"><span>Values are the real de-identified findings across 6 imaging studies and 4 pathology reads. Cross-institutional measurements — trend, not absolute.</span>
+ <span class="mono" style="margin-left:auto">MedAI Workbench · not a diagnosis</span></div>
+
+<script src="med_data.js"></script>
+<script>
+const M=window.MED;
+document.getElementById("gov").innerHTML=`<span><b>Governance.</b> ${M.case.governance}</span>`;
+
+/* ── month index helper (2025-08 = 0) ── */
+function mx(dstr){const [y,m,d]=dstr.split("-").map(Number);return (y-2025)*12+(m-8)+((d||15)-1)/30;}
+const W=900,H=360,padL=52,padR=26,padT=44,padB=60;
+const t0=mx("2025-08-01"), t1=mx("2026-06-30");
+const X=t=>padL+(t-t0)/(t1-t0)*(W-padL-padR);
+const laneP=104, laneI=252; // pathology centre / imaging baseline
+const clampX=x=>Math.max(padL+4,Math.min(W-padR-4,x));
+const anchorFor=x=> x>W-96?"end": x<96?"start":"middle";
+let s="";
+/* month grid */
+for(let k=0;k<=10;k++){const t=t0+k;const x=X(t);
+ s+=`<line x1="${x}" y1="${padT}" x2="${x}" y2="${H-padB}" stroke="#eef2f8"/>`;
+ const lbl=["Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun"][k];
+ s+=`<text x="${x}" y="${H-padB+18}" text-anchor="middle" font-size="9.5" fill="var(--ink-3)">${lbl}</text>`;}
+s+=`<text x="${X(t0)}" y="${H-padB+32}" font-size="9" fill="var(--ink-3)">2025</text>`;
+s+=`<text x="${X(mx('2026-01-08'))}" y="${H-padB+32}" font-size="9" fill="var(--ink-3)">2026</text>`;
+/* discordance band */
+const bx0=X(mx("2025-11-20")),bx1=X(mx("2026-06-11"));
+s+=`<rect x="${bx0}" y="${padT}" width="${bx1-bx0}" height="${H-padB-padT}" fill="#fdeef1" opacity=".45"/>`;
+s+=`<text x="${(bx0+bx1)/2}" y="${padT+12}" text-anchor="middle" font-size="9.5" fill="var(--critical)" font-weight="700">discordance zone</text>`;
+/* lane separator + captions */
+s+=`<line x1="${padL}" y1="192" x2="${W-padR}" y2="192" stroke="#eef2f8"/>`;
+s+=`<text x="6" y="${laneP-44}" font-size="10" fill="var(--derived)" font-weight="800">PATHOLOGY</text>`;
+s+=`<text x="6" y="${laneI-64}" font-size="10" fill="var(--evi)" font-weight="800">IMAGING</text>`;
+/* pathology verdict line — benign low, malignant high; labels de-collided */
+const vy={"non-diagnostic":laneP, "reactive":laneP+30, "neoplasm":laneP-40};
+const vcol={"non-diagnostic":"var(--ink-3)","reactive":"var(--good)","neoplasm":"var(--critical)"};
+const shortLab=["Non-diagnostic","Reactive","Reactive ✓","Possible Hodgkin"];
+const P=M.pathology.map((p,i)=>({x:X(mx(p.date)),y:vy[p.verdict],p,i}));
+s+=`<polyline points="${P.map(o=>o.x+","+o.y).join(" ")}" fill="none" stroke="var(--derived)" stroke-width="2"/>`;
+P.forEach(o=>{
+ s+=`<circle cx="${o.x}" cy="${o.y}" r="7" fill="${vcol[o.p.verdict]}" stroke="#fff" stroke-width="2"/>`;
+ let ly,dy; const a=anchorFor(o.x);
+ if(o.p.verdict==="reactive"){const extra=o.i===2?15:0; ly=o.y+18+extra; dy=ly+11;}
+ else {ly=o.y-16; dy=o.y-27;}
+ s+=`<text x="${o.x}" y="${ly}" text-anchor="${a}" font-size="10" font-weight="700" fill="${vcol[o.p.verdict]}">${shortLab[o.i]}</text>`;
+ s+=`<text x="${o.x}" y="${dy}" text-anchor="${a}" font-size="8" fill="var(--ink-3)" font-family="var(--mono)">${o.p.date.slice(5)}</text>`;});
+/* imaging — aggregated to episode-level for a clean burden line (full detail in the words panel) */
+const IMG=[
+ {d:"2025-08-28", mm:21, cap:"US neck", spleen:""},
+ {d:"2025-09-24", mm:45, cap:"US + CT", spleen:"spleen 147"},
+ {d:"2025-12-09", mm:59, cap:"US nodal", spleen:"spleen 125"},
+ {d:"2026-06-11", mm:44, cap:"MSCT · NodeRADS 4", spleen:"index 504"}];
+const mmMax=59;
+const IP=IMG.map(o=>({x:X(mx(o.d)), cy:laneI-o.mm/mmMax*34, ...o}));
+s+=`<polyline points="${IP.map(o=>o.x+","+o.cy).join(" ")}" fill="none" stroke="var(--evi)" stroke-width="1.6" opacity=".5"/>`;
+IP.forEach(o=>{const r=6+o.mm/mmMax*10; const a=anchorFor(o.x);
+ s+=`<circle cx="${o.x}" cy="${o.cy}" r="${r}" fill="var(--evi)" opacity=".15" stroke="var(--evi)" stroke-width="1.5"/>`;
+ s+=`<text x="${o.x}" y="${o.cy+3}" text-anchor="middle" font-size="9" font-weight="800" fill="var(--evi)">${o.mm}</text>`;
+ s+=`<text x="${o.x}" y="${laneI+22}" text-anchor="${a}" font-size="8.5" fill="var(--ink-2)">${o.cap}</text>`;
+ if(o.spleen) s+=`<text x="${o.x}" y="${laneI+33}" text-anchor="${a}" font-size="8" fill="var(--attention)">⌾ ${o.spleen}</text>`;});
+document.getElementById("tl").innerHTML=s;
+
+/* event stream */
+let rows="<tr><th>Date</th><th>Type</th><th>Event</th></tr>";
+M.events.forEach(e=>{rows+=`<tr class="row f-${e.flag||''}">
+ <td class="ev-date">${e.date}</td>
+ <td><span class="cat ${e.cat}">${e.cat}</span></td>
+ <td><span class="ev-t">${e.title}</span><br><span class="ev-d">${e.detail}</span></td></tr>`;});
+document.getElementById("events").innerHTML=rows;
+
+/* lab mini */
+const show=["Hgb","WBC","Lymph#","PLT","CRP"];
+document.getElementById("labmini").innerHTML=M.labs.filter(l=>show.includes(l.an)).map(l=>{
+ const vals=M.dates.map(d=>l.v[d.id]).filter(x=>x!=null);
+ const last=vals[vals.length-1];const lo=Math.min(...vals),hi=Math.max(...vals);
+ const cls=last<l.lo?"v-low":last>l.hi?"v-high":"v-ok";
+ return `<div class="state-row"><span class="n">${l.an}</span><span class="v ${cls}">${lo}–${hi}</span><span class="ref mono" style="color:var(--ink-3);font-size:10px">${l.unit}</span></div>`;}).join("");
+
+/* imaging trend words */
+document.getElementById("imgtrend").innerHTML=M.imaging.map(im=>
+ `<div style="padding:4px 0;border-bottom:1px solid var(--line)"><span class="mono" style="color:var(--ink-3);font-size:10.5px">${im.date}</span> · <b>${im.modality}</b> — ${im.maxNode}${im.noderads?` · <span style="color:var(--critical);font-weight:700">NodeRADS ${im.noderads}</span>`:""}<br><span style="color:var(--ink-2);font-size:11px">${im.trend}${im.spleen!=="—"?` · spleen ${im.spleen}`:""}</span></div>`).join("");
+</script>
+</body>
+</html>
