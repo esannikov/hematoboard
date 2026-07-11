@@ -1,6 +1,9 @@
 # MedAI · HematoBoard — clinical-reasoning support (CASE-02 demo)
 
-**Live demo:** https://esannikov.github.io/hematoboard/
+**Legacy CASE-02 dashboard:** https://esannikov.github.io/hematoboard/
+
+**Methodology demo (CASE-01, CASE-02, CASE005):**
+https://esannikov.github.io/hematoboard/demo/
 
 An **auditable clinical-reasoning support surface** for hemato-oncology tumor boards —
 **decision support, not a diagnosis**. It turns a de-identified patient's records
@@ -25,3 +28,7 @@ progresses monotonically — a real anchoring risk the system is designed to sur
 - **No fabricated citations.** Provenance or an explicit gap.
 
 Static, self-contained (no build). A research prototype from a Ukrainian oncohematology group.
+
+The methodology demo publishes only de-identified canonical bundles and the minimum immutable
+run data required to render the agent-debate protocol. Source documents, guideline PDFs,
+operator audit logs and local paths are not part of the public package.
