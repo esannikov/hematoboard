@@ -22,13 +22,13 @@
   <body class="min-h-screen bg-canvas p-0 font-sans text-ink antialiased">
     <a class="skip-link" href="#content">До змісту</a>
 
-    <header class="app-header mx-auto flex w-full max-w-[1440px] flex-col justify-between gap-4 px-5 py-4 sm:flex-row sm:items-center sm:px-8 lg:px-12">
+    <header class="app-header mx-auto flex w-full max-w-[1440px] flex-col justify-start gap-5 px-5 py-4 sm:flex-row sm:items-center sm:gap-8 sm:px-8 lg:px-12">
       <a class="brand-block focus-ring flex items-center gap-3 rounded-md" href="./" aria-label="MedAI HematoBoard">
         <img class="brand-logo" src="./hematoboard_logo.png" alt="" width="524" height="524" />
-        <span><span class="block text-[10px] font-semibold uppercase tracking-[0.18em] text-faint">MedAI</span><strong class="block text-base font-semibold tracking-[-0.015em]">HematoBoard</strong></span>
+        <span class="grid gap-1"><strong class="block text-base font-semibold tracking-[-0.015em]">MedAI · HematoBoard</strong><span class="block max-w-[31ch] text-xs leading-5 text-muted">Відтворюваний огляд кейсу: факти, гіпотези, джерела й межі висновку.</span></span>
       </a>
 
-      <div class="header-case-tools w-full sm:w-[390px]">
+      <div class="header-case-tools w-full sm:w-[390px] sm:shrink-0">
         <label class="case-picker" for="case-select">
           <span class="sr-only">Кейс для аналізу</span>
           <select class="focus-ring min-h-10 w-full rounded-lg border border-rule-strong bg-panel px-3.5 text-sm font-medium" id="case-select" aria-describedby="bundle-status"></select>
