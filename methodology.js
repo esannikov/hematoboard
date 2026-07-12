@@ -20,17 +20,17 @@ const PRIMARY_VIEWS = [
   ["overview", "Огляд"],
   ["timeline", "Історія"],
   ["state", "Дослідження"],
+  ["graph", "Граф гіпотез"],
   ["consilium", "Консиліум"],
   ["evidence", "Джерела"],
 ];
 
-const METHOD_VIEWS = [
-  ["graph", "Граф"],
+const OPTIONAL_PRIMARY_VIEWS = [
   ["multimodal", "Узгодженість"],
-  ["protocol", "Протокол агентних дебатів"],
+  ["protocol", "Протокол AI дебатів"],
 ];
 
-const VIEW_LABELS = Object.fromEntries([...PRIMARY_VIEWS, ...METHOD_VIEWS, ["packet", "Бриф для консиліуму"], ["bodymap", "Локалізація"]]);
+const VIEW_LABELS = Object.fromEntries([...PRIMARY_VIEWS, ...OPTIONAL_PRIMARY_VIEWS, ["packet", "Бриф для консиліуму"], ["bodymap", "Локалізація"]]);
 const state = { caseKey: "case02", view: "overview", bundle: null, latestRun: null };
 
 const DISPLAY_REPLACEMENTS = [
@@ -82,8 +82,7 @@ const content = document.getElementById("content");
 const statusLine = document.getElementById("bundle-status");
 const caseSelect = document.getElementById("case-select");
 const footerContract = document.getElementById("footer-contract");
-const methodMenu = document.getElementById("method-menu");
-const methodCount = document.getElementById("method-count");
+const primaryNav = document.getElementById("primary-nav");
 const packetNavAction = document.getElementById("packet-nav-action");
 
 function element(tag, options = {}, children = []) {
@@ -1601,20 +1600,17 @@ function hasMultimodalData(bundle) {
   return modalityCount >= 2 && hasSynthesis;
 }
 
-function availableMethodViews(bundle) {
-  return METHOD_VIEWS.filter(([id]) => {
-    if (id === "graph") return Array.isArray(bundle?.relations) && bundle.relations.length > 0;
+function availableOptionalPrimaryViews(bundle) {
+  return OPTIONAL_PRIMARY_VIEWS.filter(([id]) => {
     if (id === "multimodal") return hasMultimodalData(bundle);
     if (id === "protocol") return Boolean(CASES[state.caseKey]?.latest);
     return true;
   });
 }
 
-function buildMethodNavigation() {
-  const views = availableMethodViews(state.bundle);
-  buildNavigation(document.getElementById("method-nav"), views);
-  methodCount.textContent = String(views.length);
-  methodMenu.hidden = views.length === 0;
+function buildPrimaryNavigation() {
+  const views = [...PRIMARY_VIEWS, ...availableOptionalPrimaryViews(state.bundle)];
+  buildNavigation(primaryNav, views);
   const availableIds = new Set([...PRIMARY_VIEWS, ["packet", "Бриф для консиліуму"], ...views].map(([id]) => id));
   if (!availableIds.has(state.view)) state.view = state.view === "multimodal" ? "state" : "overview";
 }
@@ -1624,7 +1620,6 @@ function syncNavigation() {
     if (button.dataset.view === state.view) button.setAttribute("aria-current", "page");
     else button.removeAttribute("aria-current");
   });
-  methodMenu.open = METHOD_VIEWS.some(([id]) => id === state.view);
 }
 
 function updateUrl(push = false) {
@@ -1665,7 +1660,7 @@ async function loadCase(caseKey, { push = false, focus = false } = {}) {
     if (bundle.schema_version !== "1.0.0") throw new Error(`Непідтримувана версія контракту: ${bundle.schema_version}`);
     state.bundle = bundle;
     state.latestRun = null;
-    buildMethodNavigation();
+    buildPrimaryNavigation();
     statusLine.dataset.state = "ready";
     statusLine.textContent = `Пакет перевірено · ${bundle.case.generated || bundle.bundle_id}`;
     const provenanceHash = bundle.provenance.legacy_sha256 || bundle.provenance.source_sha256;
@@ -1690,7 +1685,7 @@ function setView(view, push = false) {
 Object.entries(CASES).forEach(([key, config]) => {
   caseSelect.append(element("option", { text: config.label, attrs: { value: key } }));
 });
-buildNavigation(document.getElementById("primary-nav"), PRIMARY_VIEWS);
+buildNavigation(primaryNav, PRIMARY_VIEWS);
 packetNavAction.addEventListener("click", () => setView("packet", true));
 
 function handleCaseSelection() {
