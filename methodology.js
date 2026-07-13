@@ -572,6 +572,16 @@ function recommendationPlanForCase(bundle) {
   }));
 }
 
+function overviewClinicalBrief(bundle) {
+  return bundle.case.overview_brief || bundle.case.demographics || "Клінічний профіль не записано у пакеті.";
+}
+
+function overviewCaseCode(bundle) {
+  const raw = String(bundle.case.id || "КЕЙС");
+  const number = raw.match(/\d+/)?.[0];
+  return number ? `CASE${number.padStart(3, "0")}` : raw.replace(/[^A-Za-z0-9]/g, "");
+}
+
 function renderOverview() {
   const bundle = state.bundle;
   const hypotheses = [...bundle.hypotheses].sort((a, b) => a.rank - b.rank);
@@ -595,9 +605,9 @@ function renderOverview() {
   const fragment = document.createDocumentFragment();
   fragment.append(
     viewHeader(
-      "Ключова діагностична рамка",
-      "Пульт показує поточний напрям, зміну доказів, розрізняльне рішення та відкриті перевірки. Ранжування підтримує аналіз і не є встановленим діагнозом.",
-      `${bundle.case.id} · Огляд`,
+      overviewCaseCode(bundle),
+      overviewClinicalBrief(bundle),
+      "Огляд клінічної картини",
     ),
   );
 
@@ -1636,7 +1646,7 @@ async function renderCurrent({ focus = false } = {}) {
     const renderer = RENDERERS[state.view] || renderOverview;
     const view = await renderer();
     content.replaceChildren(view);
-    document.title = `${state.bundle.case.id} · ${VIEW_LABELS[state.view]} · MedAI`;
+    document.title = `${overviewCaseCode(state.bundle)} · ${VIEW_LABELS[state.view]} · HematoBoard AI`;
     if (focus) content.focus({ preventScroll: true });
   } catch (error) {
     content.replaceChildren(
