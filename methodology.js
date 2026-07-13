@@ -130,6 +130,10 @@ function wordClip(value, maxLen = 46) {
 // Internal enum values → clinical Ukrainian labels (never show raw enums to a clinician).
 const ENUM_LABELS = {
   declared_deidentified: "задекларовано",
+  declared_deidentified_canonical_text_only: "знеособлено в доступному тексті",
+  source_verified_candidate_clinical_review: "джерело звірено · клінічна перевірка відкрита",
+  candidate_unverified: "кандидатний покажчик · не перевірено",
+  context_only: "лише контекст",
   present: "наявна", audited: "перевірено", discordant: "розбіжність між методами",
   high_signal_partial: "сильний сигнал (частково)", partial: "частковий сигнал",
   missing: "відсутня", not_used_clean: "не застосовувалась",
@@ -333,9 +337,9 @@ function consiliumLegend() {
 
 // Left-accent tone for a hypothesis card (by rank/status).
 function hypothesisTone(status, rank) {
-  if (rank === 1 || ["leading", "critical", "must-resolve"].includes(status)) return "lead";
+  if (rank === 1 || ["leading", "leading-provisional", "critical", "must-resolve"].includes(status)) return "lead";
   if (["must-not-miss", "must_not_miss", "safety"].includes(status)) return "critical";
-  if (["downgraded", "weak", "possible_lower", "unlikely", "refuted", "refuted-by-course"].includes(status)) return "down";
+  if (["downgraded", "weak", "possible_lower", "unlikely", "refuted", "refuted-by-course", "less-likely-not-excluded", "low-probability", "low-probability-not-excluded"].includes(status)) return "down";
   if (["excluded", "largely-excluded"].includes(status)) return "muted";
   return "";
 }
@@ -364,6 +368,7 @@ function deidentificationLabel(value) {
   const labels = {
     working_deidentified: "робоче знеособлення підтверджено",
     declared_deidentified: "знеособлення задекларовано",
+    declared_deidentified_canonical_text_only: "доступний канонічний текст знеособлено",
     deidentified: "знеособлено",
   };
   return labels[String(value || "").toLowerCase()] || displayText(value || "статус не записано");
@@ -405,6 +410,12 @@ function hypothesisById(id) {
   return state.bundle.hypotheses.find((hypothesis) => hypothesis.id === id);
 }
 
+function hypothesesSupportedBy(source) {
+  const explicit = (source.supports || []).map((id) => hypothesisById(id)).filter(Boolean);
+  if (explicit.length) return explicit;
+  return state.bundle.hypotheses.filter((hypothesis) => (hypothesis.evidence_refs || []).includes(source.id));
+}
+
 function decodedDataRef(ref) {
   const fact = factById(ref);
   return fact ? `Знахідка ${ref}: ${fact.label}` : String(ref);
@@ -418,6 +429,7 @@ function decodedSourceRef(ref) {
 function hypothesisStatus(value) {
   const labels = {
     leading: "провідна робоча гіпотеза",
+    "leading-provisional": "провідна попередня гіпотеза",
     critical: "провідна лінія",
     supported: "підтримано матеріалами",
     open: "потребує перевірки",
@@ -433,6 +445,11 @@ function hypothesisStatus(value) {
     must_not_miss: "не пропустити",
     refuted: "послаблено",
     "refuted-by-course": "послаблено перебігом",
+    "less-likely-not-excluded": "менш імовірний, не виключений",
+    "possible-reactive-background": "можливий самостійний процес або реактивний фон",
+    "parallel-check": "окрема паралельна перевірка",
+    "low-probability": "низька ймовірність",
+    "low-probability-not-excluded": "низька ймовірність, не виключено",
     "largely-excluded": "значною мірою виключено",
     excluded: "виключено",
   };
@@ -496,7 +513,7 @@ function guidelineList(limit = Infinity) {
       element("div", { className: "guideline-pointer" }, [evidenceChip(source.id)]),
       element("p", { className: "src-cite", text: guidelineCitation(source) }),
     );
-    const linked = (source.supports || []).map((id) => hypothesisById(id)).filter(Boolean);
+    const linked = hypothesesSupportedBy(source);
     if (linked.length) {
       const wrap = element("div", { className: "src-linked" });
       wrap.append(element("span", { className: "src-linked-label", text: "Гіпотези" }));
@@ -516,9 +533,9 @@ function recommendationPlanForCase(bundle) {
     return [
       {
         title: "Центральний перегляд біопсійного матеріалу",
-        action: "Передати референсному гематопатологу фізичні гістологічні скельця та парафіновий блок попередньої біопсії — не фото і не PDF. Повторно оцінити архітектуру вузла та зіставити її з новою ІГХ. Якщо матеріал виснажений або не показує архітектуру, клінічна команда вирішує питання біопсії свіжого зростаючого або ПЕТ-активного вузла.",
+        action: "Передати референсному гематопатологу фізичні гістологічні скельця та парафіновий блок попередньої біопсії — не фото і не PDF. Повторно оцінити просторову будову лімфатичного вузла та зіставити її з новою ІГХ. Якщо матеріал виснажений або не дозволяє оцінити будову вузла, клінічна команда вирішує питання біопсії свіжого зростаючого або ПЕТ-активного вузла.",
         why: "Закриває питання, чи достатньо тканини для підтвердження TFH-лімфоми та прямого диференціалу з лімфомою Ходжкіна.",
-        refs: ["E3", "E7", "E8", "G4"],
+        refs: ["E3", "E7", "E8"],
         status: "Обов’язкова перевірка",
         tone: "danger",
         phase: "Для верифікації діагнозу",
@@ -527,7 +544,7 @@ function recommendationPlanForCase(bundle) {
         title: "Розширена ІГХ-панель TFH",
         action: "На актуальній тканині оцінити PD-1/CD279, CD10, BCL6, CXCL13 та ICOS. Підтвердження TFH-фенотипу потребує щонайменше 2, бажано 3 маркерів в атиповій Т-клітинній популяції разом із відповідною морфологією.",
         why: "Уточнює, чи справді атипові клітини формують TFH-лінію, а не лише мають поодинокі неспецифічні маркери.",
-        refs: ["E9", "E10", "G4", "G5"],
+        refs: ["E9", "E10"],
         status: "Обов’язкова перевірка",
         tone: "danger",
         phase: "Для верифікації діагнозу",
@@ -536,7 +553,7 @@ function recommendationPlanForCase(bundle) {
         title: "Клональність Т-клітин",
         action: "Для парафінового матеріалу використати валідований тест TRB/TRG ПЛР або секвенування нового покоління. TRBC1 методом проточної цитометрії доречний лише за наявності життєздатної клітинної суспензії та коректного виділення атипової популяції.",
         why: "Підтримує або послаблює неопластичний Т-клітинний напрям; сама клональність не встановлює злоякісність чи підтип.",
-        refs: ["E11", "E12", "G4"],
+        refs: ["E11", "E12"],
         status: "Треба підтвердити",
         tone: "danger",
         phase: "Для верифікації діагнозу",
@@ -545,16 +562,16 @@ function recommendationPlanForCase(bundle) {
         title: "EBER-ISH та HHV-8/LANA-1 на тканині",
         action: "Виконати EBER-ISH на актуальній діагностичній тканині та LANA-1 для HHV-8; у висновку вказати, у яких саме клітинах виявлено сигнал.",
         why: "Закриває EBV/HHV-8 та Castleman-диференціал. Негативний LANA-1 без характерної морфології сам по собі не підтверджує iMCD.",
-        refs: ["E5", "E13", "G5"],
+        refs: ["E5", "E8", "E18"],
         status: "Не пропустити",
         tone: "miss",
         phase: "Паралельна перевірка",
       },
       {
         title: "Стадіювання після тканинного підтвердження",
-        action: "Після підтвердження нодальної периферичної Т-клітинної лімфоми виконати ПЕТ-КТ як вихідну візуалізацію, визначити ЛДГ, а також провести аспірацію і біопсію кісткового мозку для точного стадіювання.",
+        action: "Після тканинної верифікації визначити ЛДГ, виконати ПЕТ-КТ як вихідну візуалізацію за Lugano та окремо оцінити показання до дослідження кісткового мозку.",
         why: "Це етап визначення поширеності вже підтвердженого захворювання, а не спосіб встановити гістологічний підтип.",
-        refs: ["E8", "E14", "G6"],
+        refs: ["E8", "E14"],
         status: "Після підтвердження",
         tone: "caution",
         phase: "Після тканинного підтвердження",
@@ -634,7 +651,6 @@ function renderOverview() {
   const assessmentHead = element("div", { className: "overview-section-head" });
   const assessmentTitle = element("div");
   assessmentTitle.append(
-    element("p", { className: "overview-eyebrow text-danger-700", text: "Поточна оцінка · ранг 01" }),
     element("h3", { className: "overview-primary-title", text: lead?.label || "Робоча гіпотеза не сформована" }),
   );
   assessmentHead.append(element("span", { className: "overview-rank-chip danger", text: "Найбільш імовірна" }), assessmentTitle);
@@ -896,7 +912,7 @@ function renderEvidence() {
         item.append(element("p", { className: "src-cite", text: source.type === "guideline" ? guidelineCitation(source) : source.citation }));
         const status = sourceStatusChips(source);
         if (status) item.append(status);
-        const linked = (source.supports || []).map((id) => hypothesisById(id)).filter(Boolean);
+          const linked = hypothesesSupportedBy(source);
         if (linked.length) {
           const wrap = element("div", { className: "src-linked" });
           wrap.append(element("span", { className: "src-linked-label", text: "Гіпотези" }));
