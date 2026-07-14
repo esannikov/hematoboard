@@ -619,7 +619,6 @@
   },
   "provenance": {
     "migration": "legacy_med_data_js",
-    "legacy_path": "MedAI/workbench/dashboards/med_data.js",
     "legacy_sha256": "f1848bfeb65aba41a7d15c569f9714bf631f5f4fa94fa09600a39bd5fd0b025f",
     "built_at": "2026-07-05T00:00:00Z",
     "contract_version": "1.0.0"

@@ -1,8 +1,8 @@
 {
   "case_id": "CASE-02",
   "mode": "operator_offline",
-  "created_at": "2026-07-13T09:47:12+00:00",
-  "run_id": "20260713T094712Z-CASE-02-d09eedc910",
+  "created_at": "2026-07-14T17:34:16+00:00",
+  "run_id": "20260714T173416Z-CASE-02-0ed67c482a",
   "roles": [
     {
       "id": "00_intake_gate",
@@ -71,9 +71,14 @@
     }
   ],
   "input_hashes": {
-    "case_bundle_sha256": "26f16cbf5db71cf753be7f8441dd05ec8b8523f3875475bf65d1f447061051ec",
-    "debate_seed_sha256": "d09eedc9108bad99e4159734149adea8da10f0db5c98e68a065cd8685a8a1ecd",
+    "case_bundle_sha256": "8588e23a5477847624fd0d739082c1004c90e2531b718ad8c45bd0dae0525507",
+    "debate_seed_sha256": "0ed67c482afc7ca67536d5ffaa16d92b09df2d3ccfffe151a35ae1c6d3d75322",
     "role_bundle_sha256": "5e7a51ed82442a6e6f6518479f9b76abff3860e1e4dbc2589d5a5084b3fcb6d7"
+  },
+  "execution": {
+    "kind": "preauthored_seed",
+    "agent_execution": false,
+    "summary": "Операторський офлайн-запуск матеріалізує заздалегідь перевірений засів ролей; живі виклики мовної моделі в цьому прогоні не виконуються."
   },
   "role_ids": [
     "00_intake_gate",
@@ -352,8 +357,7 @@
           "challenge": "Не можна називати агентну розшифровку повною перевіркою джерела або незалежною повторною патологією.",
           "impact": "Усі пізніші висновки позначено як попередню підтримку клінічного рішення; наступний крок спрямовано на оригінальні скельця й блок.",
           "evidence_refs": [
-            "source_observations",
-            "new IHC transcription"
+            "SRC-CASE-PACKET"
           ]
         },
         {
@@ -364,7 +368,7 @@
           "challenge": "Найбільший ризик — перетворити висновок джерела на остаточний діагноз або лікувальну інструкцію.",
           "impact": "Протокол ранжує гіпотези й прогалини, але не встановлює діагноз і не пропонує лікування.",
           "evidence_refs": [
-            "governance"
+            "SRC-CASE-PACKET"
           ]
         }
       ]

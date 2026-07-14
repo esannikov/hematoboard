@@ -402,6 +402,10 @@ function sourceById(id) {
   return state.bundle.sources.find((source) => source.id === id);
 }
 
+function claimById(id) {
+  return (state.bundle.claims || []).find((claim) => claim.id === id);
+}
+
 function factById(id) {
   return state.bundle.facts.find((fact) => fact.id === id);
 }
@@ -411,7 +415,12 @@ function hypothesisById(id) {
 }
 
 function hypothesesSupportedBy(source) {
-  const explicit = (source.supports || []).map((id) => hypothesisById(id)).filter(Boolean);
+  const explicit = (source.supports || [])
+    .map((id) => claimById(id))
+    .filter(Boolean)
+    .flatMap((claim) => claim.hypothesis_refs || [])
+    .map((id) => hypothesisById(id))
+    .filter(Boolean);
   if (explicit.length) return explicit;
   return state.bundle.hypotheses.filter((hypothesis) => (hypothesis.evidence_refs || []).includes(source.id));
 }
@@ -470,8 +479,23 @@ function sourceTypeLabel(source) {
 
 function sourceStatusChips(source) {
   const row = element("div", { className: "chip-row" });
+  const claim = (source.supports || []).map((id) => claimById(id)).find(Boolean);
+  const level = claim?.verification?.level;
+  const labels = {
+    local_recorded: ["локальний запис", ""],
+    metadata_verified: ["метадані звірено", "evidence"],
+    content_verified: ["зміст звірено", "evidence"],
+    page_verified: ["сторінку звірено", "evidence"],
+    context_only: ["лише контекст", "candidate"],
+    candidate: ["кандидат на перевірку", "candidate"],
+    gap: ["прогалина доказів", "critical"],
+  };
+  if (level && labels[level]) {
+    row.append(statusTag(labels[level][0], labels[level][1]));
+    return row;
+  }
   if (source.type === "pmid") {
-    row.append(statusTag("звірена публікація", "evidence"));
+    row.append(statusTag("публікація", "evidence"));
   } else if (source.type === "guideline") {
     return null;
   } else if (source.type === "gap") {
@@ -882,6 +906,52 @@ function renderEvidence() {
       "Каталог публікацій, настанов і первинних документів, на яких ґрунтуються гіпотези. Клінічні прогалини та потрібні дослідження зібрані окремо у вкладці «Дослідження».",
     ),
   );
+
+  const claims = state.bundle.claims || [];
+  if (claims.length) {
+    const chain = section(
+      "Ланцюг підтвердження",
+      "Твердження → факт → джерело → гіпотеза",
+      "Кожен рядок є окремою перевірюваною тезою. Статус показує, що саме було звірено, а обмеження не дозволяє перетворити джерело на остаточний висновок.",
+    );
+    const list = element("div", { className: "source-list" });
+    claims.forEach((claim) => {
+      const item = element("article", { className: "source-item" });
+      item.append(element("h4", { className: "src-head", text: claim.text }));
+      const level = claim.verification?.level || "candidate";
+      const levelLabels = {
+        local_recorded: "локальний запис",
+        metadata_verified: "метадані звірено",
+        content_verified: "зміст звірено",
+        page_verified: "сторінку звірено",
+        context_only: "лише контекст",
+        candidate: "кандидат на перевірку",
+        gap: "прогалина доказів",
+      };
+      item.append(statusTag(levelLabels[level] || level, level === "gap" ? "critical" : level === "candidate" || level === "context_only" ? "candidate" : "evidence"));
+      const refs = element("div", { className: "src-linked" });
+      if (claim.fact_refs?.length) {
+        refs.append(element("span", { className: "src-linked-label", text: "Факти" }));
+        claim.fact_refs.forEach((id) => refs.append(dataChip(id)));
+      }
+      if (claim.source_refs?.length) {
+        refs.append(element("span", { className: "src-linked-label", text: "Джерела" }));
+        claim.source_refs.forEach((id) => refs.append(evidenceChip(id)));
+      }
+      if (claim.hypothesis_refs?.length) {
+        refs.append(element("span", { className: "src-linked-label", text: "Гіпотези" }));
+        claim.hypothesis_refs.forEach((id) => {
+          const hypothesis = hypothesisById(id);
+          if (hypothesis) refs.append(element("span", { className: "chip", text: `#${hypothesis.rank} ${wordClip(hypothesis.label, 28)}`, attrs: { title: hypothesis.label } }));
+        });
+      }
+      if (refs.childNodes.length) item.append(refs);
+      item.append(element("p", { className: "src-cite", text: `Межа: ${claim.limitations}` }));
+      list.append(item);
+    });
+    chain.append(list);
+    fragment.append(chain);
+  }
 
   const groups = [
     ["Настанови", state.bundle.sources.filter((source) => source.type === "guideline")],
@@ -1550,12 +1620,12 @@ async function renderProtocol() {
   fragment.append(
     viewHeader(
       "Протокол агентних дебатів",
-      "Раунд за раундом: які позиції сформували агенти-спеціалісти, які заперечення висунули та як модератор зібрав фінальний синтез.",
+      "Операторський відтворюваний запис: які підготовлені позиції, заперечення та синтез модератора закладено у прогін. У цій версії немає самостійного запуску мовної моделі.",
       "Агентні дебати",
     ),
   );
   state.latestRun = await loadLatestRun();
-  const audit = section("Відтворюваність", "Дані для перевірки запуску", "Ідентифікатори й хеші дозволяють підтвердити, що протокол побудовано з незмінних вхідних даних.");
+  const audit = section("Відтворюваність", "Дані для перевірки запуску", "Ідентифікатори й хеші прив'язують протокол до знімків входу. Повна перевірка байтових хешів виконується локальним валідатором, а не лише цим статичним переглядом.");
   if (!state.latestRun) {
     audit.append(emptyState("Незмінний запуск ще не створено для цього кейсу. Доступний лише статичний методологічний знімок із пакета."));
   } else {
@@ -1568,7 +1638,7 @@ async function renderProtocol() {
         ["Хеш пакета кейсу", run.input_hashes.case_bundle_sha256.slice(0, 16)],
         ["Хеш початкових даних дебатів", run.input_hashes.debate_seed_sha256.slice(0, 16)],
         ["Хеш набору ролей", run.input_hashes.role_bundle_sha256.slice(0, 16)],
-        ["Статус", "перевірено · незмінний"],
+        ["Статус", "операторський запис · хеші доступні для локальної перевірки"],
       ]),
     );
     const rounds = section(`${run.rounds?.length || 0} етапів`, "Як змінювався висновок", "Спочатку перегляньте підсумки етапів. Натисніть на позицію учасника, щоб відкрити аргументи та опорні дані.");
@@ -1683,12 +1753,12 @@ async function loadCase(caseKey, { push = false, focus = false } = {}) {
     const response = await fetch(CASES[state.caseKey].bundle, { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}: bundle недоступний`);
     const bundle = await response.json();
-    if (bundle.schema_version !== "1.0.0") throw new Error(`Непідтримувана версія контракту: ${bundle.schema_version}`);
+    if (!["1.0.0", "1.1.0"].includes(bundle.schema_version)) throw new Error(`Непідтримувана версія контракту: ${bundle.schema_version}`);
     state.bundle = bundle;
     state.latestRun = null;
     buildPrimaryNavigation();
     statusLine.dataset.state = "ready";
-    statusLine.textContent = `Пакет перевірено · ${bundle.case.generated || bundle.bundle_id}`;
+    statusLine.textContent = `Пакет завантажено · контракт ${bundle.schema_version} · ${bundle.case.generated || bundle.bundle_id}`;
     const provenanceHash = bundle.provenance.legacy_sha256 || bundle.provenance.source_sha256;
     footerContract.textContent = provenanceHash
       ? `пакет ${bundle.bundle_id} · джерело ${provenanceHash.slice(0, 12)}`
