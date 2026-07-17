@@ -1,37 +1,64 @@
-const CASES = {
-  case01: {
-    label: "CASE-01 · анемія",
-    bundle: "./data/case_bundle.json",
-    latest: null,
-  },
-  case02: {
-    label: "CASE-02 · лімфаденопатія",
-    bundle: "./case02/data/case_bundle.json",
-    latest: "./case02/runs/latest.json",
-  },
-  case05: {
-    label: "CASE005 · легкі ланцюги / нирка",
-    bundle: "./case05/data/case_bundle.json",
-    latest: "./case05/runs/latest.json",
-  },
-};
+// The case registry is data, not code: methodology/active_cases.json is the
+// validated routing manifest. Adding a case never requires editing this file.
+const CASE_MANIFEST_URL = "active_cases.json";
+let CASES = {};
+
+async function loadCaseManifest() {
+  let response;
+  try {
+    response = await fetch(CASE_MANIFEST_URL, { cache: "no-store" });
+  } catch {
+    throw new ManifestError("network", "Маніфест кейсів недоступний: немає відповіді від сервера.");
+  }
+  if (!response.ok) throw new ManifestError("http", `Маніфест кейсів недоступний (HTTP ${response.status}).`);
+  let manifest;
+  try {
+    manifest = await response.json();
+  } catch {
+    throw new ManifestError("malformed", "Маніфест кейсів пошкоджений: це не валідний JSON.");
+  }
+  if (!manifest || !Array.isArray(manifest.cases) || !manifest.cases.length) {
+    throw new ManifestError("malformed", "Маніфест кейсів не містить жодного кейсу.");
+  }
+  const active = manifest.cases.filter((entry) => entry && entry.status === "active");
+  if (!active.length) throw new ManifestError("malformed", "У маніфесті немає жодного активного кейсу.");
+  CASES = Object.fromEntries(
+    active.map((entry) => [
+      entry.key,
+      { label: entry.label, bundle: entry.bundle, latest: entry.latest ?? null, replay: entry.replay ?? null, default: entry.default === true },
+    ]),
+  );
+}
+
+function defaultCaseKey() {
+  return Object.keys(CASES).find((key) => CASES[key].default) || Object.keys(CASES)[0];
+}
+
+class ManifestError extends Error {
+  constructor(kind, message) {
+    super(message);
+    this.kind = kind;
+  }
+}
 
 const PRIMARY_VIEWS = [
   ["overview", "Огляд"],
   ["timeline", "Історія"],
   ["state", "Дослідження"],
   ["graph", "Граф гіпотез"],
+  ["provenance", "Структура висновку"],
   ["consilium", "Консиліум"],
   ["evidence", "Джерела"],
 ];
 
 const OPTIONAL_PRIMARY_VIEWS = [
   ["multimodal", "Узгодженість"],
+  ["replay", "Докази в часі"],
   ["protocol", "Протокол AI дебатів"],
 ];
 
 const VIEW_LABELS = Object.fromEntries([...PRIMARY_VIEWS, ...OPTIONAL_PRIMARY_VIEWS, ["packet", "Бриф для консиліуму"], ["bodymap", "Локалізація"]]);
-const state = { caseKey: "case02", view: "overview", bundle: null, latestRun: null };
+const state = { caseKey: "case02", view: "overview", bundle: null, latestRun: null, replay: null };
 
 const DISPLAY_REPLACEMENTS = [
   [/знеособлену ручну розшифровку/gi, "знеособлену агентну розшифровку"],
@@ -42,31 +69,31 @@ const DISPLAY_REPLACEMENTS = [
   [/понижений диференціал для порівняння/gi, "можливий варіант із меншою ймовірністю"],
   [/понижений диференціал/gi, "можливий варіант із меншою ймовірністю"],
   [/понижена, але видима/gi, "можлива, але менш імовірна"],
-  [/clinician\/source QA/gi, "перевірку лікарем і джерела"],
-  [/candidate\/decision support/gi, "попередню оцінку / підтримку рішень"],
-  [/candidate local provenance/gi, "локальний попередній слід джерела"],
-  [/guideline[- ]candidate traces?/gi, "попередні сліди настанов"],
-  [/candidate traces?/gi, "попередні сліди"],
-  [/source QA/gi, "перевірку джерела"],
-  [/tissue QA/gi, "морфологічну верифікацію"],
-  [/central QA/gi, "центральну морфологічну верифікацію"],
-  [/red team/gi, "рецензент з безпеки"],
-  [/workup/gi, "діагностичний алгоритм"],
-  [/comparator/gi, "диференціал для порівняння"],
-  [/overcall/gi, "переоцінка впевненості"],
-  [/confidence/gi, "рівень впевненості"],
-  [/proof of subtype/gi, "доказ підтипу"],
-  [/TFH-oriented IHC/gi, "ІГХ, орієнтована на TFH"],
-  [/tissue signal/gi, "тканинний сигнал"],
-  [/therapy language/gi, "мови лікувальних рекомендацій"],
-  [/no treatment/gi, "без лікувальних рекомендацій"],
-  [/side-by-side/gi, "порівняльному"],
-  [/reactive-only/gi, "суто реактивному"],
-  [/competitors/gi, "конкурентні гіпотези"],
-  [/imaging/gi, "візуалізація"],
-  [/staging/gi, "стадіювання"],
-  [/dashboard/gi, "панель"],
-  [/raw NCCN PDF/gi, "оригінальний PDF NCCN"],
+  [/\bclinician\/source QA\b/gi, "перевірку лікарем і джерела"],
+  [/\bcandidate\/decision support\b/gi, "попередню оцінку / підтримку рішень"],
+  [/\bcandidate local provenance\b/gi, "локальний попередній слід джерела"],
+  [/\bguideline[- ]candidate traces?\b/gi, "попередні сліди настанов"],
+  [/\bcandidate traces?\b/gi, "попередні сліди"],
+  [/\bsource QA\b/gi, "перевірку джерела"],
+  [/\btissue QA\b/gi, "морфологічну верифікацію"],
+  [/\bcentral QA\b/gi, "центральну морфологічну верифікацію"],
+  [/\bred team\b/gi, "рецензент з безпеки"],
+  [/\bworkup\b/gi, "діагностичний алгоритм"],
+  [/\bcomparator\b/gi, "диференціал для порівняння"],
+  [/\bovercall\b/gi, "переоцінка впевненості"],
+  [/\bconfidence\b/gi, "рівень впевненості"],
+  [/\bproof of subtype\b/gi, "доказ підтипу"],
+  [/\bTFH-oriented IHC\b/gi, "ІГХ, орієнтована на TFH"],
+  [/\btissue signal\b/gi, "тканинний сигнал"],
+  [/\btherapy language\b/gi, "мови лікувальних рекомендацій"],
+  [/\bno treatment\b/gi, "без лікувальних рекомендацій"],
+  [/\bside-by-side\b/gi, "порівняльному"],
+  [/\breactive-only\b/gi, "суто реактивному"],
+  [/\bcompetitors\b/gi, "конкурентні гіпотези"],
+  [/\bimaging\b/gi, "візуалізація"],
+  [/\bstaging\b/gi, "стадіювання"],
+  [/\bdashboard\b/gi, "панель"],
+  [/\braw NCCN PDF\b/gi, "оригінальний PDF NCCN"],
   [/\bQA\b/g, "перевірка якості"],
 ];
 
@@ -127,36 +154,87 @@ function wordClip(value, maxLen = 46) {
   return `${base.replace(/[\s,;:.–—-]+$/, "")}…`;
 }
 
-// Internal enum values → clinical Ukrainian labels (never show raw enums to a clinician).
-const ENUM_LABELS = {
-  declared_deidentified: "задекларовано",
-  declared_deidentified_canonical_text_only: "знеособлено в доступному тексті",
-  source_verified_candidate_clinical_review: "джерело звірено · клінічна перевірка відкрита",
-  candidate_unverified: "кандидатний покажчик · не перевірено",
-  context_only: "лише контекст",
-  present: "наявна", audited: "перевірено", discordant: "розбіжність між методами",
-  high_signal_partial: "сильний сигнал (частково)", partial: "частковий сигнал",
-  missing: "відсутня", not_used_clean: "не застосовувалась",
-  decisive: "вирішальна", high: "висока", moderate: "помірна", parallel: "паралельна", urgent: "термінова",
-  candidate: "кандидатний висновок", critical: "критичний", gap: "прогалина",
-  neoplasm: "неопластичний", "non-diagnostic": "недіагностично", partial_refute: "частково спростовує",
-  reactive: "реактивний", refute: "спростовує", suspicious: "підозрілий", support: "підтримує", neutral: "нейтрально",
-};
-const ENUM_TONE = {
-  present: "evidence", audited: "evidence", discordant: "critical", high_signal_partial: "candidate",
-  partial: "candidate", decisive: "critical", high: "candidate", urgent: "critical",
-  candidate: "candidate", critical: "critical", neoplasm: "critical", partial_refute: "candidate",
-  refute: "candidate", suspicious: "candidate",
+// Single label registry: internal enum values → clinical Ukrainian labels
+// (never show raw enums to a clinician). Namespaces stay separate on purpose:
+// the same token can mean different things in different contexts
+// (e.g. "critical" as a fact flag vs as a hypothesis status).
+const LABELS = {
+  enum: {
+    declared_deidentified: "задекларовано",
+    declared_deidentified_canonical_text_only: "знеособлено в доступному тексті",
+    source_verified_candidate_clinical_review: "джерело звірено · клінічна перевірка відкрита",
+    candidate_unverified: "кандидатний покажчик · не перевірено",
+    context_only: "лише контекст",
+    present: "наявна", audited: "перевірено", discordant: "розбіжність між методами",
+    high_signal_partial: "сильний сигнал (частково)", partial: "частковий сигнал",
+    missing: "відсутня", not_used_clean: "не застосовувалась",
+    decisive: "вирішальна", high: "висока", moderate: "помірна", parallel: "паралельна", urgent: "термінова",
+    candidate: "кандидатний висновок", critical: "критичний", gap: "прогалина",
+    neoplasm: "неопластичний", "non-diagnostic": "недіагностично", partial_refute: "частково спростовує",
+    reactive: "реактивний", refute: "спростовує", suspicious: "підозрілий", support: "підтримує", neutral: "нейтрально",
+  },
+  enumTone: {
+    present: "evidence", audited: "evidence", discordant: "critical", high_signal_partial: "candidate",
+    partial: "candidate", decisive: "critical", high: "candidate", urgent: "critical",
+    candidate: "candidate", critical: "critical", neoplasm: "critical", partial_refute: "candidate",
+    refute: "candidate", suspicious: "candidate",
+  },
+  hypothesisStatus: {
+    leading: "провідна робоча гіпотеза",
+    "leading-provisional": "провідна попередня гіпотеза",
+    critical: "провідна лінія",
+    supported: "підтримано матеріалами",
+    open: "потребує перевірки",
+    watch: "перевірити",
+    safety: "критичний диференціал",
+    "must-resolve": "потребує верифікації",
+    "must-not-miss": "не пропустити",
+    weak: "можливий варіант із меншою ймовірністю",
+    downgraded: "можливий варіант із меншою ймовірністю",
+    possible_lower: "можливий варіант із меншою ймовірністю",
+    unlikely: "малоймовірний варіант",
+    attention: "потребує окремої перевірки",
+    must_not_miss: "не пропустити",
+    refuted: "послаблено",
+    "refuted-by-course": "послаблено перебігом",
+    "less-likely-not-excluded": "менш імовірний, не виключений",
+    "possible-reactive-background": "можливий самостійний процес або реактивний фон",
+    "parallel-check": "окрема паралельна перевірка",
+    "low-probability": "низька ймовірність",
+    "low-probability-not-excluded": "низька ймовірність, не виключено",
+    "largely-excluded": "значною мірою виключено",
+    excluded: "виключено",
+  },
+  sourceType: {
+    case: "джерельний пакет",
+    patient: "дані кейсу",
+    pmid: "публікація PubMed",
+    guideline: "настанова · попередній слід",
+    gap: "прогалина доказів",
+    local: "локальне джерело",
+  },
+  verification: {
+    local_recorded: ["локальний запис", ""],
+    metadata_verified: ["метадані звірено", "evidence"],
+    content_verified: ["зміст звірено", "evidence"],
+    page_verified: ["сторінку звірено", "evidence"],
+    context_only: ["лише контекст", "candidate"],
+    candidate: ["кандидат на перевірку", "candidate"],
+    gap: ["прогалина доказів", "critical"],
+  },
 };
 function enumLabel(value) {
   if (value === true) return "виконано";
   if (value === false) return "не виконано";
   if (value === null || value === undefined || value === "") return "—";
   const k = String(value);
-  return ENUM_LABELS[k] || ENUM_LABELS[k.toLowerCase()] || displayText(k);
+  return LABELS.enum[k] || LABELS.enum[k.toLowerCase()] || displayText(k);
 }
 function enumTone(value) {
-  return ENUM_TONE[String(value).toLowerCase()] || "";
+  return LABELS.enumTone[String(value).toLowerCase()] || "";
+}
+function verificationLabel(level) {
+  return LABELS.verification[level] || [level || "—", ""];
 }
 
 // Wrap into up to N lines by words (for SVG labels — no mid-word cuts).
@@ -406,6 +484,17 @@ function claimById(id) {
   return (state.bundle.claims || []).find((claim) => claim.id === id);
 }
 
+function claimLayer(claim) {
+  const layers = {
+    case_fact: ["Дані з кейсу", "evidence"],
+    external_evidence: ["Висновок із настанови або статті", "evidence"],
+    source_interpretation: ["Висновок із настанови або статті", "candidate"],
+    case_interpretation: ["Пояснення для цього кейсу", "candidate"],
+    gap: ["Прогалина", "critical"],
+  };
+  return layers[claim?.kind] || ["Твердження", ""];
+}
+
 function factById(id) {
   return state.bundle.facts.find((fact) => fact.id === id);
 }
@@ -436,62 +525,20 @@ function decodedSourceRef(ref) {
 }
 
 function hypothesisStatus(value) {
-  const labels = {
-    leading: "провідна робоча гіпотеза",
-    "leading-provisional": "провідна попередня гіпотеза",
-    critical: "провідна лінія",
-    supported: "підтримано матеріалами",
-    open: "потребує перевірки",
-    watch: "перевірити",
-    safety: "критичний диференціал",
-    "must-resolve": "потребує верифікації",
-    "must-not-miss": "не пропустити",
-    weak: "можливий варіант із меншою ймовірністю",
-    downgraded: "можливий варіант із меншою ймовірністю",
-    possible_lower: "можливий варіант із меншою ймовірністю",
-    unlikely: "малоймовірний варіант",
-    attention: "потребує окремої перевірки",
-    must_not_miss: "не пропустити",
-    refuted: "послаблено",
-    "refuted-by-course": "послаблено перебігом",
-    "less-likely-not-excluded": "менш імовірний, не виключений",
-    "possible-reactive-background": "можливий самостійний процес або реактивний фон",
-    "parallel-check": "окрема паралельна перевірка",
-    "low-probability": "низька ймовірність",
-    "low-probability-not-excluded": "низька ймовірність, не виключено",
-    "largely-excluded": "значною мірою виключено",
-    excluded: "виключено",
-  };
-  return labels[value] || value || "потребує перевірки";
+  return LABELS.hypothesisStatus[value] || value || "потребує перевірки";
 }
 
 function sourceTypeLabel(source) {
-  const labels = {
-    case: "джерельний пакет",
-    patient: "дані кейсу",
-    pmid: "публікація PubMed",
-    guideline: "настанова · попередній слід",
-    gap: "прогалина доказів",
-    local: "локальне джерело",
-  };
-  return labels[source.type] || source.type;
+  return LABELS.sourceType[source.type] || source.type;
 }
 
 function sourceStatusChips(source) {
   const row = element("div", { className: "chip-row" });
   const claim = (source.supports || []).map((id) => claimById(id)).find(Boolean);
   const level = claim?.verification?.level;
-  const labels = {
-    local_recorded: ["локальний запис", ""],
-    metadata_verified: ["метадані звірено", "evidence"],
-    content_verified: ["зміст звірено", "evidence"],
-    page_verified: ["сторінку звірено", "evidence"],
-    context_only: ["лише контекст", "candidate"],
-    candidate: ["кандидат на перевірку", "candidate"],
-    gap: ["прогалина доказів", "critical"],
-  };
-  if (level && labels[level]) {
-    row.append(statusTag(labels[level][0], labels[level][1]));
+  if (level && LABELS.verification[level]) {
+    const [label, tone] = verificationLabel(level);
+    row.append(statusTag(label, tone));
     return row;
   }
   if (source.type === "pmid") {
@@ -550,58 +597,23 @@ function guidelineList(limit = Infinity) {
 }
 
 function recommendationPlanForCase(bundle) {
+  // Canonical source: the validated case bundle. The renderer never authors
+  // case-specific clinical content — it only maps contract fields to view props.
+  const canonical = bundle.methodology?.workup;
+  if (Array.isArray(canonical) && canonical.length) {
+    return canonical.map((item) => ({
+      title: item.title,
+      action: item.action,
+      why: item.why,
+      refs: item.evidence_refs || [],
+      status: item.status,
+      tone: item.tone,
+      phase: item.phase,
+    }));
+  }
   const missing = (bundle.clinical_state?.panel || []).flatMap((group) =>
     (group.items || []).filter((item) => item.present === false).map((item) => ({ ...item, group: group.group })),
   );
-  if (state.caseKey === "case02") {
-    return [
-      {
-        title: "Центральний перегляд біопсійного матеріалу",
-        action: "Передати референсному гематопатологу фізичні гістологічні скельця та парафіновий блок попередньої біопсії — не фото і не PDF. Повторно оцінити просторову будову лімфатичного вузла та зіставити її з новою ІГХ. Якщо матеріал виснажений або не дозволяє оцінити будову вузла, клінічна команда вирішує питання біопсії свіжого зростаючого або ПЕТ-активного вузла.",
-        why: "Закриває питання, чи достатньо тканини для підтвердження TFH-лімфоми та прямого диференціалу з лімфомою Ходжкіна.",
-        refs: ["E3", "E7", "E8"],
-        status: "Обов’язкова перевірка",
-        tone: "danger",
-        phase: "Для верифікації діагнозу",
-      },
-      {
-        title: "Розширена ІГХ-панель TFH",
-        action: "На актуальній тканині оцінити PD-1/CD279, CD10, BCL6, CXCL13 та ICOS. Підтвердження TFH-фенотипу потребує щонайменше 2, бажано 3 маркерів в атиповій Т-клітинній популяції разом із відповідною морфологією.",
-        why: "Уточнює, чи справді атипові клітини формують TFH-лінію, а не лише мають поодинокі неспецифічні маркери.",
-        refs: ["E9", "E10"],
-        status: "Обов’язкова перевірка",
-        tone: "danger",
-        phase: "Для верифікації діагнозу",
-      },
-      {
-        title: "Клональність Т-клітин",
-        action: "Для парафінового матеріалу використати валідований тест TRB/TRG ПЛР або секвенування нового покоління. TRBC1 методом проточної цитометрії доречний лише за наявності життєздатної клітинної суспензії та коректного виділення атипової популяції.",
-        why: "Підтримує або послаблює неопластичний Т-клітинний напрям; сама клональність не встановлює злоякісність чи підтип.",
-        refs: ["E11", "E12"],
-        status: "Треба підтвердити",
-        tone: "danger",
-        phase: "Для верифікації діагнозу",
-      },
-      {
-        title: "EBER-ISH та HHV-8/LANA-1 на тканині",
-        action: "Виконати EBER-ISH на актуальній діагностичній тканині та LANA-1 для HHV-8; у висновку вказати, у яких саме клітинах виявлено сигнал.",
-        why: "Закриває EBV/HHV-8 та Castleman-диференціал. Негативний LANA-1 без характерної морфології сам по собі не підтверджує iMCD.",
-        refs: ["E5", "E8", "E18"],
-        status: "Не пропустити",
-        tone: "miss",
-        phase: "Паралельна перевірка",
-      },
-      {
-        title: "Стадіювання після тканинного підтвердження",
-        action: "Після тканинної верифікації визначити ЛДГ, виконати ПЕТ-КТ як вихідну візуалізацію за Lugano та окремо оцінити показання до дослідження кісткового мозку.",
-        why: "Це етап визначення поширеності вже підтвердженого захворювання, а не спосіб встановити гістологічний підтип.",
-        refs: ["E8", "E14"],
-        status: "Після підтвердження",
-        tone: "caution",
-        phase: "Після тканинного підтвердження",
-      },
-    ];
-  }
   return missing.map((item) => ({
     title: item.t || item.test || item.name || item.group || "Незаповнена перевірка",
     action: item.action || item.why || item.group || "Точний спосіб виконання не записано.",
@@ -678,11 +690,13 @@ function renderOverview() {
     element("h3", { className: "overview-primary-title", text: lead?.label || "Робоча гіпотеза не сформована" }),
   );
   assessmentHead.append(element("span", { className: "overview-rank-chip danger", text: "Найбільш імовірна" }), assessmentTitle);
-  assessment.append(assessmentHead, element("p", { className: "overview-primary-copy", text: lead?.stance || bundle.case.signal }));
+  const assessmentCopy = element("div");
+  assessmentCopy.append(element("p", { className: "overview-primary-copy", text: lead?.stance || bundle.case.signal }));
   const signals = element("div", { className: "overview-signal-row", attrs: { "aria-label": "Опорні сигнали" } });
   const leadRefs = lead?.data_refs?.length ? lead.data_refs : bundle.facts.slice(-4).map((fact) => fact.id);
   leadRefs.slice(0, 4).forEach((ref) => signals.append(element("span", { text: factById(ref)?.label || ref })));
-  assessment.append(signals);
+  assessmentCopy.append(signals);
+  assessment.append(assessmentHead, assessmentCopy);
   const secondary = element("div", { className: "overview-secondary-field" });
   hypotheses.slice(1, 3).forEach((hypothesis) => {
     const item = element("div");
@@ -898,6 +912,297 @@ function renderConsilium() {
   return fragment;
 }
 
+
+function renderConclusionStructureMap({ lead, facts, sourceClaims, fallbackSources, interpretation }) {
+  const sources = sourceClaims.length ? sourceClaims : fallbackSources;
+  const root = element("section", { className: "conclusion-map", attrs: { "aria-label": "Послідовність формування робочого висновку" } });
+  const head = element("div", { className: "conclusion-map-head" });
+  head.append(
+    element("div", {}, [
+      element("p", { className: "section-kicker", text: "Шлях до робочого висновку" }),
+      element("h3", { text: "Як система пояснює поточний напрям" }),
+    ]),
+    element("p", { className: "conclusion-map-intro", text: "Оберіть етап або переміщуйте повзунок. Деталі з’являються праворуч: від даних цього кейсу й настанов до пояснення та робочої гіпотези." }),
+  );
+
+  const canvas = element("div", { className: "conclusion-map-canvas", attrs: { "aria-label": "Дані з кейсу та висновки настанов і статей формують пояснення для цього кейсу, з якого виходить робоча гіпотеза" } });
+  const paths = svgElement("svg", { className: "conclusion-map-paths", attrs: { viewBox: "0 0 1000 340", preserveAspectRatio: "none", "aria-hidden": "true" } });
+  [
+    "M 238 88 C 370 88, 405 150, 495 170",
+    "M 238 252 C 370 252, 405 190, 495 170",
+    "M 625 170 C 710 170, 748 170, 818 170",
+  ].forEach((d) => paths.append(svgElement("path", { attrs: { d } })));
+  canvas.append(paths);
+
+  const territories = [
+    ["facts", "01", "Дані з кейсу", "Що зафіксовано в медичних матеріалах"],
+    ["sources", "02", "Настанови й статті", "Що про це кажуть зовнішні джерела"],
+    ["interpretation", "03", "Інтерпретація", "Що це означає саме для цього кейсу"],
+    ["hypothesis", "04", "Робоча гіпотеза", "Який напрям перевіряємо далі"],
+  ];
+  const territoryButtons = [];
+  territories.forEach(([id, number, title, meta]) => {
+    const button = element("button", {
+      className: `conclusion-territory ${id} focus-ring`,
+      attrs: { type: "button", "data-stage": id, "aria-current": "false" },
+    }, [
+      element("span", { className: "conclusion-territory-number", text: number }),
+      element("span", { className: "conclusion-territory-copy" }, [
+        element("strong", { text: title }),
+        element("small", { text: meta }),
+      ]),
+    ]);
+    canvas.append(button);
+    territoryButtons.push(button);
+  });
+
+  const rail = element("div", { className: "conclusion-map-rail" });
+  const stageOutput = element("p", { className: "conclusion-map-stage", attrs: { "aria-live": "polite" } });
+  const range = element("input", {
+    className: "conclusion-map-range focus-ring",
+    attrs: { type: "range", min: "0", max: "4", value: "0", step: "1", "aria-label": "Етап формування робочого висновку" },
+  });
+  const ticks = element("div", { className: "conclusion-map-ticks", attrs: { "aria-hidden": "true" } });
+  ["Огляд", "Дані кейсу", "Настанови й статті", "Пояснення", "Гіпотеза"].forEach((label, index) => ticks.append(element("span", { text: `${String(index).padStart(2, "0")} · ${label}` })));
+  rail.append(stageOutput, range, ticks);
+
+  const focus = element("article", { className: "conclusion-map-focus", attrs: { "aria-live": "polite" } });
+  const mapColumn = element("div", { className: "conclusion-map-controls" });
+  mapColumn.append(canvas, rail);
+  const workspace = element("div", { className: "conclusion-map-workspace" });
+  workspace.append(mapColumn, focus);
+  root.append(head, workspace);
+
+  const stageDefinitions = [
+    {
+      key: "overview",
+      label: "00 · Огляд шляху",
+      title: "Чотири кроки до робочого висновку",
+      copy: "Система спочатку відокремлює дані, записані в цьому кейсі, від загальних висновків настанов і статей. Далі вона пояснює, як ці два шари стосуються саме цього кейсу, і формує робочу гіпотезу для наступної перевірки.",
+      build: (body) => {
+        const list = element("dl", { className: "conclusion-map-summary" });
+        [
+          ["Дані кейсу", facts.length ? `${facts.length} записів із пакета` : "не виділено"],
+          ["Настанови й статті", sources.length ? `${sources.length} пов’язаних висновків` : "не пов’язано"],
+          ["Пояснення для кейсу", interpretation ? "сформовано окремо" : "ще не сформовано"],
+          ["Робоча гіпотеза", `напрям #${lead.rank}`],
+        ].forEach(([term, value]) => {
+          const row = element("div", {});
+          row.append(element("dt", { text: term }), element("dd", { text: value }));
+          list.append(row);
+        });
+        body.append(list);
+      },
+    },
+    {
+      key: "facts",
+      label: "01 · Дані з кейсу",
+      title: "Що записано в медичних матеріалах",
+      copy: "Це знеособлені результати досліджень, описи матеріалів і події перебігу. Кожен запис походить із пакета цього кейсу. Дані описують клінічну картину та ще не є діагностичним висновком.",
+      build: (body) => {
+        const list = element("div", { className: "conclusion-map-detail-list" });
+        if (!facts.length) list.append(emptyState("Для цієї гіпотези не відібрано пов’язаних даних із кейсу."));
+        facts.slice(0, 4).forEach((fact) => list.append(element("article", { className: "conclusion-map-detail" }, [element("span", { text: fact.id }), element("strong", { text: fact.label }), element("p", { text: fact.detail })])));
+        if (facts.length > 4) list.append(element("p", { className: "conclusion-map-more", text: `Ще ${facts.length - 4} записів із кейсу — у детальному реєстрі нижче.` }));
+        body.append(list);
+      },
+    },
+    {
+      key: "sources",
+      label: "02 · Настанови й статті",
+      title: "Що з цього приводу кажуть зовнішні джерела",
+      copy: "Тут зібрані висновки з клінічних настанов і наукових статей: які ознаки підтримують або обмежують напрям і які перевірки розрізняють альтернативи. Джерело задає загальне правило; застосування до цього кейсу показано на наступному етапі.",
+      build: (body) => {
+        const list = element("div", { className: "conclusion-map-detail-list" });
+        if (!sources.length) list.append(emptyState("Для цієї гіпотези не вказано пов’язаних висновків із настанов або статей."));
+        sources.slice(0, 3).forEach((source) => {
+          const card = element("article", { className: "conclusion-map-detail" });
+          const text = source.text || source.citation || source.ref || "Висновок із зовнішнього джерела";
+          card.append(element("strong", { text }));
+          if (source.source_refs?.length) {
+            const refs = element("div", { className: "provenance-source-row" });
+            source.source_refs.forEach((id) => refs.append(evidenceChip(id)));
+            card.append(refs);
+          } else if (source.id) card.append(evidenceChip(source.id));
+          list.append(card);
+        });
+        if (sources.length > 3) list.append(element("p", { className: "conclusion-map-more", text: `Ще ${sources.length - 3} висновків із джерел — у детальному реєстрі нижче.` }));
+        body.append(list);
+      },
+    },
+    {
+      key: "interpretation",
+      label: "03 · Пояснення для цього кейсу",
+      title: interpretation ? "Що означає це поєднання саме тут" : "Інтерпретацію ще потрібно сформувати",
+      copy: interpretation?.text || "У пакеті немає окремої інтерпретації, яка пов’язує факти конкретного кейсу з положеннями зовнішніх джерел. Такий висновок не можна підміняти самими посиланнями.",
+      build: (body) => {
+        if (interpretation?.limitations) body.append(element("p", { className: "conclusion-map-boundary", text: `Межа висновку: ${interpretation.limitations}` }));
+      },
+    },
+    {
+      key: "hypothesis",
+      label: "04 · Робоча гіпотеза",
+      title: lead.label,
+      copy: lead.stance || "Поточне обґрунтування не внесено до пакета.",
+      build: (body) => {
+        const checks = element("div", { className: "conclusion-map-checks" });
+        checks.append(
+          element("div", {}, [element("span", { text: "Зміцнить напрям" }), element("p", { text: lead.confirms || "Критерій не записано." })]),
+          element("div", {}, [element("span", { text: "Змусить переглянути" }), element("p", { text: lead.refutes || "Критерій не записано." })]),
+        );
+        body.append(checks);
+      },
+    },
+  ];
+
+  function setStage(index) {
+    const stage = stageDefinitions[index];
+    root.dataset.stage = stage.key;
+    range.value = String(index);
+    stageOutput.textContent = stage.label;
+    territoryButtons.forEach((button) => button.setAttribute("aria-current", String(button.dataset.stage === stage.key)));
+    focus.replaceChildren(
+      element("p", { className: "conclusion-map-focus-label", text: stage.label }),
+      element("h4", { text: stage.title }),
+      element("p", { className: "conclusion-map-focus-copy", text: stage.copy }),
+    );
+    stage.build(focus);
+  }
+
+  range.addEventListener("input", () => setStage(Number(range.value)));
+  territoryButtons.forEach((button) => button.addEventListener("click", () => setStage(stageDefinitions.findIndex((stage) => stage.key === button.dataset.stage))));
+  setStage(0);
+  return root;
+}
+
+function renderProvenance() {
+  const bundle = state.bundle;
+  const lead = bundle.hypotheses.find((hypothesis) => hypothesis.primary) || [...bundle.hypotheses].sort((a, b) => a.rank - b.rank)[0];
+  const leadClaimRefs = lead?.claim_refs || [];
+  const interpretation = leadClaimRefs.map((id) => claimById(id)).find((claim) => claim?.kind === "case_interpretation");
+  const facts = (interpretation?.fact_refs?.length ? interpretation.fact_refs : lead?.data_refs || [])
+    .map((id) => factById(id))
+    .filter(Boolean);
+  const sourceClaims = (interpretation?.claim_refs?.length ? interpretation.claim_refs : leadClaimRefs)
+    .map((id) => claimById(id))
+    .filter((claim) => claim && ["external_evidence", "source_interpretation"].includes(claim.kind));
+  const fallbackSources = (lead?.evidence_refs || []).map((id) => sourceById(id)).filter(Boolean);
+
+  const fragment = document.createDocumentFragment();
+  fragment.append(
+    viewHeader(
+      "Структура робочого висновку",
+      "Ця сторінка показує шлях від даних, записаних у медичних матеріалах, до робочої гіпотези. Вона окремо показує, що відомо про кейс, що кажуть настанови й статті, як це пояснено для цього кейсу та що ще потрібно перевірити.",
+    ),
+  );
+
+  const map = section(
+    "Перевірювані деталі",
+    lead ? `Повний ланцюг для напряму #${lead.rank}` : "Провідну гіпотезу не сформовано",
+    "Для перевірки або друку тут розкладено чотири частини: дані з кейсу, настанови й статті, пояснення для цього кейсу та робоча гіпотеза.",
+  );
+  if (!lead) {
+    map.append(emptyState("У пакеті немає ранжованої гіпотези, для якої можна побудувати карту походження."));
+    fragment.append(map);
+    return fragment;
+  }
+
+  fragment.append(renderConclusionStructureMap({ lead, facts, sourceClaims, fallbackSources, interpretation }));
+
+  const diagram = element("div", { className: "provenance-diagram" });
+  const inputs = element("section", { className: "provenance-inputs", attrs: { "aria-label": "Вхідні шари" } });
+  const factsColumn = element("div", { className: "provenance-column provenance-facts" });
+  factsColumn.append(element("p", { className: "provenance-step", text: "1 · Дані з кейсу" }));
+  factsColumn.append(element("p", { className: "provenance-subcopy", text: "Знеособлені результати досліджень, описи матеріалів і події перебігу, записані в пакеті цього кейсу." }));
+  const factsList = element("div", { className: "provenance-card-list" });
+  if (facts.length) {
+    facts.forEach((fact) => {
+      const card = element("article", { className: "provenance-card" });
+      card.append(element("span", { className: "provenance-id", text: fact.id }), element("strong", { text: fact.label }), element("p", { text: fact.detail }));
+      factsList.append(card);
+    });
+  } else {
+    factsList.append(emptyState("У цьому пакеті немає окремо пов’язаних даних для провідної гіпотези."));
+  }
+  factsColumn.append(factsList);
+
+  const sourcesColumn = element("div", { className: "provenance-column provenance-sources" });
+  sourcesColumn.append(element("p", { className: "provenance-step", text: "2 · Настанови й статті" }));
+  sourcesColumn.append(element("p", { className: "provenance-subcopy", text: "Висновки з настанов і наукових статей: загальні правила, з якими система зіставляє дані кейсу." }));
+  const sourcesList = element("div", { className: "provenance-card-list" });
+  if (sourceClaims.length) {
+    sourceClaims.forEach((claim) => {
+      const card = element("article", { className: "provenance-card" });
+      const [label, tone] = claimLayer(claim);
+      card.append(statusTag(label, tone), element("p", { text: claim.text }));
+      if (claim.source_refs?.length) {
+        const refs = element("div", { className: "provenance-source-row" });
+        claim.source_refs.forEach((id) => refs.append(evidenceChip(id)));
+        card.append(refs);
+      }
+      sourcesList.append(card);
+    });
+  } else if (fallbackSources.length) {
+    fallbackSources.forEach((source) => {
+      const card = element("article", { className: "provenance-card" });
+      card.append(element("strong", { text: source.ref }), element("p", { text: source.citation }), evidenceChip(source.id));
+      sourcesList.append(card);
+    });
+  } else {
+    sourcesList.append(emptyState("Для цієї позиції не вказано простежуваних джерел."));
+  }
+  sourcesColumn.append(sourcesList);
+  inputs.append(factsColumn, sourcesColumn);
+
+  const interpretationColumn = element("section", { className: "provenance-interpretation", attrs: { "aria-label": "Пояснення для цього кейсу" } });
+  interpretationColumn.append(element("p", { className: "provenance-step", text: "3 · Пояснення для цього кейсу" }));
+  if (interpretation) {
+    interpretationColumn.append(
+      element("h4", { text: "Що означає поєднання цих даних саме для цього кейсу" }),
+      element("p", { className: "provenance-interpretation-copy", text: interpretation.text }),
+      element("p", { className: "provenance-limit", text: `Межа: ${interpretation.limitations}` }),
+    );
+  } else {
+    interpretationColumn.append(
+      element("h4", { text: "Потрібна окрема інтерпретація про кейс" }),
+      element("p", { className: "provenance-interpretation-copy", text: "У цьому пакеті поки немає окремого пояснення, яке прямо пов’язує дані кейсу з висновками настанов і статей. Доступні матеріали збережено для перевірки, а робочий висновок про конкретний кейс ще не сформовано." }),
+    );
+  }
+
+  const hypothesisColumn = element("section", { className: "provenance-hypothesis", attrs: { "aria-label": "Провідна робоча гіпотеза" } });
+  hypothesisColumn.append(
+    statusTag("Найбільш імовірна", "critical"),
+    element("p", { className: "provenance-step", text: `4 · Робоча гіпотеза #${lead.rank}` }),
+    element("h4", { text: lead.label }),
+    element("p", { text: lead.stance }),
+  );
+  const joinFlow = element("div", { className: "provenance-flow", attrs: { "aria-hidden": "true" } });
+  joinFlow.append(element("span", { text: "зіставлення" }), element("strong", { text: "→" }));
+  const rankFlow = element("div", { className: "provenance-flow", attrs: { "aria-hidden": "true" } });
+  rankFlow.append(element("span", { text: "ранжування" }), element("strong", { text: "→" }));
+  diagram.append(inputs, joinFlow, interpretationColumn, rankFlow, hypothesisColumn);
+  const auditDisclosure = element("details", { className: "provenance-audit-disclosure" });
+  auditDisclosure.append(element("summary", { text: "Відкрити повний структурований реєстр" }), diagram);
+  map.append(auditDisclosure);
+  fragment.append(map);
+
+  const boundary = section("Перевірка висновку", "Що зміцнить або перегляне цей напрям");
+  const ledger = element("div", { className: "provenance-ledger" });
+  [
+    ["Що підтвердить напрям", lead.confirms || "Критерій підтвердження не записано."],
+    ["Що змусить переглянути напрям", lead.refutes || "Критерій перегляду не записано."],
+    ["Джерела та повний ланцюг", "Відкрийте вкладку «Джерела», щоб звірити статус кожного положення, точне посилання та його межу застосування."],
+  ].forEach(([title, copy], index) => {
+    const item = element("article", { className: "provenance-ledger-item" });
+    item.append(element("span", { className: "provenance-ledger-number", text: String(index + 1).padStart(2, "0") }), element("h4", { text: title }), element("p", { text: copy }));
+    if (index === 2) item.append(element("a", { className: "overview-text-link focus-ring", text: "Відкрити джерела →", attrs: { href: `?case=${state.caseKey}&view=evidence` } }));
+    ledger.append(item);
+  });
+  boundary.append(ledger);
+  fragment.append(boundary);
+  return fragment;
+}
+
 function renderEvidence() {
   const fragment = document.createDocumentFragment();
   fragment.append(
@@ -910,33 +1215,33 @@ function renderEvidence() {
   const claims = state.bundle.claims || [];
   if (claims.length) {
     const chain = section(
-      "Ланцюг підтвердження",
-      "Твердження → факт → джерело → гіпотеза",
-      "Кожен рядок є окремою перевірюваною тезою. Статус показує, що саме було звірено, а обмеження не дозволяє перетворити джерело на остаточний висновок.",
+      "Шари підтвердження",
+      "Дані кейсу + настанови й статті → пояснення для цього кейсу → робоча гіпотеза",
+      "Кожен рядок є окремою перевірюваною тезою. Настанова або стаття формулює загальне правило чи контекст; наступний шар показує, як це правило застосовано до даних конкретного кейсу.",
     );
     const list = element("div", { className: "source-list" });
     claims.forEach((claim) => {
       const item = element("article", { className: "source-item" });
-      item.append(element("h4", { className: "src-head", text: claim.text }));
+      const [layerLabel, layerTone] = claimLayer(claim);
+      item.append(statusTag(layerLabel, layerTone), element("h4", { className: "src-head", text: claim.text }));
       const level = claim.verification?.level || "candidate";
-      const levelLabels = {
-        local_recorded: "локальний запис",
-        metadata_verified: "метадані звірено",
-        content_verified: "зміст звірено",
-        page_verified: "сторінку звірено",
-        context_only: "лише контекст",
-        candidate: "кандидат на перевірку",
-        gap: "прогалина доказів",
-      };
-      item.append(statusTag(levelLabels[level] || level, level === "gap" ? "critical" : level === "candidate" || level === "context_only" ? "candidate" : "evidence"));
+      const [levelLabel, levelTone] = verificationLabel(level);
+      item.append(statusTag(levelLabel, levelTone));
       const refs = element("div", { className: "src-linked" });
       if (claim.fact_refs?.length) {
-        refs.append(element("span", { className: "src-linked-label", text: "Факти" }));
+        refs.append(element("span", { className: "src-linked-label", text: "Дані кейсу" }));
         claim.fact_refs.forEach((id) => refs.append(dataChip(id)));
       }
       if (claim.source_refs?.length) {
-        refs.append(element("span", { className: "src-linked-label", text: "Джерела" }));
+        refs.append(element("span", { className: "src-linked-label", text: "Настанови й статті" }));
         claim.source_refs.forEach((id) => refs.append(evidenceChip(id)));
+      }
+      if (claim.claim_refs?.length) {
+        refs.append(element("span", { className: "src-linked-label", text: "Висновки джерел" }));
+        claim.claim_refs.forEach((id) => {
+          const linked = claimById(id);
+          if (linked) refs.append(element("span", { className: "chip", text: wordClip(linked.text, 48), attrs: { title: linked.text } }));
+        });
       }
       if (claim.hypothesis_refs?.length) {
         refs.append(element("span", { className: "src-linked-label", text: "Гіпотези" }));
@@ -1297,9 +1602,21 @@ function renderBodyMap() {
   return fragment;
 }
 
-function svgElement(tag, attrs = {}) {
+// SVG має окремий DOM-простір: className для HTML тут не працює надійно.
+// Підтримує старий короткий запис атрибутів і розширений запис як у element().
+function svgElement(tag, options = {}, children = []) {
   const node = document.createElementNS("http://www.w3.org/2000/svg", tag);
-  Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, String(value)));
+  const attrs = options.attrs || options;
+  if (options.className) node.setAttribute("class", options.className);
+  if (options.text !== undefined) node.textContent = displayText(options.text);
+  Object.entries(attrs).forEach(([key, value]) => {
+    if (key === "attrs" || key === "className" || key === "text" || value === undefined || value === null) return;
+    node.setAttribute(key, String(value));
+  });
+  for (const child of Array.isArray(children) ? children : [children]) {
+    if (child === undefined || child === null) continue;
+    node.append(child instanceof Node ? child : document.createTextNode(String(child)));
+  }
   return node;
 }
 
@@ -1388,19 +1705,9 @@ function renderGraph() {
   }
 
   function compactHypothesisLabel(item) {
-    const caseLabels = {
-      case02: {
-        H1: "Нодальна TFH-лімфома / ПТКЛ", H2: "Класична лімфома Ходжкіна", H3: "Хвороба Каслмана",
-        H4: "Саркоїдоз", H5: "Вірусна лімфопроліферація", H6: "Реактивний лімфаденіт",
-        H7: "Метастатична карцинома", H8: "Інфекційний / ТБ-лімфаденіт",
-      },
-      case05: {
-        H1: "LCDD / MIDD", H2: "PGNMID / MGRS-гломерулопатія", H3: "Імунокомплексний / інфекційний ГН",
-        H4: "AL-амілоїдоз", H5: "Діабетичний гломерулосклероз", H6: "Мембранозна нефропатія",
-        H7: "Мієломна нефропатія", H8: "Фібрилярний / імунотактоїдний ГН",
-      },
-    };
-    return caseLabels[state.caseKey]?.[item.id] || wordClip(item.label, 38);
+    // Short labels live in the validated bundle (hypothesis.short_label);
+    // the renderer only falls back to clipping the full clinical label.
+    return item.short_label || wordClip(item.label, 38);
   }
 
   function interactiveGroup(kind, item, x, y, width) {
@@ -1525,20 +1832,59 @@ function renderMultimodal() {
   return fragment;
 }
 
+// Typed run loading: the UI must distinguish "no run yet" from "run is
+// corrupted", "pointer is broken" and "bytes do not match the pinned hash".
+// Collapsing every failure into null would lie about the evidence base state.
+async function sha256Hex(text) {
+  if (!globalThis.crypto?.subtle) return null;
+  const bytes = new TextEncoder().encode(text);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
 async function loadLatestRun() {
   const config = CASES[state.caseKey];
-  if (!config.latest) return null;
+  if (!config?.latest) return { status: "absent" };
+  let pointerResponse;
   try {
-    const pointerResponse = await fetch(config.latest, { cache: "no-store" });
-    if (!pointerResponse.ok) return null;
-    const pointer = await pointerResponse.json();
-    const base = config.latest.slice(0, config.latest.lastIndexOf("/") + 1);
-    const runResponse = await fetch(`${base}${pointer.path}`, { cache: "no-store" });
-    if (!runResponse.ok) return null;
-    return { pointer, run: await runResponse.json() };
+    pointerResponse = await fetch(config.latest, { cache: "no-store" });
   } catch {
-    return null;
+    return { status: "network-error", detail: "Немає відповіді від сервера під час читання вказівника запуску." };
   }
+  if (!pointerResponse.ok) return { status: "absent" };
+  let pointer;
+  try {
+    pointer = await pointerResponse.json();
+  } catch {
+    return { status: "pointer-invalid", detail: "Вказівник запуску пошкоджений: це не валідний JSON." };
+  }
+  if (!pointer || typeof pointer.path !== "string" || !pointer.path) {
+    return { status: "pointer-invalid", detail: "Вказівник запуску не містить шляху до run.json." };
+  }
+  const base = config.latest.slice(0, config.latest.lastIndexOf("/") + 1);
+  let runResponse;
+  try {
+    runResponse = await fetch(`${base}${pointer.path}`, { cache: "no-store" });
+  } catch {
+    return { status: "network-error", detail: "Немає відповіді від сервера під час читання run.json." };
+  }
+  if (!runResponse.ok) return { status: "run-missing", detail: `Файл запуску недоступний (HTTP ${runResponse.status}).` };
+  const runText = await runResponse.text();
+  let run;
+  try {
+    run = JSON.parse(runText);
+  } catch {
+    return { status: "run-invalid", detail: "run.json пошкоджений: це не валідний JSON." };
+  }
+  let hashState = "unverified";
+  if (typeof pointer.run_sha256 === "string" && pointer.run_sha256) {
+    const actual = await sha256Hex(runText);
+    if (actual === null) hashState = "unverified";
+    else if (actual !== pointer.run_sha256.toLowerCase()) {
+      return { status: "hash-mismatch", detail: "Байтовий хеш run.json не збігається з вказівником. Запуск міг бути змінений після публікації.", pointer, run };
+    } else hashState = "verified";
+  }
+  return { status: "ok", pointer, run, hashState };
 }
 
 function protocolRounds(run) {
@@ -1615,6 +1961,247 @@ function protocolRounds(run) {
   return list;
 }
 
+const RUN_STATE_MESSAGES = {
+  absent: "Незмінний запуск ще не створено для цього кейсу. Доступний лише статичний методологічний знімок із пакета.",
+  "pointer-invalid": "Вказівник на запуск пошкоджений. Це не те саме, що відсутність запуску: перевірте цілісність runs/latest.json локальним валідатором.",
+  "run-missing": "Вказівник посилається на файл запуску, який недоступний. Запуск міг бути видалений або не опублікований повністю.",
+  "run-invalid": "Файл запуску пошкоджений і не може бути прочитаний. Не використовуйте цей запуск як доказову основу.",
+  "network-error": "Сервер не відповів під час завантаження запуску. Стан доказової бази невідомий — перевірте локальний HTTP-сервер.",
+  "hash-mismatch": "Хеш завантаженого запуску не збігається зі значенням у вказівнику. Вміст запуску міг бути змінений після публікації — протокол не показується.",
+};
+
+// Replay loading mirrors the same honesty rules as run loading: absent,
+// invalid and stale are different states and are named differently.
+async function loadReplay() {
+  const config = CASES[state.caseKey];
+  if (!config?.replay) return { status: "absent" };
+  const fetchText = async (url) => {
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) return null;
+    return response.text();
+  };
+  let replayText;
+  let bundleText;
+  try {
+    [replayText, bundleText] = await Promise.all([fetchText(config.replay), fetchText(config.bundle)]);
+  } catch {
+    return { status: "network-error", detail: "Немає відповіді від сервера під час читання replay-артефакту." };
+  }
+  if (replayText === null) return { status: "absent" };
+  let replay;
+  try {
+    replay = JSON.parse(replayText);
+  } catch {
+    return { status: "replay-invalid", detail: "replay.json пошкоджений: це не валідний JSON." };
+  }
+  if (bundleText !== null && typeof replay.bundle_sha256 === "string") {
+    const actual = await sha256Hex(bundleText);
+    if (actual !== null && actual !== replay.bundle_sha256.toLowerCase()) {
+      return { status: "stale", detail: "replay.json застарілий: пакет кейсу змінився після генерації артефакту. Регенеруйте scripts/replay_case.py.", replay };
+    }
+  }
+  return { status: "ok", replay };
+}
+
+const MILESTONE_PRESENTATION = {
+  first_support: ["Перший доказ на користь", "candidate"],
+  first_discriminating_support: ["Початок розділення пари", "evidence"],
+  first_strict_lead: ["Строге лідерство", "evidence"],
+  unresolved_pair_window: ["Фінальна пара нерозділена", "candidate"],
+  fault_line_window: ["Розбіжність потоків", "critical"],
+  resolution: ["Фінальну відповідь зафіксовано", "evidence"],
+};
+
+function renderReplay() {
+  const fragment = document.createDocumentFragment();
+  fragment.append(
+    viewHeader(
+      "Докази в часі",
+      "Детерміновані часові зрізи замороженого графа доказів: що було доступне станом на кожну дату і коли докази вперше розділили фінальну пару гіпотез. Це не симуляція минулих міркувань — жодна модель не викликається, жодне минуле ранжування не вигадується.",
+      "Реплей доказів",
+    ),
+  );
+  const loaded = state.replay;
+  if (!loaded || loaded.status !== "ok") {
+    const messages = {
+      absent: "Для цього кейсу часовий реплей не згенеровано (немає датованих фактів або replay-артефакту).",
+      "replay-invalid": "Артефакт реплею пошкоджений.",
+      "network-error": "Сервер не відповів під час завантаження реплею.",
+      stale: "Реплей застарілий відносно поточного пакета кейсу.",
+    };
+    fragment.append(
+      element("div", { className: loaded && loaded.status !== "absent" ? "error-panel" : "empty-state" }, [
+        element("p", { text: messages[loaded?.status] || messages.absent }),
+        loaded?.detail ? element("p", { text: loaded.detail }) : null,
+      ]),
+    );
+    return fragment;
+  }
+  const replay = loaded.replay;
+  const finalHypothesis = hypothesisById(replay.final_hypothesis);
+  const runnerUp = state.bundle.hypotheses.find((h) => h.rank === 2);
+
+  const explainer = element("aside", { className: "explainer" });
+  explainer.append(
+    element("p", { text: replay.method }),
+    element("p", { text: replay.date_map_note || "" }),
+  );
+  if (replay.facts_undated?.length) {
+    explainer.append(element("p", { text: `Факти без дати виключено зі зрізів: ${replay.facts_undated.join(", ")}.` }));
+  }
+  fragment.append(explainer);
+
+  const milestones = section("Ключові моменти", "Коли докази змінили картину");
+  const milestoneGrid = element("div", { className: "milestone-grid" });
+  (replay.milestones || []).forEach((milestone) => {
+    const [title, tone] = MILESTONE_PRESENTATION[milestone.kind] || [milestone.kind, "candidate"];
+    const when = milestone.date || `${milestone.from} → ${milestone.to}${milestone.days != null ? ` · ${milestone.days} дн.` : ""}`;
+    milestoneGrid.append(
+      element("article", { className: "milestone-card", attrs: { "data-tone": tone } }, [
+        element("p", { className: "milestone-when", text: when }),
+        element("h3", { text: title }),
+        element("p", { text: milestone.note }),
+      ]),
+    );
+  });
+  milestones.append(milestoneGrid);
+  fragment.append(milestones);
+
+  // Trajectory: support/refute bars for the final pair over the cutoffs.
+  const trajectory = section(
+    "Траєкторія підтримки",
+    `${finalHypothesis?.short_label || finalHypothesis?.label || replay.final_hypothesis} проти ${runnerUp?.short_label || runnerUp?.label || "другої за рангом"}`,
+    "Стовпці — кількість фактів «за» станом на дату; червоні риски — факти «проти». Маркер ◆ — фінальна гіпотеза строго лідирує.",
+  );
+  const pairIds = [replay.final_hypothesis, runnerUp?.id].filter(Boolean);
+  const maxSupport = Math.max(
+    4,
+    ...replay.cutoffs.flatMap((c) => c.standings.filter((s) => pairIds.includes(s.id)).map((s) => s.support)),
+  );
+  const slot = 104;
+  const chartHeight = 190;
+  const baseY = 158;
+  const width = slot * replay.cutoffs.length + 40;
+  const svg = svgElement("svg", { class: "replay-svg", viewBox: `0 0 ${width} ${chartHeight + 56}`, role: "img", "aria-label": "Траєкторія підтримки фінальної пари гіпотез" });
+
+  // Window shading from milestones with from/to dates.
+  (replay.milestones || []).forEach((milestone) => {
+    if (!milestone.from || !milestone.to) return;
+    const fromIdx = replay.cutoffs.findIndex((c) => c.date >= milestone.from);
+    const toIdx = replay.cutoffs.findIndex((c) => c.date >= milestone.to);
+    if (fromIdx < 0) return;
+    const endIdx = toIdx < 0 ? replay.cutoffs.length - 1 : toIdx;
+    svg.append(svgElement("rect", {
+      class: `replay-window ${milestone.kind === "fault_line_window" ? "fault" : "pair"}`,
+      x: String(20 + fromIdx * slot - 8),
+      y: "6",
+      width: String((endIdx - fromIdx + 1) * slot - 8),
+      height: String(baseY - 6),
+      rx: "10",
+    }));
+  });
+
+  replay.cutoffs.forEach((cutoff, index) => {
+    const x = 20 + index * slot;
+    pairIds.forEach((hid, pairIndex) => {
+      const standing = cutoff.standings.find((s) => s.id === hid) || { support: 0, refute: 0 };
+      const barHeight = Math.max(3, (standing.support / maxSupport) * (baseY - 20));
+      const barX = x + pairIndex * 34;
+      svg.append(svgElement("rect", {
+        class: `replay-bar ${pairIndex === 0 ? "final" : "runner"}`,
+        x: String(barX), y: String(baseY - barHeight), width: "26", height: String(barHeight), rx: "5",
+      }));
+      if (standing.refute > 0) {
+        svg.append(svgElement("line", {
+          class: "replay-refute-tick",
+          x1: String(barX + 3), x2: String(barX + 23), y1: String(baseY + 7), y2: String(baseY + 7),
+        }));
+      }
+    });
+    if (cutoff.final_leads) {
+      const marker = svgElement("text", { class: "replay-lead-marker", x: String(x + 22), y: "18", "text-anchor": "middle" });
+      marker.textContent = "◆";
+      svg.append(marker);
+    }
+    const label = svgElement("text", { class: "replay-date-label", x: String(x + 22), y: String(baseY + 30), "text-anchor": "middle" });
+    label.textContent = cutoff.date.slice(2).replace(/-/g, ".");
+    svg.append(label);
+  });
+  const baseline = svgElement("line", { class: "replay-baseline", x1: "14", x2: String(width - 14), y1: String(baseY), y2: String(baseY) });
+  svg.append(baseline);
+  trajectory.append(svg);
+  const legend = element("div", { className: "replay-legend" });
+  legend.append(
+    element("span", { className: "replay-legend-item final" }, [element("i"), document.createTextNode(finalHypothesis?.short_label || replay.final_hypothesis)]),
+    runnerUp ? element("span", { className: "replay-legend-item runner" }, [element("i"), document.createTextNode(runnerUp.short_label || `#${runnerUp.rank}`)]) : null,
+    element("span", { className: "replay-legend-item pair" }, [element("i"), document.createTextNode("вікно нерозділеної пари")]),
+    element("span", { className: "replay-legend-item fault" }, [element("i"), document.createTextNode("вікно розбіжності потоків")]),
+  );
+  trajectory.append(legend);
+  fragment.append(trajectory);
+
+  const cutoffsSection = section("Зрізи за датами", "Що було доступне станом на кожну дату", "Кожен зріз перераховано з тих самих заморожених зв'язків графа — без майбутніх фактів.");
+  const cutoffList = element("div", { className: "protocol-list" });
+  replay.cutoffs.forEach((cutoff, index) => {
+    const detail = element("details", { className: "protocol-entry", attrs: index === replay.cutoffs.length - 1 ? { open: "" } : {} });
+    const summary = element("summary", { className: "protocol-entry-head" });
+    const summaryCopy = element("span", { className: "protocol-summary-wrap" });
+    summaryCopy.append(element("span", { className: "protocol-summary", text: cutoff.label }));
+    const leaderNames = cutoff.leaders.map((id) => {
+      const hypothesis = hypothesisById(id);
+      return hypothesis?.short_label || hypothesis?.label || id;
+    });
+    summary.append(
+      element("span", { className: "protocol-role", text: cutoff.date }),
+      summaryCopy,
+      element("span", { className: "entry-toggle", attrs: { "aria-hidden": "true" }, text: "+" }),
+    );
+    detail.append(summary);
+    const body = element("div", { className: "protocol-analysis" });
+    body.append(element("p", { className: "replay-leaders-line", text: cutoff.leaders.length ? `Лідери зрізу: ${leaderNames.join(" · ")}` : "Лідера ще немає (доказів замало)." }));
+    if (cutoff.facts_entered.length) {
+      const entered = element("div", { className: "protocol-refs" });
+      entered.append(element("span", { className: "protocol-refs-label", text: "Нові факти зрізу" }));
+      cutoff.facts_entered.forEach((factId) => entered.append(dataChip(factId)));
+      body.append(entered);
+    }
+    const rows = cutoff.standings
+      .filter((s) => s.support > 0 || s.refute > 0)
+      .sort((a, b) => b.support - a.support || a.refute - b.refute)
+      .map((s) => {
+        const hypothesis = hypothesisById(s.id);
+        return [hypothesis?.short_label || hypothesis?.label || s.id, `за ${s.support}`, `проти ${s.refute}`];
+      });
+    if (rows.length) body.append(table(["Гіпотеза", "Підтримка", "Спростування"], rows));
+    detail.append(body);
+    cutoffList.append(detail);
+  });
+  cutoffsSection.append(cutoffList);
+  fragment.append(cutoffsSection);
+
+  if (replay.reaction_points?.length) {
+    const reactions = section("Реакція команди", "Задокументовані дії, що змінили перебіг");
+    const list = element("div", { className: "source-list" });
+    replay.reaction_points.forEach((point) => {
+      list.append(
+        element("article", { className: "source-item" }, [
+          element("p", { className: "milestone-when", text: point.date }),
+          element("h4", { className: "src-head", text: point.label }),
+          element("p", { className: "src-cite", text: point.note }),
+        ]),
+      );
+    });
+    reactions.append(list);
+    fragment.append(reactions);
+  }
+  return fragment;
+}
+
+async function renderReplayAsync() {
+  if (!state.replay) state.replay = await loadReplay();
+  return renderReplay();
+}
+
 async function renderProtocol() {
   const fragment = document.createDocumentFragment();
   fragment.append(
@@ -1626,19 +2213,29 @@ async function renderProtocol() {
   );
   state.latestRun = await loadLatestRun();
   const audit = section("Відтворюваність", "Дані для перевірки запуску", "Ідентифікатори й хеші прив'язують протокол до знімків входу. Повна перевірка байтових хешів виконується локальним валідатором, а не лише цим статичним переглядом.");
-  if (!state.latestRun) {
-    audit.append(emptyState("Незмінний запуск ще не створено для цього кейсу. Доступний лише статичний методологічний знімок із пакета."));
+  if (state.latestRun.status !== "ok") {
+    const message = RUN_STATE_MESSAGES[state.latestRun.status] || RUN_STATE_MESSAGES.absent;
+    const detail = state.latestRun.detail;
+    audit.append(
+      element("div", { className: state.latestRun.status === "absent" ? "empty-state" : "error-panel" }, [
+        element("p", { text: message }),
+        detail ? element("p", { text: detail }) : null,
+      ]),
+    );
   } else {
-    const { pointer, run } = state.latestRun;
+    const { pointer, run, hashState } = state.latestRun;
+    const hashLabel = hashState === "verified"
+      ? "байтовий хеш run.json перевірено у браузері — збігається"
+      : "хеш не перевірено в браузері (недоступний WebCrypto або відсутній очікуваний хеш) — звірте локальним валідатором";
     audit.append(
       definitionList([
         ["Ідентифікатор запуску", pointer.run_id],
         ["Режим", run.mode === "operator_offline" ? "операторський офлайн" : run.mode],
         ["Створено", run.created_at],
-        ["Хеш пакета кейсу", run.input_hashes.case_bundle_sha256.slice(0, 16)],
-        ["Хеш початкових даних дебатів", run.input_hashes.debate_seed_sha256.slice(0, 16)],
-        ["Хеш набору ролей", run.input_hashes.role_bundle_sha256.slice(0, 16)],
-        ["Статус", "операторський запис · хеші доступні для локальної перевірки"],
+        ["Хеш пакета кейсу", run.input_hashes?.case_bundle_sha256?.slice(0, 16) || "—"],
+        ["Хеш початкових даних дебатів", run.input_hashes?.debate_seed_sha256?.slice(0, 16) || "—"],
+        ["Хеш набору ролей", run.input_hashes?.role_bundle_sha256?.slice(0, 16) || "—"],
+        ["Цілісність", hashLabel],
       ]),
     );
     const rounds = section(`${run.rounds?.length || 0} етапів`, "Як змінювався висновок", "Спочатку перегляньте підсумки етапів. Натисніть на позицію учасника, щоб відкрити аргументи та опорні дані.");
@@ -1667,11 +2264,13 @@ const RENDERERS = {
   timeline: renderTimeline,
   consilium: renderConsilium,
   evidence: renderEvidence,
+  provenance: renderProvenance,
   state: renderState,
   packet: renderPacket,
   graph: renderGraph,
   bodymap: renderBodyMap,
   multimodal: renderMultimodal,
+  replay: renderReplayAsync,
   protocol: renderProtocol,
 };
 
@@ -1699,6 +2298,7 @@ function hasMultimodalData(bundle) {
 function availableOptionalPrimaryViews(bundle) {
   return OPTIONAL_PRIMARY_VIEWS.filter(([id]) => {
     if (id === "multimodal") return hasMultimodalData(bundle);
+    if (id === "replay") return Boolean(CASES[state.caseKey]?.replay);
     if (id === "protocol") return Boolean(CASES[state.caseKey]?.latest);
     return true;
   });
@@ -1744,18 +2344,34 @@ async function renderCurrent({ focus = false } = {}) {
   }
 }
 
+let caseLoadToken = 0;
+let caseLoadAbort = null;
+
 async function loadCase(caseKey, { push = false, focus = false } = {}) {
-  state.caseKey = CASES[caseKey] ? caseKey : "case02";
+  const token = ++caseLoadToken;
+  caseLoadAbort?.abort();
+  const controller = new AbortController();
+  caseLoadAbort = controller;
+  state.caseKey = CASES[caseKey] ? caseKey : defaultCaseKey();
   caseSelect.value = state.caseKey;
   statusLine.dataset.state = "loading";
   statusLine.textContent = "Завантаження й перевірка пакета кейсу…";
   try {
-    const response = await fetch(CASES[state.caseKey].bundle, { cache: "no-store" });
-    if (!response.ok) throw new Error(`HTTP ${response.status}: bundle недоступний`);
-    const bundle = await response.json();
-    if (!["1.0.0", "1.1.0"].includes(bundle.schema_version)) throw new Error(`Непідтримувана версія контракту: ${bundle.schema_version}`);
+    const response = await fetch(CASES[state.caseKey].bundle, { cache: "no-store", signal: controller.signal });
+    if (!response.ok) throw new CaseLoadError("http", `Пакет кейсу недоступний (HTTP ${response.status}).`);
+    let bundle;
+    try {
+      bundle = await response.json();
+    } catch {
+      throw new CaseLoadError("malformed", "Пакет кейсу пошкоджений: це не валідний JSON. Перевірте case_bundle.json валідатором.");
+    }
+    if (!["1.0.0", "1.1.0", "1.2.0"].includes(bundle.schema_version)) {
+      throw new CaseLoadError("schema", `Непідтримувана версія контракту: ${bundle.schema_version}.`);
+    }
+    if (token !== caseLoadToken) return; // a newer case selection superseded this load
     state.bundle = bundle;
     state.latestRun = null;
+    state.replay = null;
     buildPrimaryNavigation();
     statusLine.dataset.state = "ready";
     statusLine.textContent = `Пакет завантажено · контракт ${bundle.schema_version} · ${bundle.case.generated || bundle.bundle_id}`;
@@ -1766,9 +2382,18 @@ async function loadCase(caseKey, { push = false, focus = false } = {}) {
     updateUrl(push);
     await renderCurrent({ focus });
   } catch (error) {
+    if (error?.name === "AbortError" || token !== caseLoadToken) return;
     statusLine.dataset.state = "error";
-    statusLine.textContent = `Bundle не завантажено: ${error instanceof Error ? error.message : String(error)}`;
-    content.replaceChildren(element("section", { className: "error-panel" }, [element("h2", { text: "Пакет кейсу недоступний" }), element("p", { text: "Запустіть локальний HTTP-сервер із кореня workbench і перевірте контракт." })]));
+    const typed = error instanceof CaseLoadError ? error : new CaseLoadError("network", "Пакет кейсу не завантажено: сервер не відповідає. Запустіть локальний HTTP-сервер із кореня workbench.");
+    statusLine.textContent = typed.message;
+    content.replaceChildren(element("section", { className: "error-panel" }, [element("h2", { text: "Пакет кейсу недоступний" }), element("p", { text: typed.message })]));
+  }
+}
+
+class CaseLoadError extends Error {
+  constructor(kind, message) {
+    super(message);
+    this.kind = kind;
   }
 }
 
@@ -1778,26 +2403,44 @@ function setView(view, push = false) {
   renderCurrent({ focus: true });
 }
 
-Object.entries(CASES).forEach(([key, config]) => {
-  caseSelect.append(element("option", { text: config.label, attrs: { value: key } }));
-});
-buildNavigation(primaryNav, PRIMARY_VIEWS);
-packetNavAction.addEventListener("click", () => setView("packet", true));
+async function boot() {
+  try {
+    await loadCaseManifest();
+  } catch (error) {
+    statusLine.dataset.state = "error";
+    statusLine.textContent = error instanceof Error ? error.message : String(error);
+    content.replaceChildren(
+      element("section", { className: "error-panel" }, [
+        element("h2", { text: "Маніфест кейсів недоступний" }),
+        element("p", { text: error instanceof Error ? error.message : String(error) }),
+        element("p", { text: "Перевірте methodology/active_cases.json командою validate-manifest у workbench/scripts/medai_contract.py." }),
+      ]),
+    );
+    return;
+  }
+  Object.entries(CASES).forEach(([key, config]) => {
+    caseSelect.append(element("option", { text: config.label, attrs: { value: key } }));
+  });
+  buildNavigation(primaryNav, PRIMARY_VIEWS);
+  packetNavAction.addEventListener("click", () => setView("packet", true));
 
-function handleCaseSelection() {
-  const nextCase = caseSelect.value;
-  if (!CASES[nextCase] || nextCase === state.caseKey) return;
-  loadCase(nextCase, { push: true, focus: true });
+  function handleCaseSelection() {
+    const nextCase = caseSelect.value;
+    if (!CASES[nextCase] || nextCase === state.caseKey) return;
+    loadCase(nextCase, { push: true, focus: true });
+  }
+
+  caseSelect.addEventListener("input", handleCaseSelection);
+  caseSelect.addEventListener("change", handleCaseSelection);
+  window.addEventListener("popstate", () => {
+    const params = new URLSearchParams(window.location.search);
+    state.view = VIEW_LABELS[params.get("view")] ? params.get("view") : "overview";
+    loadCase(params.get("case") || defaultCaseKey(), { push: false, focus: true });
+  });
+
+  const initial = new URLSearchParams(window.location.search);
+  state.view = VIEW_LABELS[initial.get("view")] ? initial.get("view") : "overview";
+  loadCase(initial.get("case") || defaultCaseKey());
 }
 
-caseSelect.addEventListener("input", handleCaseSelection);
-caseSelect.addEventListener("change", handleCaseSelection);
-window.addEventListener("popstate", () => {
-  const params = new URLSearchParams(window.location.search);
-  state.view = VIEW_LABELS[params.get("view")] ? params.get("view") : "overview";
-  loadCase(params.get("case") || "case02", { push: false, focus: true });
-});
-
-const initial = new URLSearchParams(window.location.search);
-state.view = VIEW_LABELS[initial.get("view")] ? initial.get("view") : "overview";
-loadCase(initial.get("case") || "case02");
+boot();

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "updated": "2026-07-17",
+  "cases": [
+    {
+      "key": "case01",
+      "label": "CASE-01 · анемія",
+      "bundle": "./case01/data/case_bundle.json",
+      "latest": null,
+      "status": "active"
+    },
+    {
+      "key": "case02",
+      "label": "CASE-02 · лімфаденопатія",
+      "bundle": "./case02/data/case_bundle.json",
+      "latest": "./case02/runs/latest.json",
+      "replay": "./case02/data/replay.json",
+      "status": "active",
+      "default": true
+    },
+    {
+      "key": "case05",
+      "label": "CASE005 · легкі ланцюги / нирка",
+      "bundle": "./case05/data/case_bundle.json",
+      "latest": "./case05/runs/latest.json",
+      "status": "active"
+    }
+  ]
+}
