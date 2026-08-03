@@ -4507,7 +4507,7 @@ function renderReplay() {
       svg.append(marker);
     }
     const label = svgElement("text", { class: "replay-date-label", x: String(x + 22), y: String(baseY + 30), "text-anchor": "middle" });
-    label.textContent = cutoff.date.slice(2).replace(/-/g, ".");
+    label.textContent = spineRawDate(cutoff.date);
     svg.append(label);
   });
   const baseline = svgElement("line", { class: "replay-baseline", x1: "14", x2: String(width - 14), y1: String(baseY), y2: String(baseY) });
