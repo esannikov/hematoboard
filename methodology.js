@@ -34,7 +34,15 @@ async function loadCaseManifest() {
   CASES = Object.fromEntries(
     active.map((entry) => [
       entry.key,
-      { label: entry.label, bundle: entry.bundle, latest: entry.latest ?? null, replay: entry.replay ?? null, default: entry.default === true },
+      {
+        caseId: entry.case_id,
+        label: entry.label,
+        bundle: entry.bundle,
+        latest: entry.latest ?? null,
+        replay: entry.replay ?? null,
+        reasoningCandidate: entry.reasoning_candidate ?? null,
+        default: entry.default === true,
+      },
     ]),
   );
 }
@@ -81,7 +89,7 @@ const VIEW_LABELS = Object.fromEntries([
   ["packet", "Бриф для консиліуму"],
   ["bodymap", "Локалізація"],
 ]);
-const state = { caseKey: "case02", view: "overview", bundle: null, latestRun: null, replay: null };
+const state = { caseKey: "case02", view: "overview", bundle: null, latestRun: null, replay: null, reasoningCandidate: null };
 const timelineCursorByCase = new Map();
 const timelineZoomByCase = new Map();
 const timelineEventByCase = new Map();
@@ -4030,6 +4038,119 @@ function renderAgentAnswer(target, payload) {
   target.replaceChildren(result);
 }
 
+function candidateRelationCounts(revision, hypothesisId) {
+  const counts = { support: 0, refute: 0, neutral: 0 };
+  (revision.relations || []).forEach((relation) => {
+    if (relation?.hypothesis_id === hypothesisId && Object.hasOwn(counts, relation.relation)) {
+      counts[relation.relation] += 1;
+    }
+  });
+  return counts;
+}
+
+function renderReasoningCandidate(candidate) {
+  const section = element("section", { className: "reasoning-candidate" });
+  if (!candidate || candidate.status === "absent") return section;
+  if (candidate.status !== "ok") {
+    section.append(
+      element("div", { className: "reasoning-candidate-error" }, [
+        element("strong", { text: "Кандидатний синтез не пройшов перевірку" }),
+        element("p", { text: candidate.detail || "Стан ревізії невідомий; її не можна показувати як перевірений артефакт." }),
+      ]),
+    );
+    return section;
+  }
+
+  const revision = candidate.revision;
+  const hypotheses = [...(revision.hypotheses || [])].sort((a, b) => Number(a.rank) - Number(b.rank));
+  const lead = hypotheses[0];
+  const head = element("header", { className: "reasoning-candidate-head" });
+  head.append(
+    element("div", {}, [
+      element("p", { className: "reasoning-candidate-kicker", text: "Свіжа кандидатна ревізія" }),
+      element("h2", { text: `Синтез гіпотез ${overviewCaseCode(state.bundle)}` }),
+      element("p", { text: revision.reason }),
+    ]),
+    element("div", { className: "reasoning-candidate-status" }, [
+      statusTag("очікує рішення лікаря", "candidate"),
+      element("code", { text: revision.reasoning_revision_id }),
+    ]),
+  );
+  section.append(head);
+
+  if (lead) {
+    const counts = candidateRelationCounts(revision, lead.id);
+    section.append(
+      element("article", { className: "reasoning-lead" }, [
+        element("div", { className: "reasoning-rank", text: `01 · ${lead.id}` }),
+        element("div", {}, [
+          element("p", { className: "reasoning-role", text: lead.clinical_role }),
+          element("h3", { text: lead.label }),
+          element("p", { text: lead.rationale }),
+          element("div", { className: "reasoning-counts" }, [
+            element("span", { text: `${counts.support} підтримують` }),
+            element("span", { text: `${counts.refute} суперечать` }),
+            element("span", { text: `${counts.neutral} нейтральні` }),
+          ]),
+        ]),
+      ]),
+    );
+  }
+
+  const ranked = element("details", { className: "reasoning-disclosure", attrs: { open: "" } });
+  ranked.append(element("summary", { text: `Ранжований диференціал · ${hypotheses.length}` }));
+  const hypothesisList = element("ol", { className: "reasoning-hypothesis-list" });
+  hypotheses.forEach((hypothesis) => {
+    const counts = candidateRelationCounts(revision, hypothesis.id);
+    const item = element("li");
+    item.append(
+      element("span", { className: "reasoning-rank", text: String(hypothesis.rank).padStart(2, "0") }),
+      element("div", {}, [
+        element("strong", { text: hypothesis.label }),
+        element("p", { text: hypothesis.clinical_role }),
+      ]),
+      element("span", {
+        className: "reasoning-mini-counts",
+        text: `+${counts.support} · −${counts.refute} · ${counts.neutral} нейтр.`,
+      }),
+    );
+    hypothesisList.append(item);
+  });
+  ranked.append(hypothesisList);
+  section.append(ranked);
+
+  const workup = element("details", { className: "reasoning-disclosure", attrs: { open: "" } });
+  workup.append(element("summary", { text: `Перевірки, що розрізняють гіпотези · ${(revision.workup || []).length}` }));
+  const workupList = element("div", { className: "reasoning-workup-list" });
+  (revision.workup || []).forEach((item) => {
+    const priority = item.priority === "critical" ? "критично" : item.priority === "high" ? "високий пріоритет" : "за показаннями";
+    workupList.append(
+      element("article", { attrs: { "data-priority": item.priority } }, [
+        element("div", {}, [element("strong", { text: item.id }), element("span", { text: priority })]),
+        element("h3", { text: item.title }),
+        element("p", { text: item.rationale }),
+      ]),
+    );
+  });
+  workup.append(workupList);
+  section.append(workup);
+
+  const gaps = element("details", { className: "reasoning-disclosure reasoning-gaps" });
+  gaps.append(element("summary", { text: `Незакриті клінічні прогалини · ${(revision.critical_gaps || []).length}` }));
+  const gapList = element("ul");
+  (revision.critical_gaps || []).forEach((gap) => gapList.append(element("li", { text: gap })));
+  gaps.append(gapList);
+  section.append(gaps);
+
+  section.append(
+    element("p", {
+      className: "reasoning-candidate-boundary",
+      text: "Ця ревізія не змінює прийняті гіпотези, клінічний стан або журнал рішень. Для перенесення потрібне окреме рішення лікаря й нова канонічна ревізія.",
+    }),
+  );
+  return section;
+}
+
 async function renderAgent() {
   const fragment = document.createDocumentFragment();
   fragment.append(
@@ -4043,8 +4164,16 @@ async function renderAgent() {
   activeViewCleanup = () => controller.abort();
   let health = null;
   try {
-    const response = await fetch("/api/agent/health", { cache: "no-store", signal: controller.signal });
-    if (response.ok) health = await response.json();
+    let probeAgentApi = true;
+    const runtime = await fetch("/health/ready", { cache: "no-store", signal: controller.signal });
+    if (runtime.ok) {
+      const runtimeStatus = await runtime.json();
+      probeAgentApi = runtimeStatus?.agent_api !== false;
+    }
+    if (probeAgentApi) {
+      const response = await fetch("/api/agent/health", { cache: "no-store", signal: controller.signal });
+      if (response.ok) health = await response.json();
+    }
   } catch (error) {
     if (error?.name === "AbortError") throw error;
   }
@@ -4054,7 +4183,7 @@ async function renderAgent() {
   const mode = element("div", { className: "agent-mode-line" });
   mode.append(
     statusTag(health ? "контроль готовий" : "сервер не підключено", health ? "support" : "critical"),
-    element("span", { text: "Читає тільки мінімально необхідну проєкцію CASE‑02." }),
+    element("span", { text: `Читає мінімально необхідну проєкцію ${overviewCaseCode(state.bundle)}; кандидатний синтез не змінює прийняту картину.` }),
   );
   main.append(mode);
 
@@ -4110,6 +4239,7 @@ async function renderAgent() {
     ]),
   );
   main.append(answerHost);
+  main.append(renderReasoningCandidate(state.reasoningCandidate));
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -4168,6 +4298,18 @@ async function renderAgent() {
   } else {
     rail.append(agentGate("Локальний сервер", "Не підключено", "blocked", "Статична сторінка може показувати кейс, але для контрольованого запиту потрібен loopback AgentEngine server."));
   }
+  if (state.reasoningCandidate?.status === "ok") {
+    rail.append(
+      agentGate(
+        "Кандидатний синтез",
+        "Свіжий і цілісний",
+        "review",
+        `${state.reasoningCandidate.revision.hypotheses?.length || 0} гіпотез; рішення лікаря ще не записано.`,
+      ),
+    );
+  } else if (state.reasoningCandidate && state.reasoningCandidate.status !== "absent") {
+    rail.append(agentGate("Кандидатний синтез", "Недоступний", "blocked", state.reasoningCandidate.detail || "Артефакт не пройшов перевірку."));
+  }
   rail.append(
     element("div", { className: "agent-boundary" }, [
       element("strong", { text: "Незмінна межа" }),
@@ -4188,6 +4330,79 @@ async function sha256Hex(text) {
   const bytes = new TextEncoder().encode(text);
   const digest = await crypto.subtle.digest("SHA-256", bytes);
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function loadReasoningCandidate(bundleText, signal) {
+  const config = CASES[state.caseKey];
+  if (!config?.reasoningCandidate) return { status: "absent" };
+  let pointerResponse;
+  try {
+    pointerResponse = await fetch(config.reasoningCandidate, { cache: "no-store", signal });
+  } catch (error) {
+    if (error?.name === "AbortError") throw error;
+    return { status: "network-error", detail: "Сервер не відповів під час читання вказівника кандидатного синтезу." };
+  }
+  if (!pointerResponse.ok) return { status: "pointer-missing", detail: `Вказівник кандидатного синтезу недоступний (HTTP ${pointerResponse.status}).` };
+  let pointer;
+  try {
+    pointer = await pointerResponse.json();
+  } catch {
+    return { status: "pointer-invalid", detail: "Вказівник кандидатного синтезу не є валідним JSON." };
+  }
+  if (
+    pointer?.schema_version !== "hematoboard.reasoning-run-pointer/1.0.0"
+    || typeof pointer.revision_path !== "string"
+    || !pointer.revision_path
+  ) {
+    return { status: "pointer-invalid", detail: "Вказівник не містить підтримуваної схеми або revision_path." };
+  }
+  const revisionUrl = new URL(pointer.revision_path, new URL(config.reasoningCandidate, document.baseURI));
+  let revisionResponse;
+  try {
+    revisionResponse = await fetch(revisionUrl, { cache: "no-store", signal });
+  } catch (error) {
+    if (error?.name === "AbortError") throw error;
+    return { status: "network-error", detail: "Сервер не відповів під час читання кандидатної ревізії." };
+  }
+  if (!revisionResponse.ok) return { status: "revision-missing", detail: `Кандидатна ревізія недоступна (HTTP ${revisionResponse.status}).` };
+  const revisionText = await revisionResponse.text();
+  const actualRevisionHash = await sha256Hex(revisionText);
+  if (
+    actualRevisionHash !== null
+    && typeof pointer.revision_sha256 === "string"
+    && actualRevisionHash !== pointer.revision_sha256.toLowerCase()
+  ) {
+    return { status: "hash-mismatch", detail: "Хеш кандидатної ревізії не збігається з незмінним вказівником." };
+  }
+  let revision;
+  try {
+    revision = JSON.parse(revisionText);
+  } catch {
+    return { status: "revision-invalid", detail: "Кандидатна ревізія не є валідним JSON." };
+  }
+  if (
+    revision?.schema_version !== "hematoboard.reasoning-revision/1.0.0"
+    || revision.case_id !== state.bundle?.case?.id
+    || revision.status !== "candidate"
+    || revision.run_id !== pointer.run_id
+    || revision.reasoning_revision_id !== pointer.reasoning_revision_id
+  ) {
+    return { status: "revision-invalid", detail: "Ідентичність кандидатної ревізії не відповідає активному кейсу або її вказівнику." };
+  }
+  const actualBundleHash = await sha256Hex(bundleText);
+  if (
+    actualBundleHash !== null
+    && typeof revision.input?.bundle_sha256 === "string"
+    && actualBundleHash !== revision.input.bundle_sha256.toLowerCase()
+  ) {
+    return { status: "stale", detail: "Кандидатний синтез побудовано для іншої версії пакета; його не показано як актуальний." };
+  }
+  return {
+    status: "ok",
+    pointer,
+    revision,
+    hashState: actualRevisionHash === null ? "unverified" : "verified",
+  };
 }
 
 async function loadLatestRun() {
@@ -4778,25 +4993,35 @@ async function loadCase(caseKey, { push = false, focus = false } = {}) {
   const controller = new AbortController();
   caseLoadAbort = controller;
   state.caseKey = CASES[caseKey] ? caseKey : defaultCaseKey();
+  state.reasoningCandidate = null;
   caseSelect.value = state.caseKey;
   statusLine.dataset.state = "loading";
   statusLine.textContent = "Завантаження й перевірка пакета кейсу…";
   try {
     const response = await fetch(CASES[state.caseKey].bundle, { cache: "no-store", signal: controller.signal });
     if (!response.ok) throw new CaseLoadError("http", `Пакет кейсу недоступний (HTTP ${response.status}).`);
+    const bundleText = await response.text();
     let bundle;
     try {
-      bundle = await response.json();
+      bundle = JSON.parse(bundleText);
     } catch {
       throw new CaseLoadError("malformed", "Пакет кейсу пошкоджений: це не валідний JSON. Перевірте case_bundle.json валідатором.");
     }
     if (!["1.0.0", "1.1.0", "1.2.0", "1.3.0", "1.4.0"].includes(bundle.schema_version)) {
       throw new CaseLoadError("schema", `Непідтримувана версія контракту: ${bundle.schema_version}.`);
     }
+    if (bundle?.case?.id !== CASES[state.caseKey].caseId) {
+      throw new CaseLoadError(
+        "case-mismatch",
+        `Маніфест очікує ${CASES[state.caseKey].caseId}, але завантажений пакет належить ${bundle?.case?.id || "невідомому кейсу"}.`,
+      );
+    }
     if (token !== caseLoadToken) return; // a newer case selection superseded this load
     state.bundle = bundle;
     state.latestRun = null;
     state.replay = null;
+    state.reasoningCandidate = await loadReasoningCandidate(bundleText, controller.signal);
+    if (token !== caseLoadToken) return;
     buildPrimaryNavigation();
     statusLine.dataset.state = "ready";
     statusLine.textContent = `Пакет завантажено · контракт ${bundle.schema_version} · ${bundle.case.generated || bundle.bundle_id}`;

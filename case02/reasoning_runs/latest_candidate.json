@@ -1,0 +1,8 @@
+{
+  "schema_version": "hematoboard.reasoning-run-pointer/1.0.0",
+  "run_id": "20260804T111409648704Z-CASE-02-reasoning-065cd25992b6",
+  "reasoning_revision_id": "RR-CASE-02-065cd25992b6",
+  "revision_path": "20260804T111409648704Z-CASE-02-reasoning-065cd25992b6/reasoning_revision.json",
+  "revision_sha256": "525c0c0afb280381cb427bc33d96d486041cc1721e00605cde59c3f5bed848c8",
+  "status": "candidate"
+}
