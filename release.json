@@ -1,0 +1,19 @@
+{
+  "schema_version": "hematoboard.public-release/1.0.0",
+  "released_at": "2026-08-04T16:44:44Z",
+  "default_case": "case02",
+  "case_scope": {
+    "case_key": "case02",
+    "case_id": "CASE-02",
+    "bundle_sha256": "f490b40f873d36523410c1793822f001b92da146596e35704f8b67c61a5592f4",
+    "revision_id": "CASE-02@c33a2b020553"
+  },
+  "reasoning_candidate": {
+    "reasoning_revision_id": "RR-CASE-02-6d703a1a54d0",
+    "run_id": "20260804T161927304806Z-CASE-02-reasoning-6d703a1a54d0",
+    "revision_sha256": "fd011b7894c64b03feb27df54c09b805469d12ebc94bf266bc85de9acd4e6f23",
+    "status": "candidate",
+    "clinical_acceptance": "pending"
+  },
+  "boundary": "Публічний технічний демо-реліз. Кандидатний синтез не підміняє прийняту лікарем клінічну картину."
+}
