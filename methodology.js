@@ -39,7 +39,9 @@ async function loadCaseManifest() {
         label: entry.label,
         bundle: entry.bundle,
         latest: entry.latest ?? null,
+        latestRole: entry.latest_role ?? null,
         replay: entry.replay ?? null,
+        replayRole: entry.replay_role ?? null,
         reasoningCandidate: entry.reasoning_candidate ?? null,
         default: entry.default === true,
       },
@@ -4426,8 +4428,14 @@ async function loadLatestRun() {
   }
   const base = config.latest.slice(0, config.latest.lastIndexOf("/") + 1);
   let runResponse;
+  let bundleText = null;
   try {
-    runResponse = await fetch(`${base}${pointer.path}`, { cache: "no-store" });
+    const [runResult, bundleResult] = await Promise.all([
+      fetch(`${base}${pointer.path}`, { cache: "no-store" }),
+      fetch(config.bundle, { cache: "no-store" }),
+    ]);
+    runResponse = runResult;
+    if (bundleResult.ok) bundleText = await bundleResult.text();
   } catch {
     return { status: "network-error", detail: "Немає відповіді від сервера під час читання run.json." };
   }
@@ -4447,7 +4455,32 @@ async function loadLatestRun() {
       return { status: "hash-mismatch", detail: "Байтовий хеш run.json не збігається з вказівником. Запуск міг бути змінений після публікації.", pointer, run };
     } else hashState = "verified";
   }
-  return { status: "ok", pointer, run, hashState };
+  const declaredInputHash = run.input_hashes?.case_bundle_sha256;
+  const currentBundleHash = bundleText === null ? null : await sha256Hex(bundleText);
+  const bundleHashState = currentBundleHash === null
+    ? "unverified"
+    : typeof declaredInputHash === "string" && declaredInputHash.toLowerCase() === currentBundleHash
+      ? "current"
+      : "historical";
+  if (config.latestRole === "current_run" && bundleHashState !== "current") {
+    return {
+      status: "stale",
+      detail: "Запуск позначено поточним, але його вхідний пакет не збігається з активним case_bundle.json.",
+      pointer,
+      run,
+    };
+  }
+  if (config.latestRole !== "current_run" && config.latestRole !== "historical_snapshot") {
+    return { status: "role-invalid", detail: "Роль запуску не визначена активним реєстром кейсів." };
+  }
+  return {
+    status: "ok",
+    pointer,
+    run,
+    hashState,
+    bundleHashState,
+    artifactRole: config.latestRole,
+  };
 }
 
 function protocolRounds(run) {
@@ -4531,6 +4564,8 @@ const RUN_STATE_MESSAGES = {
   "run-invalid": "Файл запуску пошкоджений і не може бути прочитаний. Не використовуйте цей запуск як доказову основу.",
   "network-error": "Сервер не відповів під час завантаження запуску. Стан доказової бази невідомий — перевірте локальний HTTP-сервер.",
   "hash-mismatch": "Хеш завантаженого запуску не збігається зі значенням у вказівнику. Вміст запуску міг бути змінений після публікації — протокол не показується.",
+  stale: "Запуск не відповідає активній версії пакета й не може вважатися поточним.",
+  "role-invalid": "Реєстр не визначає, чи цей запуск поточний, чи історичний. Протокол приховано.",
 };
 
 // Replay loading mirrors the same honesty rules as run loading: absent,
@@ -4562,6 +4597,29 @@ async function loadReplay() {
     if (actual !== null && actual !== replay.bundle_sha256.toLowerCase()) {
       return { status: "stale", detail: "replay.json застарілий: пакет кейсу змінився після генерації артефакту. Регенеруйте scripts/replay_case.py.", replay };
     }
+    let bundle;
+    try {
+      bundle = JSON.parse(bundleText);
+    } catch {
+      return { status: "bundle-invalid", detail: "case_bundle.json пошкоджений: CaseScope часової проєкції не можна перевірити." };
+    }
+    const scope = replay.case_scope;
+    const revisionId = typeof bundle.bundle_revision === "object"
+      ? bundle.bundle_revision?.id
+      : bundle.bundle_revision;
+    if (
+      config.replayRole !== "current_projection"
+      || replay.artifact_role !== "current_projection"
+      || !scope
+      || scope.schema_version !== "hematoboard.case-scope/1.0.0"
+      || scope.case_key !== state.caseKey
+      || scope.case_id !== config.caseId
+      || scope.bundle_sha256 !== replay.bundle_sha256
+      || scope.revision_id !== (revisionId || bundle.schema_version || "revision-not-recorded")
+      || scope.operation_id !== "replay"
+    ) {
+      return { status: "scope-mismatch", detail: "CaseScope часової проєкції не відповідає активному кейсу; артефакт приховано." };
+    }
   }
   return { status: "ok", replay };
 }
@@ -4591,6 +4649,8 @@ function renderReplay() {
       "replay-invalid": "Артефакт реплею пошкоджений.",
       "network-error": "Сервер не відповів під час завантаження реплею.",
       stale: "Реплей застарілий відносно поточного пакета кейсу.",
+      "bundle-invalid": "Поточний пакет кейсу пошкоджений; прив'язку реплею перевірити неможливо.",
+      "scope-mismatch": "Реплей належить іншому кейсу або іншій ревізії пакета.",
     };
     fragment.append(
       element("div", { className: loaded && loaded.status !== "absent" ? "error-panel" : "empty-state" }, [
@@ -4766,12 +4826,15 @@ async function renderReplayAsync() {
 }
 
 async function renderProtocol() {
+  const isHistorical = CASES[state.caseKey]?.latestRole === "historical_snapshot";
   const fragment = document.createDocumentFragment();
   fragment.append(
     viewHeader(
-      "Протокол агентних дебатів",
-      "Операторський відтворюваний запис: які підготовлені позиції, заперечення та синтез модератора закладено у прогін. У цій версії немає самостійного запуску мовної моделі.",
-      "Агентні дебати",
+      isHistorical ? "Історичний протокол агентних дебатів" : "Протокол агентних дебатів",
+      isHistorical
+        ? "Архівний операторський запис попередньої версії пакета. Він доступний для аудиту походження, але не є поточним синтезом і не змінює активну клінічну картину."
+        : "Операторський відтворюваний запис: які підготовлені позиції, заперечення та синтез модератора закладено у прогін. У цій версії немає самостійного запуску мовної моделі.",
+      isHistorical ? "Історичний артефакт" : "Агентні дебати",
     ),
   );
   state.latestRun = await loadLatestRun();
@@ -4786,7 +4849,7 @@ async function renderProtocol() {
       ]),
     );
   } else {
-    const { pointer, run, hashState } = state.latestRun;
+    const { pointer, run, hashState, bundleHashState, artifactRole } = state.latestRun;
     const hashLabel = hashState === "verified"
       ? "байтовий хеш run.json перевірено у браузері — збігається"
       : "хеш не перевірено в браузері (недоступний WebCrypto або відсутній очікуваний хеш) — звірте локальним валідатором";
@@ -4798,6 +4861,7 @@ async function renderProtocol() {
         ["Хеш пакета кейсу", run.input_hashes?.case_bundle_sha256?.slice(0, 16) || "—"],
         ["Хеш початкових даних дебатів", run.input_hashes?.debate_seed_sha256?.slice(0, 16) || "—"],
         ["Хеш набору ролей", run.input_hashes?.role_bundle_sha256?.slice(0, 16) || "—"],
+        ["Статус відносно активного пакета", artifactRole === "historical_snapshot" || bundleHashState === "historical" ? "історичний знімок — не поточний синтез" : "поточна прив'язка"],
         ["Цілісність", hashLabel],
       ]),
     );
