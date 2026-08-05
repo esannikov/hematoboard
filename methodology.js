@@ -1022,7 +1022,6 @@ function overviewPlanPhases(bundle) {
         element("span", { className: "overview-plan-timing", text: timing }),
       ]),
       element("div", {}, [
-        element("strong", { className: "overview-plan-phase-title", text: phase }),
         details,
         element("small", { text: `${items.length} ${items.length === 1 ? "перевірка" : items.length < 5 ? "перевірки" : "перевірок"}` }),
       ]),
@@ -3900,6 +3899,7 @@ function renderGraph() {
     attrs: { "aria-label": "Зв’язки вибраної гіпотези" },
   });
   if (!state.bundle.relations.length) {
+    graphSection.classList.add("is-empty");
     graphSection.append(emptyState("Для цього bundle немає типізованих зв’язків графа."));
     fragment.append(graphSection);
     return fragment;
