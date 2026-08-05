@@ -5,6 +5,7 @@ import {
   sourceDocumentBreakdown,
   workupPlan as projectedWorkupPlan,
 } from "./shared/case_projection.js";
+import { projectClinicalState } from "./shared/clinical_state_projection.js?v=20260805stateclarity1";
 
 // The case registry is data, not code: methodology/active_cases.json is the
 // validated routing manifest. Adding a case never requires editing this file.
@@ -3293,55 +3294,31 @@ function observationRegistry(context) {
   return disclosure;
 }
 
-function labReadings(lab, dates = []) {
-  const dateById = new Map(dates.map((item) => [item.id, item.date]));
-  const raw = lab.v ?? lab.value;
-  const entries = Array.isArray(raw)
-    ? raw.map((value, index) => [`${index + 1}`, value])
-    : raw && typeof raw === "object"
-      ? Object.entries(raw)
-      : [["", raw]];
-  return entries.map(([key, value]) => {
-    const numeric = typeof value === "number" ? value : Number(value);
-    let status = "normal";
-    if (value === null || value === undefined || value === "" || Number.isNaN(numeric)) status = "unknown";
-    else if (lab.lo !== null && lab.lo !== undefined && numeric < Number(lab.lo)) status = "low";
-    else if (lab.hi !== null && lab.hi !== undefined && numeric > Number(lab.hi)) status = "high";
-    return { key, date: dateById.get(key), value, status };
+function labReadingCell(reading) {
+  const statusLabel = reading.status === "low" ? "нижче референсу" : reading.status === "high" ? "вище референсу" : "";
+  const chip = element("span", {
+    className: "lab-value-chip",
+    attrs: {
+      "data-status": reading.status,
+      title: [reading.dateLabel, statusLabel].filter(Boolean).join(" · "),
+      "aria-label": [textValue(reading.value), statusLabel].filter(Boolean).join(", "),
+    },
   });
-}
-
-function labValuesCell(lab, dates) {
-  const readings = labReadings(lab, dates);
-  const wrapper = element("div", { className: "lab-value-chips" });
-  readings.forEach((reading) => {
-    const chip = element("span", {
-      className: "lab-value-chip",
-      attrs: {
-        "data-status": reading.status,
-        title: [reading.date || reading.key, reading.status === "low" ? "нижче референсу" : reading.status === "high" ? "вище референсу" : ""].filter(Boolean).join(" · "),
-      },
-    });
-    if (reading.key) chip.append(element("small", { text: reading.key }));
-    chip.append(element("strong", { text: textValue(reading.value) }));
-    if (reading.status === "low" || reading.status === "high") {
-      chip.append(element("em", { text: reading.status === "low" ? "нижче" : "вище" }));
-    }
-    wrapper.append(chip);
-  });
-  return { node: wrapper, abnormal: readings.some((reading) => ["low", "high"].includes(reading.status)) };
+  chip.append(element("strong", { text: textValue(reading.value) }));
+  if (statusLabel) chip.append(element("em", { text: reading.status === "low" ? "нижче" : "вище" }));
+  return chip;
 }
 
 function labNameCell(lab, abnormal) {
   const wrapper = element("div", { className: "lab-name" });
-  wrapper.append(element("strong", { text: panelText(lab.an || lab.name || "Показник") }));
+  wrapper.append(element("strong", { text: panelText(lab.name || "Показник") }));
   if (abnormal) wrapper.append(element("span", { text: "є значення поза референсом" }));
   else if (lab.key) wrapper.append(element("span", { className: "is-key", text: "ключовий показник" }));
   return wrapper;
 }
 
 function table(headers, rows, className = "") {
-  const wrapper = element("div", { className: "data-table-wrap" });
+  const wrapper = element("div", { className: `data-table-wrap ${className ? `${className}-wrap` : ""}`.trim() });
   const tableNode = element("table", { className: `data-table ${className}`.trim() });
   const head = element("thead");
   const headRow = element("tr");
@@ -3376,7 +3353,7 @@ function renderState() {
       "Спочатку показано ключові сигнали та тематичний огляд. Повний набір досліджень і кожне джерельне спостереження доступні нижче без втрати деталей.",
     ),
   );
-  const clinical = state.bundle.clinical_state;
+  const clinical = projectClinicalState(state.bundle);
   const coverage = element("dl", { className: "state-coverage", attrs: { "aria-label": "Покриття структурованих досліджень" } });
   [
     ["Лабораторія", clinical.labs.length],
@@ -3433,25 +3410,33 @@ function renderState() {
   }
 
   if (clinical.labs.length) {
-    const labs = section("Кількісні дані", "Лабораторні показники");
+    const labs = section(
+      "Кількісні дані",
+      "Лабораторні показники",
+      "Кожна колонка — окрема дата з канонічного пакета кейсу. Внутрішні ключі часових точок у таблиці не показуються.",
+    );
     const labRows = clinical.labs.map((lab) => {
-      const values = labValuesCell(lab, clinical.dates || []);
       return {
-        attrs: { ...(values.abnormal ? { "data-tone": "critical" } : {}), ...(lab.key ? { "data-key": "true" } : {}) },
+        attrs: { ...(lab.abnormal ? { "data-tone": "critical" } : {}), ...(lab.key ? { "data-key": "true" } : {}) },
         cells: [
-          labNameCell(lab, values.abnormal),
-          values.node,
+          labNameCell(lab, lab.abnormal),
+          ...lab.series.map(labReadingCell),
           panelText(lab.unit),
-          `${textValue(lab.lo)}–${textValue(lab.hi)}`,
+          lab.low !== undefined || lab.high !== undefined ? `${textValue(lab.low)}–${textValue(lab.high)}` : "—",
           panelText(lab.note),
         ],
       };
     });
-    labs.append(table(
-      ["Показник", "Значення", "Одиниця", "Референс", "Примітка"],
+    const labTable = table(
+      ["Показник", ...clinical.labColumns.map((column) => column.label), "Одиниця", "Референс", "Примітка"],
       labRows,
       "lab-table",
-    ));
+    );
+    labTable.setAttribute("role", "region");
+    labTable.setAttribute("aria-label", "Лабораторні показники за датами");
+    labTable.tabIndex = 0;
+    labTable.querySelector(".lab-table")?.style.setProperty("--lab-date-columns", clinical.labColumns.length);
+    labs.append(labTable);
     fragment.append(labs);
   }
 
@@ -3477,13 +3462,18 @@ function renderState() {
   }
 
   if (clinical.pathology.length) {
-    const pathology = section("Тканини", "Патоморфологія та ІГХ");
-    const list = element("div", { className: "state-list" });
+    const pathology = section(
+      "Тканини",
+      "Тканинні дослідження та ІГХ",
+      "Хронологія досліджень, повторних переглядів і попередніх розшифровок. Формулювання документів відокремлено від робочих гіпотез системи.",
+    );
+    const list = element("div", { className: "state-list pathology-list" });
     clinical.pathology.forEach((item, index) => {
       const tone = enumTone(item.verdict);
       const summaryMeta = element("div", { className: "state-summary-chips" }, [
-        item.date ? stateDataChip("Дата", item.date) : null,
-        item.specimen ? stateDataChip("Матеріал", item.specimen) : null,
+        item.date ? stateDataChip("Дата", item.dateLabel) : null,
+        stateDataChip("Тип запису", item.recordType),
+        item.conciseSpecimen ? stateDataChip("Матеріал", item.conciseSpecimen) : null,
         item.verdict ? stateDataChip(enumLabel(item.verdict), "", tone) : null,
       ]);
       const detail = element("details", {
@@ -3493,14 +3483,26 @@ function renderState() {
       detail.append(
         element("summary", { className: "state-item-summary" }, [
           element("div", {}, [
-            element("h3", { text: item.label || item.kind || item.specimen || "Тканинне дослідження" }),
+            element("h3", { text: item.title }),
             summaryMeta,
           ]),
           element("span", { className: "source-disclosure-toggle", attrs: { "aria-hidden": "true" } }),
         ]),
-        element("div", { className: "state-item-body" }, [
-          stateNarrative(item.finding || item.conclusion || item.verdict),
-          stateDetailGrid([["Дата", item.date], ["Тип дослідження", item.kind], ["Матеріал", item.specimen], ["Висновок", enumLabel(item.verdict || item.conclusion), tone]]),
+        element("div", { className: "state-item-body pathology-record-body" }, [
+          element("section", { className: "pathology-source-layer" }, [
+            element("h4", { text: "Знахідки у документі" }),
+            stateNarrative(item.findings || "Знахідки не структуровано."),
+          ]),
+          element("section", { className: "pathology-source-layer pathology-source-conclusion" }, [
+            element("div", { className: "pathology-source-heading" }, [
+              element("h4", { text: item.conclusionHeading }),
+              stateDataChip("Джерельний рівень", "не гіпотеза системи"),
+            ]),
+            item.sourceSummary ? element("strong", { className: "pathology-source-summary", text: item.sourceSummary }) : null,
+            stateNarrative(item.sourceConclusion || "Висновок у джерелі не структуровано."),
+            element("p", { className: "pathology-boundary", text: item.boundary }),
+          ]),
+          stateDetailGrid([["Дата", item.dateLabel], ["Тип запису", item.recordType], ["Дослідження", item.title], ["Матеріал у джерелі", item.specimen]]),
         ]),
       );
       list.append(detail);
