@@ -1269,6 +1269,219 @@ html[data-ui="carbon"] {
   line-height: 1.6;
 }
 
+[data-ui="carbon"] .lab-table-wrap {
+  position: relative;
+  max-width: 100%;
+  overscroll-behavior-inline: contain;
+  scrollbar-gutter: stable;
+}
+
+[data-ui="carbon"] .lab-table-wrap:focus-visible {
+  outline: 2px solid var(--cds-focus);
+  outline-offset: 2px;
+}
+
+[data-ui="carbon"] .lab-table {
+  width: 100%;
+  min-width: max(100%, calc(676px + var(--lab-date-columns, 1) * 96px));
+  table-layout: fixed;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-ui="carbon"] .lab-table th,
+[data-ui="carbon"] .lab-table td {
+  width: 96px;
+  min-width: 96px;
+  text-align: right;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+[data-ui="carbon"] .lab-table th { text-align: right; }
+
+[data-ui="carbon"] .lab-table th:first-child,
+[data-ui="carbon"] .lab-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+  text-align: left;
+  white-space: normal;
+}
+
+[data-ui="carbon"] .lab-table th:first-child {
+  z-index: 3;
+  background: var(--cds-layer-03);
+}
+
+[data-ui="carbon"] .lab-table td:first-child {
+  background: var(--cds-layer-01);
+  box-shadow: 1px 0 var(--cds-border-subtle-00);
+}
+
+[data-ui="carbon"] .lab-table tbody tr[data-tone="critical"] td {
+  background: var(--cds-layer-01);
+}
+
+[data-ui="carbon"] .lab-table tbody tr[data-tone="critical"] td:first-child {
+  background: var(--cds-layer-01);
+  box-shadow: inset 4px 0 var(--cds-support-error), 1px 0 var(--cds-border-subtle-00);
+}
+
+[data-ui="carbon"] .lab-table tbody tr:hover td,
+[data-ui="carbon"] .lab-table tbody tr[data-tone="critical"]:hover td,
+[data-ui="carbon"] .lab-table tbody tr[data-tone="critical"]:hover td:first-child {
+  background: var(--cds-layer-02);
+}
+
+[data-ui="carbon"] .lab-table th:nth-last-child(3),
+[data-ui="carbon"] .lab-table td:nth-last-child(3) {
+  width: 88px;
+  min-width: 88px;
+}
+
+[data-ui="carbon"] .lab-table th:nth-last-child(2),
+[data-ui="carbon"] .lab-table td:nth-last-child(2) {
+  width: 100px;
+  min-width: 108px;
+}
+
+[data-ui="carbon"] .lab-table th:last-child,
+[data-ui="carbon"] .lab-table td:last-child {
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
+  text-align: left;
+  white-space: normal;
+}
+
+[data-ui="carbon"] .lab-name strong {
+  display: block;
+  color: var(--cds-text-primary);
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+[data-ui="carbon"] .lab-name span {
+  display: block;
+  margin-top: 4px;
+  color: var(--cds-support-error);
+  font-size: .6875rem;
+  line-height: 1.35;
+}
+
+[data-ui="carbon"] .lab-name span.is-key { color: var(--cds-link-primary); }
+[data-ui="carbon"] .lab-table tr[data-tone="critical"] .lab-name strong { color: var(--cds-support-error); }
+
+[data-ui="carbon"] .lab-value-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1px;
+  min-width: 0;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  color: var(--cds-text-primary);
+  background: transparent;
+}
+
+[data-ui="carbon"] .lab-value-chip strong { font-size: .875rem; font-weight: 400; }
+[data-ui="carbon"] .lab-value-chip em {
+  color: var(--cds-support-error);
+  font-size: .625rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+[data-ui="carbon"] .lab-value-chip[data-status="low"],
+[data-ui="carbon"] .lab-value-chip[data-status="high"] {
+  border: 0;
+  color: var(--cds-support-error);
+  background: transparent;
+}
+
+[data-ui="carbon"] .lab-value-chip[data-status="low"] strong,
+[data-ui="carbon"] .lab-value-chip[data-status="high"] strong { font-weight: 600; }
+
+[data-ui="carbon"] .lab-table td:has(.lab-value-chip[data-status="low"]),
+[data-ui="carbon"] .lab-table td:has(.lab-value-chip[data-status="high"]) {
+  box-shadow: inset 0 -2px var(--cds-support-error);
+  background: #fff1f1 !important;
+}
+
+[data-ui="carbon"] .lab-value-chip[data-status="unknown"] {
+  color: var(--cds-text-helper);
+  background: transparent;
+}
+
+[data-ui="carbon"] .pathology-record-body {
+  display: grid;
+  gap: 1px;
+  padding: 1px;
+  background: var(--cds-border-subtle-00);
+}
+
+[data-ui="carbon"] .pathology-source-layer {
+  min-width: 0;
+  padding: 20px;
+  background: var(--cds-layer-01);
+}
+
+[data-ui="carbon"] .pathology-source-layer h4 {
+  margin: 0 0 10px;
+  color: var(--cds-text-primary);
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+[data-ui="carbon"] .pathology-source-layer .state-narrative { margin: 0; }
+
+[data-ui="carbon"] .pathology-source-conclusion {
+  box-shadow: inset 4px 0 var(--cds-border-strong-01);
+  background: var(--cds-layer-02);
+}
+
+[data-ui="carbon"] .pathology-source-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 12px;
+}
+
+[data-ui="carbon"] .pathology-source-heading h4 { margin: 0; }
+
+[data-ui="carbon"] .pathology-source-summary {
+  display: block;
+  max-width: 72ch;
+  margin-bottom: 8px;
+  color: var(--cds-text-primary);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+[data-ui="carbon"] .pathology-boundary {
+  max-width: 86ch;
+  margin: 14px 0 0 !important;
+  padding-top: 12px;
+  border-top: 1px solid var(--cds-border-subtle-01);
+  color: var(--cds-text-helper) !important;
+  font-size: .75rem !important;
+  line-height: 1.45;
+}
+
+[data-ui="carbon"] .pathology-record-body > .state-detail-grid {
+  margin: 0;
+  background: var(--cds-border-subtle-00);
+}
+
 /* Long-form evidence and full-state reading surfaces */
 
 [data-ui="carbon"] .source-list {
@@ -2768,6 +2981,16 @@ html[data-ui="carbon"] {
   [data-ui="carbon"] .observation-registry-controls { grid-template-columns: 1fr; }
   [data-ui="carbon"] .observation-result-count { grid-column: 1; }
   [data-ui="carbon"] .state-detail-grid { grid-template-columns: 1fr; }
+  [data-ui="carbon"] .lab-table th:first-child,
+  [data-ui="carbon"] .lab-table td:first-child {
+    width: 156px;
+    min-width: 156px;
+    max-width: 156px;
+  }
+  [data-ui="carbon"] .lab-table th,
+  [data-ui="carbon"] .lab-table td { width: 96px; min-width: 96px; padding: 10px 12px; }
+  [data-ui="carbon"] .lab-table th:last-child,
+  [data-ui="carbon"] .lab-table td:last-child { width: 240px; min-width: 240px; max-width: 240px; }
   [data-ui="carbon"] .packet-gap-title-row { display: grid; }
   [data-ui="carbon"] .source-registry-section > .data-table-wrap { overflow: visible; }
   [data-ui="carbon"] .source-registry-table {
