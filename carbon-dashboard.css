@@ -15,9 +15,9 @@
   --cds-layer-02: #f4f4f4;
   --cds-layer-03: #e8e8e8;
   --cds-text-primary: #161616;
-  --cds-text-secondary: #525252;
-  --cds-text-helper: #6f6f6f;
-  --cds-text-placeholder: #a8a8a8;
+  --cds-text-secondary: #161616;
+  --cds-text-helper: #161616;
+  --cds-text-placeholder: #161616;
   --cds-link-primary: #0f62fe;
   --cds-link-primary-hover: #0043ce;
   --cds-border-subtle-00: #e0e0e0;
@@ -2419,20 +2419,21 @@ html[data-ui="carbon"] {
 
 [data-ui="carbon"] .clinical-spine-event h3,
 [data-ui="carbon"] .clinical-spine-event.has-details h3 {
-  max-width: 34ch;
+  max-width: 42ch;
   margin: 0;
   color: var(--cds-text-primary);
-  font-size: clamp(1.625rem, 2.25vw, 2.375rem);
-  font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -.035em;
+  font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(1.625rem, 2vw, 2rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -.025em;
 }
 
 [data-ui="carbon"] .clinical-spine-event h3.is-long,
 [data-ui="carbon"] .clinical-spine-event.has-details h3.is-long {
-  max-width: 48ch;
-  font-size: clamp(1.375rem, 1.7vw, 1.75rem);
-  line-height: 1.14;
+  max-width: 42ch;
+  font-size: clamp(1.625rem, 2vw, 2rem);
+  line-height: 1.12;
 }
 
 [data-ui="carbon"] .clinical-spine-event p,
@@ -3537,6 +3538,63 @@ html[data-ui="carbon"] {
 [data-ui="carbon"] .lab-table[data-structured="true"] td:nth-last-child(3) { width: 96px; min-width: 96px; }
 [data-ui="carbon"] .lab-table[data-structured="true"] th:nth-last-child(2),
 [data-ui="carbon"] .lab-table[data-structured="true"] td:nth-last-child(2) { width: 88px; min-width: 88px; }
+
+/* Clinical reading contract: hierarchy is carried by scale, weight, spacing,
+   surfaces and rules. Text on light working surfaces remains solid black. */
+[data-ui="carbon"] .hb-shell {
+  --color-muted: #161616;
+  --color-faint: #161616;
+  --ink-soft: #161616;
+  --ink-muted: #161616;
+}
+
+[data-ui="carbon"] .clinical-spine-workspace {
+  --spine-muted: #161616;
+  font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+[data-ui="carbon"] .clinical-spine-event,
+[data-ui="carbon"] .clinical-spine-event :where(h3, h4, p, li, span, small, strong, time),
+[data-ui="carbon"] .clinical-spine-transport,
+[data-ui="carbon"] .clinical-spine-transport :where(span, small, strong),
+[data-ui="carbon"] .clinical-spine-timeline-stage {
+  font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Keep focus context visible without fading labels beyond laptop legibility. */
+[data-ui="carbon"] .graph-node.is-dim,
+[data-ui="carbon"] .full-graph-node.is-dim {
+  opacity: 1;
+}
+
+[data-ui="carbon"] .graph-node.is-dim .node-surface,
+[data-ui="carbon"] .full-graph-node.is-dim .node-surface {
+  fill: #f4f4f4;
+  stroke: #e0e0e0;
+}
+
+[data-ui="carbon"] .graph-node :where(.node-label, .node-status-label, .node-rank),
+[data-ui="carbon"] .full-graph-node :where(.node-label, .node-status-label, .node-rank),
+[data-ui="carbon"] .graph-column-label,
+[data-ui="carbon"] .node-code,
+[data-ui="carbon"] .replay-date-label,
+[data-ui="carbon"] .clinical-spine-site text,
+[data-ui="carbon"] .clinical-spine-track-label,
+[data-ui="carbon"] .clinical-spine-month-label {
+  fill: #161616;
+}
+
+[data-ui="carbon"] .clinical-spine-zoom-control,
+[data-ui="carbon"] .clinical-spine-zoom-control :where(span, strong),
+[data-ui="carbon"] .clinical-spine-lane strong,
+[data-ui="carbon"] .rel-tag.neutral {
+  color: #161616;
+}
+
+[data-ui="carbon"] .graph-node.is-dim :where(.node-label, .node-status-label, .node-rank),
+[data-ui="carbon"] .full-graph-node.is-dim :where(.node-label, .node-status-label, .node-rank) {
+  fill: #161616;
+}
 
 @media (max-width: 1120px) {
   [data-ui="carbon"] .synthesis-step { grid-template-columns: 56px repeat(2, minmax(0, 1fr)); }

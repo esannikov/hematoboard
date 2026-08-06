@@ -1,7 +1,7 @@
 {
   "schema_version": "hematoboard.public-release/1.0.0",
-  "released_at": "2026-08-06T06:18:12Z",
-  "release_tag": "20260806synthesis1",
+  "released_at": "2026-08-06T06:43:03Z",
+  "release_tag": "20260806readability1",
   "default_case": "case02",
   "case_scope": {
     "case_key": "case02",
@@ -25,7 +25,7 @@
   },
   "presentation": {
     "ui_system": "IBM Carbon",
-    "browser_matrix": "27 public routes plus mobile and graph passed; Carbon layouts, synthesis protocol, graph interaction and dated clinical tables were checked without horizontal overflow",
+    "browser_matrix": "27 public routes plus mobile and graph passed; 10 CASE-02 work routes contain no light-gray text on light clinical surfaces, graph labels remain black while focus is carried by surfaces and edges, and Clinical Spine uses one IBM Plex Sans title role",
     "packet_pdf_pages": 3,
     "canonical_projection_changed": true,
     "clinical_acceptance_changed": false
