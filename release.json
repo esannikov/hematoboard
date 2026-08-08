@@ -1,7 +1,7 @@
 {
   "schema_version": "hematoboard.public-release/1.0.0",
-  "released_at": "2026-08-08T12:58:42Z",
-  "release_tag": "20260808case0061",
+  "released_at": "2026-08-08T15:29:04Z",
+  "release_tag": "20260808case006synthesis1",
   "default_case": "case02",
   "case_scope": {
     "case_key": "case02",
@@ -50,6 +50,7 @@
     "projection_contract": "hematoboard.dashboard-projection-contract/1.0.0",
     "case006_observations": 58,
     "case006_projection_closure": "pass",
+    "case006_candidate_overview_projection": "pass",
     "clinical_acceptance_changed": false
   },
   "boundary": "Публічний read-only технічний демо-реліз. Кандидатний синтез CASE006 не підміняє прийняту лікарем клінічну картину."

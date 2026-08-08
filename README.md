@@ -6,13 +6,14 @@
 **Live dashboard:** <https://esannikov.github.io/hematoboard/>
 
 **CASE006:**
-<https://esannikov.github.io/hematoboard/?case=case006&view=overview&release=20260808case0061>
+<https://esannikov.github.io/hematoboard/?case=case006&view=overview&release=20260808case006synthesis1>
 
 ## Поточний реліз
 
-Реліз `20260808case0061` додає CASE006 як четвертий read-only кейс. Його
-accepted bundle містить 58 адресованих спостережень, а свіжа кандидатна
-reasoning revision відображається окремо від прийнятого стану. Повна
+Реліз `20260808case006synthesis1` показує CASE006 як четвертий read-only кейс.
+Його accepted bundle містить 58 адресованих спостережень, а свіжа кандидатна
+reasoning revision відображається в Огляді як робоча гіпотеза, диференційний
+ряд і план діагностичної верифікації — окремо від прийнятого стану. Повна
 проєкційна перевірка підтвердила однакову множину observation IDs і точне
 відтворення клінічних полів у DOM.
 
