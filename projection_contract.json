@@ -55,6 +55,34 @@
       "comparison_to_previous"
     ]
   },
+  "surface_semantic_closure": {
+    "overview": {
+      "patient_field": "case.demographics_only",
+      "clinical_period": "min_max_of_timeline_source_documents_and_observation_effective_at",
+      "candidate_rationale": "structured_observation_receipts_plus_agent_interpretation"
+    },
+    "graph": {
+      "candidate_hypotheses": "exact_id_set",
+      "candidate_relations": "exact_typed_edge_set",
+      "referenced_accepted_observations": "exact_id_set"
+    },
+    "gap_map": {
+      "candidate_critical_gaps": "exact_ordered_set",
+      "candidate_workup": "exact_id_set",
+      "candidate_hypothesis_links": "exact_id_set"
+    },
+    "clinical_state": {
+      "generic_observation_category_counts": "exact_count_by_kind",
+      "full_observation_registry": "exact_id_set"
+    },
+    "consilium_packet": {
+      "candidate_hypotheses": "exact_ranked_set",
+      "candidate_workup": "exact_id_set",
+      "accepted_observation_links": "must_resolve"
+    }
+  },
+  "candidate_projection_failure_mode": "fail_closed_on_unresolved_observation_or_hypothesis_reference",
+  "forbid_build_or_release_timestamp_as_clinical_period": true,
   "require_post_synthesis_browser_projection_audit": true,
   "forbid_case_clinical_literals_in_page_code": true
 }

@@ -255,3 +255,16 @@ export function projectClinicalState(bundle) {
     panel: asArray(clinical.panel),
   };
 }
+
+export function sourceObservationCoverage(bundle, workup = []) {
+  const observations = asArray(bundle?.observations);
+  const count = (...kinds) => observations.filter((item) => kinds.includes(item?.kind)).length;
+  return {
+    laboratory: count("measurement"),
+    pathology: count("pathology_finding"),
+    imaging: count("imaging_finding"),
+    clinicalContext: count("diagnostic_interpretation", "negative_finding", "procedure", "recommendation", "clinical_note", "gap"),
+    verificationSteps: asArray(workup).length,
+    total: observations.length,
+  };
+}
