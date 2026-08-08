@@ -4121,6 +4121,61 @@ function renderGraph() {
   const candidateRevision = candidateProjection.status === "ok" ? candidateProjection.revision : null;
   const graphFactById = (id) => (graphBundle.facts || []).find((fact) => fact.id === id);
   const graphHypothesisById = (id) => (graphBundle.hypotheses || []).find((hypothesis) => hypothesis.id === id);
+  const graphObservationById = (id) => (state.bundle?.observations || []).find((observation) => observation.id === id);
+  const graphDocumentById = (id) => (state.bundle?.source_documents || []).find((documentItem) => documentItem.id === id);
+
+  function graphSourceAddress(fact) {
+    const observation = graphObservationById(fact?.source_observation_id || fact?.id);
+    if (!observation) return null;
+    const page = observation.page ?? observation.source_address?.page;
+    const rowId = observation.source_address?.structured_row_id || "";
+    const compactRowId = rowId.match(/(p\d+-.+)$/u)?.[1] || rowId;
+    const fragmentId = observation.source_fragment_id || "";
+    const compactFragmentId = fragmentId.match(/(\d+)$/u)?.[1] || fragmentId;
+    const documentItem = graphDocumentById(observation.document_id);
+    const verified = observation.verification?.human_verified === true;
+    const address = element("div", {
+      className: "graph-source-address",
+      attrs: {
+        "data-source-address": observation.id,
+        "data-source-document": observation.document_id || "",
+        "data-source-page": page ?? "",
+        "data-source-row": rowId,
+        "data-source-fragment": fragmentId,
+        "data-source-human-verified": String(verified),
+      },
+    });
+    address.append(
+      element("span", { className: "graph-source-page", text: page ? `Сторінка ${page}` : "Сторінка не вказана" }),
+      element("span", { className: "graph-source-document", text: observationSourceLabel(documentItem) }),
+    );
+    if (compactRowId) address.append(element("code", { text: `Рядок ${compactRowId}`, attrs: { title: rowId } }));
+    else if (compactFragmentId) address.append(element("code", { text: `Фрагмент ${compactFragmentId}`, attrs: { title: fragmentId } }));
+    address.append(element("span", {
+      className: `graph-source-verification ${verified ? "is-verified" : "is-unverified"}`,
+      text: verified ? "Людська звірка пройдена" : "Людську звірку не зафіксовано",
+    }));
+    return address;
+  }
+
+  function graphSourceReceipt(fact, relation) {
+    const receipt = element("article", {
+      className: "graph-source-receipt",
+      attrs: {
+        "data-graph-source-observation": fact?.source_observation_id || fact?.id || "",
+        "data-relation": relation,
+      },
+    });
+    receipt.append(
+      element("div", { className: "graph-source-receipt-head" }, [
+        element("strong", { text: fact?.label || "Джерельний запис недоступний" }),
+      ]),
+      element("p", { className: "graph-source-receipt-detail", text: fact?.detail || "Клінічне значення окремо не записано." }),
+    );
+    const address = graphSourceAddress(fact);
+    if (address) receipt.append(address);
+    return receipt;
+  }
   const fragment = document.createDocumentFragment();
   const compactHeader = element("header", { className: "graph-compact-header" }, [
     element("div", { className: "graph-heading-copy" }, [
@@ -4196,35 +4251,35 @@ function renderGraph() {
       if (!sourceHypothesis) return emptyState("Для цієї гіпотези немає запису в поточній кандидатній ревізії.");
       const disclosure = element("details", { className: "graph-reasoning-path is-full", attrs: { open: "" } });
       disclosure.append(element("summary", {}, [
-        element("span", { text: "Структурований шлях обґрунтування" }),
+        element("span", { text: "Клінічне тлумачення та межі" }),
         element("small", { text: "кандидат · потребує перевірки лікарем" }),
       ]));
       const body = element("div", { className: "graph-reasoning-body" });
-      body.append(
-        element("p", { className: "graph-reasoning-label", text: "Робоча інтерпретація" }),
-        element("p", { className: "graph-reasoning-interpretation", text: sourceHypothesis.rationale }),
-      );
-      [
-        ["На користь", sourceHypothesis.support_refs, "support"],
-        ["Суперечать", sourceHypothesis.refute_refs, "refute"],
-        ["Нейтральні", sourceHypothesis.neutral_refs, "neutral"],
-      ].forEach(([label, refs, relation]) => {
-        const layer = element("section", { className: "graph-reasoning-layer", attrs: { "data-relation": relation } });
-        layer.append(element("h4", { text: label }));
-        const list = element("div", { className: "graph-reasoning-facts" });
-        (refs || []).forEach((ref) => {
-          const fact = graphFactById(ref);
-          if (fact) list.append(element("span", { text: fact.label, attrs: { "data-graph-observation-ref": ref } }));
-        });
-        layer.append(list.childElementCount ? list : element("p", { text: "Зв’язки цього типу не записано." }));
-        body.append(layer);
-      });
+      const interpretation = element("section", { className: "graph-reasoning-layer" }, [
+        element("h4", { text: "Робоча інтерпретація" }),
+      ]);
+      const rationalePoints = String(sourceHypothesis.rationale || "")
+        .split(/(?<=[.!?])\s+/u)
+        .map((value) => value.trim())
+        .filter(Boolean);
+      interpretation.append(rationalePoints.length
+        ? element("ul", { className: "graph-reasoning-points" }, rationalePoints.map((value) => element("li", { text: value })))
+        : element("p", { text: "Робочу інтерпретацію не записано." }));
+      body.append(interpretation);
       const judgement = element("dl", { className: "graph-reasoning-judgement" });
       [
-        ["Відсутні докази", (sourceHypothesis.missing_evidence || []).join(" ")],
-        ["Межі застосовності", (sourceHypothesis.applicability_limits || []).join(" ")],
-        ["Діагностична верифікація", (sourceHypothesis.discriminating_checks || []).join(" ")],
-      ].forEach(([label, value]) => judgement.append(element("div", {}, [element("dt", { text: label }), element("dd", { text: value || "Не записано." })])));
+        ["Відсутні докази", sourceHypothesis.missing_evidence],
+        ["Межі застосовності", sourceHypothesis.applicability_limits],
+        ["Діагностична верифікація", sourceHypothesis.discriminating_checks],
+      ].forEach(([label, values]) => {
+        const items = Array.isArray(values) ? values.filter(Boolean) : [];
+        judgement.append(element("div", {}, [
+          element("dt", { text: label }),
+          element("dd", {}, items.length
+            ? [element("ul", { className: "graph-reasoning-points" }, items.map((value) => element("li", { text: value })))]
+            : [document.createTextNode("Не записано.")]),
+        ]));
+      });
       body.append(judgement);
       disclosure.append(body);
       return disclosure;
@@ -4304,6 +4359,10 @@ function renderGraph() {
       element("p", { className: "graph-detail-label", text: kind === "fact" ? "Що зафіксовано" : "Поточна оцінка" }),
       element("p", { className: "graph-detail-copy", text: kind === "fact" ? item.detail : item.stance }),
     );
+    if (kind === "fact") {
+      const address = graphSourceAddress(item);
+      if (address) detail.append(address);
+    }
     const relOrder = { support: 0, neutral: 1, refute: 2 };
     const relWord = { support: "підтримує", refute: "суперечить", neutral: "нейтрально" };
     const relationCounts = kind === "hypothesis"
@@ -4323,18 +4382,29 @@ function renderGraph() {
         element("dd", { text: relationCounts[tone] }),
       ]));
     });
-    detail.append(metrics, element("p", { className: "graph-detail-label graph-detail-relations-label", text: "Пов’язані дані" }));
+    detail.append(metrics, element("p", {
+      className: "graph-detail-label graph-detail-relations-label",
+      text: kind === "hypothesis" && candidateRevision ? "Джерельні записи" : "Пов’язані дані",
+    }));
     const list = element("ul", { className: "relation-list" });
     connections
       .slice()
       .sort((a, b) => (relOrder[a.relation] ?? 1) - (relOrder[b.relation] ?? 1))
       .forEach((relation) => {
         const counterpart = kind === "fact" ? graphHypothesisById(relation.hypothesis_id) : graphFactById(relation.fact_id);
-        const li = element("li", { className: "rel-item" });
-        li.append(
-          element("span", { className: `rel-tag ${relation.relation}`, text: relWord[relation.relation] || relation.relation }),
-          element("span", { className: "rel-text", text: counterpart ? counterpart.label : "невідомий вузол" }),
-        );
+        const sourceReceipt = kind === "hypothesis" && candidateRevision && counterpart;
+        const li = element("li", { className: `rel-item${sourceReceipt ? " is-source-receipt" : ""}` });
+        if (sourceReceipt) {
+          li.append(
+            element("span", { className: `rel-tag ${relation.relation}`, text: relWord[relation.relation] || relation.relation }),
+            graphSourceReceipt(counterpart, relation.relation),
+          );
+        } else {
+          li.append(
+            element("span", { className: `rel-tag ${relation.relation}`, text: relWord[relation.relation] || relation.relation }),
+            element("span", { className: "rel-text", text: counterpart ? counterpart.label : "невідомий вузол" }),
+          );
+        }
         list.append(li);
       });
     detail.append(list);
@@ -4396,11 +4466,19 @@ function renderGraph() {
     } else {
       const code = svgElement("text", { class: "node-rank", x: "35", y: "5", "text-anchor": "middle" });
       code.textContent = `#${item.rank}`;
-      const role = svgElement("text", { class: "node-status-label", x: "70", y: "-8" });
+      const role = svgElement("text", { class: "node-status-label", x: "70", y: "-12" });
       role.textContent = graphHypothesisRole(item);
-      const label = svgElement("text", { class: "node-label hypothesis-short-label", x: "70", y: "13" });
-      label.textContent = compactHypothesisLabel(item);
-      group.append(code, role, label);
+      group.append(code, role);
+      const labelLines = wrapLines(compactHypothesisLabel(item), 30, 2);
+      labelLines.forEach((line, index) => {
+        const label = svgElement("text", {
+          class: "node-label hypothesis-short-label",
+          x: "70",
+          y: String((labelLines.length === 1 ? 10 : 3) + index * 15),
+        });
+        label.textContent = line;
+        group.append(label);
+      });
     }
     const activate = () => setDetail(kind, item);
     group.addEventListener("click", activate);
