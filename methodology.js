@@ -1132,10 +1132,70 @@ function overviewDifferentialRank(bundle, hypotheses) {
   return section;
 }
 
+function currentCandidateOverviewProjection(bundle) {
+  const candidate = state.reasoningCandidate;
+  if (candidate?.status !== "ok" || !candidate.revision) return null;
+  const revision = candidate.revision;
+  const hypotheses = [...(revision.hypotheses || [])].sort((a, b) => Number(a.rank) - Number(b.rank));
+  if (!hypotheses.length) return null;
+  const rankById = new Map(hypotheses.map((item) => [item.id, Number(item.rank)]));
+  const workup = (revision.workup || []).map((item) => ({
+    id: item.id,
+    title: item.title,
+    action: item.title,
+    why: item.rationale,
+    evidence_refs: [],
+    status: item.priority === "critical"
+      ? "Першочергова перевірка"
+      : item.priority === "high" ? "Високий пріоритет" : "За клінічною потребою",
+    tone: item.priority === "critical" ? "danger" : item.priority === "high" ? "caution" : "neutral",
+    phase: item.priority === "critical"
+      ? "Верифікація підтипу"
+      : item.priority === "high" ? "Паралельні перевірки" : "Наступний етап",
+    scope: {
+      kind: "hypotheses",
+      hypothesis_refs: (item.discriminates || []).map((id) => ({
+        id,
+        role: rankById.get(id) === 1
+          ? "leading"
+          : rankById.get(id) === 2 ? "direct_differential" : "critical_differential",
+      })),
+    },
+  }));
+  return {
+    revision,
+    hypotheses,
+    lead: hypotheses[0],
+    bundle: {
+      ...bundle,
+      hypotheses,
+      relations: revision.relations || [],
+      methodology: { ...(bundle.methodology || {}), workup },
+    },
+  };
+}
+
+function candidateOverviewChallenge(lead, bundle) {
+  const observations = new Map((bundle.observations || []).map((item) => [item.id, item]));
+  const supportingSignals = (lead?.support_refs || [])
+    .map((id) => observations.get(id)?.display)
+    .filter(Boolean)
+    .slice(0, 3);
+  const limits = (lead?.applicability_limits || []).slice(0, 2);
+  const verification = (lead?.discriminating_checks || []).slice(0, 2);
+  return [
+    { key: "support", label: "Дані на користь", text: supportingSignals.join(" · ") },
+    { key: "limit", label: "Обмеження гіпотези", text: limits.join(" ") },
+    { key: "discriminate", label: "Діагностична верифікація", text: verification.join("; ") },
+  ].filter((item) => item.text);
+}
+
 function renderOverview() {
   const bundle = state.bundle;
-  const hypotheses = [...bundle.hypotheses].sort((a, b) => a.rank - b.rank);
-  const lead = leadingHypothesis(bundle) || hypotheses[0];
+  const candidateProjection = currentCandidateOverviewProjection(bundle);
+  const reasoningBundle = candidateProjection?.bundle || bundle;
+  const hypotheses = candidateProjection?.hypotheses || [...bundle.hypotheses].sort((a, b) => a.rank - b.rank);
+  const lead = candidateProjection?.lead || leadingHypothesis(bundle) || hypotheses[0];
   const timeline = [...(bundle.timeline || [])];
   const firstDate = timeline[0]?.date || "—";
   const lastDate = timeline.at(-1)?.date || bundle.case.generated || "—";
@@ -1173,20 +1233,21 @@ function renderOverview() {
 
   const deck = element("section", { className: "overview-command-deck" });
   const commandMain = element("div", { className: "overview-command-main" });
-  const candidateOnly = isCandidateOnlyBundle(bundle);
+  const candidateOnly = Boolean(candidateProjection) || isCandidateOnlyBundle(bundle);
   const assessment = element("div", {
     className: `overview-primary-assessment${candidateOnly ? " ai-presence-surface" : ""}`,
+    attrs: candidateProjection ? { "data-synthesis-source": "candidate-revision" } : {},
   });
   const assessmentHead = element("div", { className: "overview-section-head" });
   const assessmentTitle = element("div");
   assessmentTitle.append(
-    element("p", { className: "overview-assessment-label", text: "Провідна попередня гіпотеза" }),
+    element("p", { className: "overview-assessment-label", text: candidateProjection ? "Провідна робоча гіпотеза · кандидат" : "Провідна попередня гіпотеза" }),
     element("h3", { className: "overview-primary-title", text: lead?.short_label || lead?.label || "Робоча гіпотеза не сформована", attrs: lead?.label ? { title: lead.label } : {} }),
   );
   if (candidateOnly) assessmentTitle.append(agentSynthesisLabel());
   assessmentHead.append(assessmentTitle);
   const assessmentCopy = element("div");
-  const leadRationale = overviewLeadRationale(lead, bundle);
+  const leadRationale = candidateProjection ? lead.rationale : overviewLeadRationale(lead, bundle);
   const rationale = element("div", { className: "overview-rationale" }, [
     element("div", {}, [
       element("h4", { text: "Клініко-морфологічне обґрунтування" }),
@@ -1194,7 +1255,7 @@ function renderOverview() {
     ]),
   ]);
   assessmentCopy.append(rationale);
-  const challenge = hypothesisChallenge(lead);
+  const challenge = candidateProjection ? candidateOverviewChallenge(lead, bundle) : hypothesisChallenge(lead);
   if (challenge.length) {
     assessmentCopy.append(element("div", {
       className: "overview-argument-grid",
@@ -1212,8 +1273,12 @@ function renderOverview() {
     })));
   }
   assessment.append(assessmentHead, assessmentCopy);
-  assessment.append(overviewDifferentialRank(bundle, hypotheses));
-  assessment.append(element("a", { className: "overview-text-link focus-ring", text: "Переглянути факти та зв’язки на графі →", attrs: { href: viewUrl("graph") } }));
+  assessment.append(overviewDifferentialRank(reasoningBundle, hypotheses));
+  assessment.append(element("a", {
+    className: "overview-text-link focus-ring",
+    text: candidateProjection ? "Переглянути повний кандидатний синтез →" : "Переглянути факти та зв’язки на графі →",
+    attrs: { href: viewUrl(candidateProjection ? "agent" : "graph") },
+  }));
 
   const decision = element("aside", { className: "overview-decision-gate" });
   decision.append(
@@ -1221,9 +1286,13 @@ function renderOverview() {
       element("h3", { text: "План діагностичної верифікації" }),
       element("p", { text: "Перші кроки перевіряють провідну гіпотезу та прямий морфологічний диференціал; паралельні — критичні альтернативи. Стадіювання починається лише після тканинного підтвердження. Чіпи біля кожного кроку показують його діагностичну роль." }),
     ]),
-    overviewPlanPhases(bundle),
+    overviewPlanPhases(reasoningBundle),
   );
-  decision.append(element("a", { className: "overview-text-link focus-ring", text: "Повний план досліджень і матеріалів →", attrs: { href: viewUrl("state") } }));
+  decision.append(element("a", {
+    className: "overview-text-link focus-ring",
+    text: candidateProjection ? "Повний план і межі синтезу →" : "Повний план досліджень і матеріалів →",
+    attrs: { href: viewUrl(candidateProjection ? "agent" : "state") },
+  }));
   commandMain.append(assessment, decision);
   deck.append(commandMain);
   fragment.append(deck);
@@ -1235,15 +1304,19 @@ function renderOverview() {
   const balanceTitle = element("div");
   balanceTitle.append(element("h3", { text: "Критерій переходу від гіпотези до висновку" }), element("p", { className: "overview-panel-copy", text: "Що має з’явитися у репрезентативному матеріалі — і що змусить змінити напрям." }));
   balanceHead.append(balanceTitle);
-  if (bundle.relations.length) balanceHead.append(element("a", { className: "overview-text-link focus-ring", text: "Дивитися граф →", attrs: { href: viewUrl("graph") } }));
+  if (reasoningBundle.relations.length) balanceHead.append(element("a", {
+    className: "overview-text-link focus-ring",
+    text: candidateProjection ? "Переглянути кандидатну аргументацію →" : "Дивитися граф →",
+    attrs: { href: viewUrl(candidateProjection ? "agent" : "graph") },
+  }));
   const criteria = element("div", { className: "overview-verification-criteria" }, [
     element("article", { attrs: { "data-kind": "confirm" } }, [
       element("h4", { text: "Підтвердить напрям" }),
-      element("p", { text: lead?.confirms || "Критерій підтвердження не записано." }),
+      element("p", { text: lead?.confirms || lead?.discriminating_checks?.[0] || "Критерій підтвердження не записано." }),
     ]),
     element("article", { attrs: { "data-kind": "refute" } }, [
       element("h4", { text: "Змусить змінити напрям" }),
-      element("p", { text: lead?.refutes || "Критерій спростування не записано." }),
+      element("p", { text: lead?.refutes || lead?.applicability_limits?.[0] || "Критерій спростування не записано." }),
     ]),
   ]);
   balance.append(balanceHead, criteria);
