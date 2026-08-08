@@ -397,6 +397,37 @@ html[data-ui="carbon"] {
   line-height: 1.3;
 }
 
+/* Stable source identity across overview, reasoning, graph and registry.
+   Verification status remains a separate token. */
+[data-ui="carbon"] .source-type-chip,
+[data-ui="carbon"] .source-type-badge {
+  border: 1px solid var(--source-primary-border);
+  border-radius: 0;
+  color: var(--source-primary-ink);
+  background: var(--source-primary-bg);
+}
+[data-ui="carbon"] :is(.source-type-chip, .source-type-badge)[data-source-tone="pubmed"] {
+  color: var(--source-pubmed-ink); border-color: var(--source-pubmed-border); background: var(--source-pubmed-bg);
+}
+[data-ui="carbon"] :is(.source-type-chip, .source-type-badge)[data-source-tone="guideline"] {
+  color: var(--source-guideline-ink); border-color: var(--source-guideline-border); background: var(--source-guideline-bg);
+}
+[data-ui="carbon"] :is(.source-type-chip, .source-type-badge)[data-source-tone="protocol"] {
+  color: var(--source-protocol-ink); border-color: var(--source-protocol-border); background: var(--source-protocol-bg);
+}
+[data-ui="carbon"] :is(.source-type-chip, .source-type-badge)[data-source-tone="evidence-summary"] {
+  color: var(--source-summary-ink); border-color: var(--source-summary-border); background: var(--source-summary-bg);
+}
+[data-ui="carbon"] :is(.source-type-chip, .source-type-badge)[data-source-tone="gap"] {
+  color: var(--source-gap-ink); border-color: var(--source-gap-border); background: var(--source-gap-bg);
+}
+[data-ui="carbon"] :is(.source-type-chip, .source-type-badge)[data-source-tone="other"] {
+  color: var(--source-other-ink); border-color: var(--source-other-border); background: var(--source-other-bg);
+}
+[data-ui="carbon"] :is(.source-type-chip, .source-type-badge)[data-source-tone="primary"] {
+  color: var(--source-primary-ink); border-color: var(--source-primary-border); background: var(--source-primary-bg);
+}
+
 [data-ui="carbon"] .content-section,
 [data-ui="carbon"] .overview-panel,
 [data-ui="carbon"] .packet-section,
