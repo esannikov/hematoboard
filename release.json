@@ -1,7 +1,7 @@
 {
   "schema_version": "hematoboard.public-release/1.0.0",
-  "released_at": "2026-08-08T18:38:45Z",
-  "release_tag": "20260808case006sourcevisibility1",
+  "released_at": "2026-08-08T20:07:15Z",
+  "release_tag": "20260808case006sourceidentity1",
   "default_case": "case02",
   "case_scope": {
     "case_key": "case02",
@@ -59,6 +59,18 @@
     "case006_history_dated_observations": 8,
     "case006_history_undated_observations": 50,
     "case006_source_visibility_closure": "pass",
+    "case006_source_identity_closure": "pass",
+    "source_type_palette": {
+      "pubmed": "purple",
+      "guideline": "green",
+      "protocol": "blue",
+      "evidence_summary": "teal",
+      "primary_record": "neutral",
+      "gap": "red",
+      "other": "amber"
+    },
+    "structured_candidate_interpretation": "pass",
+    "public_agent_dead_controls_removed": true,
     "clinical_acceptance_changed": false
   },
   "boundary": "Публічний read-only технічний демо-реліз. Кандидатний синтез CASE006 не підміняє прийняту лікарем клінічну картину."

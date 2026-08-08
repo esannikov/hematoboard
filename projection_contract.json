@@ -71,6 +71,19 @@
         "use_limit"
       ],
       "must_not_promote_to_accepted_evidence": true
+    },
+    "source_type_presentation": {
+      "must_be_consistent_across_surfaces": true,
+      "color_must_not_be_only_carrier": true,
+      "types": {
+        "pmid": "pubmed_purple",
+        "guideline": "guideline_green",
+        "protocol": "protocol_blue",
+        "evidence_summary": "evidence_summary_teal",
+        "case_patient_local": "primary_neutral",
+        "gap": "gap_red",
+        "other": "other_amber"
+      }
     }
   },
   "surface_semantic_closure": {

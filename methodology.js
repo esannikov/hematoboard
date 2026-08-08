@@ -421,22 +421,46 @@ function evidencePublicationYear(source) {
   return displayText(source?.citation || source?.ref || "").match(/\b(?:19|20)\d{2}\b/u)?.[0] || "";
 }
 
+const SOURCE_TYPE_PRESENTATION = Object.freeze({
+  pmid: { key: "pubmed", label: "PubMed", prefix: "Стаття · " },
+  guideline: { key: "guideline", label: "Настанова", prefix: "Настанова · " },
+  protocol: { key: "protocol", label: "Протокол", prefix: "Протокол · " },
+  evidence_summary: { key: "evidence-summary", label: "Огляд доказів", prefix: "Огляд доказів · " },
+  gap: { key: "gap", label: "Прогалина", prefix: "Прогалина · " },
+  patient: { key: "primary", label: "Первинне", prefix: "" },
+  case: { key: "primary", label: "Первинне", prefix: "" },
+  local: { key: "primary", label: "Локальне", prefix: "" },
+  web: { key: "other", label: "Інше джерело", prefix: "Джерело · " },
+});
+
+function sourceTypePresentation(source) {
+  return SOURCE_TYPE_PRESENTATION[source?.type] || { key: "other", label: sourceTypeLabel(source || {}), prefix: "Джерело · " };
+}
+
+function sourceTypeAttributes(source) {
+  const presentation = sourceTypePresentation(source);
+  return {
+    "data-source-type": source?.type || "other",
+    "data-source-tone": presentation.key,
+  };
+}
+
+function sourceTypeBadge(source) {
+  const presentation = sourceTypePresentation(source);
+  return element("span", {
+    className: "source-type-badge",
+    text: presentation.label,
+    attrs: sourceTypeAttributes(source),
+  });
+}
+
 // Evidence chip: source type is carried by text and a restrained semantic tone.
 // Decorative Unicode symbols are deliberately avoided in the clinical UI.
 function evidenceChip(ref) {
   const source = sourceById(ref);
   if (!source) return element("span", { className: "chip", text: String(ref) });
-  const map = {
-    pmid: ["chip evi", "Стаття · "],
-    guideline: ["chip guideline", "Настанова · "],
-    protocol: ["chip guideline", "Протокол · "],
-    evidence_summary: ["chip evi", "Огляд доказів · "],
-    gap: ["chip gap", "Прогалина · "],
-    patient: ["chip fact", ""],
-    case: ["chip fact", ""],
-    local: ["chip", ""],
-  };
-  const [cls, icon] = map[source.type] || ["chip", ""];
+  const presentation = sourceTypePresentation(source);
+  const cls = `chip source-type-chip source-type-${presentation.key}`;
   // guideline: its name is the essence; pmid/other: a short gist of the citation.
   const gist = source.type === "guideline"
     ? source.ref
@@ -448,11 +472,28 @@ function evidenceChip(ref) {
   if (linkable) {
     return element("a", {
       className: `${cls} chip-link`,
-      text: `${icon}${gist}`,
-      attrs: { href: source.source_uri, target: "_blank", rel: "noopener", title: tooltip, "data-source-ref": source.id, "data-source-kind": sourceRegistryKind(source) },
+      text: `${presentation.prefix}${gist}`,
+      attrs: {
+        href: source.source_uri,
+        target: "_blank",
+        rel: "noopener",
+        title: tooltip,
+        "data-source-ref": source.id,
+        "data-source-kind": sourceRegistryKind(source),
+        ...sourceTypeAttributes(source),
+      },
     });
   }
-  return element("span", { className: cls, text: `${icon}${gist}`, attrs: { title: tooltip, "data-source-ref": source.id, "data-source-kind": sourceRegistryKind(source) } });
+  return element("span", {
+    className: cls,
+    text: `${presentation.prefix}${gist}`,
+    attrs: {
+      title: tooltip,
+      "data-source-ref": source.id,
+      "data-source-kind": sourceRegistryKind(source),
+      ...sourceTypeAttributes(source),
+    },
+  });
 }
 
 // Stable source locator used across clinician-facing projections.
@@ -527,6 +568,46 @@ function clinicalSummary(text) {
     block.append(copy);
     wrapper.append(block);
   }
+  return wrapper;
+}
+
+function interpretationGroupKey(sentence) {
+  if (/(?:\bразом\b|найбільше узгоджу|свідчить на користь|робоч(?:ий|а|е) (?:висновок|гіпотез)|провідн(?:ий|а|е) напрям)/iu.test(sentence)) return "conclusion";
+  if (/(?:\bводночас\b|\bodнак\b|\bпроте\b|\bале\b|відсутн|не містить|не закрит|не підтвердж|недостатн|обмеж|бракує|потрібно (?:звірити|підтвердити|виключити))/iu.test(sentence)) return "limits";
+  return "evidence";
+}
+
+function clinicalInterpretation(text, options = {}) {
+  const normalized = clinicianNarrative(text || "");
+  if (!normalized) return emptyState("Робоче тлумачення не записано.");
+  const sentences = normalized
+    .split(/(?<=[.!?])\s+(?=[А-ЯA-ZІЇЄҐ0-9])/u)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+  const groups = { conclusion: [], evidence: [], limits: [] };
+  sentences.forEach((sentence) => groups[interpretationGroupKey(sentence)].push(sentence));
+  const labels = {
+    conclusion: "Робочий висновок",
+    evidence: "Джерельні ознаки",
+    limits: "Що обмежує висновок",
+  };
+  const wrapper = element("div", {
+    className: `clinical-interpretation${options.compact ? " is-compact" : ""}`,
+    attrs: { "data-clinical-text": normalized },
+  });
+  ["conclusion", "evidence", "limits"].forEach((key) => {
+    if (!groups[key].length) return;
+    const block = element("section", { className: "clinical-interpretation-block", attrs: { "data-interpretation-kind": key } });
+    block.append(element("h5", { text: labels[key] }));
+    const list = element("ul");
+    groups[key].forEach((sentence) => {
+      const item = element("li");
+      item.innerHTML = highlightClinicalSummary(sentence);
+      list.append(item);
+    });
+    block.append(list);
+    wrapper.append(block);
+  });
   return wrapper;
 }
 
@@ -677,9 +758,9 @@ function consiliumLegend() {
     element("h4", { text: "Доказова опора" }),
     element("p", { text: "Кожна теза спирається на простежене джерело або явно позначену прогалину." }),
     element("div", { className: "consilium-legend-chips" }, [
-      element("span", { className: "chip evi", text: "PubMed" }),
-      element("span", { className: "chip guideline", text: "Настанова" }),
-      element("span", { className: "chip gap", text: "Прогалина" }),
+      element("span", { className: "chip source-type-chip", text: "PubMed", attrs: sourceTypeAttributes({ type: "pmid" }) }),
+      element("span", { className: "chip source-type-chip", text: "Настанова", attrs: sourceTypeAttributes({ type: "guideline" }) }),
+      element("span", { className: "chip source-type-chip", text: "Прогалина", attrs: sourceTypeAttributes({ type: "gap" }) }),
     ]),
   );
   grid.append(ranking, challenge, evidence);
@@ -741,6 +822,10 @@ function deidentificationLabel(value) {
 
 function clinicianNarrative(value) {
   return textValue(value)
+    .replace(
+      /These sources constrain interpretation and missing-evidence checks; they do not establish diagnosis, stage, treatment indication or applicability for (CASE\d+)\.?/giu,
+      "Ці джерела обмежують тлумачення та перевірку відсутніх доказів. Вони не встановлюють діагноз, стадію, показання до лікування або застосовність для $1.",
+    )
     .replace(/minimum-necessary source layer/giu, "мінімально необхідного джерельного шару")
     .replace(/\bSource layer\b/gu, "Джерельний шар")
     .replace(/source layer/giu, "джерельний шар")
@@ -813,8 +898,11 @@ function candidateExternalSourceStrip(sources, label = "Зовнішні дже�
   const strip = element("aside", { className: "candidate-external-sources" });
   strip.append(
     element("div", { className: "candidate-external-sources-head" }, [
-      element("strong", { text: label }),
-      statusTag("джерельний запис · потребує оцінки застосовності", "candidate"),
+      element("div", {}, [
+        element("strong", { text: label }),
+        element("p", { text: "Колір показує тип джерела; кожен запис залишається кандидатом до окремої оцінки застосовності." }),
+      ]),
+      statusTag("застосовність не прийнята", "candidate"),
     ]),
     element("div", { className: "chip-row", attrs: { "aria-label": label } }, sources.map((source) => evidenceChip(source.id))),
   );
@@ -1319,8 +1407,8 @@ function renderOverview() {
   const leadRationale = candidateProjection ? clinicianNarrative(lead.rationale) : overviewLeadRationale(lead, bundle);
   const rationale = element("div", { className: "overview-rationale" }, [
     element("div", {}, [
-      element("h4", { text: candidateProjection ? "Робоча інтерпретація агентного синтезу" : "Клініко-морфологічне обґрунтування" }),
-      element("p", { text: leadRationale }),
+      element("h4", { text: candidateProjection ? "Робоче клінічне тлумачення" : "Клініко-морфологічне обґрунтування" }),
+      candidateProjection ? clinicalInterpretation(leadRationale) : element("p", { text: leadRationale }),
     ]),
   ]);
   assessmentCopy.append(rationale);
@@ -3034,17 +3122,7 @@ function sourceRegistryKind(source) {
 }
 
 function sourceRegistryType(source) {
-  if (source?.type === "guideline") return "Настанова";
-  if (source?.type === "protocol") return "Протокол";
-  if (source?.type === "evidence_summary") return "Огляд доказів";
-  const labels = {
-    primary: "Первинне",
-    guidance: "Клінічне джерело",
-    pmid: "PubMed",
-    gap: "Прогалина",
-    other: "Інше",
-  };
-  return labels[sourceRegistryKind(source)] || sourceTypeLabel(source);
+  return sourceTypeBadge(source);
 }
 
 function sourceRegistryStatus(source) {
@@ -3110,6 +3188,7 @@ function sourceRegistry(sources = state.bundle.sources || []) {
         id: `source-${source.id}`,
         "data-source-row": "",
         "data-source-kind": sourceRegistryKind(source),
+        ...sourceTypeAttributes(source),
       },
       cells: [
         idControl,
@@ -4132,7 +4211,7 @@ function renderPacket() {
         );
         const evidence = element("div", { className: "packet-evidence-row" });
         if (item.refs.length) item.refs.forEach((ref) => evidence.append(evidenceChip(ref)));
-        else evidence.append(element("span", { className: "chip gap", text: "◇ Джерело не прив’язане" }));
+        else evidence.append(element("span", { className: "chip source-type-chip", text: "Джерело не прив’язане", attrs: sourceTypeAttributes({ type: "gap" }) }));
         copy.append(evidence);
         row.append(element("span", { className: "packet-gap-index", text: String(index + 1).padStart(2, "0") }), copy);
         list.append(row);
@@ -4692,7 +4771,14 @@ function renderAgentAnswer(target, payload) {
   if ((payload.source_chips || []).length) {
     const sources = element("div", { className: "agent-source-strip" });
     sources.append(element("strong", { text: "Джерельні шари" }));
-    payload.source_chips.forEach((item) => sources.append(element("span", { text: item.label })));
+    payload.source_chips.forEach((item) => {
+      const source = { type: item.source_type || "other" };
+      sources.append(element("span", {
+        className: "chip source-type-chip",
+        text: item.label,
+        attrs: { "data-source-ref": item.source_ref || "", ...sourceTypeAttributes(source) },
+      }));
+    });
     result.append(sources);
   }
   target.replaceChildren(result);
@@ -4751,7 +4837,6 @@ function renderReasoningCandidate(candidate) {
   );
   section.append(head);
   const externalSourceStrip = candidateExternalSourceStrip(currentExternalSources());
-  if (externalSourceStrip) section.append(externalSourceStrip);
 
   if (lead) {
     const counts = candidateRelationCounts(revision, lead.id);
@@ -4761,7 +4846,7 @@ function renderReasoningCandidate(candidate) {
         element("div", {}, [
           element("p", { className: "reasoning-role", text: clinicianNarrative(lead.clinical_role) }),
           element("h3", { text: lead.label }),
-          element("p", { text: clinicianNarrative(lead.rationale) }),
+          clinicalInterpretation(lead.rationale, { compact: true }),
           element("div", { className: "reasoning-counts" }, [
             element("span", { text: `${counts.support} підтримують` }),
             element("span", { text: `${counts.refute} суперечать` }),
@@ -4771,6 +4856,7 @@ function renderReasoningCandidate(candidate) {
       ]),
     );
   }
+  if (externalSourceStrip) section.append(externalSourceStrip);
 
   const ranked = element("details", { className: "reasoning-disclosure", attrs: { open: "" } });
   ranked.append(element("summary", { text: `Ранжований диференціал · ${hypotheses.length}` }));
@@ -4894,8 +4980,8 @@ async function renderAgent() {
   const fragment = document.createDocumentFragment();
   fragment.append(
     viewHeader(
-      "Контрольований розбір",
-      "Поставте питання до знеособленого графа. Локальний режим показує записані зв’язки без виклику моделі й без зміни картки пацієнта.",
+      "Перевірка по графу",
+      "Тут видно зафіксований кандидатний синтез і його джерельні межі. У приватному режимі лікар може поставити уточнювальне питання до типізованого графа.",
     ),
   );
 
@@ -4932,11 +5018,12 @@ async function renderAgent() {
     ),
     element("span", {
       text: IS_PUBLIC_STATIC_DEMO
-        ? `Показує зафіксований кандидатний синтез ${overviewCaseCode(state.bundle)}; інтерактивний AI Agent працює лише у приватному локальному контурі.`
+        ? `Зафіксований кандидатний синтез ${overviewCaseCode(state.bundle)}. Інтерактивний запит доступний лише у приватному локальному середовищі.`
         : `Читає мінімально необхідну проєкцію ${overviewCaseCode(state.bundle)}; кандидатний синтез не змінює прийняту картину.`,
     }),
   );
   main.append(mode);
+  main.append(renderReasoningCandidate(state.reasoningCandidate));
 
   const form = element("form", { className: "agent-composer" });
   const label = element("label", { attrs: { for: "agent-question" } });
@@ -4984,17 +5071,27 @@ async function renderAgent() {
   });
   actions.append(formStatus, submit);
   form.append(label, textarea, suggestions, actions);
-  main.append(form);
-
   const answerHost = element("div", { className: "agent-answer-host" });
   answerHost.append(
     element("section", { className: "agent-empty" }, [
-      element("h3", { text: "Результат з’явиться тут" }),
-      element("p", { text: "Система розкладе провідну гіпотезу на записані підтримувальні, суперечні та невизначені зв’язки й покаже наступну перевірку." }),
+      element("h3", { text: "Що можна перевірити запитом" }),
+      element("ul", {}, [
+        element("li", { text: "які прийняті спостереження підтримують або послаблюють провідну гіпотезу;" }),
+        element("li", { text: "які докази залишаються відсутніми або невизначеними;" }),
+        element("li", { text: "яка наступна перевірка найкраще розрізнить робочі гіпотези." }),
+      ]),
     ]),
   );
-  main.append(answerHost);
-  main.append(renderReasoningCandidate(state.reasoningCandidate));
+  if (health) {
+    main.append(form, answerHost);
+  } else {
+    main.append(element("section", { className: "agent-query-unavailable" }, [
+      element("strong", { text: IS_PUBLIC_STATIC_DEMO ? "Інтерактивний запит приховано у публічній проєкції" : "Локальний модуль запитів не підключено" }),
+      element("p", { text: IS_PUBLIC_STATIC_DEMO
+        ? "Сторінка показує лише зафіксовану ревізію. Текст запиту, первинні документи й відповідь залишаються у приватному середовищі."
+        : "Поточний кандидатний синтез доступний для читання; запит активується через локальний AgentEngine server." }),
+    ]));
+  }
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -5027,8 +5124,8 @@ async function renderAgent() {
     }
   });
 
-  const rail = element("aside", { className: "agent-gates", attrs: { "aria-label": "Шлюзи AgentEngine" } });
-  rail.append(element("h3", { text: "Що доступно зараз" }));
+  const rail = element("aside", { className: "agent-gates", attrs: { "aria-label": "Поточний контекст перевірки" } });
+  rail.append(element("h3", { text: "Поточний контекст" }));
   if (health) {
     const review = health.graph_review || {};
     rail.append(
@@ -5052,16 +5149,21 @@ async function renderAgent() {
     );
   } else {
     rail.append(IS_PUBLIC_STATIC_DEMO
-      ? agentGate("AI Agent", "Приватний контур", "review", "Публічна проєкція показує лише зафіксований результат; запит і первинні дані залишаються в локальному середовищі.")
-      : agentGate("Локальний сервер", "Не підключено", "blocked", "Статична сторінка може показувати кейс, але для контрольованого запиту потрібен loopback AgentEngine server."));
+      ? agentGate(
+        "Джерельний шар",
+        `${state.bundle.observations?.length || 0} спостережень`,
+        "ready",
+        "Показано прийняту read-only проєкцію з адресами походження; первинні документи не публікуються.",
+      )
+      : agentGate("Локальний модуль", "Не підключено", "blocked", "Кандидатний синтез доступний для читання; інтерактивний запит потребує loopback AgentEngine server."));
   }
   if (state.reasoningCandidate?.status === "ok") {
     rail.append(
       agentGate(
         "Кандидатний синтез",
-        "Свіжий і цілісний",
+        `${state.reasoningCandidate.revision.hypotheses?.length || 0} гіпотези`,
         "review",
-        `${state.reasoningCandidate.revision.hypotheses?.length || 0} гіпотез; рішення лікаря ще не записано.`,
+        "Ревізію зафіксовано; рішення лікаря ще не записано.",
       ),
     );
   } else if (state.reasoningCandidate?.status === "stale") {
@@ -5069,10 +5171,19 @@ async function renderAgent() {
   } else if (state.reasoningCandidate && state.reasoningCandidate.status !== "absent") {
     rail.append(agentGate("Кандидатний синтез", "Недоступний", "blocked", state.reasoningCandidate.detail || "Артефакт не пройшов перевірку."));
   }
+  const externalSourceCount = currentExternalSources().length;
+  if (externalSourceCount) {
+    rail.append(agentGate(
+      "Зовнішній контекст",
+      `${externalSourceCount} ${externalSourceCount === 1 ? "джерело" : externalSourceCount < 5 ? "джерела" : "джерел"}`,
+      "review",
+      "PubMed, протоколи й огляди обмежують тлумачення; їхня застосовність до цього кейсу ще не прийнята лікарем.",
+    ));
+  }
   rail.append(
     element("div", { className: "agent-boundary" }, [
-      element("strong", { text: "Незмінна межа" }),
-      element("p", { text: "Жодна відповідь агента не змінює картку пацієнта автоматично. Прийняття потребує окремої дії лікаря й нової ревізії." }),
+      element("strong", { text: "Межа дії" }),
+      element("p", { text: "Відповідь не змінює картку пацієнта. Перенесення результату потребує окремого рішення лікаря й нової ревізії." }),
     ]),
   );
 
