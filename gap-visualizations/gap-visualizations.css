@@ -2,18 +2,18 @@
    the two integration lines in methodology.js/index.html to remove the feature. */
 
 [data-ui="carbon"] {
-  --gap-hot-bg: #fddc69;
-  --gap-hot-ink: #3d2f00;
-  --gap-warm-bg: #fff1b8;
-  --gap-warm-ink: #3d2f00;
-  --gap-cool-bg: #9ef0f0;
+  --gap-hot-bg: #ff832b;
+  --gap-hot-ink: #2d1400;
+  --gap-warm-bg: #f1c21b;
+  --gap-warm-ink: #281900;
+  --gap-cool-bg: #3ddbd9;
   --gap-cool-ink: #003a46;
-  --gap-cold-bg: #d0e2ff;
-  --gap-cold-ink: #002d9c;
-  --gap-fracture-bg: #ffd7d9;
-  --gap-fracture-ink: #750e13;
-  --gap-unmapped-bg: #e8e8e8;
-  --gap-unmapped-ink: #525252;
+  --gap-cold-bg: #78a9ff;
+  --gap-cold-ink: #001d6c;
+  --gap-fracture-bg: #fa4d56;
+  --gap-fracture-ink: #2d0709;
+  --gap-unmapped-bg: #c6c6c6;
+  --gap-unmapped-ink: #262626;
 }
 
 [data-ui="carbon"] [data-thermal="hot"] { --gap-fill: var(--gap-hot-bg); --gap-ink: var(--gap-hot-ink); }
@@ -121,6 +121,7 @@
 [data-ui="carbon"] .gap-fp-hypothesis-copy { display: grid; gap: 5px; min-width: 0; padding-top: 10px; border-top: 1px solid var(--cds-border-subtle-00); }
 [data-ui="carbon"] .gap-fp-hypothesis-copy span { color: var(--cds-link-primary); font-size: .625rem; }
 [data-ui="carbon"] .gap-fp-hypothesis-copy h4 { margin: 0; overflow-wrap: anywhere; color: var(--cds-text-primary); font-size: .78rem; line-height: 1.35; }
+[data-ui="carbon"] .gap-fp-hypothesis-copy small { color: var(--cds-text-secondary); font-size: .625rem; font-weight: 600; line-height: 1.35; }
 [data-ui="carbon"] .gap-fp-radial-sector,
 [data-ui="carbon"] .gap-core-petal,
 [data-ui="carbon"] .gap-core-halo,
@@ -143,7 +144,7 @@
 [data-ui="carbon"] .gap-core-petal[data-thermal="cold"],
 [data-ui="carbon"] .gap-core-petal[data-thermal="unmapped"],
 [data-ui="carbon"] .gap-core-halo[data-thermal="cold"],
-[data-ui="carbon"] .gap-core-halo[data-thermal="unmapped"] { fill-opacity: .26; stroke-dasharray: 4 3; }
+[data-ui="carbon"] .gap-core-halo[data-thermal="unmapped"] { fill-opacity: 1; stroke-width: 1.7; }
 [data-ui="carbon"] .gap-fp-radial-sector[data-thermal="fracture"],
 [data-ui="carbon"] .gap-core-petal[data-thermal="fracture"] { stroke-width: 3; }
 [data-ui="carbon"] .gap-fp-radial-label,
@@ -153,8 +154,8 @@
 [data-ui="carbon"] .gap-fp-radial-id,
 [data-ui="carbon"] .gap-core-id { fill: var(--cds-text-primary); font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 600; pointer-events: none; }
 [data-ui="carbon"] .gap-fp-state-mark { position: relative; width: 12px; height: 12px; flex: 0 0 12px; border: 1.5px solid var(--gap-ink); background: var(--gap-fill); }
-[data-ui="carbon"] [data-thermal="cold"] > .gap-fp-state-mark { transform: rotate(45deg); background: transparent; }
-[data-ui="carbon"] [data-thermal="unmapped"] > .gap-fp-state-mark { border-style: dotted; background: transparent; }
+[data-ui="carbon"] [data-thermal="cold"] > .gap-fp-state-mark { transform: rotate(45deg); }
+[data-ui="carbon"] [data-thermal="unmapped"] > .gap-fp-state-mark { border-style: solid; }
 [data-ui="carbon"] [data-thermal="fracture"] > .gap-fp-state-mark::after { position: absolute; top: -2px; left: 4px; width: 2px; height: 14px; background: var(--gap-ink); transform: rotate(32deg); content: ""; }
 
 /* 1 · Labeled rosette */
@@ -167,6 +168,18 @@
 [data-ui="carbon"] .gap-rosette-card,
 [data-ui="carbon"] .gap-core-card,
 [data-ui="carbon"] .gap-stamp-card { display: grid; align-content: start; min-width: 0; padding: 14px; background: var(--cds-layer-01); }
+[data-ui="carbon"] .gap-rosette-card { padding: 0; }
+[data-ui="carbon"] .gap-rosette-card > .gap-fp-hypothesis-copy {
+  padding: 15px 16px 14px;
+  border-top: 0;
+  border-bottom: 1px solid var(--cds-border-subtle-00);
+  background: var(--cds-layer-02);
+}
+[data-ui="carbon"] .gap-rosette-card[data-coverage="hot"] > .gap-fp-hypothesis-copy { box-shadow: inset 0 5px 0 var(--gap-hot-bg); }
+[data-ui="carbon"] .gap-rosette-card[data-coverage="warm"] > .gap-fp-hypothesis-copy { box-shadow: inset 0 5px 0 var(--gap-warm-bg); }
+[data-ui="carbon"] .gap-rosette-card[data-coverage="cool"] > .gap-fp-hypothesis-copy { box-shadow: inset 0 5px 0 var(--gap-cool-bg); }
+[data-ui="carbon"] .gap-rosette-card[data-coverage="cold"] > .gap-fp-hypothesis-copy { box-shadow: inset 0 5px 0 var(--gap-cold-bg); }
+[data-ui="carbon"] .gap-rosette-card .gap-fp-radial-svg { padding: 10px 12px 14px; }
 [data-ui="carbon"] .gap-fp-radial-svg { width: 100%; max-width: 320px; margin-inline: auto; }
 
 /* 2 · Core, halo, gate */
@@ -196,7 +209,7 @@
 [data-ui="carbon"] .gap-stamp-cell:hover,
 [data-ui="carbon"] .gap-stamp-cell.is-active { box-shadow: inset 0 0 0 4px var(--cds-focus); }
 [data-ui="carbon"] .gap-stamp-cell[data-thermal="cold"],
-[data-ui="carbon"] .gap-stamp-cell[data-thermal="unmapped"] { background: color-mix(in srgb, var(--gap-fill) 30%, var(--cds-layer-01)); outline: 1px dashed var(--gap-ink); outline-offset: -5px; }
+[data-ui="carbon"] .gap-stamp-cell[data-thermal="unmapped"] { background: var(--gap-fill); box-shadow: inset 0 0 0 1px var(--gap-ink); }
 [data-ui="carbon"] .gap-stamp-cell .gap-fp-cell-label { overflow-wrap: anywhere; font-size: .65rem; font-weight: 600; line-height: 1.2; }
 [data-ui="carbon"] .gap-stamp-cell small { grid-column: 1 / -1; font-size: .5625rem; }
 

@@ -286,6 +286,8 @@ const LABELS = {
     patient: "дані кейсу",
     pmid: "публікація PubMed",
     guideline: "настанова · попередній слід",
+    protocol: "клінічний протокол · попередній слід",
+    evidence_summary: "огляд доказів · попередній слід",
     gap: "прогалина доказів",
     local: "локальне джерело",
   },
@@ -400,6 +402,8 @@ function sourceDisplayTitle(source) {
 
 function evidencePublicationKind(source) {
   const citation = displayText(source?.citation || source?.ref || "");
+  if (source?.type === "protocol") return "Протокол";
+  if (source?.type === "evidence_summary") return "Огляд доказів";
   if (/clinical practice guideline|\bguidelines?\b/iu.test(citation)) return "Настанова";
   if (/classification/iu.test(citation)) return "Класифікація";
   if (/consensus|diagnostic criteria/iu.test(citation)) return "Консенсус";
@@ -425,6 +429,8 @@ function evidenceChip(ref) {
   const map = {
     pmid: ["chip evi", "Стаття · "],
     guideline: ["chip guideline", "Настанова · "],
+    protocol: ["chip guideline", "Протокол · "],
+    evidence_summary: ["chip evi", "Огляд доказів · "],
     gap: ["chip gap", "Прогалина · "],
     patient: ["chip fact", ""],
     case: ["chip fact", ""],
@@ -443,10 +449,10 @@ function evidenceChip(ref) {
     return element("a", {
       className: `${cls} chip-link`,
       text: `${icon}${gist}`,
-      attrs: { href: source.source_uri, target: "_blank", rel: "noopener", title: tooltip },
+      attrs: { href: source.source_uri, target: "_blank", rel: "noopener", title: tooltip, "data-source-ref": source.id, "data-source-kind": sourceRegistryKind(source) },
     });
   }
-  return element("span", { className: cls, text: `${icon}${gist}`, attrs: { title: tooltip } });
+  return element("span", { className: cls, text: `${icon}${gist}`, attrs: { title: tooltip, "data-source-ref": source.id, "data-source-kind": sourceRegistryKind(source) } });
 }
 
 // Stable source locator used across clinician-facing projections.
@@ -792,7 +798,29 @@ function governanceSummary(bundle) {
 }
 
 function sourceById(id) {
-  return state.bundle.sources.find((source) => source.id === id);
+  const projection = currentReasoningProjection(state.bundle);
+  const sources = projection.status === "ok" ? projection.bundle.sources : state.bundle.sources;
+  return (sources || []).find((source) => source.id === id);
+}
+
+function currentExternalSources() {
+  const projection = currentReasoningProjection(state.bundle);
+  return projection.status === "ok" ? projection.externalSources || [] : [];
+}
+
+function candidateExternalSourceStrip(sources, label = "Зовнішні джерела кандидатного синтезу") {
+  if (!sources?.length) return null;
+  const strip = element("aside", { className: "candidate-external-sources" });
+  strip.append(
+    element("div", { className: "candidate-external-sources-head" }, [
+      element("strong", { text: label }),
+      statusTag("джерельний запис · потребує оцінки застосовності", "candidate"),
+    ]),
+    element("div", { className: "chip-row", attrs: { "aria-label": label } }, sources.map((source) => evidenceChip(source.id))),
+  );
+  const useLimit = sources.find((source) => source.use_limit)?.use_limit;
+  if (useLimit) strip.append(element("p", { text: clinicianNarrative(useLimit) }));
+  return strip;
 }
 
 function claimById(id) {
@@ -858,7 +886,7 @@ function sourceStatusChips(source) {
   }
   if (source.type === "pmid") {
     row.append(statusTag("публікація", "evidence"));
-  } else if (source.type === "guideline") {
+  } else if (["guideline", "protocol", "evidence_summary"].includes(source.type)) {
     return null;
   } else if (source.type === "gap") {
     row.append(statusTag("прогалина доказів", "critical"));
@@ -1296,6 +1324,9 @@ function renderOverview() {
     ]),
   ]);
   assessmentCopy.append(rationale);
+  if (candidateProjection?.externalSources?.length) {
+    assessmentCopy.append(candidateExternalSourceStrip(candidateProjection.externalSources));
+  }
   const observationTrace = candidateProjection ? candidateObservationTrace(lead, bundle) : null;
   if (observationTrace) assessmentCopy.append(observationTrace);
   const challenge = candidateProjection ? candidateOverviewChallenge(lead, bundle) : hypothesisChallenge(lead);
@@ -1359,7 +1390,13 @@ function renderOverview() {
     ]),
     element("article", { attrs: { "data-kind": "refute" } }, [
       element("h4", { text: "Змусить змінити напрям" }),
-      element("p", { text: clinicianNarrative(lead?.refutes || lead?.applicability_limits?.[0] || "Критерій спростування не записано.") }),
+      element("p", {
+        text: clinicianNarrative(
+          relationCountsForHypothesis(reasoningBundle, lead?.id).refute > 0
+            ? lead?.refutes || "У ревізії записано прямі суперечні спостереження; відкрийте граф для точного переліку."
+            : "Прямих суперечних фактів у поточній ревізії не записано. Обмеження та відсутні докази наведено окремо.",
+        ),
+      }),
     ]),
   ]);
   balance.append(balanceHead, criteria);
@@ -2087,59 +2124,73 @@ function spineEventReadout(event) {
   return nodes;
 }
 
-function spineUndatedDocuments(bundle) {
+function spineUndatedObservationGroups(bundle) {
   const documents = Array.isArray(bundle?.source_documents) ? bundle.source_documents : [];
   const observations = Array.isArray(bundle?.observations) ? bundle.observations : [];
-  return documents
-    .filter((documentItem) => !documentItem.document_date)
-    .map((documentItem) => {
-      const documentObservations = spineDocumentObservations(documentItem, observations);
-      const focus = spineDocumentFocus(documentItem, documentObservations);
-      const pages = [...new Set(documentObservations.map((observation) => observation.page || observation.source_address?.page).filter(Boolean))].sort((a, b) => Number(a) - Number(b));
-      return {
-        id: documentItem.id,
-        label: focus,
-        summary: documentItem.summary || spineObservationGroupSummary(documentObservations),
-        detail_sections: spineObservationSections(documentObservations),
-        source_pages: pages,
-        review_state: documentObservations.length && documentObservations.every((observation) => observation?.verification?.human_verified === true) ? "verified" : "candidate",
-        _sourceDocumentIds: [documentItem.id],
-        _observationIds: documentObservations.map((observation) => observation.id),
-      };
-    })
-    .filter((documentItem) => documentItem._observationIds.length);
+  const documentsById = new Map(documents.map((documentItem) => [documentItem.id, documentItem]));
+  const groups = new Map();
+  observations
+    .filter((observation) => !observation?.effective_at && !documentsById.get(observation?.document_id)?.document_date)
+    .forEach((observation) => {
+      const page = observation.page || observation.source_address?.page || "";
+      const key = `${observation.document_id || "unknown"}::${page || "unknown"}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(observation);
+    });
+  return [...groups.entries()].map(([key, groupObservations]) => {
+    const documentId = groupObservations[0]?.document_id || "";
+    const documentItem = documentsById.get(documentId);
+    const page = groupObservations[0]?.page || groupObservations[0]?.source_address?.page || "";
+    const sections = spineObservationSections(groupObservations);
+    const sectionLabel = sections.length === 1 ? sections[0].title : "Клінічні дані";
+    const label = `${sectionLabel}${page ? ` · сторінка ${page}` : " · сторінку не вказано"}`;
+    return {
+      id: key,
+      label,
+      summary: spineObservationGroupSummary(groupObservations),
+      detail_sections: sections,
+      source_pages: page ? [page] : [],
+      review_state: groupObservations.every((observation) => observation?.verification?.human_verified === true) ? "verified" : "candidate",
+      _sourceDocumentIds: documentItem ? [documentItem.id] : documentId ? [documentId] : [],
+      _observationIds: groupObservations.map((observation) => observation.id),
+    };
+  }).sort((left, right) => Number(left.source_pages[0] || 9999) - Number(right.source_pages[0] || 9999));
 }
 
 function spineUndatedPanel(bundle) {
-  const documents = spineUndatedDocuments(bundle);
-  if (!documents.length) return null;
+  const groups = spineUndatedObservationGroups(bundle);
+  if (!groups.length) return null;
+  const observationCount = groups.reduce((total, group) => total + group._observationIds.length, 0);
   return element("details", {
     className: "clinical-spine-undated",
-    attrs: { "data-undated-count": documents.length },
+    attrs: { "data-undated-count": observationCount },
   }, [
     element("summary", {}, [
       element("span", {}, [
-        element("strong", { text: "Документи без підтвердженої дати" }),
-        element("small", { text: "Не розміщені на часовій шкалі, доки дата не буде звірена." }),
+        element("strong", { text: "Спостереження без підтвердженої дати" }),
+        element("small", { text: "Усі записи збережено за сторінками; на часову шкалу їх не переносять без точної дати." }),
       ]),
-      element("b", { text: documents.length }),
+      element("b", { text: observationCount }),
     ]),
-    element("div", { className: "clinical-spine-undated-list" }, documents.map((documentItem) => (
+    element("div", { className: "clinical-spine-undated-list" }, groups.map((group) => (
       element("details", {
         className: "clinical-spine-undated-item",
-        attrs: { "data-source-document-id": documentItem.id },
+        attrs: {
+          "data-undated-group": group.id,
+          "data-source-document-id": group._sourceDocumentIds[0] || "",
+        },
       }, [
         element("summary", {}, [
           element("span", {}, [
-            element("strong", { text: documentItem.label }),
-            element("small", { text: `${documentItem._observationIds.length} структурованих спостережень` }),
+            element("strong", { text: group.label }),
+            element("small", { text: `${group._observationIds.length} структурованих спостережень` }),
           ]),
           element("i", { text: "+" }),
         ]),
         element("div", { className: "clinical-spine-undated-body" }, [
-          element("p", { text: documentItem.summary }),
-          spineEventProvenance(documentItem),
-          spineDetailGrid(documentItem.detail_sections),
+          element("p", { text: group.summary }),
+          spineEventProvenance(group),
+          spineDetailGrid(group.detail_sections),
         ]),
       ])
     ))),
@@ -2349,7 +2400,9 @@ function renderTimeline() {
   const events = spinePrepareEvents(state.bundle);
   if (!events.length) {
     const empty = section("Час", "Перебіг у документах");
-    empty.append(emptyState("У bundle немає нормалізованих подій."));
+    empty.append(emptyState("У пакеті немає подій із підтвердженою датою."));
+    const undatedPanel = spineUndatedPanel(state.bundle);
+    if (undatedPanel) empty.append(undatedPanel);
     return empty;
   }
 
@@ -2975,14 +3028,18 @@ function renderProvenance() {
 
 function sourceRegistryKind(source) {
   if (["case", "patient", "local"].includes(source?.type)) return "primary";
-  if (["guideline", "pmid", "gap"].includes(source?.type)) return source.type;
+  if (["guideline", "protocol", "evidence_summary"].includes(source?.type)) return "guidance";
+  if (["pmid", "gap"].includes(source?.type)) return source.type;
   return "other";
 }
 
 function sourceRegistryType(source) {
+  if (source?.type === "guideline") return "Настанова";
+  if (source?.type === "protocol") return "Протокол";
+  if (source?.type === "evidence_summary") return "Огляд доказів";
   const labels = {
     primary: "Первинне",
-    guideline: "Настанова",
+    guidance: "Клінічне джерело",
     pmid: "PubMed",
     gap: "Прогалина",
     other: "Інше",
@@ -3012,8 +3069,7 @@ function sourceRegistryId(source) {
   return String(source?.id || "—").replace(/^SRC-T\d+-/u, "SRC-LOCAL-");
 }
 
-function sourceRegistry() {
-  const sources = state.bundle.sources || [];
+function sourceRegistry(sources = state.bundle.sources || []) {
   const registry = section(
     "Каталог",
     `Реєстр джерел · ${sources.length}`,
@@ -3024,7 +3080,7 @@ function sourceRegistry() {
   const filters = [
     ["all", "Усі"],
     ["primary", "Первинні"],
-    ["guideline", "Настанови"],
+    ["guidance", "Настанови й огляди"],
     ["pmid", "PubMed"],
     ["gap", "Прогалини"],
   ];
@@ -3059,7 +3115,11 @@ function sourceRegistry() {
         idControl,
         sourceRegistryType(source),
         sourceRegistryStatus(source),
-        element("p", { className: "source-registry-citation", text: citation }),
+        element("div", { className: "source-registry-citation" }, [
+          element("p", { text: citation }),
+          source.candidate_use ? element("small", { text: clinicianNarrative(source.candidate_use) }) : null,
+          source.use_limit ? element("small", { className: "source-registry-limit", text: `Межа: ${clinicianNarrative(source.use_limit)}` }) : null,
+        ]),
         element("span", {
           className: "source-support-count",
           text: String((source.supports || []).length || "—"),
@@ -3097,7 +3157,9 @@ function renderEvidence() {
       "Каталог публікацій, настанов і первинних документів, на яких ґрунтуються гіпотези. Клінічні прогалини та повний реєстр спостережень доступні в розділі «Повні дані».",
     ),
   );
-  fragment.append(sourceRegistry());
+  const projection = currentReasoningProjection(state.bundle);
+  const sources = projection.status === "ok" ? projection.bundle.sources || [] : state.bundle.sources || [];
+  fragment.append(sourceRegistry(sources));
 
   const claims = state.bundle.claims || [];
   if (claims.length) {
@@ -4179,7 +4241,7 @@ function renderGraph() {
   const graphObservationById = (id) => (state.bundle?.observations || []).find((observation) => observation.id === id);
   const graphDocumentById = (id) => (state.bundle?.source_documents || []).find((documentItem) => documentItem.id === id);
 
-  function graphSourceAddress(fact) {
+  function graphSourceAddress(fact, options = {}) {
     const observation = graphObservationById(fact?.source_observation_id || fact?.id);
     if (!observation) return null;
     const page = observation.page ?? observation.source_address?.page;
@@ -4190,7 +4252,7 @@ function renderGraph() {
     const documentItem = graphDocumentById(observation.document_id);
     const verified = observation.verification?.human_verified === true;
     const address = element("div", {
-      className: "graph-source-address",
+      className: `graph-source-address${options.compact ? " is-compact" : ""}`,
       attrs: {
         "data-source-address": observation.id,
         "data-source-document": observation.document_id || "",
@@ -4200,15 +4262,19 @@ function renderGraph() {
         "data-source-human-verified": String(verified),
       },
     });
-    address.append(
-      element("span", { className: "graph-source-page", text: page ? `Сторінка ${page}` : "Сторінка не вказана" }),
-      element("span", { className: "graph-source-document", text: observationSourceLabel(documentItem) }),
-    );
+    address.append(element("span", {
+      className: "graph-source-page",
+      text: options.compact ? (page ? `с. ${page}` : "сторінку не вказано") : (page ? `Сторінка ${page}` : "Сторінка не вказана"),
+      attrs: documentItem ? { title: observationSourceLabel(documentItem) } : {},
+    }));
+    if (!options.compact) address.append(element("span", { className: "graph-source-document", text: observationSourceLabel(documentItem) }));
     if (compactRowId) address.append(element("code", { text: `Рядок ${compactRowId}`, attrs: { title: rowId } }));
     else if (compactFragmentId) address.append(element("code", { text: `Фрагмент ${compactFragmentId}`, attrs: { title: fragmentId } }));
     address.append(element("span", {
       className: `graph-source-verification ${verified ? "is-verified" : "is-unverified"}`,
-      text: verified ? "Людська звірка пройдена" : "Людську звірку не зафіксовано",
+      text: options.compact
+        ? (verified ? "звірено" : "звірку не зафіксовано")
+        : (verified ? "Людська звірка пройдена" : "Людську звірку не зафіксовано"),
     }));
     return address;
   }
@@ -4225,9 +4291,8 @@ function renderGraph() {
       element("div", { className: "graph-source-receipt-head" }, [
         element("strong", { text: fact?.label || "Джерельний запис недоступний" }),
       ]),
-      element("p", { className: "graph-source-receipt-detail", text: fact?.detail || "Клінічне значення окремо не записано." }),
     );
-    const address = graphSourceAddress(fact);
+    const address = graphSourceAddress(fact, { compact: true });
     if (address) receipt.append(address);
     return receipt;
   }
@@ -4321,6 +4386,10 @@ function renderGraph() {
         ? element("ul", { className: "graph-reasoning-points" }, rationalePoints.map((value) => element("li", { text: value })))
         : element("p", { text: "Робочу інтерпретацію не записано." }));
       body.append(interpretation);
+      const externalSources = currentExternalSources();
+      if (externalSources.length) {
+        body.append(candidateExternalSourceStrip(externalSources, "Джерела, що обмежують тлумачення ревізії"));
+      }
       const judgement = element("dl", { className: "graph-reasoning-judgement" });
       [
         ["Відсутні докази", sourceHypothesis.missing_evidence],
@@ -4410,7 +4479,11 @@ function renderGraph() {
     focusStatus.title = focusStatus.textContent;
     detail.append(
       element("p", { className: "graph-detail-kicker", text: detailKind }),
-      element("h3", { className: "graph-detail-title", text: item.label }),
+      element("h3", {
+        className: "graph-detail-title",
+        text: kind === "hypothesis" ? item.short_label || item.label : item.label,
+        attrs: kind === "hypothesis" && item.short_label && item.short_label !== item.label ? { title: item.label } : {},
+      }),
       element("p", { className: "graph-detail-label", text: kind === "fact" ? "Що зафіксовано" : "Поточна оцінка" }),
       element("p", { className: "graph-detail-copy", text: kind === "fact" ? item.detail : item.stance }),
     );
@@ -4441,6 +4514,12 @@ function renderGraph() {
       className: "graph-detail-label graph-detail-relations-label",
       text: kind === "hypothesis" && candidateRevision ? "Джерельні записи" : "Пов’язані дані",
     }));
+    if (kind === "hypothesis" && relationCounts.refute === 0) {
+      detail.append(element("p", {
+        className: "graph-detail-zero-state",
+        text: "Прямих суперечних фактів не записано. Це не закриває прогалини й не підтверджує гіпотезу остаточно.",
+      }));
+    }
     const list = element("ul", { className: "relation-list" });
     connections
       .slice()
@@ -4524,6 +4603,7 @@ function renderGraph() {
       const role = svgElement("text", { class: "node-status-label", x: "70", y: "-12" });
       role.textContent = graphHypothesisRole(item);
       group.append(code, role);
+      group.append(svgElement("title", { text: item.label }));
       const labelLines = wrapLines(compactHypothesisLabel(item), 30, 2);
       labelLines.forEach((line, index) => {
         const label = svgElement("text", {
@@ -4670,6 +4750,8 @@ function renderReasoningCandidate(candidate) {
     ]),
   );
   section.append(head);
+  const externalSourceStrip = candidateExternalSourceStrip(currentExternalSources());
+  if (externalSourceStrip) section.append(externalSourceStrip);
 
   if (lead) {
     const counts = candidateRelationCounts(revision, lead.id);
@@ -4693,12 +4775,14 @@ function renderReasoningCandidate(candidate) {
   const ranked = element("details", { className: "reasoning-disclosure", attrs: { open: "" } });
   ranked.append(element("summary", { text: `Ранжований диференціал · ${hypotheses.length}` }));
   const hypothesisList = element("ol", { className: "reasoning-hypothesis-list" });
-  const reasoningList = (label, values, className = "") => {
+  const reasoningList = (label, values, className = "", emptyText = "") => {
     const items = Array.isArray(values) ? values : [];
-    if (!items.length) return null;
+    if (!items.length && !emptyText) return null;
     return element("section", { className: `reasoning-hypothesis-field ${className}`.trim() }, [
-      element("strong", { text: label }),
-      element("ul", {}, items.map((value) => element("li", { text: clinicianNarrative(value) }))),
+      element("h4", { text: label }),
+      items.length
+        ? element("ul", {}, items.map((value) => element("li", { text: clinicianNarrative(value) })))
+        : element("p", { className: "reasoning-zero-state", text: emptyText }),
     ]);
   };
   hypotheses.forEach((hypothesis) => {
@@ -4708,7 +4792,12 @@ function renderReasoningCandidate(candidate) {
       element("summary", { text: "Повне обґрунтування й межі" }),
       element("p", { text: clinicianNarrative(hypothesis.rationale) }),
       reasoningList("Підтримувальні спостереження", hypothesis.support_refs, "is-support"),
-      reasoningList("Суперечні спостереження", hypothesis.refute_refs, "is-refute"),
+      reasoningList(
+        "Суперечні спостереження",
+        hypothesis.refute_refs,
+        "is-refute",
+        "Прямих суперечних фактів у поточній ревізії не записано. Це не закриває відсутні докази.",
+      ),
       reasoningList("Нейтральні спостереження", hypothesis.neutral_refs),
       reasoningList("Відсутні докази", hypothesis.missing_evidence),
       reasoningList("Межі застосовності", hypothesis.applicability_limits),
@@ -4815,11 +4904,11 @@ async function renderAgent() {
   let health = null;
   if (!IS_PUBLIC_STATIC_DEMO) {
     try {
-      let probeAgentApi = true;
+      let probeAgentApi = false;
       const runtime = await fetch("/health/ready", { cache: "no-store", signal: controller.signal });
       if (runtime.ok) {
         const runtimeStatus = await runtime.json();
-        probeAgentApi = runtimeStatus?.agent_api !== false;
+        probeAgentApi = runtimeStatus?.agent_api === true;
       }
       if (probeAgentApi) {
         const response = await fetch(`/api/agent/health?caseKey=${encodeURIComponent(state.caseKey)}`, {

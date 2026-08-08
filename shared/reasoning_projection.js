@@ -24,6 +24,61 @@ function compactText(value) {
   return String(value ?? "").replace(/\s+/gu, " ").trim();
 }
 
+function derivedHypothesisShortLabel(hypothesis) {
+  const fullLabel = compactText(hypothesis?.label);
+  const explicit = compactText(hypothesis?.short_label);
+  if (explicit && explicit !== fullLabel) return explicit;
+
+  let shortLabel = fullLabel
+    .split(/\s+—\s+/u)[0]
+    .split(/,\s*(?=(?:поки|включно|за умови|яка|який|яке)(?:\s|$))/iu)[0]
+    .split(/\s+або\s+(?=(?:інш\p{L}*)(?:\s|$))/iu)[0]
+    .trim();
+  const diagnosisWithQualifier = shortLabel.match(/^(.+?лімфом\p{L}*)\s+(?:з|із|зі)\s+.+$/iu);
+  if (diagnosisWithQualifier?.[1]?.split(/\s+/u).length >= 3) shortLabel = diagnosisWithQualifier[1];
+  return shortLabel || fullLabel;
+}
+
+function candidateSourceType(source) {
+  const url = compactText(source?.url);
+  const title = compactText(source?.title);
+  if (/pubmed\.ncbi\.nlm\.nih\.gov\/\d+/iu.test(url)) return "pmid";
+  if (/\bprotocol\b/iu.test(title)) return "protocol";
+  if (/\b(?:guideline|practice guideline)\b/iu.test(title)) return "guideline";
+  if (/\b(?:treatment pdq|evidence summary)\b/iu.test(title)) return "evidence_summary";
+  return "web";
+}
+
+function candidateSourceRef(source, type) {
+  if (type === "pmid") return compactText(source?.url).match(/pubmed\.ncbi\.nlm\.nih\.gov\/(\d+)/iu)?.[1] || compactText(source?.title);
+  return compactText(source?.title || source?.url);
+}
+
+export function projectCandidateExternalSources(revision) {
+  let sourceIndex = 0;
+  return asArray(revision?.input?.source_corpus_receipts).flatMap((receipt, receiptIndex) => (
+    asArray(receipt?.sources).map((source) => {
+      sourceIndex += 1;
+      const type = candidateSourceType(source);
+      return {
+        id: `E-CAND-${sourceIndex}`,
+        type,
+        ref: candidateSourceRef(source, type),
+        citation: compactText(source?.title || source?.url || `Зовнішнє джерело ${sourceIndex}`),
+        source_uri: compactText(source?.url),
+        supports: [],
+        human_verified: false,
+        status: "candidate_external_receipt",
+        candidate_use: compactText(source?.use),
+        use_limit: compactText(receipt?.use_limit),
+        retrieved_at: compactText(receipt?.retrieved_at),
+        source_scope: compactText(receipt?.scope),
+        receipt_index: receiptIndex,
+      };
+    })
+  ));
+}
+
 function observationValue(observation) {
   if (observation?.value_number !== null && observation?.value_number !== undefined) {
     return compactText(`${observation.value_number}${observation.unit ? ` ${observation.unit}` : ""}`);
@@ -75,7 +130,7 @@ function projectedClaim(claim) {
 function projectedHypothesis(hypothesis) {
   return {
     ...hypothesis,
-    short_label: hypothesis.short_label || hypothesis.label,
+    short_label: derivedHypothesisShortLabel(hypothesis),
     stance: hypothesis.rationale,
     status: Number(hypothesis.rank) === 1 ? "leading-provisional" : "candidate",
     data_refs: [
@@ -84,7 +139,7 @@ function projectedHypothesis(hypothesis) {
       ...asArray(hypothesis.neutral_refs),
     ],
     confirms: asArray(hypothesis.discriminating_checks)[0] || "Критерій підтвердження не записано.",
-    refutes: asArray(hypothesis.applicability_limits)[0] || "Критерій зміни напряму не записано.",
+    refutes: asArray(hypothesis.refute_refs).length ? "У ревізії записано прямі суперечні спостереження." : null,
   };
 }
 
@@ -149,17 +204,22 @@ export function projectCandidateReasoning(bundle, candidate) {
   const referencedEvidenceIds = [...new Set(relations.map((item) => item.fact_id).filter(Boolean))];
   const facts = referencedEvidenceIds.map((id) => acceptedEvidenceById.get(id)).filter(Boolean);
   const workup = projectedWorkup(revision, hypotheses);
+  const externalSources = projectCandidateExternalSources(revision);
+  const externalSourceIds = new Set(externalSources.map((item) => item.id));
+  const acceptedSources = asArray(bundle?.sources).filter((item) => !externalSourceIds.has(item?.id));
   const projectedBundle = {
     ...bundle,
     facts,
     hypotheses,
     relations,
+    sources: [...acceptedSources, ...externalSources],
     methodology: {
       ...(bundle?.methodology || {}),
       workup,
       candidate_revision: {
         reasoning_revision_id: revision.reasoning_revision_id,
         critical_gaps: asArray(revision.critical_gaps),
+        external_source_refs: externalSources.map((item) => item.id),
         source: "immutable_candidate_revision",
       },
     },
@@ -172,6 +232,7 @@ export function projectCandidateReasoning(bundle, candidate) {
     hypotheses,
     relations,
     workup,
+    externalSources,
     bundle: projectedBundle,
   };
 }

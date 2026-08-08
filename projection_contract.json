@@ -52,8 +52,26 @@
       "critical_gaps",
       "safety.limitations",
       "method.limitations",
-      "comparison_to_previous"
-    ]
+      "comparison_to_previous",
+      "input.source_corpus_receipts.sources"
+    ],
+    "relation_semantics": {
+      "refute": "direct_typed_relation_only",
+      "missing_evidence": "must_not_be_projected_as_refute",
+      "applicability_limits": "must_not_be_projected_as_refute",
+      "zero_refute": "explicit_visible_state"
+    },
+    "external_source_receipts": {
+      "set_semantics": "exact_receipt_source_set",
+      "projection_status": "candidate_external_receipt",
+      "must_expose": [
+        "title",
+        "url",
+        "use",
+        "use_limit"
+      ],
+      "must_not_promote_to_accepted_evidence": true
+    }
   },
   "surface_semantic_closure": {
     "overview": {
@@ -61,10 +79,17 @@
       "clinical_period": "min_max_of_timeline_source_documents_and_observation_effective_at",
       "candidate_rationale": "structured_observation_receipts_plus_agent_interpretation"
     },
+    "history": {
+      "dated_observations": "exact_set_by_effective_at_or_source_document_date",
+      "undated_observations": "exact_remaining_id_set",
+      "forbid_release_timestamp_fallback": true
+    },
     "graph": {
       "candidate_hypotheses": "exact_id_set",
       "candidate_relations": "exact_typed_edge_set",
-      "referenced_accepted_observations": "exact_id_set"
+      "referenced_accepted_observations": "exact_id_set",
+      "card_label": "short_label_with_full_label_metadata",
+      "repeated_source_receipt": "compact_address_only"
     },
     "gap_map": {
       "candidate_critical_gaps": "exact_ordered_set",
@@ -74,6 +99,9 @@
     "clinical_state": {
       "generic_observation_category_counts": "exact_count_by_kind",
       "full_observation_registry": "exact_id_set"
+    },
+    "evidence": {
+      "candidate_external_sources": "exact_receipt_source_set_with_candidate_status_and_use_limit"
     },
     "consilium_packet": {
       "candidate_hypotheses": "exact_ranked_set",

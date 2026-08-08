@@ -1,7 +1,7 @@
 {
   "schema_version": "hematoboard.public-release/1.0.0",
-  "released_at": "2026-08-08T16:06:51Z",
-  "release_tag": "20260808case006surfaceclosure1",
+  "released_at": "2026-08-08T18:38:45Z",
+  "release_tag": "20260808case006sourcevisibility1",
   "default_case": "case02",
   "case_scope": {
     "case_key": "case02",
@@ -55,6 +55,10 @@
     "case006_critical_gaps": 8,
     "case006_workup_steps": 5,
     "case006_semantic_surface_closure": "pass",
+    "case006_external_candidate_receipts": 4,
+    "case006_history_dated_observations": 8,
+    "case006_history_undated_observations": 50,
+    "case006_source_visibility_closure": "pass",
     "clinical_acceptance_changed": false
   },
   "boundary": "Публічний read-only технічний демо-реліз. Кандидатний синтез CASE006 не підміняє прийняту лікарем клінічну картину."
