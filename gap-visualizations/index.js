@@ -79,7 +79,11 @@ function makeAuditRegistry(model, selectCell) {
   const perimeterSection = el("section", {}, [el("h4", { text: "Джерельний периметр" })]);
   const perimeter = el("div", { className: "gap-suite-perimeter-list" });
   model.projection.sourcePerimeter.forEach((item) => {
-    perimeter.append(el("article", {}, [
+    perimeter.append(el("article", {
+      attrs: item.origin === "candidate_revision"
+        ? { "data-candidate-gap-index": item.candidateIndex, "data-candidate-gap-id": item.id }
+        : { "data-gap-origin": item.origin || "source" },
+    }, [
       el("strong", { text: item.title }),
       el("p", { text: item.detail }),
       el("span", { text: item.page ? `Сторінка ${item.page}` : "Гіпотезу ще не визначено" }),
@@ -98,24 +102,29 @@ function makeAuditRegistry(model, selectCell) {
   return disclosure;
 }
 
-export function renderGapVisualizationSuite({ bundle, projection, ui }) {
+export function renderGapVisualizationSuite({ bundle, projection, ui, projectionSource = "accepted-ledger" }) {
   const model = createGapVisualModel(projection);
   const fragment = document.createDocumentFragment();
   fragment.append(ui.viewHeader(
     "Карта прогалин",
     "П’ять варіантів доказового відбитка показують один детермінований стан різними способами: від підписаної розетки до щільного геному й атласу. Домени названі безпосередньо; жоден режим не показує ймовірність діагнозу.",
-    `${ui.caseCode(bundle)} · прийнятий пакет`,
+    projectionSource === "candidate-revision"
+      ? `${ui.caseCode(bundle)} · кандидатна ревізія · перевіряє лікар`
+      : `${ui.caseCode(bundle)} · прийнятий пакет`,
   ));
 
   const metrics = el("dl", { className: "gap-suite-metrics", attrs: { "aria-label": "Стан доказового контуру" } }, [
-    makeMetric("Відкриті прогалини", projection.metrics.cool + projection.metrics.cold, "Записаний сигнал не закриває клінічне питання"),
+    makeMetric("Записані прогалини", projection.metrics.explicitGaps || 0, "Окремі клінічні питання, записані у джерельному або кандидатному шарі"),
     makeMetric("Суперечності", projection.metrics.fracture, "Несумісні модальності або типізовані факти"),
     makeMetric("Спільні перевірки", projection.metrics.sharedBridges, "Один крок впливає більш ніж на одну гіпотезу"),
     makeMetric("Перевірено людиною", `${projection.sourceVerification.verified}/${projection.sourceVerification.total}`, "Окремі рішення лікаря щодо джерельних спостережень"),
   ]);
   fragment.append(metrics);
 
-  const suite = el("section", { className: "content-section gap-suite" });
+  const suite = el("section", {
+    className: "content-section gap-suite",
+    attrs: { "data-synthesis-source": projectionSource },
+  });
   if (!model.hypotheses.length || !model.columns.length) {
     suite.append(el("h3", { text: "Структури для карти ще недостатньо" }), el("p", { text: "У пакеті мають бути робочі гіпотези й типізовані доказові домени." }));
     fragment.append(suite);

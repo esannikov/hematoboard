@@ -283,6 +283,17 @@ export function projectGapMap(bundle) {
       detail: String(item.value_text || item.interpretation || "Потребує перевірки первинного документа."),
       page: item.page ?? item.source_address?.page ?? null,
       documentId: item.document_id || null,
+      origin: "source_observation",
+    }));
+  const candidateGaps = values(bundle?.methodology?.candidate_revision?.critical_gaps)
+    .map((gap, index) => ({
+      id: `candidate-gap-${index + 1}`,
+      title: String(gap),
+      detail: "Клінічне питання записано у поточній незмінній кандидатній ревізії та очікує рішення лікаря.",
+      page: null,
+      documentId: null,
+      origin: "candidate_revision",
+      candidateIndex: index,
     }));
   const unscopedModalityGaps = columns
     .filter((column) => column.kind === "modality" && !column.hypothesisIds.length)
@@ -292,6 +303,7 @@ export function projectGapMap(bundle) {
       detail: `${column.label}: ${column.signal}`,
       page: null,
       documentId: null,
+      origin: "modality",
     })));
   const hypothesesWithoutTypedLinks = orderedHypotheses.filter((hypothesis) => {
     const hasRelation = values(bundle?.relations).some((relation) => relation?.hypothesis_id === hypothesis.id);
@@ -305,13 +317,14 @@ export function projectGapMap(bundle) {
     return summary;
   }, { hot: 0, warm: 0, cool: 0, cold: 0, fracture: 0, unmapped: 0 });
   metrics.sharedBridges = bridges.filter((bridge) => bridge.origin === "workup" && bridge.hypothesisIds.length > 1).length;
+  metrics.explicitGaps = sourceGaps.length + candidateGaps.length + unscopedModalityGaps.length;
 
   return {
     hypotheses: orderedHypotheses,
     columns,
     cells,
     bridges,
-    sourcePerimeter: [...sourceGaps, ...unscopedModalityGaps],
+    sourcePerimeter: [...sourceGaps, ...candidateGaps, ...unscopedModalityGaps],
     hypothesesWithoutTypedLinks,
     sourceVerification: {
       total: observations.length,

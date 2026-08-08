@@ -100,3 +100,41 @@ export function sourceDocumentBreakdown(bundle) {
   }
   return counts;
 }
+
+function isoDate(value) {
+  const raw = String(value || "").trim();
+  return /^\d{4}-\d{2}-\d{2}$/u.test(raw) ? raw : null;
+}
+
+function displayDate(value) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/u.exec(value || "");
+  return match ? `${match[3]}.${match[2]}.${match[1]}` : value;
+}
+
+/**
+ * Clinical period is derived only from dated clinical records. Build/release
+ * timestamps are deliberately excluded so an undated case cannot appear dated.
+ */
+export function clinicalPeriod(bundle) {
+  const dates = [
+    ...(bundle?.timeline ?? []).map((item) => isoDate(item?.date)),
+    ...(bundle?.source_documents ?? []).map((item) => isoDate(item?.document_date)),
+    ...(bundle?.observations ?? []).map((item) => isoDate(item?.effective_at)),
+  ].filter(Boolean).sort();
+  if (!dates.length) {
+    return {
+      start: null,
+      end: null,
+      label: "Дати документів не нормалізовано",
+      source: "clinical_records_only",
+    };
+  }
+  const start = dates[0];
+  const end = dates.at(-1);
+  return {
+    start,
+    end,
+    label: start === end ? displayDate(start) : `${displayDate(start)} — ${displayDate(end)}`,
+    source: "clinical_records_only",
+  };
+}
