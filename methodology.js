@@ -7,13 +7,41 @@ import {
   workupPlan as projectedWorkupPlan,
 } from "./shared/case_projection.js?v=20260806synthesis1";
 import { projectClinicalState } from "./shared/clinical_state_projection.js?v=20260806synthesis1";
+import { projectGapMap } from "./shared/gap_projection.js?v=20260806gapmap1";
+import { renderGapVisualizationSuite } from "./gap-visualizations/index.js?v=20260806gapviews1";
 
 // The case registry is data, not code: methodology/active_cases.json is the
 // validated routing manifest. Adding a case never requires editing this file.
 const CASE_MANIFEST_URL = "active_cases.json";
+const PROJECTION_CONTRACT_URL = "projection_contract.json";
 const SYNTHESIS_PROTOCOL_URL = "synthesis_protocol.json";
 const IS_PUBLIC_STATIC_DEMO = window.location.hostname.endsWith(".github.io");
 let CASES = {};
+let SUPPORTED_BUNDLE_SCHEMA_VERSIONS = new Set();
+
+async function loadProjectionContract() {
+  let response;
+  try {
+    response = await fetch(PROJECTION_CONTRACT_URL, { cache: "no-store" });
+  } catch {
+    throw new ManifestError("network", "Контракт проєкції dashboard недоступний: немає відповіді від сервера.");
+  }
+  if (!response.ok) throw new ManifestError("http", `Контракт проєкції dashboard недоступний (HTTP ${response.status}).`);
+  let contract;
+  try {
+    contract = await response.json();
+  } catch {
+    throw new ManifestError("malformed", "Контракт проєкції dashboard пошкоджений: це не валідний JSON.");
+  }
+  if (
+    contract?.schema_version !== "hematoboard.dashboard-projection-contract/1.0.0"
+    || !Array.isArray(contract.supported_bundle_schema_versions)
+    || !contract.supported_bundle_schema_versions.length
+  ) {
+    throw new ManifestError("malformed", "Контракт проєкції dashboard не містить підтримуваних версій bundle.");
+  }
+  SUPPORTED_BUNDLE_SCHEMA_VERSIONS = new Set(contract.supported_bundle_schema_versions);
+}
 
 async function loadCaseManifest() {
   let response;
@@ -68,6 +96,7 @@ const PRIMARY_VIEWS = [
   ["overview", "Огляд"],
   ["timeline", "Історія"],
   ["graph", "Граф гіпотез"],
+  ["gaps", "Карта прогалин"],
 ];
 
 const DATA_VIEWS = [
@@ -111,82 +140,6 @@ const timelineZoomByCase = new Map();
 const timelineEventByCase = new Map();
 let activeViewCleanup = null;
 
-const PANEL_TEXT_UA = new Map([
-  ["Hgb", "Гемоглобін (Hb)"],
-  ["RBC", "Еритроцити"],
-  ["Ht", "Гематокрит"],
-  ["MCV", "Середній об’єм еритроцита (MCV)"],
-  ["MCH", "Середній вміст гемоглобіну в еритроциті (MCH)"],
-  ["MCHC", "Середня концентрація гемоглобіну (MCHC)"],
-  ["RDW-CV", "Ширина розподілу еритроцитів (RDW-CV)"],
-  ["PLT", "Тромбоцити"],
-  ["WBC", "Лейкоцити"],
-  ["Neu", "Нейтрофіли"],
-  ["Lymph", "Лімфоцити"],
-  ["Mono", "Моноцити"],
-  ["Iron (serum)", "Сироваткове залізо"],
-  ["ALT", "АЛТ"],
-  ["AST", "АСТ"],
-  ["Total cholesterol", "Загальний холестерин"],
-  ["g/L", "г/л"],
-  ["fL", "фл"],
-  ["pg", "пг"],
-  ["mm/h", "мм/год"],
-  ["ng/mL", "нг/мл"],
-  ["µmol/L", "мкмоль/л"],
-  ["U/L", "Од/л"],
-  ["mmol/L", "ммоль/л"],
-  ["Δ +55 — major rise; source of recovery unknown (transfusion? iron?)", "Зростання на 55 г/л; причина відновлення не записана — переливання крові чи препарати заліза"],
-  ["microcytic at both points", "Мікроцитоз в обох точках"],
-  ["hypochromic", "Гіпохромія"],
-  ["persistently high anisocytosis", "Стійко підвищений анізоцитоз"],
-  ["upper limit at A — reactive thrombocytosis fits iron deficiency / blood loss", "На верхній межі в першій точці; реактивний тромбоцитоз узгоджується з дефіцитом заліза або крововтратою"],
-  ["monocytes at/above ceiling at both points — worth an absolute count + smear", "Моноцити на верхній межі або вище в обох точках; доцільні абсолютна кількість і мазок крові"],
-  ["Δ +52 — marked systemic inflammatory signal at B", "Зростання на 52 мм/год — виражений системний запальний сигнал у другій точці"],
-  ["rose ~14× — but ferritin is an acute-phase reactant; the rise may be inflammation, not repletion", "Зріс приблизно у 14 разів, але як білок гострої фази може відображати запалення, а не відновлення запасів заліза"],
-  ["still LOW at B despite normal-range ferritin — the core dissociation", "Залишається нижче референсу в другій точці попри феритин у межах референсу — ключова розбіжність"],
-  ["Iron studies", "Показники обміну заліза"],
-  ["Ferritin", "Феритин"],
-  ["Serum iron", "Сироваткове залізо"],
-  ["Transferrin / TIBC", "Трансферин / загальна залізозв’язувальна здатність"],
-  ["TSAT", "Насичення трансферину (TSAT)"],
-  ["sTfR", "Розчинний рецептор трансферину (sTfR)"],
-  ["iron stores (acute-phase reactant — unreliable when inflamed)", "Запаси заліза: феритин є білком гострої фази й може бути ненадійним при запаленні"],
-  ["circulating iron (present at B only)", "Циркулююче залізо; визначено лише у другій точці"],
-  ["iron transport capacity", "Здатність крові переносити залізо"],
-  ["transferrin saturation — key to separate IDA from AI", "Допомагає відрізнити залізодефіцитну анемію від анемії запалення"],
-  ["soluble transferrin receptor — not an acute-phase reactant; the discriminator", "Не є білком гострої фази; допомагає розрізнити дефіцит заліза й анемію запалення"],
-  ["Inflammation", "Запалення"],
-  ["ESR", "ШОЕ"],
-  ["CRP", "С-реактивний білок"],
-  ["erythrocyte sedimentation rate", "Швидкість осідання еритроцитів"],
-  ["C-reactive protein — confirms the inflammatory state", "Підтверджує наявність запального процесу"],
-  ["Production / hemolysis", "Кровотворення / гемоліз"],
-  ["Reticulocytes", "Ретикулоцити"],
-  ["LDH", "ЛДГ"],
-  ["Haptoglobin", "Гаптоглобін"],
-  ["Bilirubin (total)", "Білірубін загальний"],
-  ["marrow response — is production adequate?", "Відповідь кісткового мозку: чи достатнє утворення еритроцитів"],
-  ["turnover / hemolysis / tumour burden", "Клітинний обмін, гемоліз або пухлинне навантаження"],
-  ["hemolysis screen", "Перевірка на гемоліз"],
-  ["Nutritional", "Нутритивні чинники"],
-  ["Vitamin B12", "Вітамін B12"],
-  ["Folate", "Фолат"],
-  ["macrocytic causes", "Макроцитарні причини анемії"],
-  ["Onco-heme", "Онкогематологічні перевірки"],
-  ["Peripheral smear (described)", "Мазок периферичної крові з описом"],
-  ["SPEP / immunofixation", "Електрофорез білків сироватки / імунофіксація"],
-  ["Free light chains", "Вільні легкі ланцюги"],
-  ["morphology by a hematologist (only a handwritten “aniso/poikilo +++” note exists)", "Морфологічна оцінка гематологом; наявна лише рукописна примітка «анізо/пойкіло +++»"],
-  ["paraprotein screen (age 87)", "Перевірка на парапротеїн з урахуванням віку"],
-  ["plasma-cell dyscrasia screen", "Перевірка на плазмоклітинне захворювання"],
-  ["Procedures", "Процедури"],
-  ["FOBT / FIT", "Аналіз калу на приховану кров (FOBT / FIT)"],
-  ["Colonoscopy / EGD", "Колоноскопія / езофагогастродуоденоскопія"],
-  ["occult GI blood loss", "Прихована шлунково-кишкова крововтрата"],
-  ["source of chronic blood loss in elderly IDA", "Пошук джерела хронічної крововтрати при залізодефіцитній анемії"],
-]);
-
 function meaningfulText(value) {
   if (value === null || value === undefined) return "";
   const text = String(value).trim();
@@ -200,8 +153,7 @@ function displayText(value) {
 }
 
 function panelText(value) {
-  const text = String(value ?? "");
-  return PANEL_TEXT_UA.get(text) || displayText(text);
+  return displayText(value);
 }
 
 const content = document.getElementById("content");
@@ -887,7 +839,7 @@ function sourceStatusChips(source) {
 function guidelineExplainer() {
   const box = element("aside", { className: "explainer" });
   box.innerHTML =
-    '<b>Як читати покажчик.</b> У записі <b>NCCN Hodgkin v2.2026 (HODG-1A, p.9)</b> зазначено назву й версію настанови, індекс розділу <b>HODG-1A</b> та сторінку PDF <b>9</b>. Це точне місце, яке треба відкрити в оригінальному документі й звірити перед клінічним використанням. Фіолетові чіпи нижче є такими покажчиками; повторюваний статусний чіп прибрано.';
+    '<b>Як читати покажчик.</b> Кожен запис містить назву й версію джерела, адресу розділу та сторінку. Це точне місце, яке треба відкрити в оригінальному документі й звірити перед клінічним використанням.';
   return box;
 }
 
@@ -3312,6 +3264,14 @@ function observationRegistry(context) {
         attrs: {
           "data-observation-row": "",
           "data-observation-id": observation.id,
+          "data-document-id": observation.document_id || "",
+          "data-source-fragment-id": observation.source_fragment_id || "",
+          "data-page": observation.page || observation.source_address?.page || "",
+          "data-kind": observation.kind || "",
+          "data-effective-at": observation.effective_at || "",
+          "data-comparator": observation.comparator || "",
+          "data-assertion-status": observation.assertion_status || "",
+          "data-human-verified": String(observation.verification?.human_verified === true),
           "data-group": group.id,
           "data-attention": String(attention),
           "data-search": searchText,
@@ -3409,6 +3369,19 @@ function table(headers, rows, className = "") {
   tableNode.append(head, body);
   wrapper.append(tableNode);
   return wrapper;
+}
+
+function renderGapMap() {
+  return renderGapVisualizationSuite({
+    bundle: state.bundle,
+    projection: projectGapMap(state.bundle),
+    ui: {
+      viewHeader,
+      caseCode: overviewCaseCode,
+      evidenceNode: evidenceIndex,
+      graphUrl: viewUrl("graph"),
+    },
+  });
 }
 
 function renderState() {
@@ -4279,6 +4252,17 @@ function candidateRelationCounts(revision, hypothesisId) {
   return counts;
 }
 
+function reasoningComparisonLabel(status) {
+  return {
+    added: "додано",
+    deactivated: "прибрано",
+    merged: "об’єднано",
+    reranked: "новий ранг",
+    retained: "збережено",
+    unchanged: "без змін",
+  }[status] || status || "змінено";
+}
+
 function renderReasoningCandidate(candidate) {
   const section = element("section", { className: "reasoning-candidate" });
   if (!candidate || candidate.status === "absent") return section;
@@ -4296,11 +4280,12 @@ function renderReasoningCandidate(candidate) {
   const isHistorical = candidate.status === "stale";
   const hypotheses = [...(revision.hypotheses || [])].sort((a, b) => Number(a.rank) - Number(b.rank));
   const lead = hypotheses[0];
+  const namedRevision = String(revision.reason || "").match(/^(CASE[\d-]+(?:-\d+)?)/u)?.[1];
   const head = element("header", { className: "reasoning-candidate-head" });
   head.append(
     element("div", {}, [
       element("p", { className: "reasoning-candidate-kicker", text: isHistorical ? "Історична кандидатна ревізія" : "Свіжа кандидатна ревізія" }),
-      element("h2", { text: `Синтез гіпотез ${overviewCaseCode(state.bundle)}` }),
+      element("h2", { text: `Синтез гіпотез ${namedRevision || overviewCaseCode(state.bundle)}` }),
       element("p", { text: isHistorical ? candidate.detail : revision.reason }),
     ]),
     element("div", { className: "reasoning-candidate-status" }, [
@@ -4332,14 +4317,33 @@ function renderReasoningCandidate(candidate) {
   const ranked = element("details", { className: "reasoning-disclosure", attrs: { open: "" } });
   ranked.append(element("summary", { text: `Ранжований диференціал · ${hypotheses.length}` }));
   const hypothesisList = element("ol", { className: "reasoning-hypothesis-list" });
+  const reasoningList = (label, values, className = "") => {
+    const items = Array.isArray(values) ? values : [];
+    if (!items.length) return null;
+    return element("section", { className: `reasoning-hypothesis-field ${className}`.trim() }, [
+      element("strong", { text: label }),
+      element("ul", {}, items.map((value) => element("li", { text: value }))),
+    ]);
+  };
   hypotheses.forEach((hypothesis) => {
     const counts = candidateRelationCounts(revision, hypothesis.id);
-    const item = element("li");
+    const item = element("li", { attrs: { "data-reasoning-hypothesis-id": hypothesis.id } });
+    const detail = element("details", { className: "reasoning-hypothesis-detail" }, [
+      element("summary", { text: "Повне обґрунтування й межі" }),
+      element("p", { text: hypothesis.rationale }),
+      reasoningList("Підтримувальні спостереження", hypothesis.support_refs, "is-support"),
+      reasoningList("Суперечні спостереження", hypothesis.refute_refs, "is-refute"),
+      reasoningList("Нейтральні спостереження", hypothesis.neutral_refs),
+      reasoningList("Відсутні докази", hypothesis.missing_evidence),
+      reasoningList("Межі застосовності", hypothesis.applicability_limits),
+      reasoningList("Діагностична верифікація", hypothesis.discriminating_checks),
+    ]);
     item.append(
       element("span", { className: "reasoning-rank", text: String(hypothesis.rank).padStart(2, "0") }),
       element("div", {}, [
         element("strong", { text: hypothesis.label }),
         element("p", { text: hypothesis.clinical_role }),
+        detail,
       ]),
       element("span", {
         className: "reasoning-mini-counts",
@@ -4351,16 +4355,38 @@ function renderReasoningCandidate(candidate) {
   ranked.append(hypothesisList);
   section.append(ranked);
 
+  const comparisonItems = revision.comparison_to_previous || [];
+  if (comparisonItems.length) {
+    const comparison = element("details", { className: "reasoning-disclosure reasoning-comparison", attrs: { open: "" } });
+    comparison.append(element("summary", { text: `Що змінилося проти попереднього синтезу · ${comparisonItems.length}` }));
+    const comparisonList = element("ol", { className: "reasoning-comparison-list" });
+    comparisonItems.forEach((item, index) => {
+      const path = [item.previous_id || "нова гілка", item.current_id || "закрито"].join(" → ");
+      comparisonList.append(
+        element("li", { attrs: { "data-comparison-status": item.status, "data-reasoning-comparison-index": index } }, [
+          element("span", { className: "reasoning-comparison-status", text: reasoningComparisonLabel(item.status) }),
+          element("div", {}, [
+            element("strong", { text: path }),
+            element("p", { text: item.reason }),
+          ]),
+        ]),
+      );
+    });
+    comparison.append(comparisonList);
+    section.append(comparison);
+  }
+
   const workup = element("details", { className: "reasoning-disclosure", attrs: { open: "" } });
   workup.append(element("summary", { text: `Діагностична верифікація · ${(revision.workup || []).length}` }));
   const workupList = element("div", { className: "reasoning-workup-list" });
   (revision.workup || []).forEach((item) => {
     const priority = item.priority === "critical" ? "критично" : item.priority === "high" ? "високий пріоритет" : "за показаннями";
     workupList.append(
-      element("article", { attrs: { "data-priority": item.priority } }, [
+      element("article", { attrs: { "data-priority": item.priority, "data-reasoning-workup-id": item.id } }, [
         element("div", {}, [element("strong", { text: item.id }), element("span", { text: priority })]),
         element("h3", { text: item.title }),
         element("p", { text: item.rationale }),
+        reasoningList("Розрізняє гіпотези", item.discriminates),
       ]),
     );
   });
@@ -4370,9 +4396,25 @@ function renderReasoningCandidate(candidate) {
   const gaps = element("details", { className: "reasoning-disclosure reasoning-gaps" });
   gaps.append(element("summary", { text: `Незакриті клінічні прогалини · ${(revision.critical_gaps || []).length}` }));
   const gapList = element("ul");
-  (revision.critical_gaps || []).forEach((gap) => gapList.append(element("li", { text: gap })));
+  (revision.critical_gaps || []).forEach((gap, index) => gapList.append(element("li", {
+    text: gap,
+    attrs: { "data-reasoning-gap-index": index },
+  })));
   gaps.append(gapList);
   section.append(gaps);
+
+  const safety = revision.safety || {};
+  const safetySection = element("details", { className: "reasoning-disclosure reasoning-safety", attrs: { open: "", "data-reasoning-safety": "" } });
+  safetySection.append(
+    element("summary", { text: `Межі безпеки · ${(safety.limitations || []).length}` }),
+    element("p", { text: safety.diagnosis_not_established === true ? "Діагноз не встановлено; це кандидатний синтез." : "Статус діагнозу не записано." }),
+    element("p", { text: safety.treatment_directives_present === false ? "Лікувальних призначень немає." : "Потрібна перевірка лікувальних формулювань." }),
+    element("ul", {}, (safety.limitations || []).map((item, index) => element("li", {
+      text: item,
+      attrs: { "data-reasoning-safety-limit-index": index },
+    }))),
+  );
+  section.append(safetySection);
 
   section.append(
     element("p", {
@@ -5136,6 +5178,12 @@ function synthesisStepState(stepId) {
         : "для активного пакета критичний прохід не записано",
     },
     P9: {
+      tone: candidate?.status === "ok" ? "review" : "blocked",
+      label: candidate?.status === "ok"
+        ? "потрібна hash-pinned browser projection receipt"
+        : "проєкцію не можна перевірити без актуального кандидата",
+    },
+    P10: {
       tone: "review",
       label: `${candidateLabel} · автоматичне прийняття заборонено`,
     },
@@ -5161,7 +5209,10 @@ function synthesisMethodReceipt(candidate) {
   if (Array.isArray(method.limitations) && method.limitations.length) {
     wrapper.append(element("div", { className: "synthesis-limitations" }, [
       element("strong", { text: "Записані обмеження" }),
-      element("ul", {}, method.limitations.map((item) => element("li", { text: item }))),
+      element("ul", {}, method.limitations.map((item, index) => element("li", {
+        text: item,
+        attrs: { "data-reasoning-method-limit-index": index },
+      }))),
     ]));
   }
   return wrapper;
@@ -5342,6 +5393,7 @@ const RENDERERS = {
   consilium: renderConsilium,
   evidence: renderEvidence,
   state: renderState,
+  gaps: renderGapMap,
   packet: renderPacket,
   graph: renderGraph,
   bodymap: renderBodyMap,
@@ -5512,7 +5564,7 @@ async function loadCase(caseKey, { push = false, focus = false } = {}) {
     } catch {
       throw new CaseLoadError("malformed", "Пакет кейсу пошкоджений: це не валідний JSON. Перевірте case_bundle.json валідатором.");
     }
-    if (!["1.0.0", "1.1.0", "1.2.0", "1.3.0", "1.4.0"].includes(bundle.schema_version)) {
+    if (!SUPPORTED_BUNDLE_SCHEMA_VERSIONS.has(bundle.schema_version)) {
       throw new CaseLoadError("schema", `Непідтримувана версія контракту: ${bundle.schema_version}.`);
     }
     if (bundle?.case?.id !== CASES[state.caseKey].caseId) {
@@ -5569,7 +5621,7 @@ function setView(view, push = false) {
 
 async function boot() {
   try {
-    await loadCaseManifest();
+    await Promise.all([loadProjectionContract(), loadCaseManifest()]);
   } catch (error) {
     statusLine.dataset.state = "error";
     statusLine.textContent = error instanceof Error ? error.message : String(error);

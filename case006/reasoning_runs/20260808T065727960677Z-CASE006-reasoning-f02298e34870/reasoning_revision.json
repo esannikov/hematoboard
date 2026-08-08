@@ -1,0 +1,474 @@
+{
+  "schema_version": "hematoboard.reasoning-revision/1.0.0",
+  "reasoning_revision_id": "RR-CASE006-f02298e34870",
+  "run_id": "20260808T065727960677Z-CASE006-reasoning-f02298e34870",
+  "case_id": "CASE006",
+  "case_scope": {
+    "schema_version": "hematoboard.case-scope/1.0.0",
+    "case_key": "case006",
+    "case_id": "CASE006",
+    "bundle_sha256": "53a883c8e441bda559fadf011c09a44c7ed43581c3472fda4a4bebc847ec5d74",
+    "revision_id": "CASE006@2f7a8ab2b810",
+    "operation_id": "20260808T065727960677Z-CASE006-reasoning-f02298e34870",
+    "clinical_input_sha256": "f651a62c9cbb0b2c05e6a601e5b65069ca10d13699a4c3a13ff48f6077b6f3d0"
+  },
+  "status": "candidate",
+  "created_at": "2026-08-08T06:57:27.960677Z",
+  "operator": "codex",
+  "executor": {
+    "kind": "codex_session",
+    "model": "gpt-5",
+    "agent_execution": true
+  },
+  "reason": "CASE006-3 · синтез на остаточно прийнятому source ledger з одним source-гейтом",
+  "input": {
+    "bundle_id": "CASE006@2f7a8ab2b810",
+    "bundle_sha256": "53a883c8e441bda559fadf011c09a44c7ed43581c3472fda4a4bebc847ec5d74",
+    "clinical_input_sha256": "f651a62c9cbb0b2c05e6a601e5b65069ca10d13699a4c3a13ff48f6077b6f3d0",
+    "source_corpus_receipts": [
+      {
+        "scope": "CASE006 accepted clinical input projection",
+        "bundle_id": "CASE006@052a5f519fbd",
+        "bundle_sha256": "21542adae029288f4b67cc649657462b84a62d4deca3de112f5665a79d563e96",
+        "clinical_input_sha256": "a33f2ef5532a092080f47be6227840b0bffb4c264a720073becffebb36324b5c",
+        "counts": {
+          "facts": 58,
+          "observations": 58,
+          "measurements": 33,
+          "narrative_findings": 25
+        }
+      },
+      {
+        "scope": "Current external classification and staging evidence used for general applicability checks",
+        "retrieved_at": "2026-08-08",
+        "sources": [
+          {
+            "title": "CAP Protocol for the Examination of Precursor and Mature Lymphoid Malignancies",
+            "url": "https://documents.cap.org/protocols/Heme.Lymphoid.Bx.Res_1.0.0.1.REL_CAPCP.pdf",
+            "use": "Morphology, immunophenotype and genetics must be integrated; follicular architecture and BCL2 rearrangement context."
+          },
+          {
+            "title": "International Consensus Classification of Mature Lymphoid Neoplasms",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35653592/",
+            "use": "BCL2 rearrangement and/or CD10 may favor follicular lymphoma in ambiguous morphology, without replacing morphology."
+          },
+          {
+            "title": "NCI Indolent B-Cell Non-Hodgkin Lymphoma Treatment PDQ",
+            "url": "https://www.cancer.gov/types/lymphoma/hp/indolent-b-cell-lymphoma-treatment-pdq",
+            "use": "General staging boundary: CT/PET-CT, marrow assessment when management would change, and distinction between diagnosis and extent."
+          },
+          {
+            "title": "Investigating unilateral pleural effusions: the role of cytology",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30262573/",
+            "use": "A negative pleural-fluid cytology has limited sensitivity in haematological malignancy and cannot independently exclude pleural involvement."
+          }
+        ],
+        "use_limit": "These sources constrain interpretation and missing-evidence checks; they do not establish diagnosis, stage, treatment indication or applicability for CASE006."
+      }
+    ]
+  },
+  "method": {
+    "clinical_input_projection_used": true,
+    "breadth_pass_before_bundle_comparison": true,
+    "fresh_session_blinded": true,
+    "grounding_pass": true,
+    "critic_pass": true,
+    "limitations": [
+      "Це перша reasoning revision CASE006: попереднього канонічного ранжування або accepted diagnosis не було.",
+      "Первинні скельця, парафіновий блок і повні ІГХ/FISH-протоколи не переглядалися; використано прийнятий знеособлений source ledger.",
+      "Фраза про транслокацію BCL2 не містить у source layer партнера, частки позитивних клітин, cutoff або типу FISH-проби.",
+      "BCL6-негативність і CD10-позитивність зафіксовані як джерельні твердження, але технічна якість і повнота панелі не відомі.",
+      "Дати CBC/біохімії не нормалізовані, тому лабораторні показники не трактуються як актуальні на момент синтезу.",
+      "Зовнішні джерела використано лише для класифікаційних і staging-меж; терапевтичні директиви не формувалися."
+    ]
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "rank": 1,
+      "label": "Фолікулярна В-клітинна лімфома — найбільш узгоджений робочий підтип",
+      "clinical_role": "Провідна candidate-гіпотеза для експертної гематопатологічної верифікації",
+      "rationale": "Джерело описує В-клітинну малоклітинну лімфому з нечіткими нодулярними структурами, CD10-позитивністю, низьким Ki-67 близько 10% і транслокацією BCL2. Разом це найбільше узгоджується з фолікулярною лімфомою. Водночас BCL6 негативний, повна архітектура та повна ІГХ-панель відсутні, а формулювання FISH не містить партнера транслокації; тому підтип і grade не закриті незалежно.",
+      "support_refs": [
+        "OBS-31FDB1A02C6C-053",
+        "OBS-31FDB1A02C6C-055",
+        "OBS-31FDB1A02C6C-056",
+        "OBS-31FDB1A02C6C-057",
+        "OBS-31FDB1A02C6C-058",
+        "OBS-31FDB1A02C6C-038",
+        "OBS-31FDB1A02C6C-042",
+        "OBS-31FDB1A02C6C-044"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "OBS-31FDB1A02C6C-033",
+        "OBS-31FDB1A02C6C-045"
+      ],
+      "missing_evidence": [
+        "Повний морфологічний опис репрезентативного лімфовузла з оцінкою архітектури, centrocytes/centroblasts, diffuse areas і grade",
+        "Повна ІГХ/flow-панель: CD20/PAX5, CD3, CD5, CD10, BCL6, BCL2, MUM1/IRF4, CD21/CD23, κ/λ та Ki-67 у морфологічному контексті",
+        "Точний FISH-протокол BCL2 із зазначенням партнера, проби, cutoff і частки позитивних клітин",
+        "Експертне зіставлення матеріалу лімфовузла й трепан-біопсії"
+      ],
+      "applicability_limits": [
+        "BCL2 rearrangement і CD10-позитивність підтримують, але самі по собі не встановлюють фолікулярну лімфому.",
+        "BCL6-негативність потребує перевірки техніки, матеріалу та альтернативної класифікації.",
+        "Низький Ki-67 не замінює морфологічне grade і не виключає фокальний агресивніший компонент."
+      ],
+      "discriminating_checks": [
+        "Експертний перегляд повного гістологічного матеріалу та ІГХ/FISH на одному інтегрованому висновку",
+        "Підтвердження або спростування фолікулярної архітектури й exact BCL2 rearrangement",
+        "Окрема оцінка наявності large-cell або diffuse компонента"
+      ]
+    },
+    {
+      "id": "H2",
+      "rank": 2,
+      "label": "Інша мала В-клітинна лімфома з гермінально-центровим фенотипом, поки не класифікована",
+      "clinical_role": "Fallback-гілка, якщо повна морфологія або FISH не підтвердять класичну фолікулярну лімфому",
+      "rationale": "В-клітинна лінія, CD10-позитивність і малоклітинна нодулярна морфологія вказують на germinal-center напрям, але наявний source layer не містить достатнього набору маркерів і архітектурних ознак для формальної класифікації. Ця гілка утримує діагноз відкритим, не перетворюючи BCL2-сигнал на самодостатній ярлик.",
+      "support_refs": [
+        "OBS-31FDB1A02C6C-055",
+        "OBS-31FDB1A02C6C-056",
+        "OBS-31FDB1A02C6C-058"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "OBS-31FDB1A02C6C-053",
+        "OBS-31FDB1A02C6C-057"
+      ],
+      "missing_evidence": [
+        "Повний B-cell immunophenotype і light-chain clonality",
+        "Опис розподілу CD10/BCL6/BCL2 у пухлинних клітинах, а не лише загальний результат",
+        "Архітектура репрезентативного вузла та кореляція з кістковим мозком",
+        "Молекулярні/цитогенетичні дані, потрібні для конкретної альтернативної entity"
+      ],
+      "applicability_limits": [
+        "Це навмисно широка класифікаційна категорія, а не окремий встановлений діагноз.",
+        "Вона не повинна затримувати експертну перевірку найімовірнішої фолікулярної гілки."
+      ],
+      "discriminating_checks": [
+        "Інтегрована класифікація за морфологією, flow, ІГХ і FISH",
+        "Перевірка CD5/CD23/LEF1, BCL2/BCL6/MUM1/IRF4 та follicular dendritic-cell meshworks за морфологічною підозрою"
+      ]
+    },
+    {
+      "id": "H3",
+      "rank": 3,
+      "label": "Large B-cell transformation або інший агресивний B-cell компонент",
+      "clinical_role": "Критична safety-гілка, яку треба активно виключити у репрезентативній тканині",
+      "rationale": "Генералізована лімфаденопатія, двобічні плевральні випоти й попереднє формулювання В-клітинної лімфоми роблять пропуск агресивного компонента клінічно значущим. Проти домінуючого aggressive phenotype у наданому матеріалі свідчать малоклітинний опис, Ki-67 близько 10% і ЛДГ у наведеному референсі. Даних про MYC, великоклітинні ділянки або високий proliferation hotspot немає.",
+      "support_refs": [
+        "OBS-31FDB1A02C6C-038",
+        "OBS-31FDB1A02C6C-041",
+        "OBS-31FDB1A02C6C-042",
+        "OBS-31FDB1A02C6C-045"
+      ],
+      "refute_refs": [
+        "OBS-31FDB1A02C6C-056",
+        "OBS-31FDB1A02C6C-057",
+        "OBS-31FDB1A02C6C-033"
+      ],
+      "neutral_refs": [
+        "OBS-31FDB1A02C6C-053"
+      ],
+      "missing_evidence": [
+        "Оцінка large-cell component, necrosis, mitotic activity і Ki-67 hotspots на репрезентативному вузлі",
+        "MYC/BCL2/BCL6 IHC/FISH лише якщо морфологія або proliferation підтримують high-grade/large-cell процес",
+        "PET-CT із вибором найбільш FDG-активної ділянки для повторної біопсії за discordant disease"
+      ],
+      "applicability_limits": [
+        "Нормальний ЛДГ не виключає трансформацію.",
+        "BCL2 rearrangement без MYC і без великоклітинної морфології не означає double-hit lymphoma.",
+        "Плевральний випіт сам по собі не доводить агресивний або лімфомний генез."
+      ],
+      "discriminating_checks": [
+        "Експертна ревізія тканини на large-cell/diffuse component",
+        "PET-CT для пошуку discordantly активного вузла та коректного biopsy target",
+        "Targeted MYC/BCL2/BCL6 testing лише в належному морфологічному контексті"
+      ]
+    },
+    {
+      "id": "H4",
+      "rank": 4,
+      "label": "Інша індолентна small B-cell lymphoma, включно з mantle-zone/marginal-zone/SLL спектром",
+      "clinical_role": "Низькорангова контрольна гілка проти передчасного закриття класифікації",
+      "rationale": "Малоклітинний B-cell процес теоретично потребує виключення інших індолентних entity. Наявні CD10-позитивність і BCL2 translocation більше підтримують фолікулярний напрям, а негативні cyclin D1 і SOX11 знижують підтримку mantle-cell lymphoma. Проте CD5, CD23, LEF1, surface light chains, MYD88 та повний morphology context відсутні.",
+      "support_refs": [
+        "OBS-31FDB1A02C6C-055",
+        "OBS-31FDB1A02C6C-056"
+      ],
+      "refute_refs": [
+        "OBS-31FDB1A02C6C-053",
+        "OBS-31FDB1A02C6C-058"
+      ],
+      "neutral_refs": [
+        "OBS-31FDB1A02C6C-057"
+      ],
+      "missing_evidence": [
+        "CD5/CD23/LEF1/CD43, surface κ/λ і повний flow cytometry profile",
+        "Архітектура вузла, характер marrow pattern і клінічна кореляція",
+        "Entity-specific testing лише після морфологічного звуження диференціалу"
+      ],
+      "applicability_limits": [
+        "Об'єднання кількох entity в одну низькорангову гілку використано лише як контроль повноти.",
+        "Жодна з цих альтернатив не має прямого позитивного entity-specific доказу в source layer."
+      ],
+      "discriminating_checks": [
+        "Повний small B-cell lymphoma immunophenotype",
+        "Морфологічно спрямоване entity-specific molecular testing"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-053",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-055",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-056",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-057",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-058",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-038",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-042",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-044",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-033",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-045",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-055",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-056",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-058",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-053",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-057",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-038",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-041",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-042",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-045",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-056",
+      "hypothesis_id": "H3",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-057",
+      "hypothesis_id": "H3",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-033",
+      "hypothesis_id": "H3",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-053",
+      "hypothesis_id": "H3",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-055",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-056",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-053",
+      "hypothesis_id": "H4",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-058",
+      "hypothesis_id": "H4",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "OBS-31FDB1A02C6C-057",
+      "hypothesis_id": "H4",
+      "relation": "neutral"
+    }
+  ],
+  "workup": [
+    {
+      "id": "W1",
+      "title": "Інтегрований експертний гематопатологічний перегляд",
+      "priority": "critical",
+      "rationale": "Саме повна архітектура, цитологія, ІГХ, flow і точний FISH визначають entity та grade; ізольований BCL2-сигнал цього не замінює.",
+      "discriminates": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "id": "W2",
+      "title": "PET-CT/CT staging із вибором репрезентативного biopsy target",
+      "priority": "high",
+      "rationale": "Потрібно відокремити поширеність індолентного процесу від discordantly активної ділянки, що може містити агресивний компонент; поточний source layer не дає повного stage.",
+      "discriminates": [
+        "H1",
+        "H3"
+      ]
+    },
+    {
+      "id": "W3",
+      "title": "Встановлення причини двобічного плеврального випоту",
+      "priority": "high",
+      "rationale": "Негативна цитологія не виключає лімфомне ураження. За клінічної потреби потрібні коректні біохімічні, мікробіологічні, цитологічні/ cell-block та flow-дослідження, зіставлені з imaging і системним станом.",
+      "discriminates": [
+        "H1",
+        "H3"
+      ]
+    },
+    {
+      "id": "W4",
+      "title": "Заповнення baseline staging/prognostic gaps",
+      "priority": "medium",
+      "rationale": "У source layer немає нормалізованих віку, B-symptoms, performance status, повного nodal map та актуальної дати лабораторії; тому stage, FLIPI і treatment indication зараз не обчислюються.",
+      "discriminates": [
+        "H1",
+        "H3"
+      ]
+    },
+    {
+      "id": "W5",
+      "title": "Окрема клінічна оцінка легкої тромбоцитопенії та β2-мікроглобуліну",
+      "priority": "conditional",
+      "rationale": "Тромбоцити 132×10^9/л і β2-мікроглобулін 3,27 мг/л за наведеними референсами потребують часової прив'язки, повтору й кореляції з marrow, нирковою функцією та загальним burden; ці значення не визначають підтип самостійно.",
+      "discriminates": [
+        "H1",
+        "H3",
+        "H4"
+      ]
+    }
+  ],
+  "comparison_to_previous": [
+    {
+      "previous_id": null,
+      "current_id": "H1",
+      "status": "added",
+      "reason": "Перша candidate reasoning revision CASE006; попередньої гіпотези не існувало."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H2",
+      "status": "added",
+      "reason": "Додано fail-safe класифікаційну гілку для неповного phenotype."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H3",
+      "status": "added",
+      "reason": "Додано критичну safety-гілку для виключення aggressive/large-cell component."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H4",
+      "status": "added",
+      "reason": "Додано низькоранговий контроль інших indolent small B-cell entity."
+    }
+  ],
+  "critical_gaps": [
+    "Немає інтегрованого експертного морфологічного висновку з повною архітектурою й grade.",
+    "Немає повної ІГХ/flow-панелі з чіткою належністю маркерів пухлинним клітинам.",
+    "BCL2 FISH не містить партнера, probe/cutoff, частки позитивних клітин і точного specimen context.",
+    "Не закрито large-cell/diffuse component і не надано MYC-oriented testing у належному контексті.",
+    "Немає повного PET-CT/CT staging, nodal map та formal marrow/pleural attribution.",
+    "Негативна плевральна цитологія не встановлює нелімфомну причину випоту.",
+    "Вік, B-symptoms, performance status і treatment history не входять до current minimum-necessary source layer.",
+    "Дати лабораторних показників не нормалізовані; FLIPI та актуальний risk/treatment threshold не обчислюються."
+  ],
+  "safety": {
+    "candidate_only": true,
+    "diagnosis_not_established": true,
+    "treatment_directives_present": false,
+    "limitations": [
+      "Провідна гіпотеза потребує верифікації гематопатологом на первинному матеріалі.",
+      "Не визначено stage, grade, tumor burden, transformation status або показання до лікування.",
+      "Жоден пункт workup не є персональним призначенням; це список дискримінуючих перевірок для лікаря.",
+      "Негативна цитологія плевральної рідини не використана як доказ відсутності лімфомного ураження.",
+      "BCL2 rearrangement не трактовано як самодостатній діагноз або double-hit status."
+    ]
+  },
+  "human_review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "decisions": []
+  }
+}
