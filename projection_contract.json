@@ -1,0 +1,60 @@
+{
+  "schema_version": "hematoboard.dashboard-projection-contract/1.0.0",
+  "current_bundle_schema_version": "1.5.0",
+  "supported_bundle_schema_versions": [
+    "1.0.0",
+    "1.1.0",
+    "1.2.0",
+    "1.3.0",
+    "1.4.0",
+    "1.5.0"
+  ],
+  "clinical_data_source": "case_bundle_and_hash_pinned_reasoning_revision_only",
+  "ledger_observation_projection": {
+    "set_semantics": "exact_id_set",
+    "visible_clinical_fields": [
+      "display",
+      "value_number",
+      "value_text",
+      "unit",
+      "reference_range",
+      "interpretation"
+    ],
+    "exact_address_fields": [
+      "id",
+      "document_id",
+      "page",
+      "kind",
+      "effective_at",
+      "comparator",
+      "assertion_status",
+      "verification.human_verified"
+    ]
+  },
+  "reasoning_candidate_projection": {
+    "set_semantics": "exact_id_set",
+    "hypothesis_fields": [
+      "id",
+      "rank",
+      "label",
+      "clinical_role",
+      "rationale",
+      "support_refs",
+      "refute_refs",
+      "neutral_refs",
+      "missing_evidence",
+      "applicability_limits",
+      "discriminating_checks"
+    ],
+    "additional_sections": [
+      "relations",
+      "workup",
+      "critical_gaps",
+      "safety.limitations",
+      "method.limitations",
+      "comparison_to_previous"
+    ]
+  },
+  "require_post_synthesis_browser_projection_audit": true,
+  "forbid_case_clinical_literals_in_page_code": true
+}
