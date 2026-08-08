@@ -8,9 +8,9 @@ import {
   workupPlan as projectedWorkupPlan,
 } from "./shared/case_projection.js?v=20260808surfaceclosure1";
 import { projectClinicalState, sourceObservationCoverage } from "./shared/clinical_state_projection.js?v=20260808surfaceclosure1";
-import { projectCandidateReasoning, observationClinicalDetail } from "./shared/reasoning_projection.js?v=20260808surfaceclosure1";
+import { projectCandidateReasoning, observationClinicalDetail } from "./shared/reasoning_projection.js?v=20260808sourcevisibility1";
 import { projectGapMap } from "./shared/gap_projection.js?v=20260808surfaceclosure1";
-import { renderGapVisualizationSuite } from "./gap-visualizations/index.js?v=20260808surfaceclosure1";
+import { renderGapVisualizationSuite } from "./gap-visualizations/index.js?v=20260808sourcevisibility1";
 
 // The case registry is data, not code: methodology/active_cases.json is the
 // validated routing manifest. Adding a case never requires editing this file.

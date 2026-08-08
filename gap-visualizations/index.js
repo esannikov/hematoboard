@@ -1,6 +1,6 @@
 import { el, setActiveTargets } from "./dom.js";
 import { createGapVisualModel } from "./model.js";
-import { rosetteView } from "./rosette.js";
+import { rosetteView } from "./rosette.js?v=20260808sourcevisibility1";
 import { coreHaloGateView } from "./core-halo-gate.js";
 import { genomeView } from "./genome.js";
 import { stampView } from "./stamp.js";
