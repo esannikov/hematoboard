@@ -1,5 +1,5 @@
 {
-  "schema_version": "hematoboard.dashboard-projection-contract/1.0.0",
+  "schema_version": "hematoboard.dashboard-projection-contract/1.1.0",
   "current_bundle_schema_version": "1.5.0",
   "supported_bundle_schema_versions": [
     "1.0.0",
@@ -10,6 +10,18 @@
     "1.5.0"
   ],
   "clinical_data_source": "case_bundle_and_hash_pinned_reasoning_revision_only",
+  "case_agnostic_component_selection": {
+    "selector": "typed_contract_fields_not_case_id",
+    "legacy_and_current_examples": [
+      "CASE-02",
+      "CASE006"
+    ],
+    "navigation_labels": "un-numbered_visible_labels_with_machine_readable_workflow_step",
+    "overview_peer_surfaces": [
+      "leading_working_hypothesis",
+      "source_base"
+    ]
+  },
   "ledger_observation_projection": {
     "set_semantics": "exact_id_set",
     "visible_clinical_fields": [
@@ -102,16 +114,32 @@
       "candidate_relations": "exact_typed_edge_set",
       "referenced_accepted_observations": "exact_id_set",
       "card_label": "short_label_with_full_label_metadata",
-      "repeated_source_receipt": "compact_address_only"
+      "repeated_source_receipt": "compact_F_index_relation_address_only",
+      "global_external_corpus_in_detail": "forbidden_without_point_to_point_binding"
     },
     "gap_map": {
       "candidate_critical_gaps": "exact_ordered_set",
       "candidate_workup": "exact_id_set",
-      "candidate_hypothesis_links": "exact_id_set"
+      "candidate_hypothesis_links": "exact_id_set",
+      "candidate_source_corpus": "exact_receipt_set_global_until_point_to_point_refs_are_recorded",
+      "missing_point_to_point_source_ref": "must_not_render_a_source_chip_and_must_not_be_inferred",
+      "source_coverage_disclosure": "must_show_exact_corpus_size_and_traced_gap_workup_count"
     },
     "clinical_state": {
       "generic_observation_category_counts": "exact_count_by_kind",
-      "full_observation_registry": "exact_id_set"
+      "full_observation_registry": "exact_id_set",
+      "measurement_projection": {
+        "selection": "all_kind_measurement_observations",
+        "required_visible_fields": [
+          "display",
+          "value_number_or_value_text",
+          "reference_range",
+          "unit",
+          "effective_at_or_explicit_not_normalized_label",
+          "source_address"
+        ],
+        "forbid_document_or_release_date_inference": true
+      }
     },
     "evidence": {
       "candidate_external_sources": "exact_receipt_source_set_with_candidate_status_and_use_limit"

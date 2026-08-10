@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "bundle_id": "CASE006@2f7a8ab2b810",
+  "bundle_id": "CASE006@6ec73b7e806a",
   "case": {
     "id": "CASE006",
     "title": "Знеособлений клінічний пакет · source ledger прийнято",
@@ -1907,10 +1907,10 @@
     "ingest_release_status": "human_source_review_pass"
   },
   "bundle_revision": {
-    "id": "CASE006@2f7a8ab2b810",
-    "parent_bundle_sha256": "6485957e34da01f406174af80836d0bfdb84de0b85d6c4faaf61bb440a7edd82",
+    "id": "CASE006@6ec73b7e806a",
+    "parent_bundle_sha256": "53a883c8e441bda559fadf011c09a44c7ed43581c3472fda4a4bebc847ec5d74",
     "source_layer_sha256": "beb0e8facaf85ea2042ae564f185fda4ba6fa92418d1fb43be4904e5e514677c",
-    "created_at": "2026-08-08T06:56:45.772082+00:00",
+    "created_at": "2026-08-10T06:45:46.279486+00:00",
     "change_type": "source_review_acceptance",
     "release_status": "released_for_methodological_use"
   },

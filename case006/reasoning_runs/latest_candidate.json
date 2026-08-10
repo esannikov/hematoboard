@@ -1,17 +1,17 @@
 {
   "schema_version": "hematoboard.reasoning-run-pointer/1.0.0",
-  "run_id": "20260808T065727960677Z-CASE006-reasoning-f02298e34870",
-  "reasoning_revision_id": "RR-CASE006-f02298e34870",
+  "run_id": "20260810T064635980545Z-CASE006-reasoning-24c036375a74",
+  "reasoning_revision_id": "RR-CASE006-24c036375a74",
   "case_scope": {
     "schema_version": "hematoboard.case-scope/1.0.0",
     "case_key": "case006",
     "case_id": "CASE006",
-    "bundle_sha256": "53a883c8e441bda559fadf011c09a44c7ed43581c3472fda4a4bebc847ec5d74",
-    "revision_id": "CASE006@2f7a8ab2b810",
-    "operation_id": "20260808T065727960677Z-CASE006-reasoning-f02298e34870",
+    "bundle_sha256": "2032ad12fead1e2a365a07b6b20cca3e4c1726d78c438dd4b0ad678a9adf2930",
+    "revision_id": "CASE006@6ec73b7e806a",
+    "operation_id": "20260810T064635980545Z-CASE006-reasoning-24c036375a74",
     "clinical_input_sha256": "f651a62c9cbb0b2c05e6a601e5b65069ca10d13699a4c3a13ff48f6077b6f3d0"
   },
-  "revision_path": "20260808T065727960677Z-CASE006-reasoning-f02298e34870/reasoning_revision.json",
-  "revision_sha256": "99ccdce8befbb51e19be87581add99ad8b35af4bea8947b91739fe2cc7623b92",
+  "revision_path": "20260810T064635980545Z-CASE006-reasoning-24c036375a74/reasoning_revision.json",
+  "revision_sha256": "d58f502385884cda06502e0ac458abdac655e5cb802ae49c1ac2ac7ec7d7f68d",
   "status": "candidate"
 }

@@ -36,10 +36,18 @@ function derivedHypothesisShortLabel(hypothesis) {
     .trim();
   const diagnosisWithQualifier = shortLabel.match(/^(.+?лімфом\p{L}*)\s+(?:з|із|зі)\s+.+$/iu);
   if (diagnosisWithQualifier?.[1]?.split(/\s+/u).length >= 3) shortLabel = diagnosisWithQualifier[1];
+  if (shortLabel.length > 62) {
+    const boundary = shortLabel.slice(0, 59).lastIndexOf(" ");
+    shortLabel = `${shortLabel.slice(0, boundary > 38 ? boundary : 59).trim()}…`;
+  }
   return shortLabel || fullLabel;
 }
 
 function candidateSourceType(source) {
+  const explicitType = compactText(source?.type).toLowerCase();
+  if (["pmid", "guideline", "protocol", "classification", "consensus", "evidence_summary", "web"].includes(explicitType)) {
+    return explicitType;
+  }
   const url = compactText(source?.url);
   const title = compactText(source?.title);
   if (/pubmed\.ncbi\.nlm\.nih\.gov\/\d+/iu.test(url)) return "pmid";
@@ -50,7 +58,7 @@ function candidateSourceType(source) {
 }
 
 function candidateSourceRef(source, type) {
-  if (type === "pmid") return compactText(source?.url).match(/pubmed\.ncbi\.nlm\.nih\.gov\/(\d+)/iu)?.[1] || compactText(source?.title);
+  if (type === "pmid") return compactText(source?.pmid) || compactText(source?.url).match(/pubmed\.ncbi\.nlm\.nih\.gov\/(\d+)/iu)?.[1] || compactText(source?.title);
   return compactText(source?.title || source?.url);
 }
 
@@ -70,6 +78,12 @@ export function projectCandidateExternalSources(revision) {
         human_verified: false,
         status: "candidate_external_receipt",
         candidate_use: compactText(source?.use),
+        applicability_limit: compactText(source?.applicability_limit),
+        evidence_location: compactText(source?.location),
+        doi: compactText(source?.doi),
+        pmid: compactText(source?.pmid),
+        publication_year: source?.year ?? null,
+        verification_status: compactText(source?.verification_status),
         use_limit: compactText(receipt?.use_limit),
         retrieved_at: compactText(receipt?.retrieved_at),
         source_scope: compactText(receipt?.scope),
@@ -150,7 +164,8 @@ function projectedWorkup(revision, hypotheses) {
     title: item.title,
     action: item.title,
     why: item.rationale,
-    evidence_refs: [],
+    priority: item.priority,
+    evidence_refs: asArray(item.evidence_refs),
     status: item.priority === "critical"
       ? "Першочергова перевірка"
       : item.priority === "high" ? "Високий пріоритет" : "За клінічною потребою",
@@ -219,6 +234,7 @@ export function projectCandidateReasoning(bundle, candidate) {
       candidate_revision: {
         reasoning_revision_id: revision.reasoning_revision_id,
         critical_gaps: asArray(revision.critical_gaps),
+        critical_gap_evidence: asArray(revision.critical_gap_evidence),
         external_source_refs: externalSources.map((item) => item.id),
         source: "immutable_candidate_revision",
       },
