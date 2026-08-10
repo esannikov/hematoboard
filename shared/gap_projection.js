@@ -118,6 +118,7 @@ function normalizeWorkup(bundle) {
       title: String(item?.title || item?.action || `Крок верифікації ${index + 1}`),
       action: String(item?.action || "Дію не записано."),
       why: String(item?.why || "Клінічне питання не записано."),
+      priority: String(item?.priority || "unspecified"),
       phase: String(item?.phase || "Діагностична верифікація"),
       tone: String(item?.tone || "caution"),
       evidenceRefs: unique(values(item?.evidence_refs).map(String)),
@@ -126,12 +127,13 @@ function normalizeWorkup(bundle) {
   });
 }
 
-function makeBridge({ id, title, detail, action, phase, tone, evidenceRefs = [], hypothesisIds = [], domainIds = [], origin }) {
+function makeBridge({ id, title, detail, action, priority, phase, tone, evidenceRefs = [], hypothesisIds = [], domainIds = [], origin }) {
   return {
     id,
     title,
     detail,
     action,
+    priority,
     phase,
     tone,
     evidenceRefs: unique(evidenceRefs),
@@ -158,6 +160,7 @@ function mergeBridges(bridges) {
       current.id = bridge.id;
       current.detail = bridge.detail;
       current.action = bridge.action;
+      current.priority = bridge.priority;
       current.phase = bridge.phase;
       current.tone = bridge.tone;
       current.origin = bridge.origin;
@@ -216,6 +219,7 @@ export function projectGapMap(bundle) {
     title: item.title,
     detail: item.why,
     action: item.action,
+    priority: item.priority,
     phase: item.phase,
     tone: item.tone,
     evidenceRefs: item.evidenceRefs,
@@ -285,6 +289,9 @@ export function projectGapMap(bundle) {
       documentId: item.document_id || null,
       origin: "source_observation",
     }));
+  const criticalGapEvidence = new Map(values(bundle?.methodology?.candidate_revision?.critical_gap_evidence)
+    .filter((item) => Number.isInteger(item?.gap_index))
+    .map((item) => [item.gap_index, unique(values(item?.evidence_refs).map(String))]));
   const candidateGaps = values(bundle?.methodology?.candidate_revision?.critical_gaps)
     .map((gap, index) => ({
       id: `candidate-gap-${index + 1}`,
@@ -294,6 +301,7 @@ export function projectGapMap(bundle) {
       documentId: null,
       origin: "candidate_revision",
       candidateIndex: index,
+      evidenceRefs: criticalGapEvidence.get(index) || [],
     }));
   const unscopedModalityGaps = columns
     .filter((column) => column.kind === "modality" && !column.hypothesisIds.length)

@@ -296,9 +296,12 @@ html {
   padding: 0 3px;
   color: var(--hb-muted);
   border: 0;
+  font-family: var(--hb-font-sans);
   font-size: 10px;
   line-height: 1.5;
 }
+
+.hb-shell .sr-only { font-family: var(--hb-font-sans); }
 
 .hb-shell .ui-switcher {
   display: flex;

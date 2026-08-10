@@ -12,8 +12,7 @@
       name="description"
       content="HematoBoard AI: evidence-based, agent-assisted case review."
     />
-    <meta name="hematoboard-release" content="registry-bound · projection-contract-v1" />
-    <meta name="hematoboard-runtime" content="public-static" />
+    <meta name="hematoboard-release" content="registry-bound · projection-contract-v1.1" />
     <title>HematoBoard AI</title>
     <link
       rel="icon"
@@ -21,10 +20,10 @@
     />
     <meta name="theme-color" content="#f4f4f4" id="theme-color" />
     <script src="hematoboard-ui.js?v=20260805stateclarity1"></script>
-    <link rel="stylesheet" href="methodology.css?v=20260808sourceidentity1" />
-    <link rel="stylesheet" href="hematoboard-shell.css?v=20260805stateclarity1" />
-    <link rel="stylesheet" href="carbon-dashboard.css?v=20260808sourceidentity1" />
-    <link rel="stylesheet" href="gap-visualizations/gap-visualizations.css?v=20260808sourcevisibility1" />
+    <link rel="stylesheet" href="methodology.css?v=20260810modularcase1" />
+    <link rel="stylesheet" href="hematoboard-shell.css?v=20260809uiclosure1" />
+    <link rel="stylesheet" href="carbon-dashboard.css?v=20260809systemcontracts1" />
+    <link rel="stylesheet" href="gap-visualizations/gap-visualizations.css?v=20260809systemcontracts1" />
   </head>
   <body class="hb-shell min-h-screen bg-canvas p-0 font-sans text-ink antialiased">
     <!--
@@ -68,7 +67,15 @@
         <summary class="focus-ring">Метод</summary>
         <div class="route-menu-panel route-buttons method-routes-list" id="method-nav"></div>
       </details>
-      <button class="route-button packet-nav-action focus-ring" id="packet-nav-action" type="button" data-view="packet">Бриф / PDF</button>
+      <button
+        class="route-button packet-nav-action focus-ring"
+        id="packet-nav-action"
+        type="button"
+        data-view="packet"
+        data-workflow-step="6"
+        title="6. Підготувати простежуваний пакет для консиліуму"
+        aria-label="6. Підготувати простежуваний пакет для консиліуму"
+      >Консиліум</button>
     </nav>
 
     <main class="mx-auto min-h-[55vh] w-full max-w-[1440px] px-5 py-8 sm:px-8 lg:px-12 lg:py-10" id="content" tabindex="-1"></main>
@@ -82,6 +89,6 @@
     </footer>
 
     <script>if(location.protocol==="file:")location.replace("http://127.0.0.1:8899/methodology/"+location.search+location.hash);</script>
-    <script type="module" src="methodology.js?v=20260808sourceidentity1"></script>
+    <script type="module" src="methodology.js?v=20260810modularcase1"></script>
   </body>
 </html>

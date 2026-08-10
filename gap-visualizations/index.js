@@ -1,25 +1,13 @@
 import { el, setActiveTargets } from "./dom.js";
 import { createGapVisualModel } from "./model.js";
-import { rosetteView } from "./rosette.js?v=20260808sourcevisibility1";
-import { coreHaloGateView } from "./core-halo-gate.js";
-import { genomeView } from "./genome.js";
-import { stampView } from "./stamp.js";
-import { atlasView } from "./atlas.js";
+import { scalesView } from "./scales.js";
 
 export const GAP_VISUALIZATIONS = Object.freeze([
-  rosetteView,
-  coreHaloGateView,
-  genomeView,
-  stampView,
-  atlasView,
+  scalesView,
 ]);
 
-function countLabel(count, singular, plural) {
-  return `${count} ${count === 1 ? singular : plural}`;
-}
-
-function evidenceRefs(target, refs, evidenceNode) {
-  const nodes = (refs || []).map((ref) => evidenceNode?.(ref)).filter(Boolean);
+function evidenceRefs(target, refs, evidenceNode, sourceChip) {
+  const nodes = (refs || []).map((ref) => evidenceNode?.(ref) || sourceChip?.(ref, { compact: true })).filter(Boolean);
   if (!nodes.length) return;
   target.append(el("div", { className: "gap-suite-source-refs" }, [el("span", { text: "Підстава" }), ...nodes]));
 }
@@ -51,10 +39,11 @@ function makeDomainLegend(model) {
 }
 
 function makeAuditRegistry(model, selectCell) {
+  const perimeterItems = model.projection.sourcePerimeter.filter((item) => item.origin !== "candidate_revision");
   const disclosure = el("details", { className: "gap-suite-registry" });
   disclosure.append(el("summary", {}, [
     el("span", { text: "Повний реєстр невизначеності" }),
-    el("strong", { text: `${model.projection.sourcePerimeter.length + model.projection.hypothesesWithoutTypedLinks.length} поза гіпотезами` }),
+    el("strong", { text: `${perimeterItems.length + model.projection.hypothesesWithoutTypedLinks.length} поза гіпотезами` }),
   ]));
   const content = el("div", { className: "gap-suite-registry-body" });
   const fractures = model.projection.cells.filter((cell) => cell.thermal === "fracture");
@@ -78,11 +67,9 @@ function makeAuditRegistry(model, selectCell) {
   }
   const perimeterSection = el("section", {}, [el("h4", { text: "Джерельний периметр" })]);
   const perimeter = el("div", { className: "gap-suite-perimeter-list" });
-  model.projection.sourcePerimeter.forEach((item) => {
+  perimeterItems.forEach((item) => {
     perimeter.append(el("article", {
-      attrs: item.origin === "candidate_revision"
-        ? { "data-candidate-gap-index": item.candidateIndex, "data-candidate-gap-id": item.id }
-        : { "data-gap-origin": item.origin || "source" },
+      attrs: { "data-gap-origin": item.origin || "source" },
     }, [
       el("strong", { text: item.title }),
       el("p", { text: item.detail }),
@@ -102,12 +89,148 @@ function makeAuditRegistry(model, selectCell) {
   return disclosure;
 }
 
+function priorityLabel(value) {
+  return ({
+    critical: "критичний",
+    high: "високий",
+    medium: "середній",
+    conditional: "за клінічною потребою",
+  })[value] || "пріоритет не вказано";
+}
+
+function makeCandidateSourceTrace(ui) {
+  const sources = Array.isArray(ui.candidateSources) ? ui.candidateSources : [];
+  if (!sources.length) return null;
+  const coverage = ui.traceCoverage || { tracedItems: 0, totalItems: 0 };
+  const chips = sources.map((source) => ui.sourceChip?.(source.id, { compact: true })).filter(Boolean);
+  const trace = el("aside", { className: "gap-source-trace" }, [
+    el("div", { className: "gap-source-trace-head" }, [
+      el("div", {}, [
+        el("strong", { text: `Джерела кандидатної ревізії · ${sources.length}` }),
+        el("p", {
+          text: coverage.totalItems
+            ? `Це не повний огляд літератури. Точний зв’язок записано для ${coverage.tracedItems} із ${coverage.totalItems} прогалин і кроків перевірки.`
+            : "Це не повний огляд літератури. Точний зв’язок з окремим пунктом потребує явного source ref.",
+        }),
+      ]),
+      el("span", { text: coverage.totalItems > 0 && coverage.tracedItems === coverage.totalItems ? "трейс заповнено" : "покриття неповне" }),
+    ]),
+    el("div", { className: "gap-source-chip-row", attrs: { "aria-label": "Зовнішні джерела кандидатного плану" } }, chips),
+  ]);
+  const useLimit = sources.find((source) => source.use_limit)?.use_limit;
+  if (useLimit) trace.append(el("p", { className: "gap-source-use-limit", text: ui.clinicalText?.(useLimit) || useLimit }));
+  return trace;
+}
+
+function makeDecisionLayer(model, selectBridge, ui) {
+  const criticalGaps = model.projection.sourcePerimeter.filter((item) => item.origin === "candidate_revision");
+  const workup = model.projection.bridges.filter((item) => item.origin === "workup");
+  const sharedCount = workup.filter((item) => item.hypothesisIds.length > 1).length;
+  const layer = el("section", { className: "gap-decision-layer", attrs: { "aria-labelledby": "gap-decision-title" } });
+  layer.append(el("header", { className: "gap-decision-head" }, [
+    el("div", {}, [
+      el("span", { text: "Рівень рішення" }),
+      el("h3", { text: "Від відкритого питання до перевірки", attrs: { id: "gap-decision-title" } }),
+      el("p", { text: "Прогалина тут означає конкретне невирішене клінічне питання. Пріоритет і охоплення гіпотез беруться з кандидатної ревізії; це не оцінка ймовірності діагнозу." }),
+    ]),
+    el("dl", {}, [
+      el("div", {}, [el("dt", { text: "Критичні питання" }), el("dd", { text: criticalGaps.length })]),
+      el("div", {}, [el("dt", { text: "Кроки перевірки" }), el("dd", { text: workup.length })]),
+      el("div", {}, [el("dt", { text: "Спільні кроки" }), el("dd", { text: sharedCount })]),
+    ]),
+  ]));
+  const sourceTrace = makeCandidateSourceTrace(ui);
+  if (sourceTrace) layer.append(sourceTrace);
+
+  const questions = el("section", { className: "gap-critical-questions" }, [
+    el("header", {}, [el("span", { text: "01" }), el("h4", { text: "Критичні прогалини" })]),
+  ]);
+  const questionList = el("ol", { className: "gap-critical-list" });
+  criticalGaps.forEach((gap, index) => {
+    questionList.append(el("li", {
+      attrs: { "data-candidate-gap-index": gap.candidateIndex, "data-candidate-gap-id": gap.id },
+    }, [
+      el("span", { text: String(index + 1).padStart(2, "0") }),
+      el("div", {}, [
+        el("p", { text: gap.title }),
+      ]),
+    ]));
+    if (gap.evidenceRefs?.length) evidenceRefs(questionList.lastElementChild.lastElementChild, gap.evidenceRefs, ui.evidenceNode, ui.sourceChip);
+  });
+  questions.append(questionList.childElementCount
+    ? questionList
+    : el("p", { className: "gap-decision-empty", text: "Окремих критичних питань у цій проєкції не записано." }));
+
+  const plan = el("section", { className: "gap-verification-plan" }, [
+    el("header", {}, [el("span", { text: "02" }), el("h4", { text: "План верифікації" })]),
+  ]);
+  const planList = el("div", { className: "gap-verification-list" });
+  workup.forEach((bridge) => {
+    const affected = bridge.hypothesisIds.map((id) => model.hypothesis(id)).filter(Boolean);
+    const chips = el("div", { className: "gap-verification-hypotheses", attrs: { "aria-label": "Гіпотези, на які впливає перевірка" } });
+    affected.forEach((hypothesis) => chips.append(el("span", {
+      text: hypothesis.id,
+      attrs: { title: hypothesis.displayLabel },
+    })));
+    const item = el("article", {
+      className: "gap-verification-step",
+      attrs: { "data-priority": bridge.priority || "unspecified" },
+    });
+    const button = el("button", {
+      className: "gap-verification-select focus-ring",
+      attrs: {
+        type: "button",
+        "data-gap-bridge-target": bridge.id,
+        "aria-pressed": "false",
+      },
+    }, [
+      el("span", { className: "gap-verification-code", text: bridge.id }),
+      el("div", { className: "gap-verification-copy" }, [
+        el("div", { className: "gap-verification-meta" }, [
+          el("span", { text: priorityLabel(bridge.priority), attrs: { "data-priority": bridge.priority || "unspecified" } }),
+          el("span", { text: bridge.hypothesisIds.length > 1 ? `спільний крок · ${bridge.hypothesisIds.length} гіпотези` : "цільова перевірка" }),
+        ]),
+        el("strong", { text: bridge.title }),
+        el("p", { text: bridge.detail }),
+        chips,
+      ]),
+    ]);
+    button.addEventListener("click", () => selectBridge(bridge.id));
+    item.append(button);
+    if (bridge.evidenceRefs.length) evidenceRefs(item, bridge.evidenceRefs, ui.evidenceNode, ui.sourceChip);
+    planList.append(item);
+  });
+  plan.append(planList.childElementCount
+    ? planList
+    : el("p", { className: "gap-decision-empty", text: "Кроків верифікації не записано." }));
+
+  const hypothesisDetails = el("details", { className: "gap-hypothesis-gaps" });
+  hypothesisDetails.append(el("summary", {}, [
+    el("span", { text: "Невирішене за гіпотезами" }),
+    el("strong", { text: `${model.hypotheses.length} робочі гіпотези` }),
+  ]));
+  const hypothesisGrid = el("div", { className: "gap-hypothesis-gap-grid" });
+  model.hypotheses.forEach((hypothesis) => {
+    const missing = Array.isArray(hypothesis.missing_evidence) ? hypothesis.missing_evidence.filter(Boolean) : [];
+    hypothesisGrid.append(el("article", {}, [
+      el("span", { text: `${hypothesis.id} · ранг №${hypothesis.rank}` }),
+      el("h4", { text: hypothesis.displayLabel }),
+      missing.length
+        ? el("ul", {}, missing.map((item) => el("li", { text: item })))
+        : el("p", { text: "Окремого переліку відсутніх доказів не записано." }),
+    ]));
+  });
+  hypothesisDetails.append(hypothesisGrid);
+  layer.append(el("div", { className: "gap-decision-grid" }, [questions, plan]), hypothesisDetails);
+  return layer;
+}
+
 export function renderGapVisualizationSuite({ bundle, projection, ui, projectionSource = "accepted-ledger" }) {
   const model = createGapVisualModel(projection);
   const fragment = document.createDocumentFragment();
   fragment.append(ui.viewHeader(
     "Карта прогалин",
-    "П’ять варіантів доказового відбитка показують один детермінований стан різними способами: від підписаної розетки до щільного геному й атласу. Домени названі безпосередньо; жоден режим не показує ймовірність діагнозу.",
+    "Горизонтальні шкали показують записане покриття кожного доказового домену на спільній температурній осі. Домени названі безпосередньо; довжина й колір не показують ймовірність діагнозу.",
     projectionSource === "candidate-revision"
       ? `${ui.caseCode(bundle)} · кандидатна ревізія · перевіряє лікар`
       : `${ui.caseCode(bundle)} · прийнятий пакет`,
@@ -131,7 +254,8 @@ export function renderGapVisualizationSuite({ bundle, projection, ui, projection
     return fragment;
   }
 
-  const urlMode = new URL(window.location.href).searchParams.get("gapviz");
+  const requestedMode = new URL(window.location.href).searchParams.get("gapviz");
+  const urlMode = requestedMode === "atlas" ? "scales" : requestedMode;
   let activeMode = GAP_VISUALIZATIONS.some((view) => view.id === urlMode) ? urlMode : GAP_VISUALIZATIONS[0].id;
   let selectedCellId = model.defaultCellId;
   const modeTabs = el("div", { className: "gap-suite-tabs", attrs: { role: "tablist", "aria-label": "Спосіб візуалізації прогалин" } });
@@ -170,7 +294,7 @@ export function renderGapVisualizationSuite({ bundle, projection, ui, projection
       const next = el("section", {}, [el("h4", { text: "Пов’язані кроки верифікації" })]);
       linkedBridges.forEach((bridge) => {
         const item = el("article", { className: "gap-suite-inspector-action" }, [el("strong", { text: `${bridge.id} · ${bridge.title}` }), el("p", { text: bridge.action })]);
-        evidenceRefs(item, bridge.evidenceRefs, ui.evidenceNode);
+        evidenceRefs(item, bridge.evidenceRefs, ui.evidenceNode, ui.sourceChip);
         next.append(item);
       });
       inspector.append(next);
@@ -197,7 +321,7 @@ export function renderGapVisualizationSuite({ bundle, projection, ui, projection
     );
     const impact = el("section", {}, [el("h4", { text: "На що впливає" })]);
     impact.append(affected.length ? el("ul", {}, affected.map((item) => el("li", { text: item.displayLabel }))) : el("p", { text: "Наступний етап без прив’язки до однієї гіпотези." }));
-    evidenceRefs(impact, bridge.evidenceRefs, ui.evidenceNode);
+    evidenceRefs(impact, bridge.evidenceRefs, ui.evidenceNode, ui.sourceChip);
     inspector.append(impact);
   }
 
@@ -242,27 +366,19 @@ export function renderGapVisualizationSuite({ bundle, projection, ui, projection
   });
 
   const keys = el("div", { className: "gap-suite-keys" }, [makeStateLegend(model), makeDomainLegend(model)]);
-  suite.append(modeTabs, modeHeading, keys, workspace);
-
-  const bridgeSection = el("section", { className: "gap-suite-bridges" }, [
-    el("header", {}, [
-      el("span", { text: "Мости прогалин" }),
-      el("h3", { text: "Наступні перевірки з найбільшим охопленням" }),
-      el("p", { text: "Вибір показує зону впливу без переранжування диференціалу." }),
+  suite.append(
+    makeDecisionLayer(model, selectBridge, ui),
+    el("header", { className: "gap-comparison-head" }, [
+      el("span", { text: "Рівень порівняння" }),
+      el("h3", { text: "Покриття гіпотез за доказовими доменами" }),
+      el("p", { text: "П’ять режимів нижче показують той самий детермінований стан. У режимі шкал довжина показує заповнення доказового домену, а градієнт переходить від холодного до теплого кольору. Це не ймовірність діагнозу." }),
     ]),
-  ]);
-  const bridgeList = el("div", { className: "gap-suite-bridge-list" });
-  projection.bridges.filter((bridge) => bridge.origin === "workup").forEach((bridge) => {
-    const button = el("button", { className: "gap-suite-bridge focus-ring", attrs: { type: "button", "data-gap-bridge-target": bridge.id, "aria-pressed": "false" } }, [
-      el("span", { text: bridge.id }),
-      el("strong", { text: bridge.title }),
-      el("small", { text: bridge.hypothesisIds.length ? countLabel(bridge.hypothesisIds.length, "гіпотеза", "гіпотези") : "наступний етап" }),
-    ]);
-    button.addEventListener("click", () => selectBridge(bridge.id));
-    bridgeList.append(button);
-  });
-  bridgeSection.append(bridgeList.childElementCount ? bridgeList : el("p", { text: "Окремих кроків верифікації не записано." }));
-  suite.append(bridgeSection, makeAuditRegistry(model, selectCell));
+    modeTabs,
+    modeHeading,
+    keys,
+    workspace,
+    makeAuditRegistry(model, selectCell),
+  );
   fragment.append(suite);
   renderMode({ updateUrl: false });
   if (selectedCellId) selectCell(selectedCellId);

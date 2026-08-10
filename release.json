@@ -1,7 +1,7 @@
 {
   "schema_version": "hematoboard.public-release/1.0.0",
-  "released_at": "2026-08-08T20:07:15Z",
-  "release_tag": "20260808case006sourceidentity1",
+  "released_at": "2026-08-10T07:13:24Z",
+  "release_tag": "20260810case006ledgerrebuild1",
   "default_case": "case02",
   "case_scope": {
     "case_key": "case02",
@@ -31,15 +31,15 @@
     {
       "case_key": "case006",
       "case_id": "CASE006",
-      "revision_id": "CASE006@2f7a8ab2b810",
-      "bundle_sha256": "53a883c8e441bda559fadf011c09a44c7ed43581c3472fda4a4bebc847ec5d74",
+      "revision_id": "CASE006@6ec73b7e806a",
+      "bundle_sha256": "2032ad12fead1e2a365a07b6b20cca3e4c1726d78c438dd4b0ad678a9adf2930",
       "artifact_role": "accepted_projection_with_current_candidate",
       "technical_status": "pass_with_review",
       "clinician_acceptance": "pending",
       "reasoning_candidate": {
-        "reasoning_revision_id": "RR-CASE006-f02298e34870",
-        "run_id": "20260808T065727960677Z-CASE006-reasoning-f02298e34870",
-        "revision_sha256": "99ccdce8befbb51e19be87581add99ad8b35af4bea8947b91739fe2cc7623b92",
+        "reasoning_revision_id": "RR-CASE006-24c036375a74",
+        "run_id": "20260810T064635980545Z-CASE006-reasoning-24c036375a74",
+        "revision_sha256": "d58f502385884cda06502e0ac458abdac655e5cb802ae49c1ac2ac7ec7d7f68d",
         "freshness": "fresh",
         "status": "candidate"
       }
@@ -55,11 +55,14 @@
     "case006_critical_gaps": 8,
     "case006_workup_steps": 5,
     "case006_semantic_surface_closure": "pass",
-    "case006_external_candidate_receipts": 4,
+    "case006_external_candidate_receipts": 14,
     "case006_history_dated_observations": 8,
     "case006_history_undated_observations": 50,
     "case006_source_visibility_closure": "pass",
     "case006_source_identity_closure": "pass",
+    "case006_timeline_contract": "type_aware_pass",
+    "case006_display_assertion_only_records": 23,
+    "case006_modular_runtime_contract": "pass",
     "source_type_palette": {
       "pubmed": "purple",
       "guideline": "green",
