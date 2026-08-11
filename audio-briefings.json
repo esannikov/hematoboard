@@ -3,21 +3,21 @@
   "briefings": [
     {
       "case_id": "CASE006",
-      "id": "AB-CASE006-20260811-03",
-      "title": "CASE006: підготовка до консиліуму",
+      "id": "AB-CASE006-20260811-04",
+      "title": "Коротко до консиліуму",
       "label": "Аудіогайд",
-      "public_url": "https://v3b.fal.media/files/b/0aa5e1eb/6xB1EdMvuFH_3iCxolIKA_output.mp3",
+      "public_url": "https://v3b.fal.media/files/b/0aa5eb6d/pOw5uKE8G7P_Lj2cH-khx_output.mp3",
       "mime_type": "audio/mpeg",
-      "duration_seconds": 147.722,
-      "audio_sha256": "5e82c5c7e470f4a05052aa5da47e04f1768302feb7db3cb0020e8fdf9c7bdb3a",
-      "source_text_sha256": "6d3d2ccd16be9abdc5d7fd1649cbecd1509c9586edc2ca48ed2c9ae84c8878a3",
-      "reasoning_revision_id": "RR-CASE006-98ceb4f1d324",
-      "reasoning_revision_sha256": "2db39622dbc5669ecb8389a22018d0a0e96ff29a8ef1a1f39912cd4fdef54b64",
+      "duration_seconds": 194.926,
+      "audio_sha256": "db28280b330a029147be536adc37038ab26aa1f297d3a473ea2a37c8070ec3a7",
+      "source_text_sha256": "a0db43154276bb38e8a91a474bece2900923904a6579419214b773d3ba6b2b25",
+      "reasoning_revision_id": "RR-CASE006-3d72544bd826",
+      "reasoning_revision_sha256": "eee2b9836653914ea8974f240edf3862ffc34417e8ab5339dddc66bdb435836f",
       "clinical_status": "candidate_pending_human_review",
       "reverse_stt": {
         "model": "fal-ai/elevenlabs/speech-to-text",
         "detected_language": "ukr",
-        "language_probability": 0.9938685297966003,
+        "language_probability": 1.0,
         "critical_content_preserved": true
       }
     }

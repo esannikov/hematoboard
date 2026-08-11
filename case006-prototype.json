@@ -5,12 +5,16 @@
     "bundle_id": "CASE006@6ec73b7e806a",
     "bundle_revision": "CASE006@6ec73b7e806a",
     "bundle_sha256": "2032ad12fead1e2a365a07b6b20cca3e4c1726d78c438dd4b0ad678a9adf2930",
-    "reasoning_revision_id": "RR-CASE006-98ceb4f1d324",
-    "reasoning_revision_sha256": "2db39622dbc5669ecb8389a22018d0a0e96ff29a8ef1a1f39912cd4fdef54b64",
+    "reasoning_revision_id": "RR-CASE006-3d72544bd826",
+    "reasoning_revision_sha256": "eee2b9836653914ea8974f240edf3862ffc34417e8ab5339dddc66bdb435836f",
     "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
-    "clinical_copy_sha256": "bce8e13423f08b43480a0cf1556943a34e6b3d52204ae21c1d8a877497d51ab9",
+    "clinical_copy_sha256": "9bcd6d7654bd6fad3d22fb4760aa5f12cd89c84049244a1ca411bc236f6d9718",
     "clinical_input_sha256": "f651a62c9cbb0b2c05e6a601e5b65069ca10d13699a4c3a13ff48f6077b6f3d0",
     "evidence_review_status": "pass",
+    "evidence_review_modes": [
+      "human_source_review",
+      "agent_visual_source_review"
+    ],
     "source_date_context_schema": "hematoboard.source_date_context/1.0",
     "method_verification": "verified",
     "projection_status": "verified",
@@ -19,7 +23,7 @@
   "case": {
     "id": "CASE006",
     "title": "Знеособлений клінічний пакет · source ledger прийнято",
-    "overview_brief": "Чоловік, 44 роки. Генералізована лімфаденопатія та двобічні плевральні випоти; триває уточнення підтипу В-клітинної лімфоми.",
+    "overview_brief": "Чоловік, 44 роки. Генералізована лімфаденопатія, двобічні рецидивні плевральні випоти та епізоди дренування гнійного плеврального вмісту; уточнюються підтип В-клітинної лімфоми й механізм випотів.",
     "generated": "2026-08-08",
     "governance": "Source ledger сформовано лише після об'єднаної людської звірки сканів, структурованого тексту, приватності та hash-derived координатного G4. Гіпотези й лікувальні рішення до канонічного ledger не внесено.",
     "demographics": "Демографічні дані не перенесено до minimum-necessary source layer.",
@@ -31,7 +35,7 @@
     {
       "id": "H1",
       "rank": 1,
-      "label": "Фолікулярна В-клітинна лімфома — найбільш узгоджений робочий підтип",
+      "label": "Класична фолікулярна лімфома — провідна робоча гіпотеза",
       "clinical_role": "Провідна робоча гіпотеза для експертної гематопатологічної перевірки",
       "rationale": "Найбільш узгоджена з наявним обмеженим набором даних робоча гіпотеза — фолікулярна лімфома. Її підтримує сукупність ознак: малоклітинна В-клітинна лімфома з нечіткими нодулярними структурами, експресія CD10, низький індекс проліферації Ki-67 — близько 10% — та перебудова гена BCL2 за даними FISH. Водночас гіпотеза ще не підтверджена остаточно: BCL6 негативний, немає оцінки повної архітектури лімфовузла й повної панелі ІГХ, а протокол FISH не уточнює досліджений матеріал, тип зонда, порогове значення та частку позитивних клітин. Тому точний підтип, а також наявність великоклітинного чи дифузного компонента потребують окремої перевірки.",
       "support_refs": [
@@ -43,17 +47,13 @@
       ],
       "refute_refs": [],
       "neutral_refs": [
-        "F033",
         "F038",
-        "F042",
-        "F044",
         "F045"
       ],
       "missing_evidence": [
-        "Повний опис архітектури репрезентативного лімфовузла з оцінкою великих клітин і дифузних ділянок",
-        "Повна панель ІГХ і проточної цитометрії в морфологічному контексті",
-        "Оригінальний протокол FISH щодо BCL2 із матеріалом, типом зонда, лабораторним порогом, часткою позитивних клітин і технічними обмеженнями",
-        "Експертне зіставлення матеріалу лімфовузла й трепан-біопсії"
+        "Повна архітектура репрезентативного лімфовузла з оцінкою великих клітин і дифузних ділянок",
+        "Повна ІГХ-панель і проточна цитометрія в морфологічному контексті",
+        "Оригінальний протокол BCL2 FISH із матеріалом, зондом, лабораторним порогом, часткою позитивних клітин і технічними обмеженнями"
       ],
       "applicability_limits": [
         "Перебудова BCL2 і експресія CD10 підтримують цю гіпотезу, але самі по собі не встановлюють діагноз фолікулярної лімфоми.",
@@ -61,15 +61,14 @@
         "Низький Ki-67 не замінює оцінку морфології та не виключає локального агресивнішого компонента."
       ],
       "discriminating_checks": [
-        "Інтегрований експертний перегляд морфології, ІГХ, проточної цитометрії та FISH",
-        "Перевірка фолікулярної архітектури та точного змісту результату BCL2 FISH",
-        "Окрема оцінка великоклітинного або дифузного компонента"
+        "Інтегрований перегляд морфології, ІГХ, проточної цитометрії та FISH",
+        "Окрема оцінка класичної FL, FLBL і великоклітинного або дифузного компонента"
       ],
       "short_label": "Фолікулярна лімфома",
       "counts": {
         "support": 5,
         "refute": 0,
-        "neutral": 5
+        "neutral": 2
       },
       "support_facts": [
         {
@@ -161,23 +160,6 @@
       "refute_facts": [],
       "neutral_facts": [
         {
-          "id": "F033",
-          "kind": "measurement",
-          "display": "ЛДГ",
-          "value": "ЛДГ: 179.2 Од/л; референс 110 - 250.",
-          "unit": "Од/л",
-          "reference": "110 - 250",
-          "comparator": null,
-          "interpretation": null,
-          "effective_at": null,
-          "source_reported_at": "2026-06-24",
-          "source_date_role": "laboratory_report_date",
-          "page": 2,
-          "source_fragment_id": "FRAG-31FDB1A02C6C-002",
-          "structured_row_id": "DOC-31FDB1A02C6C-p002-t01-r009",
-          "human_verified": true
-        },
-        {
           "id": "F038",
           "kind": "imaging_finding",
           "display": "КТ-ознаки генералізованої лімфаденопатії",
@@ -191,40 +173,6 @@
           "source_date_role": null,
           "page": 4,
           "source_fragment_id": "FRAG-31FDB1A02C6C-004",
-          "structured_row_id": null,
-          "human_verified": true
-        },
-        {
-          "id": "F042",
-          "kind": "imaging_finding",
-          "display": "Визначаються неопластично змінені лімфатичні вузли наступних розмірів та локалізацій:",
-          "value": "Визначаються неопластично змінені лімфатичні вузли наступних розмірів та локалізацій:.",
-          "unit": "—",
-          "reference": "—",
-          "comparator": null,
-          "interpretation": null,
-          "effective_at": null,
-          "source_reported_at": null,
-          "source_date_role": null,
-          "page": 5,
-          "source_fragment_id": "FRAG-31FDB1A02C6C-005",
-          "structured_row_id": null,
-          "human_verified": true
-        },
-        {
-          "id": "F044",
-          "kind": "imaging_finding",
-          "display": "Селезінка - аксіальні розміри 114х74мм, ККР складає 140мм",
-          "value": "Селезінка - аксіальні розміри 114х74мм, ККР складає 140мм.",
-          "unit": "—",
-          "reference": "—",
-          "comparator": null,
-          "interpretation": null,
-          "effective_at": null,
-          "source_reported_at": null,
-          "source_date_role": null,
-          "page": 5,
-          "source_fragment_id": "FRAG-31FDB1A02C6C-005",
           "structured_row_id": null,
           "human_verified": true
         },
@@ -250,7 +198,7 @@
     {
       "id": "H2",
       "rank": 2,
-      "label": "Інша дрібноклітинна В-клітинна лімфома з фенотипом гермінального центру, поки не класифікована",
+      "label": "Фолікулярна лімфома з нетиповою архітектурою або фенотипом / інша гермінально-центрова В-клітинна лімфома",
       "clinical_role": "Резервна гіпотеза, якщо повна морфологія або FISH не підтвердять класичну фолікулярну лімфому",
       "rationale": "Резервна гіпотеза — інша мала В-клітинна лімфома гермінального центру, яку поки неможливо точніше класифікувати. В-клітинний фенотип, експресія CD10 і малоклітинна нодулярна морфологія підтримують походження з гермінального центру. Однак бракує повної панелі маркерів та оцінки архітектури, тому сигнал BCL2 не можна використовувати як самодостатній критерій діагнозу.",
       "support_refs": [
@@ -260,28 +208,26 @@
       ],
       "refute_refs": [],
       "neutral_refs": [
-        "F053",
-        "F057"
+        "F053"
       ],
       "missing_evidence": [
-        "Повний В-клітинний імунофенотип і клональність легких ланцюгів",
-        "Розподіл CD10, BCL6 і BCL2 саме в пухлинних клітинах",
-        "Архітектура репрезентативного лімфовузла та зіставлення з кістковим мозком",
-        "Спрямовані молекулярні або цитогенетичні дані для конкретної альтернативи"
+        "Частка фолікулярного й дифузного росту та фолікулярно-дендритні сітки",
+        "Повторна оцінка BCL6 з валідними контролями",
+        "Кореляція морфології, ІГХ і FISH в одному зразку"
       ],
       "applicability_limits": [
-        "Це широка класифікаційна гілка, а не встановлений діагноз.",
-        "Вона не скасовує перевірку найбільш узгодженої фолікулярної гіпотези."
+        "Гілка об'єднує споріднені класифікаційні варіанти до отримання репрезентативної тканини.",
+        "Вона не скасовує перевірку провідної гіпотези."
       ],
       "discriminating_checks": [
-        "Інтегрована класифікація за морфологією, проточною цитометрією, ІГХ і FISH",
-        "Морфологічно обґрунтована перевірка додаткових маркерів"
+        "Експертний перегляд архітектури й повного імунофенотипу",
+        "Морфологічно спрямовані додаткові молекулярні дослідження"
       ],
       "short_label": "Інша мала В-клітинна лімфома гермінального центру",
       "counts": {
         "support": 3,
         "refute": 0,
-        "neutral": 2
+        "neutral": 1
       },
       "support_facts": [
         {
@@ -354,30 +300,13 @@
           "source_fragment_id": "FRAG-31FDB1A02C6C-008",
           "structured_row_id": null,
           "human_verified": true
-        },
-        {
-          "id": "F057",
-          "kind": "pathology_finding",
-          "display": "Приблизно 10% пухлинних клітин позитивні на маркер проліферації Кі-67.",
-          "value": "Приблизно 10% пухлинних клітин позитивні на маркер проліферації Кі-67..",
-          "unit": "—",
-          "reference": "—",
-          "comparator": null,
-          "interpretation": null,
-          "effective_at": null,
-          "source_reported_at": null,
-          "source_date_role": null,
-          "page": 9,
-          "source_fragment_id": "FRAG-31FDB1A02C6C-009",
-          "structured_row_id": null,
-          "human_verified": true
         }
       ]
     },
     {
       "id": "H3",
       "rank": 3,
-      "label": "Великоклітинна трансформація або інший агресивний В-клітинний компонент",
+      "label": "Великоклітинна трансформація або окремий агресивний В-клітинний компонент",
       "clinical_role": "Критично важлива гіпотеза, яку слід активно виключити в репрезентативній тканині",
       "rationale": "Клінічно важлива гіпотеза для виключення — великоклітинна трансформація або інший агресивний В-клітинний компонент. Її не можна пропустити з огляду на генералізовану лімфаденопатію та двобічні плевральні випоти. Проти домінування агресивного компонента в наданому матеріалі свідчать малоклітинна морфологія, Ki-67 близько 10% і ЛДГ у межах зазначеного референтного інтервалу. Даних про MYC, великоклітинні ділянки чи осередки високої проліферативної активності немає.",
       "support_refs": [],
@@ -388,15 +317,12 @@
       ],
       "neutral_refs": [
         "F038",
-        "F041",
-        "F042",
-        "F045",
-        "F053"
+        "F045"
       ],
       "missing_evidence": [
-        "Оцінка великоклітинного компонента, некрозу, мітотичної активності та осередків високого Ki-67 у репрезентативному вузлі",
-        "Дані MYC/BCL2/BCL6 у морфологічно обґрунтованому контексті",
-        "ПЕТ-КТ із вибором ділянки повторної біопсії лише за клінічно значущої неоднорідності"
+        "Репрезентативна тканина з оцінкою великих клітин, дифузного росту та неоднорідності Ki-67",
+        "MYC/BCL2/BCL6 у морфологічно обґрунтованому контексті",
+        "ПЕТ-КТ лише для стадіювання та вибору підозрілої ділянки біопсії"
       ],
       "applicability_limits": [
         "Нормальний рівень ЛДГ не виключає трансформацію.",
@@ -404,14 +330,14 @@
         "Плевральний випіт сам по собі не доводить агресивний перебіг або лімфомне ураження плеври."
       ],
       "discriminating_checks": [
-        "Експертна оцінка репрезентативної тканини на великоклітинний або дифузний компонент",
+        "Експертна оцінка репрезентативної тканини",
         "Вибір ділянки біопсії за сукупністю клінічних і візуалізаційних даних"
       ],
       "short_label": "Великоклітинна трансформація або інший агресивний В-клітинний компонент",
       "counts": {
         "support": 0,
         "refute": 3,
-        "neutral": 5
+        "neutral": 2
       },
       "support_facts": [],
       "refute_facts": [
@@ -486,40 +412,6 @@
           "human_verified": true
         },
         {
-          "id": "F041",
-          "kind": "diagnostic_interpretation",
-          "display": "Попередні дані: За даними ПГЗ від 09.06.2026р. - В-клітинна лімфома.",
-          "value": "Попередні дані: За даними ПГЗ від 09.06.2026р. - В-клітинна лімфома..",
-          "unit": "—",
-          "reference": "—",
-          "comparator": null,
-          "interpretation": null,
-          "effective_at": "2026-06-09",
-          "source_reported_at": null,
-          "source_date_role": null,
-          "page": 5,
-          "source_fragment_id": "FRAG-31FDB1A02C6C-005",
-          "structured_row_id": null,
-          "human_verified": true
-        },
-        {
-          "id": "F042",
-          "kind": "imaging_finding",
-          "display": "Визначаються неопластично змінені лімфатичні вузли наступних розмірів та локалізацій:",
-          "value": "Визначаються неопластично змінені лімфатичні вузли наступних розмірів та локалізацій:.",
-          "unit": "—",
-          "reference": "—",
-          "comparator": null,
-          "interpretation": null,
-          "effective_at": null,
-          "source_reported_at": null,
-          "source_date_role": null,
-          "page": 5,
-          "source_fragment_id": "FRAG-31FDB1A02C6C-005",
-          "structured_row_id": null,
-          "human_verified": true
-        },
-        {
           "id": "F045",
           "kind": "imaging_finding",
           "display": "В обох гемітораксах та по міжчасточковим плеврам визначається рідинний вміст: висота стовпа у правому гемітораксі складає 100мм, зліва - 21мм.",
@@ -533,23 +425,6 @@
           "source_date_role": null,
           "page": 5,
           "source_fragment_id": "FRAG-31FDB1A02C6C-005",
-          "structured_row_id": null,
-          "human_verified": true
-        },
-        {
-          "id": "F053",
-          "kind": "pathology_finding",
-          "display": "В клітинах пухлини виявлено транслокацію гена BCL2.",
-          "value": "В клітинах пухлини виявлено транслокацію гена BCL2..",
-          "unit": "—",
-          "reference": "—",
-          "comparator": null,
-          "interpretation": null,
-          "effective_at": "2026-07-02",
-          "source_reported_at": null,
-          "source_date_role": null,
-          "page": 8,
-          "source_fragment_id": "FRAG-31FDB1A02C6C-008",
           "structured_row_id": null,
           "human_verified": true
         }
@@ -568,27 +443,26 @@
       ],
       "neutral_refs": [
         "F055",
-        "F056",
-        "F057"
+        "F056"
       ],
       "missing_evidence": [
         "Повний імунофенотип дрібноклітинної В-клітинної лімфоми",
-        "Архітектура вузла, характер ураження кісткового мозку й клінічне зіставлення",
-        "Спрямовані дослідження лише після морфологічного звуження диференційного ряду"
+        "Клональність легких ланцюгів і архітектура вузла",
+        "Спрямовані дослідження лише після морфологічного звуження ряду"
       ],
       "applicability_limits": [
         "Кілька можливих діагнозів об’єднано в одну контрольну гілку лише для перевірки повноти диференційного ряду.",
         "Жодна з цих альтернатив не має прямого специфічного підтвердження в наданих матеріалах."
       ],
       "discriminating_checks": [
-        "Повний імунофенотип дрібноклітинної В-клітинної лімфоми",
-        "Морфологічно спрямовані додаткові дослідження"
+        "Повний імунофенотип і морфологічна ревізія",
+        "Додаткові маркери, обрані після звуження морфологічного ряду"
       ],
       "short_label": "Інша індолентна мала В-клітинна лімфома",
       "counts": {
         "support": 0,
         "refute": 2,
-        "neutral": 3
+        "neutral": 2
       },
       "support_facts": [],
       "refute_facts": [
@@ -650,23 +524,6 @@
           "kind": "pathology_finding",
           "display": "В матеріалі трепан-біопсії розростання дрібноклітинної лімфоми, яка на деяких ділянках формує нечіткі нодулярні структури.",
           "value": "В матеріалі трепан-біопсії розростання дрібноклітинної лімфоми, яка на деяких ділянках формує нечіткі нодулярні структури..",
-          "unit": "—",
-          "reference": "—",
-          "comparator": null,
-          "interpretation": null,
-          "effective_at": null,
-          "source_reported_at": null,
-          "source_date_role": null,
-          "page": 9,
-          "source_fragment_id": "FRAG-31FDB1A02C6C-009",
-          "structured_row_id": null,
-          "human_verified": true
-        },
-        {
-          "id": "F057",
-          "kind": "pathology_finding",
-          "display": "Приблизно 10% пухлинних клітин позитивні на маркер проліферації Кі-67.",
-          "value": "Приблизно 10% пухлинних клітин позитивні на маркер проліферації Кі-67..",
           "unit": "—",
           "reference": "—",
           "comparator": null,
@@ -709,22 +566,7 @@
       "relation": "support"
     },
     {
-      "evidence_ref": "F033",
-      "hypothesis_id": "H1",
-      "relation": "neutral"
-    },
-    {
       "evidence_ref": "F038",
-      "hypothesis_id": "H1",
-      "relation": "neutral"
-    },
-    {
-      "evidence_ref": "F042",
-      "hypothesis_id": "H1",
-      "relation": "neutral"
-    },
-    {
-      "evidence_ref": "F044",
       "hypothesis_id": "H1",
       "relation": "neutral"
     },
@@ -754,11 +596,6 @@
       "relation": "neutral"
     },
     {
-      "evidence_ref": "F057",
-      "hypothesis_id": "H2",
-      "relation": "neutral"
-    },
-    {
       "evidence_ref": "F033",
       "hypothesis_id": "H3",
       "relation": "refute"
@@ -779,22 +616,7 @@
       "relation": "neutral"
     },
     {
-      "evidence_ref": "F041",
-      "hypothesis_id": "H3",
-      "relation": "neutral"
-    },
-    {
-      "evidence_ref": "F042",
-      "hypothesis_id": "H3",
-      "relation": "neutral"
-    },
-    {
       "evidence_ref": "F045",
-      "hypothesis_id": "H3",
-      "relation": "neutral"
-    },
-    {
-      "evidence_ref": "F053",
       "hypothesis_id": "H3",
       "relation": "neutral"
     },
@@ -815,11 +637,6 @@
     },
     {
       "evidence_ref": "F056",
-      "hypothesis_id": "H4",
-      "relation": "neutral"
-    },
-    {
-      "evidence_ref": "F057",
       "hypothesis_id": "H4",
       "relation": "neutral"
     }
@@ -1816,636 +1633,605 @@
     {
       "id": "E-CAND-1",
       "type": "guideline",
-      "title": "Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma — Spanish Lymphoma Group (GELTAMO) 2025",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41681868/",
+      "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
       "pmid": "41681868",
       "doi": "10.3390/cancers18030395",
-      "year": 2026,
-      "location": "Sections 2–3; Table 1",
-      "use": "Ексцизійна біопсія для встановлення діагнозу; базова оцінка анамнезу й фізикального статусу; загальний аналіз крові, ЛДГ і β2-мікроглобулін; ПЕТ/КТ для стадіювання та вибору ділянки біопсії за накопиченням ФДГ, якщо підозрюють трансформацію.",
-      "applicability_limit": "Рекомендації цієї настанови застосовні після того, як лікар підтвердить фолікулярну лімфому як робочу нозологію; самі по собі вони не встановлюють діагноз і показання до лікування в CASE006.",
-      "verification_status": "verified_primary"
+      "local_source_id": "geltamo_follicular_lymphoma_2025",
+      "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+      "location": "PDF pp. 2–5",
+      "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+      "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+      "verification_status": "human_source_review",
+      "url": "https://doi.org/10.3390/cancers18030395",
+      "year": 2025
     },
     {
       "id": "E-CAND-2",
-      "type": "guideline",
-      "title": "Newly diagnosed and relapsed follicular lymphoma: ESMO Clinical Practice Guidelines for diagnosis, treatment and follow-up",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/33249059/",
-      "pmid": "33249059",
-      "doi": "10.1016/j.annonc.2020.11.008",
-      "year": 2021,
-      "location": "Diagnosis and staging recommendations",
-      "use": "Незалежна клінічна настанова щодо первинного підтвердження діагнозу, стадіювання та клінічного контексту при фолікулярній лімфомі.",
-      "applicability_limit": "Повний текст рекомендацій недоступний у PubMed, тому джерело використано для незалежного підтвердження напряму, а не як єдину підставу для визначення прогалини CASE006.",
-      "verification_status": "verified_metadata"
+      "type": "classification",
+      "title": "WHO-HAEM5: Lymphoid Neoplasms",
+      "pmid": "35732829",
+      "doi": "10.1038/s41375-022-01620-2",
+      "local_source_id": "who_haem5_lymphoid_2022",
+      "sha256": "7b2dd8bbfa57480a119fc038977f41de53861543474649528bba40b6b99c0a2c",
+      "location": "PDF pp. 8–10",
+      "use": "Інтегрована класифікація лімфоїдних новоутворень і розмежування класичної фолікулярної лімфоми, фолікулярної В-великоклітинної лімфоми та дифузного або великоклітинного компонента.",
+      "applicability_limit": "Класифікація задає критерії й терміни, але не замінює перегляд репрезентативної тканини.",
+      "verification_status": "human_source_review",
+      "url": "https://doi.org/10.1038/s41375-022-01620-2",
+      "year": null
     },
     {
       "id": "E-CAND-3",
-      "type": "classification",
-      "title": "The 5th edition of the World Health Organization Classification of Haematolymphoid Tumours: Lymphoid Neoplasms",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/35732829/",
-      "pmid": "35732829",
-      "doi": "10.1038/s41375-022-01620-2",
-      "year": 2022,
-      "location": "Mature B-cell neoplasms; follicular and aggressive B-cell lymphoma sections",
-      "use": "Інтегрована оцінка морфології, імунофенотипу та генетики; розмежування великоклітинного або агресивного компонента й змін MYC/BCL2. WHO-HAEM5 не вимагає обов’язкового визначення ступеня для класичної фолікулярної лімфоми.",
-      "applicability_limit": "Класифікація визначає терміни й необхідні розмежування, але не замінює перегляд первинного тканинного матеріалу.",
-      "verification_status": "verified_primary"
+      "type": "protocol",
+      "title": "European recommendations for cytogenomic analysis of haematological neoplasms",
+      "pmid": "30696948",
+      "doi": "10.1038/s41375-019-0378-z",
+      "local_source_id": "european_cytogenomic_recommendations_2019",
+      "sha256": "e00eaee8ed92f10aaed7e7aaa9aedaed8dad47f79ae74c540dfcf21aa42ec2ee",
+      "location": "PDF p. 6",
+      "use": "Перевірка повноти протоколу FISH: досліджений матеріал, тип зонда й методика, лабораторний поріг, кількість оцінених клітин та обмеження тесту.",
+      "applicability_limit": "Джерело визначає відсутній контекст звіту, але не скасовує наявний результат і не дозволяє самостійно встановити підтип лімфоми.",
+      "verification_status": "human_source_review",
+      "url": "https://doi.org/10.1038/s41375-019-0378-z",
+      "year": null
     },
     {
       "id": "E-CAND-4",
-      "type": "classification",
-      "title": "The International Consensus Classification of Mature Lymphoid Neoplasms: a report from the Clinical Advisory Committee",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/35653592/",
-      "pmid": "35653592",
-      "doi": "10.1182/blood.2022015851",
-      "year": 2022,
-      "location": "Follicular lymphoma classification section",
-      "use": "За неоднозначної морфології перебудова BCL2 та/або експресія CD10 можуть підтримувати фолікулярну лімфому, однак морфологія й інтегрована імунофенотипізація залишаються обов’язковими.",
-      "applicability_limit": "Наведені ознаки посилюють класифікаційну підтримку, але окремо не встановлюють діагноз у CASE006.",
-      "verification_status": "verified_primary"
+      "type": "guideline",
+      "title": "British Thoracic Society Guideline for pleural disease",
+      "doi": "10.1136/thorax-2022-219784",
+      "location": "Pleural-fluid tests and biomarkers",
+      "use": "Оцінка плеврального випоту, коли негативна цитологія не закриває питання злоякісного ураження плеври.",
+      "applicability_limit": "Настанова не є специфічною для лімфом і не встановлює причину випоту в CASE006.",
+      "verification_status": "human_source_review",
+      "url": "https://doi.org/10.1136/thorax-2022-219784",
+      "year": null
     },
     {
       "id": "E-CAND-5",
-      "type": "protocol",
-      "title": "CAP Protocol for the Examination of Precursor and Mature Lymphoid Malignancies",
-      "url": "https://documents.cap.org/protocols/Heme.Lymphoid.Bx.Res_1.0.0.1.REL_CAPCP.pdf",
-      "year": 2025,
-      "location": "Lymphoid biopsy reporting elements; molecular/cytogenetic results",
-      "use": "Структурований патоморфологічний протокол для морфології, імунофенотипу й молекулярних змін із зазначенням методу та клінічно значущих даних BCL2, BCL6 і MYC.",
-      "applicability_limit": "Протокол CAP визначає повноту звіту, але не дає змоги інтерпретувати відсутні первинні гістологічні препарати CASE006.",
-      "verification_status": "verified_official"
+      "type": "pmid",
+      "title": "Use of flow cytometry in fluid specimens",
+      "pmid": "24554583",
+      "doi": "10.1002/dc.23106",
+      "location": "Abstract and pleural-fluid subgroup",
+      "use": "Проточна цитометрія плевральної рідини як додаткове дослідження, якщо підозрюють лімфопроліферативний процес.",
+      "applicability_limit": "Це ретроспективні дані; корисність залежить від якості зразка та клінічної ймовірності, тому тест не є самодостатнім.",
+      "verification_status": "human_source_review",
+      "url": "https://doi.org/10.1002/dc.23106",
+      "year": null
     },
     {
       "id": "E-CAND-6",
-      "type": "guideline",
-      "title": "European recommendations and quality assurance for cytogenomic analysis of haematological neoplasms",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/30696948/",
-      "pmid": "30696948",
-      "doi": "10.1038/s41375-019-0378-z",
-      "year": 2019,
-      "location": "Interphase FISH; Reporting",
-      "use": "У протоколі FISH слід зазначати досліджений матеріал, зонд і методику, лабораторні порогові значення, кількість нормальних і аномальних клітин та обмеження; результати поблизу порога потребують застереження.",
-      "applicability_limit": "Настанова з лабораторної звітності не вимагає називати партнера перебудови, якщо валідований розривний зонд його не визначав.",
-      "verification_status": "verified_primary"
+      "type": "pmid",
+      "title": "Follicular Lymphoma International Prognostic Index",
+      "pmid": "15126323",
+      "doi": "10.1182/blood-2003-12-4434",
+      "location": "Model variables",
+      "use": "Визначення обов’язкових вихідних даних для FLIPI: вік, стадія Ann Arbor, гемоглобін, кількість уражених лімфатичних зон і ЛДГ.",
+      "applicability_limit": "FLIPI є прогностичним індексом після встановлення діагнозу й надійного датування показників; він не встановлює діагноз або показання до лікування.",
+      "verification_status": "human_source_review",
+      "url": "https://doi.org/10.1182/blood-2003-12-4434",
+      "year": null
     },
     {
       "id": "E-CAND-7",
-      "type": "consensus",
-      "title": "Recommendations for Initial Evaluation, Staging, and Response Assessment of Hodgkin and Non-Hodgkin Lymphoma: The Lugano Classification",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/25113753/",
-      "pmid": "25113753",
-      "doi": "10.1200/JCO.2013.54.8800",
-      "year": 2014,
-      "location": "Initial evaluation and staging",
-      "use": "Стадіювання ФДГ-авідних лімфом за допомогою ПЕТ/КТ і стандартизована оцінка ураження лімфовузлів, екстранодальних ділянок та кісткового мозку.",
-      "applicability_limit": "Візуалізація описує поширеність хвороби після визначення діагностичного контексту, але сама не встановлює підтип лімфоми чи трансформацію.",
-      "verification_status": "verified_primary"
+      "type": "pmid",
+      "title": "Follicular Lymphoma International Prognostic Index 2",
+      "pmid": "19652063",
+      "doi": "10.1200/JCO.2008.21.3991",
+      "location": "Model variables",
+      "use": "Визначення обов’язкових вихідних даних для FLIPI2: β2-мікроглобулін, розмір найбільшого вузла, ураження кісткового мозку, гемоглобін і вік.",
+      "applicability_limit": "FLIPI2 є прогностичним індексом і не встановлює діагноз, причину тромбоцитопенії або рішення про лікування.",
+      "verification_status": "human_source_review",
+      "url": "https://doi.org/10.1200/JCO.2008.21.3991",
+      "year": null
     },
     {
       "id": "E-CAND-8",
-      "type": "consensus",
-      "title": "Application of the Lugano Classification for Initial Evaluation, Staging, and Response Assessment of Hodgkin and Non-Hodgkin Lymphoma: The PRoLoG Consensus Initiative",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/35835580/",
-      "pmid": "35835580",
-      "doi": "10.2967/jnumed.122.264106",
-      "year": 2023,
-      "location": "Clinical recommendations for PET/CT, diagnostic CT and marrow assessment",
-      "use": "Уточнення стандартизованого застосування класифікації Lugano та інтерпретації неузгоджених або неповних результатів візуалізації.",
-      "applicability_limit": "Консенсус стандартизує трактування візуалізації, але не встановлює порога SUV, який може замінити біопсію.",
-      "verification_status": "verified_primary"
+      "type": "guideline",
+      "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas",
+      "local_source_id": "nccn_b_cell_lymphomas_v4_2026",
+      "sha256": "c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+      "location": "PDF pp. 14-19; DIAG-1 and FOLL-1 to FOLL-5",
+      "use": "Вибір репрезентативної тканини, інтегрована класифікація фолікулярної лімфоми та спрямування біопсії за ПЕТ/КТ без встановлення трансформації лише за зображенням.",
+      "applicability_limit": "Схеми й примітки перевірені агентом безпосередньо на сторінках PDF. Вони не встановлюють діагноз, стадію, трансформацію чи показання до лікування в CASE006; фінальну застосовність оцінює лікар.",
+      "verification_status": "agent_visual_source_review",
+      "url": "https://www.nccn.org/guidelines/category_1",
+      "year": 2026
     },
     {
       "id": "E-CAND-9",
       "type": "pmid",
-      "title": "FDG-PET/CT-guided rebiopsy may find clinically unsuspicious transformation of follicular lymphoma",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/35661431/",
-      "pmid": "35661431",
-      "doi": "10.1002/cam4.4924",
-      "year": 2023,
-      "location": "Methods and Results",
-      "use": "Спостережні дані на користь повторної біопсії підозрілої ділянки з високим накопиченням ФДГ, якщо клінічно важливо виключити трансформацію.",
-      "applicability_limit": "Ретроспективне одноцентрове дослідження має ризик селекційного зміщення; воно не визначає універсального порога SUV і не встановлює обов’язковість біопсії в CASE006.",
-      "verification_status": "verified_primary"
+      "title": "Diagnosis and management of pleural infection",
+      "doi": "10.1183/20734735.0146-2023",
+      "local_source_id": "breathe_pleural_infection_2023",
+      "sha256": "035ba08cbb9c82af5361617d00fb0fa7b500b561495fc20d14420fcea462ff88",
+      "location": "PDF pp. 1, 3-4",
+      "use": "Окрема інфекційна гілка плеврального випоту: значення документованого гною та межі інтерпретації pH, глюкози, ЛДГ і мікробіології.",
+      "applicability_limit": "Історична евакуація гнійного вмісту підтримує емпіємну або інфекційну гілку, але не доводить поточну активність, збудника, єдину причину чи відсутність поєднаного механізму.",
+      "verification_status": "agent_visual_source_review",
+      "url": "https://doi.org/10.1183/20734735.0146-2023",
+      "year": null
     },
     {
       "id": "E-CAND-10",
       "type": "pmid",
-      "title": "PET scan for the detection of histological transformation of follicular lymphoma: A systematic review of diagnostic performance",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/39893056/",
-      "pmid": "39893056",
-      "doi": "10.1016/j.blre.2025.101270",
-      "year": 2025,
-      "location": "Abstract conclusion",
-      "use": "Контраргумент: опубліковані порогові значення SUVmax мають неоднорідну діагностичну точність, тому не повинні самостійно визначати наявність трансформації чи рішення про біопсію.",
-      "applicability_limit": "Огляд показує невизначеність і ризик упереджень, а не дає позитивного порога для рішення саме в CASE006.",
-      "verification_status": "verified_primary"
+      "title": "Non-traumatic chylothorax: diagnostic and therapeutic strategies",
+      "doi": "10.1183/20734735.0163-2021",
+      "local_source_id": "breathe_nontraumatic_chylothorax_2022",
+      "sha256": "10d7e13b7b4d6a688ee14f2d5e67cc9f56f2b461f206aa842c1a3878dd5e616d",
+      "location": "PDF pp. 3-6 and 11",
+      "use": "Окрема хілозна гілка: тригліцериди, холестерин і хіломікрони плевральної рідини та обмежений зв’язок із лімфомою.",
+      "applicability_limit": "У CASE006 немає перевірених показників плевральних ліпідів або хіломікронів, тому хілоторакс лишається непідтвердженим.",
+      "verification_status": "agent_visual_source_review",
+      "url": "https://doi.org/10.1183/20734735.0163-2021",
+      "year": null
     },
     {
       "id": "E-CAND-11",
-      "type": "guideline",
-      "title": "British Thoracic Society Guideline for pleural disease",
-      "url": "https://thorax.bmj.com/content/78/Suppl_3/s1",
-      "doi": "10.1136/thorax-2022-219784",
-      "year": 2023,
-      "location": "Pleural fluid tests and biomarkers for diagnosing secondary pleural malignancy",
-      "use": "Цитологічне дослідження плевральної рідини є початковим тестом; за негативного результату слід розглянути подальше обстеження з урахуванням очікуваної діагностичної чутливості для конкретної пухлини.",
-      "applicability_limit": "Рекомендація стосується підозри на вторинне злоякісне ураження плеври загалом і без повного клінічного контексту не визначає конкретний наступний тест для цього пацієнта.",
-      "verification_status": "verified_official"
-    },
-    {
-      "id": "E-CAND-12",
       "type": "pmid",
-      "title": "Use of flow cytometry in the diagnosis of lymphoproliferative disorders in fluid specimens",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/24554583/",
-      "pmid": "24554583",
-      "doi": "10.1002/dc.23106",
-      "year": 2014,
-      "location": "Abstract and pleural-fluid subgroup",
-      "use": "Проточна цитометрія може бути корисним додатковим дослідженням плеврального випоту, якщо підозрюють лімфопроліферативне захворювання.",
-      "applicability_limit": "Це ретроспективний діагностичний досвід; користь залежить від якості зразка й попередньої клінічної ймовірності, тому проточна цитометрія не є автоматичним самодостатнім тестом.",
-      "verification_status": "verified_primary"
-    },
-    {
-      "id": "E-CAND-13",
-      "type": "pmid",
-      "title": "Follicular lymphoma international prognostic index",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/15126323/",
-      "pmid": "15126323",
-      "doi": "10.1182/blood-2003-12-4434",
-      "year": 2004,
-      "location": "Abstract: five adverse prognostic factors",
-      "use": "Для FLIPI потрібні вік, стадія за Ann Arbor, гемоглобін, кількість уражених лімфатичних зон і ЛДГ; відсутні або недатовані показники не дають змоги коректно розрахувати індекс.",
-      "applicability_limit": "FLIPI є прогностичним індексом після встановлення діагнозу й базових даних; він не слугує правилом для встановлення діагнозу чи показань до лікування.",
-      "verification_status": "verified_primary"
-    },
-    {
-      "id": "E-CAND-14",
-      "type": "pmid",
-      "title": "Follicular lymphoma international prognostic index 2: a new prognostic index for follicular lymphoma",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/19652063/",
-      "pmid": "19652063",
-      "doi": "10.1200/JCO.2008.21.3991",
-      "year": 2009,
-      "location": "Model variables and conclusion",
-      "use": "Для FLIPI2 потрібні β2-мікроглобулін, розмір найбільшого лімфовузла, ураження кісткового мозку, гемоглобін і вік; для кожного показника потрібна надійна вихідна дата.",
-      "applicability_limit": "FLIPI2 є прогностичним індексом і самостійно не встановлює діагноз або рішення про лікування за рівнем β2-мікроглобуліну чи кількістю тромбоцитів.",
-      "verification_status": "verified_primary"
+      "title": "The tuberculous pleural effusion",
+      "pmid": "38125799",
+      "pmcid": "PMC10729824",
+      "doi": "10.1183/20734735.0143-2023",
+      "local_source_id": "breathe_tuberculous_pleural_effusion_2023",
+      "sha256": "b9dabc39e373d6a8f9ab443664cd749e203c392ab233dfa2e6b5f5772ca60b71",
+      "location": "PDF pp. 1, 5-8 and 14",
+      "use": "Окрема гілка туберкульозного або іншого гранульоматозного плеврального процесу: епідеміологічний контекст, мікробіологія, тканина, ADA, клітинний склад і межі NAAT.",
+      "applicability_limit": "Гнійний вміст і змішаний клітинний склад самі по собі не встановлюють туберкульоз. Піогенний, туберкульозний, пухлинний, хілозний і поєднаний механізми лишаються окремими до рішення лікаря.",
+      "verification_status": "agent_visual_source_review",
+      "url": "https://doi.org/10.1183/20734735.0143-2023",
+      "year": null
     }
   ],
   "critical_gaps": [
     {
       "id": "G1",
-      "text": "Немає інтегрованого експертного морфологічного висновку з оцінкою повної архітектури та великоклітинного або дифузного компонента.",
+      "text": "Немає інтегрованого висновку з повною архітектурою та оцінкою великоклітинного або дифузного компонента.",
       "evidence_refs": [
         "E-CAND-1",
-        "E-CAND-3",
-        "E-CAND-4",
-        "E-CAND-5"
+        "E-CAND-2",
+        "E-CAND-8"
       ],
       "sources": [
         {
           "id": "E-CAND-1",
           "type": "guideline",
-          "title": "Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma — Spanish Lymphoma Group (GELTAMO) 2025",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/41681868/",
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
           "pmid": "41681868",
           "doi": "10.3390/cancers18030395",
-          "year": 2026,
-          "location": "Sections 2–3; Table 1",
-          "use": "Ексцизійна біопсія для встановлення діагнозу; базова оцінка анамнезу й фізикального статусу; загальний аналіз крові, ЛДГ і β2-мікроглобулін; ПЕТ/КТ для стадіювання та вибору ділянки біопсії за накопиченням ФДГ, якщо підозрюють трансформацію.",
-          "applicability_limit": "Рекомендації цієї настанови застосовні після того, як лікар підтвердить фолікулярну лімфому як робочу нозологію; самі по собі вони не встановлюють діагноз і показання до лікування в CASE006.",
-          "verification_status": "verified_primary"
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
         },
         {
-          "id": "E-CAND-3",
+          "id": "E-CAND-2",
           "type": "classification",
-          "title": "The 5th edition of the World Health Organization Classification of Haematolymphoid Tumours: Lymphoid Neoplasms",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/35732829/",
+          "title": "WHO-HAEM5: Lymphoid Neoplasms",
           "pmid": "35732829",
           "doi": "10.1038/s41375-022-01620-2",
-          "year": 2022,
-          "location": "Mature B-cell neoplasms; follicular and aggressive B-cell lymphoma sections",
-          "use": "Інтегрована оцінка морфології, імунофенотипу та генетики; розмежування великоклітинного або агресивного компонента й змін MYC/BCL2. WHO-HAEM5 не вимагає обов’язкового визначення ступеня для класичної фолікулярної лімфоми.",
-          "applicability_limit": "Класифікація визначає терміни й необхідні розмежування, але не замінює перегляд первинного тканинного матеріалу.",
-          "verification_status": "verified_primary"
+          "local_source_id": "who_haem5_lymphoid_2022",
+          "sha256": "7b2dd8bbfa57480a119fc038977f41de53861543474649528bba40b6b99c0a2c",
+          "location": "PDF pp. 8–10",
+          "use": "Інтегрована класифікація лімфоїдних новоутворень і розмежування класичної фолікулярної лімфоми, фолікулярної В-великоклітинної лімфоми та дифузного або великоклітинного компонента.",
+          "applicability_limit": "Класифікація задає критерії й терміни, але не замінює перегляд репрезентативної тканини.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1038/s41375-022-01620-2",
+          "year": null
         },
         {
-          "id": "E-CAND-4",
-          "type": "classification",
-          "title": "The International Consensus Classification of Mature Lymphoid Neoplasms: a report from the Clinical Advisory Committee",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/35653592/",
-          "pmid": "35653592",
-          "doi": "10.1182/blood.2022015851",
-          "year": 2022,
-          "location": "Follicular lymphoma classification section",
-          "use": "За неоднозначної морфології перебудова BCL2 та/або експресія CD10 можуть підтримувати фолікулярну лімфому, однак морфологія й інтегрована імунофенотипізація залишаються обов’язковими.",
-          "applicability_limit": "Наведені ознаки посилюють класифікаційну підтримку, але окремо не встановлюють діагноз у CASE006.",
-          "verification_status": "verified_primary"
-        },
-        {
-          "id": "E-CAND-5",
-          "type": "protocol",
-          "title": "CAP Protocol for the Examination of Precursor and Mature Lymphoid Malignancies",
-          "url": "https://documents.cap.org/protocols/Heme.Lymphoid.Bx.Res_1.0.0.1.REL_CAPCP.pdf",
-          "year": 2025,
-          "location": "Lymphoid biopsy reporting elements; molecular/cytogenetic results",
-          "use": "Структурований патоморфологічний протокол для морфології, імунофенотипу й молекулярних змін із зазначенням методу та клінічно значущих даних BCL2, BCL6 і MYC.",
-          "applicability_limit": "Протокол CAP визначає повноту звіту, але не дає змоги інтерпретувати відсутні первинні гістологічні препарати CASE006.",
-          "verification_status": "verified_official"
+          "id": "E-CAND-8",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas",
+          "local_source_id": "nccn_b_cell_lymphomas_v4_2026",
+          "sha256": "c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "location": "PDF pp. 14-19; DIAG-1 and FOLL-1 to FOLL-5",
+          "use": "Вибір репрезентативної тканини, інтегрована класифікація фолікулярної лімфоми та спрямування біопсії за ПЕТ/КТ без встановлення трансформації лише за зображенням.",
+          "applicability_limit": "Схеми й примітки перевірені агентом безпосередньо на сторінках PDF. Вони не встановлюють діагноз, стадію, трансформацію чи показання до лікування в CASE006; фінальну застосовність оцінює лікар.",
+          "verification_status": "agent_visual_source_review",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026
         }
       ]
     },
     {
       "id": "G2",
-      "text": "Немає повної панелі ІГХ/проточної цитометрії з чіткою належністю маркерів пухлинним клітинам.",
+      "text": "Немає повної ІГХ/flow-панелі з чіткою належністю маркерів пухлинним клітинам.",
       "evidence_refs": [
         "E-CAND-1",
-        "E-CAND-4",
-        "E-CAND-5"
+        "E-CAND-2",
+        "E-CAND-8"
       ],
       "sources": [
         {
           "id": "E-CAND-1",
           "type": "guideline",
-          "title": "Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma — Spanish Lymphoma Group (GELTAMO) 2025",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/41681868/",
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
           "pmid": "41681868",
           "doi": "10.3390/cancers18030395",
-          "year": 2026,
-          "location": "Sections 2–3; Table 1",
-          "use": "Ексцизійна біопсія для встановлення діагнозу; базова оцінка анамнезу й фізикального статусу; загальний аналіз крові, ЛДГ і β2-мікроглобулін; ПЕТ/КТ для стадіювання та вибору ділянки біопсії за накопиченням ФДГ, якщо підозрюють трансформацію.",
-          "applicability_limit": "Рекомендації цієї настанови застосовні після того, як лікар підтвердить фолікулярну лімфому як робочу нозологію; самі по собі вони не встановлюють діагноз і показання до лікування в CASE006.",
-          "verification_status": "verified_primary"
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
         },
         {
-          "id": "E-CAND-4",
+          "id": "E-CAND-2",
           "type": "classification",
-          "title": "The International Consensus Classification of Mature Lymphoid Neoplasms: a report from the Clinical Advisory Committee",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/35653592/",
-          "pmid": "35653592",
-          "doi": "10.1182/blood.2022015851",
-          "year": 2022,
-          "location": "Follicular lymphoma classification section",
-          "use": "За неоднозначної морфології перебудова BCL2 та/або експресія CD10 можуть підтримувати фолікулярну лімфому, однак морфологія й інтегрована імунофенотипізація залишаються обов’язковими.",
-          "applicability_limit": "Наведені ознаки посилюють класифікаційну підтримку, але окремо не встановлюють діагноз у CASE006.",
-          "verification_status": "verified_primary"
+          "title": "WHO-HAEM5: Lymphoid Neoplasms",
+          "pmid": "35732829",
+          "doi": "10.1038/s41375-022-01620-2",
+          "local_source_id": "who_haem5_lymphoid_2022",
+          "sha256": "7b2dd8bbfa57480a119fc038977f41de53861543474649528bba40b6b99c0a2c",
+          "location": "PDF pp. 8–10",
+          "use": "Інтегрована класифікація лімфоїдних новоутворень і розмежування класичної фолікулярної лімфоми, фолікулярної В-великоклітинної лімфоми та дифузного або великоклітинного компонента.",
+          "applicability_limit": "Класифікація задає критерії й терміни, але не замінює перегляд репрезентативної тканини.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1038/s41375-022-01620-2",
+          "year": null
         },
         {
-          "id": "E-CAND-5",
-          "type": "protocol",
-          "title": "CAP Protocol for the Examination of Precursor and Mature Lymphoid Malignancies",
-          "url": "https://documents.cap.org/protocols/Heme.Lymphoid.Bx.Res_1.0.0.1.REL_CAPCP.pdf",
-          "year": 2025,
-          "location": "Lymphoid biopsy reporting elements; molecular/cytogenetic results",
-          "use": "Структурований патоморфологічний протокол для морфології, імунофенотипу й молекулярних змін із зазначенням методу та клінічно значущих даних BCL2, BCL6 і MYC.",
-          "applicability_limit": "Протокол CAP визначає повноту звіту, але не дає змоги інтерпретувати відсутні первинні гістологічні препарати CASE006.",
-          "verification_status": "verified_official"
+          "id": "E-CAND-8",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas",
+          "local_source_id": "nccn_b_cell_lymphomas_v4_2026",
+          "sha256": "c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "location": "PDF pp. 14-19; DIAG-1 and FOLL-1 to FOLL-5",
+          "use": "Вибір репрезентативної тканини, інтегрована класифікація фолікулярної лімфоми та спрямування біопсії за ПЕТ/КТ без встановлення трансформації лише за зображенням.",
+          "applicability_limit": "Схеми й примітки перевірені агентом безпосередньо на сторінках PDF. Вони не встановлюють діагноз, стадію, трансформацію чи показання до лікування в CASE006; фінальну застосовність оцінює лікар.",
+          "verification_status": "agent_visual_source_review",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026
         }
       ]
     },
     {
       "id": "G3",
-      "text": "У висновку FISH щодо BCL2 не зазначено матеріал, тип дослідження/зонда, лабораторний поріг, частку позитивних клітин і технічні обмеження.",
+      "text": "Коротке формулювання BCL2 FISH не містить матеріалу, зонда/методу, лабораторного порога, частки позитивних клітин і технічних обмежень.",
       "evidence_refs": [
-        "E-CAND-5",
-        "E-CAND-6"
+        "E-CAND-3"
       ],
       "sources": [
         {
-          "id": "E-CAND-5",
+          "id": "E-CAND-3",
           "type": "protocol",
-          "title": "CAP Protocol for the Examination of Precursor and Mature Lymphoid Malignancies",
-          "url": "https://documents.cap.org/protocols/Heme.Lymphoid.Bx.Res_1.0.0.1.REL_CAPCP.pdf",
-          "year": 2025,
-          "location": "Lymphoid biopsy reporting elements; molecular/cytogenetic results",
-          "use": "Структурований патоморфологічний протокол для морфології, імунофенотипу й молекулярних змін із зазначенням методу та клінічно значущих даних BCL2, BCL6 і MYC.",
-          "applicability_limit": "Протокол CAP визначає повноту звіту, але не дає змоги інтерпретувати відсутні первинні гістологічні препарати CASE006.",
-          "verification_status": "verified_official"
-        },
-        {
-          "id": "E-CAND-6",
-          "type": "guideline",
-          "title": "European recommendations and quality assurance for cytogenomic analysis of haematological neoplasms",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/30696948/",
+          "title": "European recommendations for cytogenomic analysis of haematological neoplasms",
           "pmid": "30696948",
           "doi": "10.1038/s41375-019-0378-z",
-          "year": 2019,
-          "location": "Interphase FISH; Reporting",
-          "use": "У протоколі FISH слід зазначати досліджений матеріал, зонд і методику, лабораторні порогові значення, кількість нормальних і аномальних клітин та обмеження; результати поблизу порога потребують застереження.",
-          "applicability_limit": "Настанова з лабораторної звітності не вимагає називати партнера перебудови, якщо валідований розривний зонд його не визначав.",
-          "verification_status": "verified_primary"
+          "local_source_id": "european_cytogenomic_recommendations_2019",
+          "sha256": "e00eaee8ed92f10aaed7e7aaa9aedaed8dad47f79ae74c540dfcf21aa42ec2ee",
+          "location": "PDF p. 6",
+          "use": "Перевірка повноти протоколу FISH: досліджений матеріал, тип зонда й методика, лабораторний поріг, кількість оцінених клітин та обмеження тесту.",
+          "applicability_limit": "Джерело визначає відсутній контекст звіту, але не скасовує наявний результат і не дозволяє самостійно встановити підтип лімфоми.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1038/s41375-019-0378-z",
+          "year": null
         }
       ]
     },
     {
       "id": "G4",
-      "text": "Не виключено великоклітинний або дифузний компонент; MYC-орієнтоване тестування не наведено у відповідному морфологічному контексті.",
+      "text": "Не визначено, чи наявний окремий великоклітинний або дифузний компонент; MYC-орієнтовані дані відсутні в морфологічному контексті.",
       "evidence_refs": [
-        "E-CAND-3",
-        "E-CAND-5",
-        "E-CAND-10"
+        "E-CAND-1",
+        "E-CAND-2",
+        "E-CAND-8"
       ],
       "sources": [
         {
-          "id": "E-CAND-3",
+          "id": "E-CAND-1",
+          "type": "guideline",
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
+          "pmid": "41681868",
+          "doi": "10.3390/cancers18030395",
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
+        },
+        {
+          "id": "E-CAND-2",
           "type": "classification",
-          "title": "The 5th edition of the World Health Organization Classification of Haematolymphoid Tumours: Lymphoid Neoplasms",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/35732829/",
+          "title": "WHO-HAEM5: Lymphoid Neoplasms",
           "pmid": "35732829",
           "doi": "10.1038/s41375-022-01620-2",
-          "year": 2022,
-          "location": "Mature B-cell neoplasms; follicular and aggressive B-cell lymphoma sections",
-          "use": "Інтегрована оцінка морфології, імунофенотипу та генетики; розмежування великоклітинного або агресивного компонента й змін MYC/BCL2. WHO-HAEM5 не вимагає обов’язкового визначення ступеня для класичної фолікулярної лімфоми.",
-          "applicability_limit": "Класифікація визначає терміни й необхідні розмежування, але не замінює перегляд первинного тканинного матеріалу.",
-          "verification_status": "verified_primary"
+          "local_source_id": "who_haem5_lymphoid_2022",
+          "sha256": "7b2dd8bbfa57480a119fc038977f41de53861543474649528bba40b6b99c0a2c",
+          "location": "PDF pp. 8–10",
+          "use": "Інтегрована класифікація лімфоїдних новоутворень і розмежування класичної фолікулярної лімфоми, фолікулярної В-великоклітинної лімфоми та дифузного або великоклітинного компонента.",
+          "applicability_limit": "Класифікація задає критерії й терміни, але не замінює перегляд репрезентативної тканини.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1038/s41375-022-01620-2",
+          "year": null
         },
         {
-          "id": "E-CAND-5",
-          "type": "protocol",
-          "title": "CAP Protocol for the Examination of Precursor and Mature Lymphoid Malignancies",
-          "url": "https://documents.cap.org/protocols/Heme.Lymphoid.Bx.Res_1.0.0.1.REL_CAPCP.pdf",
-          "year": 2025,
-          "location": "Lymphoid biopsy reporting elements; molecular/cytogenetic results",
-          "use": "Структурований патоморфологічний протокол для морфології, імунофенотипу й молекулярних змін із зазначенням методу та клінічно значущих даних BCL2, BCL6 і MYC.",
-          "applicability_limit": "Протокол CAP визначає повноту звіту, але не дає змоги інтерпретувати відсутні первинні гістологічні препарати CASE006.",
-          "verification_status": "verified_official"
-        },
-        {
-          "id": "E-CAND-10",
-          "type": "pmid",
-          "title": "PET scan for the detection of histological transformation of follicular lymphoma: A systematic review of diagnostic performance",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/39893056/",
-          "pmid": "39893056",
-          "doi": "10.1016/j.blre.2025.101270",
-          "year": 2025,
-          "location": "Abstract conclusion",
-          "use": "Контраргумент: опубліковані порогові значення SUVmax мають неоднорідну діагностичну точність, тому не повинні самостійно визначати наявність трансформації чи рішення про біопсію.",
-          "applicability_limit": "Огляд показує невизначеність і ризик упереджень, а не дає позитивного порога для рішення саме в CASE006.",
-          "verification_status": "verified_primary"
+          "id": "E-CAND-8",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas",
+          "local_source_id": "nccn_b_cell_lymphomas_v4_2026",
+          "sha256": "c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "location": "PDF pp. 14-19; DIAG-1 and FOLL-1 to FOLL-5",
+          "use": "Вибір репрезентативної тканини, інтегрована класифікація фолікулярної лімфоми та спрямування біопсії за ПЕТ/КТ без встановлення трансформації лише за зображенням.",
+          "applicability_limit": "Схеми й примітки перевірені агентом безпосередньо на сторінках PDF. Вони не встановлюють діагноз, стадію, трансформацію чи показання до лікування в CASE006; фінальну застосовність оцінює лікар.",
+          "verification_status": "agent_visual_source_review",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026
         }
       ]
     },
     {
       "id": "G5",
-      "text": "Немає повного ПЕТ-КТ/КТ стадіювання, карти лімфовузлів та формальної оцінки ураження кісткового мозку й плеври.",
+      "text": "Немає повного датованого стадіювання, карти вузлів і формальної оцінки кісткового мозку та плеври.",
       "evidence_refs": [
         "E-CAND-1",
-        "E-CAND-7",
-        "E-CAND-8",
-        "E-CAND-10"
+        "E-CAND-6",
+        "E-CAND-7"
       ],
       "sources": [
         {
           "id": "E-CAND-1",
           "type": "guideline",
-          "title": "Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma — Spanish Lymphoma Group (GELTAMO) 2025",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/41681868/",
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
           "pmid": "41681868",
           "doi": "10.3390/cancers18030395",
-          "year": 2026,
-          "location": "Sections 2–3; Table 1",
-          "use": "Ексцизійна біопсія для встановлення діагнозу; базова оцінка анамнезу й фізикального статусу; загальний аналіз крові, ЛДГ і β2-мікроглобулін; ПЕТ/КТ для стадіювання та вибору ділянки біопсії за накопиченням ФДГ, якщо підозрюють трансформацію.",
-          "applicability_limit": "Рекомендації цієї настанови застосовні після того, як лікар підтвердить фолікулярну лімфому як робочу нозологію; самі по собі вони не встановлюють діагноз і показання до лікування в CASE006.",
-          "verification_status": "verified_primary"
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
+        },
+        {
+          "id": "E-CAND-6",
+          "type": "pmid",
+          "title": "Follicular Lymphoma International Prognostic Index",
+          "pmid": "15126323",
+          "doi": "10.1182/blood-2003-12-4434",
+          "location": "Model variables",
+          "use": "Визначення обов’язкових вихідних даних для FLIPI: вік, стадія Ann Arbor, гемоглобін, кількість уражених лімфатичних зон і ЛДГ.",
+          "applicability_limit": "FLIPI є прогностичним індексом після встановлення діагнозу й надійного датування показників; він не встановлює діагноз або показання до лікування.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1182/blood-2003-12-4434",
+          "year": null
         },
         {
           "id": "E-CAND-7",
-          "type": "consensus",
-          "title": "Recommendations for Initial Evaluation, Staging, and Response Assessment of Hodgkin and Non-Hodgkin Lymphoma: The Lugano Classification",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/25113753/",
-          "pmid": "25113753",
-          "doi": "10.1200/JCO.2013.54.8800",
-          "year": 2014,
-          "location": "Initial evaluation and staging",
-          "use": "Стадіювання ФДГ-авідних лімфом за допомогою ПЕТ/КТ і стандартизована оцінка ураження лімфовузлів, екстранодальних ділянок та кісткового мозку.",
-          "applicability_limit": "Візуалізація описує поширеність хвороби після визначення діагностичного контексту, але сама не встановлює підтип лімфоми чи трансформацію.",
-          "verification_status": "verified_primary"
-        },
-        {
-          "id": "E-CAND-8",
-          "type": "consensus",
-          "title": "Application of the Lugano Classification for Initial Evaluation, Staging, and Response Assessment of Hodgkin and Non-Hodgkin Lymphoma: The PRoLoG Consensus Initiative",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/35835580/",
-          "pmid": "35835580",
-          "doi": "10.2967/jnumed.122.264106",
-          "year": 2023,
-          "location": "Clinical recommendations for PET/CT, diagnostic CT and marrow assessment",
-          "use": "Уточнення стандартизованого застосування класифікації Lugano та інтерпретації неузгоджених або неповних результатів візуалізації.",
-          "applicability_limit": "Консенсус стандартизує трактування візуалізації, але не встановлює порога SUV, який може замінити біопсію.",
-          "verification_status": "verified_primary"
-        },
-        {
-          "id": "E-CAND-10",
           "type": "pmid",
-          "title": "PET scan for the detection of histological transformation of follicular lymphoma: A systematic review of diagnostic performance",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/39893056/",
-          "pmid": "39893056",
-          "doi": "10.1016/j.blre.2025.101270",
-          "year": 2025,
-          "location": "Abstract conclusion",
-          "use": "Контраргумент: опубліковані порогові значення SUVmax мають неоднорідну діагностичну точність, тому не повинні самостійно визначати наявність трансформації чи рішення про біопсію.",
-          "applicability_limit": "Огляд показує невизначеність і ризик упереджень, а не дає позитивного порога для рішення саме в CASE006.",
-          "verification_status": "verified_primary"
+          "title": "Follicular Lymphoma International Prognostic Index 2",
+          "pmid": "19652063",
+          "doi": "10.1200/JCO.2008.21.3991",
+          "location": "Model variables",
+          "use": "Визначення обов’язкових вихідних даних для FLIPI2: β2-мікроглобулін, розмір найбільшого вузла, ураження кісткового мозку, гемоглобін і вік.",
+          "applicability_limit": "FLIPI2 є прогностичним індексом і не встановлює діагноз, причину тромбоцитопенії або рішення про лікування.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1200/JCO.2008.21.3991",
+          "year": null
         }
       ]
     },
     {
       "id": "G6",
-      "text": "Негативна цитологія плевральної рідини не встановлює причину випоту.",
+      "text": "Причину й поточну активність плеврального випоту не встановлено. Історичне гнійне дренування F035 підтримує емпіємну/інфекційну гілку, але не визначає збудника або поточний стан; негативна цитологія не закриває піогенний, туберкульозний/інший гранульоматозний, пов'язаний із лімфомою, хілозний або поєднаний механізм.",
       "evidence_refs": [
-        "E-CAND-11",
-        "E-CAND-12"
+        "E-CAND-1",
+        "E-CAND-4",
+        "E-CAND-5",
+        "E-CAND-9",
+        "E-CAND-10",
+        "E-CAND-11"
       ],
       "sources": [
         {
-          "id": "E-CAND-11",
+          "id": "E-CAND-1",
           "type": "guideline",
-          "title": "British Thoracic Society Guideline for pleural disease",
-          "url": "https://thorax.bmj.com/content/78/Suppl_3/s1",
-          "doi": "10.1136/thorax-2022-219784",
-          "year": 2023,
-          "location": "Pleural fluid tests and biomarkers for diagnosing secondary pleural malignancy",
-          "use": "Цитологічне дослідження плевральної рідини є початковим тестом; за негативного результату слід розглянути подальше обстеження з урахуванням очікуваної діагностичної чутливості для конкретної пухлини.",
-          "applicability_limit": "Рекомендація стосується підозри на вторинне злоякісне ураження плеври загалом і без повного клінічного контексту не визначає конкретний наступний тест для цього пацієнта.",
-          "verification_status": "verified_official"
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
+          "pmid": "41681868",
+          "doi": "10.3390/cancers18030395",
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
         },
         {
-          "id": "E-CAND-12",
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "British Thoracic Society Guideline for pleural disease",
+          "doi": "10.1136/thorax-2022-219784",
+          "location": "Pleural-fluid tests and biomarkers",
+          "use": "Оцінка плеврального випоту, коли негативна цитологія не закриває питання злоякісного ураження плеври.",
+          "applicability_limit": "Настанова не є специфічною для лімфом і не встановлює причину випоту в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1136/thorax-2022-219784",
+          "year": null
+        },
+        {
+          "id": "E-CAND-5",
           "type": "pmid",
-          "title": "Use of flow cytometry in the diagnosis of lymphoproliferative disorders in fluid specimens",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/24554583/",
+          "title": "Use of flow cytometry in fluid specimens",
           "pmid": "24554583",
           "doi": "10.1002/dc.23106",
-          "year": 2014,
           "location": "Abstract and pleural-fluid subgroup",
-          "use": "Проточна цитометрія може бути корисним додатковим дослідженням плеврального випоту, якщо підозрюють лімфопроліферативне захворювання.",
-          "applicability_limit": "Це ретроспективний діагностичний досвід; користь залежить від якості зразка й попередньої клінічної ймовірності, тому проточна цитометрія не є автоматичним самодостатнім тестом.",
-          "verification_status": "verified_primary"
+          "use": "Проточна цитометрія плевральної рідини як додаткове дослідження, якщо підозрюють лімфопроліферативний процес.",
+          "applicability_limit": "Це ретроспективні дані; корисність залежить від якості зразка та клінічної ймовірності, тому тест не є самодостатнім.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1002/dc.23106",
+          "year": null
+        },
+        {
+          "id": "E-CAND-9",
+          "type": "pmid",
+          "title": "Diagnosis and management of pleural infection",
+          "doi": "10.1183/20734735.0146-2023",
+          "local_source_id": "breathe_pleural_infection_2023",
+          "sha256": "035ba08cbb9c82af5361617d00fb0fa7b500b561495fc20d14420fcea462ff88",
+          "location": "PDF pp. 1, 3-4",
+          "use": "Окрема інфекційна гілка плеврального випоту: значення документованого гною та межі інтерпретації pH, глюкози, ЛДГ і мікробіології.",
+          "applicability_limit": "Історична евакуація гнійного вмісту підтримує емпіємну або інфекційну гілку, але не доводить поточну активність, збудника, єдину причину чи відсутність поєднаного механізму.",
+          "verification_status": "agent_visual_source_review",
+          "url": "https://doi.org/10.1183/20734735.0146-2023",
+          "year": null
+        },
+        {
+          "id": "E-CAND-10",
+          "type": "pmid",
+          "title": "Non-traumatic chylothorax: diagnostic and therapeutic strategies",
+          "doi": "10.1183/20734735.0163-2021",
+          "local_source_id": "breathe_nontraumatic_chylothorax_2022",
+          "sha256": "10d7e13b7b4d6a688ee14f2d5e67cc9f56f2b461f206aa842c1a3878dd5e616d",
+          "location": "PDF pp. 3-6 and 11",
+          "use": "Окрема хілозна гілка: тригліцериди, холестерин і хіломікрони плевральної рідини та обмежений зв’язок із лімфомою.",
+          "applicability_limit": "У CASE006 немає перевірених показників плевральних ліпідів або хіломікронів, тому хілоторакс лишається непідтвердженим.",
+          "verification_status": "agent_visual_source_review",
+          "url": "https://doi.org/10.1183/20734735.0163-2021",
+          "year": null
+        },
+        {
+          "id": "E-CAND-11",
+          "type": "pmid",
+          "title": "The tuberculous pleural effusion",
+          "pmid": "38125799",
+          "pmcid": "PMC10729824",
+          "doi": "10.1183/20734735.0143-2023",
+          "local_source_id": "breathe_tuberculous_pleural_effusion_2023",
+          "sha256": "b9dabc39e373d6a8f9ab443664cd749e203c392ab233dfa2e6b5f5772ca60b71",
+          "location": "PDF pp. 1, 5-8 and 14",
+          "use": "Окрема гілка туберкульозного або іншого гранульоматозного плеврального процесу: епідеміологічний контекст, мікробіологія, тканина, ADA, клітинний склад і межі NAAT.",
+          "applicability_limit": "Гнійний вміст і змішаний клітинний склад самі по собі не встановлюють туберкульоз. Піогенний, туберкульозний, пухлинний, хілозний і поєднаний механізми лишаються окремими до рішення лікаря.",
+          "verification_status": "agent_visual_source_review",
+          "url": "https://doi.org/10.1183/20734735.0143-2023",
+          "year": null
         }
       ]
     },
     {
       "id": "G7",
-      "text": "B-симптоми, функціональний стан і анамнез лікування не входять до чинного мінімально необхідного джерельного шару.",
+      "text": "B-симптоми, функціональний стан і анамнез лікування відсутні в minimum-necessary source layer.",
       "evidence_refs": [
-        "E-CAND-1",
-        "E-CAND-2"
+        "E-CAND-1"
       ],
       "sources": [
         {
           "id": "E-CAND-1",
           "type": "guideline",
-          "title": "Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma — Spanish Lymphoma Group (GELTAMO) 2025",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/41681868/",
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
           "pmid": "41681868",
           "doi": "10.3390/cancers18030395",
-          "year": 2026,
-          "location": "Sections 2–3; Table 1",
-          "use": "Ексцизійна біопсія для встановлення діагнозу; базова оцінка анамнезу й фізикального статусу; загальний аналіз крові, ЛДГ і β2-мікроглобулін; ПЕТ/КТ для стадіювання та вибору ділянки біопсії за накопиченням ФДГ, якщо підозрюють трансформацію.",
-          "applicability_limit": "Рекомендації цієї настанови застосовні після того, як лікар підтвердить фолікулярну лімфому як робочу нозологію; самі по собі вони не встановлюють діагноз і показання до лікування в CASE006.",
-          "verification_status": "verified_primary"
-        },
-        {
-          "id": "E-CAND-2",
-          "type": "guideline",
-          "title": "Newly diagnosed and relapsed follicular lymphoma: ESMO Clinical Practice Guidelines for diagnosis, treatment and follow-up",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/33249059/",
-          "pmid": "33249059",
-          "doi": "10.1016/j.annonc.2020.11.008",
-          "year": 2021,
-          "location": "Diagnosis and staging recommendations",
-          "use": "Незалежна клінічна настанова щодо первинного підтвердження діагнозу, стадіювання та клінічного контексту при фолікулярній лімфомі.",
-          "applicability_limit": "Повний текст рекомендацій недоступний у PubMed, тому джерело використано для незалежного підтвердження напряму, а не як єдину підставу для визначення прогалини CASE006.",
-          "verification_status": "verified_metadata"
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
         }
       ]
     },
     {
       "id": "G8",
-      "text": "Дати лабораторних показників не нормалізовані; FLIPI/FLIPI2 та актуальний ризик-контекст не обчислюються.",
+      "text": "Дати лабораторних показників не нормалізовані; FLIPI/FLIPI2 і актуальний risk context не обчислюються.",
       "evidence_refs": [
         "E-CAND-1",
-        "E-CAND-13",
-        "E-CAND-14"
+        "E-CAND-6",
+        "E-CAND-7"
       ],
       "sources": [
         {
           "id": "E-CAND-1",
           "type": "guideline",
-          "title": "Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma — Spanish Lymphoma Group (GELTAMO) 2025",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/41681868/",
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
           "pmid": "41681868",
           "doi": "10.3390/cancers18030395",
-          "year": 2026,
-          "location": "Sections 2–3; Table 1",
-          "use": "Ексцизійна біопсія для встановлення діагнозу; базова оцінка анамнезу й фізикального статусу; загальний аналіз крові, ЛДГ і β2-мікроглобулін; ПЕТ/КТ для стадіювання та вибору ділянки біопсії за накопиченням ФДГ, якщо підозрюють трансформацію.",
-          "applicability_limit": "Рекомендації цієї настанови застосовні після того, як лікар підтвердить фолікулярну лімфому як робочу нозологію; самі по собі вони не встановлюють діагноз і показання до лікування в CASE006.",
-          "verification_status": "verified_primary"
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
         },
         {
-          "id": "E-CAND-13",
+          "id": "E-CAND-6",
           "type": "pmid",
-          "title": "Follicular lymphoma international prognostic index",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/15126323/",
+          "title": "Follicular Lymphoma International Prognostic Index",
           "pmid": "15126323",
           "doi": "10.1182/blood-2003-12-4434",
-          "year": 2004,
-          "location": "Abstract: five adverse prognostic factors",
-          "use": "Для FLIPI потрібні вік, стадія за Ann Arbor, гемоглобін, кількість уражених лімфатичних зон і ЛДГ; відсутні або недатовані показники не дають змоги коректно розрахувати індекс.",
-          "applicability_limit": "FLIPI є прогностичним індексом після встановлення діагнозу й базових даних; він не слугує правилом для встановлення діагнозу чи показань до лікування.",
-          "verification_status": "verified_primary"
+          "location": "Model variables",
+          "use": "Визначення обов’язкових вихідних даних для FLIPI: вік, стадія Ann Arbor, гемоглобін, кількість уражених лімфатичних зон і ЛДГ.",
+          "applicability_limit": "FLIPI є прогностичним індексом після встановлення діагнозу й надійного датування показників; він не встановлює діагноз або показання до лікування.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1182/blood-2003-12-4434",
+          "year": null
         },
         {
-          "id": "E-CAND-14",
+          "id": "E-CAND-7",
           "type": "pmid",
-          "title": "Follicular lymphoma international prognostic index 2: a new prognostic index for follicular lymphoma",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/19652063/",
+          "title": "Follicular Lymphoma International Prognostic Index 2",
           "pmid": "19652063",
           "doi": "10.1200/JCO.2008.21.3991",
-          "year": 2009,
-          "location": "Model variables and conclusion",
-          "use": "Для FLIPI2 потрібні β2-мікроглобулін, розмір найбільшого лімфовузла, ураження кісткового мозку, гемоглобін і вік; для кожного показника потрібна надійна вихідна дата.",
-          "applicability_limit": "FLIPI2 є прогностичним індексом і самостійно не встановлює діагноз або рішення про лікування за рівнем β2-мікроглобуліну чи кількістю тромбоцитів.",
-          "verification_status": "verified_primary"
+          "location": "Model variables",
+          "use": "Визначення обов’язкових вихідних даних для FLIPI2: β2-мікроглобулін, розмір найбільшого вузла, ураження кісткового мозку, гемоглобін і вік.",
+          "applicability_limit": "FLIPI2 є прогностичним індексом і не встановлює діагноз, причину тромбоцитопенії або рішення про лікування.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1200/JCO.2008.21.3991",
+          "year": null
         }
       ]
     },
     {
       "id": "G9",
-      "text": "F035 і F037 залишають невирішеною окрему інфекційно-запальну причину плеврального випоту; дата й актуальний стан цього процесу потребують клінічного уточнення.",
-      "evidence_refs": [
-        "E-CAND-11"
-      ],
-      "sources": [
-        {
-          "id": "E-CAND-11",
-          "type": "guideline",
-          "title": "British Thoracic Society Guideline for pleural disease",
-          "url": "https://thorax.bmj.com/content/78/Suppl_3/s1",
-          "doi": "10.1136/thorax-2022-219784",
-          "year": 2023,
-          "location": "Pleural fluid tests and biomarkers for diagnosing secondary pleural malignancy",
-          "use": "Цитологічне дослідження плевральної рідини є початковим тестом; за негативного результату слід розглянути подальше обстеження з урахуванням очікуваної діагностичної чутливості для конкретної пухлини.",
-          "applicability_limit": "Рекомендація стосується підозри на вторинне злоякісне ураження плеври загалом і без повного клінічного контексту не визначає конкретний наступний тест для цього пацієнта.",
-          "verification_status": "verified_official"
-        }
-      ]
-    },
-    {
-      "id": "G10",
-      "text": "F037 і F038 залишають невирішеним можливий хільозний механізм; у людськи перевіреному зовнішньому корпусі цього run немає proposition-level протоколу конкретного підтверджувального тесту.",
-      "evidence_refs": [
-        "E-CAND-11"
-      ],
-      "sources": [
-        {
-          "id": "E-CAND-11",
-          "type": "guideline",
-          "title": "British Thoracic Society Guideline for pleural disease",
-          "url": "https://thorax.bmj.com/content/78/Suppl_3/s1",
-          "doi": "10.1136/thorax-2022-219784",
-          "year": 2023,
-          "location": "Pleural fluid tests and biomarkers for diagnosing secondary pleural malignancy",
-          "use": "Цитологічне дослідження плевральної рідини є початковим тестом; за негативного результату слід розглянути подальше обстеження з урахуванням очікуваної діагностичної чутливості для конкретної пухлини.",
-          "applicability_limit": "Рекомендація стосується підозри на вторинне злоякісне ураження плеври загалом і без повного клінічного контексту не визначає конкретний наступний тест для цього пацієнта.",
-          "verification_status": "verified_official"
-        }
-      ]
-    },
-    {
-      "id": "G11",
-      "text": "F010 фіксує тромбоцити 132×10^9/л без надійної дати й динаміки; F043/F044 не доводять причину, тому механізм тромбоцитопенії не встановлено.",
+      "text": "Тромбоцити 132×10^9/L зафіксовані без надійної дати, динаміки й установленої причини; значення не слід автоматично прирівнювати до GELF-цитопенії.",
       "evidence_refs": [
         "E-CAND-1",
-        "E-CAND-14"
+        "E-CAND-7"
       ],
       "sources": [
         {
           "id": "E-CAND-1",
           "type": "guideline",
-          "title": "Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma — Spanish Lymphoma Group (GELTAMO) 2025",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/41681868/",
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
           "pmid": "41681868",
           "doi": "10.3390/cancers18030395",
-          "year": 2026,
-          "location": "Sections 2–3; Table 1",
-          "use": "Ексцизійна біопсія для встановлення діагнозу; базова оцінка анамнезу й фізикального статусу; загальний аналіз крові, ЛДГ і β2-мікроглобулін; ПЕТ/КТ для стадіювання та вибору ділянки біопсії за накопиченням ФДГ, якщо підозрюють трансформацію.",
-          "applicability_limit": "Рекомендації цієї настанови застосовні після того, як лікар підтвердить фолікулярну лімфому як робочу нозологію; самі по собі вони не встановлюють діагноз і показання до лікування в CASE006.",
-          "verification_status": "verified_primary"
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
         },
         {
-          "id": "E-CAND-14",
+          "id": "E-CAND-7",
           "type": "pmid",
-          "title": "Follicular lymphoma international prognostic index 2: a new prognostic index for follicular lymphoma",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/19652063/",
+          "title": "Follicular Lymphoma International Prognostic Index 2",
           "pmid": "19652063",
           "doi": "10.1200/JCO.2008.21.3991",
-          "year": 2009,
-          "location": "Model variables and conclusion",
-          "use": "Для FLIPI2 потрібні β2-мікроглобулін, розмір найбільшого лімфовузла, ураження кісткового мозку, гемоглобін і вік; для кожного показника потрібна надійна вихідна дата.",
-          "applicability_limit": "FLIPI2 є прогностичним індексом і самостійно не встановлює діагноз або рішення про лікування за рівнем β2-мікроглобуліну чи кількістю тромбоцитів.",
-          "verification_status": "verified_primary"
+          "location": "Model variables",
+          "use": "Визначення обов’язкових вихідних даних для FLIPI2: β2-мікроглобулін, розмір найбільшого вузла, ураження кісткового мозку, гемоглобін і вік.",
+          "applicability_limit": "FLIPI2 є прогностичним індексом і не встановлює діагноз, причину тромбоцитопенії або рішення про лікування.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1200/JCO.2008.21.3991",
+          "year": null
         }
       ]
     }
@@ -2455,7 +2241,7 @@
       "id": "W1",
       "title": "Інтегрований експертний гематопатологічний перегляд",
       "priority": "critical",
-      "rationale": "Морфологія, ІГХ, проточна цитометрія та належно описаний FISH разом визначають нозологію й наявність великоклітинного або дифузного компонента. Окремий сигнал BCL2 цього не замінює.",
+      "rationale": "Морфологія, повний імунофенотип і належно описаний FISH разом визначають нозологію. Потрібна окрема оцінка класичної FL, нетипової FL, FLBL та великоклітинного/дифузного компонента; isolated BCL2 signal цього не замінює.",
       "discriminates": [
         "H1",
         "H2",
@@ -2464,74 +2250,68 @@
       ],
       "evidence_refs": [
         "E-CAND-1",
+        "E-CAND-2",
         "E-CAND-3",
-        "E-CAND-4",
-        "E-CAND-5",
-        "E-CAND-6"
+        "E-CAND-8"
       ],
       "sources": [
         {
           "id": "E-CAND-1",
           "type": "guideline",
-          "title": "Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma — Spanish Lymphoma Group (GELTAMO) 2025",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/41681868/",
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
           "pmid": "41681868",
           "doi": "10.3390/cancers18030395",
-          "year": 2026,
-          "location": "Sections 2–3; Table 1",
-          "use": "Ексцизійна біопсія для встановлення діагнозу; базова оцінка анамнезу й фізикального статусу; загальний аналіз крові, ЛДГ і β2-мікроглобулін; ПЕТ/КТ для стадіювання та вибору ділянки біопсії за накопиченням ФДГ, якщо підозрюють трансформацію.",
-          "applicability_limit": "Рекомендації цієї настанови застосовні після того, як лікар підтвердить фолікулярну лімфому як робочу нозологію; самі по собі вони не встановлюють діагноз і показання до лікування в CASE006.",
-          "verification_status": "verified_primary"
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "classification",
+          "title": "WHO-HAEM5: Lymphoid Neoplasms",
+          "pmid": "35732829",
+          "doi": "10.1038/s41375-022-01620-2",
+          "local_source_id": "who_haem5_lymphoid_2022",
+          "sha256": "7b2dd8bbfa57480a119fc038977f41de53861543474649528bba40b6b99c0a2c",
+          "location": "PDF pp. 8–10",
+          "use": "Інтегрована класифікація лімфоїдних новоутворень і розмежування класичної фолікулярної лімфоми, фолікулярної В-великоклітинної лімфоми та дифузного або великоклітинного компонента.",
+          "applicability_limit": "Класифікація задає критерії й терміни, але не замінює перегляд репрезентативної тканини.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1038/s41375-022-01620-2",
+          "year": null
         },
         {
           "id": "E-CAND-3",
-          "type": "classification",
-          "title": "The 5th edition of the World Health Organization Classification of Haematolymphoid Tumours: Lymphoid Neoplasms",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/35732829/",
-          "pmid": "35732829",
-          "doi": "10.1038/s41375-022-01620-2",
-          "year": 2022,
-          "location": "Mature B-cell neoplasms; follicular and aggressive B-cell lymphoma sections",
-          "use": "Інтегрована оцінка морфології, імунофенотипу та генетики; розмежування великоклітинного або агресивного компонента й змін MYC/BCL2. WHO-HAEM5 не вимагає обов’язкового визначення ступеня для класичної фолікулярної лімфоми.",
-          "applicability_limit": "Класифікація визначає терміни й необхідні розмежування, але не замінює перегляд первинного тканинного матеріалу.",
-          "verification_status": "verified_primary"
-        },
-        {
-          "id": "E-CAND-4",
-          "type": "classification",
-          "title": "The International Consensus Classification of Mature Lymphoid Neoplasms: a report from the Clinical Advisory Committee",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/35653592/",
-          "pmid": "35653592",
-          "doi": "10.1182/blood.2022015851",
-          "year": 2022,
-          "location": "Follicular lymphoma classification section",
-          "use": "За неоднозначної морфології перебудова BCL2 та/або експресія CD10 можуть підтримувати фолікулярну лімфому, однак морфологія й інтегрована імунофенотипізація залишаються обов’язковими.",
-          "applicability_limit": "Наведені ознаки посилюють класифікаційну підтримку, але окремо не встановлюють діагноз у CASE006.",
-          "verification_status": "verified_primary"
-        },
-        {
-          "id": "E-CAND-5",
           "type": "protocol",
-          "title": "CAP Protocol for the Examination of Precursor and Mature Lymphoid Malignancies",
-          "url": "https://documents.cap.org/protocols/Heme.Lymphoid.Bx.Res_1.0.0.1.REL_CAPCP.pdf",
-          "year": 2025,
-          "location": "Lymphoid biopsy reporting elements; molecular/cytogenetic results",
-          "use": "Структурований патоморфологічний протокол для морфології, імунофенотипу й молекулярних змін із зазначенням методу та клінічно значущих даних BCL2, BCL6 і MYC.",
-          "applicability_limit": "Протокол CAP визначає повноту звіту, але не дає змоги інтерпретувати відсутні первинні гістологічні препарати CASE006.",
-          "verification_status": "verified_official"
-        },
-        {
-          "id": "E-CAND-6",
-          "type": "guideline",
-          "title": "European recommendations and quality assurance for cytogenomic analysis of haematological neoplasms",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/30696948/",
+          "title": "European recommendations for cytogenomic analysis of haematological neoplasms",
           "pmid": "30696948",
           "doi": "10.1038/s41375-019-0378-z",
-          "year": 2019,
-          "location": "Interphase FISH; Reporting",
-          "use": "У протоколі FISH слід зазначати досліджений матеріал, зонд і методику, лабораторні порогові значення, кількість нормальних і аномальних клітин та обмеження; результати поблизу порога потребують застереження.",
-          "applicability_limit": "Настанова з лабораторної звітності не вимагає називати партнера перебудови, якщо валідований розривний зонд його не визначав.",
-          "verification_status": "verified_primary"
+          "local_source_id": "european_cytogenomic_recommendations_2019",
+          "sha256": "e00eaee8ed92f10aaed7e7aaa9aedaed8dad47f79ae74c540dfcf21aa42ec2ee",
+          "location": "PDF p. 6",
+          "use": "Перевірка повноти протоколу FISH: досліджений матеріал, тип зонда й методика, лабораторний поріг, кількість оцінених клітин та обмеження тесту.",
+          "applicability_limit": "Джерело визначає відсутній контекст звіту, але не скасовує наявний результат і не дозволяє самостійно встановити підтип лімфоми.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1038/s41375-019-0378-z",
+          "year": null
+        },
+        {
+          "id": "E-CAND-8",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas",
+          "local_source_id": "nccn_b_cell_lymphomas_v4_2026",
+          "sha256": "c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "location": "PDF pp. 14-19; DIAG-1 and FOLL-1 to FOLL-5",
+          "use": "Вибір репрезентативної тканини, інтегрована класифікація фолікулярної лімфоми та спрямування біопсії за ПЕТ/КТ без встановлення трансформації лише за зображенням.",
+          "applicability_limit": "Схеми й примітки перевірені агентом безпосередньо на сторінках PDF. Вони не встановлюють діагноз, стадію, трансформацію чи показання до лікування в CASE006; фінальну застосовність оцінює лікар.",
+          "verification_status": "agent_visual_source_review",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026
         }
       ]
     },
@@ -2539,121 +2319,160 @@
       "id": "W2",
       "title": "ПЕТ-КТ/КТ для стадіювання та вибору репрезентативної ділянки біопсії",
       "priority": "high",
-      "rationale": "Візуалізація може показати поширеність процесу й допомогти лікарю обрати ділянку біопсії за клінічно значущої неоднорідності. Значення SUVmax не використовують як самостійний доказ трансформації.",
+      "rationale": "Візуалізація уточнює поширеність і може спрямувати біопсію до клінічно або метаболічно неоднорідної ділянки. SUVmax не використовується як самостійний діагноз трансформації.",
       "discriminates": [
         "H1",
         "H3"
       ],
       "evidence_refs": [
         "E-CAND-1",
-        "E-CAND-7",
-        "E-CAND-8",
-        "E-CAND-9",
-        "E-CAND-10"
+        "E-CAND-2",
+        "E-CAND-8"
       ],
       "sources": [
         {
           "id": "E-CAND-1",
           "type": "guideline",
-          "title": "Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma — Spanish Lymphoma Group (GELTAMO) 2025",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/41681868/",
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
           "pmid": "41681868",
           "doi": "10.3390/cancers18030395",
-          "year": 2026,
-          "location": "Sections 2–3; Table 1",
-          "use": "Ексцизійна біопсія для встановлення діагнозу; базова оцінка анамнезу й фізикального статусу; загальний аналіз крові, ЛДГ і β2-мікроглобулін; ПЕТ/КТ для стадіювання та вибору ділянки біопсії за накопиченням ФДГ, якщо підозрюють трансформацію.",
-          "applicability_limit": "Рекомендації цієї настанови застосовні після того, як лікар підтвердить фолікулярну лімфому як робочу нозологію; самі по собі вони не встановлюють діагноз і показання до лікування в CASE006.",
-          "verification_status": "verified_primary"
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
         },
         {
-          "id": "E-CAND-7",
-          "type": "consensus",
-          "title": "Recommendations for Initial Evaluation, Staging, and Response Assessment of Hodgkin and Non-Hodgkin Lymphoma: The Lugano Classification",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/25113753/",
-          "pmid": "25113753",
-          "doi": "10.1200/JCO.2013.54.8800",
-          "year": 2014,
-          "location": "Initial evaluation and staging",
-          "use": "Стадіювання ФДГ-авідних лімфом за допомогою ПЕТ/КТ і стандартизована оцінка ураження лімфовузлів, екстранодальних ділянок та кісткового мозку.",
-          "applicability_limit": "Візуалізація описує поширеність хвороби після визначення діагностичного контексту, але сама не встановлює підтип лімфоми чи трансформацію.",
-          "verification_status": "verified_primary"
+          "id": "E-CAND-2",
+          "type": "classification",
+          "title": "WHO-HAEM5: Lymphoid Neoplasms",
+          "pmid": "35732829",
+          "doi": "10.1038/s41375-022-01620-2",
+          "local_source_id": "who_haem5_lymphoid_2022",
+          "sha256": "7b2dd8bbfa57480a119fc038977f41de53861543474649528bba40b6b99c0a2c",
+          "location": "PDF pp. 8–10",
+          "use": "Інтегрована класифікація лімфоїдних новоутворень і розмежування класичної фолікулярної лімфоми, фолікулярної В-великоклітинної лімфоми та дифузного або великоклітинного компонента.",
+          "applicability_limit": "Класифікація задає критерії й терміни, але не замінює перегляд репрезентативної тканини.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1038/s41375-022-01620-2",
+          "year": null
         },
         {
           "id": "E-CAND-8",
-          "type": "consensus",
-          "title": "Application of the Lugano Classification for Initial Evaluation, Staging, and Response Assessment of Hodgkin and Non-Hodgkin Lymphoma: The PRoLoG Consensus Initiative",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/35835580/",
-          "pmid": "35835580",
-          "doi": "10.2967/jnumed.122.264106",
-          "year": 2023,
-          "location": "Clinical recommendations for PET/CT, diagnostic CT and marrow assessment",
-          "use": "Уточнення стандартизованого застосування класифікації Lugano та інтерпретації неузгоджених або неповних результатів візуалізації.",
-          "applicability_limit": "Консенсус стандартизує трактування візуалізації, але не встановлює порога SUV, який може замінити біопсію.",
-          "verification_status": "verified_primary"
-        },
-        {
-          "id": "E-CAND-9",
-          "type": "pmid",
-          "title": "FDG-PET/CT-guided rebiopsy may find clinically unsuspicious transformation of follicular lymphoma",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/35661431/",
-          "pmid": "35661431",
-          "doi": "10.1002/cam4.4924",
-          "year": 2023,
-          "location": "Methods and Results",
-          "use": "Спостережні дані на користь повторної біопсії підозрілої ділянки з високим накопиченням ФДГ, якщо клінічно важливо виключити трансформацію.",
-          "applicability_limit": "Ретроспективне одноцентрове дослідження має ризик селекційного зміщення; воно не визначає універсального порога SUV і не встановлює обов’язковість біопсії в CASE006.",
-          "verification_status": "verified_primary"
-        },
-        {
-          "id": "E-CAND-10",
-          "type": "pmid",
-          "title": "PET scan for the detection of histological transformation of follicular lymphoma: A systematic review of diagnostic performance",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/39893056/",
-          "pmid": "39893056",
-          "doi": "10.1016/j.blre.2025.101270",
-          "year": 2025,
-          "location": "Abstract conclusion",
-          "use": "Контраргумент: опубліковані порогові значення SUVmax мають неоднорідну діагностичну точність, тому не повинні самостійно визначати наявність трансформації чи рішення про біопсію.",
-          "applicability_limit": "Огляд показує невизначеність і ризик упереджень, а не дає позитивного порога для рішення саме в CASE006.",
-          "verification_status": "verified_primary"
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas",
+          "local_source_id": "nccn_b_cell_lymphomas_v4_2026",
+          "sha256": "c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "location": "PDF pp. 14-19; DIAG-1 and FOLL-1 to FOLL-5",
+          "use": "Вибір репрезентативної тканини, інтегрована класифікація фолікулярної лімфоми та спрямування біопсії за ПЕТ/КТ без встановлення трансформації лише за зображенням.",
+          "applicability_limit": "Схеми й примітки перевірені агентом безпосередньо на сторінках PDF. Вони не встановлюють діагноз, стадію, трансформацію чи показання до лікування в CASE006; фінальну застосовність оцінює лікар.",
+          "verification_status": "agent_visual_source_review",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026
         }
       ]
     },
     {
       "id": "W3",
-      "title": "Питання до консиліуму: причина двобічного плеврального випоту",
-      "priority": "high",
-      "rationale": "F035 і F037 зберігають окрему інфекційно-запальну гілку, а F037 і F038 — можливий хільозний механізм. Невідомо, чи ці ознаки описують один епізод і чи залишаються актуальними. E-CAND-11 підтримує подальшу оцінку після негативної цитології, а E-CAND-12 — вибіркову проточну цитометрію за підозри на лімфопроліферативний процес. Конкретний обсяг досліджень і терміновість визначає лікар за поточним зразком; цей кандидат не приписує джерелам окремого протоколу для інфекційного або хільозного випоту.",
+      "title": "Питання до консиліуму: причина й поточна активність двобічного плеврального випоту",
+      "priority": "critical",
+      "rationale": "Перевірені за сторінкою F035/C035 документують історичну евакуацію до 2 л, а потім до 3 л гнійного плеврального вмісту, що підтримує емпіємну/інфекційну гілку. Це не встановлює поточну активність, збудника або єдиний механізм. Тому двобічний випіт потребує паралельної оцінки піогенної інфекції, плеврального туберкульозу/туберкульозної емпієми чи іншого гранульоматозного процесу, плеврального залучення лімфомою/лімфатичної обструкції, хілотораксу та поєднаних причин. Для піогенної гілки потрібні актуальний макроскопічний вигляд, pH, глюкоза, ЛДГ і мікробіологія; для туберкульозної — також епідеміологічний ризик, дослідження мокротиння та плеврального матеріалу на кислотостійкі бактерії, культура/NAAT, ADA, клітинний склад і, за клінічних підстав, тканина плеври. Для хілозної гілки потрібні тригліцериди, холестерин і в сумнівному діапазоні хіломікрони. Негативна цитологія не закриває жоден із цих механізмів.",
       "discriminates": [],
       "evidence_refs": [
-        "E-CAND-11",
-        "E-CAND-12"
+        "E-CAND-1",
+        "E-CAND-4",
+        "E-CAND-5",
+        "E-CAND-9",
+        "E-CAND-10",
+        "E-CAND-11"
       ],
       "sources": [
         {
-          "id": "E-CAND-11",
+          "id": "E-CAND-1",
           "type": "guideline",
-          "title": "British Thoracic Society Guideline for pleural disease",
-          "url": "https://thorax.bmj.com/content/78/Suppl_3/s1",
-          "doi": "10.1136/thorax-2022-219784",
-          "year": 2023,
-          "location": "Pleural fluid tests and biomarkers for diagnosing secondary pleural malignancy",
-          "use": "Цитологічне дослідження плевральної рідини є початковим тестом; за негативного результату слід розглянути подальше обстеження з урахуванням очікуваної діагностичної чутливості для конкретної пухлини.",
-          "applicability_limit": "Рекомендація стосується підозри на вторинне злоякісне ураження плеври загалом і без повного клінічного контексту не визначає конкретний наступний тест для цього пацієнта.",
-          "verification_status": "verified_official"
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
+          "pmid": "41681868",
+          "doi": "10.3390/cancers18030395",
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
         },
         {
-          "id": "E-CAND-12",
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "British Thoracic Society Guideline for pleural disease",
+          "doi": "10.1136/thorax-2022-219784",
+          "location": "Pleural-fluid tests and biomarkers",
+          "use": "Оцінка плеврального випоту, коли негативна цитологія не закриває питання злоякісного ураження плеври.",
+          "applicability_limit": "Настанова не є специфічною для лімфом і не встановлює причину випоту в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1136/thorax-2022-219784",
+          "year": null
+        },
+        {
+          "id": "E-CAND-5",
           "type": "pmid",
-          "title": "Use of flow cytometry in the diagnosis of lymphoproliferative disorders in fluid specimens",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/24554583/",
+          "title": "Use of flow cytometry in fluid specimens",
           "pmid": "24554583",
           "doi": "10.1002/dc.23106",
-          "year": 2014,
           "location": "Abstract and pleural-fluid subgroup",
-          "use": "Проточна цитометрія може бути корисним додатковим дослідженням плеврального випоту, якщо підозрюють лімфопроліферативне захворювання.",
-          "applicability_limit": "Це ретроспективний діагностичний досвід; користь залежить від якості зразка й попередньої клінічної ймовірності, тому проточна цитометрія не є автоматичним самодостатнім тестом.",
-          "verification_status": "verified_primary"
+          "use": "Проточна цитометрія плевральної рідини як додаткове дослідження, якщо підозрюють лімфопроліферативний процес.",
+          "applicability_limit": "Це ретроспективні дані; корисність залежить від якості зразка та клінічної ймовірності, тому тест не є самодостатнім.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1002/dc.23106",
+          "year": null
+        },
+        {
+          "id": "E-CAND-9",
+          "type": "pmid",
+          "title": "Diagnosis and management of pleural infection",
+          "doi": "10.1183/20734735.0146-2023",
+          "local_source_id": "breathe_pleural_infection_2023",
+          "sha256": "035ba08cbb9c82af5361617d00fb0fa7b500b561495fc20d14420fcea462ff88",
+          "location": "PDF pp. 1, 3-4",
+          "use": "Окрема інфекційна гілка плеврального випоту: значення документованого гною та межі інтерпретації pH, глюкози, ЛДГ і мікробіології.",
+          "applicability_limit": "Історична евакуація гнійного вмісту підтримує емпіємну або інфекційну гілку, але не доводить поточну активність, збудника, єдину причину чи відсутність поєднаного механізму.",
+          "verification_status": "agent_visual_source_review",
+          "url": "https://doi.org/10.1183/20734735.0146-2023",
+          "year": null
+        },
+        {
+          "id": "E-CAND-10",
+          "type": "pmid",
+          "title": "Non-traumatic chylothorax: diagnostic and therapeutic strategies",
+          "doi": "10.1183/20734735.0163-2021",
+          "local_source_id": "breathe_nontraumatic_chylothorax_2022",
+          "sha256": "10d7e13b7b4d6a688ee14f2d5e67cc9f56f2b461f206aa842c1a3878dd5e616d",
+          "location": "PDF pp. 3-6 and 11",
+          "use": "Окрема хілозна гілка: тригліцериди, холестерин і хіломікрони плевральної рідини та обмежений зв’язок із лімфомою.",
+          "applicability_limit": "У CASE006 немає перевірених показників плевральних ліпідів або хіломікронів, тому хілоторакс лишається непідтвердженим.",
+          "verification_status": "agent_visual_source_review",
+          "url": "https://doi.org/10.1183/20734735.0163-2021",
+          "year": null
+        },
+        {
+          "id": "E-CAND-11",
+          "type": "pmid",
+          "title": "The tuberculous pleural effusion",
+          "pmid": "38125799",
+          "pmcid": "PMC10729824",
+          "doi": "10.1183/20734735.0143-2023",
+          "local_source_id": "breathe_tuberculous_pleural_effusion_2023",
+          "sha256": "b9dabc39e373d6a8f9ab443664cd749e203c392ab233dfa2e6b5f5772ca60b71",
+          "location": "PDF pp. 1, 5-8 and 14",
+          "use": "Окрема гілка туберкульозного або іншого гранульоматозного плеврального процесу: епідеміологічний контекст, мікробіологія, тканина, ADA, клітинний склад і межі NAAT.",
+          "applicability_limit": "Гнійний вміст і змішаний клітинний склад самі по собі не встановлюють туберкульоз. Піогенний, туберкульозний, пухлинний, хілозний і поєднаний механізми лишаються окремими до рішення лікаря.",
+          "verification_status": "agent_visual_source_review",
+          "url": "https://doi.org/10.1183/20734735.0143-2023",
+          "year": null
         }
       ]
     },
@@ -2661,66 +2480,54 @@
       "id": "W4",
       "title": "Заповнення прогалин базового стадіювання та прогностичної оцінки",
       "priority": "medium",
-      "rationale": "Немає повністю нормалізованих B-симптомів, функціонального стану, карти уражених лімфовузлів і датованого лабораторного зрізу; тому стадію, FLIPI та показання до лікування зараз не визначають.",
+      "rationale": "Без датованого baseline, B-симптомів, функціонального стану, карти вузлів, розміру найбільшого вузла й формального marrow status не визначають стадію, FLIPI або FLIPI2.",
       "discriminates": [],
       "evidence_refs": [
         "E-CAND-1",
-        "E-CAND-2",
-        "E-CAND-13",
-        "E-CAND-14"
+        "E-CAND-6",
+        "E-CAND-7"
       ],
       "sources": [
         {
           "id": "E-CAND-1",
           "type": "guideline",
-          "title": "Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma — Spanish Lymphoma Group (GELTAMO) 2025",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/41681868/",
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
           "pmid": "41681868",
           "doi": "10.3390/cancers18030395",
-          "year": 2026,
-          "location": "Sections 2–3; Table 1",
-          "use": "Ексцизійна біопсія для встановлення діагнозу; базова оцінка анамнезу й фізикального статусу; загальний аналіз крові, ЛДГ і β2-мікроглобулін; ПЕТ/КТ для стадіювання та вибору ділянки біопсії за накопиченням ФДГ, якщо підозрюють трансформацію.",
-          "applicability_limit": "Рекомендації цієї настанови застосовні після того, як лікар підтвердить фолікулярну лімфому як робочу нозологію; самі по собі вони не встановлюють діагноз і показання до лікування в CASE006.",
-          "verification_status": "verified_primary"
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
         },
         {
-          "id": "E-CAND-2",
-          "type": "guideline",
-          "title": "Newly diagnosed and relapsed follicular lymphoma: ESMO Clinical Practice Guidelines for diagnosis, treatment and follow-up",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/33249059/",
-          "pmid": "33249059",
-          "doi": "10.1016/j.annonc.2020.11.008",
-          "year": 2021,
-          "location": "Diagnosis and staging recommendations",
-          "use": "Незалежна клінічна настанова щодо первинного підтвердження діагнозу, стадіювання та клінічного контексту при фолікулярній лімфомі.",
-          "applicability_limit": "Повний текст рекомендацій недоступний у PubMed, тому джерело використано для незалежного підтвердження напряму, а не як єдину підставу для визначення прогалини CASE006.",
-          "verification_status": "verified_metadata"
-        },
-        {
-          "id": "E-CAND-13",
+          "id": "E-CAND-6",
           "type": "pmid",
-          "title": "Follicular lymphoma international prognostic index",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/15126323/",
+          "title": "Follicular Lymphoma International Prognostic Index",
           "pmid": "15126323",
           "doi": "10.1182/blood-2003-12-4434",
-          "year": 2004,
-          "location": "Abstract: five adverse prognostic factors",
-          "use": "Для FLIPI потрібні вік, стадія за Ann Arbor, гемоглобін, кількість уражених лімфатичних зон і ЛДГ; відсутні або недатовані показники не дають змоги коректно розрахувати індекс.",
-          "applicability_limit": "FLIPI є прогностичним індексом після встановлення діагнозу й базових даних; він не слугує правилом для встановлення діагнозу чи показань до лікування.",
-          "verification_status": "verified_primary"
+          "location": "Model variables",
+          "use": "Визначення обов’язкових вихідних даних для FLIPI: вік, стадія Ann Arbor, гемоглобін, кількість уражених лімфатичних зон і ЛДГ.",
+          "applicability_limit": "FLIPI є прогностичним індексом після встановлення діагнозу й надійного датування показників; він не встановлює діагноз або показання до лікування.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1182/blood-2003-12-4434",
+          "year": null
         },
         {
-          "id": "E-CAND-14",
+          "id": "E-CAND-7",
           "type": "pmid",
-          "title": "Follicular lymphoma international prognostic index 2: a new prognostic index for follicular lymphoma",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/19652063/",
+          "title": "Follicular Lymphoma International Prognostic Index 2",
           "pmid": "19652063",
           "doi": "10.1200/JCO.2008.21.3991",
-          "year": 2009,
-          "location": "Model variables and conclusion",
-          "use": "Для FLIPI2 потрібні β2-мікроглобулін, розмір найбільшого лімфовузла, ураження кісткового мозку, гемоглобін і вік; для кожного показника потрібна надійна вихідна дата.",
-          "applicability_limit": "FLIPI2 є прогностичним індексом і самостійно не встановлює діагноз або рішення про лікування за рівнем β2-мікроглобуліну чи кількістю тромбоцитів.",
-          "verification_status": "verified_primary"
+          "location": "Model variables",
+          "use": "Визначення обов’язкових вихідних даних для FLIPI2: β2-мікроглобулін, розмір найбільшого вузла, ураження кісткового мозку, гемоглобін і вік.",
+          "applicability_limit": "FLIPI2 є прогностичним індексом і не встановлює діагноз, причину тромбоцитопенії або рішення про лікування.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1200/JCO.2008.21.3991",
+          "year": null
         }
       ]
     },
@@ -2728,59 +2535,61 @@
       "id": "W5",
       "title": "Питання до консиліуму: дата, динаміка та причина тромбоцитопенії",
       "priority": "conditional",
-      "rationale": "F010 фіксує тромбоцити 132×10^9/л, але дата, динаміка й причина не встановлені; F043 і F044 описують збільшені печінку та селезінку без доведення причинного зв'язку. E-CAND-1 і E-CAND-14 підтримують потребу в датованому базовому лабораторному контексті, але не встановлюють механізм тромбоцитопенії.",
+      "rationale": "Тромбоцити 132×10^9/L нижчі за локальний референс, але дата, динаміка й причина невідомі. Це значення не досягає наведеного GELF-порогу <100×10^9/L і саме по собі не доводить marrow involvement, hypersplenism або показання до лікування.",
       "discriminates": [],
       "evidence_refs": [
         "E-CAND-1",
-        "E-CAND-14"
+        "E-CAND-7"
       ],
       "sources": [
         {
           "id": "E-CAND-1",
           "type": "guideline",
-          "title": "Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma — Spanish Lymphoma Group (GELTAMO) 2025",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/41681868/",
+          "title": "GELTAMO Guidelines for Follicular Lymphoma 2025",
           "pmid": "41681868",
           "doi": "10.3390/cancers18030395",
-          "year": 2026,
-          "location": "Sections 2–3; Table 1",
-          "use": "Ексцизійна біопсія для встановлення діагнозу; базова оцінка анамнезу й фізикального статусу; загальний аналіз крові, ЛДГ і β2-мікроглобулін; ПЕТ/КТ для стадіювання та вибору ділянки біопсії за накопиченням ФДГ, якщо підозрюють трансформацію.",
-          "applicability_limit": "Рекомендації цієї настанови застосовні після того, як лікар підтвердить фолікулярну лімфому як робочу нозологію; самі по собі вони не встановлюють діагноз і показання до лікування в CASE006.",
-          "verification_status": "verified_primary"
+          "local_source_id": "geltamo_follicular_lymphoma_2025",
+          "sha256": "ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744",
+          "location": "PDF pp. 2–5",
+          "use": "Інтегроване підтвердження фолікулярної лімфоми, базове обстеження, ПЕТ/КТ для стадіювання та вибору ділянки біопсії, якщо є підозра на трансформацію.",
+          "applicability_limit": "Настанова підтримує план перевірки, але сама не встановлює діагноз, причину плеврального випоту чи показання до лікування в CASE006.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025
         },
         {
-          "id": "E-CAND-14",
+          "id": "E-CAND-7",
           "type": "pmid",
-          "title": "Follicular lymphoma international prognostic index 2: a new prognostic index for follicular lymphoma",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/19652063/",
+          "title": "Follicular Lymphoma International Prognostic Index 2",
           "pmid": "19652063",
           "doi": "10.1200/JCO.2008.21.3991",
-          "year": 2009,
-          "location": "Model variables and conclusion",
-          "use": "Для FLIPI2 потрібні β2-мікроглобулін, розмір найбільшого лімфовузла, ураження кісткового мозку, гемоглобін і вік; для кожного показника потрібна надійна вихідна дата.",
-          "applicability_limit": "FLIPI2 є прогностичним індексом і самостійно не встановлює діагноз або рішення про лікування за рівнем β2-мікроглобуліну чи кількістю тромбоцитів.",
-          "verification_status": "verified_primary"
+          "location": "Model variables",
+          "use": "Визначення обов’язкових вихідних даних для FLIPI2: β2-мікроглобулін, розмір найбільшого вузла, ураження кісткового мозку, гемоглобін і вік.",
+          "applicability_limit": "FLIPI2 є прогностичним індексом і не встановлює діагноз, причину тромбоцитопенії або рішення про лікування.",
+          "verification_status": "human_source_review",
+          "url": "https://doi.org/10.1200/JCO.2008.21.3991",
+          "year": null
         }
       ]
     }
   ],
   "audio_briefing": {
     "case_id": "CASE006",
-    "id": "AB-CASE006-20260811-03",
-    "title": "CASE006: підготовка до консиліуму",
+    "id": "AB-CASE006-20260811-04",
+    "title": "Коротко до консиліуму",
     "label": "Аудіогайд",
-    "public_url": "https://v3b.fal.media/files/b/0aa5e1eb/6xB1EdMvuFH_3iCxolIKA_output.mp3",
+    "public_url": "https://v3b.fal.media/files/b/0aa5eb6d/pOw5uKE8G7P_Lj2cH-khx_output.mp3",
     "mime_type": "audio/mpeg",
-    "duration_seconds": 147.722,
-    "audio_sha256": "5e82c5c7e470f4a05052aa5da47e04f1768302feb7db3cb0020e8fdf9c7bdb3a",
-    "source_text_sha256": "6d3d2ccd16be9abdc5d7fd1649cbecd1509c9586edc2ca48ed2c9ae84c8878a3",
-    "reasoning_revision_id": "RR-CASE006-98ceb4f1d324",
-    "reasoning_revision_sha256": "2db39622dbc5669ecb8389a22018d0a0e96ff29a8ef1a1f39912cd4fdef54b64",
+    "duration_seconds": 194.926,
+    "audio_sha256": "db28280b330a029147be536adc37038ab26aa1f297d3a473ea2a37c8070ec3a7",
+    "source_text_sha256": "a0db43154276bb38e8a91a474bece2900923904a6579419214b773d3ba6b2b25",
+    "reasoning_revision_id": "RR-CASE006-3d72544bd826",
+    "reasoning_revision_sha256": "eee2b9836653914ea8974f240edf3862ffc34417e8ab5339dddc66bdb435836f",
     "clinical_status": "candidate_pending_human_review",
     "reverse_stt": {
       "model": "fal-ai/elevenlabs/speech-to-text",
       "detected_language": "ukr",
-      "language_probability": 0.9938685297966003,
+      "language_probability": 1,
       "critical_content_preserved": true
     }
   },
@@ -2791,9 +2600,8 @@
     "limitations": [
       "Провідна гіпотеза потребує перевірки гематопатологом на первинному матеріалі.",
       "Не визначено стадію, пухлинне навантаження, статус трансформації або показання до лікування.",
-      "Пункти плану перевірки не є персональними призначеннями; це перелік питань для лікаря.",
-      "Негативну цитологію плевральної рідини не трактують як доказ відсутності лімфомного ураження.",
-      "Перебудову BCL2 не трактують як самодостатній діагноз або ознаку лімфоми з подвійною перебудовою."
+      "План перевірки є переліком питань для лікаря, а не персональним призначенням.",
+      "Візуальна перевірка зовнішніх джерел агентом підтверджує лише цілісність candidate-пакета; клінічну застосовність і весь пакет фінально оцінює лікар."
     ]
   },
   "use_limit": "Зовнішні джерела обґрунтовують доцільність окремих перевірок, але до рішення лікаря не встановлюють діагноз, стадію, показання до лікування чи застосовність висновків до цього пацієнта."
