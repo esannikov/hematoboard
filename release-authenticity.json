@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-08-11T08:09:32.190Z",
+  "fixture_schema": "hematoboard.public-dashboard-fixture/2.0.0",
+  "sources": {
+    "case_id": "CASE006",
+    "bundle_id": "CASE006@6ec73b7e806a",
+    "bundle_revision": "CASE006@6ec73b7e806a",
+    "bundle_sha256": "2032ad12fead1e2a365a07b6b20cca3e4c1726d78c438dd4b0ad678a9adf2930",
+    "reasoning_revision_id": "RR-CASE006-98ceb4f1d324",
+    "reasoning_revision_sha256": "2db39622dbc5669ecb8389a22018d0a0e96ff29a8ef1a1f39912cd4fdef54b64",
+    "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
+    "clinical_copy_sha256": "bce8e13423f08b43480a0cf1556943a34e6b3d52204ae21c1d8a877497d51ab9",
+    "clinical_input_sha256": "f651a62c9cbb0b2c05e6a601e5b65069ca10d13699a4c3a13ff48f6077b6f3d0",
+    "evidence_review_status": "pass",
+    "source_date_context_schema": "hematoboard.source_date_context/1.0",
+    "method_verification": "verified",
+    "projection_status": "verified",
+    "clinician_accepted": false
+  },
+  "ui_framework": {
+    "material": {
+      "packages": [
+        "@mui/material@9.3.1",
+        "@mui/x-data-grid@9.11.0"
+      ]
+    }
+  }
+}
