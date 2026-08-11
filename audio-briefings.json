@@ -1,0 +1,25 @@
+{
+  "schema_version": "hematoboard.public-audio-manifest/1.0.0",
+  "briefings": [
+    {
+      "case_id": "CASE006",
+      "id": "AB-CASE006-20260811-02",
+      "title": "CASE006: підготовка до консиліуму",
+      "label": "Аудіогайд",
+      "public_url": "https://v3b.fal.media/files/b/0aa5dd56/FxADKQGRjYX8N_6CMC81e_output.mp3",
+      "mime_type": "audio/mpeg",
+      "duration_seconds": 120.189,
+      "audio_sha256": "000d90b3a107c7fa23d73aba2ad18312f05d645595e1287c5c7faf68ffbd2f9e",
+      "source_text_sha256": "0106902812a87003f6f3029414f4f5749592e1bd8ef743408f836cf97e5ea76c",
+      "reasoning_revision_id": "RR-CASE006-24c036375a74",
+      "reasoning_revision_sha256": "d58f502385884cda06502e0ac458abdac655e5cb802ae49c1ac2ac7ec7d7f68d",
+      "clinical_status": "candidate_pending_human_review",
+      "reverse_stt": {
+        "model": "fal-ai/elevenlabs/speech-to-text",
+        "detected_language": "ukr",
+        "language_probability": 0.9937148094177246,
+        "critical_content_preserved": true
+      }
+    }
+  ]
+}
