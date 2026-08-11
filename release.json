@@ -1,7 +1,7 @@
 {
   "schema_version": "hematoboard.public-release/2.0.0",
-  "release_id": "20260811-material-canonical-3",
-  "published_at": "2026-08-11T05:44:51Z",
+  "release_id": "20260811-material-canonical-4",
+  "published_at": "2026-08-11T05:53:18Z",
   "canonical_route": "/",
   "canonical_design": "material",
   "source_workspace": "03PROJECTS/MedAI/workbench/prototypes/ui-framework-comparison",
@@ -22,6 +22,8 @@
     "pages_base_path": "pass",
     "stable_event_monitor": "pass",
     "cursor_alignment": "pass",
-    "distinct_event_colors": "pass"
+    "distinct_event_colors": "pass",
+    "event_monitor_overflow_desktop_tablet": "0px",
+    "workup_hypothesis_navigation": "pass"
   }
 }
