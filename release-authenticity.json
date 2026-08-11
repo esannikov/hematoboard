@@ -1,7 +1,8 @@
 {
-  "generated_at": "2026-08-11T14:42:01.390Z",
+  "generated_at": "2026-08-11T17:51:15.634Z",
   "fixture_schema": "hematoboard.public-dashboard-fixture/2.0.0",
   "sources": {
+    "case_key": "case006",
     "case_id": "CASE006",
     "bundle_id": "CASE006@6ec73b7e806a",
     "bundle_revision": "CASE006@6ec73b7e806a",
