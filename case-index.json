@@ -1,0 +1,13 @@
+{
+  "schema_version": "hematoboard.public-case-index/1.0.0",
+  "cases": [
+    {
+      "key": "case006",
+      "case_id": "CASE006"
+    },
+    {
+      "key": "case007",
+      "case_id": "CASE007"
+    }
+  ]
+}

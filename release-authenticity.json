@@ -1,20 +1,63 @@
 {
-  "generated_at": "2026-08-11T17:51:15.634Z",
+  "schema_version": "hematoboard.public-release-authenticity/2.0.0",
+  "generated_at": "2026-08-11T22:02:23.694Z",
   "fixture_schema": "hematoboard.public-dashboard-fixture/2.0.0",
+  "cases": {
+    "case006": {
+      "case_key": "case006",
+      "case_id": "CASE006",
+      "bundle_id": "CASE006@6ec73b7e806a",
+      "bundle_revision": "CASE006@6ec73b7e806a",
+      "bundle_sha256": "2032ad12fead1e2a365a07b6b20cca3e4c1726d78c438dd4b0ad678a9adf2930",
+      "reasoning_revision_id": "RR-CASE006-3d72544bd826",
+      "reasoning_revision_sha256": "eee2b9836653914ea8974f240edf3862ffc34417e8ab5339dddc66bdb435836f",
+      "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
+      "clinical_copy_sha256": "9bcd6d7654bd6fad3d22fb4760aa5f12cd89c84049244a1ca411bc236f6d9718",
+      "clinical_input_sha256": "f651a62c9cbb0b2c05e6a601e5b65069ca10d13699a4c3a13ff48f6077b6f3d0",
+      "evidence_review_status": "pass",
+      "evidence_review_modes": [
+        "human_source_review",
+        "agent_visual_source_review"
+      ],
+      "source_date_context_schema": "hematoboard.source_date_context/1.0",
+      "method_verification": "verified",
+      "projection_status": "verified",
+      "clinician_accepted": false
+    },
+    "case007": {
+      "case_key": "case007",
+      "case_id": "CASE007",
+      "bundle_id": "CASE007@f8f129d92044",
+      "bundle_revision": "CASE007@f8f129d92044",
+      "bundle_sha256": "94f76b566fa779a2f496fa6822ccc6b85ba3ae571a6d7a8738d1cf1bc1b836c7",
+      "reasoning_revision_id": "RR-CASE007-463400661991",
+      "reasoning_revision_sha256": "5b7657ba73d11658370969804b9bba90b83ffcf2d8b6f9982ae250c149ecf434",
+      "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
+      "clinical_copy_sha256": "a7a8699aa15a3575db49bac3229b8d43f87207afa4b5f631aa5e1f454200ff4c",
+      "clinical_input_sha256": "04fc034c0ad771a1c2910099c91eca048d85580b9b686c655a107a072ec6b152",
+      "evidence_review_status": "pass",
+      "evidence_review_modes": [
+        "agent_visual_source_review"
+      ],
+      "source_date_context_schema": "hematoboard.source_date_context/1.0",
+      "method_verification": "verified",
+      "projection_status": "verified",
+      "clinician_accepted": false
+    }
+  },
   "sources": {
-    "case_key": "case006",
-    "case_id": "CASE006",
-    "bundle_id": "CASE006@6ec73b7e806a",
-    "bundle_revision": "CASE006@6ec73b7e806a",
-    "bundle_sha256": "2032ad12fead1e2a365a07b6b20cca3e4c1726d78c438dd4b0ad678a9adf2930",
-    "reasoning_revision_id": "RR-CASE006-3d72544bd826",
-    "reasoning_revision_sha256": "eee2b9836653914ea8974f240edf3862ffc34417e8ab5339dddc66bdb435836f",
+    "case_key": "case007",
+    "case_id": "CASE007",
+    "bundle_id": "CASE007@f8f129d92044",
+    "bundle_revision": "CASE007@f8f129d92044",
+    "bundle_sha256": "94f76b566fa779a2f496fa6822ccc6b85ba3ae571a6d7a8738d1cf1bc1b836c7",
+    "reasoning_revision_id": "RR-CASE007-463400661991",
+    "reasoning_revision_sha256": "5b7657ba73d11658370969804b9bba90b83ffcf2d8b6f9982ae250c149ecf434",
     "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
-    "clinical_copy_sha256": "9bcd6d7654bd6fad3d22fb4760aa5f12cd89c84049244a1ca411bc236f6d9718",
-    "clinical_input_sha256": "f651a62c9cbb0b2c05e6a601e5b65069ca10d13699a4c3a13ff48f6077b6f3d0",
+    "clinical_copy_sha256": "a7a8699aa15a3575db49bac3229b8d43f87207afa4b5f631aa5e1f454200ff4c",
+    "clinical_input_sha256": "04fc034c0ad771a1c2910099c91eca048d85580b9b686c655a107a072ec6b152",
     "evidence_review_status": "pass",
     "evidence_review_modes": [
-      "human_source_review",
       "agent_visual_source_review"
     ],
     "source_date_context_schema": "hematoboard.source_date_context/1.0",

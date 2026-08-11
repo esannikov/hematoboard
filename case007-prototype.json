@@ -1,0 +1,1997 @@
+{
+  "schema_version": "hematoboard.public-dashboard-fixture/2.0.0",
+  "generated_from": {
+    "case_key": "case007",
+    "case_id": "CASE007",
+    "bundle_id": "CASE007@f8f129d92044",
+    "bundle_revision": "CASE007@f8f129d92044",
+    "bundle_sha256": "94f76b566fa779a2f496fa6822ccc6b85ba3ae571a6d7a8738d1cf1bc1b836c7",
+    "reasoning_revision_id": "RR-CASE007-463400661991",
+    "reasoning_revision_sha256": "5b7657ba73d11658370969804b9bba90b83ffcf2d8b6f9982ae250c149ecf434",
+    "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
+    "clinical_copy_sha256": "a7a8699aa15a3575db49bac3229b8d43f87207afa4b5f631aa5e1f454200ff4c",
+    "clinical_input_sha256": "04fc034c0ad771a1c2910099c91eca048d85580b9b686c655a107a072ec6b152",
+    "evidence_review_status": "pass",
+    "evidence_review_modes": [
+      "agent_visual_source_review"
+    ],
+    "source_date_context_schema": "hematoboard.source_date_context/1.0",
+    "method_verification": "verified",
+    "projection_status": "verified",
+    "clinician_accepted": false
+  },
+  "case": {
+    "id": "CASE007",
+    "title": "Знеособлений клінічний пакет · source ledger прийнято",
+    "overview_brief": "Жінка, 88 років. Анемія протягом 2 років, гемоглобін 66, MCV 126,5, тромбоцити 90×10⁹/л і попередні переливання еритроцитарної маси; уточнюються клональне захворювання кісткового мозку, дефіцит B12/фолатів і механізм непрямої гіпербілірубінемії.",
+    "generated": "2026-08-11",
+    "governance": "Source ledger сформовано лише після об'єднаної людської звірки сканів, структурованого тексту, приватності та hash-derived координатного G4. Гіпотези й лікувальні рішення до канонічного ledger не внесено.",
+    "demographics": "Стать: жіноча · Вік: 88 років",
+    "source": "Знеособлений source layer із приватним hash-pinned PDF/OCR/crop provenance.",
+    "signal": "Source layer прийнято; candidate synthesis формується окремою незмінною ревізією.",
+    "discriminating_step": "Лікарська перевірка окремого candidate synthesis після завершення незалежних reasoning passes."
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "rank": 1,
+      "label": "Мієлодиспластичне новоутворення або інша клональна мієлоїдна цитопенія",
+      "clinical_role": "Провідна робоча гіпотеза для інтегрованої гематопатологічної перевірки",
+      "rationale": "Клональне мієлоїдне захворювання найповніше поєднує анемію протягом 2 років, гемоглобін 66, попередні переливання, MCV 126,5, тромбоцити 90×10⁹/л, вік пацієнтки та гіперцелюлярний пунктат. Код D46.4 у джерелі підтримує цей напрям як попередній клінічний висновок, але не встановлює сучасний підтип. Бракує кількісного опису дисплазії й бластів, трепанобіопсії, каріотипу та молекулярного дослідження; оборотні вторинні причини також не виключені.",
+      "support_refs": [
+        "F002",
+        "F004",
+        "F008",
+        "F009",
+        "F010",
+        "F013",
+        "F016"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F014",
+        "F015",
+        "F017"
+      ],
+      "missing_evidence": [
+        "Експертна морфологія периферичної крові й кісткового мозку з кількісною оцінкою дисплазії та бластів",
+        "Трепанобіопсія з клітинністю, фіброзом, топографією та виключенням інфільтрації",
+        "Каріотип і мієлоїдна NGS-панель; спрямований FISH лише за показаннями",
+        "Виключення B12/фолатного дефіциту, гемолізу, тиреоїдних, печінкових, медикаментозних та інших реактивних причин"
+      ],
+      "applicability_limits": [
+        "Гіперцелюлярність і код D46.4 не є самодостатніми критеріями мієлодиспластичного новоутворення.",
+        "Кількісного підрахунку бластів у крові й кістковому мозку немає; фраза «лейкомізації кісткового мозку не виявлено» є лише обмеженою негативною знахідкою.",
+        "Підтип і прогностичну категорію не можна визначити без інтегрованої морфологічної, цитогенетичної та молекулярної оцінки."
+      ],
+      "discriminating_checks": [
+        "Інтегрований перегляд мазка, аспірату, трепанобіопсії, цитогенетики й молекулярних досліджень",
+        "Порівняння з результатами коригованих вторинних причин на одній часовій осі"
+      ],
+      "short_label": "Мієлодиспластичне новоутворення або інша клональна цитопенія",
+      "counts": {
+        "support": 7,
+        "refute": 0,
+        "neutral": 3
+      },
+      "support_facts": [
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "display": "Вік пацієнта: 88 р.",
+          "value": "Вік пацієнта: 88 р.: 88.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F004",
+          "kind": "clinical_note",
+          "display": "анемія неточненої етіології останні 2 роки",
+          "value": "анемія неточненої етіології останні 2 роки. були переливання одногрупної ер-маси",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F008",
+          "kind": "clinical_note",
+          "display": "Гемоглобін HGB",
+          "value": "Гемоглобін HGB: 66.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F009",
+          "kind": "clinical_note",
+          "display": "Тромбоцити PLT",
+          "value": "Тромбоцити PLT: 90.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "clinical_note",
+          "display": "MCV",
+          "value": "MCV: 126.5.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F013",
+          "kind": "pathology_finding",
+          "display": "Пунктат гіперцелюлерний.",
+          "value": "Пунктат гіперцелюлерний.. Гранулоцитарний паросток збережений, спостерігається зниження індексу дозрівання нейтрофілів до 0,4. Еритрон - нормобластичний, подразнений, визначається посилення проліферації клітинних елементів, переважають стадії поліхроматофільних нормоцитів",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-16E01E0454B2-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F016",
+          "kind": "diagnostic_interpretation",
+          "display": "D46.4 - Рефрактерна анемія, неточнена",
+          "value": "D46.4 - Рефрактерна анемія, неточнена. Основний: Рефрактерна анемія, неточнена, важкого ступеня.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 5,
+          "source_fragment_id": "FRAG-16E01E0454B2-005",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F014",
+          "kind": "pathology_finding",
+          "display": "МКЦ в межах норми",
+          "value": "МКЦ в межах норми. визначається до 6 екземплярів на 10 попів зору",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-16E01E0454B2-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F015",
+          "kind": "negative_finding",
+          "display": "Лейкомізації кісткового мозку не виявлено.",
+          "value": "Лейкомізації кісткового мозку не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-16E01E0454B2-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F017",
+          "kind": "diagnostic_interpretation",
+          "display": "Аутомунний тиреоїдит, дифузна форма.",
+          "value": "Аутомунний тиреоїдит, дифузна форма.. Гіпотиреоз, декомпенсований.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 5,
+          "source_fragment_id": "FRAG-16E01E0454B2-005",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H2",
+      "rank": 2,
+      "label": "Мегалобластний еритропоез через дефіцит вітаміну B12 або фолатів",
+      "clinical_role": "Критична потенційно коригована альтернатива до прийняття клонального діагнозу",
+      "rationale": "Виражений макроцитоз і непряма гіпербілірубінемія сумісні з неефективним мегалобластним еритропоезом. Посилена еритроїдна проліферація неспецифічна, а еритрон у джерелі названо нормобластичним, тому морфологічного підтвердження немає. У пакеті відсутні B12, фолати, метилмалонова кислота за невизначеного B12 і повний опис мазка, отже цю потенційно оборотну причину ще не перевірено.",
+      "support_refs": [
+        "F010",
+        "F011"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F012",
+        "F013",
+        "F017"
+      ],
+      "missing_evidence": [
+        "Загальний або активний B12 і фолати з лабораторними межами",
+        "Метилмалонова кислота для невизначеного загального або активного B12; гомоцистеїн — лише у спеціально визначеному клінічному шляху",
+        "Мазок периферичної крові з описом макроовалоцитів і гіперсегментації"
+      ],
+      "applicability_limits": [
+        "Нормобластичний опис еритрону не підтверджує мегалобластну морфологію.",
+        "Дефіцит і клональне захворювання можуть співіснувати; позитивний дефіцитний тест не скасовує оцінку стійкої анемії та тромбоцитопенії.",
+        "Гомоцистеїн не є універсальною заміною MMA і застосовується лише у визначеному клінічному шляху."
+      ],
+      "discriminating_checks": [
+        "Загальний або активний B12 і фолати; MMA за невизначеного результату B12. Гомоцистеїн — лише за окремого клінічного показання, зокрема підозри на вплив закису азоту.",
+        "Мазок і ретикулоцитарна відповідь у датованому контексті"
+      ],
+      "short_label": "Дефіцит B12 або фолатів із мегалобластним еритропоезом",
+      "counts": {
+        "support": 2,
+        "refute": 0,
+        "neutral": 3
+      },
+      "support_facts": [
+        {
+          "id": "F010",
+          "kind": "clinical_note",
+          "display": "MCV",
+          "value": "MCV: 126.5.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F011",
+          "kind": "clinical_note",
+          "display": "Білірубін загальний, прямий, непрямий",
+          "value": "Білірубін загальний, прямий, непрямий: Білірубін непрямий - 21,65; Білірубін загальний - 35,48; Білірубін прямий - 13,83.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-16E01E0454B2-006",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F012",
+          "kind": "negative_finding",
+          "display": "Пряма проба Кумбса негативний",
+          "value": "Пряма проба Кумбса негативний.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-16E01E0454B2-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F013",
+          "kind": "pathology_finding",
+          "display": "Пунктат гіперцелюлерний.",
+          "value": "Пунктат гіперцелюлерний.. Гранулоцитарний паросток збережений, спостерігається зниження індексу дозрівання нейтрофілів до 0,4. Еритрон - нормобластичний, подразнений, визначається посилення проліферації клітинних елементів, переважають стадії поліхроматофільних нормоцитів",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-16E01E0454B2-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F017",
+          "kind": "diagnostic_interpretation",
+          "display": "Аутомунний тиреоїдит, дифузна форма.",
+          "value": "Аутомунний тиреоїдит, дифузна форма.. Гіпотиреоз, декомпенсований.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 5,
+          "source_fragment_id": "FRAG-16E01E0454B2-005",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H3",
+      "rank": 3,
+      "label": "Гемоліз або внутрішньокістковомозковий розпад при неефективному еритропоезі",
+      "clinical_role": "Механістична гіпотеза, що визначає наступний лабораторний крок",
+      "rationale": "Непряма гіпербілірубінемія, тяжка анемія та посилена еритроїдна проліферація потребують розмежування периферичного гемолізу й внутрішньокістковомозкового руйнування клітин при неефективному еритропоезі. Негативна пряма проба Кумбса послаблює типову DAT-позитивну автоімунну гілку, але без ретикулоцитів, LDH, гаптоглобіну, мазка й часу аналізів відносно трансфузій механізм не визначений.",
+      "support_refs": [
+        "F004",
+        "F011",
+        "F013"
+      ],
+      "refute_refs": [
+        "F012"
+      ],
+      "neutral_refs": [
+        "F010"
+      ],
+      "missing_evidence": [
+        "Абсолютні ретикулоцити та ретикулоцитарний індекс",
+        "LDH, гаптоглобін, фракції білірубіну й мазок із пошуком сфероцитів або шистоцитів",
+        "Час аналізів відносно трансфузій",
+        "За підтвердженого нез'ясованого гемолізу — деталізація DAT і спрямовані дослідження за морфологією"
+      ],
+      "applicability_limits": [
+        "Непряма гіпербілірубінемія не є специфічною для периферичного гемолізу.",
+        "Один негативний скринінговий DAT не виключає рідкісного DAT-негативного автоімунного гемолізу.",
+        "Попередні переливання можуть змінювати інтерпретацію серології та маркерів гемолізу."
+      ],
+      "discriminating_checks": [
+        "Повний гемолітичний блок разом із ретикулоцитами й мазком",
+        "Зіставлення гемолізу з B12/фолатним статусом та морфологією кісткового мозку"
+      ],
+      "short_label": "Гемоліз або руйнування еритроїдних клітин у кістковому мозку",
+      "counts": {
+        "support": 3,
+        "refute": 1,
+        "neutral": 1
+      },
+      "support_facts": [
+        {
+          "id": "F004",
+          "kind": "clinical_note",
+          "display": "анемія неточненої етіології останні 2 роки",
+          "value": "анемія неточненої етіології останні 2 роки. були переливання одногрупної ер-маси",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F011",
+          "kind": "clinical_note",
+          "display": "Білірубін загальний, прямий, непрямий",
+          "value": "Білірубін загальний, прямий, непрямий: Білірубін непрямий - 21,65; Білірубін загальний - 35,48; Білірубін прямий - 13,83.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-16E01E0454B2-006",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F013",
+          "kind": "pathology_finding",
+          "display": "Пунктат гіперцелюлерний.",
+          "value": "Пунктат гіперцелюлерний.. Гранулоцитарний паросток збережений, спостерігається зниження індексу дозрівання нейтрофілів до 0,4. Еритрон - нормобластичний, подразнений, визначається посилення проліферації клітинних елементів, переважають стадії поліхроматофільних нормоцитів",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-16E01E0454B2-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [
+        {
+          "id": "F012",
+          "kind": "negative_finding",
+          "display": "Пряма проба Кумбса негативний",
+          "value": "Пряма проба Кумбса негативний.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-16E01E0454B2-002",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "neutral_facts": [
+        {
+          "id": "F010",
+          "kind": "clinical_note",
+          "display": "MCV",
+          "value": "MCV: 126.5.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H4",
+      "rank": 4,
+      "label": "Вторинний або змішаний макроцитоз із внеском декомпенсованого гіпотиреозу",
+      "clinical_role": "Паралельна перевірка поширених не-клональних причин",
+      "rationale": "У джерелі прямо зафіксовано декомпенсований гіпотиреоз, який може сприяти макроцитозу й анемії. Сам по собі він непереконливо пояснює гемоглобін 66, тромбоцити 90×10⁹/л, попередні переливання та гіперцелюлярний кістковий мозок. Паралельно потрібно перевірити функцію печінки й нирок, препарати, алкогольний анамнез і можливе поєднання причин.",
+      "support_refs": [
+        "F010",
+        "F017"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F008",
+        "F009",
+        "F011",
+        "F013"
+      ],
+      "missing_evidence": [
+        "TSH і вільний T4 у датованому контексті та інформація про замісну терапію",
+        "Печінкові проби, креатинін/eGFR, анамнез алкоголю",
+        "Повний список препаратів, особливо тих, що впливають на синтез ДНК або кістковий мозок"
+      ],
+      "applicability_limits": [
+        "У джерелі немає числових TSH і вільного T4.",
+        "Вторинна причина може бути внеском, а не єдиним поясненням білінеажної цитопенії."
+      ],
+      "discriminating_checks": [
+        "Датовані TSH/fT4, печінкові й ниркові показники",
+        "Анамнез препаратів, алкоголю та динаміка CBC після корекції оборотних причин"
+      ],
+      "short_label": "Вторинний або змішаний макроцитоз із внеском гіпотиреозу",
+      "counts": {
+        "support": 2,
+        "refute": 0,
+        "neutral": 4
+      },
+      "support_facts": [
+        {
+          "id": "F010",
+          "kind": "clinical_note",
+          "display": "MCV",
+          "value": "MCV: 126.5.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F017",
+          "kind": "diagnostic_interpretation",
+          "display": "Аутомунний тиреоїдит, дифузна форма.",
+          "value": "Аутомунний тиреоїдит, дифузна форма.. Гіпотиреоз, декомпенсований.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 5,
+          "source_fragment_id": "FRAG-16E01E0454B2-005",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F008",
+          "kind": "clinical_note",
+          "display": "Гемоглобін HGB",
+          "value": "Гемоглобін HGB: 66.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F009",
+          "kind": "clinical_note",
+          "display": "Тромбоцити PLT",
+          "value": "Тромбоцити PLT: 90.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F011",
+          "kind": "clinical_note",
+          "display": "Білірубін загальний, прямий, непрямий",
+          "value": "Білірубін загальний, прямий, непрямий: Білірубін непрямий - 21,65; Білірубін загальний - 35,48; Білірубін прямий - 13,83.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-16E01E0454B2-006",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F013",
+          "kind": "pathology_finding",
+          "display": "Пунктат гіперцелюлерний.",
+          "value": "Пунктат гіперцелюлерний.. Гранулоцитарний паросток збережений, спостерігається зниження індексу дозрівання нейтрофілів до 0,4. Еритрон - нормобластичний, подразнений, визначається посилення проліферації клітинних елементів, переважають стадії поліхроматофільних нормоцитів",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-16E01E0454B2-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H5",
+      "rank": 5,
+      "label": "Інше клональне або інфільтративне ураження кісткового мозку, включно з гострим лейкозом",
+      "clinical_role": "Критично важлива контрольна гіпотеза тяжкої анемії з тромбоцитопенією",
+      "rationale": "Тяжка анемія з тромбоцитопенією вимагає не пропустити гострий мієлоїдний процес, іншу гематологічну неоплазію або метастатичну інфільтрацію. Фраза «лейкомізації кісткового мозку не виявлено» зменшує підтримку гострого лейкозу лише в межах дослідженого матеріалу. Без кількісного підрахунку бластів, трепанобіопсії, імунофенотипування та генетики ця гілка не закрита.",
+      "support_refs": [
+        "F008",
+        "F009"
+      ],
+      "refute_refs": [
+        "F015"
+      ],
+      "neutral_refs": [
+        "F013",
+        "F014"
+      ],
+      "missing_evidence": [
+        "Повний морфологічний підрахунок бластів у крові й кістковому мозку",
+        "Трепанобіопсія та flow cytometry за морфологічними показаннями",
+        "Цитогенетика й молекулярні дослідження, спрямовані морфологічною картиною"
+      ],
+      "applicability_limits": [
+        "У пакеті немає прямого позитивного доказу гострого лейкозу.",
+        "Гіпотеза збережена через високу ціну пропуску, а не через високий поточний ранг."
+      ],
+      "discriminating_checks": [
+        "Трепанобіопсія з повною морфологією та імунофенотипом",
+        "Генетичне уточнення лише в інтегрованому контексті"
+      ],
+      "short_label": "Інше клональне або інфільтративне ураження кісткового мозку",
+      "counts": {
+        "support": 2,
+        "refute": 1,
+        "neutral": 2
+      },
+      "support_facts": [
+        {
+          "id": "F008",
+          "kind": "clinical_note",
+          "display": "Гемоглобін HGB",
+          "value": "Гемоглобін HGB: 66.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F009",
+          "kind": "clinical_note",
+          "display": "Тромбоцити PLT",
+          "value": "Тромбоцити PLT: 90.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [
+        {
+          "id": "F015",
+          "kind": "negative_finding",
+          "display": "Лейкомізації кісткового мозку не виявлено.",
+          "value": "Лейкомізації кісткового мозку не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-16E01E0454B2-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "neutral_facts": [
+        {
+          "id": "F013",
+          "kind": "pathology_finding",
+          "display": "Пунктат гіперцелюлерний.",
+          "value": "Пунктат гіперцелюлерний.. Гранулоцитарний паросток збережений, спостерігається зниження індексу дозрівання нейтрофілів до 0,4. Еритрон - нормобластичний, подразнений, визначається посилення проліферації клітинних елементів, переважають стадії поліхроматофільних нормоцитів",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-16E01E0454B2-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F014",
+          "kind": "pathology_finding",
+          "display": "МКЦ в межах норми",
+          "value": "МКЦ в межах норми. визначається до 6 екземплярів на 10 попів зору",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-16E01E0454B2-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H6",
+      "rank": 6,
+      "label": "Хронічна крововтрата або залізодефіцит як супутній компонент",
+      "clinical_role": "Низькорангова змішана гілка, що не пояснює весь фенотип",
+      "rationale": "Ерозивна гастропатія та поліпи створюють можливий контекст прихованої крововтрати. Водночас MCV 126,5 і тромбоцитопенія не узгоджуються з ізольованим залізодефіцитом як достатнім поясненням. Залізо й насичення трансферину без феритину, одиниць, референсів і часу відносно переливань не підтверджують і не виключають змішаний дефіцит.",
+      "support_refs": [
+        "F005",
+        "F006"
+      ],
+      "refute_refs": [
+        "F010"
+      ],
+      "neutral_refs": [
+        "F007",
+        "F018"
+      ],
+      "missing_evidence": [
+        "Феритин, трансферин/загальна залізозв'язувальна здатність, насичення трансферину й CRP у датованому контексті",
+        "Гістологія видалених поліпів і антрального поліпа, якщо вона існує",
+        "Оцінка актуальної крововтрати лише після підтвердження залізодефіциту"
+      ],
+      "applicability_limits": [
+        "Сироваткове залізо окремо не визначає запаси заліза.",
+        "Ендоскопічні знахідки не доводять активну крововтрату."
+      ],
+      "discriminating_checks": [
+        "Повний iron panel із феритином і запальним контекстом",
+        "Кореляція з ендоскопічною гістологією та фактичними ознаками крововтрати"
+      ],
+      "short_label": "Крововтрата або залізодефіцит як супутній компонент",
+      "counts": {
+        "support": 2,
+        "refute": 1,
+        "neutral": 2
+      },
+      "support_facts": [
+        {
+          "id": "F005",
+          "kind": "procedure",
+          "display": "Колоноскопія 28.07.2026 року",
+          "value": "Колоноскопія 28.07.2026 року. Доліхосигма, поліпи ободової кишки (видалені)",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-28",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F006",
+          "kind": "procedure",
+          "display": "Гастроскопія 27.07.2026 року",
+          "value": "Гастроскопія 27.07.2026 року. Еритематозно-ерозивна гастропатія. Поліп антрального відділу до 1см. H.Pylori - НЕГАТИВНИЙ. ГОД тип 1, до 5см.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-27",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [
+        {
+          "id": "F010",
+          "kind": "clinical_note",
+          "display": "MCV",
+          "value": "MCV: 126.5.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "neutral_facts": [
+        {
+          "id": "F007",
+          "kind": "clinical_note",
+          "display": "Залізо (Fe) від 24.07.2026",
+          "value": "Залізо (Fe) від 24.07.2026: 25.5.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-24",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 3,
+          "source_fragment_id": "FRAG-16E01E0454B2-003",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F018",
+          "kind": "clinical_note",
+          "display": "Насиченість трансферину залізом",
+          "value": "Насиченість трансферину залізом: 20.54.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-28",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 7,
+          "source_fragment_id": "FRAG-16E01E0454B2-007",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F004",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F009",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F013",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F016",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F014",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F015",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F017",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F013",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F012",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F017",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F004",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F013",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F012",
+      "hypothesis_id": "H3",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H3",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F017",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H4",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F009",
+      "hypothesis_id": "H4",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H4",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F013",
+      "hypothesis_id": "H4",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H5",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F009",
+      "hypothesis_id": "H5",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F015",
+      "hypothesis_id": "H5",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F013",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F014",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H6",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F007",
+      "hypothesis_id": "H6",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F018",
+      "hypothesis_id": "H6",
+      "relation": "neutral"
+    }
+  ],
+  "observations": [
+    {
+      "id": "OBS-16E01E0454B2-001",
+      "kind": "clinical_note",
+      "display": "Стать: жіноча",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 3,
+      "source_fragment_id": "FRAG-16E01E0454B2-003",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-002",
+      "kind": "clinical_note",
+      "display": "Вік пацієнта: 88 р.",
+      "value": 88,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 3,
+      "source_fragment_id": "FRAG-16E01E0454B2-003",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-003",
+      "kind": "clinical_note",
+      "display": "Скарги: загальна слабкість",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 3,
+      "source_fragment_id": "FRAG-16E01E0454B2-003",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-004",
+      "kind": "clinical_note",
+      "display": "анемія неточненої етіології останні 2 роки",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "були переливання одногрупної ер-маси",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 3,
+      "source_fragment_id": "FRAG-16E01E0454B2-003",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-005",
+      "kind": "procedure",
+      "display": "Колоноскопія 28.07.2026 року",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "Доліхосигма, поліпи ободової кишки (видалені)",
+      "effective_at": "2026-07-28",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 3,
+      "source_fragment_id": "FRAG-16E01E0454B2-003",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-006",
+      "kind": "procedure",
+      "display": "Гастроскопія 27.07.2026 року",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "Еритематозно-ерозивна гастропатія. Поліп антрального відділу до 1см. H.Pylori - НЕГАТИВНИЙ. ГОД тип 1, до 5см.",
+      "effective_at": "2026-07-27",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 3,
+      "source_fragment_id": "FRAG-16E01E0454B2-003",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-007",
+      "kind": "clinical_note",
+      "display": "Залізо (Fe) від 24.07.2026",
+      "value": 25.5,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-07-24",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 3,
+      "source_fragment_id": "FRAG-16E01E0454B2-003",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-008",
+      "kind": "clinical_note",
+      "display": "Гемоглобін HGB",
+      "value": 66,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-07-24",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 3,
+      "source_fragment_id": "FRAG-16E01E0454B2-003",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-009",
+      "kind": "clinical_note",
+      "display": "Тромбоцити PLT",
+      "value": 90,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-07-24",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 3,
+      "source_fragment_id": "FRAG-16E01E0454B2-003",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-010",
+      "kind": "clinical_note",
+      "display": "MCV",
+      "value": 126.5,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-07-24",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 3,
+      "source_fragment_id": "FRAG-16E01E0454B2-003",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-011",
+      "kind": "clinical_note",
+      "display": "Білірубін загальний, прямий, непрямий",
+      "value": "Білірубін непрямий - 21,65; Білірубін загальний - 35,48; Білірубін прямий - 13,83",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-07-24",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 6,
+      "source_fragment_id": "FRAG-16E01E0454B2-006",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-012",
+      "kind": "negative_finding",
+      "display": "Пряма проба Кумбса негативний",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 2,
+      "source_fragment_id": "FRAG-16E01E0454B2-002",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-013",
+      "kind": "pathology_finding",
+      "display": "Пунктат гіперцелюлерний.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "Гранулоцитарний паросток збережений, спостерігається зниження індексу дозрівання нейтрофілів до 0,4. Еритрон - нормобластичний, подразнений, визначається посилення проліферації клітинних елементів, переважають стадії поліхроматофільних нормоцитів",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-16E01E0454B2-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-014",
+      "kind": "pathology_finding",
+      "display": "МКЦ в межах норми",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "визначається до 6 екземплярів на 10 попів зору",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-16E01E0454B2-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-015",
+      "kind": "negative_finding",
+      "display": "Лейкомізації кісткового мозку не виявлено.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-16E01E0454B2-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-016",
+      "kind": "diagnostic_interpretation",
+      "display": "D46.4 - Рефрактерна анемія, неточнена",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "Основний: Рефрактерна анемія, неточнена, важкого ступеня.",
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 5,
+      "source_fragment_id": "FRAG-16E01E0454B2-005",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-017",
+      "kind": "diagnostic_interpretation",
+      "display": "Аутомунний тиреоїдит, дифузна форма.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "Гіпотиреоз, декомпенсований.",
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 5,
+      "source_fragment_id": "FRAG-16E01E0454B2-005",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-16E01E0454B2-018",
+      "kind": "clinical_note",
+      "display": "Насиченість трансферину залізом",
+      "value": 20.54,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "Трансферин - 132,4",
+      "effective_at": "2026-07-28",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 7,
+      "source_fragment_id": "FRAG-16E01E0454B2-007",
+      "structured_row_id": null,
+      "human_verified": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "E-CAND-1",
+      "type": "classification",
+      "title": "The 5th edition of the WHO Classification of Haematolymphoid Tumours: Myeloid and Histiocytic/Dendritic Neoplasms",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9252913/",
+      "year": null,
+      "location": "WHO-HAEM5 myeloid classification; myelodysplastic neoplasms and blast-defined categories",
+      "verification_status": "agent_visual_source_review",
+      "use": "Сучасна класифікація мієлодиспластичних новоутворень: поєднання цитопеній, морфології, кількості бластів і визначальних генетичних змін.",
+      "applicability_limit": "Класифікація підтримує перевірку клональної гіпотези, але не дозволяє встановити підтип за кодом D46.4 або гіперцелюлярністю."
+    },
+    {
+      "id": "E-CAND-2",
+      "type": "classification",
+      "title": "International Consensus Classification of Myeloid Neoplasms and Acute Leukemias",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9479031/",
+      "year": null,
+      "location": "ICC 2022; clonal cytopenias, MDS diagnostic criteria and MDS/AML boundaries",
+      "verification_status": "agent_visual_source_review",
+      "use": "Критерії ICC для стійкої цитопенії, дисплазії, клональності та меж між мієлодиспластичним новоутворенням і гострим мієлоїдним лейкозом.",
+      "applicability_limit": "У CASE007 немає кількісного підрахунку бластів, повного опису дисплазії та генетичних результатів, тому джерело задає критерії перевірки, а не діагноз."
+    },
+    {
+      "id": "E-CAND-3",
+      "type": "guideline",
+      "title": "Diagnosis and treatment of primary myelodysplastic syndromes in adults: recommendations from the European LeukemiaNet",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3811170/",
+      "year": null,
+      "location": "Diagnostic procedures and Table 2",
+      "verification_status": "agent_visual_source_review",
+      "use": "Послідовне виключення не-клональних причин цитопеній і поєднання мазка, аспірату, трепанобіопсії та цитогенетики.",
+      "applicability_limit": "Це діагностична рамка; вона не надає відсутніх результатів і не підтверджує MDS автоматично."
+    },
+    {
+      "id": "E-CAND-4",
+      "type": "guideline",
+      "title": "Vitamin B12 deficiency in over 16s: diagnosis and management — Evidence review C for diagnostic tests",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK603364/",
+      "year": null,
+      "location": "Evidence review C; diagnostic-test discussion on PDF pages 42, 43, 45, 48 and 50",
+      "verification_status": "agent_visual_source_review",
+      "use": "Шлях лабораторної перевірки B12: загальний або активний B12 як початковий тест, MMA за невизначеного результату та відбір крові до замісної терапії, коли це можливо.",
+      "applicability_limit": "Evidence review C визначає шлях тестування, але не встановлює дефіцит B12 і не є самостійною підставою підозрювати його в CASE007; цю підставу дає диференційний ряд макроцитозу."
+    },
+    {
+      "id": "E-CAND-5",
+      "type": "pmid",
+      "title": "Diagnosis and treatment of macrocytic anemias in adults",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5689413/",
+      "year": null,
+      "location": "Etiology and diagnostic flow for adult macrocytic anemia",
+      "verification_status": "agent_visual_source_review",
+      "use": "Диференційний ряд макроцитарної анемії та показники, що розмежовують дефіцитний еритропоез, гемоліз, крововтрату, гіпотиреоз, печінкові причини й MDS.",
+      "applicability_limit": "Огляд визначає потрібні розвилкові аналізи, але не встановлює механізм анемії без ретикулоцитів, LDH, гаптоглобіну й мазка."
+    },
+    {
+      "id": "E-CAND-6",
+      "type": "guideline",
+      "title": "The diagnosis and management of primary autoimmune haemolytic anaemia",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/bjh.14478",
+      "year": null,
+      "location": "Investigation of DAT-negative haemolysis",
+      "verification_status": "agent_visual_source_review",
+      "use": "Покрокова оцінка автоімунного гемолізу та межі негативної прямої проби Кумбса.",
+      "applicability_limit": "Додаткове DAT-тестування має сенс лише після незалежного підтвердження нез'ясованого гемолізу; одна негативна проба не визначає механізм."
+    },
+    {
+      "id": "E-CAND-7",
+      "type": "guideline",
+      "title": "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8515119/",
+      "year": null,
+      "location": "Executive recommendations: definitions and initial assessment",
+      "verification_status": "agent_visual_source_review",
+      "use": "Підтвердження залізодефіциту лабораторними показниками до приписування анемії гастроінтестинальній крововтраті.",
+      "applicability_limit": "Ендоскопічні знахідки й окреме значення сироваткового заліза не доводять залізодефіцит або активну крововтрату."
+    }
+  ],
+  "critical_gaps": [
+    {
+      "id": "G1",
+      "text": "Немає повного кількісного опису дисплазії, бластів, трепанобіопсії, каріотипу та мієлоїдної молекулярної панелі, тому сучасна MDS-нозологія не встановлена.",
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-2",
+        "E-CAND-3"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "classification",
+          "title": "The 5th edition of the WHO Classification of Haematolymphoid Tumours: Myeloid and Histiocytic/Dendritic Neoplasms",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9252913/",
+          "year": null,
+          "location": "WHO-HAEM5 myeloid classification; myelodysplastic neoplasms and blast-defined categories",
+          "verification_status": "agent_visual_source_review",
+          "use": "Сучасна класифікація мієлодиспластичних новоутворень: поєднання цитопеній, морфології, кількості бластів і визначальних генетичних змін.",
+          "applicability_limit": "Класифікація підтримує перевірку клональної гіпотези, але не дозволяє встановити підтип за кодом D46.4 або гіперцелюлярністю."
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "classification",
+          "title": "International Consensus Classification of Myeloid Neoplasms and Acute Leukemias",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9479031/",
+          "year": null,
+          "location": "ICC 2022; clonal cytopenias, MDS diagnostic criteria and MDS/AML boundaries",
+          "verification_status": "agent_visual_source_review",
+          "use": "Критерії ICC для стійкої цитопенії, дисплазії, клональності та меж між мієлодиспластичним новоутворенням і гострим мієлоїдним лейкозом.",
+          "applicability_limit": "У CASE007 немає кількісного підрахунку бластів, повного опису дисплазії та генетичних результатів, тому джерело задає критерії перевірки, а не діагноз."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "Diagnosis and treatment of primary myelodysplastic syndromes in adults: recommendations from the European LeukemiaNet",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3811170/",
+          "year": null,
+          "location": "Diagnostic procedures and Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "Послідовне виключення не-клональних причин цитопеній і поєднання мазка, аспірату, трепанобіопсії та цитогенетики.",
+          "applicability_limit": "Це діагностична рамка; вона не надає відсутніх результатів і не підтверджує MDS автоматично."
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "text": "Немає B12, фолатів, метилмалонової кислоти за невизначеного B12 та морфології мазка для перевірки мегалобластного еритропоезу.",
+      "evidence_refs": [
+        "E-CAND-4",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "Vitamin B12 deficiency in over 16s: diagnosis and management — Evidence review C for diagnostic tests",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK603364/",
+          "year": null,
+          "location": "Evidence review C; diagnostic-test discussion on PDF pages 42, 43, 45, 48 and 50",
+          "verification_status": "agent_visual_source_review",
+          "use": "Шлях лабораторної перевірки B12: загальний або активний B12 як початковий тест, MMA за невизначеного результату та відбір крові до замісної терапії, коли це можливо.",
+          "applicability_limit": "Evidence review C визначає шлях тестування, але не встановлює дефіцит B12 і не є самостійною підставою підозрювати його в CASE007; цю підставу дає диференційний ряд макроцитозу."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Diagnosis and treatment of macrocytic anemias in adults",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5689413/",
+          "year": null,
+          "location": "Etiology and diagnostic flow for adult macrocytic anemia",
+          "verification_status": "agent_visual_source_review",
+          "use": "Диференційний ряд макроцитарної анемії та показники, що розмежовують дефіцитний еритропоез, гемоліз, крововтрату, гіпотиреоз, печінкові причини й MDS.",
+          "applicability_limit": "Огляд визначає потрібні розвилкові аналізи, але не встановлює механізм анемії без ретикулоцитів, LDH, гаптоглобіну й мазка."
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "text": "Немає абсолютних ретикулоцитів, LDH, гаптоглобіну, мазка й часу аналізів відносно трансфузій; механізм непрямої гіпербілірубінемії не визначений.",
+      "evidence_refs": [
+        "E-CAND-5",
+        "E-CAND-6"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Diagnosis and treatment of macrocytic anemias in adults",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5689413/",
+          "year": null,
+          "location": "Etiology and diagnostic flow for adult macrocytic anemia",
+          "verification_status": "agent_visual_source_review",
+          "use": "Диференційний ряд макроцитарної анемії та показники, що розмежовують дефіцитний еритропоез, гемоліз, крововтрату, гіпотиреоз, печінкові причини й MDS.",
+          "applicability_limit": "Огляд визначає потрібні розвилкові аналізи, але не встановлює механізм анемії без ретикулоцитів, LDH, гаптоглобіну й мазка."
+        },
+        {
+          "id": "E-CAND-6",
+          "type": "guideline",
+          "title": "The diagnosis and management of primary autoimmune haemolytic anaemia",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/bjh.14478",
+          "year": null,
+          "location": "Investigation of DAT-negative haemolysis",
+          "verification_status": "agent_visual_source_review",
+          "use": "Покрокова оцінка автоімунного гемолізу та межі негативної прямої проби Кумбса.",
+          "applicability_limit": "Додаткове DAT-тестування має сенс лише після незалежного підтвердження нез'ясованого гемолізу; одна негативна проба не визначає механізм."
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "text": "Декомпенсований гіпотиреоз не має датованих TSH/fT4; відсутні повний список препаратів, алкогольний анамнез, печінкові й ниркові показники.",
+      "evidence_refs": [
+        "E-CAND-3",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "Diagnosis and treatment of primary myelodysplastic syndromes in adults: recommendations from the European LeukemiaNet",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3811170/",
+          "year": null,
+          "location": "Diagnostic procedures and Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "Послідовне виключення не-клональних причин цитопеній і поєднання мазка, аспірату, трепанобіопсії та цитогенетики.",
+          "applicability_limit": "Це діагностична рамка; вона не надає відсутніх результатів і не підтверджує MDS автоматично."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Diagnosis and treatment of macrocytic anemias in adults",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5689413/",
+          "year": null,
+          "location": "Etiology and diagnostic flow for adult macrocytic anemia",
+          "verification_status": "agent_visual_source_review",
+          "use": "Диференційний ряд макроцитарної анемії та показники, що розмежовують дефіцитний еритропоез, гемоліз, крововтрату, гіпотиреоз, печінкові причини й MDS.",
+          "applicability_limit": "Огляд визначає потрібні розвилкові аналізи, але не встановлює механізм анемії без ретикулоцитів, LDH, гаптоглобіну й мазка."
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "text": "Залізний статус неповний: немає феритину, одиниць, референсів, CRP і надійного часу відносно трансфузій; ендоскопічна гістологія не представлена.",
+      "evidence_refs": [
+        "E-CAND-5",
+        "E-CAND-7"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Diagnosis and treatment of macrocytic anemias in adults",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5689413/",
+          "year": null,
+          "location": "Etiology and diagnostic flow for adult macrocytic anemia",
+          "verification_status": "agent_visual_source_review",
+          "use": "Диференційний ряд макроцитарної анемії та показники, що розмежовують дефіцитний еритропоез, гемоліз, крововтрату, гіпотиреоз, печінкові причини й MDS.",
+          "applicability_limit": "Огляд визначає потрібні розвилкові аналізи, але не встановлює механізм анемії без ретикулоцитів, LDH, гаптоглобіну й мазка."
+        },
+        {
+          "id": "E-CAND-7",
+          "type": "guideline",
+          "title": "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8515119/",
+          "year": null,
+          "location": "Executive recommendations: definitions and initial assessment",
+          "verification_status": "agent_visual_source_review",
+          "use": "Підтвердження залізодефіциту лабораторними показниками до приписування анемії гастроінтестинальній крововтраті.",
+          "applicability_limit": "Ендоскопічні знахідки й окреме значення сироваткового заліза не доводять залізодефіцит або активну крововтрату."
+        }
+      ]
+    },
+    {
+      "id": "G6",
+      "text": "Немає послідовної датованої динаміки CBC і трансфузій, щоб відокремити стійку клональну цитопенію від змін після гострого стану або втручань.",
+      "evidence_refs": [
+        "E-CAND-2",
+        "E-CAND-3",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-2",
+          "type": "classification",
+          "title": "International Consensus Classification of Myeloid Neoplasms and Acute Leukemias",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9479031/",
+          "year": null,
+          "location": "ICC 2022; clonal cytopenias, MDS diagnostic criteria and MDS/AML boundaries",
+          "verification_status": "agent_visual_source_review",
+          "use": "Критерії ICC для стійкої цитопенії, дисплазії, клональності та меж між мієлодиспластичним новоутворенням і гострим мієлоїдним лейкозом.",
+          "applicability_limit": "У CASE007 немає кількісного підрахунку бластів, повного опису дисплазії та генетичних результатів, тому джерело задає критерії перевірки, а не діагноз."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "Diagnosis and treatment of primary myelodysplastic syndromes in adults: recommendations from the European LeukemiaNet",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3811170/",
+          "year": null,
+          "location": "Diagnostic procedures and Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "Послідовне виключення не-клональних причин цитопеній і поєднання мазка, аспірату, трепанобіопсії та цитогенетики.",
+          "applicability_limit": "Це діагностична рамка; вона не надає відсутніх результатів і не підтверджує MDS автоматично."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Diagnosis and treatment of macrocytic anemias in adults",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5689413/",
+          "year": null,
+          "location": "Etiology and diagnostic flow for adult macrocytic anemia",
+          "verification_status": "agent_visual_source_review",
+          "use": "Диференційний ряд макроцитарної анемії та показники, що розмежовують дефіцитний еритропоез, гемоліз, крововтрату, гіпотиреоз, печінкові причини й MDS.",
+          "applicability_limit": "Огляд визначає потрібні розвилкові аналізи, але не встановлює механізм анемії без ретикулоцитів, LDH, гаптоглобіну й мазка."
+        }
+      ]
+    }
+  ],
+  "workup": [
+    {
+      "id": "W1",
+      "title": "Повторний CBC, ретикулоцити, мазок і гемолітичний блок",
+      "priority": "critical",
+      "rationale": "Один датований набір із CBC, абсолютними ретикулоцитами, LDH, гаптоглобіном, фракціями білірубіну й ручним мазком розділяє продукційну недостатність, периферичний гемоліз, гостру крововтрату та частину MDS-ознак. Час відносно трансфузій має бути зафіксований.",
+      "discriminates": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6"
+      ],
+      "evidence_refs": [
+        "E-CAND-3",
+        "E-CAND-5",
+        "E-CAND-6"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "Diagnosis and treatment of primary myelodysplastic syndromes in adults: recommendations from the European LeukemiaNet",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3811170/",
+          "year": null,
+          "location": "Diagnostic procedures and Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "Послідовне виключення не-клональних причин цитопеній і поєднання мазка, аспірату, трепанобіопсії та цитогенетики.",
+          "applicability_limit": "Це діагностична рамка; вона не надає відсутніх результатів і не підтверджує MDS автоматично."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Diagnosis and treatment of macrocytic anemias in adults",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5689413/",
+          "year": null,
+          "location": "Etiology and diagnostic flow for adult macrocytic anemia",
+          "verification_status": "agent_visual_source_review",
+          "use": "Диференційний ряд макроцитарної анемії та показники, що розмежовують дефіцитний еритропоез, гемоліз, крововтрату, гіпотиреоз, печінкові причини й MDS.",
+          "applicability_limit": "Огляд визначає потрібні розвилкові аналізи, але не встановлює механізм анемії без ретикулоцитів, LDH, гаптоглобіну й мазка."
+        },
+        {
+          "id": "E-CAND-6",
+          "type": "guideline",
+          "title": "The diagnosis and management of primary autoimmune haemolytic anaemia",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/bjh.14478",
+          "year": null,
+          "location": "Investigation of DAT-negative haemolysis",
+          "verification_status": "agent_visual_source_review",
+          "use": "Покрокова оцінка автоімунного гемолізу та межі негативної прямої проби Кумбса.",
+          "applicability_limit": "Додаткове DAT-тестування має сенс лише після незалежного підтвердження нез'ясованого гемолізу; одна негативна проба не визначає механізм."
+        }
+      ]
+    },
+    {
+      "id": "W2",
+      "title": "B12/фолатний блок із рефлексною перевіркою невизначеного результату",
+      "priority": "critical",
+      "rationale": "Загальний або активний B12 і фолати перевіряють мегалобластну гілку; за невизначеного B12 другим тестом є насамперед MMA. Гомоцистеїн не є універсальною альтернативою: його застосовують лише в окремому клінічному шляху, зокрема за підозри на вплив закису азоту, з урахуванням фолатного й ниркового контексту. Результати інтерпретують разом із мазком і ретикулоцитами.",
+      "discriminates": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "evidence_refs": [
+        "E-CAND-4",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "Vitamin B12 deficiency in over 16s: diagnosis and management — Evidence review C for diagnostic tests",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK603364/",
+          "year": null,
+          "location": "Evidence review C; diagnostic-test discussion on PDF pages 42, 43, 45, 48 and 50",
+          "verification_status": "agent_visual_source_review",
+          "use": "Шлях лабораторної перевірки B12: загальний або активний B12 як початковий тест, MMA за невизначеного результату та відбір крові до замісної терапії, коли це можливо.",
+          "applicability_limit": "Evidence review C визначає шлях тестування, але не встановлює дефіцит B12 і не є самостійною підставою підозрювати його в CASE007; цю підставу дає диференційний ряд макроцитозу."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Diagnosis and treatment of macrocytic anemias in adults",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5689413/",
+          "year": null,
+          "location": "Etiology and diagnostic flow for adult macrocytic anemia",
+          "verification_status": "agent_visual_source_review",
+          "use": "Диференційний ряд макроцитарної анемії та показники, що розмежовують дефіцитний еритропоез, гемоліз, крововтрату, гіпотиреоз, печінкові причини й MDS.",
+          "applicability_limit": "Огляд визначає потрібні розвилкові аналізи, але не встановлює механізм анемії без ретикулоцитів, LDH, гаптоглобіну й мазка."
+        }
+      ]
+    },
+    {
+      "id": "W3",
+      "title": "Інтегрована гематопатологічна ревізія кісткового мозку",
+      "priority": "critical",
+      "rationale": "Потрібні периферична й кістковомозкова морфологія з кількісною дисплазією та бластами, трепанобіопсія, забарвлення заліза/кільцеві сидеробласти, каріотип і мієлоїдна NGS-панель; flow та FISH додають за морфологічними показаннями. Лише цей інтегрований пакет відрізняє MDS, CCUS та іншу інфільтрацію.",
+      "discriminates": [
+        "H1",
+        "H2",
+        "H5"
+      ],
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-2",
+        "E-CAND-3"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "classification",
+          "title": "The 5th edition of the WHO Classification of Haematolymphoid Tumours: Myeloid and Histiocytic/Dendritic Neoplasms",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9252913/",
+          "year": null,
+          "location": "WHO-HAEM5 myeloid classification; myelodysplastic neoplasms and blast-defined categories",
+          "verification_status": "agent_visual_source_review",
+          "use": "Сучасна класифікація мієлодиспластичних новоутворень: поєднання цитопеній, морфології, кількості бластів і визначальних генетичних змін.",
+          "applicability_limit": "Класифікація підтримує перевірку клональної гіпотези, але не дозволяє встановити підтип за кодом D46.4 або гіперцелюлярністю."
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "classification",
+          "title": "International Consensus Classification of Myeloid Neoplasms and Acute Leukemias",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9479031/",
+          "year": null,
+          "location": "ICC 2022; clonal cytopenias, MDS diagnostic criteria and MDS/AML boundaries",
+          "verification_status": "agent_visual_source_review",
+          "use": "Критерії ICC для стійкої цитопенії, дисплазії, клональності та меж між мієлодиспластичним новоутворенням і гострим мієлоїдним лейкозом.",
+          "applicability_limit": "У CASE007 немає кількісного підрахунку бластів, повного опису дисплазії та генетичних результатів, тому джерело задає критерії перевірки, а не діагноз."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "Diagnosis and treatment of primary myelodysplastic syndromes in adults: recommendations from the European LeukemiaNet",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3811170/",
+          "year": null,
+          "location": "Diagnostic procedures and Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "Послідовне виключення не-клональних причин цитопеній і поєднання мазка, аспірату, трепанобіопсії та цитогенетики.",
+          "applicability_limit": "Це діагностична рамка; вона не надає відсутніх результатів і не підтверджує MDS автоматично."
+        }
+      ]
+    },
+    {
+      "id": "W4",
+      "title": "Перевірка вторинних причин макроцитозу",
+      "priority": "high",
+      "rationale": "Датовані TSH/fT4, печінкові проби, креатинін/eGFR, список препаратів і алкогольний анамнез оцінюють внесок гіпотиреозу, печінкової або ниркової дисфункції та ліків. Результат не повинен автоматично скасовувати оцінку білінеажної цитопенії.",
+      "discriminates": [
+        "H1",
+        "H4"
+      ],
+      "evidence_refs": [
+        "E-CAND-3",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "Diagnosis and treatment of primary myelodysplastic syndromes in adults: recommendations from the European LeukemiaNet",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3811170/",
+          "year": null,
+          "location": "Diagnostic procedures and Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "Послідовне виключення не-клональних причин цитопеній і поєднання мазка, аспірату, трепанобіопсії та цитогенетики.",
+          "applicability_limit": "Це діагностична рамка; вона не надає відсутніх результатів і не підтверджує MDS автоматично."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Diagnosis and treatment of macrocytic anemias in adults",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5689413/",
+          "year": null,
+          "location": "Etiology and diagnostic flow for adult macrocytic anemia",
+          "verification_status": "agent_visual_source_review",
+          "use": "Диференційний ряд макроцитарної анемії та показники, що розмежовують дефіцитний еритропоез, гемоліз, крововтрату, гіпотиреоз, печінкові причини й MDS.",
+          "applicability_limit": "Огляд визначає потрібні розвилкові аналізи, але не встановлює механізм анемії без ретикулоцитів, LDH, гаптоглобіну й мазка."
+        }
+      ]
+    },
+    {
+      "id": "W5",
+      "title": "Підтвердження або виключення залізодефіцитного та крововтратного компонента",
+      "priority": "high",
+      "rationale": "Феритин, трансферин/ЗЗЗЗ, насичення трансферину й запальний контекст потрібні до приписування анемії ендоскопічним знахідкам. Гістологія поліпів і фактичні ознаки крововтрати розглядаються після підтвердження дефіциту.",
+      "discriminates": [
+        "H2",
+        "H6"
+      ],
+      "evidence_refs": [
+        "E-CAND-5",
+        "E-CAND-7"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Diagnosis and treatment of macrocytic anemias in adults",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5689413/",
+          "year": null,
+          "location": "Etiology and diagnostic flow for adult macrocytic anemia",
+          "verification_status": "agent_visual_source_review",
+          "use": "Диференційний ряд макроцитарної анемії та показники, що розмежовують дефіцитний еритропоез, гемоліз, крововтрату, гіпотиреоз, печінкові причини й MDS.",
+          "applicability_limit": "Огляд визначає потрібні розвилкові аналізи, але не встановлює механізм анемії без ретикулоцитів, LDH, гаптоглобіну й мазка."
+        },
+        {
+          "id": "E-CAND-7",
+          "type": "guideline",
+          "title": "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8515119/",
+          "year": null,
+          "location": "Executive recommendations: definitions and initial assessment",
+          "verification_status": "agent_visual_source_review",
+          "use": "Підтвердження залізодефіциту лабораторними показниками до приписування анемії гастроінтестинальній крововтраті.",
+          "applicability_limit": "Ендоскопічні знахідки й окреме значення сироваткового заліза не доводять залізодефіцит або активну крововтрату."
+        }
+      ]
+    }
+  ],
+  "method": {
+    "clinical_input_projection_used": true,
+    "breadth_pass_before_bundle_comparison": true,
+    "fresh_session_blinded": true,
+    "grounding_pass": true,
+    "critic_pass": true,
+    "limitations": [
+      "Кандидатний синтез не замінює перегляд первинних мазків, аспірату й трепанобіопсії.",
+      "Exact model build identifier is not exposed by the host.",
+      "У локальному авторизованому NCCN-корпусі немає релевантної MDS або macrocytic-anemia настанови; використано відкриті первинні класифікації та професійні настанови.",
+      "Усі сім зовнішніх джерел проходять агентну візуальну перевірку; human_verified=false і clinician acceptance pending.",
+      "Декілька лабораторних значень не мають одиниць або локальних референсів у прийнятому мінімальному source layer."
+    ],
+    "controlled_run": {
+      "status": "verified",
+      "run_id": "20260811T201035483298Z-CASE007-controlled-dddeefde5a26",
+      "method_id": "HB-CONTROLLED-SYNTHESIS",
+      "method_version": "2.0.0",
+      "protocol_sha256": "26b8dcc9aea238155af99fa1f8e3848b6ba8377957394cc7d28713c230d7b28a",
+      "critic_independent": true,
+      "unresolved_critical": 0,
+      "pass_receipts": {
+        "breadth": "b705863bc566d002a78b9d4f792e9bc10d76398a228da8a13cee763a6b2eb0ed",
+        "grounding": "75deeeb4ad5fb129ef4ab9d27fb6bc0c73ec2ab5bde46057bcf1f74aa022e8c9",
+        "reconciliation": "b2b5f08ca23c8bf0c886816e8ea6fb948bd6cc93ba24aabac785fb2abcaae300",
+        "critic": "ae20e624f8f774e1b346b5e2fb698f753d92b57e431f6396e6b0cb498969808c"
+      }
+    }
+  },
+  "comparison_to_previous": [
+    {
+      "previous_id": null,
+      "current_id": "H1",
+      "status": "added",
+      "reason": "B-CAND-1 збережено як провідну гіпотезу, але формулювання розширено до клональної мієлоїдної цитопенії й обмежено сучасними WHO/ICC критеріями."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H2",
+      "status": "added",
+      "reason": "B-CAND-2 збережено окремо як критичну потенційно кориговану альтернативу до прийняття MDS."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H3",
+      "status": "added",
+      "reason": "B-CAND-3 збережено як механістичну гілку; негативний DAT не використано для передчасного виключення гемолізу."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H4",
+      "status": "added",
+      "reason": "B-CAND-4 і B-CAND-5 об'єднано в одну вторинну/змішану гілку, щоб не дублювати перевірку гіпотиреозу, печінки, нирок, алкоголю та ліків."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H5",
+      "status": "added",
+      "reason": "B-CAND-7 збережено як низькоранговий must-not-miss контроль без прямого позитивного доказу гострого лейкозу."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H6",
+      "status": "added",
+      "reason": "B-CAND-6 збережено як можливий супутній компонент, але знижено через виражений макроцитоз і відсутність підтвердженого залізодефіциту."
+    }
+  ],
+  "safety": {
+    "candidate_only": true,
+    "diagnosis_not_established": true,
+    "treatment_directives_present": false,
+    "limitations": [
+      "Результат призначений для перевірки лікарем і не встановлює діагноз.",
+      "Жодна гіпотеза не є лікувальним призначенням.",
+      "Фінальне рішення лікаря має бути окремо записане як accept, correct, reject або defer."
+    ]
+  },
+  "use_limit": "Це кандидатний синтез для перевірки лікарем. Джерела обґрунтовують критерії та наступні діагностичні розвилки, але не встановлюють діагноз, не визначають лікування й не є рішенням лікаря."
+}
