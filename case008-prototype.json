@@ -1,0 +1,1978 @@
+{
+  "schema_version": "hematoboard.public-dashboard-fixture/2.0.0",
+  "generated_from": {
+    "case_key": "case008",
+    "case_id": "CASE008",
+    "bundle_id": "CASE008@953b493bd1cc",
+    "bundle_revision": "CASE008@953b493bd1cc",
+    "bundle_sha256": "055047f8d7a60abca5b55822b0f9d6ed4e683492786f4eb50f438601edc52597",
+    "reasoning_revision_id": "RR-CASE008-6bc65feca77e",
+    "reasoning_revision_sha256": "9a55408f78dd007f0690b93e73a23ebc8b1f4e5560424c7ee2d8ad1457597b50",
+    "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
+    "clinical_copy_sha256": "ba12ef81e6b4e8094b31af3823810dcac529d66e6231ce0366c85e5292733ff0",
+    "clinical_copy_origin": "curated_optional_override",
+    "clinical_input_sha256": "bc0cc6b9861b5aa1619de2804906e4224b11262baddaed43846f1d8af21fc045",
+    "evidence_review_status": "pass",
+    "evidence_review_modes": [
+      "agent_visual_source_review"
+    ],
+    "evidence_review_binding": "embedded",
+    "source_date_context_schema": "hematoboard.source_date_context/1.0",
+    "method_verification": "verified",
+    "projection_status": "verified",
+    "clinician_accepted": false
+  },
+  "case": {
+    "id": "CASE008",
+    "title": "Знеособлений клінічний пакет · source ledger прийнято",
+    "overview_brief": "Жінка, 63 роки. На трьох МРТ описано невелике контраст-позитивне інтрамедулярне утворення на рівні T10–T11 без переконливої динаміки, з прилеглою T2/STIR-зміною та дрібною гідромієлією. Потрібні зіставлення вихідних DICOM, неврологічний огляд і профільний нейрохірургічний/нейроонкологічний перегляд.",
+    "generated": "2026-08-12",
+    "governance": "Source ledger сформовано лише після об'єднаної людської звірки сканів, структурованого тексту, приватності та hash-derived координатного G4. Гіпотези й лікувальні рішення до канонічного ledger не внесено.",
+    "demographics": "Вік: 63 роки",
+    "source": "Знеособлений source layer із приватним hash-pinned PDF/OCR/crop provenance.",
+    "signal": "Source layer прийнято; candidate synthesis формується окремою незмінною ревізією.",
+    "discriminating_step": "Лікарська перевірка окремого candidate synthesis після завершення незалежних reasoning passes."
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "rank": 1,
+      "label": "Епендимома спинного мозку",
+      "clinical_role": "Провідна робоча первинна інтрамедулярна гіпотеза для DICOM- і нейрохірургічної верифікації",
+      "rationale": "Контраст-позитивне інтрамедулярне утворення T10–T11 з реактивною T2/STIR-зміною та дрібною гідромієлією сумісне з епендимомою, найпоширенішою інтрамедулярною пухлиною у дорослих. Повний DICOM-патерн, центральність, межі, ознаки продуктів крові, кістозний компонент і тканинна верифікація відсутні, тому гістологія не встановлена.",
+      "support_refs": [
+        "F008",
+        "F010",
+        "F011",
+        "F012",
+        "F014"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F003",
+        "F004",
+        "F006"
+      ],
+      "missing_evidence": [
+        "Side-by-side DICOM review усіх трьох МРТ",
+        "Точні осьові T1/T2 і постконтрастні характеристики",
+        "GRE/SWI для продуктів крові",
+        "Неврологічний статус і тканинна діагностика лише якщо спеціалісти визначать її доречною"
+      ],
+      "applicability_limits": [
+        "Контрастування та дорослий вік неспецифічні.",
+        "Розмір 4 мм проти 7×8 мм може відображати різні площини або методику вимірювання.",
+        "Відсутність описаного потовщення спинного мозку обмежує впевненість у пухлинній природі."
+      ],
+      "discriminating_checks": [
+        "Перегляд центральності, меж, cord expansion, cyst/syrinx і hemosiderin на DICOM",
+        "Зіставлення з H2–H6 у нейрорадіологічному й нейрохірургічному контексті"
+      ],
+      "short_label": "Епендимома спинного мозку",
+      "counts": {
+        "support": 5,
+        "refute": 0,
+        "neutral": 3
+      },
+      "support_facts": [
+        {
+          "id": "F008",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-06-17",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-02",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-006",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F011",
+          "kind": "diagnostic_interpretation",
+          "display": "МР-ознаки в обʼємного інтрадурального інтрамедулярного утворення на рівні Т10-Т11.",
+          "value": "МР-ознаки в обʼємного інтрадурального інтрамедулярного утворення на рівні Т10-Т11..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-02",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-006",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F012",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33).",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33)..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-26",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 7,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-007",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F014",
+          "kind": "imaging_finding",
+          "display": "на рівні сегмента Т12-L1 визначається кістозне розширення спинномозкового каналу, товщиною до 1-1,5 мм(гідроміслія).",
+          "value": "на рівні сегмента Т12-L1 визначається кістозне розширення спинномозкового каналу, товщиною до 1-1,5 мм(гідроміслія)..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-26",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 8,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-008",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F003",
+          "kind": "negative_finding",
+          "display": "Вогнищевих та інфільтративних змін не виявлено.",
+          "value": "Вогнищевих та інфільтративних змін не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F004",
+          "kind": "negative_finding",
+          "display": "КТ-ознак збільшення бронхо-пульмональних, медіастинальних, аксилярних лімфовузлів, додаткових утворів середостіння не визначено.",
+          "value": "КТ-ознак збільшення бронхо-пульмональних, медіастинальних, аксилярних лімфовузлів, додаткових утворів середостіння не визначено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F006",
+          "kind": "negative_finding",
+          "display": "Вогнищевих утворень печінки, підозрілих на neo/mts, не виявлено.",
+          "value": "Вогнищевих утворень печінки, підозрілих на neo/mts, не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H2",
+      "rank": 2,
+      "label": "Астроцитома або інша первинна інтрамедулярна гліома",
+      "clinical_role": "Основна первинна пухлинна альтернатива епендимомі",
+      "rationale": "Контраст-позитивне інтрамедулярне вогнище з прилеглою зміною сигналу сумісне з гліомою. У текстових звітах немає ключових ознак дифузного інфільтративного росту, ексцентричності, довжини ураження або вираженого розширення спинного мозку, тому її не можна надійно відрізнити від епендимоми.",
+      "support_refs": [
+        "F008",
+        "F010",
+        "F011",
+        "F012",
+        "F014"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F003",
+        "F004",
+        "F006"
+      ],
+      "missing_evidence": [
+        "Повний морфологічний опис DICOM",
+        "Оцінка інфільтративності й довжини ураження",
+        "Клінічний темп і неврологічний дефіцит"
+      ],
+      "applicability_limits": [
+        "Звіти не описують достатніх диференційних МР-ознак.",
+        "Відсутність cord expansion знижує, але не виключає невелику гліому."
+      ],
+      "discriminating_checks": [
+        "Центральність, межі, довжина, cord expansion і enhancement pattern на DICOM",
+        "Тканинна класифікація лише після рішення спеціалістів"
+      ],
+      "short_label": "Астроцитома або інша первинна інтрамедулярна гліома",
+      "counts": {
+        "support": 5,
+        "refute": 0,
+        "neutral": 3
+      },
+      "support_facts": [
+        {
+          "id": "F008",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-06-17",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-02",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-006",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F011",
+          "kind": "diagnostic_interpretation",
+          "display": "МР-ознаки в обʼємного інтрадурального інтрамедулярного утворення на рівні Т10-Т11.",
+          "value": "МР-ознаки в обʼємного інтрадурального інтрамедулярного утворення на рівні Т10-Т11..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-02",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-006",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F012",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33).",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33)..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-26",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 7,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-007",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F014",
+          "kind": "imaging_finding",
+          "display": "на рівні сегмента Т12-L1 визначається кістозне розширення спинномозкового каналу, товщиною до 1-1,5 мм(гідроміслія).",
+          "value": "на рівні сегмента Т12-L1 визначається кістозне розширення спинномозкового каналу, товщиною до 1-1,5 мм(гідроміслія)..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-26",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 8,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-008",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F003",
+          "kind": "negative_finding",
+          "display": "Вогнищевих та інфільтративних змін не виявлено.",
+          "value": "Вогнищевих та інфільтративних змін не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F004",
+          "kind": "negative_finding",
+          "display": "КТ-ознак збільшення бронхо-пульмональних, медіастинальних, аксилярних лімфовузлів, додаткових утворів середостіння не визначено.",
+          "value": "КТ-ознак збільшення бронхо-пульмональних, медіастинальних, аксилярних лімфовузлів, додаткових утворів середостіння не визначено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F006",
+          "kind": "negative_finding",
+          "display": "Вогнищевих утворень печінки, підозрілих на neo/mts, не виявлено.",
+          "value": "Вогнищевих утворень печінки, підозрілих на neo/mts, не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H3",
+      "rank": 3,
+      "label": "Гемангіобластома або інша гіперваскулярна інтрамедулярна пухлина",
+      "clinical_role": "Судинно-пухлинна альтернатива, важлива до інвазивного втручання",
+      "rationale": "Невеликий інтенсивно контраст-позитивний вузол із прилеглою реактивною зміною може відповідати гемангіобластомі. Пакет не містить опису живильних або дренувальних судин, flow-voids, вираженого сиринкса чи множинності, тому підтримка цієї гілки обмежена.",
+      "support_refs": [
+        "F008",
+        "F010",
+        "F011",
+        "F012",
+        "F014"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [],
+      "missing_evidence": [
+        "Оцінка flow-voids і судинності",
+        "MRA або ангіографія лише за підтверджених судинних ознак",
+        "Пошук множинних уражень за клінічними показаннями"
+      ],
+      "applicability_limits": [
+        "Гіперваскулярний патерн у звітах не описаний.",
+        "Дрібна гідромієлія неспецифічна."
+      ],
+      "discriminating_checks": [
+        "Контрастний патерн, flow-voids, feeding vessels і syrinx на DICOM",
+        "Відмежування від H6 на GRE/SWI та судинно-чутливих послідовностях"
+      ],
+      "short_label": "Гемангіобластома або інша гіперваскулярна пухлина",
+      "counts": {
+        "support": 5,
+        "refute": 0,
+        "neutral": 0
+      },
+      "support_facts": [
+        {
+          "id": "F008",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-06-17",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-02",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-006",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F011",
+          "kind": "diagnostic_interpretation",
+          "display": "МР-ознаки в обʼємного інтрадурального інтрамедулярного утворення на рівні Т10-Т11.",
+          "value": "МР-ознаки в обʼємного інтрадурального інтрамедулярного утворення на рівні Т10-Т11..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-02",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-006",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F012",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33).",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33)..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-26",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 7,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-007",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F014",
+          "kind": "imaging_finding",
+          "display": "на рівні сегмента Т12-L1 визначається кістозне розширення спинномозкового каналу, товщиною до 1-1,5 мм(гідроміслія).",
+          "value": "на рівні сегмента Т12-L1 визначається кістозне розширення спинномозкового каналу, товщиною до 1-1,5 мм(гідроміслія)..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-26",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 8,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-008",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": []
+    },
+    {
+      "id": "H4",
+      "rank": 4,
+      "label": "Вторинне інтрамедулярне ураження: метастаз або лімфопроліферативний процес",
+      "clinical_role": "Must-not-miss системна пухлинна гілка",
+      "rationale": "Вік, контрастування, невеликі надключичні вузли й спленомегалія вимагають не пропустити вторинне або гематолімфоїдне ураження. Вузли неспецифічні, а КТ не показала легеневих, медіастинальних або печінкових пухлинних вогнищ. Історія тиреоїдектомії без доступної гістології залишається важливою невизначеністю.",
+      "support_refs": [
+        "F005",
+        "F007",
+        "F008",
+        "F010",
+        "F011",
+        "F012"
+      ],
+      "refute_refs": [
+        "F003",
+        "F004",
+        "F006"
+      ],
+      "neutral_refs": [
+        "F002"
+      ],
+      "missing_evidence": [
+        "Причина й гістологія тиреоїдектомії",
+        "Повний онкологічний і гематологічний анамнез",
+        "Клінічна оцінка вузлів і спленомегалії",
+        "Загальний аналіз крові та системні симптоми"
+      ],
+      "applicability_limits": [
+        "Надключичні вузли й спленомегалія не доводять злоякісний процес.",
+        "Відсутність очевидної первинної пухлини на КТ знижує, але не усуває цю гілку."
+      ],
+      "discriminating_checks": [
+        "Верифікація тиреоїдної гістології та системного анамнезу",
+        "Таргетована системна оцінка лише за клінічними показаннями"
+      ],
+      "short_label": "Вторинне інтрамедулярне ураження: метастаз або лімфопроліферативний процес",
+      "counts": {
+        "support": 6,
+        "refute": 3,
+        "neutral": 1
+      },
+      "support_facts": [
+        {
+          "id": "F005",
+          "kind": "imaging_finding",
+          "display": "Зліва група надключичних лімфовузлів овальної форми з нечіткими контурами, максимальним розміром 7x11 мм (без змін), декілька надключичних справа до 8 мм (раніше 5 мм).",
+          "value": "Зліва група надключичних лімфовузлів овальної форми з нечіткими контурами, максимальним розміром 7x11 мм (без змін), декілька надключичних справа до 8 мм (раніше 5 мм)..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F007",
+          "kind": "imaging_finding",
+          "display": "СЕЛЕЗІНКА збільшена, 60х108х117 мм (раінше 53х106х107мм ), без обʼємно-вогнищевих змін",
+          "value": "СЕЛЕЗІНКА збільшена, 60х108х117 мм (раінше 53х106х107мм ), без обʼємно-вогнищевих змін.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F008",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-06-17",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-02",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-006",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F011",
+          "kind": "diagnostic_interpretation",
+          "display": "МР-ознаки в обʼємного інтрадурального інтрамедулярного утворення на рівні Т10-Т11.",
+          "value": "МР-ознаки в обʼємного інтрадурального інтрамедулярного утворення на рівні Т10-Т11..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-02",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-006",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F012",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33).",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33)..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-26",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 7,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-007",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [
+        {
+          "id": "F003",
+          "kind": "negative_finding",
+          "display": "Вогнищевих та інфільтративних змін не виявлено.",
+          "value": "Вогнищевих та інфільтративних змін не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F004",
+          "kind": "negative_finding",
+          "display": "КТ-ознак збільшення бронхо-пульмональних, медіастинальних, аксилярних лімфовузлів, додаткових утворів середостіння не визначено.",
+          "value": "КТ-ознак збільшення бронхо-пульмональних, медіастинальних, аксилярних лімфовузлів, додаткових утворів середостіння не визначено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F006",
+          "kind": "negative_finding",
+          "display": "Вогнищевих утворень печінки, підозрілих на neo/mts, не виявлено.",
+          "value": "Вогнищевих утворень печінки, підозрілих на neo/mts, не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "neutral_facts": [
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "display": "Щитоподібна залоза видалена.",
+          "value": "Щитоподібна залоза видалена..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H5",
+      "rank": 5,
+      "label": "Запальне, демієлінізувальне або інфекційне пухлиноподібне ураження",
+      "clinical_role": "Потенційно лікувально відмінний імітатор пухлини",
+      "rationale": "Запальні, демієлінізувальні та інфекційні ураження можуть контрастувати й створювати T2/STIR-зміну без значного потовщення спинного мозку. Симптоми, часовий перебіг, МРТ головного мозку, ліквор і системний контекст відсутні, тому цю гілку не можна ані підтримати, ані закрити.",
+      "support_refs": [
+        "F008",
+        "F010",
+        "F012"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F003",
+        "F004",
+        "F006",
+        "F007"
+      ],
+      "missing_evidence": [
+        "Гострий чи хронічний клінічний темп",
+        "Ознаки інфекції, аутоімунного захворювання або демієлінізації",
+        "МРТ головного мозку й повного хребта за показаннями",
+        "Ліквор і AQP4/MOG або інфекційні тести лише за клінічною підозрою"
+      ],
+      "applicability_limits": [
+        "Позитивного клінічного доказу запалення або інфекції немає.",
+        "Контрастування неспецифічне; таргетовані тести доречні лише після клінічної та нейрорадіологічної оцінки."
+      ],
+      "discriminating_checks": [
+        "Неврологічний огляд і клінічний темп",
+        "Таргетовані тести лише після нейрорадіологічного патерну й оцінки невролога"
+      ],
+      "short_label": "Запальне, демієлінізувальне або інфекційне пухлиноподібне ураження",
+      "counts": {
+        "support": 3,
+        "refute": 0,
+        "neutral": 4
+      },
+      "support_facts": [
+        {
+          "id": "F008",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-06-17",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-02",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-006",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F012",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33).",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33)..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-26",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 7,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-007",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F003",
+          "kind": "negative_finding",
+          "display": "Вогнищевих та інфільтративних змін не виявлено.",
+          "value": "Вогнищевих та інфільтративних змін не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F004",
+          "kind": "negative_finding",
+          "display": "КТ-ознак збільшення бронхо-пульмональних, медіастинальних, аксилярних лімфовузлів, додаткових утворів середостіння не визначено.",
+          "value": "КТ-ознак збільшення бронхо-пульмональних, медіастинальних, аксилярних лімфовузлів, додаткових утворів середостіння не визначено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F006",
+          "kind": "negative_finding",
+          "display": "Вогнищевих утворень печінки, підозрілих на neo/mts, не виявлено.",
+          "value": "Вогнищевих утворень печінки, підозрілих на neo/mts, не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F007",
+          "kind": "imaging_finding",
+          "display": "СЕЛЕЗІНКА збільшена, 60х108х117 мм (раінше 53х106х107мм ), без обʼємно-вогнищевих змін",
+          "value": "СЕЛЕЗІНКА збільшена, 60х108х117 мм (раінше 53х106х107мм ), без обʼємно-вогнищевих змін.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-03",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H6",
+      "rank": 6,
+      "label": "Судинна мальформація або кавернома",
+      "clinical_role": "Must-not-miss судинний імітатор перед біопсією або резекцією",
+      "rationale": "Мале інтрамедулярне вогнище може бути каверномою або іншою судинною мальформацією, особливо якщо незвичний T1/T2-сигнал пов'язаний із продуктами крові. Звіти не описують GRE/SWI, hemosiderin rim, blooming або flow-voids.",
+      "support_refs": [
+        "F008",
+        "F010",
+        "F012"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F014"
+      ],
+      "missing_evidence": [
+        "GRE/SWI",
+        "Оцінка hemorrhagic products і flow-voids",
+        "MRA/ангіографія лише якщо неінвазивне MRI дає судинні ознаки"
+      ],
+      "applicability_limits": [
+        "У наявних текстових звітах немає прямої судинної ознаки.",
+        "Ця гілка збережена через ризик інвазивного втручання без повної судинно-чутливої МР-оцінки."
+      ],
+      "discriminating_checks": [
+        "GRE/SWI blooming і hemosiderin",
+        "MRA або ангіографія за підтверджених vascular features"
+      ],
+      "short_label": "Судинна мальформація або кавернома",
+      "counts": {
+        "support": 3,
+        "refute": 0,
+        "neutral": 1
+      },
+      "support_facts": [
+        {
+          "id": "F008",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-06-17",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-02",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-006",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F012",
+          "kind": "imaging_finding",
+          "display": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33).",
+          "value": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33)..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-26",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 7,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-007",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F014",
+          "kind": "imaging_finding",
+          "display": "на рівні сегмента Т12-L1 визначається кістозне розширення спинномозкового каналу, товщиною до 1-1,5 мм(гідроміслія).",
+          "value": "на рівні сегмента Т12-L1 визначається кістозне розширення спинномозкового каналу, товщиною до 1-1,5 мм(гідроміслія)..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-26",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 8,
+          "source_fragment_id": "FRAG-6EA7A99AD56D-008",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F012",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F014",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F004",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F012",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F014",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F004",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F012",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F014",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F007",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F012",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H4",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F004",
+      "hypothesis_id": "H4",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H4",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H4",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H5",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H5",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F012",
+      "hypothesis_id": "H5",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F004",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F007",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F012",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F014",
+      "hypothesis_id": "H6",
+      "relation": "neutral"
+    }
+  ],
+  "observations": [
+    {
+      "id": "OBS-6EA7A99AD56D-001",
+      "kind": "clinical_note",
+      "display": "Вік: 63 роки",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-03",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-002",
+      "kind": "clinical_note",
+      "display": "Щитоподібна залоза видалена.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-03",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-003",
+      "kind": "negative_finding",
+      "display": "Вогнищевих та інфільтративних змін не виявлено.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-03",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-004",
+      "kind": "negative_finding",
+      "display": "КТ-ознак збільшення бронхо-пульмональних, медіастинальних, аксилярних лімфовузлів, додаткових утворів середостіння не визначено.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-03",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-005",
+      "kind": "imaging_finding",
+      "display": "Зліва група надключичних лімфовузлів овальної форми з нечіткими контурами, максимальним розміром 7x11 мм (без змін), декілька надключичних справа до 8 мм (раніше 5 мм).",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-03",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-006",
+      "kind": "negative_finding",
+      "display": "Вогнищевих утворень печінки, підозрілих на neo/mts, не виявлено.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-03",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-007",
+      "kind": "imaging_finding",
+      "display": "СЕЛЕЗІНКА збільшена, 60х108х117 мм (раінше 53х106х107мм ), без обʼємно-вогнищевих змін",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-03",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-008",
+      "kind": "imaging_finding",
+      "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 зберігається вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 7х8мм. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-06-17",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 2,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-002",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-009",
+      "kind": "recommendation",
+      "display": "Рекомендовано: Консультація невролога, нейрохірурга.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-06-17",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 3,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-003",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-010",
+      "kind": "imaging_finding",
+      "display": "Спинний мозок не потовщений, на рівні сегмента T10-T11 визначаються вогнище підвищеної інтенсивності сигналу на Т1 33, розмірами 4мм, з вірогідним перефокальним набряком. На постконтрастних Т1-зважених зображеннях патологічне вогнище накопичує контрастну речовину.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-04-02",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 6,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-006",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-011",
+      "kind": "diagnostic_interpretation",
+      "display": "МР-ознаки в обʼємного інтрадурального інтрамедулярного утворення на рівні Т10-Т11.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-04-02",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 6,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-006",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-012",
+      "kind": "imaging_finding",
+      "display": "Спинний мозок не потовщений, на рівні сегмента T1O-TII визначаються вогнище підвищеної інтенсивності сигналу на ТІ 33. розмірами 4мм, з вірогідним перефокальним набряком(вогнища підвищеної інтенсивності сигналу на Т2, STIR 33).",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-03-26",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 7,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-007",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-013",
+      "kind": "imaging_finding",
+      "display": "LI-L2: Екструзія міжхребцевого диска лівоцентрально до 3,5мм, 3 невеликою каудальною та краніальною міграцією до 2мм, з частковим здавленням дурального мішка.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-03-26",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 8,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-008",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-014",
+      "kind": "imaging_finding",
+      "display": "на рівні сегмента Т12-L1 визначається кістозне розширення спинномозкового каналу, товщиною до 1-1,5 мм(гідроміслія).",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-03-26",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 8,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-008",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-6EA7A99AD56D-015",
+      "kind": "recommendation",
+      "display": "Рекомендовано: Консультація нейрохірурга, МР-контроль з контрастом.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-03-26",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 8,
+      "source_fragment_id": "FRAG-6EA7A99AD56D-008",
+      "structured_row_id": null,
+      "human_verified": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "E-CAND-1",
+      "type": "pmid",
+      "title": "ACR Appropriateness Criteria: Myelopathy",
+      "url": "https://acsearch.acr.org/docs/69484/Narrative/",
+      "year": null,
+      "location": "Variant 2 and rating table",
+      "verification_status": "agent_visual_source_review",
+      "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
+      "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
+    },
+    {
+      "id": "E-CAND-2",
+      "type": "pmid",
+      "title": "EANO guidelines for the diagnosis and treatment of ependymal tumors",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5909649/",
+      "year": null,
+      "location": "Diagnosis and Table 5",
+      "verification_status": "agent_visual_source_review",
+      "use": "EANO підтримує МР-оцінку та профільний нейрохірургічний маршрут; класифікація епендимальної пухлини потребує тканинної верифікації.",
+      "applicability_limit": "У CASE008 немає тканинного діагнозу, тому рекомендації не підтверджують епендимому автоматично."
+    },
+    {
+      "id": "E-CAND-3",
+      "type": "pmid",
+      "title": "Imaging of intramedullary tumours of the spinal cord",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11705043/",
+      "year": null,
+      "location": "MRI protocol and tumor features",
+      "verification_status": "agent_visual_source_review",
+      "use": "Повна мультипланарна контрастна МРТ, susceptibility- і судинно-чутливі послідовності допомагають розрізняти інтрамедулярні пухлини та імітатори.",
+      "applicability_limit": "У звітах CASE008 бракує частини диференційних ознак; потрібен перегляд вихідних DICOM."
+    },
+    {
+      "id": "E-CAND-4",
+      "type": "pmid",
+      "title": "Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7965414/",
+      "year": null,
+      "location": "Results and conclusions",
+      "verification_status": "agent_visual_source_review",
+      "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
+      "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
+    },
+    {
+      "id": "E-CAND-5",
+      "type": "pmid",
+      "title": "Intramedullary Spinal Cord Tumors and Tumor-Like Lesions",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40287249/",
+      "year": null,
+      "location": "PubMed abstract",
+      "verification_status": "agent_visual_source_review",
+      "use": "Пухлиноподібні ураження залишаються частиною візуального диференціалу, а клінічний контекст є необхідним для їх розмежування.",
+      "applicability_limit": "Використано лише бібліографічний опис і абстракт; джерело не встановлює конкретну природу вогнища."
+    }
+  ],
+  "critical_gaps": [
+    {
+      "id": "G1",
+      "text": "Немає неврологічних симптомів, огляду й темпу клінічної динаміки; терміновість не визначена.",
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "ACR Appropriateness Criteria: Myelopathy",
+          "url": "https://acsearch.acr.org/docs/69484/Narrative/",
+          "year": null,
+          "location": "Variant 2 and rating table",
+          "verification_status": "agent_visual_source_review",
+          "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
+          "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Intramedullary Spinal Cord Tumors and Tumor-Like Lesions",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40287249/",
+          "year": null,
+          "location": "PubMed abstract",
+          "verification_status": "agent_visual_source_review",
+          "use": "Пухлиноподібні ураження залишаються частиною візуального диференціалу, а клінічний контекст є необхідним для їх розмежування.",
+          "applicability_limit": "Використано лише бібліографічний опис і абстракт; джерело не встановлює конкретну природу вогнища."
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "text": "Немає side-by-side DICOM-review і стандартизованого повторного вимірювання; зміна 4 мм до 7×8 мм не доведена як біологічне зростання.",
+      "evidence_refs": [
+        "E-CAND-3",
+        "E-CAND-4"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Imaging of intramedullary tumours of the spinal cord",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11705043/",
+          "year": null,
+          "location": "MRI protocol and tumor features",
+          "verification_status": "agent_visual_source_review",
+          "use": "Повна мультипланарна контрастна МРТ, susceptibility- і судинно-чутливі послідовності допомагають розрізняти інтрамедулярні пухлини та імітатори.",
+          "applicability_limit": "У звітах CASE008 бракує частини диференційних ознак; потрібен перегляд вихідних DICOM."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "pmid",
+          "title": "Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7965414/",
+          "year": null,
+          "location": "Results and conclusions",
+          "verification_status": "agent_visual_source_review",
+          "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
+          "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "text": "Немає повного MRI-патерну: centrality, margins, cord expansion, cyst/syrinx, GRE/SWI, DWI та flow-voids.",
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-3",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "ACR Appropriateness Criteria: Myelopathy",
+          "url": "https://acsearch.acr.org/docs/69484/Narrative/",
+          "year": null,
+          "location": "Variant 2 and rating table",
+          "verification_status": "agent_visual_source_review",
+          "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
+          "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Imaging of intramedullary tumours of the spinal cord",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11705043/",
+          "year": null,
+          "location": "MRI protocol and tumor features",
+          "verification_status": "agent_visual_source_review",
+          "use": "Повна мультипланарна контрастна МРТ, susceptibility- і судинно-чутливі послідовності допомагають розрізняти інтрамедулярні пухлини та імітатори.",
+          "applicability_limit": "У звітах CASE008 бракує частини диференційних ознак; потрібен перегляд вихідних DICOM."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Intramedullary Spinal Cord Tumors and Tumor-Like Lesions",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40287249/",
+          "year": null,
+          "location": "PubMed abstract",
+          "verification_status": "agent_visual_source_review",
+          "use": "Пухлиноподібні ураження залишаються частиною візуального диференціалу, а клінічний контекст є необхідним для їх розмежування.",
+          "applicability_limit": "Використано лише бібліографічний опис і абстракт; джерело не встановлює конкретну природу вогнища."
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "text": "Невідомі причина й гістологія тиреоїдектомії, повний онкологічний анамнез і значення надключичних вузлів/спленомегалії.",
+      "evidence_refs": [
+        "E-CAND-4"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-4",
+          "type": "pmid",
+          "title": "Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7965414/",
+          "year": null,
+          "location": "Results and conclusions",
+          "verification_status": "agent_visual_source_review",
+          "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
+          "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
+        }
+      ]
+    }
+  ],
+  "workup": [
+    {
+      "id": "W1",
+      "title": "Неврологічний огляд і терміновість за клінічним дефіцитом",
+      "priority": "critical",
+      "rationale": "Темп симптомів, моторний і чутливий дефіцит, хода та тазові порушення визначають клінічну терміновість і локалізацію; їх немає в пакеті.",
+      "discriminates": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ],
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "ACR Appropriateness Criteria: Myelopathy",
+          "url": "https://acsearch.acr.org/docs/69484/Narrative/",
+          "year": null,
+          "location": "Variant 2 and rating table",
+          "verification_status": "agent_visual_source_review",
+          "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
+          "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Intramedullary Spinal Cord Tumors and Tumor-Like Lesions",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40287249/",
+          "year": null,
+          "location": "PubMed abstract",
+          "verification_status": "agent_visual_source_review",
+          "use": "Пухлиноподібні ураження залишаються частиною візуального диференціалу, а клінічний контекст є необхідним для їх розмежування.",
+          "applicability_limit": "Використано лише бібліографічний опис і абстракт; джерело не встановлює конкретну природу вогнища."
+        }
+      ]
+    },
+    {
+      "id": "W2",
+      "title": "Side-by-side нейрорадіологічний DICOM-review трьох МРТ",
+      "priority": "critical",
+      "rationale": "Потрібно повторно виміряти в однакових площинах і перевірити centrality, margins, cord expansion, enhancement, cyst/syrinx, edema, GRE/SWI та flow-voids; це відділяє реальне зростання від різниці протоколів і звужує H1–H6.",
+      "discriminates": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ],
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-3",
+        "E-CAND-4",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "ACR Appropriateness Criteria: Myelopathy",
+          "url": "https://acsearch.acr.org/docs/69484/Narrative/",
+          "year": null,
+          "location": "Variant 2 and rating table",
+          "verification_status": "agent_visual_source_review",
+          "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
+          "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Imaging of intramedullary tumours of the spinal cord",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11705043/",
+          "year": null,
+          "location": "MRI protocol and tumor features",
+          "verification_status": "agent_visual_source_review",
+          "use": "Повна мультипланарна контрастна МРТ, susceptibility- і судинно-чутливі послідовності допомагають розрізняти інтрамедулярні пухлини та імітатори.",
+          "applicability_limit": "У звітах CASE008 бракує частини диференційних ознак; потрібен перегляд вихідних DICOM."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "pmid",
+          "title": "Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7965414/",
+          "year": null,
+          "location": "Results and conclusions",
+          "verification_status": "agent_visual_source_review",
+          "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
+          "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Intramedullary Spinal Cord Tumors and Tumor-Like Lesions",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40287249/",
+          "year": null,
+          "location": "PubMed abstract",
+          "verification_status": "agent_visual_source_review",
+          "use": "Пухлиноподібні ураження залишаються частиною візуального диференціалу, а клінічний контекст є необхідним для їх розмежування.",
+          "applicability_limit": "Використано лише бібліографічний опис і абстракт; джерело не встановлює конкретну природу вогнища."
+        }
+      ]
+    },
+    {
+      "id": "W3",
+      "title": "Верифікація системного та онкологічного контексту",
+      "priority": "high",
+      "rationale": "Гістологія тиреоїдектомії, онкологічний/гематологічний анамнез, CBC, системні симптоми й клінічна оцінка надключичних вузлів та спленомегалії потрібні до закриття вторинної гілки.",
+      "discriminates": [
+        "H1",
+        "H2",
+        "H4"
+      ],
+      "evidence_refs": [
+        "E-CAND-4"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-4",
+          "type": "pmid",
+          "title": "Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7965414/",
+          "year": null,
+          "location": "Results and conclusions",
+          "verification_status": "agent_visual_source_review",
+          "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
+          "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
+        }
+      ]
+    },
+    {
+      "id": "W4",
+      "title": "Нейрохірургічний або нейроонкологічний мультидисциплінарний перегляд",
+      "priority": "critical",
+      "rationale": "Після клінічного й DICOM-review спеціалісти співвідносять ризик спостереження, тканинної верифікації та резекції з симптомами й морфологією; кандидат не визначає втручання.",
+      "discriminates": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ],
+      "evidence_refs": [
+        "E-CAND-2",
+        "E-CAND-3"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-2",
+          "type": "pmid",
+          "title": "EANO guidelines for the diagnosis and treatment of ependymal tumors",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5909649/",
+          "year": null,
+          "location": "Diagnosis and Table 5",
+          "verification_status": "agent_visual_source_review",
+          "use": "EANO підтримує МР-оцінку та профільний нейрохірургічний маршрут; класифікація епендимальної пухлини потребує тканинної верифікації.",
+          "applicability_limit": "У CASE008 немає тканинного діагнозу, тому рекомендації не підтверджують епендимому автоматично."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Imaging of intramedullary tumours of the spinal cord",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11705043/",
+          "year": null,
+          "location": "MRI protocol and tumor features",
+          "verification_status": "agent_visual_source_review",
+          "use": "Повна мультипланарна контрастна МРТ, susceptibility- і судинно-чутливі послідовності допомагають розрізняти інтрамедулярні пухлини та імітатори.",
+          "applicability_limit": "У звітах CASE008 бракує частини диференційних ознак; потрібен перегляд вихідних DICOM."
+        }
+      ]
+    },
+    {
+      "id": "W5",
+      "title": "Таргетоване виключення запальної, інфекційної або судинної гілки",
+      "priority": "high",
+      "rationale": "Ліквор, AQP4/MOG, інфекційні тести, MRA або ангіографія мають сенс лише якщо анамнез, огляд або DICOM дають відповідний патерн; широке невибіркове тестування не закриває диференціал.",
+      "discriminates": [
+        "H3",
+        "H5",
+        "H6"
+      ],
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-3",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "ACR Appropriateness Criteria: Myelopathy",
+          "url": "https://acsearch.acr.org/docs/69484/Narrative/",
+          "year": null,
+          "location": "Variant 2 and rating table",
+          "verification_status": "agent_visual_source_review",
+          "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
+          "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Imaging of intramedullary tumours of the spinal cord",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11705043/",
+          "year": null,
+          "location": "MRI protocol and tumor features",
+          "verification_status": "agent_visual_source_review",
+          "use": "Повна мультипланарна контрастна МРТ, susceptibility- і судинно-чутливі послідовності допомагають розрізняти інтрамедулярні пухлини та імітатори.",
+          "applicability_limit": "У звітах CASE008 бракує частини диференційних ознак; потрібен перегляд вихідних DICOM."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Intramedullary Spinal Cord Tumors and Tumor-Like Lesions",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40287249/",
+          "year": null,
+          "location": "PubMed abstract",
+          "verification_status": "agent_visual_source_review",
+          "use": "Пухлиноподібні ураження залишаються частиною візуального диференціалу, а клінічний контекст є необхідним для їх розмежування.",
+          "applicability_limit": "Використано лише бібліографічний опис і абстракт; джерело не встановлює конкретну природу вогнища."
+        }
+      ]
+    }
+  ],
+  "method": {
+    "clinical_input_projection_used": true,
+    "breadth_pass_before_bundle_comparison": true,
+    "fresh_session_blinded": true,
+    "grounding_pass": true,
+    "critic_pass": true,
+    "limitations": [
+      "Вхід містить текстові звіти, але не вихідні DICOM-зображення.",
+      "Неврологічні симптоми, огляд і темп клінічної динаміки відсутні.",
+      "Exact model deployment build identifier не відкривається desktop-host.",
+      "Зовнішні джерела пройшли agent-visual source review; human_verified=false, clinician acceptance pending.",
+      "Неповний лабораторний ряд без точного референсу виключено з числових фактів і збережено як прогалину даних."
+    ],
+    "controlled_run": {
+      "status": "verified",
+      "run_id": "20260812T103237651441Z-CASE008-controlled-c975a6c8e693",
+      "method_id": "HB-CONTROLLED-SYNTHESIS",
+      "method_version": "2.0.0",
+      "protocol_sha256": "26b8dcc9aea238155af99fa1f8e3848b6ba8377957394cc7d28713c230d7b28a",
+      "critic_independent": true,
+      "unresolved_critical": 0,
+      "pass_receipts": {
+        "breadth": "8f66efdc5a862036a954cfcae909bc2571fce446bcd25e56750e7d5173973ada",
+        "grounding": "7ee569892b61f7faba87be4b5802ead0bc3ab84abc056050d174cbded89a0610",
+        "reconciliation": "d92646ffc641886db210d92c2967a7dbca86816ac7023fbe31bcfeb38f5e68d7",
+        "critic": "e731871b7547ac1c1c68ac72c374455528d0667a3bb65334beeddbeed19c6f93"
+      }
+    }
+  },
+  "comparison_to_previous": [
+    {
+      "previous_id": "H1",
+      "current_id": "H1",
+      "status": "unchanged",
+      "reason": "Клінічний зміст незмінний; перепублікація лише пінує виправлену квитанцію приватності джерел для дашборда."
+    },
+    {
+      "previous_id": "H2",
+      "current_id": "H2",
+      "status": "unchanged",
+      "reason": "Клінічний зміст незмінний; перепублікація лише пінує виправлену квитанцію приватності джерел для дашборда."
+    },
+    {
+      "previous_id": "H3",
+      "current_id": "H3",
+      "status": "unchanged",
+      "reason": "Клінічний зміст незмінний; перепублікація лише пінує виправлену квитанцію приватності джерел для дашборда."
+    },
+    {
+      "previous_id": "H4",
+      "current_id": "H4",
+      "status": "unchanged",
+      "reason": "Клінічний зміст незмінний; перепублікація лише пінує виправлену квитанцію приватності джерел для дашборда."
+    },
+    {
+      "previous_id": "H5",
+      "current_id": "H5",
+      "status": "unchanged",
+      "reason": "Клінічний зміст незмінний; перепублікація лише пінує виправлену квитанцію приватності джерел для дашборда."
+    },
+    {
+      "previous_id": "H6",
+      "current_id": "H6",
+      "status": "unchanged",
+      "reason": "Клінічний зміст незмінний; перепублікація лише пінує виправлену квитанцію приватності джерел для дашборда."
+    }
+  ],
+  "safety": {
+    "candidate_only": true,
+    "diagnosis_not_established": true,
+    "treatment_directives_present": false,
+    "limitations": [
+      "Результат призначений для перевірки лікарем і не встановлює діагноз.",
+      "Ранжування H1–H6 є робочим і може змінитися після DICOM/клінічного review.",
+      "Лише записане рішення лікаря може прийняти, виправити, відхилити або відкласти кандидат."
+    ]
+  },
+  "use_limit": "Це кандидатний синтез для перевірки лікарем. Гіпотези та джерела не встановлюють діагноз, не визначають лікування й не є клінічним рішенням."
+}
