@@ -20,6 +20,46 @@
         "language_probability": 1.0,
         "critical_content_preserved": true
       }
+    },
+    {
+      "case_id": "CASE008",
+      "id": "AB-CASE008-20260812-01",
+      "title": "Коротко до консиліуму",
+      "label": "Аудіогайд",
+      "public_url": "https://v3b.fal.media/files/b/0aa6111c/ZQk0zyxfZwk12SvovoFMP_output.mp3",
+      "mime_type": "audio/mpeg",
+      "duration_seconds": 231.549,
+      "audio_sha256": "a088c4f1866b6f054deb5836d8916bc2c0724953ae321e818eb9dbdc758fc771",
+      "source_text_sha256": "48330bb5b6db1db5d89332e8856a8a3232bb569f36ed0549e15d3fa796acf0ff",
+      "reasoning_revision_id": "RR-CASE008-6bc65feca77e",
+      "reasoning_revision_sha256": "9a55408f78dd007f0690b93e73a23ebc8b1f4e5560424c7ee2d8ad1457597b50",
+      "clinical_status": "candidate_pending_human_review",
+      "reverse_stt": {
+        "model": "fal-ai/elevenlabs/speech-to-text",
+        "detected_language": "ukr",
+        "language_probability": 1.0,
+        "critical_content_preserved": true
+      }
+    },
+    {
+      "case_id": "CASE009",
+      "id": "AB-CASE009-20260812-01",
+      "title": "Коротко до консиліуму",
+      "label": "Аудіогайд",
+      "public_url": "https://v3b.fal.media/files/b/0aa61136/SvWvZ1M9UGNw5eG2ly_Cj_output.mp3",
+      "mime_type": "audio/mpeg",
+      "duration_seconds": 303.726,
+      "audio_sha256": "cebf2fb3b3407327ac953e20c1a15578599678d96f9c3c62ed5df6e8c58ddcc7",
+      "source_text_sha256": "d82317f88d1c0894b6564bfb5b9042c4f380f31469a64e6ceaf388524029dd68",
+      "reasoning_revision_id": "RR-CASE009-6fa38511ec43",
+      "reasoning_revision_sha256": "ca5e4d87116f7106ff49cd1d922159379f40977b85bd5152b2249e83c947eb5a",
+      "clinical_status": "candidate_pending_human_review",
+      "reverse_stt": {
+        "model": "fal-ai/elevenlabs/speech-to-text",
+        "detected_language": "ukr",
+        "language_probability": 1.0,
+        "critical_content_preserved": true
+      }
     }
   ]
 }
