@@ -10,12 +10,14 @@
     "reasoning_revision_sha256": "eee2b9836653914ea8974f240edf3862ffc34417e8ab5339dddc66bdb435836f",
     "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
     "clinical_copy_sha256": "9bcd6d7654bd6fad3d22fb4760aa5f12cd89c84049244a1ca411bc236f6d9718",
+    "clinical_copy_origin": "curated_optional_override",
     "clinical_input_sha256": "f651a62c9cbb0b2c05e6a601e5b65069ca10d13699a4c3a13ff48f6077b6f3d0",
     "evidence_review_status": "pass",
     "evidence_review_modes": [
       "human_source_review",
       "agent_visual_source_review"
     ],
+    "evidence_review_binding": "embedded",
     "source_date_context_schema": "hematoboard.source_date_context/1.0",
     "method_verification": "verified",
     "projection_status": "verified",
