@@ -1,6 +1,6 @@
 {
   "schema_version": "hematoboard.public-release-authenticity/2.0.0",
-  "generated_at": "2026-08-12T15:33:46.266Z",
+  "generated_at": "2026-08-12T17:15:38.191Z",
   "fixture_schema": "hematoboard.public-dashboard-fixture/2.0.0",
   "cases": {
     "case006": {
