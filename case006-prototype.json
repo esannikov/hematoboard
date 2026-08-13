@@ -20,7 +20,6 @@
     "evidence_review_binding": "embedded",
     "source_date_context_schema": "hematoboard.source_date_context/1.0",
     "method_verification": "verified",
-    "projection_status": "verified",
     "clinician_accepted": false
   },
   "case": {

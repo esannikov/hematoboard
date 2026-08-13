@@ -1,6 +1,6 @@
 {
   "schema_version": "hematoboard.public-release-authenticity/2.0.0",
-  "generated_at": "2026-08-12T17:34:08.628Z",
+  "generated_at": "2026-08-13T05:50:36.544Z",
   "fixture_schema": "hematoboard.public-dashboard-fixture/2.0.0",
   "cases": {
     "case006": {
@@ -23,7 +23,6 @@
       "evidence_review_binding": "embedded",
       "source_date_context_schema": "hematoboard.source_date_context/1.0",
       "method_verification": "verified",
-      "projection_status": "verified",
       "clinician_accepted": false
     },
     "case007": {
@@ -45,7 +44,6 @@
       "evidence_review_binding": "embedded",
       "source_date_context_schema": "hematoboard.source_date_context/1.0",
       "method_verification": "verified",
-      "projection_status": "verified",
       "clinician_accepted": false
     },
     "case008": {
@@ -67,7 +65,6 @@
       "evidence_review_binding": "embedded",
       "source_date_context_schema": "hematoboard.source_date_context/1.0",
       "method_verification": "verified",
-      "projection_status": "verified",
       "clinician_accepted": false
     },
     "case009": {
@@ -89,22 +86,42 @@
       "evidence_review_binding": "embedded",
       "source_date_context_schema": "hematoboard.source_date_context/1.0",
       "method_verification": "verified",
-      "projection_status": "verified",
+      "clinician_accepted": false
+    },
+    "case010": {
+      "case_key": "case010",
+      "case_id": "CASE010",
+      "bundle_id": "CASE010@b55cae9b66ea",
+      "bundle_revision": "CASE010@b55cae9b66ea",
+      "bundle_sha256": "9e4d3a9531a5c5d8c99c286ff4b9f5b51ef15877172a38420999f5289f6fbd3a",
+      "reasoning_revision_id": "RR-CASE010-6173a7e843b1",
+      "reasoning_revision_sha256": "7c6a319ab3916fc74a45609216460cea6cadac5ba4b509d66020ead02dcc980c",
+      "clinical_copy_schema": "hematoboard.public-clinical-copy/generated-1.0.0",
+      "clinical_copy_sha256": "e3a30a8e3da7acacd8ca7ad342c1e21ccb1a709f498c24268720f5d5081546d5",
+      "clinical_copy_origin": "canonical_generated_projection",
+      "clinical_input_sha256": "c5f783923918d8cc79f21cfa2a33d809e932e94a328c0a01520593c94c8a9a6b",
+      "evidence_review_status": "pass",
+      "evidence_review_modes": [
+        "agent_visual_source_review"
+      ],
+      "evidence_review_binding": "embedded",
+      "source_date_context_schema": "hematoboard.source_date_context/1.0",
+      "method_verification": "verified",
       "clinician_accepted": false
     }
   },
   "sources": {
-    "case_key": "case009",
-    "case_id": "CASE009",
-    "bundle_id": "CASE009@d69c463fe3c1",
-    "bundle_revision": "CASE009@d69c463fe3c1",
-    "bundle_sha256": "fa7c6524e65b05d07ad8339e50c483fda3cb4dc1ac440af7e6f7cd3f66ac4eb9",
-    "reasoning_revision_id": "RR-CASE009-6fa38511ec43",
-    "reasoning_revision_sha256": "ca5e4d87116f7106ff49cd1d922159379f40977b85bd5152b2249e83c947eb5a",
-    "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
-    "clinical_copy_sha256": "e29d291a066539a600e224bc473aeea4c7e6089c5fa541e6406ed2a65c5ffa53",
-    "clinical_copy_origin": "curated_optional_override",
-    "clinical_input_sha256": "234d300e3c018cddd42496d2e711e77d32dd540c3194465c61f808dc7a45df51",
+    "case_key": "case010",
+    "case_id": "CASE010",
+    "bundle_id": "CASE010@b55cae9b66ea",
+    "bundle_revision": "CASE010@b55cae9b66ea",
+    "bundle_sha256": "9e4d3a9531a5c5d8c99c286ff4b9f5b51ef15877172a38420999f5289f6fbd3a",
+    "reasoning_revision_id": "RR-CASE010-6173a7e843b1",
+    "reasoning_revision_sha256": "7c6a319ab3916fc74a45609216460cea6cadac5ba4b509d66020ead02dcc980c",
+    "clinical_copy_schema": "hematoboard.public-clinical-copy/generated-1.0.0",
+    "clinical_copy_sha256": "e3a30a8e3da7acacd8ca7ad342c1e21ccb1a709f498c24268720f5d5081546d5",
+    "clinical_copy_origin": "canonical_generated_projection",
+    "clinical_input_sha256": "c5f783923918d8cc79f21cfa2a33d809e932e94a328c0a01520593c94c8a9a6b",
     "evidence_review_status": "pass",
     "evidence_review_modes": [
       "agent_visual_source_review"
@@ -112,7 +129,6 @@
     "evidence_review_binding": "embedded",
     "source_date_context_schema": "hematoboard.source_date_context/1.0",
     "method_verification": "verified",
-    "projection_status": "verified",
     "clinician_accepted": false
   },
   "ui_framework": {

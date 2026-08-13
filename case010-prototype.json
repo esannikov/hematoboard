@@ -1,0 +1,2052 @@
+{
+  "schema_version": "hematoboard.public-dashboard-fixture/2.0.0",
+  "generated_from": {
+    "case_key": "case010",
+    "case_id": "CASE010",
+    "bundle_id": "CASE010@b55cae9b66ea",
+    "bundle_revision": "CASE010@b55cae9b66ea",
+    "bundle_sha256": "9e4d3a9531a5c5d8c99c286ff4b9f5b51ef15877172a38420999f5289f6fbd3a",
+    "reasoning_revision_id": "RR-CASE010-6173a7e843b1",
+    "reasoning_revision_sha256": "7c6a319ab3916fc74a45609216460cea6cadac5ba4b509d66020ead02dcc980c",
+    "clinical_copy_schema": "hematoboard.public-clinical-copy/generated-1.0.0",
+    "clinical_copy_sha256": "e3a30a8e3da7acacd8ca7ad342c1e21ccb1a709f498c24268720f5d5081546d5",
+    "clinical_copy_origin": "canonical_generated_projection",
+    "clinical_input_sha256": "c5f783923918d8cc79f21cfa2a33d809e932e94a328c0a01520593c94c8a9a6b",
+    "evidence_review_status": "pass",
+    "evidence_review_modes": [
+      "agent_visual_source_review"
+    ],
+    "evidence_review_binding": "embedded",
+    "source_date_context_schema": "hematoboard.source_date_context/1.0",
+    "method_verification": "verified",
+    "clinician_accepted": false
+  },
+  "case": {
+    "id": "CASE010",
+    "title": "Знеособлений клінічний пакет · source ledger прийнято",
+    "overview_brief": "Вік: 38 років Стать: Жіноча. У пакеті є клональна T-клітинна популяція 5,97%, описана як індолентна й без ознак агресивності. Дослідження кісткового мозку та периферичної крові не виявило лімфоми чи хромосомних аберацій, трепанобіопсія з інтактним гемопоезом, абдомінальні/тазові вузли не збільшені, а актуальні гемоглобін і тромбоцити не демонструють цитопенії. Цей профіль найближчий до T-CUS, але термін залишається кандидатним: немає повного фенотипу, абсолютної кількості клону й доведеної персистенції того самого клону.",
+    "generated": "2026-08-12",
+    "governance": "Source ledger сформовано лише після об'єднаної людської звірки сканів, структурованого тексту, приватності та hash-derived координатного G4. Гіпотези й лікувальні рішення до канонічного ledger не внесено.",
+    "demographics": "Вік: 38 років Стать: Жіноча",
+    "source": "Знеособлений source layer із приватним hash-pinned PDF/OCR/crop provenance.",
+    "signal": "Source layer прийнято; candidate synthesis формується окремою незмінною ревізією.",
+    "discriminating_step": "Лікарська перевірка окремого candidate synthesis після завершення незалежних reasoning passes."
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "rank": 1,
+      "label": "T-клітинний клон невизначеного клінічного значення (T-CUS)",
+      "clinical_role": "Провідна робоча рамка для гематологічної верифікації й динамічного спостереження",
+      "rationale": "У пакеті є клональна T-клітинна популяція 5,97%, описана як індолентна й без ознак агресивності. Дослідження кісткового мозку та периферичної крові не виявило лімфоми чи хромосомних аберацій, трепанобіопсія з інтактним гемопоезом, абдомінальні/тазові вузли не збільшені, а актуальні гемоглобін і тромбоцити не демонструють цитопенії. Цей профіль найближчий до T-CUS, але термін залишається кандидатним: немає повного фенотипу, абсолютної кількості клону й доведеної персистенції того самого клону.",
+      "support_refs": [
+        "F002",
+        "F003",
+        "F004",
+        "F005",
+        "F006",
+        "F010",
+        "F011",
+        "F012",
+        "F015"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [],
+      "missing_evidence": [
+        "Повний імунофенотип і абсолютна кількість клональних/LGL-клітин",
+        "Серійне підтвердження того самого клону щонайменше шість місяців",
+        "Повний анамнез інфекційних, автоімунних і медикаментозних тригерів"
+      ],
+      "applicability_limits": [
+        "5,97% не є самостійною діагностичною межею.",
+        "Негативний marrow/nodal контекст знижує, але не обнуляє ризик T-клітинної неоплазії.",
+        "Для T-CUS немає офіційних клінічних настанов; маршрут є кандидатним."
+      ],
+      "discriminating_checks": [
+        "Фіксація абсолютного clonal/LGL-count",
+        "Потокова цитометрія з TRBC1 або Vβ",
+        "Зіставлення TCR-клонотипу в серійних зразках"
+      ],
+      "short_label": "T-клітинний клон невизначеного клінічного значення (T-CUS)",
+      "counts": {
+        "support": 9,
+        "refute": 0,
+        "neutral": 0
+      },
+      "support_facts": [
+        {
+          "id": "F002",
+          "kind": "pathology_finding",
+          "display": "результат відповідає клональності популяції Т-клітин.",
+          "value": "результат відповідає клональності популяції Т-клітин..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2025-05-07",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F003",
+          "kind": "pathology_finding",
+          "display": "Т-клітинна популяція з ознаками клональності 5,97%. Має індолентний перебіг, на момент обстеження не має ознак агресивності.",
+          "value": "Т-клітинна популяція з ознаками клональності 5,97%. Має індолентний перебіг, на момент обстеження не має ознак агресивності..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2025-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F004",
+          "kind": "negative_finding",
+          "display": "Дослідження КМ та ПК в лаб.MLL від 17.10.25: ознак лімфоми не виявлено. Хромосомних аберацій не виявлено.",
+          "value": "Дослідження КМ та ПК в лаб.MLL від 17.10.25: ознак лімфоми не виявлено. Хромосомних аберацій не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F005",
+          "kind": "pathology_finding",
+          "display": "Матеріал трепан-біопсії кісткового мозку з інтактним гематопоезом",
+          "value": "Матеріал трепан-біопсії кісткового мозку з інтактним гематопоезом.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F006",
+          "kind": "negative_finding",
+          "display": "Лімфатичні вузли черевної порожнини та заочеревинного простору, а також області малого тазу не збільшені.",
+          "value": "Лімфатичні вузли черевної порожнини та заочеревинного простору, а також області малого тазу не збільшені..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-23",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 5,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-005",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "clinical_note",
+          "display": "Гемоглобін (HGB) 137 г/л",
+          "value": "Гемоглобін (HGB) 137 г/л.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-10",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 18,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-018",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F011",
+          "kind": "clinical_note",
+          "display": "Тромбоцити (PLT) 167 10^9",
+          "value": "Тромбоцити (PLT) 167 10^9.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-10",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 18,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-018",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F012",
+          "kind": "clinical_note",
+          "display": "Тромбоцити за методом Фоніо 195.36 10^9",
+          "value": "Тромбоцити за методом Фоніо 195.36 10^9.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-10",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 20,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-020",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F015",
+          "kind": "diagnostic_interpretation",
+          "display": "Попередній діагноз: Гемобластоз(?), лімфома(?). - Не підтверджено.",
+          "value": "Попередній діагноз: Гемобластоз(?), лімфома(?). - Не підтверджено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-07",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-006",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": []
+    },
+    {
+      "id": "H2",
+      "rank": 2,
+      "label": "Низькоклітинна T‑велика гранулярна лімфоцитарна лейкемія (T-LGLL)",
+      "clinical_role": "Головна гематологічна альтернатива, яку слід формально відмежувати",
+      "rationale": "Клональність робить T-LGLL головною гематологічною альтернативою. NCCN LGLL-1 вимагає LGL-морфологію, достатній flow-фенотип, абсолютну кількість і T-клітинну клональність; для малої безсимптомної популяції передбачає повторну flow/TCR-перевірку через шість місяців. CASE010 не містить абсолютного LGL-count, характерного CD3/CD8/CD16/CD57-профілю, нейтропенії, анемії, автоімунного контексту або кістковомозкового інфільтрату, тому ранг H2 не підвищено.",
+      "support_refs": [
+        "F002",
+        "F003"
+      ],
+      "refute_refs": [
+        "F004",
+        "F005",
+        "F006",
+        "F010",
+        "F011",
+        "F012"
+      ],
+      "neutral_refs": [
+        "F015"
+      ],
+      "missing_evidence": [
+        "Ручний мазок і абсолютна кількість LGL",
+        "Повний цитотоксичний T-клітинний фенотип",
+        "Нейтрофіли в динаміці, інфекції й автоімунний анамнез",
+        "STAT3/STAT5B лише в інтегрованому контексті"
+      ],
+      "applicability_limits": [
+        "Низький LGL-count не виключає T-LGLL за відповідної клініки.",
+        "STAT3/STAT5B не є самодостатнім діагнозом.",
+        "Патолог не може встановити цей діагноз ізольовано від клінічної картини."
+      ],
+      "discriminating_checks": [
+        "Поєднання персистентного клону, характерного фенотипу/LGL-морфології та відповідної клініки підвищить H2",
+        "Відсутність фенотипу, цитопеній, інфільтрату й стабільний малий клон підтримає H1"
+      ],
+      "short_label": "Низькоклітинна T‑велика гранулярна лімфоцитарна лейкемія (T-LGLL)",
+      "counts": {
+        "support": 2,
+        "refute": 6,
+        "neutral": 1
+      },
+      "support_facts": [
+        {
+          "id": "F002",
+          "kind": "pathology_finding",
+          "display": "результат відповідає клональності популяції Т-клітин.",
+          "value": "результат відповідає клональності популяції Т-клітин..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2025-05-07",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F003",
+          "kind": "pathology_finding",
+          "display": "Т-клітинна популяція з ознаками клональності 5,97%. Має індолентний перебіг, на момент обстеження не має ознак агресивності.",
+          "value": "Т-клітинна популяція з ознаками клональності 5,97%. Має індолентний перебіг, на момент обстеження не має ознак агресивності..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2025-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [
+        {
+          "id": "F004",
+          "kind": "negative_finding",
+          "display": "Дослідження КМ та ПК в лаб.MLL від 17.10.25: ознак лімфоми не виявлено. Хромосомних аберацій не виявлено.",
+          "value": "Дослідження КМ та ПК в лаб.MLL від 17.10.25: ознак лімфоми не виявлено. Хромосомних аберацій не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F005",
+          "kind": "pathology_finding",
+          "display": "Матеріал трепан-біопсії кісткового мозку з інтактним гематопоезом",
+          "value": "Матеріал трепан-біопсії кісткового мозку з інтактним гематопоезом.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F006",
+          "kind": "negative_finding",
+          "display": "Лімфатичні вузли черевної порожнини та заочеревинного простору, а також області малого тазу не збільшені.",
+          "value": "Лімфатичні вузли черевної порожнини та заочеревинного простору, а також області малого тазу не збільшені..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-23",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 5,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-005",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "clinical_note",
+          "display": "Гемоглобін (HGB) 137 г/л",
+          "value": "Гемоглобін (HGB) 137 г/л.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-10",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 18,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-018",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F011",
+          "kind": "clinical_note",
+          "display": "Тромбоцити (PLT) 167 10^9",
+          "value": "Тромбоцити (PLT) 167 10^9.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-10",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 18,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-018",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F012",
+          "kind": "clinical_note",
+          "display": "Тромбоцити за методом Фоніо 195.36 10^9",
+          "value": "Тромбоцити за методом Фоніо 195.36 10^9.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-10",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 20,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-020",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "neutral_facts": [
+        {
+          "id": "F015",
+          "kind": "diagnostic_interpretation",
+          "display": "Попередній діагноз: Гемобластоз(?), лімфома(?). - Не підтверджено.",
+          "value": "Попередній діагноз: Гемобластоз(?), лімфома(?). - Не підтверджено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-07",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-006",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H3",
+      "rank": 3,
+      "label": "Реактивна або антиген-спричинена клональна T-клітинна експансія",
+      "clinical_role": "Непухлинна альтернатива, яка потребує анамнезу тригерів і серійної динаміки",
+      "rationale": "T-клітинні клони можуть виникати при інфекції, автоімунному процесі, імунному старінні, іншій пухлині або медикаментозному впливі. Негативні дослідження лімфоми й індолентний опис сумісні з непухлинним поясненням, але в пакеті немає документованого тригера, точного клонотипу або даних про його зникнення/сталість.",
+      "support_refs": [
+        "F003",
+        "F004",
+        "F005",
+        "F006"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F002"
+      ],
+      "missing_evidence": [
+        "Інфекційний, автоімунний і медикаментозний анамнез",
+        "Динаміка абсолютної кількості й того самого клонотипу",
+        "Клінічні симптоми та огляд"
+      ],
+      "applicability_limits": [
+        "Реактивна експансія може бути клональною.",
+        "Персистенція сама по собі не доводить злоякісність."
+      ],
+      "discriminating_checks": [
+        "Зменшення/зникнення клону після усунення тригера підтримає H3",
+        "Стабільний клон без пухлинних ознак змістить оцінку до H1",
+        "Наростання клону з цитопеніями/симптомами змістить оцінку до H2/H4"
+      ],
+      "short_label": "Реактивна або антиген-спричинена клональна T-клітинна експансія",
+      "counts": {
+        "support": 4,
+        "refute": 0,
+        "neutral": 1
+      },
+      "support_facts": [
+        {
+          "id": "F003",
+          "kind": "pathology_finding",
+          "display": "Т-клітинна популяція з ознаками клональності 5,97%. Має індолентний перебіг, на момент обстеження не має ознак агресивності.",
+          "value": "Т-клітинна популяція з ознаками клональності 5,97%. Має індолентний перебіг, на момент обстеження не має ознак агресивності..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2025-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F004",
+          "kind": "negative_finding",
+          "display": "Дослідження КМ та ПК в лаб.MLL від 17.10.25: ознак лімфоми не виявлено. Хромосомних аберацій не виявлено.",
+          "value": "Дослідження КМ та ПК в лаб.MLL від 17.10.25: ознак лімфоми не виявлено. Хромосомних аберацій не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F005",
+          "kind": "pathology_finding",
+          "display": "Матеріал трепан-біопсії кісткового мозку з інтактним гематопоезом",
+          "value": "Матеріал трепан-біопсії кісткового мозку з інтактним гематопоезом.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F006",
+          "kind": "negative_finding",
+          "display": "Лімфатичні вузли черевної порожнини та заочеревинного простору, а також області малого тазу не збільшені.",
+          "value": "Лімфатичні вузли черевної порожнини та заочеревинного простору, а також області малого тазу не збільшені..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-23",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 5,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-005",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F002",
+          "kind": "pathology_finding",
+          "display": "результат відповідає клональності популяції Т-клітин.",
+          "value": "результат відповідає клональності популяції Т-клітин..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2025-05-07",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H4",
+      "rank": 4,
+      "label": "Інша зріла T-клітинна неоплазія або периферична T-клітинна лімфома",
+      "clinical_role": "Must-not-miss гілка з низькою поточною джерельною підтримкою",
+      "rationale": "Клональність вимагає не пропустити іншу зрілу T-клітинну неоплазію. Однак пакет не містить тканинного пухлинного субстрату: marrow/peripheral blood evaluation не виявила лімфоми, гематопоез інтактний, вузли живота й таза не збільшені, об'ємної патології грудної клітки не описано, а попередня підозра на гемобластоз/лімфому позначена як непідтверджена. Тип неоплазії неможливо вивести лише з TCR-клональності.",
+      "support_refs": [
+        "F002"
+      ],
+      "refute_refs": [
+        "F004",
+        "F005",
+        "F006",
+        "F007",
+        "F015"
+      ],
+      "neutral_refs": [
+        "F003"
+      ],
+      "missing_evidence": [
+        "Повний огляд на B-симптоми, шкіру, вузли, печінку й селезінку",
+        "Перегляд первинних flow/pathology materials",
+        "Тканинна біопсія лише за появи доступного підозрілого ураження"
+      ],
+      "applicability_limits": [
+        "Відсутність описаних вузлів не замінює повного фізикального огляду.",
+        "Шумний OCR F007 використовується лише як обмежений негативний контекст."
+      ],
+      "discriminating_checks": [
+        "Новий тканинний субстрат або системні ознаки потребуватимуть entity-specific work-up",
+        "Стабільний клінічно тихий малий клон зберігає перевагу H1"
+      ],
+      "short_label": "Інша зріла T-клітинна неоплазія або периферична T-клітинна лімфома",
+      "counts": {
+        "support": 1,
+        "refute": 5,
+        "neutral": 1
+      },
+      "support_facts": [
+        {
+          "id": "F002",
+          "kind": "pathology_finding",
+          "display": "результат відповідає клональності популяції Т-клітин.",
+          "value": "результат відповідає клональності популяції Т-клітин..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2025-05-07",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [
+        {
+          "id": "F004",
+          "kind": "negative_finding",
+          "display": "Дослідження КМ та ПК в лаб.MLL від 17.10.25: ознак лімфоми не виявлено. Хромосомних аберацій не виявлено.",
+          "value": "Дослідження КМ та ПК в лаб.MLL від 17.10.25: ознак лімфоми не виявлено. Хромосомних аберацій не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F005",
+          "kind": "pathology_finding",
+          "display": "Матеріал трепан-біопсії кісткового мозку з інтактним гематопоезом",
+          "value": "Матеріал трепан-біопсії кісткового мозку з інтактним гематопоезом.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F006",
+          "kind": "negative_finding",
+          "display": "Лімфатичні вузли черевної порожнини та заочеревинного простору, а також області малого тазу не збільшені.",
+          "value": "Лімфатичні вузли черевної порожнини та заочеревинного простору, а також області малого тазу не збільшені..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-03-23",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 5,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-005",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F007",
+          "kind": "negative_finding",
+          "display": "Висновок: МРТ-ознак обʼємної та гострої інфільтративної патології органів грудної порожнини, травматичних необхідності доцільно МРТ обстеження суглобу. пошкоджень не виявлено.",
+          "value": "Висновок: МРТ-ознак обʼємної та гострої інфільтративної патології органів грудної порожнини, травматичних необхідності доцільно МРТ обстеження суглобу. пошкоджень не виявлено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-05-13",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F015",
+          "kind": "diagnostic_interpretation",
+          "display": "Попередній діагноз: Гемобластоз(?), лімфома(?). - Не підтверджено.",
+          "value": "Попередній діагноз: Гемобластоз(?), лімфома(?). - Не підтверджено..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-07",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-006",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "neutral_facts": [
+        {
+          "id": "F003",
+          "kind": "pathology_finding",
+          "display": "Т-клітинна популяція з ознаками клональності 5,97%. Має індолентний перебіг, на момент обстеження не має ознак агресивності.",
+          "value": "Т-клітинна популяція з ознаками клональності 5,97%. Має індолентний перебіг, на момент обстеження не має ознак агресивності..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2025-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 2,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H5",
+      "rank": 5,
+      "label": "Стрес-перелом VI ребра з консолідацією та кістковим мозолем",
+      "clinical_role": "Окрема кісткова гілка; потребує завершення вже рекомендованого дообстеження",
+      "rationale": "УЗД описує кісткові мозолі ребер зліва, а клінічний висновок — стрес-перелом VI ребра в стадії консолідації. Остеосцинтиграфію рекомендовано для пошуку інших осередків і ризику патологічних переломів. Поточний пакет не містить результату цього дослідження й не доводить зв'язок перелому з T-клітинним клоном.",
+      "support_refs": [
+        "F014",
+        "F016"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F017"
+      ],
+      "missing_evidence": [
+        "Результат рекомендованої остеосцинтиграфії або іншої цільової візуалізації",
+        "Оцінка причин стрес-перелому/кісткової крихкості за клінічними показаннями"
+      ],
+      "applicability_limits": [
+        "Рекомендація обстеження не є позитивною знахідкою.",
+        "УЗ-зображення другого PDF не інтерпретувалися агентом без наративного висновку."
+      ],
+      "discriminating_checks": [
+        "Консолідація без інших осередків підтримає ізольований перелом",
+        "Інші підозрілі осередки вимагатимуть окремої клінічної інтерпретації"
+      ],
+      "short_label": "Стрес-перелом VI ребра з консолідацією та кістковим мозолем",
+      "counts": {
+        "support": 2,
+        "refute": 0,
+        "neutral": 1
+      },
+      "support_facts": [
+        {
+          "id": "F014",
+          "kind": "imaging_finding",
+          "display": "УЗ-ознаки кісткових мозолів ребер ліворуч",
+          "value": "УЗ-ознаки кісткових мозолів ребер ліворуч.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-06",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 23,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-023",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F016",
+          "kind": "diagnostic_interpretation",
+          "display": "Клінічний діагноз: Стес-перелом 6 ребра ліворуч в стадії консолідації.",
+          "value": "Клінічний діагноз: Стес-перелом 6 ребра ліворуч в стадії консолідації..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-07",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-006",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F017",
+          "kind": "recommendation",
+          "display": "Дообстеження: Остео-Сцинти-Графія кісток скелету, - онко-скринінг, для визначення осередків накопичення РФП (радіофарм-препарат) і локалізації та загрози патологічних переломів кісток скелету.",
+          "value": "Дообстеження: Остео-Сцинти-Графія кісток скелету, - онко-скринінг, для визначення осередків накопичення РФП (радіофарм-препарат) і локалізації та загрози патологічних переломів кісток скелету..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-08-07",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 6,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-006",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H6",
+      "rank": 6,
+      "label": "Мікроаденома гіпофіза з неузгодженою оцінкою динаміки",
+      "clinical_role": "Незалежна ендокринологічно-нейрорадіологічна гілка",
+      "rationale": "Обидва записи підтверджують мікроаденому, але клінічна нотатка говорить про відсутність негативної динаміки за два роки, тоді як МР-висновок від 01.06.2026 описує збільшення від 24.03.2025. Це джерельний конфлікт, який потребує прямого порівняння зображень/вимірів і гормонального контексту; причинний зв'язок із T-клітинним клоном не встановлений.",
+      "support_refs": [
+        "F008",
+        "F009"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [],
+      "missing_evidence": [
+        "Порівняльний нейрорадіологічний перегляд МРТ 2025/2026 з точними вимірами",
+        "Ендокринологічна оцінка й гормональні дані за показаннями"
+      ],
+      "applicability_limits": [
+        "Два джерела суперечать одне одному щодо динаміки.",
+        "Гілка не пояснює клональність T-клітин."
+      ],
+      "discriminating_checks": [
+        "Консенсусне порівняння МРТ визначить, чи була реальна зміна розміру"
+      ],
+      "short_label": "Мікроаденома гіпофіза з неузгодженою оцінкою динаміки",
+      "counts": {
+        "support": 2,
+        "refute": 0,
+        "neutral": 0
+      },
+      "support_facts": [
+        {
+          "id": "F008",
+          "kind": "diagnostic_interpretation",
+          "display": "На МРТ мікроаденома гіпофіза без негативної динаміки за останні 2 роки.",
+          "value": "На МРТ мікроаденома гіпофіза без негативної динаміки за останні 2 роки..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 16,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-016",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F009",
+          "kind": "diagnostic_interpretation",
+          "display": "Висновок: МР-ознаки мікроаденоми гіпофізу, яка від 24.03.25. збільшилась у розмірах (негативна динаміка).",
+          "value": "Висновок: МР-ознаки мікроаденоми гіпофізу, яка від 24.03.25. збільшилась у розмірах (негативна динаміка)..",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-06-01",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 22,
+          "source_fragment_id": "FRAG-2EC56A4C52ED-022",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": []
+    }
+  ],
+  "relations": [
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F004",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F012",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F015",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F004",
+      "hypothesis_id": "H2",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H2",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H2",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H2",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H2",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F012",
+      "hypothesis_id": "H2",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F015",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F004",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H3",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F004",
+      "hypothesis_id": "H4",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H4",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H4",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F007",
+      "hypothesis_id": "H4",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F015",
+      "hypothesis_id": "H4",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H4",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F014",
+      "hypothesis_id": "H5",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F016",
+      "hypothesis_id": "H5",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F017",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F009",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    }
+  ],
+  "observations": [
+    {
+      "id": "OBS-2EC56A4C52ED-001",
+      "kind": "clinical_note",
+      "display": "Вік: 38 років Стать: Жіноча",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-06",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 23,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-023",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-002",
+      "kind": "pathology_finding",
+      "display": "результат відповідає клональності популяції Т-клітин.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2025-05-07",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 2,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-003",
+      "kind": "pathology_finding",
+      "display": "Т-клітинна популяція з ознаками клональності 5,97%. Має індолентний перебіг, на момент обстеження не має ознак агресивності.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2025-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 2,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-004",
+      "kind": "negative_finding",
+      "display": "Дослідження КМ та ПК в лаб.MLL від 17.10.25: ознак лімфоми не виявлено. Хромосомних аберацій не виявлено.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 2,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-005",
+      "kind": "pathology_finding",
+      "display": "Матеріал трепан-біопсії кісткового мозку з інтактним гематопоезом",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 2,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-006",
+      "kind": "negative_finding",
+      "display": "Лімфатичні вузли черевної порожнини та заочеревинного простору, а також області малого тазу не збільшені.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-03-23",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 5,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-005",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-008",
+      "kind": "negative_finding",
+      "display": "Висновок: МРТ-ознак обʼємної та гострої інфільтративної патології органів грудної порожнини, травматичних необхідності доцільно МРТ обстеження суглобу. пошкоджень не виявлено.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-05-13",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 2,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-002",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-009",
+      "kind": "diagnostic_interpretation",
+      "display": "На МРТ мікроаденома гіпофіза без негативної динаміки за останні 2 роки.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 16,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-016",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-010",
+      "kind": "diagnostic_interpretation",
+      "display": "Висновок: МР-ознаки мікроаденоми гіпофізу, яка від 24.03.25. збільшилась у розмірах (негативна динаміка).",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-06-01",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 22,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-022",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-011",
+      "kind": "clinical_note",
+      "display": "Гемоглобін (HGB) 137 г/л",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-10",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 18,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-018",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-012",
+      "kind": "clinical_note",
+      "display": "Тромбоцити (PLT) 167 10^9",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-10",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 18,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-018",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-013",
+      "kind": "clinical_note",
+      "display": "Тромбоцити за методом Фоніо 195.36 10^9",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-10",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 20,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-020",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-014",
+      "kind": "clinical_note",
+      "display": "Феритин 2.14 6000/Cobas е411 (Швейцарія) г/л 2.0 - 3.6 26.3 нг/мл",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-10",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 17,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-017",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-015",
+      "kind": "imaging_finding",
+      "display": "УЗ-ознаки кісткових мозолів ребер ліворуч",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-06",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 23,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-023",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-016",
+      "kind": "diagnostic_interpretation",
+      "display": "Попередній діагноз: Гемобластоз(?), лімфома(?). - Не підтверджено.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-07",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 6,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-006",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-017",
+      "kind": "diagnostic_interpretation",
+      "display": "Клінічний діагноз: Стес-перелом 6 ребра ліворуч в стадії консолідації.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-07",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 6,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-006",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-2EC56A4C52ED-018",
+      "kind": "recommendation",
+      "display": "Дообстеження: Остео-Сцинти-Графія кісток скелету, - онко-скринінг, для визначення осередків накопичення РФП (радіофарм-препарат) і локалізації та загрози патологічних переломів кісток скелету.",
+      "value": "—",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-08-07",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 6,
+      "source_fragment_id": "FRAG-2EC56A4C52ED-006",
+      "structured_row_id": null,
+      "human_verified": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "E-CAND-1",
+      "type": "pmid",
+      "title": "T-cell clones of uncertain significance. When is the rogue clone dangerous?",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
+      "year": 2025,
+      "location": "Abstract; Introduction; Work-up of T-CUS; Table 2",
+      "verification_status": "agent_visual_source_review",
+      "use": "T-CUS може мати молекулярні й імунофенотипові риси T-LGLL без клінічних або лабораторних ознак T-клітинної злоякісності. Оцінка має бути мультипараметричною; один числовий поріг не розмежовує доброякісний клон і неоплазію, а персистенцію зазвичай перевіряють не менше шести місяців.",
+      "applicability_limit": "CASE010 має малу популяцію 5,97% і негативні джерельні ознаки лімфоми, але не має повного фенотипу, абсолютного LGL-count або серійного підтвердження того самого клону; тому T-CUS є робочою рамкою, а не встановленим діагнозом."
+    },
+    {
+      "id": "E-CAND-2",
+      "type": "classification",
+      "title": "The 5th edition of the WHO Classification of Haematolymphoid Tumours: Lymphoid Neoplasms",
+      "url": "https://www.nature.com/articles/s41375-022-01620-2",
+      "year": 2022,
+      "location": "Conceptual framework; essential/desirable criteria; mature T/NK-cell leukemia entity list",
+      "verification_status": "agent_visual_source_review",
+      "use": "WHO-HAEM5 класифікує T-LGLL як окрему зрілу T-клітинну лейкемію та використовує ієрархічні визначення з essential/desirable діагностичними критеріями, поєднуючи доступну морфологію, імунофенотип і молекулярні дані.",
+      "applicability_limit": "Джерело задає класифікаційну рамку для перевірки конкретної сутності, але не дозволяє перетворити позитивний тест клональності CASE010 на діагноз T-LGLL або лімфоми."
+    },
+    {
+      "id": "E-CAND-3",
+      "type": "pmid",
+      "title": "Mature T-Cell leukemias: Challenges in Diagnosis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
+      "year": 2022,
+      "location": "Reactive versus T-cell neoplasm; Large granular lymphocytic leukemia; Making the diagnosis",
+      "verification_status": "agent_visual_source_review",
+      "use": "Виявлення T-клітинного клону не є синонімом неоплазії. Діагноз зрілої T-клітинної лейкемії потребує інтеграції клініки, діагностичного матеріалу й візуалізації; малий клон без відповідного фенотипу або інфільтрату може не відповідати критеріям T-LGLL.",
+      "applicability_limit": "Негативний кістковомозковий контекст і відсутність документованих вузлів у CASE010 знижують підтримку встановленої неоплазії, але повний клінічний огляд і фенотип залишаються потрібними."
+    },
+    {
+      "id": "E-CAND-4",
+      "type": "guideline",
+      "title": "NCCN Guidelines Version 2.2026: T-Cell Large Granular Lymphocytic Leukemia",
+      "url": "https://www.nccn.org/guidelines/category_1",
+      "year": 2026,
+      "location": "LGLL-1; PDF page 31; footnotes c-f",
+      "verification_status": "agent_visual_source_review",
+      "use": "Для T-LGLL NCCN вимагає морфологію LGL у мазку, достатній імунофенотип периферичної крові та оцінку T-клітинної клональності. Для безсимптомних пацієнтів із малою клональною LGL-популяцією менш як 0,5 × 10^9/л радить повторити потокову цитометрію і дослідження клональності через шість місяців; кістковий мозок особливо корисний за низької абсолютної кількості LGL.",
+      "applicability_limit": "У CASE010 наведено 5,97%, але немає абсолютної кількості LGL, повного фенотипу або LGL-морфології. Настанова підтримує саме план розмежування H1/H2 і не перетворює відсоток клону на діагноз."
+    },
+    {
+      "id": "E-CAND-5",
+      "type": "pmid",
+      "title": "NCI PDQ: Large granular lymphocyte leukemia",
+      "url": "https://www.cancer.gov/types/leukemia/hp/cll-treatment-pdq",
+      "year": 2025,
+      "location": "Large granular lymphocyte leukemia; offline snapshot PDF page 3",
+      "verification_status": "agent_visual_source_review",
+      "use": "NCI PDQ описує LGL-лейкемію як індолентний стан, для якого типовими клінічними контекстами є нейтропенія, анемія, спленомегалія та ревматоїдний артрит, а T-клітинний варіант має CD2/CD3/CD8-фенотип; STAT3 трапляється лише в частині випадків і не є самодостатнім критерієм.",
+      "applicability_limit": "У CASE010 наявні гемоглобін і тромбоцити не показують цитопенії, але абсолютні нейтрофіли, клініка інфекцій, автоімунний анамнез і спленомегалія не закриті. Офлайн-знімок є доказовим оглядом, а не окремою практичною настановою."
+    }
+  ],
+  "critical_gaps": [
+    {
+      "id": "G1",
+      "text": "Немає абсолютної кількості клональних T-клітин/LGL і повного імунофенотипу.",
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-2",
+        "E-CAND-3",
+        "E-CAND-4",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "T-cell clones of uncertain significance. When is the rogue clone dangerous?",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
+          "year": 2025,
+          "location": "Abstract; Introduction; Work-up of T-CUS; Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "T-CUS може мати молекулярні й імунофенотипові риси T-LGLL без клінічних або лабораторних ознак T-клітинної злоякісності. Оцінка має бути мультипараметричною; один числовий поріг не розмежовує доброякісний клон і неоплазію, а персистенцію зазвичай перевіряють не менше шести місяців.",
+          "applicability_limit": "CASE010 має малу популяцію 5,97% і негативні джерельні ознаки лімфоми, але не має повного фенотипу, абсолютного LGL-count або серійного підтвердження того самого клону; тому T-CUS є робочою рамкою, а не встановленим діагнозом."
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "classification",
+          "title": "The 5th edition of the WHO Classification of Haematolymphoid Tumours: Lymphoid Neoplasms",
+          "url": "https://www.nature.com/articles/s41375-022-01620-2",
+          "year": 2022,
+          "location": "Conceptual framework; essential/desirable criteria; mature T/NK-cell leukemia entity list",
+          "verification_status": "agent_visual_source_review",
+          "use": "WHO-HAEM5 класифікує T-LGLL як окрему зрілу T-клітинну лейкемію та використовує ієрархічні визначення з essential/desirable діагностичними критеріями, поєднуючи доступну морфологію, імунофенотип і молекулярні дані.",
+          "applicability_limit": "Джерело задає класифікаційну рамку для перевірки конкретної сутності, але не дозволяє перетворити позитивний тест клональності CASE010 на діагноз T-LGLL або лімфоми."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Mature T-Cell leukemias: Challenges in Diagnosis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
+          "year": 2022,
+          "location": "Reactive versus T-cell neoplasm; Large granular lymphocytic leukemia; Making the diagnosis",
+          "verification_status": "agent_visual_source_review",
+          "use": "Виявлення T-клітинного клону не є синонімом неоплазії. Діагноз зрілої T-клітинної лейкемії потребує інтеграції клініки, діагностичного матеріалу й візуалізації; малий клон без відповідного фенотипу або інфільтрату може не відповідати критеріям T-LGLL.",
+          "applicability_limit": "Негативний кістковомозковий контекст і відсутність документованих вузлів у CASE010 знижують підтримку встановленої неоплазії, але повний клінічний огляд і фенотип залишаються потрібними."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 2.2026: T-Cell Large Granular Lymphocytic Leukemia",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "LGLL-1; PDF page 31; footnotes c-f",
+          "verification_status": "agent_visual_source_review",
+          "use": "Для T-LGLL NCCN вимагає морфологію LGL у мазку, достатній імунофенотип периферичної крові та оцінку T-клітинної клональності. Для безсимптомних пацієнтів із малою клональною LGL-популяцією менш як 0,5 × 10^9/л радить повторити потокову цитометрію і дослідження клональності через шість місяців; кістковий мозок особливо корисний за низької абсолютної кількості LGL.",
+          "applicability_limit": "У CASE010 наведено 5,97%, але немає абсолютної кількості LGL, повного фенотипу або LGL-морфології. Настанова підтримує саме план розмежування H1/H2 і не перетворює відсоток клону на діагноз."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "NCI PDQ: Large granular lymphocyte leukemia",
+          "url": "https://www.cancer.gov/types/leukemia/hp/cll-treatment-pdq",
+          "year": 2025,
+          "location": "Large granular lymphocyte leukemia; offline snapshot PDF page 3",
+          "verification_status": "agent_visual_source_review",
+          "use": "NCI PDQ описує LGL-лейкемію як індолентний стан, для якого типовими клінічними контекстами є нейтропенія, анемія, спленомегалія та ревматоїдний артрит, а T-клітинний варіант має CD2/CD3/CD8-фенотип; STAT3 трапляється лише в частині випадків і не є самодостатнім критерієм.",
+          "applicability_limit": "У CASE010 наявні гемоглобін і тромбоцити не показують цитопенії, але абсолютні нейтрофіли, клініка інфекцій, автоімунний анамнез і спленомегалія не закриті. Офлайн-знімок є доказовим оглядом, а не окремою практичною настановою."
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "text": "Не доведено персистенцію саме того самого TCR-клонотипу щонайменше шість місяців.",
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-3",
+        "E-CAND-4"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "T-cell clones of uncertain significance. When is the rogue clone dangerous?",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
+          "year": 2025,
+          "location": "Abstract; Introduction; Work-up of T-CUS; Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "T-CUS може мати молекулярні й імунофенотипові риси T-LGLL без клінічних або лабораторних ознак T-клітинної злоякісності. Оцінка має бути мультипараметричною; один числовий поріг не розмежовує доброякісний клон і неоплазію, а персистенцію зазвичай перевіряють не менше шести місяців.",
+          "applicability_limit": "CASE010 має малу популяцію 5,97% і негативні джерельні ознаки лімфоми, але не має повного фенотипу, абсолютного LGL-count або серійного підтвердження того самого клону; тому T-CUS є робочою рамкою, а не встановленим діагнозом."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Mature T-Cell leukemias: Challenges in Diagnosis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
+          "year": 2022,
+          "location": "Reactive versus T-cell neoplasm; Large granular lymphocytic leukemia; Making the diagnosis",
+          "verification_status": "agent_visual_source_review",
+          "use": "Виявлення T-клітинного клону не є синонімом неоплазії. Діагноз зрілої T-клітинної лейкемії потребує інтеграції клініки, діагностичного матеріалу й візуалізації; малий клон без відповідного фенотипу або інфільтрату може не відповідати критеріям T-LGLL.",
+          "applicability_limit": "Негативний кістковомозковий контекст і відсутність документованих вузлів у CASE010 знижують підтримку встановленої неоплазії, але повний клінічний огляд і фенотип залишаються потрібними."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 2.2026: T-Cell Large Granular Lymphocytic Leukemia",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "LGLL-1; PDF page 31; footnotes c-f",
+          "verification_status": "agent_visual_source_review",
+          "use": "Для T-LGLL NCCN вимагає морфологію LGL у мазку, достатній імунофенотип периферичної крові та оцінку T-клітинної клональності. Для безсимптомних пацієнтів із малою клональною LGL-популяцією менш як 0,5 × 10^9/л радить повторити потокову цитометрію і дослідження клональності через шість місяців; кістковий мозок особливо корисний за низької абсолютної кількості LGL.",
+          "applicability_limit": "У CASE010 наведено 5,97%, але немає абсолютної кількості LGL, повного фенотипу або LGL-морфології. Настанова підтримує саме план розмежування H1/H2 і не перетворює відсоток клону на діагноз."
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "text": "Немає повного клінічного контексту цитопеній, інфекцій, автоімунного стану, B-симптомів, вузлів і спленомегалії.",
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-2",
+        "E-CAND-3",
+        "E-CAND-4",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "T-cell clones of uncertain significance. When is the rogue clone dangerous?",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
+          "year": 2025,
+          "location": "Abstract; Introduction; Work-up of T-CUS; Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "T-CUS може мати молекулярні й імунофенотипові риси T-LGLL без клінічних або лабораторних ознак T-клітинної злоякісності. Оцінка має бути мультипараметричною; один числовий поріг не розмежовує доброякісний клон і неоплазію, а персистенцію зазвичай перевіряють не менше шести місяців.",
+          "applicability_limit": "CASE010 має малу популяцію 5,97% і негативні джерельні ознаки лімфоми, але не має повного фенотипу, абсолютного LGL-count або серійного підтвердження того самого клону; тому T-CUS є робочою рамкою, а не встановленим діагнозом."
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "classification",
+          "title": "The 5th edition of the WHO Classification of Haematolymphoid Tumours: Lymphoid Neoplasms",
+          "url": "https://www.nature.com/articles/s41375-022-01620-2",
+          "year": 2022,
+          "location": "Conceptual framework; essential/desirable criteria; mature T/NK-cell leukemia entity list",
+          "verification_status": "agent_visual_source_review",
+          "use": "WHO-HAEM5 класифікує T-LGLL як окрему зрілу T-клітинну лейкемію та використовує ієрархічні визначення з essential/desirable діагностичними критеріями, поєднуючи доступну морфологію, імунофенотип і молекулярні дані.",
+          "applicability_limit": "Джерело задає класифікаційну рамку для перевірки конкретної сутності, але не дозволяє перетворити позитивний тест клональності CASE010 на діагноз T-LGLL або лімфоми."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Mature T-Cell leukemias: Challenges in Diagnosis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
+          "year": 2022,
+          "location": "Reactive versus T-cell neoplasm; Large granular lymphocytic leukemia; Making the diagnosis",
+          "verification_status": "agent_visual_source_review",
+          "use": "Виявлення T-клітинного клону не є синонімом неоплазії. Діагноз зрілої T-клітинної лейкемії потребує інтеграції клініки, діагностичного матеріалу й візуалізації; малий клон без відповідного фенотипу або інфільтрату може не відповідати критеріям T-LGLL.",
+          "applicability_limit": "Негативний кістковомозковий контекст і відсутність документованих вузлів у CASE010 знижують підтримку встановленої неоплазії, але повний клінічний огляд і фенотип залишаються потрібними."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 2.2026: T-Cell Large Granular Lymphocytic Leukemia",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "LGLL-1; PDF page 31; footnotes c-f",
+          "verification_status": "agent_visual_source_review",
+          "use": "Для T-LGLL NCCN вимагає морфологію LGL у мазку, достатній імунофенотип периферичної крові та оцінку T-клітинної клональності. Для безсимптомних пацієнтів із малою клональною LGL-популяцією менш як 0,5 × 10^9/л радить повторити потокову цитометрію і дослідження клональності через шість місяців; кістковий мозок особливо корисний за низької абсолютної кількості LGL.",
+          "applicability_limit": "У CASE010 наведено 5,97%, але немає абсолютної кількості LGL, повного фенотипу або LGL-морфології. Настанова підтримує саме план розмежування H1/H2 і не перетворює відсоток клону на діагноз."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "NCI PDQ: Large granular lymphocyte leukemia",
+          "url": "https://www.cancer.gov/types/leukemia/hp/cll-treatment-pdq",
+          "year": 2025,
+          "location": "Large granular lymphocyte leukemia; offline snapshot PDF page 3",
+          "verification_status": "agent_visual_source_review",
+          "use": "NCI PDQ описує LGL-лейкемію як індолентний стан, для якого типовими клінічними контекстами є нейтропенія, анемія, спленомегалія та ревматоїдний артрит, а T-клітинний варіант має CD2/CD3/CD8-фенотип; STAT3 трапляється лише в частині випадків і не є самодостатнім критерієм.",
+          "applicability_limit": "У CASE010 наявні гемоглобін і тромбоцити не показують цитопенії, але абсолютні нейтрофіли, клініка інфекцій, автоімунний анамнез і спленомегалія не закриті. Офлайн-знімок є доказовим оглядом, а не окремою практичною настановою."
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "text": "Candidate layer не містить первинних flow/TCR-графіків і повних матеріалів marrow review для незалежного зіставлення.",
+      "evidence_refs": [
+        "E-CAND-2",
+        "E-CAND-3",
+        "E-CAND-4"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-2",
+          "type": "classification",
+          "title": "The 5th edition of the WHO Classification of Haematolymphoid Tumours: Lymphoid Neoplasms",
+          "url": "https://www.nature.com/articles/s41375-022-01620-2",
+          "year": 2022,
+          "location": "Conceptual framework; essential/desirable criteria; mature T/NK-cell leukemia entity list",
+          "verification_status": "agent_visual_source_review",
+          "use": "WHO-HAEM5 класифікує T-LGLL як окрему зрілу T-клітинну лейкемію та використовує ієрархічні визначення з essential/desirable діагностичними критеріями, поєднуючи доступну морфологію, імунофенотип і молекулярні дані.",
+          "applicability_limit": "Джерело задає класифікаційну рамку для перевірки конкретної сутності, але не дозволяє перетворити позитивний тест клональності CASE010 на діагноз T-LGLL або лімфоми."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Mature T-Cell leukemias: Challenges in Diagnosis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
+          "year": 2022,
+          "location": "Reactive versus T-cell neoplasm; Large granular lymphocytic leukemia; Making the diagnosis",
+          "verification_status": "agent_visual_source_review",
+          "use": "Виявлення T-клітинного клону не є синонімом неоплазії. Діагноз зрілої T-клітинної лейкемії потребує інтеграції клініки, діагностичного матеріалу й візуалізації; малий клон без відповідного фенотипу або інфільтрату може не відповідати критеріям T-LGLL.",
+          "applicability_limit": "Негативний кістковомозковий контекст і відсутність документованих вузлів у CASE010 знижують підтримку встановленої неоплазії, але повний клінічний огляд і фенотип залишаються потрібними."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 2.2026: T-Cell Large Granular Lymphocytic Leukemia",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "LGLL-1; PDF page 31; footnotes c-f",
+          "verification_status": "agent_visual_source_review",
+          "use": "Для T-LGLL NCCN вимагає морфологію LGL у мазку, достатній імунофенотип периферичної крові та оцінку T-клітинної клональності. Для безсимптомних пацієнтів із малою клональною LGL-популяцією менш як 0,5 × 10^9/л радить повторити потокову цитометрію і дослідження клональності через шість місяців; кістковий мозок особливо корисний за низької абсолютної кількості LGL.",
+          "applicability_limit": "У CASE010 наведено 5,97%, але немає абсолютної кількості LGL, повного фенотипу або LGL-морфології. Настанова підтримує саме план розмежування H1/H2 і не перетворює відсоток клону на діагноз."
+        }
+      ]
+    }
+  ],
+  "workup": [
+    {
+      "id": "W1",
+      "title": "Повторний ЗАК із абсолютною формулою та ручний мазок",
+      "priority": "critical",
+      "rationale": "Абсолютні лімфоцити/нейтрофіли, наявність і кількість LGL та серійна динаміка відрізняють клінічно тихий малий клон від T-LGLL і реактивної експансії.",
+      "discriminates": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ],
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-3",
+        "E-CAND-4",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "T-cell clones of uncertain significance. When is the rogue clone dangerous?",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
+          "year": 2025,
+          "location": "Abstract; Introduction; Work-up of T-CUS; Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "T-CUS може мати молекулярні й імунофенотипові риси T-LGLL без клінічних або лабораторних ознак T-клітинної злоякісності. Оцінка має бути мультипараметричною; один числовий поріг не розмежовує доброякісний клон і неоплазію, а персистенцію зазвичай перевіряють не менше шести місяців.",
+          "applicability_limit": "CASE010 має малу популяцію 5,97% і негативні джерельні ознаки лімфоми, але не має повного фенотипу, абсолютного LGL-count або серійного підтвердження того самого клону; тому T-CUS є робочою рамкою, а не встановленим діагнозом."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Mature T-Cell leukemias: Challenges in Diagnosis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
+          "year": 2022,
+          "location": "Reactive versus T-cell neoplasm; Large granular lymphocytic leukemia; Making the diagnosis",
+          "verification_status": "agent_visual_source_review",
+          "use": "Виявлення T-клітинного клону не є синонімом неоплазії. Діагноз зрілої T-клітинної лейкемії потребує інтеграції клініки, діагностичного матеріалу й візуалізації; малий клон без відповідного фенотипу або інфільтрату може не відповідати критеріям T-LGLL.",
+          "applicability_limit": "Негативний кістковомозковий контекст і відсутність документованих вузлів у CASE010 знижують підтримку встановленої неоплазії, але повний клінічний огляд і фенотип залишаються потрібними."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 2.2026: T-Cell Large Granular Lymphocytic Leukemia",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "LGLL-1; PDF page 31; footnotes c-f",
+          "verification_status": "agent_visual_source_review",
+          "use": "Для T-LGLL NCCN вимагає морфологію LGL у мазку, достатній імунофенотип периферичної крові та оцінку T-клітинної клональності. Для безсимптомних пацієнтів із малою клональною LGL-популяцією менш як 0,5 × 10^9/л радить повторити потокову цитометрію і дослідження клональності через шість місяців; кістковий мозок особливо корисний за низької абсолютної кількості LGL.",
+          "applicability_limit": "У CASE010 наведено 5,97%, але немає абсолютної кількості LGL, повного фенотипу або LGL-морфології. Настанова підтримує саме план розмежування H1/H2 і не перетворює відсоток клону на діагноз."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "NCI PDQ: Large granular lymphocyte leukemia",
+          "url": "https://www.cancer.gov/types/leukemia/hp/cll-treatment-pdq",
+          "year": 2025,
+          "location": "Large granular lymphocyte leukemia; offline snapshot PDF page 3",
+          "verification_status": "agent_visual_source_review",
+          "use": "NCI PDQ описує LGL-лейкемію як індолентний стан, для якого типовими клінічними контекстами є нейтропенія, анемія, спленомегалія та ревматоїдний артрит, а T-клітинний варіант має CD2/CD3/CD8-фенотип; STAT3 трапляється лише в частині випадків і не є самодостатнім критерієм.",
+          "applicability_limit": "У CASE010 наявні гемоглобін і тромбоцити не показують цитопенії, але абсолютні нейтрофіли, клініка інфекцій, автоімунний анамнез і спленомегалія не закриті. Офлайн-знімок є доказовим оглядом, а не окремою практичною настановою."
+        }
+      ]
+    },
+    {
+      "id": "W2",
+      "title": "Повний T-клітинний flow-профіль і кількісна оцінка клону",
+      "priority": "critical",
+      "rationale": "CD3/CD4/CD8/CD16/CD56/CD57, втрата пан-T-маркерів, TRBC1 або Vβ та абсолютний clonal count потрібні, бо один відсоток 5,97% не класифікує стан.",
+      "discriminates": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ],
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-2",
+        "E-CAND-3",
+        "E-CAND-4"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "T-cell clones of uncertain significance. When is the rogue clone dangerous?",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
+          "year": 2025,
+          "location": "Abstract; Introduction; Work-up of T-CUS; Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "T-CUS може мати молекулярні й імунофенотипові риси T-LGLL без клінічних або лабораторних ознак T-клітинної злоякісності. Оцінка має бути мультипараметричною; один числовий поріг не розмежовує доброякісний клон і неоплазію, а персистенцію зазвичай перевіряють не менше шести місяців.",
+          "applicability_limit": "CASE010 має малу популяцію 5,97% і негативні джерельні ознаки лімфоми, але не має повного фенотипу, абсолютного LGL-count або серійного підтвердження того самого клону; тому T-CUS є робочою рамкою, а не встановленим діагнозом."
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "classification",
+          "title": "The 5th edition of the WHO Classification of Haematolymphoid Tumours: Lymphoid Neoplasms",
+          "url": "https://www.nature.com/articles/s41375-022-01620-2",
+          "year": 2022,
+          "location": "Conceptual framework; essential/desirable criteria; mature T/NK-cell leukemia entity list",
+          "verification_status": "agent_visual_source_review",
+          "use": "WHO-HAEM5 класифікує T-LGLL як окрему зрілу T-клітинну лейкемію та використовує ієрархічні визначення з essential/desirable діагностичними критеріями, поєднуючи доступну морфологію, імунофенотип і молекулярні дані.",
+          "applicability_limit": "Джерело задає класифікаційну рамку для перевірки конкретної сутності, але не дозволяє перетворити позитивний тест клональності CASE010 на діагноз T-LGLL або лімфоми."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Mature T-Cell leukemias: Challenges in Diagnosis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
+          "year": 2022,
+          "location": "Reactive versus T-cell neoplasm; Large granular lymphocytic leukemia; Making the diagnosis",
+          "verification_status": "agent_visual_source_review",
+          "use": "Виявлення T-клітинного клону не є синонімом неоплазії. Діагноз зрілої T-клітинної лейкемії потребує інтеграції клініки, діагностичного матеріалу й візуалізації; малий клон без відповідного фенотипу або інфільтрату може не відповідати критеріям T-LGLL.",
+          "applicability_limit": "Негативний кістковомозковий контекст і відсутність документованих вузлів у CASE010 знижують підтримку встановленої неоплазії, але повний клінічний огляд і фенотип залишаються потрібними."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 2.2026: T-Cell Large Granular Lymphocytic Leukemia",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "LGLL-1; PDF page 31; footnotes c-f",
+          "verification_status": "agent_visual_source_review",
+          "use": "Для T-LGLL NCCN вимагає морфологію LGL у мазку, достатній імунофенотип периферичної крові та оцінку T-клітинної клональності. Для безсимптомних пацієнтів із малою клональною LGL-популяцією менш як 0,5 × 10^9/л радить повторити потокову цитометрію і дослідження клональності через шість місяців; кістковий мозок особливо корисний за низької абсолютної кількості LGL.",
+          "applicability_limit": "У CASE010 наведено 5,97%, але немає абсолютної кількості LGL, повного фенотипу або LGL-морфології. Настанова підтримує саме план розмежування H1/H2 і не перетворює відсоток клону на діагноз."
+        }
+      ]
+    },
+    {
+      "id": "W3",
+      "title": "Підтвердити персистенцію саме того самого TCR-клонотипу",
+      "priority": "high",
+      "rationale": "Серійне зіставлення клонотипу щонайменше через шість місяців відрізняє транзиторну реакцію від персистентного T-CUS/T-LGLL-спектра.",
+      "discriminates": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-3",
+        "E-CAND-4"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "T-cell clones of uncertain significance. When is the rogue clone dangerous?",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
+          "year": 2025,
+          "location": "Abstract; Introduction; Work-up of T-CUS; Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "T-CUS може мати молекулярні й імунофенотипові риси T-LGLL без клінічних або лабораторних ознак T-клітинної злоякісності. Оцінка має бути мультипараметричною; один числовий поріг не розмежовує доброякісний клон і неоплазію, а персистенцію зазвичай перевіряють не менше шести місяців.",
+          "applicability_limit": "CASE010 має малу популяцію 5,97% і негативні джерельні ознаки лімфоми, але не має повного фенотипу, абсолютного LGL-count або серійного підтвердження того самого клону; тому T-CUS є робочою рамкою, а не встановленим діагнозом."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Mature T-Cell leukemias: Challenges in Diagnosis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
+          "year": 2022,
+          "location": "Reactive versus T-cell neoplasm; Large granular lymphocytic leukemia; Making the diagnosis",
+          "verification_status": "agent_visual_source_review",
+          "use": "Виявлення T-клітинного клону не є синонімом неоплазії. Діагноз зрілої T-клітинної лейкемії потребує інтеграції клініки, діагностичного матеріалу й візуалізації; малий клон без відповідного фенотипу або інфільтрату може не відповідати критеріям T-LGLL.",
+          "applicability_limit": "Негативний кістковомозковий контекст і відсутність документованих вузлів у CASE010 знижують підтримку встановленої неоплазії, але повний клінічний огляд і фенотип залишаються потрібними."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 2.2026: T-Cell Large Granular Lymphocytic Leukemia",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "LGLL-1; PDF page 31; footnotes c-f",
+          "verification_status": "agent_visual_source_review",
+          "use": "Для T-LGLL NCCN вимагає морфологію LGL у мазку, достатній імунофенотип периферичної крові та оцінку T-клітинної клональності. Для безсимптомних пацієнтів із малою клональною LGL-популяцією менш як 0,5 × 10^9/л радить повторити потокову цитометрію і дослідження клональності через шість місяців; кістковий мозок особливо корисний за низької абсолютної кількості LGL.",
+          "applicability_limit": "У CASE010 наведено 5,97%, але немає абсолютної кількості LGL, повного фенотипу або LGL-морфології. Настанова підтримує саме план розмежування H1/H2 і не перетворює відсоток клону на діагноз."
+        }
+      ]
+    },
+    {
+      "id": "W4",
+      "title": "Клінічний огляд T-клітинного клону",
+      "priority": "critical",
+      "rationale": "B-симптоми, вузли, печінка/селезінка, інфекції, автоімунні захворювання, ліки й попередні інфекції визначають застосовність лабораторного результату.",
+      "discriminates": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ],
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-2",
+        "E-CAND-3",
+        "E-CAND-4",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "T-cell clones of uncertain significance. When is the rogue clone dangerous?",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
+          "year": 2025,
+          "location": "Abstract; Introduction; Work-up of T-CUS; Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "T-CUS може мати молекулярні й імунофенотипові риси T-LGLL без клінічних або лабораторних ознак T-клітинної злоякісності. Оцінка має бути мультипараметричною; один числовий поріг не розмежовує доброякісний клон і неоплазію, а персистенцію зазвичай перевіряють не менше шести місяців.",
+          "applicability_limit": "CASE010 має малу популяцію 5,97% і негативні джерельні ознаки лімфоми, але не має повного фенотипу, абсолютного LGL-count або серійного підтвердження того самого клону; тому T-CUS є робочою рамкою, а не встановленим діагнозом."
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "classification",
+          "title": "The 5th edition of the WHO Classification of Haematolymphoid Tumours: Lymphoid Neoplasms",
+          "url": "https://www.nature.com/articles/s41375-022-01620-2",
+          "year": 2022,
+          "location": "Conceptual framework; essential/desirable criteria; mature T/NK-cell leukemia entity list",
+          "verification_status": "agent_visual_source_review",
+          "use": "WHO-HAEM5 класифікує T-LGLL як окрему зрілу T-клітинну лейкемію та використовує ієрархічні визначення з essential/desirable діагностичними критеріями, поєднуючи доступну морфологію, імунофенотип і молекулярні дані.",
+          "applicability_limit": "Джерело задає класифікаційну рамку для перевірки конкретної сутності, але не дозволяє перетворити позитивний тест клональності CASE010 на діагноз T-LGLL або лімфоми."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Mature T-Cell leukemias: Challenges in Diagnosis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
+          "year": 2022,
+          "location": "Reactive versus T-cell neoplasm; Large granular lymphocytic leukemia; Making the diagnosis",
+          "verification_status": "agent_visual_source_review",
+          "use": "Виявлення T-клітинного клону не є синонімом неоплазії. Діагноз зрілої T-клітинної лейкемії потребує інтеграції клініки, діагностичного матеріалу й візуалізації; малий клон без відповідного фенотипу або інфільтрату може не відповідати критеріям T-LGLL.",
+          "applicability_limit": "Негативний кістковомозковий контекст і відсутність документованих вузлів у CASE010 знижують підтримку встановленої неоплазії, але повний клінічний огляд і фенотип залишаються потрібними."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 2.2026: T-Cell Large Granular Lymphocytic Leukemia",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "LGLL-1; PDF page 31; footnotes c-f",
+          "verification_status": "agent_visual_source_review",
+          "use": "Для T-LGLL NCCN вимагає морфологію LGL у мазку, достатній імунофенотип периферичної крові та оцінку T-клітинної клональності. Для безсимптомних пацієнтів із малою клональною LGL-популяцією менш як 0,5 × 10^9/л радить повторити потокову цитометрію і дослідження клональності через шість місяців; кістковий мозок особливо корисний за низької абсолютної кількості LGL.",
+          "applicability_limit": "У CASE010 наведено 5,97%, але немає абсолютної кількості LGL, повного фенотипу або LGL-морфології. Настанова підтримує саме план розмежування H1/H2 і не перетворює відсоток клону на діагноз."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "NCI PDQ: Large granular lymphocyte leukemia",
+          "url": "https://www.cancer.gov/types/leukemia/hp/cll-treatment-pdq",
+          "year": 2025,
+          "location": "Large granular lymphocyte leukemia; offline snapshot PDF page 3",
+          "verification_status": "agent_visual_source_review",
+          "use": "NCI PDQ описує LGL-лейкемію як індолентний стан, для якого типовими клінічними контекстами є нейтропенія, анемія, спленомегалія та ревматоїдний артрит, а T-клітинний варіант має CD2/CD3/CD8-фенотип; STAT3 трапляється лише в частині випадків і не є самодостатнім критерієм.",
+          "applicability_limit": "У CASE010 наявні гемоглобін і тромбоцити не показують цитопенії, але абсолютні нейтрофіли, клініка інфекцій, автоімунний анамнез і спленомегалія не закриті. Офлайн-знімок є доказовим оглядом, а не окремою практичною настановою."
+        }
+      ]
+    },
+    {
+      "id": "W5",
+      "title": "STAT3/STAT5B — лише якщо фенотип і клініка підтримують LGL-спектр",
+      "priority": "medium",
+      "rationale": "Мутації можуть допомогти в інтегрованій оцінці, але не є специфічним або самодостатнім підтвердженням T-LGLL.",
+      "discriminates": [
+        "H1",
+        "H2"
+      ],
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-3",
+        "E-CAND-4",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "pmid",
+          "title": "T-cell clones of uncertain significance. When is the rogue clone dangerous?",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
+          "year": 2025,
+          "location": "Abstract; Introduction; Work-up of T-CUS; Table 2",
+          "verification_status": "agent_visual_source_review",
+          "use": "T-CUS може мати молекулярні й імунофенотипові риси T-LGLL без клінічних або лабораторних ознак T-клітинної злоякісності. Оцінка має бути мультипараметричною; один числовий поріг не розмежовує доброякісний клон і неоплазію, а персистенцію зазвичай перевіряють не менше шести місяців.",
+          "applicability_limit": "CASE010 має малу популяцію 5,97% і негативні джерельні ознаки лімфоми, але не має повного фенотипу, абсолютного LGL-count або серійного підтвердження того самого клону; тому T-CUS є робочою рамкою, а не встановленим діагнозом."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Mature T-Cell leukemias: Challenges in Diagnosis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
+          "year": 2022,
+          "location": "Reactive versus T-cell neoplasm; Large granular lymphocytic leukemia; Making the diagnosis",
+          "verification_status": "agent_visual_source_review",
+          "use": "Виявлення T-клітинного клону не є синонімом неоплазії. Діагноз зрілої T-клітинної лейкемії потребує інтеграції клініки, діагностичного матеріалу й візуалізації; малий клон без відповідного фенотипу або інфільтрату може не відповідати критеріям T-LGLL.",
+          "applicability_limit": "Негативний кістковомозковий контекст і відсутність документованих вузлів у CASE010 знижують підтримку встановленої неоплазії, але повний клінічний огляд і фенотип залишаються потрібними."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 2.2026: T-Cell Large Granular Lymphocytic Leukemia",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "LGLL-1; PDF page 31; footnotes c-f",
+          "verification_status": "agent_visual_source_review",
+          "use": "Для T-LGLL NCCN вимагає морфологію LGL у мазку, достатній імунофенотип периферичної крові та оцінку T-клітинної клональності. Для безсимптомних пацієнтів із малою клональною LGL-популяцією менш як 0,5 × 10^9/л радить повторити потокову цитометрію і дослідження клональності через шість місяців; кістковий мозок особливо корисний за низької абсолютної кількості LGL.",
+          "applicability_limit": "У CASE010 наведено 5,97%, але немає абсолютної кількості LGL, повного фенотипу або LGL-морфології. Настанова підтримує саме план розмежування H1/H2 і не перетворює відсоток клону на діагноз."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "NCI PDQ: Large granular lymphocyte leukemia",
+          "url": "https://www.cancer.gov/types/leukemia/hp/cll-treatment-pdq",
+          "year": 2025,
+          "location": "Large granular lymphocyte leukemia; offline snapshot PDF page 3",
+          "verification_status": "agent_visual_source_review",
+          "use": "NCI PDQ описує LGL-лейкемію як індолентний стан, для якого типовими клінічними контекстами є нейтропенія, анемія, спленомегалія та ревматоїдний артрит, а T-клітинний варіант має CD2/CD3/CD8-фенотип; STAT3 трапляється лише в частині випадків і не є самодостатнім критерієм.",
+          "applicability_limit": "У CASE010 наявні гемоглобін і тромбоцити не показують цитопенії, але абсолютні нейтрофіли, клініка інфекцій, автоімунний анамнез і спленомегалія не закриті. Офлайн-знімок є доказовим оглядом, а не окремою практичною настановою."
+        }
+      ]
+    }
+  ],
+  "audio_briefing": {
+    "case_id": "CASE010",
+    "id": "AB-CASE010-20260813-01",
+    "title": "Коротко до консиліуму",
+    "label": "Аудіогайд",
+    "public_url": "https://v3b.fal.media/files/b/0aa622a5/lc_OhlLvZiZ-27-HlnZxD_output.mp3",
+    "mime_type": "audio/mpeg",
+    "duration_seconds": 338.207,
+    "audio_sha256": "ac54891fc54ea39b2cfdc39e2e45d94bd833e342a5d37d26b1dd359eef1558c7",
+    "source_text_sha256": "ba240f9f48ab3e4e314efb160a654f57913866c1a89ee7da2a1a843330adea2f",
+    "reasoning_revision_id": "RR-CASE010-6173a7e843b1",
+    "reasoning_revision_sha256": "7c6a319ab3916fc74a45609216460cea6cadac5ba4b509d66020ead02dcc980c",
+    "clinical_status": "candidate_pending_human_review",
+    "reverse_stt": {
+      "model": "fal-ai/elevenlabs/speech-to-text",
+      "detected_language": "ukr",
+      "language_probability": 1,
+      "critical_content_preserved": true
+    }
+  },
+  "method": {
+    "clinical_input_projection_used": true,
+    "breadth_pass_before_bundle_comparison": true,
+    "fresh_session_blinded": true,
+    "grounding_pass": true,
+    "critic_pass": true,
+    "limitations": [
+      "Клональність і відсоток 5,97% походять із джерельного висновку; первинні flow/TCR-графіки в candidate layer не відтворені.",
+      "Другий PDF містить чотири сторінки УЗ-зображень без окремого машинозчитуваного наративного висновку; агент не формував з них нові клінічні знахідки.",
+      "F007 і F013 мають OCR-шум; F007 використано лише як обмежений негативний контекст, F013 не використано для ранжування.",
+      "П'ять зовнішніх опор включають дві локальні корпусні настанови/огляди; human_verified=false, clinician acceptance pending."
+    ],
+    "controlled_run": {
+      "status": "verified",
+      "run_id": "20260813T051354022364Z-CASE010-controlled-e4bb95801eed",
+      "method_id": "HB-CONTROLLED-SYNTHESIS",
+      "method_version": "2.2.0",
+      "protocol_sha256": "e738e30ae623b36516543a9ac096fff36dd8c7266ee9fba5ce494013097e6397",
+      "critic_independent": true,
+      "unresolved_critical": 0,
+      "pass_receipts": {
+        "breadth": "6283fc95eaa2861f314d1c77104d8d38f68b222a9af8925e2e69fcf629a61eb6",
+        "grounding": "1378f2986c807ac3b483aa8aafcd9b316189f2cfa79e457d261a7d052ef5a40f",
+        "reconciliation": "3ac44c42ae64eb96bf4ced58294e193e8e05cf15dd131082eff004dbea1b09dd",
+        "critic": "e0e75b129c2060336c90f6bee6e6260c2dfc2c57e3ee97145c84c692415febd4"
+      }
+    }
+  },
+  "comparison_to_previous": [
+    {
+      "previous_id": "H1",
+      "current_id": "H1",
+      "status": "retained",
+      "reason": "Ранг не змінено; корпус підтвердив необхідність абсолютної кількості, фенотипу й серійної перевірки до будь-якого висновку."
+    },
+    {
+      "previous_id": "H2",
+      "current_id": "H2",
+      "status": "retained",
+      "reason": "NCCN LGLL-1 посилив конкретність плану перевірки низькоклітинної T-LGLL, але не дав підстав підвищити її ранг."
+    },
+    {
+      "previous_id": "H3",
+      "current_id": "H3",
+      "status": "retained",
+      "reason": "Реактивна LGL-експансія залишається окремою альтернативою; NCCN прямо вимагає її виключати."
+    },
+    {
+      "previous_id": "H4",
+      "current_id": "H4",
+      "status": "retained",
+      "reason": "Must-not-miss гілка збережена з низькою поточною підтримкою і без розширення до лікувальної рекомендації."
+    },
+    {
+      "previous_id": "H5",
+      "current_id": "H5",
+      "status": "unchanged",
+      "reason": "Корпусний пошук T-клітинної гілки не додає підстав причинно пов'язувати консолідований перелом із клоном."
+    },
+    {
+      "previous_id": "H6",
+      "current_id": "H6",
+      "status": "unchanged",
+      "reason": "Корпусний пошук T-клітинної гілки не змінює окрему неузгодженість щодо динаміки мікроаденоми."
+    }
+  ],
+  "safety": {
+    "candidate_only": true,
+    "diagnosis_not_established": true,
+    "treatment_directives_present": false,
+    "limitations": [
+      "Результат готує структурований пакет до рішення лікаря й не встановлює T-CUS, T-LGLL або лімфому.",
+      "Провідний ранг H1 залежить від повного фенотипу, абсолютної кількості й серійного підтвердження клону.",
+      "Лише записане рішення лікаря може прийняти, виправити, відхилити або відкласти кандидат."
+    ]
+  },
+  "use_limit": "Результат готує структурований пакет до рішення лікаря й не встановлює T-CUS, T-LGLL або лімфому. Провідний ранг H1 залежить від повного фенотипу, абсолютної кількості й серійного підтвердження клону. Лише записане рішення лікаря може прийняти, виправити, відхилити або відкласти кандидат."
+}

@@ -60,6 +60,26 @@
         "language_probability": 1.0,
         "critical_content_preserved": true
       }
+    },
+    {
+      "case_id": "CASE010",
+      "id": "AB-CASE010-20260813-01",
+      "title": "Коротко до консиліуму",
+      "label": "Аудіогайд",
+      "public_url": "https://v3b.fal.media/files/b/0aa622a5/lc_OhlLvZiZ-27-HlnZxD_output.mp3",
+      "mime_type": "audio/mpeg",
+      "duration_seconds": 338.207,
+      "audio_sha256": "ac54891fc54ea39b2cfdc39e2e45d94bd833e342a5d37d26b1dd359eef1558c7",
+      "source_text_sha256": "ba240f9f48ab3e4e314efb160a654f57913866c1a89ee7da2a1a843330adea2f",
+      "reasoning_revision_id": "RR-CASE010-6173a7e843b1",
+      "reasoning_revision_sha256": "7c6a319ab3916fc74a45609216460cea6cadac5ba4b509d66020ead02dcc980c",
+      "clinical_status": "candidate_pending_human_review",
+      "reverse_stt": {
+        "model": "fal-ai/elevenlabs/speech-to-text",
+        "detected_language": "ukr",
+        "language_probability": 1.0,
+        "critical_content_preserved": true
+      }
     }
   ]
 }
