@@ -14,7 +14,7 @@
     "clinical_input_sha256": "9c6bf91da1ab3cdc1e0b7dfcf15e3007bb176517abcb5b2f559b1ca7e2f457a5",
     "evidence_review_status": "pass",
     "evidence_review_modes": [
-      false
+      "agent_text_source_review"
     ],
     "evidence_review_binding": "embedded",
     "source_date_context_schema": "hematoboard.source_date_context/1.0",
@@ -1352,7 +1352,7 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
       "year": 2025,
       "location": "Abstract; Introduction",
-      "verification_status": false,
+      "verification_status": "agent_text_source_review",
       "use": "T-CUS описує персистентні T-LGL клони з рисами T-LGLL без клінічних або лабораторних ознак T-злоякісності. Один числовий поріг не розмежовує доброякісний клон і неоплазію; офіційних настанов з ведення T-CUS немає.",
       "applicability_limit": "Пакет має 5,97% і індолентний опис, але не має фенотипу, абсолютного LGL-count і доведеної персистенції того самого клону."
     },
@@ -1363,7 +1363,7 @@
       "url": "https://www.nature.com/articles/s41375-022-01620-2",
       "year": 2022,
       "location": "Mature T/NK-cell leukemia entity list; p.6",
-      "verification_status": false,
+      "verification_status": "agent_text_source_review",
       "use": "WHO-HAEM5 виділяє T-LGLL як окрему зрілу T-клітинну лейкемію з ієрархією essential/desirable критеріїв.",
       "applicability_limit": "Класифікація не перетворює позитивний тест клональності на діагноз T-LGLL."
     },
@@ -1374,7 +1374,7 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
       "year": 2022,
       "location": "Differential for a clonal T-cell population; Introduction",
-      "verification_status": false,
+      "verification_status": "agent_text_source_review",
       "use": "T-клітинний клон у крові не є синонімом неоплазії. Діагноз зрілої T-лейкемії потребує інтеграції клініки, морфології, фенотипу, молекулярних даних і радіології.",
       "applicability_limit": "Негативний мозок і вузли послаблюють установлену неоплазію, але не замінюють повний огляд і фенотип."
     },
@@ -1385,7 +1385,7 @@
       "url": "https://www.nccn.org/guidelines/category_1",
       "year": 2026,
       "location": "LGLL-1; PDF page 31; footnotes c-f",
-      "verification_status": false,
+      "verification_status": "agent_text_source_review",
       "use": "NCCN LGLL-1 вимагає мазок на LGL, імунофенотип периферичної крові й оцінку T-клональності. Для безсимптомної малої клональної LGL <0,5×10^9/л треба повторити flow і клональність через шість місяців і виключити реактивну LGL-цитозу.",
       "applicability_limit": "Відсоток клону не замінює абсолютну кількість LGL. Вузол Indication for Treatment не використано."
     }
@@ -1624,7 +1624,7 @@
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
           "year": 2025,
           "location": "Abstract; Introduction",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "T-CUS описує персистентні T-LGL клони з рисами T-LGLL без клінічних або лабораторних ознак T-злоякісності. Один числовий поріг не розмежовує доброякісний клон і неоплазію; офіційних настанов з ведення T-CUS немає.",
           "applicability_limit": "Пакет має 5,97% і індолентний опис, але не має фенотипу, абсолютного LGL-count і доведеної персистенції того самого клону."
         },
@@ -1635,7 +1635,7 @@
           "url": "https://www.nature.com/articles/s41375-022-01620-2",
           "year": 2022,
           "location": "Mature T/NK-cell leukemia entity list; p.6",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "WHO-HAEM5 виділяє T-LGLL як окрему зрілу T-клітинну лейкемію з ієрархією essential/desirable критеріїв.",
           "applicability_limit": "Класифікація не перетворює позитивний тест клональності на діагноз T-LGLL."
         },
@@ -1646,7 +1646,7 @@
           "url": "https://www.nccn.org/guidelines/category_1",
           "year": 2026,
           "location": "LGLL-1; PDF page 31; footnotes c-f",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "NCCN LGLL-1 вимагає мазок на LGL, імунофенотип периферичної крові й оцінку T-клональності. Для безсимптомної малої клональної LGL <0,5×10^9/л треба повторити flow і клональність через шість місяців і виключити реактивну LGL-цитозу.",
           "applicability_limit": "Відсоток клону не замінює абсолютну кількість LGL. Вузол Indication for Treatment не використано."
         }
@@ -1667,7 +1667,7 @@
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
           "year": 2025,
           "location": "Abstract; Introduction",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "T-CUS описує персистентні T-LGL клони з рисами T-LGLL без клінічних або лабораторних ознак T-злоякісності. Один числовий поріг не розмежовує доброякісний клон і неоплазію; офіційних настанов з ведення T-CUS немає.",
           "applicability_limit": "Пакет має 5,97% і індолентний опис, але не має фенотипу, абсолютного LGL-count і доведеної персистенції того самого клону."
         },
@@ -1678,7 +1678,7 @@
           "url": "https://www.nccn.org/guidelines/category_1",
           "year": 2026,
           "location": "LGLL-1; PDF page 31; footnotes c-f",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "NCCN LGLL-1 вимагає мазок на LGL, імунофенотип периферичної крові й оцінку T-клональності. Для безсимптомної малої клональної LGL <0,5×10^9/л треба повторити flow і клональність через шість місяців і виключити реактивну LGL-цитозу.",
           "applicability_limit": "Відсоток клону не замінює абсолютну кількість LGL. Вузол Indication for Treatment не використано."
         }
@@ -1700,7 +1700,7 @@
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
           "year": 2025,
           "location": "Abstract; Introduction",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "T-CUS описує персистентні T-LGL клони з рисами T-LGLL без клінічних або лабораторних ознак T-злоякісності. Один числовий поріг не розмежовує доброякісний клон і неоплазію; офіційних настанов з ведення T-CUS немає.",
           "applicability_limit": "Пакет має 5,97% і індолентний опис, але не має фенотипу, абсолютного LGL-count і доведеної персистенції того самого клону."
         },
@@ -1711,7 +1711,7 @@
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
           "year": 2022,
           "location": "Differential for a clonal T-cell population; Introduction",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "T-клітинний клон у крові не є синонімом неоплазії. Діагноз зрілої T-лейкемії потребує інтеграції клініки, морфології, фенотипу, молекулярних даних і радіології.",
           "applicability_limit": "Негативний мозок і вузли послаблюють установлену неоплазію, але не замінюють повний огляд і фенотип."
         },
@@ -1722,7 +1722,7 @@
           "url": "https://www.nccn.org/guidelines/category_1",
           "year": 2026,
           "location": "LGLL-1; PDF page 31; footnotes c-f",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "NCCN LGLL-1 вимагає мазок на LGL, імунофенотип периферичної крові й оцінку T-клональності. Для безсимптомної малої клональної LGL <0,5×10^9/л треба повторити flow і клональність через шість місяців і виключити реактивну LGL-цитозу.",
           "applicability_limit": "Відсоток клону не замінює абсолютну кількість LGL. Вузол Indication for Treatment не використано."
         }
@@ -1744,7 +1744,7 @@
           "url": "https://www.nature.com/articles/s41375-022-01620-2",
           "year": 2022,
           "location": "Mature T/NK-cell leukemia entity list; p.6",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "WHO-HAEM5 виділяє T-LGLL як окрему зрілу T-клітинну лейкемію з ієрархією essential/desirable критеріїв.",
           "applicability_limit": "Класифікація не перетворює позитивний тест клональності на діагноз T-LGLL."
         },
@@ -1755,7 +1755,7 @@
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
           "year": 2022,
           "location": "Differential for a clonal T-cell population; Introduction",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "T-клітинний клон у крові не є синонімом неоплазії. Діагноз зрілої T-лейкемії потребує інтеграції клініки, морфології, фенотипу, молекулярних даних і радіології.",
           "applicability_limit": "Негативний мозок і вузли послаблюють установлену неоплазію, але не замінюють повний огляд і фенотип."
         },
@@ -1766,7 +1766,7 @@
           "url": "https://www.nccn.org/guidelines/category_1",
           "year": 2026,
           "location": "LGLL-1; PDF page 31; footnotes c-f",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "NCCN LGLL-1 вимагає мазок на LGL, імунофенотип периферичної крові й оцінку T-клональності. Для безсимптомної малої клональної LGL <0,5×10^9/л треба повторити flow і клональність через шість місяців і виключити реактивну LGL-цитозу.",
           "applicability_limit": "Відсоток клону не замінює абсолютну кількість LGL. Вузол Indication for Treatment не використано."
         }
@@ -1797,7 +1797,7 @@
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
           "year": 2022,
           "location": "Differential for a clonal T-cell population; Introduction",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "T-клітинний клон у крові не є синонімом неоплазії. Діагноз зрілої T-лейкемії потребує інтеграції клініки, морфології, фенотипу, молекулярних даних і радіології.",
           "applicability_limit": "Негативний мозок і вузли послаблюють установлену неоплазію, але не замінюють повний огляд і фенотип."
         },
@@ -1808,7 +1808,7 @@
           "url": "https://www.nccn.org/guidelines/category_1",
           "year": 2026,
           "location": "LGLL-1; PDF page 31; footnotes c-f",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "NCCN LGLL-1 вимагає мазок на LGL, імунофенотип периферичної крові й оцінку T-клональності. Для безсимптомної малої клональної LGL <0,5×10^9/л треба повторити flow і клональність через шість місяців і виключити реактивну LGL-цитозу.",
           "applicability_limit": "Відсоток клону не замінює абсолютну кількість LGL. Вузол Indication for Treatment не використано."
         }
@@ -1838,7 +1838,7 @@
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
           "year": 2025,
           "location": "Abstract; Introduction",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "T-CUS описує персистентні T-LGL клони з рисами T-LGLL без клінічних або лабораторних ознак T-злоякісності. Один числовий поріг не розмежовує доброякісний клон і неоплазію; офіційних настанов з ведення T-CUS немає.",
           "applicability_limit": "Пакет має 5,97% і індолентний опис, але не має фенотипу, абсолютного LGL-count і доведеної персистенції того самого клону."
         },
@@ -1849,7 +1849,7 @@
           "url": "https://www.nature.com/articles/s41375-022-01620-2",
           "year": 2022,
           "location": "Mature T/NK-cell leukemia entity list; p.6",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "WHO-HAEM5 виділяє T-LGLL як окрему зрілу T-клітинну лейкемію з ієрархією essential/desirable критеріїв.",
           "applicability_limit": "Класифікація не перетворює позитивний тест клональності на діагноз T-LGLL."
         },
@@ -1860,7 +1860,7 @@
           "url": "https://www.nccn.org/guidelines/category_1",
           "year": 2026,
           "location": "LGLL-1; PDF page 31; footnotes c-f",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "NCCN LGLL-1 вимагає мазок на LGL, імунофенотип периферичної крові й оцінку T-клональності. Для безсимптомної малої клональної LGL <0,5×10^9/л треба повторити flow і клональність через шість місяців і виключити реактивну LGL-цитозу.",
           "applicability_limit": "Відсоток клону не замінює абсолютну кількість LGL. Вузол Indication for Treatment не використано."
         }
@@ -1888,7 +1888,7 @@
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
           "year": 2025,
           "location": "Abstract; Introduction",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "T-CUS описує персистентні T-LGL клони з рисами T-LGLL без клінічних або лабораторних ознак T-злоякісності. Один числовий поріг не розмежовує доброякісний клон і неоплазію; офіційних настанов з ведення T-CUS немає.",
           "applicability_limit": "Пакет має 5,97% і індолентний опис, але не має фенотипу, абсолютного LGL-count і доведеної персистенції того самого клону."
         },
@@ -1899,7 +1899,7 @@
           "url": "https://www.nccn.org/guidelines/category_1",
           "year": 2026,
           "location": "LGLL-1; PDF page 31; footnotes c-f",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "NCCN LGLL-1 вимагає мазок на LGL, імунофенотип периферичної крові й оцінку T-клональності. Для безсимптомної малої клональної LGL <0,5×10^9/л треба повторити flow і клональність через шість місяців і виключити реактивну LGL-цитозу.",
           "applicability_limit": "Відсоток клону не замінює абсолютну кількість LGL. Вузол Indication for Treatment не використано."
         }
@@ -1929,7 +1929,7 @@
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11694120/",
           "year": 2025,
           "location": "Abstract; Introduction",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "T-CUS описує персистентні T-LGL клони з рисами T-LGLL без клінічних або лабораторних ознак T-злоякісності. Один числовий поріг не розмежовує доброякісний клон і неоплазію; офіційних настанов з ведення T-CUS немає.",
           "applicability_limit": "Пакет має 5,97% і індолентний опис, але не має фенотипу, абсолютного LGL-count і доведеної персистенції того самого клону."
         },
@@ -1940,7 +1940,7 @@
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
           "year": 2022,
           "location": "Differential for a clonal T-cell population; Introduction",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "T-клітинний клон у крові не є синонімом неоплазії. Діагноз зрілої T-лейкемії потребує інтеграції клініки, морфології, фенотипу, молекулярних даних і радіології.",
           "applicability_limit": "Негативний мозок і вузли послаблюють установлену неоплазію, але не замінюють повний огляд і фенотип."
         },
@@ -1951,7 +1951,7 @@
           "url": "https://www.nccn.org/guidelines/category_1",
           "year": 2026,
           "location": "LGLL-1; PDF page 31; footnotes c-f",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "NCCN LGLL-1 вимагає мазок на LGL, імунофенотип периферичної крові й оцінку T-клональності. Для безсимптомної малої клональної LGL <0,5×10^9/л треба повторити flow і клональність через шість місяців і виключити реактивну LGL-цитозу.",
           "applicability_limit": "Відсоток клону не замінює абсолютну кількість LGL. Вузол Indication for Treatment не використано."
         }
@@ -1978,7 +1978,7 @@
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8961294/",
           "year": 2022,
           "location": "Differential for a clonal T-cell population; Introduction",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "T-клітинний клон у крові не є синонімом неоплазії. Діагноз зрілої T-лейкемії потребує інтеграції клініки, морфології, фенотипу, молекулярних даних і радіології.",
           "applicability_limit": "Негативний мозок і вузли послаблюють установлену неоплазію, але не замінюють повний огляд і фенотип."
         },
@@ -1989,7 +1989,7 @@
           "url": "https://www.nccn.org/guidelines/category_1",
           "year": 2026,
           "location": "LGLL-1; PDF page 31; footnotes c-f",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "NCCN LGLL-1 вимагає мазок на LGL, імунофенотип периферичної крові й оцінку T-клональності. Для безсимптомної малої клональної LGL <0,5×10^9/л треба повторити flow і клональність через шість місяців і виключити реактивну LGL-цитозу.",
           "applicability_limit": "Відсоток клону не замінює абсолютну кількість LGL. Вузол Indication for Treatment не використано."
         }

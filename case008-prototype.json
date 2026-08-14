@@ -14,7 +14,7 @@
     "clinical_input_sha256": "bc0cc6b9861b5aa1619de2804906e4224b11262baddaed43846f1d8af21fc045",
     "evidence_review_status": "pass",
     "evidence_review_modes": [
-      false
+      "agent_text_source_review"
     ],
     "evidence_review_binding": "embedded",
     "source_date_context_schema": "hematoboard.source_date_context/1.0",
@@ -1489,7 +1489,7 @@
       "url": "https://acsearch.acr.org/docs/69484/Narrative/",
       "year": 2026,
       "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
-      "verification_status": false,
+      "verification_status": "agent_text_source_review",
       "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
       "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
     },
@@ -1500,7 +1500,7 @@
       "url": "https://doi.org/10.1093/neuonc/nox166",
       "year": 2018,
       "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 df85fdc9d4e02110fa60f474dfc217177a69ac82604baaa0fd60e9882701bda7",
-      "verification_status": false,
+      "verification_status": "agent_text_source_review",
       "use": "EANO підтримує МР-оцінку та профільний нейрохірургічний маршрут; класифікація епендимальної пухлини потребує тканинної верифікації.",
       "applicability_limit": "У CASE008 немає тканинного діагнозу, тому рекомендації не підтверджують епендимому автоматично."
     },
@@ -1511,7 +1511,7 @@
       "url": "https://doi.org/10.5114/pjr/192424",
       "year": 2024,
       "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
-      "verification_status": false,
+      "verification_status": "agent_text_source_review",
       "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
       "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
     },
@@ -1522,7 +1522,7 @@
       "url": "https://doi.org/10.3174/ajnr.A3526",
       "year": 2013,
       "location": "PubMed/MEDLINE exact text artifact, abstract Results and Conclusions; exact bytes SHA-256 4a91eb96a225f8235f89eeb1eb851b3729fd0fd8176d8db96ad214c22b0bd0b8",
-      "verification_status": false,
+      "verification_status": "agent_text_source_review",
       "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
       "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
     },
@@ -1533,7 +1533,7 @@
       "url": "https://doi.org/10.1007/s10143-018-0957-x",
       "year": 2019,
       "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
-      "verification_status": false,
+      "verification_status": "agent_text_source_review",
       "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
       "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
     }
@@ -1810,7 +1810,7 @@
           "url": "https://acsearch.acr.org/docs/69484/Narrative/",
           "year": 2026,
           "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
           "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
         },
@@ -1821,7 +1821,7 @@
           "url": "https://doi.org/10.1007/s10143-018-0957-x",
           "year": 2019,
           "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
           "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
@@ -1842,7 +1842,7 @@
           "url": "https://doi.org/10.5114/pjr/192424",
           "year": 2024,
           "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
           "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
         },
@@ -1853,7 +1853,7 @@
           "url": "https://doi.org/10.3174/ajnr.A3526",
           "year": 2013,
           "location": "PubMed/MEDLINE exact text artifact, abstract Results and Conclusions; exact bytes SHA-256 4a91eb96a225f8235f89eeb1eb851b3729fd0fd8176d8db96ad214c22b0bd0b8",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
           "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
         }
@@ -1875,7 +1875,7 @@
           "url": "https://acsearch.acr.org/docs/69484/Narrative/",
           "year": 2026,
           "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
           "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
         },
@@ -1886,7 +1886,7 @@
           "url": "https://doi.org/10.5114/pjr/192424",
           "year": 2024,
           "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
           "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
         },
@@ -1897,7 +1897,7 @@
           "url": "https://doi.org/10.1007/s10143-018-0957-x",
           "year": 2019,
           "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
           "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
@@ -1917,7 +1917,7 @@
           "url": "https://doi.org/10.3174/ajnr.A3526",
           "year": 2013,
           "location": "PubMed/MEDLINE exact text artifact, abstract Results and Conclusions; exact bytes SHA-256 4a91eb96a225f8235f89eeb1eb851b3729fd0fd8176d8db96ad214c22b0bd0b8",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
           "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
         }
@@ -1937,7 +1937,7 @@
           "url": "https://doi.org/10.3174/ajnr.A3526",
           "year": 2013,
           "location": "PubMed/MEDLINE exact text artifact, abstract Results and Conclusions; exact bytes SHA-256 4a91eb96a225f8235f89eeb1eb851b3729fd0fd8176d8db96ad214c22b0bd0b8",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
           "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
         }
@@ -1959,7 +1959,7 @@
           "url": "https://acsearch.acr.org/docs/69484/Narrative/",
           "year": 2026,
           "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
           "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
         },
@@ -1970,7 +1970,7 @@
           "url": "https://doi.org/10.5114/pjr/192424",
           "year": 2024,
           "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
           "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
         },
@@ -1981,7 +1981,7 @@
           "url": "https://doi.org/10.1007/s10143-018-0957-x",
           "year": 2019,
           "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
           "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
@@ -2014,7 +2014,7 @@
           "url": "https://acsearch.acr.org/docs/69484/Narrative/",
           "year": 2026,
           "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
           "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
         },
@@ -2025,7 +2025,7 @@
           "url": "https://doi.org/10.1007/s10143-018-0957-x",
           "year": 2019,
           "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
           "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
@@ -2058,7 +2058,7 @@
           "url": "https://acsearch.acr.org/docs/69484/Narrative/",
           "year": 2026,
           "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
           "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
         },
@@ -2069,7 +2069,7 @@
           "url": "https://doi.org/10.5114/pjr/192424",
           "year": 2024,
           "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
           "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
         },
@@ -2080,7 +2080,7 @@
           "url": "https://doi.org/10.3174/ajnr.A3526",
           "year": 2013,
           "location": "PubMed/MEDLINE exact text artifact, abstract Results and Conclusions; exact bytes SHA-256 4a91eb96a225f8235f89eeb1eb851b3729fd0fd8176d8db96ad214c22b0bd0b8",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
           "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
         },
@@ -2091,7 +2091,7 @@
           "url": "https://doi.org/10.1007/s10143-018-0957-x",
           "year": 2019,
           "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
           "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
@@ -2118,7 +2118,7 @@
           "url": "https://doi.org/10.3174/ajnr.A3526",
           "year": 2013,
           "location": "PubMed/MEDLINE exact text artifact, abstract Results and Conclusions; exact bytes SHA-256 4a91eb96a225f8235f89eeb1eb851b3729fd0fd8176d8db96ad214c22b0bd0b8",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
           "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
         }
@@ -2150,7 +2150,7 @@
           "url": "https://doi.org/10.1093/neuonc/nox166",
           "year": 2018,
           "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 df85fdc9d4e02110fa60f474dfc217177a69ac82604baaa0fd60e9882701bda7",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "EANO підтримує МР-оцінку та профільний нейрохірургічний маршрут; класифікація епендимальної пухлини потребує тканинної верифікації.",
           "applicability_limit": "У CASE008 немає тканинного діагнозу, тому рекомендації не підтверджують епендимому автоматично."
         },
@@ -2161,7 +2161,7 @@
           "url": "https://doi.org/10.5114/pjr/192424",
           "year": 2024,
           "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
           "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
         },
@@ -2172,7 +2172,7 @@
           "url": "https://doi.org/10.1007/s10143-018-0957-x",
           "year": 2019,
           "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
           "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
@@ -2201,7 +2201,7 @@
           "url": "https://acsearch.acr.org/docs/69484/Narrative/",
           "year": 2026,
           "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
           "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
         },
@@ -2212,7 +2212,7 @@
           "url": "https://doi.org/10.5114/pjr/192424",
           "year": 2024,
           "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
           "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
         },
@@ -2223,7 +2223,7 @@
           "url": "https://doi.org/10.1007/s10143-018-0957-x",
           "year": 2019,
           "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
           "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }

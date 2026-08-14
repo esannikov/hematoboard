@@ -1,6 +1,6 @@
 {
   "schema_version": "hematoboard.public-release-authenticity/2.0.0",
-  "generated_at": "2026-08-14T20:17:26.616Z",
+  "generated_at": "2026-08-14T20:26:50.941Z",
   "fixture_schema": "hematoboard.public-dashboard-fixture/2.1.0",
   "cases": {
     "case006": {
@@ -60,7 +60,7 @@
       "clinical_input_sha256": "bc0cc6b9861b5aa1619de2804906e4224b11262baddaed43846f1d8af21fc045",
       "evidence_review_status": "pass",
       "evidence_review_modes": [
-        false
+        "agent_text_source_review"
       ],
       "evidence_review_binding": "embedded",
       "source_date_context_schema": "hematoboard.source_date_context/1.0",
@@ -81,7 +81,7 @@
       "clinical_input_sha256": "234d300e3c018cddd42496d2e711e77d32dd540c3194465c61f808dc7a45df51",
       "evidence_review_status": "pass",
       "evidence_review_modes": [
-        false
+        "agent_text_source_review"
       ],
       "evidence_review_binding": "embedded",
       "source_date_context_schema": "hematoboard.source_date_context/1.0",
@@ -123,7 +123,7 @@
       "clinical_input_sha256": "9c6bf91da1ab3cdc1e0b7dfcf15e3007bb176517abcb5b2f559b1ca7e2f457a5",
       "evidence_review_status": "pass",
       "evidence_review_modes": [
-        false
+        "agent_text_source_review"
       ],
       "evidence_review_binding": "embedded",
       "source_date_context_schema": "hematoboard.source_date_context/1.0",
