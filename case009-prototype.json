@@ -14,7 +14,7 @@
     "clinical_input_sha256": "234d300e3c018cddd42496d2e711e77d32dd540c3194465c61f808dc7a45df51",
     "evidence_review_status": "pass",
     "evidence_review_modes": [
-      false
+      "agent_text_source_review"
     ],
     "evidence_review_binding": "embedded",
     "source_date_context_schema": "hematoboard.source_date_context/1.0",
@@ -2399,7 +2399,7 @@
       "url": "https://doi.org/10.1007/s00428-022-03480-8",
       "year": 2023,
       "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-      "verification_status": false,
+      "verification_status": "agent_text_source_review",
       "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
       "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
     },
@@ -2410,7 +2410,7 @@
       "url": "https://doi.org/10.1007/s00277-025-06191-7",
       "year": 2024,
       "location": "PDF pages 1-4; printed pages 295-298; sections Diagnostic criteria and terminology and How do we define and diagnose pre-PMF?",
-      "verification_status": false,
+      "verification_status": "agent_text_source_review",
       "use": "Німецька експертна група рекомендує інтегровано зіставляти клініку, лабораторні, генетичні та гістопатологічні дані й використовувати референсний морфологічний перегляд для зменшення помилкової класифікації pre-PMF, ET і PV.",
       "applicability_limit": "Джерело прямо релевантне двом суперечливим описам CASE009, але не є незалежним переглядом її препаратів і не замінює case-specific consensus."
     },
@@ -2421,7 +2421,7 @@
       "url": "https://doi.org/10.1093/eurheartj/ehac237",
       "year": 2022,
       "location": "PDF pages 26, 29-30, 33 and 77-78; sections 5.1.5-5.1.6, 5.1.12.1, 5.2.3 and 10.1",
-      "verification_status": false,
+      "verification_status": "agent_text_source_review",
       "use": "Настанова ESC/ERS пояснює, що КТ та ехокардіографія лише формують ознаки або ймовірність легеневої гіпертензії; підтвердження й класифікація потребують профільної оцінки, а V/Q-сканування використовується для пошуку CTEPH.",
       "applicability_limit": "У CASE009 є лише записана КТ-ознака без симптомів, ехокардіографії, гемодинаміки або доказу хронічного тромбу; джерело відкриває перевірочну гілку, але не підтверджує PH чи CTEPH і не визначає індивідуальну терміновість."
     }
@@ -2625,7 +2625,7 @@
           "url": "https://doi.org/10.1007/s00428-022-03480-8",
           "year": 2023,
           "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
           "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
         },
@@ -2636,7 +2636,7 @@
           "url": "https://doi.org/10.1007/s00277-025-06191-7",
           "year": 2024,
           "location": "PDF pages 1-4; printed pages 295-298; sections Diagnostic criteria and terminology and How do we define and diagnose pre-PMF?",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Німецька експертна група рекомендує інтегровано зіставляти клініку, лабораторні, генетичні та гістопатологічні дані й використовувати референсний морфологічний перегляд для зменшення помилкової класифікації pre-PMF, ET і PV.",
           "applicability_limit": "Джерело прямо релевантне двом суперечливим описам CASE009, але не є незалежним переглядом її препаратів і не замінює case-specific consensus."
         }
@@ -2656,7 +2656,7 @@
           "url": "https://doi.org/10.1007/s00428-022-03480-8",
           "year": 2023,
           "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
           "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
         }
@@ -2676,7 +2676,7 @@
           "url": "https://doi.org/10.1007/s00428-022-03480-8",
           "year": 2023,
           "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
           "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
         }
@@ -2696,7 +2696,7 @@
           "url": "https://doi.org/10.1007/s00428-022-03480-8",
           "year": 2023,
           "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
           "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
         }
@@ -2716,7 +2716,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac237",
           "year": 2022,
           "location": "PDF pages 26, 29-30, 33 and 77-78; sections 5.1.5-5.1.6, 5.1.12.1, 5.2.3 and 10.1",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Настанова ESC/ERS пояснює, що КТ та ехокардіографія лише формують ознаки або ймовірність легеневої гіпертензії; підтвердження й класифікація потребують профільної оцінки, а V/Q-сканування використовується для пошуку CTEPH.",
           "applicability_limit": "У CASE009 є лише записана КТ-ознака без симптомів, ехокардіографії, гемодинаміки або доказу хронічного тромбу; джерело відкриває перевірочну гілку, але не підтверджує PH чи CTEPH і не визначає індивідуальну терміновість."
         }
@@ -2737,7 +2737,7 @@
           "url": "https://doi.org/10.1007/s00428-022-03480-8",
           "year": 2023,
           "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
           "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
         },
@@ -2748,7 +2748,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac237",
           "year": 2022,
           "location": "PDF pages 26, 29-30, 33 and 77-78; sections 5.1.5-5.1.6, 5.1.12.1, 5.2.3 and 10.1",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Настанова ESC/ERS пояснює, що КТ та ехокардіографія лише формують ознаки або ймовірність легеневої гіпертензії; підтвердження й класифікація потребують профільної оцінки, а V/Q-сканування використовується для пошуку CTEPH.",
           "applicability_limit": "У CASE009 є лише записана КТ-ознака без симптомів, ехокардіографії, гемодинаміки або доказу хронічного тромбу; джерело відкриває перевірочну гілку, але не підтверджує PH чи CTEPH і не визначає індивідуальну терміновість."
         }
@@ -2769,7 +2769,7 @@
           "url": "https://doi.org/10.1007/s00428-022-03480-8",
           "year": 2023,
           "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
           "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
         },
@@ -2780,7 +2780,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac237",
           "year": 2022,
           "location": "PDF pages 26, 29-30, 33 and 77-78; sections 5.1.5-5.1.6, 5.1.12.1, 5.2.3 and 10.1",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Настанова ESC/ERS пояснює, що КТ та ехокардіографія лише формують ознаки або ймовірність легеневої гіпертензії; підтвердження й класифікація потребують профільної оцінки, а V/Q-сканування використовується для пошуку CTEPH.",
           "applicability_limit": "У CASE009 є лише записана КТ-ознака без симптомів, ехокардіографії, гемодинаміки або доказу хронічного тромбу; джерело відкриває перевірочну гілку, але не підтверджує PH чи CTEPH і не визначає індивідуальну терміновість."
         }
@@ -2811,7 +2811,7 @@
           "url": "https://doi.org/10.1007/s00428-022-03480-8",
           "year": 2023,
           "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
           "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
         },
@@ -2822,7 +2822,7 @@
           "url": "https://doi.org/10.1007/s00277-025-06191-7",
           "year": 2024,
           "location": "PDF pages 1-4; printed pages 295-298; sections Diagnostic criteria and terminology and How do we define and diagnose pre-PMF?",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Німецька експертна група рекомендує інтегровано зіставляти клініку, лабораторні, генетичні та гістопатологічні дані й використовувати референсний морфологічний перегляд для зменшення помилкової класифікації pre-PMF, ET і PV.",
           "applicability_limit": "Джерело прямо релевантне двом суперечливим описам CASE009, але не є незалежним переглядом її препаратів і не замінює case-specific consensus."
         }
@@ -2851,7 +2851,7 @@
           "url": "https://doi.org/10.1007/s00428-022-03480-8",
           "year": 2023,
           "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
           "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
         }
@@ -2877,7 +2877,7 @@
           "url": "https://doi.org/10.1007/s00428-022-03480-8",
           "year": 2023,
           "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
           "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
         }
@@ -2904,7 +2904,7 @@
           "url": "https://doi.org/10.1007/s00428-022-03480-8",
           "year": 2023,
           "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
           "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
         }
@@ -2933,7 +2933,7 @@
           "url": "https://doi.org/10.1007/s00428-022-03480-8",
           "year": 2023,
           "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
           "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
         }
@@ -2958,7 +2958,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac237",
           "year": 2022,
           "location": "PDF pages 26, 29-30, 33 and 77-78; sections 5.1.5-5.1.6, 5.1.12.1, 5.2.3 and 10.1",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Настанова ESC/ERS пояснює, що КТ та ехокардіографія лише формують ознаки або ймовірність легеневої гіпертензії; підтвердження й класифікація потребують профільної оцінки, а V/Q-сканування використовується для пошуку CTEPH.",
           "applicability_limit": "У CASE009 є лише записана КТ-ознака без симптомів, ехокардіографії, гемодинаміки або доказу хронічного тромбу; джерело відкриває перевірочну гілку, але не підтверджує PH чи CTEPH і не визначає індивідуальну терміновість."
         }
@@ -2983,7 +2983,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac237",
           "year": 2022,
           "location": "PDF pages 26, 29-30, 33 and 77-78; sections 5.1.5-5.1.6, 5.1.12.1, 5.2.3 and 10.1",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Настанова ESC/ERS пояснює, що КТ та ехокардіографія лише формують ознаки або ймовірність легеневої гіпертензії; підтвердження й класифікація потребують профільної оцінки, а V/Q-сканування використовується для пошуку CTEPH.",
           "applicability_limit": "У CASE009 є лише записана КТ-ознака без симптомів, ехокардіографії, гемодинаміки або доказу хронічного тромбу; джерело відкриває перевірочну гілку, але не підтверджує PH чи CTEPH і не визначає індивідуальну терміновість."
         }
@@ -3011,7 +3011,7 @@
           "url": "https://doi.org/10.1007/s00428-022-03480-8",
           "year": 2023,
           "location": "PDF pages 4, 6, 8 and 12; printed pages 56, 58, 60 and 64; Tables 2-5 and sections Essential thrombocythemia, Primary myelofibrosis, Polycythemia vera, MPN-U",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Міжнародна консенсусна класифікація розмежовує префібротичний первинний мієлофіброз, есенціальну тромбоцитемію, поліцитемію та MPN-U за сукупністю крові, специфічної морфології, клональності, малих критеріїв і формальних виключень.",
           "applicability_limit": "У CASE009 є JAK2 V617F та ознаки мієлопроліферативного процесу, але морфологічні висновки розходяться, а частина критеріїв і виключень відсутня; класифікація не встановлює підтип автоматично."
         },
@@ -3022,7 +3022,7 @@
           "url": "https://doi.org/10.1093/eurheartj/ehac237",
           "year": 2022,
           "location": "PDF pages 26, 29-30, 33 and 77-78; sections 5.1.5-5.1.6, 5.1.12.1, 5.2.3 and 10.1",
-          "verification_status": false,
+          "verification_status": "agent_text_source_review",
           "use": "Настанова ESC/ERS пояснює, що КТ та ехокардіографія лише формують ознаки або ймовірність легеневої гіпертензії; підтвердження й класифікація потребують профільної оцінки, а V/Q-сканування використовується для пошуку CTEPH.",
           "applicability_limit": "У CASE009 є лише записана КТ-ознака без симптомів, ехокардіографії, гемодинаміки або доказу хронічного тромбу; джерело відкриває перевірочну гілку, але не підтверджує PH чи CTEPH і не визначає індивідуальну терміновість."
         }
