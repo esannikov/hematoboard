@@ -1,5 +1,5 @@
 {
-  "schema_version": "hematoboard.public-dashboard-fixture/2.0.0",
+  "schema_version": "hematoboard.public-dashboard-fixture/2.1.0",
   "generated_from": {
     "case_key": "case006",
     "case_id": "CASE006",
@@ -1769,6 +1769,338 @@
       "verification_status": "agent_visual_source_review",
       "use": "Окрема гілка туберкульозного або іншого гранульоматозного плеврального процесу: епідеміологічний контекст, мікробіологія, тканина, ADA, клітинний склад і межі NAAT.",
       "applicability_limit": "Гнійний вміст і змішаний клітинний склад самі по собі не встановлюють туберкульоз. Піогенний, туберкульозний, пухлинний, хілозний і поєднаний механізми лишаються окремими до рішення лікаря."
+    }
+  ],
+  "source_traces": [
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G2",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G4",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G5",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G6",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G7",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G8",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G9",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W1",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H3"
+      ]
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W5",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-10",
+      "via_type": "critical_gap",
+      "via_id": "G6",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-10",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-11",
+      "via_type": "critical_gap",
+      "via_id": "G6",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-11",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "critical_gap",
+      "via_id": "G2",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "critical_gap",
+      "via_id": "G4",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "workup",
+      "via_id": "W1",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H3"
+      ]
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "workup",
+      "via_id": "W1",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "critical_gap",
+      "via_id": "G6",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "critical_gap",
+      "via_id": "G6",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-6",
+      "via_type": "critical_gap",
+      "via_id": "G5",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-6",
+      "via_type": "critical_gap",
+      "via_id": "G8",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-6",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-7",
+      "via_type": "critical_gap",
+      "via_id": "G5",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-7",
+      "via_type": "critical_gap",
+      "via_id": "G8",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-7",
+      "via_type": "critical_gap",
+      "via_id": "G9",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-7",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-7",
+      "via_type": "workup",
+      "via_id": "W5",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-8",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-8",
+      "via_type": "critical_gap",
+      "via_id": "G2",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-8",
+      "via_type": "critical_gap",
+      "via_id": "G4",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-8",
+      "via_type": "workup",
+      "via_id": "W1",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-8",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H3"
+      ]
+    },
+    {
+      "source_id": "E-CAND-9",
+      "via_type": "critical_gap",
+      "via_id": "G6",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-9",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": []
     }
   ],
   "critical_gaps": [

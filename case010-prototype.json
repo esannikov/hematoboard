@@ -1,5 +1,5 @@
 {
-  "schema_version": "hematoboard.public-dashboard-fixture/2.0.0",
+  "schema_version": "hematoboard.public-dashboard-fixture/2.1.0",
   "generated_from": {
     "case_key": "case010",
     "case_id": "CASE010",
@@ -1405,6 +1405,349 @@
       "verification_status": "agent_visual_source_review",
       "use": "NCI PDQ описує LGL-лейкемію як індолентний стан, для якого типовими клінічними контекстами є нейтропенія, анемія, спленомегалія та ревматоїдний артрит, а T-клітинний варіант має CD2/CD3/CD8-фенотип; STAT3 трапляється лише в частині випадків і не є самодостатнім критерієм.",
       "applicability_limit": "У CASE010 наявні гемоглобін і тромбоцити не показують цитопенії, але абсолютні нейтрофіли, клініка інфекцій, автоімунний анамнез і спленомегалія не закриті. Офлайн-знімок є доказовим оглядом, а не окремою практичною настановою."
+    }
+  ],
+  "source_traces": [
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G2",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W1",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3"
+      ]
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W5",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2"
+      ]
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "critical_gap",
+      "via_id": "G4",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "critical_gap",
+      "via_id": "G2",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "critical_gap",
+      "via_id": "G4",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "workup",
+      "via_id": "W1",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3"
+      ]
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "workup",
+      "via_id": "W5",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2"
+      ]
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "critical_gap",
+      "via_id": "G2",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "critical_gap",
+      "via_id": "G4",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "workup",
+      "via_id": "W1",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3"
+      ]
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "workup",
+      "via_id": "W5",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2"
+      ]
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "workup",
+      "via_id": "W1",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "workup",
+      "via_id": "W5",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2"
+      ]
     }
   ],
   "critical_gaps": [

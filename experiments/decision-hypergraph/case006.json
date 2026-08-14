@@ -1,0 +1,1113 @@
+{
+  "schema_version": "hematoboard.decision-hypergraph/0.2.0",
+  "status": "candidate_experimental",
+  "derived_from": {
+    "case_key": "case006",
+    "case_id": "CASE006",
+    "bundle_sha256": "2032ad12fead1e2a365a07b6b20cca3e4c1726d78c438dd4b0ad678a9adf2930",
+    "reasoning_revision_id": "RR-CASE006-3d72544bd826",
+    "reasoning_revision_sha256": "eee2b9836653914ea8974f240edf3862ffc34417e8ab5339dddc66bdb435836f"
+  },
+  "nodes": [
+    {
+      "id": "E-CAND-1",
+      "kind": "external_source",
+      "label": "GELTAMO Guidelines for Follicular Lymphoma 2025"
+    },
+    {
+      "id": "E-CAND-10",
+      "kind": "external_source",
+      "label": "Non-traumatic chylothorax: diagnostic and therapeutic strategies"
+    },
+    {
+      "id": "E-CAND-11",
+      "kind": "external_source",
+      "label": "The tuberculous pleural effusion"
+    },
+    {
+      "id": "E-CAND-2",
+      "kind": "external_source",
+      "label": "WHO-HAEM5: Lymphoid Neoplasms"
+    },
+    {
+      "id": "E-CAND-3",
+      "kind": "external_source",
+      "label": "European recommendations for cytogenomic analysis of haematological neoplasms"
+    },
+    {
+      "id": "E-CAND-4",
+      "kind": "external_source",
+      "label": "British Thoracic Society Guideline for pleural disease"
+    },
+    {
+      "id": "E-CAND-5",
+      "kind": "external_source",
+      "label": "Use of flow cytometry in fluid specimens"
+    },
+    {
+      "id": "E-CAND-6",
+      "kind": "external_source",
+      "label": "Follicular Lymphoma International Prognostic Index"
+    },
+    {
+      "id": "E-CAND-7",
+      "kind": "external_source",
+      "label": "Follicular Lymphoma International Prognostic Index 2"
+    },
+    {
+      "id": "E-CAND-8",
+      "kind": "external_source",
+      "label": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas"
+    },
+    {
+      "id": "E-CAND-9",
+      "kind": "external_source",
+      "label": "Diagnosis and management of pleural infection"
+    },
+    {
+      "id": "F033",
+      "kind": "case_evidence",
+      "label": "ЛДГ"
+    },
+    {
+      "id": "F038",
+      "kind": "case_evidence",
+      "label": "КТ-ознаки генералізованої лімфаденопатії"
+    },
+    {
+      "id": "F045",
+      "kind": "case_evidence",
+      "label": "В обох гемітораксах та по міжчасточковим плеврам визначається рідинний вміст: висота стовпа у правому гемітораксі с…"
+    },
+    {
+      "id": "F053",
+      "kind": "case_evidence",
+      "label": "В клітинах пухлини виявлено транслокацію гена BCL2."
+    },
+    {
+      "id": "F055",
+      "kind": "case_evidence",
+      "label": "Отриманий імунофенотип клітин пухлини відповідає В-клітинній лімфомі."
+    },
+    {
+      "id": "F056",
+      "kind": "case_evidence",
+      "label": "В матеріалі трепан-біопсії розростання дрібноклітинної лімфоми, яка на деяких ділянках формує нечіткі нодулярні стр…"
+    },
+    {
+      "id": "F057",
+      "kind": "case_evidence",
+      "label": "Приблизно 10% пухлинних клітин позитивні на маркер проліферації Кі-67."
+    },
+    {
+      "id": "F058",
+      "kind": "case_evidence",
+      "label": "Клітини пухлини позитивні на CD10, негативні на bcl-6, циклін D1, SOX-11."
+    },
+    {
+      "id": "G1",
+      "kind": "critical_gap",
+      "label": "Немає інтегрованого висновку з повною архітектурою та оцінкою великоклітинного або дифузного компонента."
+    },
+    {
+      "id": "G2",
+      "kind": "critical_gap",
+      "label": "Немає повної ІГХ/flow-панелі з чіткою належністю маркерів пухлинним клітинам."
+    },
+    {
+      "id": "G4",
+      "kind": "critical_gap",
+      "label": "Не визначено, чи наявний окремий великоклітинний або дифузний компонент; MYC-орієнтовані дані відсутні в морфологіч…"
+    },
+    {
+      "id": "G5",
+      "kind": "critical_gap",
+      "label": "Немає повного датованого стадіювання, карти вузлів і формальної оцінки кісткового мозку та плеври."
+    },
+    {
+      "id": "G6",
+      "kind": "critical_gap",
+      "label": "Причину й поточну активність плеврального випоту не встановлено. Історичне гнійне дренування F035 підтримує емпіємн…"
+    },
+    {
+      "id": "G8",
+      "kind": "critical_gap",
+      "label": "Дати лабораторних показників не нормалізовані; FLIPI/FLIPI2 і актуальний risk context не обчислюються."
+    },
+    {
+      "id": "G9",
+      "kind": "critical_gap",
+      "label": "Тромбоцити 132×10^9/L зафіксовані без надійної дати, динаміки й установленої причини; значення не слід автоматично…"
+    },
+    {
+      "id": "H1",
+      "kind": "hypothesis",
+      "label": "Фолікулярна лімфома"
+    },
+    {
+      "id": "H2",
+      "kind": "hypothesis",
+      "label": "Інша мала В-клітинна лімфома гермінального центру"
+    },
+    {
+      "id": "H3",
+      "kind": "hypothesis",
+      "label": "Великоклітинна трансформація або інший агресивний В-клітинний компонент"
+    },
+    {
+      "id": "H4",
+      "kind": "hypothesis",
+      "label": "Інша індолентна мала В-клітинна лімфома"
+    },
+    {
+      "id": "W1",
+      "kind": "workup_action",
+      "label": "Інтегрований експертний гематопатологічний перегляд"
+    },
+    {
+      "id": "W2",
+      "kind": "workup_action",
+      "label": "ПЕТ-КТ/КТ для стадіювання та вибору репрезентативної ділянки біопсії"
+    },
+    {
+      "id": "W3",
+      "kind": "workup_action",
+      "label": "Питання до консиліуму: причина й поточна активність двобічного плеврального випоту"
+    },
+    {
+      "id": "W4",
+      "kind": "workup_action",
+      "label": "Заповнення прогалин базового стадіювання та прогностичної оцінки"
+    },
+    {
+      "id": "W5",
+      "kind": "workup_action",
+      "label": "Питання до консиліуму: дата, динаміка та причина тромбоцитопенії"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "X-A-H1",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H1",
+      "summary": "Зводить 7 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F038",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F045",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F053",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F055",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F056",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F057",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F058",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "H1",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 8,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H2",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H2",
+      "summary": "Зводить 4 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F053",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F055",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F056",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F058",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "H2",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 5,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H3",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H3",
+      "summary": "Зводить 5 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F033",
+          "role": "recorded_evidence",
+          "relation": "refute"
+        },
+        {
+          "ref": "F038",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F045",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F056",
+          "role": "recorded_evidence",
+          "relation": "refute"
+        },
+        {
+          "ref": "F057",
+          "role": "recorded_evidence",
+          "relation": "refute"
+        },
+        {
+          "ref": "H3",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 6,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H4",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H4",
+      "summary": "Зводить 4 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F053",
+          "role": "recorded_evidence",
+          "relation": "refute"
+        },
+        {
+          "ref": "F055",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F056",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F058",
+          "role": "recorded_evidence",
+          "relation": "refute"
+        },
+        {
+          "ref": "H4",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 5,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F038",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F038",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F038",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F045",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F045",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F045",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F053",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F053",
+      "summary": "Один запис входить у 3 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F053",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "refute"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F055",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F055",
+      "summary": "Один запис входить у 3 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F055",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F056",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F056",
+      "summary": "Один запис входить у 4 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F056",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "refute"
+        },
+        {
+          "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 5,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F057",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F057",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F057",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "refute"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F058",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F058",
+      "summary": "Один запис входить у 3 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F058",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "refute"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-G-G1",
+      "kind": "gap_context",
+      "label": "Контекст прогалини G1",
+      "summary": "Немає інтегрованого висновку з повною архітектурою та оцінкою великоклітинного або дифузного компонента.",
+      "participants": [
+        {
+          "ref": "E-CAND-1",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-2",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-8",
+          "role": "gap_context"
+        },
+        {
+          "ref": "G1",
+          "role": "open_gap"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-G-G2",
+      "kind": "gap_context",
+      "label": "Контекст прогалини G2",
+      "summary": "Немає повної ІГХ/flow-панелі з чіткою належністю маркерів пухлинним клітинам.",
+      "participants": [
+        {
+          "ref": "E-CAND-1",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-2",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-8",
+          "role": "gap_context"
+        },
+        {
+          "ref": "G2",
+          "role": "open_gap"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-G-G4",
+      "kind": "gap_context",
+      "label": "Контекст прогалини G4",
+      "summary": "Не визначено, чи наявний окремий великоклітинний або дифузний компонент; MYC-орієнтовані дані відсутні в морфологічному контексті.",
+      "participants": [
+        {
+          "ref": "E-CAND-1",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-2",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-8",
+          "role": "gap_context"
+        },
+        {
+          "ref": "G4",
+          "role": "open_gap"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-G-G5",
+      "kind": "gap_context",
+      "label": "Контекст прогалини G5",
+      "summary": "Немає повного датованого стадіювання, карти вузлів і формальної оцінки кісткового мозку та плеври.",
+      "participants": [
+        {
+          "ref": "E-CAND-1",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-6",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-7",
+          "role": "gap_context"
+        },
+        {
+          "ref": "G5",
+          "role": "open_gap"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-G-G6",
+      "kind": "gap_context",
+      "label": "Контекст прогалини G6",
+      "summary": "Причину й поточну активність плеврального випоту не встановлено. Історичне гнійне дренування F035 підтримує емпіємну/інфекційну гілку, але не визначає збудника або поточний стан;…",
+      "participants": [
+        {
+          "ref": "E-CAND-1",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-10",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-11",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-4",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-5",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-9",
+          "role": "gap_context"
+        },
+        {
+          "ref": "G6",
+          "role": "open_gap"
+        }
+      ],
+      "participant_count": 7,
+      "candidate_only": true
+    },
+    {
+      "id": "X-G-G8",
+      "kind": "gap_context",
+      "label": "Контекст прогалини G8",
+      "summary": "Дати лабораторних показників не нормалізовані; FLIPI/FLIPI2 і актуальний risk context не обчислюються.",
+      "participants": [
+        {
+          "ref": "E-CAND-1",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-6",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-7",
+          "role": "gap_context"
+        },
+        {
+          "ref": "G8",
+          "role": "open_gap"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-G-G9",
+      "kind": "gap_context",
+      "label": "Контекст прогалини G9",
+      "summary": "Тромбоцити 132×10^9/L зафіксовані без надійної дати, динаміки й установленої причини; значення не слід автоматично прирівнювати до GELF-цитопенії.",
+      "participants": [
+        {
+          "ref": "E-CAND-1",
+          "role": "gap_context"
+        },
+        {
+          "ref": "E-CAND-7",
+          "role": "gap_context"
+        },
+        {
+          "ref": "G9",
+          "role": "open_gap"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-W-W1",
+      "kind": "discriminator",
+      "label": "Інтегрований експертний гематопатологічний перегляд",
+      "summary": "Морфологія, повний імунофенотип і належно описаний FISH разом визначають нозологію. Потрібна окрема оцінка класичної FL, нетипової FL, FLBL та великоклітинного/дифузного компонент…",
+      "participants": [
+        {
+          "ref": "E-CAND-1",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-2",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-3",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-8",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "H1",
+          "role": "discriminates"
+        },
+        {
+          "ref": "H2",
+          "role": "discriminates"
+        },
+        {
+          "ref": "H3",
+          "role": "discriminates"
+        },
+        {
+          "ref": "H4",
+          "role": "discriminates"
+        },
+        {
+          "ref": "W1",
+          "role": "discriminating_action"
+        }
+      ],
+      "participant_count": 9,
+      "candidate_only": true
+    },
+    {
+      "id": "X-W-W2",
+      "kind": "discriminator",
+      "label": "ПЕТ-КТ/КТ для стадіювання та вибору репрезентативної ділянки біопсії",
+      "summary": "Візуалізація уточнює поширеність і може спрямувати біопсію до клінічно або метаболічно неоднорідної ділянки. SUVmax не використовується як самостійний діагноз трансформації.",
+      "participants": [
+        {
+          "ref": "E-CAND-1",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-2",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-8",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "H1",
+          "role": "discriminates"
+        },
+        {
+          "ref": "H3",
+          "role": "discriminates"
+        },
+        {
+          "ref": "W2",
+          "role": "discriminating_action"
+        }
+      ],
+      "participant_count": 6,
+      "candidate_only": true
+    },
+    {
+      "id": "X-W-W3",
+      "kind": "discriminator",
+      "label": "Питання до консиліуму: причина й поточна активність двобічного плеврального випоту",
+      "summary": "Перевірені за сторінкою F035/C035 документують історичну евакуацію до 2 л, а потім до 3 л гнійного плеврального вмісту, що підтримує емпіємну/інфекційну гілку. Це не встановлює по…",
+      "participants": [
+        {
+          "ref": "E-CAND-1",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-10",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-11",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-4",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-5",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-9",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "W3",
+          "role": "discriminating_action"
+        }
+      ],
+      "participant_count": 7,
+      "candidate_only": true
+    },
+    {
+      "id": "X-W-W4",
+      "kind": "discriminator",
+      "label": "Заповнення прогалин базового стадіювання та прогностичної оцінки",
+      "summary": "Без датованого baseline, B-симптомів, функціонального стану, карти вузлів, розміру найбільшого вузла й формального marrow status не визначають стадію, FLIPI або FLIPI2.",
+      "participants": [
+        {
+          "ref": "E-CAND-1",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-6",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-7",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "W4",
+          "role": "discriminating_action"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-W-W5",
+      "kind": "discriminator",
+      "label": "Питання до консиліуму: дата, динаміка та причина тромбоцитопенії",
+      "summary": "Тромбоцити 132×10^9/L нижчі за локальний референс, але дата, динаміка й причина невідомі. Це значення не досягає наведеного GELF-порогу <100×10^9/L і саме по собі не доводить marr…",
+      "participants": [
+        {
+          "ref": "E-CAND-1",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-7",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "W5",
+          "role": "discriminating_action"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    }
+  ],
+  "analysis": {
+    "evidence_signature_groups": [
+      {
+        "id": "SIG-8D25435244",
+        "evidence_refs": [
+          "F038",
+          "F045"
+        ],
+        "hypothesis_roles": [
+          {
+            "hypothesis_id": "H1",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H3",
+            "relation": "neutral"
+          }
+        ]
+      }
+    ],
+    "hypothesis_pair_diagnostics": [
+      {
+        "id": "PAIR-H1-H2",
+        "hypothesis_ids": [
+          "H1",
+          "H2"
+        ],
+        "status": "shared_workup",
+        "shared_evidence_refs": [
+          "F053",
+          "F055",
+          "F056",
+          "F058"
+        ],
+        "different_role_evidence_refs": [
+          "F053"
+        ],
+        "opposed_evidence_refs": [],
+        "shared_workup_ids": [
+          "W1"
+        ]
+      },
+      {
+        "id": "PAIR-H1-H3",
+        "hypothesis_ids": [
+          "H1",
+          "H3"
+        ],
+        "status": "opposed_and_workup",
+        "shared_evidence_refs": [
+          "F038",
+          "F045",
+          "F056",
+          "F057"
+        ],
+        "different_role_evidence_refs": [
+          "F056",
+          "F057"
+        ],
+        "opposed_evidence_refs": [
+          "F056",
+          "F057"
+        ],
+        "shared_workup_ids": [
+          "W1",
+          "W2"
+        ]
+      },
+      {
+        "id": "PAIR-H1-H4",
+        "hypothesis_ids": [
+          "H1",
+          "H4"
+        ],
+        "status": "opposed_and_workup",
+        "shared_evidence_refs": [
+          "F053",
+          "F055",
+          "F056",
+          "F058"
+        ],
+        "different_role_evidence_refs": [
+          "F053",
+          "F055",
+          "F056",
+          "F058"
+        ],
+        "opposed_evidence_refs": [
+          "F053",
+          "F058"
+        ],
+        "shared_workup_ids": [
+          "W1"
+        ]
+      },
+      {
+        "id": "PAIR-H2-H3",
+        "hypothesis_ids": [
+          "H2",
+          "H3"
+        ],
+        "status": "opposed_and_workup",
+        "shared_evidence_refs": [
+          "F056"
+        ],
+        "different_role_evidence_refs": [
+          "F056"
+        ],
+        "opposed_evidence_refs": [
+          "F056"
+        ],
+        "shared_workup_ids": [
+          "W1"
+        ]
+      },
+      {
+        "id": "PAIR-H2-H4",
+        "hypothesis_ids": [
+          "H2",
+          "H4"
+        ],
+        "status": "opposed_and_workup",
+        "shared_evidence_refs": [
+          "F053",
+          "F055",
+          "F056",
+          "F058"
+        ],
+        "different_role_evidence_refs": [
+          "F053",
+          "F055",
+          "F056",
+          "F058"
+        ],
+        "opposed_evidence_refs": [
+          "F058"
+        ],
+        "shared_workup_ids": [
+          "W1"
+        ]
+      },
+      {
+        "id": "PAIR-H3-H4",
+        "hypothesis_ids": [
+          "H3",
+          "H4"
+        ],
+        "status": "shared_workup",
+        "shared_evidence_refs": [
+          "F056"
+        ],
+        "different_role_evidence_refs": [
+          "F056"
+        ],
+        "opposed_evidence_refs": [],
+        "shared_workup_ids": [
+          "W1"
+        ]
+      }
+    ],
+    "hypothesis_components": [
+      {
+        "id": "BRANCH-533A2518FB",
+        "hypothesis_ids": [
+          "H1",
+          "H2",
+          "H3",
+          "H4"
+        ],
+        "recorded_bridge_pairs": 6,
+        "evidence_refs": [
+          "F053",
+          "F056",
+          "F057",
+          "F058"
+        ],
+        "workup_ids": [
+          "W1",
+          "W2"
+        ],
+        "isolated": false
+      }
+    ],
+    "repeated_workup_coverage": [],
+    "summary": {
+      "repeated_signature_groups": 1,
+      "evidence_refs_in_repeated_signatures": 2,
+      "pairs_without_recorded_bridge": 0,
+      "pairs_with_planned_but_no_opposed_evidence": 2,
+      "hypothesis_component_count": 1,
+      "isolated_hypothesis_components": 0,
+      "repeated_workup_coverage_groups": 0
+    }
+  },
+  "metrics": {
+    "pairwise_relation_count": 20,
+    "hyperedge_count": 23,
+    "argument_constellations": 4,
+    "shared_evidence_junctions": 7,
+    "discriminator_edges": 5,
+    "gap_contexts": 7,
+    "shared_evidence_refs": 7,
+    "pairwise_relations_visible_in_shared_junctions": 19,
+    "shared_layer_scan_units": 8,
+    "shared_layer_visual_reduction_ratio": 0.6,
+    "multi_hypothesis_workups": 2,
+    "hypotheses_covered_by_workup": 4,
+    "total_hypotheses": 4,
+    "workup_hypothesis_coverage_ratio": 1,
+    "hypotheses_without_discriminator": []
+  },
+  "limitations": [
+    "Гіперребро показує спільний контекст, а не сумісну достатність доказів.",
+    "Проєкція не змінює ранги, діагноз, workup або статус клінічного прийняття.",
+    "Зв’язки будуються лише з уже записаних relations, discriminates та evidence_refs; нові клінічні ребра не виводяться.",
+    "Однакова сигнатура або відсутність порівняльного мосту є структурним спостереженням, а не доказом клінічної еквівалентності чи діагностичної прогалини.",
+    "Компонента зв’язності групує гіпотези лише за наявністю спільного записаного evidence або workup; вона не встановлює нозологічну спорідненість."
+  ]
+}
