@@ -20,6 +20,10 @@
     {
       "key": "case010",
       "case_id": "CASE010"
+    },
+    {
+      "key": "case010v2",
+      "case_id": "CASE010V2"
     }
   ]
 }

@@ -1,20 +1,20 @@
 {
-  "schema_version": "hematoboard.public-dashboard-fixture/2.0.0",
+  "schema_version": "hematoboard.public-dashboard-fixture/2.1.0",
   "generated_from": {
     "case_key": "case008",
     "case_id": "CASE008",
     "bundle_id": "CASE008@953b493bd1cc",
     "bundle_revision": "CASE008@953b493bd1cc",
     "bundle_sha256": "055047f8d7a60abca5b55822b0f9d6ed4e683492786f4eb50f438601edc52597",
-    "reasoning_revision_id": "RR-CASE008-6bc65feca77e",
-    "reasoning_revision_sha256": "9a55408f78dd007f0690b93e73a23ebc8b1f4e5560424c7ee2d8ad1457597b50",
+    "reasoning_revision_id": "RR-CASE008-6cf567247da8",
+    "reasoning_revision_sha256": "ec1a52c7e6ca588989218a0401f59c29331de428795e74c705bdc951fe2a0aa2",
     "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
-    "clinical_copy_sha256": "ba12ef81e6b4e8094b31af3823810dcac529d66e6231ce0366c85e5292733ff0",
+    "clinical_copy_sha256": "0e96b14803cfacb8576362786e43a1a801f1d7dcedb85f5ac97cfc02900bd818",
     "clinical_copy_origin": "curated_optional_override",
     "clinical_input_sha256": "bc0cc6b9861b5aa1619de2804906e4224b11262baddaed43846f1d8af21fc045",
     "evidence_review_status": "pass",
     "evidence_review_modes": [
-      "agent_visual_source_review"
+      false
     ],
     "evidence_review_binding": "embedded",
     "source_date_context_schema": "hematoboard.source_date_context/1.0",
@@ -24,7 +24,7 @@
   "case": {
     "id": "CASE008",
     "title": "Знеособлений клінічний пакет · source ledger прийнято",
-    "overview_brief": "Жінка, 63 роки. На трьох МРТ описано невелике контраст-позитивне інтрамедулярне утворення на рівні T10–T11 без переконливої динаміки, з прилеглою T2/STIR-зміною та дрібною гідромієлією. Потрібні зіставлення вихідних DICOM, неврологічний огляд і профільний нейрохірургічний/нейроонкологічний перегляд.",
+    "overview_brief": "Жінка, 63 роки. На трьох МРТ описано невелике контраст-позитивне інтрамедулярне утворення на рівні T10–T11 без доведеної біологічної динаміки, з прилеглою T2/STIR-зміною та дрібною гідромієлією. Окремо описано екструзію диска L1–L2, тому потрібні зіставлення вихідних DICOM, неврологічна локалізація симптомів і профільний нейрохірургічний/нейроонкологічний перегляд.",
     "generated": "2026-08-12",
     "governance": "Source ledger сформовано лише після об'єднаної людської звірки сканів, структурованого тексту, приватності та hash-derived координатного G4. Гіпотези й лікувальні рішення до канонічного ledger не внесено.",
     "demographics": "Вік: 63 роки",
@@ -54,9 +54,9 @@
       ],
       "missing_evidence": [
         "Side-by-side DICOM review усіх трьох МРТ",
-        "Точні осьові T1/T2 і постконтрастні характеристики",
-        "GRE/SWI для продуктів крові",
-        "Неврологічний статус і тканинна діагностика лише якщо спеціалісти визначать її доречною"
+        "Точні осьові T1/T2/STIR, постконтрастні та susceptibility-характеристики",
+        "Неврологічний статус",
+        "Тканинна класифікація лише якщо спеціалісти визначать її доречною"
       ],
       "applicability_limits": [
         "Контрастування та дорослий вік неспецифічні.",
@@ -64,8 +64,9 @@
         "Відсутність описаного потовщення спинного мозку обмежує впевненість у пухлинній природі."
       ],
       "discriminating_checks": [
-        "Перегляд центральності, меж, cord expansion, cyst/syrinx і hemosiderin на DICOM",
-        "Зіставлення з H2–H6 у нейрорадіологічному й нейрохірургічному контексті"
+        "Центральність, межі, cord expansion, cyst/syrinx, hemorrhagic products і тип контрастування на DICOM",
+        "Стандартизоване повторне вимірювання однакових серій",
+        "Зіставлення з іншими поточними гіпотезами в мультидисциплінарному review"
       ],
       "short_label": "Епендимома спинного мозку",
       "counts": {
@@ -218,7 +219,7 @@
     {
       "id": "H2",
       "rank": 2,
-      "label": "Астроцитома або інша первинна інтрамедулярна гліома",
+      "label": "Астроцитома або інша первинна інтрамедулярна гліальна пухлина",
       "clinical_role": "Основна первинна пухлинна альтернатива епендимомі",
       "rationale": "Контраст-позитивне інтрамедулярне вогнище з прилеглою зміною сигналу сумісне з гліомою. У текстових звітах немає ключових ознак дифузного інфільтративного росту, ексцентричності, довжини ураження або вираженого розширення спинного мозку, тому її не можна надійно відрізнити від епендимоми.",
       "support_refs": [
@@ -235,8 +236,8 @@
         "F006"
       ],
       "missing_evidence": [
-        "Повний морфологічний опис DICOM",
-        "Оцінка інфільтративності й довжини ураження",
+        "Повний морфологічний DICOM-патерн",
+        "Оцінка інфільтративності, меж і довжини ураження",
         "Клінічний темп і неврологічний дефіцит"
       ],
       "applicability_limits": [
@@ -244,7 +245,7 @@
         "Відсутність cord expansion знижує, але не виключає невелику гліому."
       ],
       "discriminating_checks": [
-        "Центральність, межі, довжина, cord expansion і enhancement pattern на DICOM",
+        "Центральність, межі, довжина, cord expansion і enhancement pattern",
         "Тканинна класифікація лише після рішення спеціалістів"
       ],
       "short_label": "Астроцитома або інша первинна інтрамедулярна гліома",
@@ -412,8 +413,8 @@
       "neutral_refs": [],
       "missing_evidence": [
         "Оцінка flow-voids і судинності",
-        "MRA або ангіографія лише за підтверджених судинних ознак",
-        "Пошук множинних уражень за клінічними показаннями"
+        "Контрастний патерн та susceptibility-послідовності",
+        "Судинне дообстеження лише за підтверджених vascular features"
       ],
       "applicability_limits": [
         "Гіперваскулярний патерн у звітах не описаний.",
@@ -421,7 +422,7 @@
       ],
       "discriminating_checks": [
         "Контрастний патерн, flow-voids, feeding vessels і syrinx на DICOM",
-        "Відмежування від H6 на GRE/SWI та судинно-чутливих послідовностях"
+        "Відмежування від H6 за hemorrhagic і vascular features"
       ],
       "short_label": "Гемангіобластома або інша гіперваскулярна пухлина",
       "counts": {
@@ -522,7 +523,7 @@
     {
       "id": "H4",
       "rank": 4,
-      "label": "Вторинне інтрамедулярне ураження: метастаз або лімфопроліферативний процес",
+      "label": "Вторинне інтрамедулярне ураження: метастаз або гематолімфоїдний процес",
       "clinical_role": "Must-not-miss системна пухлинна гілка",
       "rationale": "Вік, контрастування, невеликі надключичні вузли й спленомегалія вимагають не пропустити вторинне або гематолімфоїдне ураження. Вузли неспецифічні, а КТ не показала легеневих, медіастинальних або печінкових пухлинних вогнищ. Історія тиреоїдектомії без доступної гістології залишається важливою невизначеністю.",
       "support_refs": [
@@ -544,8 +545,8 @@
       "missing_evidence": [
         "Причина й гістологія тиреоїдектомії",
         "Повний онкологічний і гематологічний анамнез",
-        "Клінічна оцінка вузлів і спленомегалії",
-        "Загальний аналіз крові та системні симптоми"
+        "Клінічна оцінка вузлів, спленомегалії та системних симптомів",
+        "Disease-specific evidence для гематолімфоїдної частини гілки"
       ],
       "applicability_limits": [
         "Надключичні вузли й спленомегалія не доводять злоякісний процес.",
@@ -553,7 +554,8 @@
       ],
       "discriminating_checks": [
         "Верифікація тиреоїдної гістології та системного анамнезу",
-        "Таргетована системна оцінка лише за клінічними показаннями"
+        "Окрема оцінка F005/F007 без припущення єдиного причинного ланцюга",
+        "Таргетована системна оцінка за клінічними показаннями"
       ],
       "short_label": "Вторинне інтрамедулярне ураження: метастаз або лімфопроліферативний процес",
       "counts": {
@@ -757,10 +759,10 @@
         "F007"
       ],
       "missing_evidence": [
-        "Гострий чи хронічний клінічний темп",
-        "Ознаки інфекції, аутоімунного захворювання або демієлінізації",
-        "МРТ головного мозку й повного хребта за показаннями",
-        "Ліквор і AQP4/MOG або інфекційні тести лише за клінічною підозрою"
+        "Гострий, підгострий чи хронічний клінічний темп",
+        "Ознаки інфекції, системного запалення або демієлінізації",
+        "МРТ інших відділів нейроосі та ліквор лише за відповідним патерном",
+        "Disease-specific proposition для конкретної етіології"
       ],
       "applicability_limits": [
         "Позитивного клінічного доказу запалення або інфекції немає.",
@@ -768,7 +770,7 @@
       ],
       "discriminating_checks": [
         "Неврологічний огляд і клінічний темп",
-        "Таргетовані тести лише після нейрорадіологічного патерну й оцінки невролога"
+        "Таргетовані тести лише після оцінки MRI-патерну та спеціаліста"
       ],
       "short_label": "Запальне, демієлінізувальне або інфекційне пухлиноподібне ураження",
       "counts": {
@@ -904,7 +906,7 @@
     {
       "id": "H6",
       "rank": 6,
-      "label": "Судинна мальформація або кавернома",
+      "label": "Судинна мальформація або кавернозна мальформація",
       "clinical_role": "Must-not-miss судинний імітатор перед біопсією або резекцією",
       "rationale": "Мале інтрамедулярне вогнище може бути каверномою або іншою судинною мальформацією, особливо якщо незвичний T1/T2-сигнал пов'язаний із продуктами крові. Звіти не описують GRE/SWI, hemosiderin rim, blooming або flow-voids.",
       "support_refs": [
@@ -917,9 +919,9 @@
         "F014"
       ],
       "missing_evidence": [
-        "GRE/SWI",
+        "GRE/SWI або еквівалентні susceptibility-послідовності",
         "Оцінка hemorrhagic products і flow-voids",
-        "MRA/ангіографія лише якщо неінвазивне MRI дає судинні ознаки"
+        "MRA, CTA або ангіографія лише якщо MRI дає судинні ознаки"
       ],
       "applicability_limits": [
         "У наявних текстових звітах немає прямої судинної ознаки.",
@@ -927,7 +929,7 @@
       ],
       "discriminating_checks": [
         "GRE/SWI blooming і hemosiderin",
-        "MRA або ангіографія за підтверджених vascular features"
+        "Умовне судинне дообстеження за підтверджених vascular features"
       ],
       "short_label": "Судинна мальформація або кавернома",
       "counts": {
@@ -1482,58 +1484,314 @@
   "sources": [
     {
       "id": "E-CAND-1",
-      "type": "pmid",
-      "title": "ACR Appropriateness Criteria: Myelopathy",
+      "type": "guideline",
+      "title": "ACR Appropriateness Criteria Myelopathy, Revised 2026, document 69484, https://acsearch.acr.org/docs/69484/Narrative/",
       "url": "https://acsearch.acr.org/docs/69484/Narrative/",
-      "year": null,
-      "location": "Variant 2 and rating table",
-      "verification_status": "agent_visual_source_review",
+      "year": 2026,
+      "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
+      "verification_status": false,
       "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
       "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
     },
     {
       "id": "E-CAND-2",
-      "type": "pmid",
-      "title": "EANO guidelines for the diagnosis and treatment of ependymal tumors",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5909649/",
-      "year": null,
-      "location": "Diagnosis and Table 5",
-      "verification_status": "agent_visual_source_review",
+      "type": "guideline",
+      "title": "Rudà R et al. EANO guidelines for the diagnosis and treatment of ependymal tumors. Neuro Oncol. 2018;20(4):445-456. PMID:29194500; DOI:10.1093/neuonc/nox166; PMCID:PMC5909649",
+      "url": "https://doi.org/10.1093/neuonc/nox166",
+      "year": 2018,
+      "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 df85fdc9d4e02110fa60f474dfc217177a69ac82604baaa0fd60e9882701bda7",
+      "verification_status": false,
       "use": "EANO підтримує МР-оцінку та профільний нейрохірургічний маршрут; класифікація епендимальної пухлини потребує тканинної верифікації.",
       "applicability_limit": "У CASE008 немає тканинного діагнозу, тому рекомендації не підтверджують епендимому автоматично."
     },
     {
       "id": "E-CAND-3",
       "type": "pmid",
-      "title": "Imaging of intramedullary tumours of the spinal cord",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11705043/",
-      "year": null,
-      "location": "MRI protocol and tumor features",
-      "verification_status": "agent_visual_source_review",
-      "use": "Повна мультипланарна контрастна МРТ, susceptibility- і судинно-чутливі послідовності допомагають розрізняти інтрамедулярні пухлини та імітатори.",
-      "applicability_limit": "У звітах CASE008 бракує частини диференційних ознак; потрібен перегляд вихідних DICOM."
+      "title": "Sąsiadek M, Romanowski C, Jacków-Nowicka J. Imaging of intramedullary tumours of the spinal cord. Pol J Radiol. 2024;89:e531-e540. PMID:39777329; DOI:10.5114/pjr/192424; PMCID:PMC11705043",
+      "url": "https://doi.org/10.5114/pjr/192424",
+      "year": 2024,
+      "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
+      "verification_status": false,
+      "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
+      "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
     },
     {
       "id": "E-CAND-4",
       "type": "pmid",
-      "title": "Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7965414/",
-      "year": null,
-      "location": "Results and conclusions",
-      "verification_status": "agent_visual_source_review",
+      "title": "Rykken JB et al. Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series. AJNR Am J Neuroradiol. 2013;34(10):2043-2049. PMID:23620071; DOI:10.3174/ajnr.A3526; PMCID:PMC7965414",
+      "url": "https://doi.org/10.3174/ajnr.A3526",
+      "year": 2013,
+      "location": "PubMed/MEDLINE exact text artifact, abstract Results and Conclusions; exact bytes SHA-256 4a91eb96a225f8235f89eeb1eb851b3729fd0fd8176d8db96ad214c22b0bd0b8",
+      "verification_status": false,
       "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
       "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
     },
     {
       "id": "E-CAND-5",
       "type": "pmid",
-      "title": "Intramedullary Spinal Cord Tumors and Tumor-Like Lesions",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/40287249/",
-      "year": null,
-      "location": "PubMed abstract",
-      "verification_status": "agent_visual_source_review",
-      "use": "Пухлиноподібні ураження залишаються частиною візуального диференціалу, а клінічний контекст є необхідним для їх розмежування.",
-      "applicability_limit": "Використано лише бібліографічний опис і абстракт; джерело не встановлює конкретну природу вогнища."
+      "title": "Ottenhausen M et al. Intradural spinal tumors in adults-update on management and outcome. Neurosurg Rev. 2019;42(2):371-388. PMID:29455369; DOI:10.1007/s10143-018-0957-x",
+      "url": "https://doi.org/10.1007/s10143-018-0957-x",
+      "year": 2019,
+      "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
+      "verification_status": false,
+      "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
+      "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
+    }
+  ],
+  "source_traces": [
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G6",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W1",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W5",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H3",
+        "H5",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "critical_gap",
+      "via_id": "G2",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "critical_gap",
+      "via_id": "G6",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "workup",
+      "via_id": "W5",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H3",
+        "H5",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "critical_gap",
+      "via_id": "G2",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "critical_gap",
+      "via_id": "G4",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "critical_gap",
+      "via_id": "G5",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "critical_gap",
+      "via_id": "G6",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "workup",
+      "via_id": "W1",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "workup",
+      "via_id": "W5",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H3",
+        "H5",
+        "H6"
+      ]
     }
   ],
   "critical_gaps": [
@@ -1547,31 +1805,31 @@
       "sources": [
         {
           "id": "E-CAND-1",
-          "type": "pmid",
-          "title": "ACR Appropriateness Criteria: Myelopathy",
+          "type": "guideline",
+          "title": "ACR Appropriateness Criteria Myelopathy, Revised 2026, document 69484, https://acsearch.acr.org/docs/69484/Narrative/",
           "url": "https://acsearch.acr.org/docs/69484/Narrative/",
-          "year": null,
-          "location": "Variant 2 and rating table",
-          "verification_status": "agent_visual_source_review",
+          "year": 2026,
+          "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
+          "verification_status": false,
           "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
           "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
         },
         {
           "id": "E-CAND-5",
           "type": "pmid",
-          "title": "Intramedullary Spinal Cord Tumors and Tumor-Like Lesions",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/40287249/",
-          "year": null,
-          "location": "PubMed abstract",
-          "verification_status": "agent_visual_source_review",
-          "use": "Пухлиноподібні ураження залишаються частиною візуального диференціалу, а клінічний контекст є необхідним для їх розмежування.",
-          "applicability_limit": "Використано лише бібліографічний опис і абстракт; джерело не встановлює конкретну природу вогнища."
+          "title": "Ottenhausen M et al. Intradural spinal tumors in adults-update on management and outcome. Neurosurg Rev. 2019;42(2):371-388. PMID:29455369; DOI:10.1007/s10143-018-0957-x",
+          "url": "https://doi.org/10.1007/s10143-018-0957-x",
+          "year": 2019,
+          "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
+          "verification_status": false,
+          "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
+          "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
       ]
     },
     {
       "id": "G2",
-      "text": "Немає side-by-side DICOM-review і стандартизованого повторного вимірювання; зміна 4 мм до 7×8 мм не доведена як біологічне зростання.",
+      "text": "Немає side-by-side DICOM-review і стандартизованого повторного вимірювання; зміна 4 мм до 7×8 мм не доведена як біологічне зростання і може бути measurement/report/OCR artifact.",
       "evidence_refs": [
         "E-CAND-3",
         "E-CAND-4"
@@ -1580,22 +1838,22 @@
         {
           "id": "E-CAND-3",
           "type": "pmid",
-          "title": "Imaging of intramedullary tumours of the spinal cord",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11705043/",
-          "year": null,
-          "location": "MRI protocol and tumor features",
-          "verification_status": "agent_visual_source_review",
-          "use": "Повна мультипланарна контрастна МРТ, susceptibility- і судинно-чутливі послідовності допомагають розрізняти інтрамедулярні пухлини та імітатори.",
-          "applicability_limit": "У звітах CASE008 бракує частини диференційних ознак; потрібен перегляд вихідних DICOM."
+          "title": "Sąsiadek M, Romanowski C, Jacków-Nowicka J. Imaging of intramedullary tumours of the spinal cord. Pol J Radiol. 2024;89:e531-e540. PMID:39777329; DOI:10.5114/pjr/192424; PMCID:PMC11705043",
+          "url": "https://doi.org/10.5114/pjr/192424",
+          "year": 2024,
+          "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
+          "verification_status": false,
+          "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
+          "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
         },
         {
           "id": "E-CAND-4",
           "type": "pmid",
-          "title": "Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7965414/",
-          "year": null,
-          "location": "Results and conclusions",
-          "verification_status": "agent_visual_source_review",
+          "title": "Rykken JB et al. Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series. AJNR Am J Neuroradiol. 2013;34(10):2043-2049. PMID:23620071; DOI:10.3174/ajnr.A3526; PMCID:PMC7965414",
+          "url": "https://doi.org/10.3174/ajnr.A3526",
+          "year": 2013,
+          "location": "PubMed/MEDLINE exact text artifact, abstract Results and Conclusions; exact bytes SHA-256 4a91eb96a225f8235f89eeb1eb851b3729fd0fd8176d8db96ad214c22b0bd0b8",
+          "verification_status": false,
           "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
           "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
         }
@@ -1603,7 +1861,7 @@
     },
     {
       "id": "G3",
-      "text": "Немає повного MRI-патерну: centrality, margins, cord expansion, cyst/syrinx, GRE/SWI, DWI та flow-voids.",
+      "text": "Немає повного MRI-патерну: centrality, margins, cord expansion, cyst/syrinx, GRE/SWI, diffusion і flow-voids.",
       "evidence_refs": [
         "E-CAND-1",
         "E-CAND-3",
@@ -1612,42 +1870,42 @@
       "sources": [
         {
           "id": "E-CAND-1",
-          "type": "pmid",
-          "title": "ACR Appropriateness Criteria: Myelopathy",
+          "type": "guideline",
+          "title": "ACR Appropriateness Criteria Myelopathy, Revised 2026, document 69484, https://acsearch.acr.org/docs/69484/Narrative/",
           "url": "https://acsearch.acr.org/docs/69484/Narrative/",
-          "year": null,
-          "location": "Variant 2 and rating table",
-          "verification_status": "agent_visual_source_review",
+          "year": 2026,
+          "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
+          "verification_status": false,
           "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
           "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
         },
         {
           "id": "E-CAND-3",
           "type": "pmid",
-          "title": "Imaging of intramedullary tumours of the spinal cord",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11705043/",
-          "year": null,
-          "location": "MRI protocol and tumor features",
-          "verification_status": "agent_visual_source_review",
-          "use": "Повна мультипланарна контрастна МРТ, susceptibility- і судинно-чутливі послідовності допомагають розрізняти інтрамедулярні пухлини та імітатори.",
-          "applicability_limit": "У звітах CASE008 бракує частини диференційних ознак; потрібен перегляд вихідних DICOM."
+          "title": "Sąsiadek M, Romanowski C, Jacków-Nowicka J. Imaging of intramedullary tumours of the spinal cord. Pol J Radiol. 2024;89:e531-e540. PMID:39777329; DOI:10.5114/pjr/192424; PMCID:PMC11705043",
+          "url": "https://doi.org/10.5114/pjr/192424",
+          "year": 2024,
+          "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
+          "verification_status": false,
+          "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
+          "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
         },
         {
           "id": "E-CAND-5",
           "type": "pmid",
-          "title": "Intramedullary Spinal Cord Tumors and Tumor-Like Lesions",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/40287249/",
-          "year": null,
-          "location": "PubMed abstract",
-          "verification_status": "agent_visual_source_review",
-          "use": "Пухлиноподібні ураження залишаються частиною візуального диференціалу, а клінічний контекст є необхідним для їх розмежування.",
-          "applicability_limit": "Використано лише бібліографічний опис і абстракт; джерело не встановлює конкретну природу вогнища."
+          "title": "Ottenhausen M et al. Intradural spinal tumors in adults-update on management and outcome. Neurosurg Rev. 2019;42(2):371-388. PMID:29455369; DOI:10.1007/s10143-018-0957-x",
+          "url": "https://doi.org/10.1007/s10143-018-0957-x",
+          "year": 2019,
+          "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
+          "verification_status": false,
+          "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
+          "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
       ]
     },
     {
       "id": "G4",
-      "text": "Невідомі причина й гістологія тиреоїдектомії, повний онкологічний анамнез і значення надключичних вузлів/спленомегалії.",
+      "text": "Невідомі причина й гістологія тиреоїдектомії та повний онкологічний анамнез.",
       "evidence_refs": [
         "E-CAND-4"
       ],
@@ -1655,13 +1913,77 @@
         {
           "id": "E-CAND-4",
           "type": "pmid",
-          "title": "Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7965414/",
-          "year": null,
-          "location": "Results and conclusions",
-          "verification_status": "agent_visual_source_review",
+          "title": "Rykken JB et al. Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series. AJNR Am J Neuroradiol. 2013;34(10):2043-2049. PMID:23620071; DOI:10.3174/ajnr.A3526; PMCID:PMC7965414",
+          "url": "https://doi.org/10.3174/ajnr.A3526",
+          "year": 2013,
+          "location": "PubMed/MEDLINE exact text artifact, abstract Results and Conclusions; exact bytes SHA-256 4a91eb96a225f8235f89eeb1eb851b3729fd0fd8176d8db96ad214c22b0bd0b8",
+          "verification_status": false,
           "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
           "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "text": "Не визначено, чи надключичні вузли й спленомегалія належать до одного процесу з ураженням спинного мозку або є другим/реактивним процесом.",
+      "evidence_refs": [
+        "E-CAND-4"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-4",
+          "type": "pmid",
+          "title": "Rykken JB et al. Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series. AJNR Am J Neuroradiol. 2013;34(10):2043-2049. PMID:23620071; DOI:10.3174/ajnr.A3526; PMCID:PMC7965414",
+          "url": "https://doi.org/10.3174/ajnr.A3526",
+          "year": 2013,
+          "location": "PubMed/MEDLINE exact text artifact, abstract Results and Conclusions; exact bytes SHA-256 4a91eb96a225f8235f89eeb1eb851b3729fd0fd8176d8db96ad214c22b0bd0b8",
+          "verification_status": false,
+          "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
+          "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
+        }
+      ]
+    },
+    {
+      "id": "G6",
+      "text": "Не визначено, чи симптоми локалізуються до T10–T11 мієлопатії, а не окремої L1–L2 екструзії, і чи гідромієлія пов’язана з T10–T11 ураженням або є незалежною.",
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-3",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "guideline",
+          "title": "ACR Appropriateness Criteria Myelopathy, Revised 2026, document 69484, https://acsearch.acr.org/docs/69484/Narrative/",
+          "url": "https://acsearch.acr.org/docs/69484/Narrative/",
+          "year": 2026,
+          "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
+          "verification_status": false,
+          "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
+          "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "pmid",
+          "title": "Sąsiadek M, Romanowski C, Jacków-Nowicka J. Imaging of intramedullary tumours of the spinal cord. Pol J Radiol. 2024;89:e531-e540. PMID:39777329; DOI:10.5114/pjr/192424; PMCID:PMC11705043",
+          "url": "https://doi.org/10.5114/pjr/192424",
+          "year": 2024,
+          "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
+          "verification_status": false,
+          "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
+          "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Ottenhausen M et al. Intradural spinal tumors in adults-update on management and outcome. Neurosurg Rev. 2019;42(2):371-388. PMID:29455369; DOI:10.1007/s10143-018-0957-x",
+          "url": "https://doi.org/10.1007/s10143-018-0957-x",
+          "year": 2019,
+          "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
+          "verification_status": false,
+          "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
+          "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
       ]
     }
@@ -1669,9 +1991,9 @@
   "workup": [
     {
       "id": "W1",
-      "title": "Неврологічний огляд і терміновість за клінічним дефіцитом",
+      "title": "Неврологічна локалізація: T10–T11 мієлопатія проти окремої L1–L2 екструзії",
       "priority": "critical",
-      "rationale": "Темп симптомів, моторний і чутливий дефіцит, хода та тазові порушення визначають клінічну терміновість і локалізацію; їх немає в пакеті.",
+      "rationale": "Симптоми, чутливий рівень, моторний патерн, рефлекси, хода й тазові функції мають перевірити, чи локалізація відповідає T10–T11 мієлопатії, чи частину симптомів краще пояснює окрема L1–L2 екструзія; цих даних у пакеті немає.",
       "discriminates": [
         "H1",
         "H2",
@@ -1687,33 +2009,33 @@
       "sources": [
         {
           "id": "E-CAND-1",
-          "type": "pmid",
-          "title": "ACR Appropriateness Criteria: Myelopathy",
+          "type": "guideline",
+          "title": "ACR Appropriateness Criteria Myelopathy, Revised 2026, document 69484, https://acsearch.acr.org/docs/69484/Narrative/",
           "url": "https://acsearch.acr.org/docs/69484/Narrative/",
-          "year": null,
-          "location": "Variant 2 and rating table",
-          "verification_status": "agent_visual_source_review",
+          "year": 2026,
+          "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
+          "verification_status": false,
           "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
           "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
         },
         {
           "id": "E-CAND-5",
           "type": "pmid",
-          "title": "Intramedullary Spinal Cord Tumors and Tumor-Like Lesions",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/40287249/",
-          "year": null,
-          "location": "PubMed abstract",
-          "verification_status": "agent_visual_source_review",
-          "use": "Пухлиноподібні ураження залишаються частиною візуального диференціалу, а клінічний контекст є необхідним для їх розмежування.",
-          "applicability_limit": "Використано лише бібліографічний опис і абстракт; джерело не встановлює конкретну природу вогнища."
+          "title": "Ottenhausen M et al. Intradural spinal tumors in adults-update on management and outcome. Neurosurg Rev. 2019;42(2):371-388. PMID:29455369; DOI:10.1007/s10143-018-0957-x",
+          "url": "https://doi.org/10.1007/s10143-018-0957-x",
+          "year": 2019,
+          "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
+          "verification_status": false,
+          "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
+          "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
       ]
     },
     {
       "id": "W2",
-      "title": "Side-by-side нейрорадіологічний DICOM-review трьох МРТ",
+      "title": "Side-by-side DICOM-review, повторне вимірювання та зв’язок гідромієлії",
       "priority": "critical",
-      "rationale": "Потрібно повторно виміряти в однакових площинах і перевірити centrality, margins, cord expansion, enhancement, cyst/syrinx, edema, GRE/SWI та flow-voids; це відділяє реальне зростання від різниці протоколів і звужує H1–H6.",
+      "rationale": "Однакові площини й послідовності мають відділити справжню динаміку від measurement/report/OCR artifact, визначити centrality, margins, cord expansion, enhancement, edema, GRE/SWI і flow-voids та окремо перевірити, чи гідромієлія T12–L1 анатомічно пов’язана з T10–T11 ураженням або є незалежною знахідкою.",
       "discriminates": [
         "H1",
         "H2",
@@ -1731,55 +2053,55 @@
       "sources": [
         {
           "id": "E-CAND-1",
-          "type": "pmid",
-          "title": "ACR Appropriateness Criteria: Myelopathy",
+          "type": "guideline",
+          "title": "ACR Appropriateness Criteria Myelopathy, Revised 2026, document 69484, https://acsearch.acr.org/docs/69484/Narrative/",
           "url": "https://acsearch.acr.org/docs/69484/Narrative/",
-          "year": null,
-          "location": "Variant 2 and rating table",
-          "verification_status": "agent_visual_source_review",
+          "year": 2026,
+          "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
+          "verification_status": false,
           "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
           "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
         },
         {
           "id": "E-CAND-3",
           "type": "pmid",
-          "title": "Imaging of intramedullary tumours of the spinal cord",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11705043/",
-          "year": null,
-          "location": "MRI protocol and tumor features",
-          "verification_status": "agent_visual_source_review",
-          "use": "Повна мультипланарна контрастна МРТ, susceptibility- і судинно-чутливі послідовності допомагають розрізняти інтрамедулярні пухлини та імітатори.",
-          "applicability_limit": "У звітах CASE008 бракує частини диференційних ознак; потрібен перегляд вихідних DICOM."
+          "title": "Sąsiadek M, Romanowski C, Jacków-Nowicka J. Imaging of intramedullary tumours of the spinal cord. Pol J Radiol. 2024;89:e531-e540. PMID:39777329; DOI:10.5114/pjr/192424; PMCID:PMC11705043",
+          "url": "https://doi.org/10.5114/pjr/192424",
+          "year": 2024,
+          "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
+          "verification_status": false,
+          "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
+          "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
         },
         {
           "id": "E-CAND-4",
           "type": "pmid",
-          "title": "Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7965414/",
-          "year": null,
-          "location": "Results and conclusions",
-          "verification_status": "agent_visual_source_review",
+          "title": "Rykken JB et al. Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series. AJNR Am J Neuroradiol. 2013;34(10):2043-2049. PMID:23620071; DOI:10.3174/ajnr.A3526; PMCID:PMC7965414",
+          "url": "https://doi.org/10.3174/ajnr.A3526",
+          "year": 2013,
+          "location": "PubMed/MEDLINE exact text artifact, abstract Results and Conclusions; exact bytes SHA-256 4a91eb96a225f8235f89eeb1eb851b3729fd0fd8176d8db96ad214c22b0bd0b8",
+          "verification_status": false,
           "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
           "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
         },
         {
           "id": "E-CAND-5",
           "type": "pmid",
-          "title": "Intramedullary Spinal Cord Tumors and Tumor-Like Lesions",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/40287249/",
-          "year": null,
-          "location": "PubMed abstract",
-          "verification_status": "agent_visual_source_review",
-          "use": "Пухлиноподібні ураження залишаються частиною візуального диференціалу, а клінічний контекст є необхідним для їх розмежування.",
-          "applicability_limit": "Використано лише бібліографічний опис і абстракт; джерело не встановлює конкретну природу вогнища."
+          "title": "Ottenhausen M et al. Intradural spinal tumors in adults-update on management and outcome. Neurosurg Rev. 2019;42(2):371-388. PMID:29455369; DOI:10.1007/s10143-018-0957-x",
+          "url": "https://doi.org/10.1007/s10143-018-0957-x",
+          "year": 2019,
+          "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
+          "verification_status": false,
+          "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
+          "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
       ]
     },
     {
       "id": "W3",
-      "title": "Верифікація системного та онкологічного контексту",
+      "title": "Верифікація онкологічного контексту та окрема оцінка вузлів і спленомегалії",
       "priority": "high",
-      "rationale": "Гістологія тиреоїдектомії, онкологічний/гематологічний анамнез, CBC, системні симптоми й клінічна оцінка надключичних вузлів та спленомегалії потрібні до закриття вторинної гілки.",
+      "rationale": "Причина тиреоїдектомії, попередня гістологія й системний анамнез потрібні для H4; F005/F007 слід оцінити окремо, бо вони можуть бути другим або реактивним процесом, не пов'язаним з T10–T11 ураженням.",
       "discriminates": [
         "H1",
         "H2",
@@ -1792,11 +2114,11 @@
         {
           "id": "E-CAND-4",
           "type": "pmid",
-          "title": "Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7965414/",
-          "year": null,
-          "location": "Results and conclusions",
-          "verification_status": "agent_visual_source_review",
+          "title": "Rykken JB et al. Intramedullary spinal cord metastases: MRI and relevant clinical features from a 13-year institutional case series. AJNR Am J Neuroradiol. 2013;34(10):2043-2049. PMID:23620071; DOI:10.3174/ajnr.A3526; PMCID:PMC7965414",
+          "url": "https://doi.org/10.3174/ajnr.A3526",
+          "year": 2013,
+          "location": "PubMed/MEDLINE exact text artifact, abstract Results and Conclusions; exact bytes SHA-256 4a91eb96a225f8235f89eeb1eb851b3729fd0fd8176d8db96ad214c22b0bd0b8",
+          "verification_status": false,
           "use": "Інтрамедулярні метастази зазвичай контрастуються й інколи виявляються до первинної пухлини, хоча частіше супроводжуються іншими системними або ЦНС-ураженнями.",
           "applicability_limit": "Джерело зберігає вторинну гілку як нижчорангову must-not-miss альтернативу, але не доводить її в CASE008."
         }
@@ -1804,9 +2126,9 @@
     },
     {
       "id": "W4",
-      "title": "Нейрохірургічний або нейроонкологічний мультидисциплінарний перегляд",
+      "title": "Мультидисциплінарний нейрорадіологічний і нейрохірургічний перегляд",
       "priority": "critical",
-      "rationale": "Після клінічного й DICOM-review спеціалісти співвідносять ризик спостереження, тканинної верифікації та резекції з симптомами й морфологією; кандидат не визначає втручання.",
+      "rationale": "Після клінічного й DICOM-review спеціалісти співвідносять морфологію, ризик спостереження та потребу тканинної класифікації; кандидат не визначає втручання.",
       "discriminates": [
         "H1",
         "H2",
@@ -1817,38 +2139,50 @@
       ],
       "evidence_refs": [
         "E-CAND-2",
-        "E-CAND-3"
+        "E-CAND-3",
+        "E-CAND-5"
       ],
       "sources": [
         {
           "id": "E-CAND-2",
-          "type": "pmid",
-          "title": "EANO guidelines for the diagnosis and treatment of ependymal tumors",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5909649/",
-          "year": null,
-          "location": "Diagnosis and Table 5",
-          "verification_status": "agent_visual_source_review",
+          "type": "guideline",
+          "title": "Rudà R et al. EANO guidelines for the diagnosis and treatment of ependymal tumors. Neuro Oncol. 2018;20(4):445-456. PMID:29194500; DOI:10.1093/neuonc/nox166; PMCID:PMC5909649",
+          "url": "https://doi.org/10.1093/neuonc/nox166",
+          "year": 2018,
+          "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 df85fdc9d4e02110fa60f474dfc217177a69ac82604baaa0fd60e9882701bda7",
+          "verification_status": false,
           "use": "EANO підтримує МР-оцінку та профільний нейрохірургічний маршрут; класифікація епендимальної пухлини потребує тканинної верифікації.",
           "applicability_limit": "У CASE008 немає тканинного діагнозу, тому рекомендації не підтверджують епендимому автоматично."
         },
         {
           "id": "E-CAND-3",
           "type": "pmid",
-          "title": "Imaging of intramedullary tumours of the spinal cord",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11705043/",
-          "year": null,
-          "location": "MRI protocol and tumor features",
-          "verification_status": "agent_visual_source_review",
-          "use": "Повна мультипланарна контрастна МРТ, susceptibility- і судинно-чутливі послідовності допомагають розрізняти інтрамедулярні пухлини та імітатори.",
-          "applicability_limit": "У звітах CASE008 бракує частини диференційних ознак; потрібен перегляд вихідних DICOM."
+          "title": "Sąsiadek M, Romanowski C, Jacków-Nowicka J. Imaging of intramedullary tumours of the spinal cord. Pol J Radiol. 2024;89:e531-e540. PMID:39777329; DOI:10.5114/pjr/192424; PMCID:PMC11705043",
+          "url": "https://doi.org/10.5114/pjr/192424",
+          "year": 2024,
+          "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
+          "verification_status": false,
+          "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
+          "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Ottenhausen M et al. Intradural spinal tumors in adults-update on management and outcome. Neurosurg Rev. 2019;42(2):371-388. PMID:29455369; DOI:10.1007/s10143-018-0957-x",
+          "url": "https://doi.org/10.1007/s10143-018-0957-x",
+          "year": 2019,
+          "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
+          "verification_status": false,
+          "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
+          "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
       ]
     },
     {
       "id": "W5",
-      "title": "Таргетоване виключення запальної, інфекційної або судинної гілки",
+      "title": "Таргетоване розрізнення запальної, інфекційної або судинної гілки",
       "priority": "high",
-      "rationale": "Ліквор, AQP4/MOG, інфекційні тести, MRA або ангіографія мають сенс лише якщо анамнез, огляд або DICOM дають відповідний патерн; широке невибіркове тестування не закриває диференціал.",
+      "rationale": "Лікворні, імунні, інфекційні чи судинні дослідження набувають змісту лише коли анамнез, огляд або DICOM формують відповідний патерн; bounded packet не визначає конкретний тест.",
       "discriminates": [
         "H3",
         "H5",
@@ -1862,60 +2196,40 @@
       "sources": [
         {
           "id": "E-CAND-1",
-          "type": "pmid",
-          "title": "ACR Appropriateness Criteria: Myelopathy",
+          "type": "guideline",
+          "title": "ACR Appropriateness Criteria Myelopathy, Revised 2026, document 69484, https://acsearch.acr.org/docs/69484/Narrative/",
           "url": "https://acsearch.acr.org/docs/69484/Narrative/",
-          "year": null,
-          "location": "Variant 2 and rating table",
-          "verification_status": "agent_visual_source_review",
+          "year": 2026,
+          "location": "Summary of Recommendations, Variant 2 and Variant 3; exact HTML bytes SHA-256 4f0e4e6c26791296631c54f6ef9f830427ad8a0901d6f35c04041cdca8e77153",
+          "verification_status": false,
           "use": "ACR підтримує повний МР-перегляд як основний метод оцінки мієлопатії; потреба в контрасті та судинній візуалізації залежить від клінічного патерну.",
           "applicability_limit": "Джерело підтримує повноту візуалізації, але не встановлює діагноз CASE008."
         },
         {
           "id": "E-CAND-3",
           "type": "pmid",
-          "title": "Imaging of intramedullary tumours of the spinal cord",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11705043/",
-          "year": null,
-          "location": "MRI protocol and tumor features",
-          "verification_status": "agent_visual_source_review",
-          "use": "Повна мультипланарна контрастна МРТ, susceptibility- і судинно-чутливі послідовності допомагають розрізняти інтрамедулярні пухлини та імітатори.",
-          "applicability_limit": "У звітах CASE008 бракує частини диференційних ознак; потрібен перегляд вихідних DICOM."
+          "title": "Sąsiadek M, Romanowski C, Jacków-Nowicka J. Imaging of intramedullary tumours of the spinal cord. Pol J Radiol. 2024;89:e531-e540. PMID:39777329; DOI:10.5114/pjr/192424; PMCID:PMC11705043",
+          "url": "https://doi.org/10.5114/pjr/192424",
+          "year": 2024,
+          "location": "PubMed exact text artifact, abstract; exact bytes SHA-256 168e901e46fec3da691eb8d78ee5d091ed5387ae410f257d5a398cebb778f844",
+          "verification_status": false,
+          "use": "Огляд з візуалізації підтримує МРТ як основний метод і зберігає епендимому, астроцитому, гемангіобластому та непухлинні імітатори у диференціальному ряду інтрамедулярних уражень.",
+          "applicability_limit": "Це оглядове джерело; без повних послідовностей і прямого порівняння DICOM воно не ранжує конкретне утворення CASE008."
         },
         {
           "id": "E-CAND-5",
           "type": "pmid",
-          "title": "Intramedullary Spinal Cord Tumors and Tumor-Like Lesions",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/40287249/",
-          "year": null,
-          "location": "PubMed abstract",
-          "verification_status": "agent_visual_source_review",
-          "use": "Пухлиноподібні ураження залишаються частиною візуального диференціалу, а клінічний контекст є необхідним для їх розмежування.",
-          "applicability_limit": "Використано лише бібліографічний опис і абстракт; джерело не встановлює конкретну природу вогнища."
+          "title": "Ottenhausen M et al. Intradural spinal tumors in adults-update on management and outcome. Neurosurg Rev. 2019;42(2):371-388. PMID:29455369; DOI:10.1007/s10143-018-0957-x",
+          "url": "https://doi.org/10.1007/s10143-018-0957-x",
+          "year": 2019,
+          "location": "PubMed/MEDLINE exact text artifact, abstract; exact bytes SHA-256 de5229868dfbe0b2a9de564f8265ed6cfa5ba87a2b63daaacd15d438b312691c",
+          "verification_status": false,
+          "use": "Огляд ведення дорослих з інтрадуральними пухлинами підтримує МРТ, мультидисциплінарне зіставлення та лише таргетоване використання додаткових методів залежно від клініки й анатомії.",
+          "applicability_limit": "Використано точний бібліографічний запис і абстракт; джерело не визначає, який додатковий тест потрібен саме цій пацієнтці, і не встановлює природу вогнища."
         }
       ]
     }
   ],
-  "audio_briefing": {
-    "case_id": "CASE008",
-    "id": "AB-CASE008-20260812-01",
-    "title": "Коротко до консиліуму",
-    "label": "Аудіогайд",
-    "public_url": "https://v3b.fal.media/files/b/0aa6111c/ZQk0zyxfZwk12SvovoFMP_output.mp3",
-    "mime_type": "audio/mpeg",
-    "duration_seconds": 231.549,
-    "audio_sha256": "a088c4f1866b6f054deb5836d8916bc2c0724953ae321e818eb9dbdc758fc771",
-    "source_text_sha256": "48330bb5b6db1db5d89332e8856a8a3232bb569f36ed0549e15d3fa796acf0ff",
-    "reasoning_revision_id": "RR-CASE008-6bc65feca77e",
-    "reasoning_revision_sha256": "9a55408f78dd007f0690b93e73a23ebc8b1f4e5560424c7ee2d8ad1457597b50",
-    "clinical_status": "candidate_pending_human_review",
-    "reverse_stt": {
-      "model": "fal-ai/elevenlabs/speech-to-text",
-      "detected_language": "ukr",
-      "language_probability": 1,
-      "critical_content_preserved": true
-    }
-  },
   "method": {
     "clinical_input_projection_used": true,
     "breadth_pass_before_bundle_comparison": true,
@@ -1925,23 +2239,24 @@
     "limitations": [
       "Вхід містить текстові звіти, але не вихідні DICOM-зображення.",
       "Неврологічні симптоми, огляд і темп клінічної динаміки відсутні.",
-      "Exact model deployment build identifier не відкривається desktop-host.",
-      "Зовнішні джерела пройшли agent-visual source review; human_verified=false, clinician acceptance pending.",
-      "Неповний лабораторний ряд без точного референсу виключено з числових фактів і збережено як прогалину даних."
+      "Blind Breadth branch B-CAND-009 не додано як окрему хворобу: окрему L1–L2 екструзію перенесено в W1, можливу незалежність гідромієлії — у W2, системний другий процес — у H4 limits/W3/critical gap 4, а спільну невизначеність — у critical gap 5.",
+      "Blind Breadth branch B-CAND-010 не додано як окрему хворобу: можливість measurement/report/OCR artifact явно перенесена в W2 та critical gap 1.",
+      "Exact-byte grounding не має disease-specific proposition для конкретної лімфоми, інфекції, гранульоматозного чи демієлінізувального діагнозу; ці гілки залишені як bounded alternatives.",
+      "Agent text-exact source review має human_verified=false і clinician acceptance pending."
     ],
     "controlled_run": {
       "status": "verified",
-      "run_id": "20260812T103237651441Z-CASE008-controlled-c975a6c8e693",
+      "run_id": "20260814T170951848014Z-CASE008-controlled-82fbe15e8c5a",
       "method_id": "HB-CONTROLLED-SYNTHESIS",
-      "method_version": "2.0.0",
-      "protocol_sha256": "26b8dcc9aea238155af99fa1f8e3848b6ba8377957394cc7d28713c230d7b28a",
+      "method_version": "2.4.0",
+      "protocol_sha256": "f020c0af6541360f19007b9deda493f2e51decbd101175c6c6a7d5c7f5ee443a",
       "critic_independent": true,
       "unresolved_critical": 0,
       "pass_receipts": {
-        "breadth": "8f66efdc5a862036a954cfcae909bc2571fce446bcd25e56750e7d5173973ada",
-        "grounding": "7ee569892b61f7faba87be4b5802ead0bc3ab84abc056050d174cbded89a0610",
-        "reconciliation": "d92646ffc641886db210d92c2967a7dbca86816ac7023fbe31bcfeb38f5e68d7",
-        "critic": "e731871b7547ac1c1c68ac72c374455528d0667a3bb65334beeddbeed19c6f93"
+        "breadth": "ed6644c00512da2b046d70c4fa511d22c47134264a05aef31176b413f860bcf3",
+        "grounding": "8d9ea6e6988ffa1ecb6e51070660fef940d3e7bd2c487798529580da19203aca",
+        "reconciliation": "c9438693697bd4e0ce0b4a6976b4bb32efb3f4944b4062fc28250c008cd1625d",
+        "critic": "c70ad32bd82643b339dde9054d2ac14cff7116e9b25121004d38cc819da90502"
       }
     }
   },
@@ -1949,38 +2264,38 @@
     {
       "previous_id": "H1",
       "current_id": "H1",
-      "status": "unchanged",
-      "reason": "Клінічний зміст незмінний; перепублікація лише пінує виправлену квитанцію приватності джерел для дашборда."
+      "status": "retained",
+      "reason": "Епендимарна первинна інтрамедулярна гіпотеза зберігається першою: blind Breadth і exact-byte grounding підтримують клас первинних інтрамедулярних пухлин, але не встановлюють гістологію без повного MRI-патерну та, за рішенням спеціалістів, тканини."
     },
     {
       "previous_id": "H2",
       "current_id": "H2",
-      "status": "unchanged",
-      "reason": "Клінічний зміст незмінний; перепублікація лише пінує виправлену квитанцію приватності джерел для дашборда."
+      "status": "retained",
+      "reason": "Астроцитарна або інша первинна гліальна пухлина зберігається близькою альтернативою того самого патерну; повні осьові серії та межі росту відсутні."
     },
     {
       "previous_id": "H3",
       "current_id": "H3",
-      "status": "unchanged",
-      "reason": "Клінічний зміст незмінний; перепублікація лише пінує виправлену квитанцію приватності джерел для дашборда."
+      "status": "retained",
+      "reason": "Гемангіобластома або інша судинна пухлина зберігається як морфологічна альтернатива, але судинні ознаки у звітах не описані."
     },
     {
       "previous_id": "H4",
       "current_id": "H4",
-      "status": "unchanged",
-      "reason": "Клінічний зміст незмінний; перепублікація лише пінує виправлену квитанцію приватності джерел для дашборда."
+      "status": "retained",
+      "reason": "Вторинна метастатична або гематолімфоїдна гілка зберігається must-not-miss через вік, контрастування, вузли та спленомегалію; exact case-series evidence показує, що невідомий первинний процес не виключає інтрамедулярний метастаз, але не встановлює його в CASE008."
     },
     {
       "previous_id": "H5",
       "current_id": "H5",
-      "status": "unchanged",
-      "reason": "Клінічний зміст незмінний; перепублікація лише пінує виправлену квитанцію приватності джерел для дашборда."
+      "status": "retained",
+      "reason": "Запальний, демієлінізувальний або інфекційний імітатор зберігається як потенційно лікувально відмінна гілка; bounded evidence визнає ці категорії, але не підтримує конкретну етіологію без клінічного патерну."
     },
     {
       "previous_id": "H6",
       "current_id": "H6",
-      "status": "unchanged",
-      "reason": "Клінічний зміст незмінний; перепублікація лише пінує виправлену квитанцію приватності джерел для дашборда."
+      "status": "retained",
+      "reason": "Судинна мальформація або кавернозна мальформація зберігається імітатором іншого механізму; судинне дообстеження залишається умовним до відповідних MRI-ознак."
     }
   ],
   "safety": {
@@ -1988,8 +2303,10 @@
     "diagnosis_not_established": true,
     "treatment_directives_present": false,
     "limitations": [
-      "Результат призначений для перевірки лікарем і не встановлює діагноз.",
-      "Ранжування H1–H6 є робочим і може змінитися після DICOM/клінічного review.",
+      "Результат є кандидатним синтезом для перевірки лікарем і не встановлює діагноз.",
+      "Ранжування H1–H6 може змінитися після DICOM і клінічного review.",
+      "Measurement/report/OCR artifact збережено у W2 та critical gap 1; second-process branch окремо охоплює L1–L2 symptom attribution, можливу незалежність гідромієлії та системні знахідки без додавання нової disease hypothesis.",
+      "Text-exact agent source review підтверджує байти та locator, але human_verified=false і clinician_accepted=false.",
       "Лише записане рішення лікаря може прийняти, виправити, відхилити або відкласти кандидат."
     ]
   },
