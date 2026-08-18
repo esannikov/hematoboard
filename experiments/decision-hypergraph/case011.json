@@ -4,15 +4,15 @@
   "derived_from": {
     "case_key": "case011",
     "case_id": "CASE011",
-    "bundle_sha256": "dfec3aaa8af817bcaad4f8f5a4b79b8d1e78bc5c27e204110febb0f3ef55d205",
-    "reasoning_revision_id": "RR-CASE011-49e7d293e0d9",
-    "reasoning_revision_sha256": "200d7d31b918033a3ac503e9d72f1092fe677accfce607062834a0ed3264570d"
+    "bundle_sha256": "6e15c189839e96b29524e8faabe945f000e5cb96f0370c28755d44715b02a630",
+    "reasoning_revision_id": "RR-CASE011-96d768527729",
+    "reasoning_revision_sha256": "eae923f04abe8fc89498e9bef78dcd99905a1bfde4d17b420d624f08e7bbcd69"
   },
   "nodes": [
     {
       "id": "E-CAND-1",
       "kind": "external_source",
-      "label": "Peñalver FJ et al. Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma—GELTAMO…"
+      "label": "NCCN Clinical Practice Guidelines in Oncology: B-Cell Lymphomas. Version 4.2026"
     },
     {
       "id": "E-CAND-2",
@@ -40,6 +40,16 @@
       "label": "Dejaco C et al. EULAR recommendations for the use of imaging in large vessel vasculitis in clinical practice: 2023…"
     },
     {
+      "id": "E-CAND-7",
+      "kind": "external_source",
+      "label": "Tessler FN et al. ACR Thyroid Imaging, Reporting and Data System (TI-RADS): White Paper. J Am Coll Radiol. 2017;14(…"
+    },
+    {
+      "id": "E-CAND-8",
+      "kind": "external_source",
+      "label": "NCCN Clinical Practice Guidelines in Oncology: Castleman Disease. Version 2.2026"
+    },
+    {
       "id": "F001",
       "kind": "case_evidence",
       "label": "Чоловік, 55 років"
@@ -55,7 +65,17 @@
       "label": "антибактеріальну терапію (меропенем, ванкоміцин)"
     },
     {
+      "id": "F004",
+      "kind": "case_evidence",
+      "label": "С-реактивний білок"
+    },
+    {
       "id": "F005",
+      "kind": "case_evidence",
+      "label": "С-реактивний білок"
+    },
+    {
+      "id": "F006",
       "kind": "case_evidence",
       "label": "С-реактивний білок"
     },
@@ -65,6 +85,11 @@
       "label": "С-реактивний білок"
     },
     {
+      "id": "F008",
+      "kind": "case_evidence",
+      "label": "ШОЕ"
+    },
+    {
       "id": "F009",
       "kind": "case_evidence",
       "label": "ШОЕ"
@@ -72,62 +97,167 @@
     {
       "id": "F010",
       "kind": "case_evidence",
-      "label": "Біохімічні показники"
+      "label": "ЛДГ"
     },
     {
       "id": "F011",
       "kind": "case_evidence",
-      "label": "Імунологічні та ревматологічні дослідження"
+      "label": "В.-мікроглобулін"
     },
     {
       "id": "F012",
       "kind": "case_evidence",
-      "label": "CMV ДНК (ПЛР)"
+      "label": "АЛТ"
     },
     {
       "id": "F013",
       "kind": "case_evidence",
-      "label": "Загальний аналіз крові від 31.07.2026"
+      "label": "АСТ"
     },
     {
       "id": "F014",
       "kind": "case_evidence",
-      "label": "Біохімічний аналіз крові від 31.07.2026"
+      "label": "Сечова кислота"
     },
     {
       "id": "F015",
       "kind": "case_evidence",
-      "label": "вузлове утворення лівої частки щитоподібної залози"
+      "label": "ПСА"
     },
     {
       "id": "F016",
       "kind": "case_evidence",
-      "label": "Незначно виражена спленомегалія"
+      "label": "ANA"
     },
     {
       "id": "F017",
       "kind": "case_evidence",
-      "label": "Ліпоматоз паренхіми підшлункової залози"
+      "label": "титр 1:320"
     },
     {
       "id": "F018",
+      "kind": "case_evidence",
+      "label": "Anti-CCP |gG"
+    },
+    {
+      "id": "F019",
+      "kind": "case_evidence",
+      "label": "ANCA"
+    },
+    {
+      "id": "F020",
+      "kind": "case_evidence",
+      "label": "|gA"
+    },
+    {
+      "id": "F021",
+      "kind": "case_evidence",
+      "label": "Прокальцитонін"
+    },
+    {
+      "id": "F022",
+      "kind": "case_evidence",
+      "label": "CMV ДНК (ПЛР)"
+    },
+    {
+      "id": "F023",
+      "kind": "case_evidence",
+      "label": "лейкоцити"
+    },
+    {
+      "id": "F024",
+      "kind": "case_evidence",
+      "label": "гемоглобін"
+    },
+    {
+      "id": "F025",
+      "kind": "case_evidence",
+      "label": "еритроцити"
+    },
+    {
+      "id": "F026",
+      "kind": "case_evidence",
+      "label": "тромбоцити"
+    },
+    {
+      "id": "F027",
+      "kind": "case_evidence",
+      "label": "глюкоза"
+    },
+    {
+      "id": "F028",
+      "kind": "case_evidence",
+      "label": "креатинін"
+    },
+    {
+      "id": "F029",
+      "kind": "case_evidence",
+      "label": "сечовина"
+    },
+    {
+      "id": "F030",
+      "kind": "case_evidence",
+      "label": "ЛФ"
+    },
+    {
+      "id": "F031",
+      "kind": "case_evidence",
+      "label": "АСТ"
+    },
+    {
+      "id": "F032",
+      "kind": "case_evidence",
+      "label": "ГГТ"
+    },
+    {
+      "id": "F033",
+      "kind": "case_evidence",
+      "label": "АЛТ"
+    },
+    {
+      "id": "F034",
+      "kind": "case_evidence",
+      "label": "білірубін прямий"
+    },
+    {
+      "id": "F035",
+      "kind": "case_evidence",
+      "label": "білок загальний"
+    },
+    {
+      "id": "F036",
+      "kind": "case_evidence",
+      "label": "вузлове утворення лівої частки щитоподібної залози"
+    },
+    {
+      "id": "F037",
+      "kind": "case_evidence",
+      "label": "Незначно виражена спленомегалія"
+    },
+    {
+      "id": "F038",
+      "kind": "case_evidence",
+      "label": "Ліпоматоз паренхіми підшлункової залози"
+    },
+    {
+      "id": "F039",
       "kind": "case_evidence",
       "label": "зміни хребта"
     },
     {
       "id": "G1",
       "kind": "critical_gap",
-      "label": "Немає валідованого повторного HLH/MAS screen із феритином, тригліцеридами, фібриногеном, коагуляцією, повними одини…"
+      "label": "Немає візуалізації всього тіла або морфологічно підтвердженої цілі для біопсії."
     },
     {
       "id": "G3",
       "kind": "critical_gap",
-      "label": "Немає whole-body metabolic localisation або морфологічно підтвердженого biopsy target."
+      "label": "Немає валідованої скринінгової оцінки HLH/MAS із повними одиницями та серійною динамікою."
     },
     {
       "id": "H1",
       "kind": "hypothesis",
-      "label": "Прихований гематологічний неопластичний процес"
+      "label": "Прихований лімфопроліферативний процес"
     },
     {
       "id": "H2",
@@ -165,44 +295,54 @@
       "label": "Лікарська гарячка"
     },
     {
+      "id": "H9",
+      "kind": "hypothesis",
+      "label": "Multicentric Castleman disease"
+    },
+    {
+      "id": "W1",
+      "kind": "workup_action",
+      "label": "Переоцінити інфекційну гілку"
+    },
+    {
       "id": "W2",
       "kind": "workup_action",
-      "label": "Переоцінити інфекційну гілку перед імуносупресивною інтерпретацією"
+      "label": "FDG-ПЕТ/КТ усього тіла для локалізації"
     },
     {
       "id": "W3",
       "kind": "workup_action",
-      "label": "Whole-body FDG-PET/CT для локалізації активного осередку"
+      "label": "Отримати адекватну тканину з підозрілого осередку"
     },
     {
       "id": "W4",
       "kind": "workup_action",
-      "label": "Отримати адекватну тканину з підозрілого осередку"
+      "label": "Швидка скринінгова оцінка HLH/MAS із валідними одиницями"
     },
     {
       "id": "W5",
       "kind": "workup_action",
-      "label": "Повторити валідований HLH/MAS quick screen"
+      "label": "Термінова оцінка гіперзапального синдрому"
     },
     {
       "id": "W6",
       "kind": "workup_action",
-      "label": "Термінова оцінка гіперзапального синдрому"
+      "label": "Перевірити Still-фенотип"
     },
     {
       "id": "W7",
       "kind": "workup_action",
-      "label": "Перевірити повний Still-фенотип без передчасного закриття"
+      "label": "Умовна візуалізація великих судин"
     },
     {
       "id": "W8",
       "kind": "workup_action",
-      "label": "Умовна візуалізація великих судин"
+      "label": "Окремо стратифікувати вузол щитоподібної залози"
     },
     {
       "id": "W9",
       "kind": "workup_action",
-      "label": "Окремо стратифікувати вузол щитоподібної залози"
+      "label": "Перевірити передумови хвороби Каслмана"
     }
   ],
   "hyperedges": [
@@ -210,7 +350,7 @@
       "id": "X-A-H1",
       "kind": "argument_constellation",
       "label": "Аргументна структура H1",
-      "summary": "Зводить 5 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "summary": "Зводить 17 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
       "participants": [
         {
           "ref": "F002",
@@ -223,182 +363,7 @@
           "relation": "support"
         },
         {
-          "ref": "F013",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "F015",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "F016",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "H1",
-          "role": "target_hypothesis"
-        }
-      ],
-      "participant_count": 6,
-      "candidate_only": true
-    },
-    {
-      "id": "X-A-H2",
-      "kind": "argument_constellation",
-      "label": "Аргументна структура H2",
-      "summary": "Зводить 6 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
-      "participants": [
-        {
-          "ref": "F002",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F003",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F005",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F007",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
           "ref": "F011",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "F012",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "H2",
-          "role": "target_hypothesis"
-        }
-      ],
-      "participant_count": 7,
-      "candidate_only": true
-    },
-    {
-      "id": "X-A-H3",
-      "kind": "argument_constellation",
-      "label": "Аргументна структура H3",
-      "summary": "Зводить 4 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
-      "participants": [
-        {
-          "ref": "F002",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F005",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F011",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "F013",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "H3",
-          "role": "target_hypothesis"
-        }
-      ],
-      "participant_count": 5,
-      "candidate_only": true
-    },
-    {
-      "id": "X-A-H4",
-      "kind": "argument_constellation",
-      "label": "Аргументна структура H4",
-      "summary": "Зводить 4 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
-      "participants": [
-        {
-          "ref": "F001",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F002",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F009",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F011",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "H4",
-          "role": "target_hypothesis"
-        }
-      ],
-      "participant_count": 5,
-      "candidate_only": true
-    },
-    {
-      "id": "X-A-H5",
-      "kind": "argument_constellation",
-      "label": "Аргументна структура H5",
-      "summary": "Зводить 2 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
-      "participants": [
-        {
-          "ref": "F002",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "F011",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "H5",
-          "role": "target_hypothesis"
-        }
-      ],
-      "participant_count": 3,
-      "candidate_only": true
-    },
-    {
-      "id": "X-A-H6",
-      "kind": "argument_constellation",
-      "label": "Аргументна структура H6",
-      "summary": "Зводить 5 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
-      "participants": [
-        {
-          "ref": "F002",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F005",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "F013",
           "role": "recorded_evidence",
           "relation": "neutral"
         },
@@ -408,23 +373,83 @@
           "relation": "neutral"
         },
         {
-          "ref": "F016",
+          "ref": "F023",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F024",
           "role": "recorded_evidence",
           "relation": "support"
         },
         {
-          "ref": "H6",
+          "ref": "F025",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F026",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F027",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F028",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F029",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F030",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F031",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F032",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F033",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F034",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F037",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "H1",
           "role": "target_hypothesis"
         }
       ],
-      "participant_count": 6,
+      "participant_count": 18,
       "candidate_only": true
     },
     {
-      "id": "X-A-H7",
+      "id": "X-A-H2",
       "kind": "argument_constellation",
-      "label": "Аргументна структура H7",
-      "summary": "Зводить 4 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "label": "Аргументна структура H2",
+      "summary": "Зводить 10 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
       "participants": [
         {
           "ref": "F002",
@@ -432,7 +457,86 @@
           "relation": "support"
         },
         {
-          "ref": "F015",
+          "ref": "F003",
+          "role": "recorded_evidence",
+          "relation": "refute"
+        },
+        {
+          "ref": "F004",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F005",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F006",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F007",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F021",
+          "role": "recorded_evidence",
+          "relation": "refute"
+        },
+        {
+          "ref": "F022",
+          "role": "recorded_evidence",
+          "relation": "refute"
+        },
+        {
+          "ref": "F023",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F026",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H2",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 11,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H3",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H3",
+      "summary": "Зводить 9 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F002",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F005",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F008",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F009",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F016",
           "role": "recorded_evidence",
           "relation": "neutral"
         },
@@ -447,11 +551,197 @@
           "relation": "neutral"
         },
         {
+          "ref": "F019",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F021",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "H3",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 10,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H4",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H4",
+      "summary": "Зводить 5 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F001",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F002",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F008",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F009",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F019",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H4",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 6,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H5",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H5",
+      "summary": "Зводить 7 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F002",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F016",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F017",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F018",
+          "role": "recorded_evidence",
+          "relation": "refute"
+        },
+        {
+          "ref": "F019",
+          "role": "recorded_evidence",
+          "relation": "refute"
+        },
+        {
+          "ref": "F023",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F026",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 8,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H6",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H6",
+      "summary": "Зводить 7 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F002",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F012",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F013",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F023",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F024",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F026",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F037",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "H6",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 8,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H7",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H7",
+      "summary": "Зводить 5 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F002",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F015",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F036",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F038",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F039",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
           "ref": "H7",
           "role": "target_hypothesis"
         }
       ],
-      "participant_count": 5,
+      "participant_count": 6,
       "candidate_only": true
     },
     {
@@ -479,10 +769,69 @@
       "candidate_only": true
     },
     {
+      "id": "X-A-H9",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H9",
+      "summary": "Зводить 9 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F002",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F004",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F005",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F020",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F023",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F024",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F026",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F035",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F037",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "H9",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 10,
+      "candidate_only": true
+    },
+    {
       "id": "X-E-F002",
       "kind": "shared_evidence_junction",
       "label": "Спільний доказ F002",
-      "summary": "Один запис входить у 7 гіпотези; його роль показана окремо для кожної.",
+      "summary": "Один запис входить у 8 гіпотези; його роль показана окремо для кожної.",
       "participants": [
         {
           "ref": "F002",
@@ -522,9 +871,14 @@
           "ref": "H7",
           "role": "candidate_hypothesis",
           "relation": "support"
+        },
+        {
+          "ref": "H9",
+          "role": "candidate_hypothesis",
+          "relation": "support"
         }
       ],
-      "participant_count": 8,
+      "participant_count": 9,
       "candidate_only": true
     },
     {
@@ -540,10 +894,34 @@
         {
           "ref": "H2",
           "role": "candidate_hypothesis",
-          "relation": "support"
+          "relation": "refute"
         },
         {
           "ref": "H8",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F004",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F004",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F004",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H9",
           "role": "candidate_hypothesis",
           "relation": "support"
         }
@@ -572,9 +950,9 @@
           "relation": "support"
         },
         {
-          "ref": "H6",
+          "ref": "H9",
           "role": "candidate_hypothesis",
-          "relation": "neutral"
+          "relation": "support"
         }
       ],
       "participant_count": 4,
@@ -605,87 +983,48 @@
       "candidate_only": true
     },
     {
-      "id": "X-E-F011",
+      "id": "X-E-F008",
       "kind": "shared_evidence_junction",
-      "label": "Спільний доказ F011",
-      "summary": "Один запис входить у 4 гіпотези; його роль показана окремо для кожної.",
+      "label": "Спільний доказ F008",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
       "participants": [
         {
-          "ref": "F011",
+          "ref": "F008",
           "role": "shared_evidence"
-        },
-        {
-          "ref": "H2",
-          "role": "candidate_hypothesis",
-          "relation": "neutral"
         },
         {
           "ref": "H3",
           "role": "candidate_hypothesis",
-          "relation": "neutral"
+          "relation": "support"
         },
         {
           "ref": "H4",
           "role": "candidate_hypothesis",
-          "relation": "neutral"
-        },
-        {
-          "ref": "H5",
-          "role": "candidate_hypothesis",
           "relation": "support"
         }
       ],
-      "participant_count": 5,
+      "participant_count": 3,
       "candidate_only": true
     },
     {
-      "id": "X-E-F013",
+      "id": "X-E-F009",
       "kind": "shared_evidence_junction",
-      "label": "Спільний доказ F013",
-      "summary": "Один запис входить у 3 гіпотези; його роль показана окремо для кожної.",
+      "label": "Спільний доказ F009",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
       "participants": [
         {
-          "ref": "F013",
+          "ref": "F009",
           "role": "shared_evidence"
-        },
-        {
-          "ref": "H1",
-          "role": "candidate_hypothesis",
-          "relation": "neutral"
         },
         {
           "ref": "H3",
           "role": "candidate_hypothesis",
-          "relation": "neutral"
+          "relation": "support"
         },
         {
-          "ref": "H6",
+          "ref": "H4",
           "role": "candidate_hypothesis",
-          "relation": "neutral"
-        }
-      ],
-      "participant_count": 4,
-      "candidate_only": true
-    },
-    {
-      "id": "X-E-F015",
-      "kind": "shared_evidence_junction",
-      "label": "Спільний доказ F015",
-      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
-      "participants": [
-        {
-          "ref": "F015",
-          "role": "shared_evidence"
-        },
-        {
-          "ref": "H1",
-          "role": "candidate_hypothesis",
-          "relation": "neutral"
-        },
-        {
-          "ref": "H7",
-          "role": "candidate_hypothesis",
-          "relation": "neutral"
+          "relation": "support"
         }
       ],
       "participant_count": 3,
@@ -702,12 +1041,12 @@
           "role": "shared_evidence"
         },
         {
-          "ref": "H1",
+          "ref": "H3",
           "role": "candidate_hypothesis",
-          "relation": "support"
+          "relation": "neutral"
         },
         {
-          "ref": "H6",
+          "ref": "H5",
           "role": "candidate_hypothesis",
           "relation": "support"
         }
@@ -716,17 +1055,254 @@
       "candidate_only": true
     },
     {
+      "id": "X-E-F017",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F017",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F017",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F018",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F018",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F018",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
+          "role": "candidate_hypothesis",
+          "relation": "refute"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F019",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F019",
+      "summary": "Один запис входить у 3 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F019",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
+          "role": "candidate_hypothesis",
+          "relation": "refute"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F021",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F021",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F021",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "refute"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F023",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F023",
+      "summary": "Один запис входить у 5 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F023",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H9",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 6,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F024",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F024",
+      "summary": "Один запис входить у 3 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F024",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H9",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F026",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F026",
+      "summary": "Один запис входить у 5 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F026",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H9",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 6,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F037",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F037",
+      "summary": "Один запис входить у 3 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F037",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H9",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
       "id": "X-G-G1",
       "kind": "gap_context",
       "label": "Контекст прогалини G1",
-      "summary": "Немає валідованого повторного HLH/MAS screen із феритином, тригліцеридами, фібриногеном, коагуляцією, повними одиницями та серійною динамікою клітин.",
+      "summary": "Немає візуалізації всього тіла або морфологічно підтвердженої цілі для біопсії.",
       "participants": [
         {
-          "ref": "E-CAND-4",
+          "ref": "E-CAND-1",
           "role": "gap_context"
         },
         {
-          "ref": "E-CAND-5",
+          "ref": "E-CAND-2",
           "role": "gap_context"
         },
         {
@@ -741,14 +1317,14 @@
       "id": "X-G-G3",
       "kind": "gap_context",
       "label": "Контекст прогалини G3",
-      "summary": "Немає whole-body metabolic localisation або морфологічно підтвердженого biopsy target.",
+      "summary": "Немає валідованої скринінгової оцінки HLH/MAS із повними одиницями та серійною динамікою.",
       "participants": [
         {
-          "ref": "E-CAND-1",
+          "ref": "E-CAND-4",
           "role": "gap_context"
         },
         {
-          "ref": "E-CAND-2",
+          "ref": "E-CAND-5",
           "role": "gap_context"
         },
         {
@@ -760,10 +1336,10 @@
       "candidate_only": true
     },
     {
-      "id": "X-W-W2",
+      "id": "X-W-W1",
       "kind": "discriminator",
-      "label": "Переоцінити інфекційну гілку перед імуносупресивною інтерпретацією",
-      "summary": "Зібрати focused exposure/physical review, отримати культури до нових антибіотиків коли клінічно можливо та виконати TTE/TOE лише за підтриманої підозри на IE; рішення щодо чинних…",
+      "label": "Переоцінити інфекційну гілку",
+      "summary": "Focused exposure/physical review, культури до нових антибіотиків коли клінічно можливо та TTE/TOE лише за підтриманої підозри; рішення щодо антибіотиків належить лікарю.",
       "participants": [
         {
           "ref": "E-CAND-3",
@@ -778,33 +1354,29 @@
           "role": "discriminates"
         },
         {
-          "ref": "H4",
-          "role": "discriminates"
-        },
-        {
           "ref": "H5",
           "role": "discriminates"
         },
         {
-          "ref": "W2",
+          "ref": "W1",
           "role": "discriminating_action"
         }
       ],
-      "participant_count": 6,
+      "participant_count": 5,
       "candidate_only": true
     },
     {
-      "id": "X-W-W3",
+      "id": "X-W-W2",
       "kind": "discriminator",
-      "label": "Whole-body FDG-PET/CT для локалізації активного осередку",
-      "summary": "Після неінформативної CT і тривалого FUO PET/CT може вибрати напрям між інфекцією, васкулітом і неоплазією та знайти biopsy target.",
+      "label": "FDG-ПЕТ/КТ усього тіла для локалізації",
+      "summary": "Після базового неінформативного обстеження при гарячці неясного генезу дослідження може знайти активний осередок і визначити ціль для біопсії між інфекційною, пухлинною та судинно…",
       "participants": [
         {
-          "ref": "E-CAND-1",
+          "ref": "E-CAND-2",
           "role": "grounded_by"
         },
         {
-          "ref": "E-CAND-2",
+          "ref": "E-CAND-8",
           "role": "grounded_by"
         },
         {
@@ -824,21 +1396,29 @@
           "role": "discriminates"
         },
         {
-          "ref": "W3",
+          "ref": "H9",
+          "role": "discriminates"
+        },
+        {
+          "ref": "W2",
           "role": "discriminating_action"
         }
       ],
-      "participant_count": 7,
+      "participant_count": 8,
       "candidate_only": true
     },
     {
-      "id": "X-W-W4",
+      "id": "X-W-W3",
       "kind": "discriminator",
       "label": "Отримати адекватну тканину з підозрілого осередку",
-      "summary": "Морфологія потрібна до встановлення лімфоми; excision biopsy бажана, якщо PET/US знаходить доступну підозрілу тканину.",
+      "summary": "Для лімфоми й хвороби Каслмана бажана ексцизійна або інцизійна біопсія; однієї тонкоголкової аспірації недостатньо.",
       "participants": [
         {
           "ref": "E-CAND-1",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "E-CAND-8",
           "role": "grounded_by"
         },
         {
@@ -846,18 +1426,26 @@
           "role": "discriminates"
         },
         {
-          "ref": "W4",
+          "ref": "H7",
+          "role": "discriminates"
+        },
+        {
+          "ref": "H9",
+          "role": "discriminates"
+        },
+        {
+          "ref": "W3",
           "role": "discriminating_action"
         }
       ],
-      "participant_count": 3,
+      "participant_count": 6,
       "candidate_only": true
     },
     {
-      "id": "X-W-W5",
+      "id": "X-W-W4",
       "kind": "discriminator",
-      "label": "Повторити валідований HLH/MAS quick screen",
-      "summary": "Нові лабораторні результати з повними одиницями та серійною динамікою феритину, CBC, тригліцеридів, фібриногену, LFT/LDH і коагуляції потрібні для оцінки патерну, а не пошкоджених…",
+      "label": "Швидка скринінгова оцінка HLH/MAS із валідними одиницями",
+      "summary": "Повторити серійний загальний аналіз крові, феритин, тригліцериди, фібриноген, печінкові показники, ЛДГ і коагуляцію; пошкоджені у джерелі одиниці не відновлювати.",
       "participants": [
         {
           "ref": "E-CAND-4",
@@ -884,7 +1472,7 @@
           "role": "discriminates"
         },
         {
-          "ref": "W5",
+          "ref": "W4",
           "role": "discriminating_action"
         }
       ],
@@ -892,10 +1480,10 @@
       "candidate_only": true
     },
     {
-      "id": "X-W-W6",
+      "id": "X-W-W5",
       "kind": "discriminator",
       "label": "Термінова оцінка гіперзапального синдрому",
-      "summary": "Швидка ескалація потрібна лише якщо виникає динамічний HLH/MAS-патерн із органною загрозою.",
+      "summary": "Негайна клінічна ескалація лише за динамічного HLH/MAS-патерну з органною загрозою.",
       "participants": [
         {
           "ref": "E-CAND-4",
@@ -910,7 +1498,7 @@
           "role": "discriminates"
         },
         {
-          "ref": "W6",
+          "ref": "W5",
           "role": "discriminating_action"
         }
       ],
@@ -918,10 +1506,10 @@
       "candidate_only": true
     },
     {
-      "id": "X-W-W7",
+      "id": "X-W-W6",
       "kind": "discriminator",
-      "label": "Перевірити повний Still-фенотип без передчасного закриття",
-      "summary": "Документувати fever pattern, rash, arthralgia/arthritis, neutrophils, ferritin і виключені mimics.",
+      "label": "Перевірити Still-фенотип",
+      "summary": "Документувати характер гарячки, висип, артралгії чи артрит, нейтрофіли й феритин, паралельно перевіряючи інфекційні та пухлинні імітатори.",
       "participants": [
         {
           "ref": "E-CAND-4",
@@ -944,7 +1532,7 @@
           "role": "discriminates"
         },
         {
-          "ref": "W7",
+          "ref": "W6",
           "role": "discriminating_action"
         }
       ],
@@ -952,10 +1540,10 @@
       "candidate_only": true
     },
     {
-      "id": "X-W-W8",
+      "id": "X-W-W7",
       "kind": "discriminator",
       "label": "Умовна візуалізація великих судин",
-      "summary": "Temporal/axillary ultrasound або FDG-PET/MRI доречні лише після focused history/exam, що підвищує pretest probability.",
+      "summary": "УЗД скроневих і пахвових артерій або FDG-ПЕТ/МРТ доречні лише після цільової клінічної оцінки, що підвищує попередню ймовірність васкуліту.",
       "participants": [
         {
           "ref": "E-CAND-6",
@@ -974,16 +1562,136 @@
           "role": "discriminates"
         },
         {
-          "ref": "W8",
+          "ref": "W7",
           "role": "discriminating_action"
         }
       ],
       "participant_count": 5,
       "candidate_only": true
+    },
+    {
+      "id": "X-W-W8",
+      "kind": "discriminator",
+      "label": "Окремо стратифікувати вузол щитоподібної залози",
+      "summary": "TSH та УЗД/TI-RADS визначають follow-up або FNA; знахідка не прирівнюється до причини гарячки.",
+      "participants": [
+        {
+          "ref": "E-CAND-7",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "H7",
+          "role": "discriminates"
+        },
+        {
+          "ref": "W8",
+          "role": "discriminating_action"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-W-W9",
+      "kind": "discriminator",
+      "label": "Перевірити передумови хвороби Каслмана",
+      "summary": "Шукати збільшені вузли щонайменше у двох анатомічних зонах; після визначення цілі потрібні адекватна гістологія, HHV-8/LANA та виключення інфекційних, автоімунних і злоякісних імі…",
+      "participants": [
+        {
+          "ref": "E-CAND-8",
+          "role": "grounded_by"
+        },
+        {
+          "ref": "H1",
+          "role": "discriminates"
+        },
+        {
+          "ref": "H2",
+          "role": "discriminates"
+        },
+        {
+          "ref": "H3",
+          "role": "discriminates"
+        },
+        {
+          "ref": "H9",
+          "role": "discriminates"
+        },
+        {
+          "ref": "W9",
+          "role": "discriminating_action"
+        }
+      ],
+      "participant_count": 6,
+      "candidate_only": true
     }
   ],
   "analysis": {
-    "evidence_signature_groups": [],
+    "evidence_signature_groups": [
+      {
+        "id": "SIG-0622D8E60B",
+        "evidence_refs": [
+          "F016",
+          "F017"
+        ],
+        "hypothesis_roles": [
+          {
+            "hypothesis_id": "H3",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H5",
+            "relation": "support"
+          }
+        ]
+      },
+      {
+        "id": "SIG-139BF61098",
+        "evidence_refs": [
+          "F023",
+          "F026"
+        ],
+        "hypothesis_roles": [
+          {
+            "hypothesis_id": "H1",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H2",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H5",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H6",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H9",
+            "relation": "neutral"
+          }
+        ]
+      },
+      {
+        "id": "SIG-81BE05A5C1",
+        "evidence_refs": [
+          "F008",
+          "F009"
+        ],
+        "hypothesis_roles": [
+          {
+            "hypothesis_id": "H3",
+            "relation": "support"
+          },
+          {
+            "hypothesis_id": "H4",
+            "relation": "support"
+          }
+        ]
+      }
+    ],
     "hypothesis_pair_diagnostics": [
       {
         "id": "PAIR-H1-H2",
@@ -993,14 +1701,17 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F002"
+          "F002",
+          "F023",
+          "F026"
         ],
         "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
-          "W3",
-          "W5",
-          "W7"
+          "W2",
+          "W4",
+          "W6",
+          "W9"
         ]
       },
       {
@@ -1011,14 +1722,14 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F002",
-          "F013"
+          "F002"
         ],
         "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
-          "W5",
-          "W7"
+          "W4",
+          "W6",
+          "W9"
         ]
       },
       {
@@ -1034,7 +1745,7 @@
         "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
-          "W3"
+          "W2"
         ]
       },
       {
@@ -1045,14 +1756,16 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F002"
+          "F002",
+          "F023",
+          "F026"
         ],
         "different_role_evidence_refs": [
           "F002"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
-          "W7"
+          "W6"
         ]
       },
       {
@@ -1064,13 +1777,17 @@
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F002",
-          "F013",
-          "F016"
+          "F023",
+          "F024",
+          "F026",
+          "F037"
         ],
-        "different_role_evidence_refs": [],
+        "different_role_evidence_refs": [
+          "F024"
+        ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
-          "W5"
+          "W4"
         ]
       },
       {
@@ -1081,12 +1798,12 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F002",
-          "F015"
+          "F002"
         ],
         "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
+          "W2",
           "W3"
         ]
       },
@@ -1103,24 +1820,51 @@
         "shared_workup_ids": []
       },
       {
-        "id": "PAIR-H2-H3",
+        "id": "PAIR-H1-H9",
         "hypothesis_ids": [
-          "H2",
-          "H3"
+          "H1",
+          "H9"
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F002",
-          "F005",
-          "F011"
+          "F023",
+          "F024",
+          "F026",
+          "F037"
         ],
         "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
           "W2",
-          "W5",
+          "W3",
+          "W9"
+        ]
+      },
+      {
+        "id": "PAIR-H2-H3",
+        "hypothesis_ids": [
+          "H2",
+          "H3"
+        ],
+        "status": "opposed_and_workup",
+        "shared_evidence_refs": [
+          "F002",
+          "F005",
+          "F021"
+        ],
+        "different_role_evidence_refs": [
+          "F021"
+        ],
+        "opposed_evidence_refs": [
+          "F021"
+        ],
+        "shared_workup_ids": [
+          "W1",
+          "W4",
+          "W6",
           "W7",
-          "W8"
+          "W9"
         ]
       },
       {
@@ -1131,15 +1875,13 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F002",
-          "F011"
+          "F002"
         ],
         "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
           "W2",
-          "W3",
-          "W8"
+          "W7"
         ]
       },
       {
@@ -1151,16 +1893,16 @@
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F002",
-          "F011"
+          "F023",
+          "F026"
         ],
         "different_role_evidence_refs": [
-          "F002",
-          "F011"
+          "F002"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
-          "W2",
-          "W7"
+          "W1",
+          "W6"
         ]
       },
       {
@@ -1172,14 +1914,13 @@
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F002",
-          "F005"
+          "F023",
+          "F026"
         ],
-        "different_role_evidence_refs": [
-          "F005"
-        ],
+        "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
-          "W5"
+          "W4"
         ]
       },
       {
@@ -1195,7 +1936,7 @@
         "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
-          "W3"
+          "W2"
         ]
       },
       {
@@ -1204,14 +1945,39 @@
           "H2",
           "H8"
         ],
-        "status": "no_recorded_bridge",
+        "status": "opposed_evidence",
         "shared_evidence_refs": [
           "F003",
           "F007"
         ],
+        "different_role_evidence_refs": [
+          "F003"
+        ],
+        "opposed_evidence_refs": [
+          "F003"
+        ],
+        "shared_workup_ids": []
+      },
+      {
+        "id": "PAIR-H2-H9",
+        "hypothesis_ids": [
+          "H2",
+          "H9"
+        ],
+        "status": "shared_workup",
+        "shared_evidence_refs": [
+          "F002",
+          "F004",
+          "F005",
+          "F023",
+          "F026"
+        ],
         "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
-        "shared_workup_ids": []
+        "shared_workup_ids": [
+          "W2",
+          "W9"
+        ]
       },
       {
         "id": "PAIR-H3-H4",
@@ -1222,13 +1988,14 @@
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F002",
-          "F011"
+          "F008",
+          "F009",
+          "F019"
         ],
         "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
-          "W2",
-          "W8"
+          "W7"
         ]
       },
       {
@@ -1240,16 +2007,22 @@
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F002",
-          "F011"
+          "F016",
+          "F017",
+          "F018",
+          "F019"
         ],
         "different_role_evidence_refs": [
           "F002",
-          "F011"
+          "F016",
+          "F017",
+          "F018",
+          "F019"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
-          "W2",
-          "W7"
+          "W1",
+          "W6"
         ]
       },
       {
@@ -1260,16 +2033,12 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F002",
-          "F005",
-          "F013"
+          "F002"
         ],
-        "different_role_evidence_refs": [
-          "F005"
-        ],
+        "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
-          "W5"
+          "W4"
         ]
       },
       {
@@ -1299,24 +2068,39 @@
         "shared_workup_ids": []
       },
       {
+        "id": "PAIR-H3-H9",
+        "hypothesis_ids": [
+          "H3",
+          "H9"
+        ],
+        "status": "shared_workup",
+        "shared_evidence_refs": [
+          "F002",
+          "F005"
+        ],
+        "different_role_evidence_refs": [],
+        "opposed_evidence_refs": [],
+        "shared_workup_ids": [
+          "W9"
+        ]
+      },
+      {
         "id": "PAIR-H4-H5",
         "hypothesis_ids": [
           "H4",
           "H5"
         ],
-        "status": "shared_workup",
+        "status": "no_recorded_bridge",
         "shared_evidence_refs": [
           "F002",
-          "F011"
+          "F019"
         ],
         "different_role_evidence_refs": [
           "F002",
-          "F011"
+          "F019"
         ],
         "opposed_evidence_refs": [],
-        "shared_workup_ids": [
-          "W2"
-        ]
+        "shared_workup_ids": []
       },
       {
         "id": "PAIR-H4-H6",
@@ -1345,7 +2129,7 @@
         "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
-          "W3"
+          "W2"
         ]
       },
       {
@@ -1361,6 +2145,22 @@
         "shared_workup_ids": []
       },
       {
+        "id": "PAIR-H4-H9",
+        "hypothesis_ids": [
+          "H4",
+          "H9"
+        ],
+        "status": "shared_workup",
+        "shared_evidence_refs": [
+          "F002"
+        ],
+        "different_role_evidence_refs": [],
+        "opposed_evidence_refs": [],
+        "shared_workup_ids": [
+          "W2"
+        ]
+      },
+      {
         "id": "PAIR-H5-H6",
         "hypothesis_ids": [
           "H5",
@@ -1368,7 +2168,9 @@
         ],
         "status": "no_recorded_bridge",
         "shared_evidence_refs": [
-          "F002"
+          "F002",
+          "F023",
+          "F026"
         ],
         "different_role_evidence_refs": [
           "F002"
@@ -1405,6 +2207,24 @@
         "shared_workup_ids": []
       },
       {
+        "id": "PAIR-H5-H9",
+        "hypothesis_ids": [
+          "H5",
+          "H9"
+        ],
+        "status": "no_recorded_bridge",
+        "shared_evidence_refs": [
+          "F002",
+          "F023",
+          "F026"
+        ],
+        "different_role_evidence_refs": [
+          "F002"
+        ],
+        "opposed_evidence_refs": [],
+        "shared_workup_ids": []
+      },
+      {
         "id": "PAIR-H6-H7",
         "hypothesis_ids": [
           "H6",
@@ -1431,6 +2251,26 @@
         "shared_workup_ids": []
       },
       {
+        "id": "PAIR-H6-H9",
+        "hypothesis_ids": [
+          "H6",
+          "H9"
+        ],
+        "status": "no_recorded_bridge",
+        "shared_evidence_refs": [
+          "F002",
+          "F023",
+          "F024",
+          "F026",
+          "F037"
+        ],
+        "different_role_evidence_refs": [
+          "F024"
+        ],
+        "opposed_evidence_refs": [],
+        "shared_workup_ids": []
+      },
+      {
         "id": "PAIR-H7-H8",
         "hypothesis_ids": [
           "H7",
@@ -1441,11 +2281,40 @@
         "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": []
+      },
+      {
+        "id": "PAIR-H7-H9",
+        "hypothesis_ids": [
+          "H7",
+          "H9"
+        ],
+        "status": "shared_workup",
+        "shared_evidence_refs": [
+          "F002"
+        ],
+        "different_role_evidence_refs": [],
+        "opposed_evidence_refs": [],
+        "shared_workup_ids": [
+          "W2",
+          "W3"
+        ]
+      },
+      {
+        "id": "PAIR-H8-H9",
+        "hypothesis_ids": [
+          "H8",
+          "H9"
+        ],
+        "status": "no_recorded_bridge",
+        "shared_evidence_refs": [],
+        "different_role_evidence_refs": [],
+        "opposed_evidence_refs": [],
+        "shared_workup_ids": []
       }
     ],
     "hypothesis_components": [
       {
-        "id": "BRANCH-F5CBF91A88",
+        "id": "BRANCH-A87F00A458",
         "hypothesis_ids": [
           "H1",
           "H2",
@@ -1453,56 +2322,53 @@
           "H4",
           "H5",
           "H6",
-          "H7"
+          "H7",
+          "H8",
+          "H9"
         ],
-        "recorded_bridge_pairs": 16,
-        "evidence_refs": [],
+        "recorded_bridge_pairs": 21,
+        "evidence_refs": [
+          "F003",
+          "F021"
+        ],
         "workup_ids": [
+          "W1",
           "W2",
           "W3",
-          "W5",
+          "W4",
+          "W6",
           "W7",
-          "W8"
+          "W9"
         ],
         "isolated": false
-      },
-      {
-        "id": "BRANCH-2022230F1E",
-        "hypothesis_ids": [
-          "H8"
-        ],
-        "recorded_bridge_pairs": 0,
-        "evidence_refs": [],
-        "workup_ids": [],
-        "isolated": true
       }
     ],
     "repeated_workup_coverage": [],
     "summary": {
-      "repeated_signature_groups": 0,
-      "evidence_refs_in_repeated_signatures": 0,
-      "pairs_without_recorded_bridge": 12,
-      "pairs_with_planned_but_no_opposed_evidence": 16,
-      "hypothesis_component_count": 2,
-      "isolated_hypothesis_components": 1,
+      "repeated_signature_groups": 3,
+      "evidence_refs_in_repeated_signatures": 6,
+      "pairs_without_recorded_bridge": 15,
+      "pairs_with_planned_but_no_opposed_evidence": 19,
+      "hypothesis_component_count": 1,
+      "isolated_hypothesis_components": 0,
       "repeated_workup_coverage_groups": 0
     }
   },
   "metrics": {
-    "pairwise_relation_count": 32,
-    "hyperedge_count": 25,
-    "argument_constellations": 8,
-    "shared_evidence_junctions": 8,
-    "discriminator_edges": 7,
+    "pairwise_relation_count": 71,
+    "hyperedge_count": 36,
+    "argument_constellations": 9,
+    "shared_evidence_junctions": 16,
+    "discriminator_edges": 9,
     "gap_contexts": 2,
-    "shared_evidence_refs": 8,
-    "pairwise_relations_visible_in_shared_junctions": 25,
-    "shared_layer_scan_units": 15,
-    "shared_layer_visual_reduction_ratio": 0.531,
-    "multi_hypothesis_workups": 5,
-    "hypotheses_covered_by_workup": 7,
-    "total_hypotheses": 8,
-    "workup_hypothesis_coverage_ratio": 0.875,
+    "shared_evidence_refs": 16,
+    "pairwise_relations_visible_in_shared_junctions": 48,
+    "shared_layer_scan_units": 39,
+    "shared_layer_visual_reduction_ratio": 0.451,
+    "multi_hypothesis_workups": 7,
+    "hypotheses_covered_by_workup": 8,
+    "total_hypotheses": 9,
+    "workup_hypothesis_coverage_ratio": 0.889,
     "hypotheses_without_discriminator": [
       "H8"
     ]

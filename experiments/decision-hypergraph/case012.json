@@ -4,9 +4,9 @@
   "derived_from": {
     "case_key": "case012",
     "case_id": "CASE012",
-    "bundle_sha256": "36a5fc7d2930169e1bce97dfe3361326c0692fb3f8c80a1daac896b4f921a07d",
-    "reasoning_revision_id": "RR-CASE012-b4ec97302ee1",
-    "reasoning_revision_sha256": "03e771e8ed294416d7fb99931179c93a3264d803e15086339931257d11fd27e6"
+    "bundle_sha256": "d09896d656131baf6937e87c9a295b5e735a7296cac1a8c7081feb93ca8e3d41",
+    "reasoning_revision_id": "RR-CASE012-e91f2beddb8e",
+    "reasoning_revision_sha256": "8e330f40ee8506a50c38c35679efc05da1db440f35d83a79e3214d0432a899ac"
   },
   "nodes": [
     {
@@ -45,59 +45,149 @@
       "label": "прогресуючу задишку при фізичному навантаженні"
     },
     {
+      "id": "F003",
+      "kind": "case_evidence",
+      "label": "зниження працездатності та непереносимість фізичного навантаження"
+    },
+    {
       "id": "F004",
       "kind": "case_evidence",
       "label": "схуд приблизно на 6 кг"
     },
     {
+      "id": "F005",
+      "kind": "case_evidence",
+      "label": "ЧСС — 102/хв"
+    },
+    {
+      "id": "F006",
+      "kind": "case_evidence",
+      "label": "Печінка виступає на 1- 2 см"
+    },
+    {
       "id": "F007",
       "kind": "case_evidence",
-      "label": "ЗАК"
+      "label": "Н"
+    },
+    {
+      "id": "F008",
+      "kind": "case_evidence",
+      "label": "RBC"
     },
     {
       "id": "F009",
       "kind": "case_evidence",
-      "label": "Біохімічний аналіз"
+      "label": "WBC"
+    },
+    {
+      "id": "F010",
+      "kind": "case_evidence",
+      "label": "нейтрофіли"
     },
     {
       "id": "F011",
       "kind": "case_evidence",
-      "label": "обʼємне конгломератне утворення"
+      "label": "лімфоцити"
     },
     {
       "id": "F012",
       "kind": "case_evidence",
-      "label": "компресія верхньої порожнистої вени"
+      "label": "тромбоцити"
     },
     {
       "id": "F013",
       "kind": "case_evidence",
-      "label": "компресія трахеї та правого головного бронха"
+      "label": "ШОЕ"
     },
     {
       "id": "F014",
       "kind": "case_evidence",
-      "label": "збільшені лімфатичні вузли шийної та надключичної груп"
+      "label": "креатинін"
     },
     {
       "id": "F015",
       "kind": "case_evidence",
-      "label": "декілька дрібних вогнищ до 5 -6 мм"
+      "label": "АЛТ"
+    },
+    {
+      "id": "F016",
+      "kind": "case_evidence",
+      "label": "АСТ"
     },
     {
       "id": "F017",
       "kind": "case_evidence",
-      "label": "інтенсивне патологічне накопичення FDG у медіастинальному утворенні"
+      "label": "загальний білірубін"
     },
     {
       "id": "F018",
       "kind": "case_evidence",
-      "label": "патологічна метаболічна активність у шийних та надключичних лімфатичних вузлах"
+      "label": "ЛДГ"
     },
     {
       "id": "F019",
       "kind": "case_evidence",
+      "label": "сечова кислота"
+    },
+    {
+      "id": "F020",
+      "kind": "case_evidence",
+      "label": "В,-мікроглобулін"
+    },
+    {
+      "id": "F021",
+      "kind": "case_evidence",
+      "label": "ВІЛ — негативний"
+    },
+    {
+      "id": "F022",
+      "kind": "case_evidence",
+      "label": "обʼємне конгломератне утворення"
+    },
+    {
+      "id": "F023",
+      "kind": "case_evidence",
+      "label": "компресія верхньої порожнистої вени"
+    },
+    {
+      "id": "F024",
+      "kind": "case_evidence",
+      "label": "компресія трахеї та правого головного бронха"
+    },
+    {
+      "id": "F025",
+      "kind": "case_evidence",
+      "label": "збільшені лімфатичні вузли шийної та надключичної груп"
+    },
+    {
+      "id": "F026",
+      "kind": "case_evidence",
+      "label": "декілька дрібних вогнищ до 5 -6 мм"
+    },
+    {
+      "id": "F027",
+      "kind": "case_evidence",
+      "label": "Плеврального випоту немає"
+    },
+    {
+      "id": "F028",
+      "kind": "case_evidence",
+      "label": "інтенсивне патологічне накопичення FDG у медіастинальному утворенні"
+    },
+    {
+      "id": "F029",
+      "kind": "case_evidence",
+      "label": "патологічна метаболічна активність у шийних та надключичних лімфатичних вузлах"
+    },
+    {
+      "id": "F030",
+      "kind": "case_evidence",
       "label": "Віддалених вогнищ інтенсивного накопичення FDG не виявлено"
+    },
+    {
+      "id": "F031",
+      "kind": "case_evidence",
+      "label": "Біопсія пухлинного утворення в роботі"
     },
     {
       "id": "G3",
@@ -175,7 +265,527 @@
       "id": "X-A-H1",
       "kind": "argument_constellation",
       "label": "Аргументна структура H1",
+      "summary": "Зводить 31 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F001",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F002",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F003",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F004",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F005",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F006",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F007",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F008",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F009",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F010",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F011",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F012",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F013",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F014",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F015",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F016",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F017",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F018",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F019",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F020",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F021",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F022",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F023",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F024",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F025",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F026",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F027",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F028",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F029",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F030",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F031",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H1",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 32,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H2",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H2",
+      "summary": "Зводить 18 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F001",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F002",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F003",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F004",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F007",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F013",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F018",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F020",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F022",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F023",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F024",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F025",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F026",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F027",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F028",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F029",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F030",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F031",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H2",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 19,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H3",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H3",
+      "summary": "Зводить 20 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F001",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F002",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F003",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F004",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F008",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F009",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F010",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F011",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F012",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F018",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F021",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F022",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F023",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F024",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F025",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F026",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F028",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F029",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F030",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F031",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 21,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H4",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H4",
+      "summary": "Зводить 10 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F001",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F018",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F022",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F023",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F024",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F025",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F028",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F029",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F030",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F031",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H4",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 11,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H5",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H5",
       "summary": "Зводить 11 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "participants": [
+        {
+          "ref": "F001",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F004",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F018",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F022",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F023",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F024",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F025",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F028",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F029",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F030",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F031",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
+          "role": "target_hypothesis"
+        }
+      ],
+      "participant_count": 12,
+      "candidate_only": true
+    },
+    {
+      "id": "X-A-H6",
+      "kind": "argument_constellation",
+      "label": "Аргументна структура H6",
+      "summary": "Зводить 14 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
       "participants": [
         {
           "ref": "F001",
@@ -193,252 +803,57 @@
           "relation": "support"
         },
         {
-          "ref": "F009",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F011",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F012",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F013",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F014",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F017",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
           "ref": "F018",
           "role": "recorded_evidence",
           "relation": "support"
         },
         {
-          "ref": "F019",
+          "ref": "F020",
           "role": "recorded_evidence",
           "relation": "neutral"
         },
         {
-          "ref": "H1",
-          "role": "target_hypothesis"
-        }
-      ],
-      "participant_count": 12,
-      "candidate_only": true
-    },
-    {
-      "id": "X-A-H2",
-      "kind": "argument_constellation",
-      "label": "Аргументна структура H2",
-      "summary": "Зводить 7 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
-      "participants": [
-        {
-          "ref": "F001",
+          "ref": "F022",
           "role": "recorded_evidence",
           "relation": "support"
         },
         {
-          "ref": "F004",
+          "ref": "F023",
           "role": "recorded_evidence",
           "relation": "support"
         },
         {
-          "ref": "F011",
+          "ref": "F024",
           "role": "recorded_evidence",
           "relation": "support"
         },
         {
-          "ref": "F014",
+          "ref": "F025",
           "role": "recorded_evidence",
           "relation": "support"
         },
         {
-          "ref": "F017",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F018",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F019",
+          "ref": "F026",
           "role": "recorded_evidence",
           "relation": "neutral"
         },
         {
-          "ref": "H2",
-          "role": "target_hypothesis"
-        }
-      ],
-      "participant_count": 8,
-      "candidate_only": true
-    },
-    {
-      "id": "X-A-H3",
-      "kind": "argument_constellation",
-      "label": "Аргументна структура H3",
-      "summary": "Зводить 6 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
-      "participants": [
-        {
-          "ref": "F001",
+          "ref": "F028",
           "role": "recorded_evidence",
           "relation": "support"
         },
         {
-          "ref": "F007",
+          "ref": "F029",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F030",
           "role": "recorded_evidence",
           "relation": "neutral"
         },
         {
-          "ref": "F011",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F013",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F014",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F017",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "H3",
-          "role": "target_hypothesis"
-        }
-      ],
-      "participant_count": 7,
-      "candidate_only": true
-    },
-    {
-      "id": "X-A-H4",
-      "kind": "argument_constellation",
-      "label": "Аргументна структура H4",
-      "summary": "Зводить 4 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
-      "participants": [
-        {
-          "ref": "F001",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F011",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F014",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "F018",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "H4",
-          "role": "target_hypothesis"
-        }
-      ],
-      "participant_count": 5,
-      "candidate_only": true
-    },
-    {
-      "id": "X-A-H5",
-      "kind": "argument_constellation",
-      "label": "Аргументна структура H5",
-      "summary": "Зводить 6 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
-      "participants": [
-        {
-          "ref": "F004",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "F011",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F012",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F013",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F014",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "F018",
-          "role": "recorded_evidence",
-          "relation": "neutral"
-        },
-        {
-          "ref": "H5",
-          "role": "target_hypothesis"
-        }
-      ],
-      "participant_count": 7,
-      "candidate_only": true
-    },
-    {
-      "id": "X-A-H6",
-      "kind": "argument_constellation",
-      "label": "Аргументна структура H6",
-      "summary": "Зводить 5 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
-      "participants": [
-        {
-          "ref": "F011",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F014",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F017",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F018",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F019",
+          "ref": "F031",
           "role": "recorded_evidence",
           "relation": "neutral"
         },
@@ -447,37 +862,72 @@
           "role": "target_hypothesis"
         }
       ],
-      "participant_count": 6,
+      "participant_count": 15,
       "candidate_only": true
     },
     {
       "id": "X-A-H7",
       "kind": "argument_constellation",
       "label": "Аргументна структура H7",
-      "summary": "Зводить 5 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
+      "summary": "Зводить 12 окремих фактів навколо однієї гіпотези без зміни їхніх ролей.",
       "participants": [
+        {
+          "ref": "F002",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F003",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
         {
           "ref": "F004",
           "role": "recorded_evidence",
           "relation": "support"
         },
         {
-          "ref": "F011",
+          "ref": "F013",
           "role": "recorded_evidence",
           "relation": "support"
         },
         {
-          "ref": "F015",
-          "role": "recorded_evidence",
-          "relation": "support"
-        },
-        {
-          "ref": "F017",
+          "ref": "F021",
           "role": "recorded_evidence",
           "relation": "neutral"
         },
         {
-          "ref": "F019",
+          "ref": "F022",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F026",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F027",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F028",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F029",
+          "role": "recorded_evidence",
+          "relation": "support"
+        },
+        {
+          "ref": "F030",
+          "role": "recorded_evidence",
+          "relation": "neutral"
+        },
+        {
+          "ref": "F031",
           "role": "recorded_evidence",
           "relation": "neutral"
         },
@@ -486,14 +936,14 @@
           "role": "target_hypothesis"
         }
       ],
-      "participant_count": 6,
+      "participant_count": 13,
       "candidate_only": true
     },
     {
       "id": "X-E-F001",
       "kind": "shared_evidence_junction",
       "label": "Спільний доказ F001",
-      "summary": "Один запис входить у 4 гіпотези; його роль показана окремо для кожної.",
+      "summary": "Один запис входить у 6 гіпотези; його роль показана окремо для кожної.",
       "participants": [
         {
           "ref": "F001",
@@ -516,6 +966,89 @@
         },
         {
           "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H5",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        }
+      ],
+      "participant_count": 7,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F002",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F002",
+      "summary": "Один запис входить у 5 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F002",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H7",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        }
+      ],
+      "participant_count": 6,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F003",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F003",
+      "summary": "Один запис входить у 4 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F003",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H7",
           "role": "candidate_hypothesis",
           "relation": "support"
         }
@@ -527,44 +1060,10 @@
       "id": "X-E-F004",
       "kind": "shared_evidence_junction",
       "label": "Спільний доказ F004",
-      "summary": "Один запис входить у 4 гіпотези; його роль показана окремо для кожної.",
+      "summary": "Один запис входить у 6 гіпотези; його роль показана окремо для кожної.",
       "participants": [
         {
           "ref": "F004",
-          "role": "shared_evidence"
-        },
-        {
-          "ref": "H1",
-          "role": "candidate_hypothesis",
-          "relation": "support"
-        },
-        {
-          "ref": "H2",
-          "role": "candidate_hypothesis",
-          "relation": "support"
-        },
-        {
-          "ref": "H5",
-          "role": "candidate_hypothesis",
-          "relation": "neutral"
-        },
-        {
-          "ref": "H7",
-          "role": "candidate_hypothesis",
-          "relation": "support"
-        }
-      ],
-      "participant_count": 5,
-      "candidate_only": true
-    },
-    {
-      "id": "X-E-F011",
-      "kind": "shared_evidence_junction",
-      "label": "Спільний доказ F011",
-      "summary": "Один запис входить у 7 гіпотези; його роль показана окремо для кожної.",
-      "participants": [
-        {
-          "ref": "F011",
           "role": "shared_evidence"
         },
         {
@@ -583,14 +1082,9 @@
           "relation": "support"
         },
         {
-          "ref": "H4",
-          "role": "candidate_hypothesis",
-          "relation": "support"
-        },
-        {
           "ref": "H5",
           "role": "candidate_hypothesis",
-          "relation": "support"
+          "relation": "neutral"
         },
         {
           "ref": "H6",
@@ -603,7 +1097,127 @@
           "relation": "support"
         }
       ],
-      "participant_count": 8,
+      "participant_count": 7,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F007",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F007",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F007",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F008",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F008",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F008",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F009",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F009",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F009",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F010",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F010",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F010",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 3,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F011",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F011",
+      "summary": "Один запис входить у 2 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F011",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 3,
       "candidate_only": true
     },
     {
@@ -619,12 +1233,12 @@
         {
           "ref": "H1",
           "role": "candidate_hypothesis",
-          "relation": "support"
+          "relation": "neutral"
         },
         {
-          "ref": "H5",
+          "ref": "H3",
           "role": "candidate_hypothesis",
-          "relation": "support"
+          "relation": "neutral"
         }
       ],
       "participant_count": 3,
@@ -646,12 +1260,12 @@
           "relation": "support"
         },
         {
-          "ref": "H3",
+          "ref": "H2",
           "role": "candidate_hypothesis",
           "relation": "support"
         },
         {
-          "ref": "H5",
+          "ref": "H7",
           "role": "candidate_hypothesis",
           "relation": "support"
         }
@@ -660,13 +1274,13 @@
       "candidate_only": true
     },
     {
-      "id": "X-E-F014",
+      "id": "X-E-F018",
       "kind": "shared_evidence_junction",
-      "label": "Спільний доказ F014",
+      "label": "Спільний доказ F018",
       "summary": "Один запис входить у 6 гіпотези; його роль показана окремо для кожної.",
       "participants": [
         {
-          "ref": "F014",
+          "ref": "F018",
           "role": "shared_evidence"
         },
         {
@@ -704,13 +1318,71 @@
       "candidate_only": true
     },
     {
-      "id": "X-E-F017",
+      "id": "X-E-F020",
       "kind": "shared_evidence_junction",
-      "label": "Спільний доказ F017",
-      "summary": "Один запис входить у 5 гіпотези; його роль показана окремо для кожної.",
+      "label": "Спільний доказ F020",
+      "summary": "Один запис входить у 3 гіпотези; його роль показана окремо для кожної.",
       "participants": [
         {
-          "ref": "F017",
+          "ref": "F020",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F021",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F021",
+      "summary": "Один запис входить у 3 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F021",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H7",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F022",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F022",
+      "summary": "Один запис входить у 7 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F022",
           "role": "shared_evidence"
         },
         {
@@ -726,7 +1398,17 @@
         {
           "ref": "H3",
           "role": "candidate_hypothesis",
-          "relation": "neutral"
+          "relation": "support"
+        },
+        {
+          "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H5",
+          "role": "candidate_hypothesis",
+          "relation": "support"
         },
         {
           "ref": "H6",
@@ -736,20 +1418,20 @@
         {
           "ref": "H7",
           "role": "candidate_hypothesis",
-          "relation": "neutral"
+          "relation": "support"
         }
       ],
-      "participant_count": 6,
+      "participant_count": 8,
       "candidate_only": true
     },
     {
-      "id": "X-E-F018",
+      "id": "X-E-F023",
       "kind": "shared_evidence_junction",
-      "label": "Спільний доказ F018",
-      "summary": "Один запис входить у 5 гіпотези; його роль показана окремо для кожної.",
+      "label": "Спільний доказ F023",
+      "summary": "Один запис входить у 6 гіпотези; його роль показана окремо для кожної.",
       "participants": [
         {
-          "ref": "F018",
+          "ref": "F023",
           "role": "shared_evidence"
         },
         {
@@ -759,6 +1441,99 @@
         },
         {
           "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        }
+      ],
+      "participant_count": 7,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F024",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F024",
+      "summary": "Один запис входить у 6 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F024",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        }
+      ],
+      "participant_count": 7,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F025",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F025",
+      "summary": "Один запис входить у 6 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F025",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H3",
           "role": "candidate_hypothesis",
           "relation": "support"
         },
@@ -778,17 +1553,17 @@
           "relation": "support"
         }
       ],
-      "participant_count": 6,
+      "participant_count": 7,
       "candidate_only": true
     },
     {
-      "id": "X-E-F019",
+      "id": "X-E-F026",
       "kind": "shared_evidence_junction",
-      "label": "Спільний доказ F019",
-      "summary": "Один запис входить у 4 гіпотези; його роль показана окремо для кожної.",
+      "label": "Спільний доказ F026",
+      "summary": "Один запис входить у 5 гіпотези; його роль показана окремо для кожної.",
       "participants": [
         {
-          "ref": "F019",
+          "ref": "F026",
           "role": "shared_evidence"
         },
         {
@@ -798,6 +1573,187 @@
         },
         {
           "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H7",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        }
+      ],
+      "participant_count": 6,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F027",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F027",
+      "summary": "Один запис входить у 3 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F027",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H7",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 4,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F028",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F028",
+      "summary": "Один запис входить у 7 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F028",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H7",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        }
+      ],
+      "participant_count": 8,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F029",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F029",
+      "summary": "Один запис входить у 7 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F029",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        },
+        {
+          "ref": "H7",
+          "role": "candidate_hypothesis",
+          "relation": "support"
+        }
+      ],
+      "participant_count": 8,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F030",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F030",
+      "summary": "Один запис входить у 7 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F030",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
           "role": "candidate_hypothesis",
           "relation": "neutral"
         },
@@ -812,7 +1768,56 @@
           "relation": "neutral"
         }
       ],
-      "participant_count": 5,
+      "participant_count": 8,
+      "candidate_only": true
+    },
+    {
+      "id": "X-E-F031",
+      "kind": "shared_evidence_junction",
+      "label": "Спільний доказ F031",
+      "summary": "Один запис входить у 7 гіпотези; його роль показана окремо для кожної.",
+      "participants": [
+        {
+          "ref": "F031",
+          "role": "shared_evidence"
+        },
+        {
+          "ref": "H1",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H2",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H3",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H4",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H5",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H6",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        },
+        {
+          "ref": "H7",
+          "role": "candidate_hypothesis",
+          "relation": "neutral"
+        }
+      ],
+      "participant_count": 8,
       "candidate_only": true
     },
     {
@@ -1011,7 +2016,168 @@
     }
   ],
   "analysis": {
-    "evidence_signature_groups": [],
+    "evidence_signature_groups": [
+      {
+        "id": "SIG-0A2A7F2BF0",
+        "evidence_refs": [
+          "F030",
+          "F031"
+        ],
+        "hypothesis_roles": [
+          {
+            "hypothesis_id": "H1",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H2",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H3",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H4",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H5",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H6",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H7",
+            "relation": "neutral"
+          }
+        ]
+      },
+      {
+        "id": "SIG-1CB091A9C7",
+        "evidence_refs": [
+          "F008",
+          "F009",
+          "F010",
+          "F011",
+          "F012"
+        ],
+        "hypothesis_roles": [
+          {
+            "hypothesis_id": "H1",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H3",
+            "relation": "neutral"
+          }
+        ]
+      },
+      {
+        "id": "SIG-4763B3BB42",
+        "evidence_refs": [
+          "F023",
+          "F024"
+        ],
+        "hypothesis_roles": [
+          {
+            "hypothesis_id": "H1",
+            "relation": "support"
+          },
+          {
+            "hypothesis_id": "H2",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H3",
+            "relation": "support"
+          },
+          {
+            "hypothesis_id": "H4",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H5",
+            "relation": "support"
+          },
+          {
+            "hypothesis_id": "H6",
+            "relation": "support"
+          }
+        ]
+      },
+      {
+        "id": "SIG-4F9A9BA123",
+        "evidence_refs": [
+          "F028",
+          "F029"
+        ],
+        "hypothesis_roles": [
+          {
+            "hypothesis_id": "H1",
+            "relation": "support"
+          },
+          {
+            "hypothesis_id": "H2",
+            "relation": "support"
+          },
+          {
+            "hypothesis_id": "H3",
+            "relation": "support"
+          },
+          {
+            "hypothesis_id": "H4",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H5",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H6",
+            "relation": "support"
+          },
+          {
+            "hypothesis_id": "H7",
+            "relation": "support"
+          }
+        ]
+      },
+      {
+        "id": "SIG-808230C07F",
+        "evidence_refs": [
+          "F018",
+          "F025"
+        ],
+        "hypothesis_roles": [
+          {
+            "hypothesis_id": "H1",
+            "relation": "support"
+          },
+          {
+            "hypothesis_id": "H2",
+            "relation": "support"
+          },
+          {
+            "hypothesis_id": "H3",
+            "relation": "support"
+          },
+          {
+            "hypothesis_id": "H4",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H5",
+            "relation": "neutral"
+          },
+          {
+            "hypothesis_id": "H6",
+            "relation": "support"
+          }
+        ]
+      }
+    ],
     "hypothesis_pair_diagnostics": [
       {
         "id": "PAIR-H1-H2",
@@ -1022,14 +2188,28 @@
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F001",
+          "F002",
+          "F003",
           "F004",
-          "F011",
-          "F014",
-          "F017",
+          "F007",
+          "F013",
           "F018",
-          "F019"
+          "F020",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F026",
+          "F027",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
-        "different_role_evidence_refs": [],
+        "different_role_evidence_refs": [
+          "F023",
+          "F024"
+        ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
           "W3",
@@ -1046,14 +2226,27 @@
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F001",
+          "F002",
+          "F003",
+          "F004",
+          "F008",
+          "F009",
+          "F010",
           "F011",
-          "F013",
-          "F014",
-          "F017"
+          "F012",
+          "F018",
+          "F021",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F026",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
-        "different_role_evidence_refs": [
-          "F017"
-        ],
+        "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
           "W3",
@@ -1069,13 +2262,23 @@
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F001",
-          "F011",
-          "F014",
-          "F018"
+          "F018",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
-          "F014",
-          "F018"
+          "F018",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1092,17 +2295,24 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
+          "F001",
           "F004",
-          "F011",
-          "F012",
-          "F013",
-          "F014",
-          "F018"
+          "F018",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
           "F004",
-          "F014",
-          "F018"
+          "F018",
+          "F025",
+          "F028",
+          "F029"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1119,11 +2329,20 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F011",
-          "F014",
-          "F017",
+          "F001",
+          "F002",
+          "F004",
           "F018",
-          "F019"
+          "F020",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F026",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
@@ -1140,13 +2359,21 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
+          "F002",
+          "F003",
           "F004",
-          "F011",
-          "F017",
-          "F019"
+          "F013",
+          "F021",
+          "F022",
+          "F026",
+          "F027",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
-          "F017"
+          "F026"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1163,12 +2390,23 @@
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F001",
-          "F011",
-          "F014",
-          "F017"
+          "F002",
+          "F003",
+          "F004",
+          "F018",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F026",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
-          "F017"
+          "F023",
+          "F024"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1185,13 +2423,21 @@
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F001",
-          "F011",
-          "F014",
-          "F018"
+          "F018",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
-          "F014",
-          "F018"
+          "F018",
+          "F025",
+          "F028",
+          "F029"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1208,15 +2454,26 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
+          "F001",
           "F004",
-          "F011",
-          "F014",
-          "F018"
+          "F018",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
           "F004",
-          "F014",
-          "F018"
+          "F018",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1233,13 +2490,25 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F011",
-          "F014",
-          "F017",
+          "F001",
+          "F002",
+          "F004",
           "F018",
-          "F019"
+          "F020",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F026",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
-        "different_role_evidence_refs": [],
+        "different_role_evidence_refs": [
+          "F023",
+          "F024"
+        ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
           "W3",
@@ -1254,13 +2523,20 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
+          "F002",
+          "F003",
           "F004",
-          "F011",
-          "F017",
-          "F019"
+          "F013",
+          "F022",
+          "F026",
+          "F027",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
-          "F017"
+          "F026"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1277,11 +2553,23 @@
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F001",
-          "F011",
-          "F014"
+          "F018",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
-          "F014"
+          "F018",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1297,12 +2585,24 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F011",
-          "F013",
-          "F014"
+          "F001",
+          "F004",
+          "F018",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
-          "F014"
+          "F004",
+          "F018",
+          "F025",
+          "F028",
+          "F029"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1318,13 +2618,21 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F011",
-          "F014",
-          "F017"
+          "F001",
+          "F002",
+          "F004",
+          "F018",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F026",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
-        "different_role_evidence_refs": [
-          "F017"
-        ],
+        "different_role_evidence_refs": [],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
           "W3",
@@ -1339,10 +2647,20 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F011",
-          "F017"
+          "F002",
+          "F003",
+          "F004",
+          "F021",
+          "F022",
+          "F026",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
-        "different_role_evidence_refs": [],
+        "different_role_evidence_refs": [
+          "F026"
+        ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
           "W3",
@@ -1357,11 +2675,21 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F011",
-          "F014",
-          "F018"
+          "F001",
+          "F018",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
-        "different_role_evidence_refs": [],
+        "different_role_evidence_refs": [
+          "F023",
+          "F024"
+        ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
           "W3",
@@ -1377,13 +2705,24 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F011",
-          "F014",
-          "F018"
+          "F001",
+          "F018",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
-          "F014",
-          "F018"
+          "F018",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1399,9 +2738,16 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F011"
+          "F022",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
-        "different_role_evidence_refs": [],
+        "different_role_evidence_refs": [
+          "F028",
+          "F029"
+        ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
           "W3",
@@ -1416,13 +2762,24 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F011",
-          "F014",
-          "F018"
+          "F001",
+          "F004",
+          "F018",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
-          "F014",
-          "F018"
+          "F004",
+          "F018",
+          "F025",
+          "F028",
+          "F029"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1439,10 +2796,16 @@
         "status": "shared_workup",
         "shared_evidence_refs": [
           "F004",
-          "F011"
+          "F022",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
-          "F004"
+          "F004",
+          "F028",
+          "F029"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1458,12 +2821,17 @@
         ],
         "status": "shared_workup",
         "shared_evidence_refs": [
-          "F011",
-          "F017",
-          "F019"
+          "F002",
+          "F004",
+          "F022",
+          "F026",
+          "F028",
+          "F029",
+          "F030",
+          "F031"
         ],
         "different_role_evidence_refs": [
-          "F017"
+          "F026"
         ],
         "opposed_evidence_refs": [],
         "shared_workup_ids": [
@@ -1513,8 +2881,8 @@
       }
     ],
     "summary": {
-      "repeated_signature_groups": 0,
-      "evidence_refs_in_repeated_signatures": 0,
+      "repeated_signature_groups": 5,
+      "evidence_refs_in_repeated_signatures": 13,
       "pairs_without_recorded_bridge": 0,
       "pairs_with_planned_but_no_opposed_evidence": 21,
       "hypothesis_component_count": 1,
@@ -1523,16 +2891,16 @@
     }
   },
   "metrics": {
-    "pairwise_relation_count": 44,
-    "hyperedge_count": 21,
+    "pairwise_relation_count": 116,
+    "hyperedge_count": 36,
     "argument_constellations": 7,
-    "shared_evidence_junctions": 9,
+    "shared_evidence_junctions": 24,
     "discriminator_edges": 3,
     "gap_contexts": 2,
-    "shared_evidence_refs": 9,
-    "pairwise_relations_visible_in_shared_junctions": 40,
-    "shared_layer_scan_units": 13,
-    "shared_layer_visual_reduction_ratio": 0.705,
+    "shared_evidence_refs": 24,
+    "pairwise_relations_visible_in_shared_junctions": 109,
+    "shared_layer_scan_units": 31,
+    "shared_layer_visual_reduction_ratio": 0.733,
     "multi_hypothesis_workups": 3,
     "hypotheses_covered_by_workup": 7,
     "total_hypotheses": 7,
