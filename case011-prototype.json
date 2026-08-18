@@ -1,0 +1,2138 @@
+{
+  "schema_version": "hematoboard.public-dashboard-fixture/2.1.0",
+  "generated_from": {
+    "case_key": "case011",
+    "case_id": "CASE011",
+    "bundle_id": "CASE011@f23c06faa5a0",
+    "bundle_revision": "CASE011@f23c06faa5a0",
+    "bundle_sha256": "dfec3aaa8af817bcaad4f8f5a4b79b8d1e78bc5c27e204110febb0f3ef55d205",
+    "reasoning_revision_id": "RR-CASE011-49e7d293e0d9",
+    "reasoning_revision_sha256": "200d7d31b918033a3ac503e9d72f1092fe677accfce607062834a0ed3264570d",
+    "clinical_copy_schema": "hematoboard.public-clinical-copy/generated-1.0.0",
+    "clinical_copy_sha256": "c9b4b10e3456aa1d462695b2b041f895db070f945e9301ff25a094e8199eacce",
+    "clinical_copy_origin": "canonical_generated_projection",
+    "clinical_input_sha256": "560d57a149be55b79938b7f6ac0a60c3c90e2f6d53ef435166557ed4b3b1f05f",
+    "evidence_review_status": "pass",
+    "evidence_review_modes": [
+      "agent_visual_source_review"
+    ],
+    "evidence_review_binding": "embedded",
+    "source_date_context_schema": "hematoboard.source_date_context/1.0",
+    "method_verification": "verified",
+    "clinician_accepted": false
+  },
+  "case": {
+    "id": "CASE011",
+    "title": "Знеособлений клінічний пакет · source ledger прийнято",
+    "overview_brief": "Демографічні дані не перенесено до minimum-necessary source layer.. Лихоманка, нічна пітливість, спленомегалія й підвищений ЛДГ/запальні маркери утворюють сумісний патерн; відсутність явних цитопеній або описаної лімфаденопатії знижує специфічність.",
+    "generated": "2026-08-18",
+    "governance": "Source ledger сформовано лише після об'єднаної людської звірки сканів, структурованого тексту, приватності та hash-derived координатного G4. Гіпотези й лікувальні рішення до канонічного ledger не внесено.",
+    "demographics": "Демографічні дані не перенесено до minimum-necessary source layer.",
+    "source": "Знеособлений source layer із приватним hash-pinned PDF/OCR/crop provenance.",
+    "signal": "Source layer прийнято; candidate synthesis формується окремою незмінною ревізією.",
+    "discriminating_step": "Лікарська перевірка окремого candidate synthesis після завершення незалежних reasoning passes."
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "rank": 1,
+      "label": "Прихований гематологічний неопластичний процес",
+      "clinical_role": "Провідний, але суто попередній кандидат для активного виключення; lesion або tissue evidence відсутні.",
+      "rationale": "Лихоманка, нічна пітливість, спленомегалія й підвищений ЛДГ/запальні маркери утворюють сумісний патерн; відсутність явних цитопеній або описаної лімфаденопатії знижує специфічність.",
+      "support_refs": [
+        "F002",
+        "F010",
+        "F016"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F013",
+        "F015"
+      ],
+      "missing_evidence": [
+        "Повний огляд вузлових зон",
+        "PET/CT або інша локалізація активного осередку",
+        "Морфологія адекватної тканини"
+      ],
+      "applicability_limits": [
+        "B-симптоми не є специфічними для лімфоми",
+        "GELTAMO source описує підтверджену фолікулярну лімфому"
+      ],
+      "discriminating_checks": [
+        "Whole-body FDG-PET/CT після первинного FUO-workup",
+        "Біопсія доступного підозрілого осередку"
+      ],
+      "short_label": "Прихований гематологічний неопластичний процес",
+      "counts": {
+        "support": 3,
+        "refute": 0,
+        "neutral": 2
+      },
+      "support_facts": [
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "display": "лихоманку неясного генезу",
+          "value": "лихоманку неясного генезу: 38 °C.",
+          "unit": "°C",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "diagnostic_interpretation",
+          "display": "Біохімічні показники",
+          "value": "Біохімічні показники: ЛДГ 410,8 Од/л, В.-мікроглобулін 2,28 мг/л, АЛТ 24 Од/л, АСТ 24 Од/л, Сечова кислота 297 мкмоль/л, ПСА 0,307 нг/мл.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F016",
+          "kind": "imaging_finding",
+          "display": "Незначно виражена спленомегалія",
+          "value": "Незначно виражена спленомегалія: Незначно виражена спленомегалія.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-16",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F013",
+          "kind": "diagnostic_interpretation",
+          "display": "Загальний аналіз крові від 31.07.2026",
+          "value": "Загальний аналіз крові від 31.07.2026: лейкоцити 8.25×10/л, гемоглобін 121 г/л, еритроцити 4,86×1012/л, тромбоцити 279×10/л.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F015",
+          "kind": "imaging_finding",
+          "display": "вузлове утворення лівої частки щитоподібної залози",
+          "value": "вузлове утворення лівої частки щитоподібної залози: вузлове утворення лівої частки щитоподібної залози.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-16",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H2",
+      "rank": 2,
+      "label": "Окульта або частково пролікована інфекція",
+      "clinical_role": "Обов’язкова гілка виключення перед будь-якою імуносупресивною інтерпретацією.",
+      "rationale": "Високе системне запалення й попереднє лікування з підозрою на бактеріальну інфекцію сумісні з прихованим осередком; низький прокальцитонін і негативний CMV ПЛР звужують лише окремі компоненти спектра.",
+      "support_refs": [
+        "F002",
+        "F003",
+        "F005"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F007",
+        "F011",
+        "F012"
+      ],
+      "missing_evidence": [
+        "Посіви крові до антибіотиків або після контрольованої паузи",
+        "Ехокардіографія за клінічної підозри",
+        "HIV/HBV/HCV/EBV/TB та експозиційний анамнез"
+      ],
+      "applicability_limits": [
+        "Немає серцевих або емболічних підказок для ендокардиту",
+        "Попередні антибіотики знижують чутливість культур"
+      ],
+      "discriminating_checks": [
+        "Серійні культури й focused infection review",
+        "TTE/TOE лише за підтриманої підозри",
+        "PET/CT для локалізації прихованого осередку"
+      ],
+      "short_label": "Окульта або частково пролікована інфекція",
+      "counts": {
+        "support": 3,
+        "refute": 0,
+        "neutral": 3
+      },
+      "support_facts": [
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "display": "лихоманку неясного генезу",
+          "value": "лихоманку неясного генезу: 38 °C.",
+          "unit": "°C",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F003",
+          "kind": "clinical_note",
+          "display": "антибактеріальну терапію (меропенем, ванкоміцин)",
+          "value": "антибактеріальну терапію (меропенем, ванкоміцин): переконливої причини гарячки встановити не вдалося.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F005",
+          "kind": "clinical_note",
+          "display": "С-реактивний білок",
+          "value": "С-реактивний білок: 673.1 мг/л.",
+          "unit": "мг/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-05-23",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F007",
+          "kind": "clinical_note",
+          "display": "С-реактивний білок",
+          "value": "С-реактивний білок: 57.9 мг/л.",
+          "unit": "мг/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-06-29",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F011",
+          "kind": "diagnostic_interpretation",
+          "display": "Імунологічні та ревматологічні дослідження",
+          "value": "Імунологічні та ревматологічні дослідження: ANA — позитивні, титр 1:320, Anti-CCP |gG <8 Од/мл - негативні, ANCA - негативні, |gA 0,06 г/л, Прокальцитонін 0,06 нг/мл.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F012",
+          "kind": "negative_finding",
+          "display": "CMV ДНК (ПЛР)",
+          "value": "CMV ДНК (ПЛР): не виявлено.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H3",
+      "rank": 3,
+      "label": "Still-подібне системне автозапальне захворювання",
+      "clinical_role": "Кандидат після виключення інфекції та злоякісного процесу.",
+      "rationale": "Гарячка, дуже високий CRP/ШОЕ і низький прокальцитонін допускають стерильне запалення, але типові висип, артралгія/артрит, нейтрофільний лейкоцитоз і феритин не надані.",
+      "support_refs": [
+        "F002",
+        "F005"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F011",
+        "F013"
+      ],
+      "missing_evidence": [
+        "Температурний патерн",
+        "Висип, артралгія/артрит і біль у горлі",
+        "Феритин та його динаміка"
+      ],
+      "applicability_limits": [
+        "Жодна наявна ознака не є специфічною",
+        "ANA 1:320 не підтримує автоматично Still’s disease"
+      ],
+      "discriminating_checks": [
+        "Феритин і повний Still-фенотип",
+        "Явне виключення інфекції, malignancy та іншого IMID"
+      ],
+      "short_label": "Still-подібне системне автозапальне захворювання",
+      "counts": {
+        "support": 2,
+        "refute": 0,
+        "neutral": 2
+      },
+      "support_facts": [
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "display": "лихоманку неясного генезу",
+          "value": "лихоманку неясного генезу: 38 °C.",
+          "unit": "°C",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F005",
+          "kind": "clinical_note",
+          "display": "С-реактивний білок",
+          "value": "С-реактивний білок: 673.1 мг/л.",
+          "unit": "мг/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-05-23",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F011",
+          "kind": "diagnostic_interpretation",
+          "display": "Імунологічні та ревматологічні дослідження",
+          "value": "Імунологічні та ревматологічні дослідження: ANA — позитивні, титр 1:320, Anti-CCP |gG <8 Од/мл - негативні, ANCA - негативні, |gA 0,06 г/л, Прокальцитонін 0,06 нг/мл.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F013",
+          "kind": "diagnostic_interpretation",
+          "display": "Загальний аналіз крові від 31.07.2026",
+          "value": "Загальний аналіз крові від 31.07.2026: лейкоцити 8.25×10/л, гемоглобін 121 г/л, еритроцити 4,86×1012/л, тромбоцити 279×10/л.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H4",
+      "rank": 4,
+      "label": "Васкуліт великих судин",
+      "clinical_role": "Умовний віково релевантний імітатор FUO.",
+      "rationale": "Вік понад 50 років, гарячка й висока ШОЕ/CRP сумісні, але відсутні дані про краніальні, зорові, щелепні, поліміалгічні або судинні симптоми.",
+      "support_refs": [
+        "F001",
+        "F002",
+        "F009"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F011"
+      ],
+      "missing_evidence": [
+        "Спрямований судинний анамнез і огляд",
+        "Пульсовий/тисковий асиметричний патерн",
+        "Експертна візуалізація за наявності pretest probability"
+      ],
+      "applicability_limits": [
+        "Негативний ANCA не оцінює large-vessel vasculitis",
+        "Саме підвищення маркерів не створює показання до imaging"
+      ],
+      "discriminating_checks": [
+        "Temporal/axillary ultrasound або FDG-PET/MRI лише за клінічної підозри"
+      ],
+      "short_label": "Васкуліт великих судин",
+      "counts": {
+        "support": 3,
+        "refute": 0,
+        "neutral": 1
+      },
+      "support_facts": [
+        {
+          "id": "F001",
+          "kind": "clinical_note",
+          "display": "Чоловік, 55 років",
+          "value": "Чоловік, 55 років: Чоловік, 55 років.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "display": "лихоманку неясного генезу",
+          "value": "лихоманку неясного генезу: 38 °C.",
+          "unit": "°C",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F009",
+          "kind": "clinical_note",
+          "display": "ШОЕ",
+          "value": "ШОЕ: 66 мм/год.",
+          "unit": "мм/год",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-06-29",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F011",
+          "kind": "diagnostic_interpretation",
+          "display": "Імунологічні та ревматологічні дослідження",
+          "value": "Імунологічні та ревматологічні дослідження: ANA — позитивні, титр 1:320, Anti-CCP |gG <8 Од/мл - негативні, ANCA - негативні, |gA 0,06 г/л, Прокальцитонін 0,06 нг/мл.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H5",
+      "rank": 5,
+      "label": "ANA-асоційоване системне автоімунне захворювання",
+      "clinical_role": "Альтернатива, що потребує органного підтвердження.",
+      "rationale": "ANA 1:320 є сигналом для контекстної перевірки, але без dsDNA/ENA, комплементу, сечового синдрому, цитопеній або специфічних органних проявів не пояснює FUO самостійно.",
+      "support_refs": [
+        "F011"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F002"
+      ],
+      "missing_evidence": [
+        "dsDNA/ENA, C3/C4",
+        "Аналіз сечі та протеїнурія",
+        "Спрямований огляд шкіри, суглобів, серозних оболонок і нервової системи"
+      ],
+      "applicability_limits": [
+        "Позитивний ANA має обмежену специфічність без сумісного фенотипу"
+      ],
+      "discriminating_checks": [
+        "Органно спрямована автоімунна перевірка"
+      ],
+      "short_label": "ANA-асоційоване системне автоімунне захворювання",
+      "counts": {
+        "support": 1,
+        "refute": 0,
+        "neutral": 1
+      },
+      "support_facts": [
+        {
+          "id": "F011",
+          "kind": "diagnostic_interpretation",
+          "display": "Імунологічні та ревматологічні дослідження",
+          "value": "Імунологічні та ревматологічні дослідження: ANA — позитивні, титр 1:320, Anti-CCP |gG <8 Од/мл - негативні, ANCA - негативні, |gA 0,06 г/л, Прокальцитонін 0,06 нг/мл.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "display": "лихоманку неясного генезу",
+          "value": "лихоманку неясного генезу: 38 °C.",
+          "unit": "°C",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H6",
+      "rank": 6,
+      "label": "HLH/MAS",
+      "clinical_role": "Небезпечний для пропуску синдром, нині не підтверджений.",
+      "rationale": "Гарячка й спленомегалія є двома елементами патерну; надані CBC і біохімія не демонструють очевидних цитопеній або органної дисфункції, але феритин, тригліцериди, фібриноген і коагуляція відсутні.",
+      "support_refs": [
+        "F002",
+        "F016"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F005",
+        "F013",
+        "F014"
+      ],
+      "missing_evidence": [
+        "Феритин у динаміці",
+        "Серійні CBC, тригліцериди, фібриноген, коагуляція",
+        "HScore і пошук тригера за наявності патерну"
+      ],
+      "applicability_limits": [
+        "Окремі критерії неспецифічні",
+        "Нормальний одиничний CBC не закриває ранній синдром"
+      ],
+      "discriminating_checks": [
+        "HLH/MAS quick screen і серійний тренд"
+      ],
+      "short_label": "HLH/MAS",
+      "counts": {
+        "support": 2,
+        "refute": 0,
+        "neutral": 3
+      },
+      "support_facts": [
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "display": "лихоманку неясного генезу",
+          "value": "лихоманку неясного генезу: 38 °C.",
+          "unit": "°C",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F016",
+          "kind": "imaging_finding",
+          "display": "Незначно виражена спленомегалія",
+          "value": "Незначно виражена спленомегалія: Незначно виражена спленомегалія.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-16",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F005",
+          "kind": "clinical_note",
+          "display": "С-реактивний білок",
+          "value": "С-реактивний білок: 673.1 мг/л.",
+          "unit": "мг/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-05-23",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F013",
+          "kind": "diagnostic_interpretation",
+          "display": "Загальний аналіз крові від 31.07.2026",
+          "value": "Загальний аналіз крові від 31.07.2026: лейкоцити 8.25×10/л, гемоглобін 121 г/л, еритроцити 4,86×1012/л, тромбоцити 279×10/л.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F014",
+          "kind": "diagnostic_interpretation",
+          "display": "Біохімічний аналіз крові від 31.07.2026",
+          "value": "Біохімічний аналіз крові від 31.07.2026: глюкоза - 4.98, креатинін — 79.95, сечовина - 5.18, ЛФ - 70.3, АСТ — 15.96, ГГТ — 15.4, АЛТ - 10, білірубін прямий - 1.37, білок загальний - 70.88.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H7",
+      "rank": 7,
+      "label": "Солідна пухлина або паранеопластичне запалення",
+      "clinical_role": "Неопластична альтернатива без локалізованого осередку.",
+      "rationale": "Тривала гарячка може супроводжувати солідну пухлину, але надана CT не показує переконливого злоякісного осередку; thyroid-вузол не прирівнюється до причини FUO.",
+      "support_refs": [
+        "F002"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F015",
+        "F017",
+        "F018"
+      ],
+      "missing_evidence": [
+        "Whole-body metabolic localisation",
+        "Доступний осередок для морфології"
+      ],
+      "applicability_limits": [
+        "FUO і високий CRP неспецифічні",
+        "Наявний CT не локалізував переконливу солідну пухлину"
+      ],
+      "discriminating_checks": [
+        "Whole-body FDG-PET/CT та морфологія лише за наявності target"
+      ],
+      "short_label": "Солідна пухлина або паранеопластичне запалення",
+      "counts": {
+        "support": 1,
+        "refute": 0,
+        "neutral": 3
+      },
+      "support_facts": [
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "display": "лихоманку неясного генезу",
+          "value": "лихоманку неясного генезу: 38 °C.",
+          "unit": "°C",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F015",
+          "kind": "imaging_finding",
+          "display": "вузлове утворення лівої частки щитоподібної залози",
+          "value": "вузлове утворення лівої частки щитоподібної залози: вузлове утворення лівої частки щитоподібної залози.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-16",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F017",
+          "kind": "imaging_finding",
+          "display": "Ліпоматоз паренхіми підшлункової залози",
+          "value": "Ліпоматоз паренхіми підшлункової залози: Ліпоматоз паренхіми підшлункової залози.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-16",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        },
+        {
+          "id": "F018",
+          "kind": "imaging_finding",
+          "display": "зміни хребта",
+          "value": "зміни хребта: зміни хребта.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-04-16",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H8",
+      "rank": 8,
+      "label": "Лікарська гарячка",
+      "clinical_role": "Потенційно зворотна, але слабо підтримана гіпотеза без окремого workup-рішення.",
+      "rationale": "Є експозиція до меропенему й ванкоміцину, але немає точної хронології початку, припинення, повторного підйому температури, висипу, еозинофілії або органних реакцій.",
+      "support_refs": [
+        "F003"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F007"
+      ],
+      "missing_evidence": [
+        "Повна медикаментозна хронологія",
+        "Температура/CRP після зміни препаратів",
+        "Еозинофіли, висип і органна токсичність"
+      ],
+      "applicability_limits": [
+        "Сам факт антибіотикотерапії не доводить лікарську гарячку",
+        "Окремого proposition-level джерела для workup не відібрано"
+      ],
+      "discriminating_checks": [
+        "Лікарська оцінка часової відповідності після отримання повної історії"
+      ],
+      "short_label": "Лікарська гарячка",
+      "counts": {
+        "support": 1,
+        "refute": 0,
+        "neutral": 1
+      },
+      "support_facts": [
+        {
+          "id": "F003",
+          "kind": "clinical_note",
+          "display": "антибактеріальну терапію (меропенем, ванкоміцин)",
+          "value": "антибактеріальну терапію (меропенем, ванкоміцин): переконливої причини гарячки встановити не вдалося.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F007",
+          "kind": "clinical_note",
+          "display": "С-реактивний білок",
+          "value": "С-реактивний білок: 57.9 мг/л.",
+          "unit": "мг/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "effective_at": "2026-06-29",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "human_verified": true
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F016",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F013",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F015",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F007",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F012",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H3",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F013",
+      "hypothesis_id": "H3",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F001",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F009",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H4",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H5",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F016",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H6",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F013",
+      "hypothesis_id": "H6",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F014",
+      "hypothesis_id": "H6",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H7",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F015",
+      "hypothesis_id": "H7",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F017",
+      "hypothesis_id": "H7",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F018",
+      "hypothesis_id": "H7",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H8",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F007",
+      "hypothesis_id": "H8",
+      "relation": "neutral"
+    }
+  ],
+  "observations": [
+    {
+      "id": "OBS-ABAB64BB696B-001",
+      "kind": "clinical_note",
+      "display": "Чоловік, 55 років",
+      "value": "Чоловік, 55 років",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-002",
+      "kind": "clinical_note",
+      "display": "лихоманку неясного генезу",
+      "value": 38,
+      "unit": "°C",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "нічну пітливість",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-003",
+      "kind": "clinical_note",
+      "display": "антибактеріальну терапію (меропенем, ванкоміцин)",
+      "value": "переконливої причини гарячки встановити не вдалося",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "переконливої причини гарячки встановити не вдалося",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-004",
+      "kind": "clinical_note",
+      "display": "С-реактивний білок",
+      "value": 217.97,
+      "unit": "мг/л",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-04-15",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-005",
+      "kind": "clinical_note",
+      "display": "С-реактивний білок",
+      "value": 673.1,
+      "unit": "мг/л",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-05-23",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-006",
+      "kind": "clinical_note",
+      "display": "С-реактивний білок",
+      "value": 399,
+      "unit": "мг/л",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-06-08",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-007",
+      "kind": "clinical_note",
+      "display": "С-реактивний білок",
+      "value": 57.9,
+      "unit": "мг/л",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-06-29",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-008",
+      "kind": "clinical_note",
+      "display": "ШОЕ",
+      "value": 62,
+      "unit": "мм/год",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-06-20",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-009",
+      "kind": "clinical_note",
+      "display": "ШОЕ",
+      "value": 66,
+      "unit": "мм/год",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-06-29",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-010",
+      "kind": "diagnostic_interpretation",
+      "display": "Біохімічні показники",
+      "value": "ЛДГ 410,8 Од/л, В.-мікроглобулін 2,28 мг/л, АЛТ 24 Од/л, АСТ 24 Од/л, Сечова кислота 297 мкмоль/л, ПСА 0,307 нг/мл",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-011",
+      "kind": "diagnostic_interpretation",
+      "display": "Імунологічні та ревматологічні дослідження",
+      "value": "ANA — позитивні, титр 1:320, Anti-CCP |gG <8 Од/мл - негативні, ANCA - негативні, |gA 0,06 г/л, Прокальцитонін 0,06 нг/мл",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "ANA — позитивні",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-012",
+      "kind": "negative_finding",
+      "display": "CMV ДНК (ПЛР)",
+      "value": "не виявлено",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "не виявлено",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-013",
+      "kind": "diagnostic_interpretation",
+      "display": "Загальний аналіз крові від 31.07.2026",
+      "value": "лейкоцити 8.25×10/л, гемоглобін 121 г/л, еритроцити 4,86×1012/л, тромбоцити 279×10/л",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-014",
+      "kind": "diagnostic_interpretation",
+      "display": "Біохімічний аналіз крові від 31.07.2026",
+      "value": "глюкоза - 4.98, креатинін — 79.95, сечовина - 5.18, ЛФ - 70.3, АСТ — 15.96, ГГТ — 15.4, АЛТ - 10, білірубін прямий - 1.37, білок загальний - 70.88",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-015",
+      "kind": "imaging_finding",
+      "display": "вузлове утворення лівої частки щитоподібної залози",
+      "value": "вузлове утворення лівої частки щитоподібної залози",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-04-16",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-016",
+      "kind": "imaging_finding",
+      "display": "Незначно виражена спленомегалія",
+      "value": "Незначно виражена спленомегалія",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-04-16",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-017",
+      "kind": "imaging_finding",
+      "display": "Ліпоматоз паренхіми підшлункової залози",
+      "value": "Ліпоматоз паренхіми підшлункової залози",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-04-16",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-018",
+      "kind": "imaging_finding",
+      "display": "зміни хребта",
+      "value": "зміни хребта",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "effective_at": "2026-04-16",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "human_verified": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "E-CAND-1",
+      "type": "guideline",
+      "title": "Peñalver FJ et al. Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma—GELTAMO 2025. Cancers. 2026;18(3):395. doi:10.3390/cancers18030395",
+      "url": "https://doi.org/10.3390/cancers18030395",
+      "year": 2025,
+      "location": "Exact PDF SHA-256 ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744, PDF page 3, sections 2.3 Recommendations and 3.1 Staging; visual render SHA-256 165cee25f8061633e17f2eb1384117121a47b199bad312170c89c3be15fb4b6c",
+      "verification_status": "agent_visual_source_review",
+      "use": "Unexplained fever and night sweats are B symptoms relevant to lymphoma assessment, while diagnosis requires tissue and excisional biopsy of accessible involved tissue is preferred for follicular lymphoma.",
+      "applicability_limit": "This is a follicular-lymphoma guideline, not a rule that B symptoms establish lymphoma in this patient; it supports symptom recognition and tissue-confirmation strategy only after a lesion is found."
+    },
+    {
+      "id": "E-CAND-2",
+      "type": "consensus",
+      "title": "Hess S et al. EANM consensus document on the use of [18F]FDG PET/CT in fever and inflammation of unknown origin. Eur J Nucl Med Mol Imaging. 2024;51(9):2597-2613. PMID:38676736. doi:10.1007/s00259-024-06732-8",
+      "url": "https://doi.org/10.1007/s00259-024-06732-8",
+      "year": 2024,
+      "location": "Abstract Results/Conclusion and diagnostic-strategy Figure 1 in the open consensus article",
+      "verification_status": "agent_visual_source_review",
+      "use": "FDG-PET/CT has a defined role in FUO/IUO after appropriate preliminary assessment; across the reviewed evidence it was diagnostically helpful in roughly 50–60% and a positive scan can guide a subsequent diagnostic procedure.",
+      "applicability_limit": "FDG uptake is nonspecific and PET/CT does not replace cultures, focused history, examination or tissue diagnosis; yield depends on patient selection and prior workup."
+    },
+    {
+      "id": "E-CAND-3",
+      "type": "guideline",
+      "title": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J. 2023;44(39):3948-4042. PMID:37622656. doi:10.1093/eurheartj/ehad193",
+      "url": "https://doi.org/10.1093/eurheartj/ehad193",
+      "year": 2023,
+      "location": "Sections 5.3 Microbiological diagnosis and 5.4 Imaging techniques; ESC diagnostic algorithms",
+      "verification_status": "agent_visual_source_review",
+      "use": "When infective endocarditis is suspected, multiple blood-culture sets should be obtained before new antibiotics when feasible, echocardiography is central, and CT/nuclear imaging is added when standard assessment remains inconclusive or prosthetic/device disease is suspected.",
+      "applicability_limit": "The case provides no murmur, embolic sign, valve/device history or culture results; prior broad-spectrum antibiotics may reduce culture yield, so this source supports a targeted exclusion pathway rather than a positive diagnosis."
+    },
+    {
+      "id": "E-CAND-4",
+      "type": "guideline",
+      "title": "Fautrel B et al. EULAR/PReS recommendations for the diagnosis and management of Still’s disease. Ann Rheum Dis. 2024;83(12):1614-1627. PMID:39317417. PMCID:PMC11672000. doi:10.1136/ard-2024-225851",
+      "url": "https://doi.org/10.1136/ard-2024-225851",
+      "year": 2024,
+      "location": "Recommendation statement RS3 and RS10; diagnosis and MAS sections",
+      "verification_status": "agent_visual_source_review",
+      "use": "Still’s disease is supported by a pattern of clinical and biological findings, none specific in isolation; infection, malignancy and other immune-mediated diseases must be considered. Persistent fever with splenomegaly makes ferritin trend, cell counts, liver tests, coagulation activation, triglycerides and related MAS features important to assess.",
+      "applicability_limit": "This patient lacks the typical rash, arthritis/arthralgia, neutrophilic leukocytosis and ferritin data; positive ANA further weakens any shortcut to Still’s disease."
+    },
+    {
+      "id": "E-CAND-5",
+      "type": "consensus",
+      "title": "Cox MF et al. Diagnosis and investigation of suspected haemophagocytic lymphohistiocytosis in adults: 2023 HiHASC consensus guideline. Lancet Rheumatol. 2024;6:e51-e62. PMID:38258680. doi:10.1016/S2665-9913(23)00273-4",
+      "url": "https://doi.org/10.1016/S2665-9913(23)00273-4",
+      "year": 2023,
+      "location": "Summary of overall approach; Initial evaluation and quick screen tests; HLH criteria and scoring systems",
+      "verification_status": "agent_visual_source_review",
+      "use": "Adult HLH evaluation should use a low threshold to check the three Fs—fever, falling blood counts and raised ferritin—serially, with triglycerides, fibrinogen, liver/coagulation tests and parallel search for the trigger; HScore can support but not replace clinical judgment.",
+      "applicability_limit": "Current data show fever and mild splenomegaly but no documented falling counts, organ failure or ferritin; this consensus supports screening and urgency triggers, not an HLH conclusion."
+    },
+    {
+      "id": "E-CAND-6",
+      "type": "guideline",
+      "title": "Dejaco C et al. EULAR recommendations for the use of imaging in large vessel vasculitis in clinical practice: 2023 update. Ann Rheum Dis. 2024;83(6):741-751. PMID:37550004. doi:10.1136/ard-2023-224543",
+      "url": "https://doi.org/10.1136/ard-2023-224543",
+      "year": 2023,
+      "location": "Table 1, Overarching principle A, Recommendations 1–3",
+      "verification_status": "agent_visual_source_review",
+      "use": "Suspected giant-cell arteritis should receive early expert imaging; ultrasound is first-line for temporal and axillary arteries, while FDG-PET or MRI can assess extracranial large-vessel disease and may reveal other serious causes in atypical systemic presentations.",
+      "applicability_limit": "There are no cranial, visual, jaw or polymyalgia symptoms in the supplied record; large-vessel imaging is a discriminator only if focused history/examination sustains clinical suspicion."
+    },
+    {
+      "id": "E-CAND-7",
+      "type": "consensus",
+      "title": "Tessler FN et al. ACR Thyroid Imaging, Reporting and Data System (TI-RADS): White Paper. J Am Coll Radiol. 2017;14(5):587-595. PMID:28372962. doi:10.1016/j.jacr.2017.01.046",
+      "url": "https://doi.org/10.1016/j.jacr.2017.01.046",
+      "year": 2017,
+      "location": "Abstract and ACR TI-RADS assessment/management categories",
+      "verification_status": "agent_visual_source_review",
+      "use": "Thyroid nodules are managed according to dedicated ultrasound features and size-based TI-RADS thresholds that determine follow-up or FNA rather than by CT detection alone.",
+      "applicability_limit": "The CT report supplies neither nodule size nor sonographic risk features; this source supports a separate thyroid workup and does not connect the nodule to FUO."
+    }
+  ],
+  "source_traces": [
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H4",
+        "H7"
+      ]
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1"
+      ]
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H4",
+        "H7"
+      ]
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "critical_gap",
+      "via_id": "G2",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H2",
+        "H3",
+        "H4",
+        "H5"
+      ]
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "critical_gap",
+      "via_id": "G4",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "workup",
+      "via_id": "W5",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "workup",
+      "via_id": "W6",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "workup",
+      "via_id": "W7",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H5"
+      ]
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "workup",
+      "via_id": "W5",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "workup",
+      "via_id": "W6",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-6",
+      "via_type": "critical_gap",
+      "via_id": "G5",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-6",
+      "via_type": "workup",
+      "via_id": "W8",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-7",
+      "via_type": "critical_gap",
+      "via_id": "G6",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-7",
+      "via_type": "workup",
+      "via_id": "W9",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": []
+    }
+  ],
+  "critical_gaps": [
+    {
+      "id": "G1",
+      "text": "Немає валідованого повторного HLH/MAS screen із феритином, тригліцеридами, фібриногеном, коагуляцією, повними одиницями та серійною динамікою клітин.",
+      "evidence_refs": [
+        "E-CAND-4",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "Fautrel B et al. EULAR/PReS recommendations for the diagnosis and management of Still’s disease. Ann Rheum Dis. 2024;83(12):1614-1627. PMID:39317417. PMCID:PMC11672000. doi:10.1136/ard-2024-225851",
+          "url": "https://doi.org/10.1136/ard-2024-225851",
+          "year": 2024,
+          "location": "Recommendation statement RS3 and RS10; diagnosis and MAS sections",
+          "verification_status": "agent_visual_source_review",
+          "use": "Still’s disease is supported by a pattern of clinical and biological findings, none specific in isolation; infection, malignancy and other immune-mediated diseases must be considered. Persistent fever with splenomegaly makes ferritin trend, cell counts, liver tests, coagulation activation, triglycerides and related MAS features important to assess.",
+          "applicability_limit": "This patient lacks the typical rash, arthritis/arthralgia, neutrophilic leukocytosis and ferritin data; positive ANA further weakens any shortcut to Still’s disease."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "consensus",
+          "title": "Cox MF et al. Diagnosis and investigation of suspected haemophagocytic lymphohistiocytosis in adults: 2023 HiHASC consensus guideline. Lancet Rheumatol. 2024;6:e51-e62. PMID:38258680. doi:10.1016/S2665-9913(23)00273-4",
+          "url": "https://doi.org/10.1016/S2665-9913(23)00273-4",
+          "year": 2023,
+          "location": "Summary of overall approach; Initial evaluation and quick screen tests; HLH criteria and scoring systems",
+          "verification_status": "agent_visual_source_review",
+          "use": "Adult HLH evaluation should use a low threshold to check the three Fs—fever, falling blood counts and raised ferritin—serially, with triglycerides, fibrinogen, liver/coagulation tests and parallel search for the trigger; HScore can support but not replace clinical judgment.",
+          "applicability_limit": "Current data show fever and mild splenomegaly but no documented falling counts, organ failure or ferritin; this consensus supports screening and urgency triggers, not an HLH conclusion."
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "text": "Не наведено серійних культур крові, focused exposure review та ехокардіографії за показаннями.",
+      "evidence_refs": [
+        "E-CAND-3"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J. 2023;44(39):3948-4042. PMID:37622656. doi:10.1093/eurheartj/ehad193",
+          "url": "https://doi.org/10.1093/eurheartj/ehad193",
+          "year": 2023,
+          "location": "Sections 5.3 Microbiological diagnosis and 5.4 Imaging techniques; ESC diagnostic algorithms",
+          "verification_status": "agent_visual_source_review",
+          "use": "When infective endocarditis is suspected, multiple blood-culture sets should be obtained before new antibiotics when feasible, echocardiography is central, and CT/nuclear imaging is added when standard assessment remains inconclusive or prosthetic/device disease is suspected.",
+          "applicability_limit": "The case provides no murmur, embolic sign, valve/device history or culture results; prior broad-spectrum antibiotics may reduce culture yield, so this source supports a targeted exclusion pathway rather than a positive diagnosis."
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "text": "Немає whole-body metabolic localisation або морфологічно підтвердженого biopsy target.",
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-2"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "guideline",
+          "title": "Peñalver FJ et al. Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma—GELTAMO 2025. Cancers. 2026;18(3):395. doi:10.3390/cancers18030395",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025,
+          "location": "Exact PDF SHA-256 ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744, PDF page 3, sections 2.3 Recommendations and 3.1 Staging; visual render SHA-256 165cee25f8061633e17f2eb1384117121a47b199bad312170c89c3be15fb4b6c",
+          "verification_status": "agent_visual_source_review",
+          "use": "Unexplained fever and night sweats are B symptoms relevant to lymphoma assessment, while diagnosis requires tissue and excisional biopsy of accessible involved tissue is preferred for follicular lymphoma.",
+          "applicability_limit": "This is a follicular-lymphoma guideline, not a rule that B symptoms establish lymphoma in this patient; it supports symptom recognition and tissue-confirmation strategy only after a lesion is found."
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "consensus",
+          "title": "Hess S et al. EANM consensus document on the use of [18F]FDG PET/CT in fever and inflammation of unknown origin. Eur J Nucl Med Mol Imaging. 2024;51(9):2597-2613. PMID:38676736. doi:10.1007/s00259-024-06732-8",
+          "url": "https://doi.org/10.1007/s00259-024-06732-8",
+          "year": 2024,
+          "location": "Abstract Results/Conclusion and diagnostic-strategy Figure 1 in the open consensus article",
+          "verification_status": "agent_visual_source_review",
+          "use": "FDG-PET/CT has a defined role in FUO/IUO after appropriate preliminary assessment; across the reviewed evidence it was diagnostically helpful in roughly 50–60% and a positive scan can guide a subsequent diagnostic procedure.",
+          "applicability_limit": "FDG uptake is nonspecific and PET/CT does not replace cultures, focused history, examination or tissue diagnosis; yield depends on patient selection and prior workup."
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "text": "Не описано повний Still/IMID-фенотип: fever pattern, rash, arthralgia/arthritis, neutrophils, ferritin та органні автоімунні ознаки.",
+      "evidence_refs": [
+        "E-CAND-4"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "Fautrel B et al. EULAR/PReS recommendations for the diagnosis and management of Still’s disease. Ann Rheum Dis. 2024;83(12):1614-1627. PMID:39317417. PMCID:PMC11672000. doi:10.1136/ard-2024-225851",
+          "url": "https://doi.org/10.1136/ard-2024-225851",
+          "year": 2024,
+          "location": "Recommendation statement RS3 and RS10; diagnosis and MAS sections",
+          "verification_status": "agent_visual_source_review",
+          "use": "Still’s disease is supported by a pattern of clinical and biological findings, none specific in isolation; infection, malignancy and other immune-mediated diseases must be considered. Persistent fever with splenomegaly makes ferritin trend, cell counts, liver tests, coagulation activation, triglycerides and related MAS features important to assess.",
+          "applicability_limit": "This patient lacks the typical rash, arthritis/arthralgia, neutrophilic leukocytosis and ferritin data; positive ANA further weakens any shortcut to Still’s disease."
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "text": "Не наведено focused симптомів або огляду для оцінки pretest probability large-vessel vasculitis.",
+      "evidence_refs": [
+        "E-CAND-6"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-6",
+          "type": "guideline",
+          "title": "Dejaco C et al. EULAR recommendations for the use of imaging in large vessel vasculitis in clinical practice: 2023 update. Ann Rheum Dis. 2024;83(6):741-751. PMID:37550004. doi:10.1136/ard-2023-224543",
+          "url": "https://doi.org/10.1136/ard-2023-224543",
+          "year": 2023,
+          "location": "Table 1, Overarching principle A, Recommendations 1–3",
+          "verification_status": "agent_visual_source_review",
+          "use": "Suspected giant-cell arteritis should receive early expert imaging; ultrasound is first-line for temporal and axillary arteries, while FDG-PET or MRI can assess extracranial large-vessel disease and may reveal other serious causes in atypical systemic presentations.",
+          "applicability_limit": "There are no cranial, visual, jaw or polymyalgia symptoms in the supplied record; large-vessel imaging is a discriminator only if focused history/examination sustains clinical suspicion."
+        }
+      ]
+    },
+    {
+      "id": "G6",
+      "text": "Вузол щитоподібної залози не має розміру, TSH, УЗД/TI-RADS або FNA-рішення.",
+      "evidence_refs": [
+        "E-CAND-7"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-7",
+          "type": "consensus",
+          "title": "Tessler FN et al. ACR Thyroid Imaging, Reporting and Data System (TI-RADS): White Paper. J Am Coll Radiol. 2017;14(5):587-595. PMID:28372962. doi:10.1016/j.jacr.2017.01.046",
+          "url": "https://doi.org/10.1016/j.jacr.2017.01.046",
+          "year": 2017,
+          "location": "Abstract and ACR TI-RADS assessment/management categories",
+          "verification_status": "agent_visual_source_review",
+          "use": "Thyroid nodules are managed according to dedicated ultrasound features and size-based TI-RADS thresholds that determine follow-up or FNA rather than by CT detection alone.",
+          "applicability_limit": "The CT report supplies neither nodule size nor sonographic risk features; this source supports a separate thyroid workup and does not connect the nodule to FUO."
+        }
+      ]
+    }
+  ],
+  "workup": [
+    {
+      "id": "W2",
+      "title": "Переоцінити інфекційну гілку перед імуносупресивною інтерпретацією",
+      "rationale": "Зібрати focused exposure/physical review, отримати культури до нових антибіотиків коли клінічно можливо та виконати TTE/TOE лише за підтриманої підозри на IE; рішення щодо чинних антибіотиків належить лікарю.",
+      "priority": "high",
+      "necessity": "classification_exclusion_required",
+      "trigger": null,
+      "discriminates": [
+        "H2",
+        "H3",
+        "H4",
+        "H5"
+      ],
+      "evidence_refs": [
+        "E-CAND-3"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J. 2023;44(39):3948-4042. PMID:37622656. doi:10.1093/eurheartj/ehad193",
+          "url": "https://doi.org/10.1093/eurheartj/ehad193",
+          "year": 2023,
+          "location": "Sections 5.3 Microbiological diagnosis and 5.4 Imaging techniques; ESC diagnostic algorithms",
+          "verification_status": "agent_visual_source_review",
+          "use": "When infective endocarditis is suspected, multiple blood-culture sets should be obtained before new antibiotics when feasible, echocardiography is central, and CT/nuclear imaging is added when standard assessment remains inconclusive or prosthetic/device disease is suspected.",
+          "applicability_limit": "The case provides no murmur, embolic sign, valve/device history or culture results; prior broad-spectrum antibiotics may reduce culture yield, so this source supports a targeted exclusion pathway rather than a positive diagnosis."
+        }
+      ]
+    },
+    {
+      "id": "W3",
+      "title": "Whole-body FDG-PET/CT для локалізації активного осередку",
+      "rationale": "Після неінформативної CT і тривалого FUO PET/CT може вибрати напрям між інфекцією, васкулітом і неоплазією та знайти biopsy target.",
+      "priority": "high",
+      "necessity": "key_discriminator",
+      "trigger": null,
+      "discriminates": [
+        "H1",
+        "H2",
+        "H4",
+        "H7"
+      ],
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-2"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "guideline",
+          "title": "Peñalver FJ et al. Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma—GELTAMO 2025. Cancers. 2026;18(3):395. doi:10.3390/cancers18030395",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025,
+          "location": "Exact PDF SHA-256 ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744, PDF page 3, sections 2.3 Recommendations and 3.1 Staging; visual render SHA-256 165cee25f8061633e17f2eb1384117121a47b199bad312170c89c3be15fb4b6c",
+          "verification_status": "agent_visual_source_review",
+          "use": "Unexplained fever and night sweats are B symptoms relevant to lymphoma assessment, while diagnosis requires tissue and excisional biopsy of accessible involved tissue is preferred for follicular lymphoma.",
+          "applicability_limit": "This is a follicular-lymphoma guideline, not a rule that B symptoms establish lymphoma in this patient; it supports symptom recognition and tissue-confirmation strategy only after a lesion is found."
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "consensus",
+          "title": "Hess S et al. EANM consensus document on the use of [18F]FDG PET/CT in fever and inflammation of unknown origin. Eur J Nucl Med Mol Imaging. 2024;51(9):2597-2613. PMID:38676736. doi:10.1007/s00259-024-06732-8",
+          "url": "https://doi.org/10.1007/s00259-024-06732-8",
+          "year": 2024,
+          "location": "Abstract Results/Conclusion and diagnostic-strategy Figure 1 in the open consensus article",
+          "verification_status": "agent_visual_source_review",
+          "use": "FDG-PET/CT has a defined role in FUO/IUO after appropriate preliminary assessment; across the reviewed evidence it was diagnostically helpful in roughly 50–60% and a positive scan can guide a subsequent diagnostic procedure.",
+          "applicability_limit": "FDG uptake is nonspecific and PET/CT does not replace cultures, focused history, examination or tissue diagnosis; yield depends on patient selection and prior workup."
+        }
+      ]
+    },
+    {
+      "id": "W4",
+      "title": "Отримати адекватну тканину з підозрілого осередку",
+      "rationale": "Морфологія потрібна до встановлення лімфоми; excision biopsy бажана, якщо PET/US знаходить доступну підозрілу тканину.",
+      "priority": "high",
+      "necessity": "conditional_adjunct",
+      "trigger": "PET/CT, УЗД або огляд виявляє доступний підозрілий вузол чи іншу тканину для біопсії.",
+      "discriminates": [
+        "H1"
+      ],
+      "evidence_refs": [
+        "E-CAND-1"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "guideline",
+          "title": "Peñalver FJ et al. Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma—GELTAMO 2025. Cancers. 2026;18(3):395. doi:10.3390/cancers18030395",
+          "url": "https://doi.org/10.3390/cancers18030395",
+          "year": 2025,
+          "location": "Exact PDF SHA-256 ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744, PDF page 3, sections 2.3 Recommendations and 3.1 Staging; visual render SHA-256 165cee25f8061633e17f2eb1384117121a47b199bad312170c89c3be15fb4b6c",
+          "verification_status": "agent_visual_source_review",
+          "use": "Unexplained fever and night sweats are B symptoms relevant to lymphoma assessment, while diagnosis requires tissue and excisional biopsy of accessible involved tissue is preferred for follicular lymphoma.",
+          "applicability_limit": "This is a follicular-lymphoma guideline, not a rule that B symptoms establish lymphoma in this patient; it supports symptom recognition and tissue-confirmation strategy only after a lesion is found."
+        }
+      ]
+    },
+    {
+      "id": "W5",
+      "title": "Повторити валідований HLH/MAS quick screen",
+      "rationale": "Нові лабораторні результати з повними одиницями та серійною динамікою феритину, CBC, тригліцеридів, фібриногену, LFT/LDH і коагуляції потрібні для оцінки патерну, а не пошкоджених історичних полів.",
+      "priority": "high",
+      "necessity": "classification_exclusion_required",
+      "trigger": null,
+      "discriminates": [
+        "H3",
+        "H6",
+        "H1",
+        "H2"
+      ],
+      "evidence_refs": [
+        "E-CAND-4",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "Fautrel B et al. EULAR/PReS recommendations for the diagnosis and management of Still’s disease. Ann Rheum Dis. 2024;83(12):1614-1627. PMID:39317417. PMCID:PMC11672000. doi:10.1136/ard-2024-225851",
+          "url": "https://doi.org/10.1136/ard-2024-225851",
+          "year": 2024,
+          "location": "Recommendation statement RS3 and RS10; diagnosis and MAS sections",
+          "verification_status": "agent_visual_source_review",
+          "use": "Still’s disease is supported by a pattern of clinical and biological findings, none specific in isolation; infection, malignancy and other immune-mediated diseases must be considered. Persistent fever with splenomegaly makes ferritin trend, cell counts, liver tests, coagulation activation, triglycerides and related MAS features important to assess.",
+          "applicability_limit": "This patient lacks the typical rash, arthritis/arthralgia, neutrophilic leukocytosis and ferritin data; positive ANA further weakens any shortcut to Still’s disease."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "consensus",
+          "title": "Cox MF et al. Diagnosis and investigation of suspected haemophagocytic lymphohistiocytosis in adults: 2023 HiHASC consensus guideline. Lancet Rheumatol. 2024;6:e51-e62. PMID:38258680. doi:10.1016/S2665-9913(23)00273-4",
+          "url": "https://doi.org/10.1016/S2665-9913(23)00273-4",
+          "year": 2023,
+          "location": "Summary of overall approach; Initial evaluation and quick screen tests; HLH criteria and scoring systems",
+          "verification_status": "agent_visual_source_review",
+          "use": "Adult HLH evaluation should use a low threshold to check the three Fs—fever, falling blood counts and raised ferritin—serially, with triglycerides, fibrinogen, liver/coagulation tests and parallel search for the trigger; HScore can support but not replace clinical judgment.",
+          "applicability_limit": "Current data show fever and mild splenomegaly but no documented falling counts, organ failure or ferritin; this consensus supports screening and urgency triggers, not an HLH conclusion."
+        }
+      ]
+    },
+    {
+      "id": "W6",
+      "title": "Термінова оцінка гіперзапального синдрому",
+      "rationale": "Швидка ескалація потрібна лише якщо виникає динамічний HLH/MAS-патерн із органною загрозою.",
+      "priority": "critical",
+      "necessity": "urgent_if_triggered",
+      "trigger": "Наростає феритин, падають клітини крові, з’являються гіпофібриногенемія, коагулопатія, печінкова або інша органна дисфункція.",
+      "discriminates": [
+        "H6"
+      ],
+      "evidence_refs": [
+        "E-CAND-4",
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "Fautrel B et al. EULAR/PReS recommendations for the diagnosis and management of Still’s disease. Ann Rheum Dis. 2024;83(12):1614-1627. PMID:39317417. PMCID:PMC11672000. doi:10.1136/ard-2024-225851",
+          "url": "https://doi.org/10.1136/ard-2024-225851",
+          "year": 2024,
+          "location": "Recommendation statement RS3 and RS10; diagnosis and MAS sections",
+          "verification_status": "agent_visual_source_review",
+          "use": "Still’s disease is supported by a pattern of clinical and biological findings, none specific in isolation; infection, malignancy and other immune-mediated diseases must be considered. Persistent fever with splenomegaly makes ferritin trend, cell counts, liver tests, coagulation activation, triglycerides and related MAS features important to assess.",
+          "applicability_limit": "This patient lacks the typical rash, arthritis/arthralgia, neutrophilic leukocytosis and ferritin data; positive ANA further weakens any shortcut to Still’s disease."
+        },
+        {
+          "id": "E-CAND-5",
+          "type": "consensus",
+          "title": "Cox MF et al. Diagnosis and investigation of suspected haemophagocytic lymphohistiocytosis in adults: 2023 HiHASC consensus guideline. Lancet Rheumatol. 2024;6:e51-e62. PMID:38258680. doi:10.1016/S2665-9913(23)00273-4",
+          "url": "https://doi.org/10.1016/S2665-9913(23)00273-4",
+          "year": 2023,
+          "location": "Summary of overall approach; Initial evaluation and quick screen tests; HLH criteria and scoring systems",
+          "verification_status": "agent_visual_source_review",
+          "use": "Adult HLH evaluation should use a low threshold to check the three Fs—fever, falling blood counts and raised ferritin—serially, with triglycerides, fibrinogen, liver/coagulation tests and parallel search for the trigger; HScore can support but not replace clinical judgment.",
+          "applicability_limit": "Current data show fever and mild splenomegaly but no documented falling counts, organ failure or ferritin; this consensus supports screening and urgency triggers, not an HLH conclusion."
+        }
+      ]
+    },
+    {
+      "id": "W7",
+      "title": "Перевірити повний Still-фенотип без передчасного закриття",
+      "rationale": "Документувати fever pattern, rash, arthralgia/arthritis, neutrophils, ferritin і виключені mimics.",
+      "priority": "medium",
+      "necessity": "key_discriminator",
+      "trigger": null,
+      "discriminates": [
+        "H3",
+        "H2",
+        "H1",
+        "H5"
+      ],
+      "evidence_refs": [
+        "E-CAND-4"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "Fautrel B et al. EULAR/PReS recommendations for the diagnosis and management of Still’s disease. Ann Rheum Dis. 2024;83(12):1614-1627. PMID:39317417. PMCID:PMC11672000. doi:10.1136/ard-2024-225851",
+          "url": "https://doi.org/10.1136/ard-2024-225851",
+          "year": 2024,
+          "location": "Recommendation statement RS3 and RS10; diagnosis and MAS sections",
+          "verification_status": "agent_visual_source_review",
+          "use": "Still’s disease is supported by a pattern of clinical and biological findings, none specific in isolation; infection, malignancy and other immune-mediated diseases must be considered. Persistent fever with splenomegaly makes ferritin trend, cell counts, liver tests, coagulation activation, triglycerides and related MAS features important to assess.",
+          "applicability_limit": "This patient lacks the typical rash, arthritis/arthralgia, neutrophilic leukocytosis and ferritin data; positive ANA further weakens any shortcut to Still’s disease."
+        }
+      ]
+    },
+    {
+      "id": "W8",
+      "title": "Умовна візуалізація великих судин",
+      "rationale": "Temporal/axillary ultrasound або FDG-PET/MRI доречні лише після focused history/exam, що підвищує pretest probability.",
+      "priority": "medium",
+      "necessity": "conditional_adjunct",
+      "trigger": "Є краніальні, зорові, щелепні, поліміалгічні, пульсові або інші судинні ознаки чи PET-патерн, сумісний із LVV.",
+      "discriminates": [
+        "H4",
+        "H2",
+        "H3"
+      ],
+      "evidence_refs": [
+        "E-CAND-6"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-6",
+          "type": "guideline",
+          "title": "Dejaco C et al. EULAR recommendations for the use of imaging in large vessel vasculitis in clinical practice: 2023 update. Ann Rheum Dis. 2024;83(6):741-751. PMID:37550004. doi:10.1136/ard-2023-224543",
+          "url": "https://doi.org/10.1136/ard-2023-224543",
+          "year": 2023,
+          "location": "Table 1, Overarching principle A, Recommendations 1–3",
+          "verification_status": "agent_visual_source_review",
+          "use": "Suspected giant-cell arteritis should receive early expert imaging; ultrasound is first-line for temporal and axillary arteries, while FDG-PET or MRI can assess extracranial large-vessel disease and may reveal other serious causes in atypical systemic presentations.",
+          "applicability_limit": "There are no cranial, visual, jaw or polymyalgia symptoms in the supplied record; large-vessel imaging is a discriminator only if focused history/examination sustains clinical suspicion."
+        }
+      ]
+    },
+    {
+      "id": "W9",
+      "title": "Окремо стратифікувати вузол щитоподібної залози",
+      "rationale": "TSH та УЗД з TI-RADS визначають спостереження або FNA; CT-згадка не доводить причину FUO.",
+      "priority": "medium",
+      "necessity": "conditional_adjunct",
+      "trigger": "Вузол лишається неохарактеризованим після стабілізації основного FUO-workup або має клінічно підозрілі ознаки.",
+      "discriminates": [],
+      "evidence_refs": [
+        "E-CAND-7"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-7",
+          "type": "consensus",
+          "title": "Tessler FN et al. ACR Thyroid Imaging, Reporting and Data System (TI-RADS): White Paper. J Am Coll Radiol. 2017;14(5):587-595. PMID:28372962. doi:10.1016/j.jacr.2017.01.046",
+          "url": "https://doi.org/10.1016/j.jacr.2017.01.046",
+          "year": 2017,
+          "location": "Abstract and ACR TI-RADS assessment/management categories",
+          "verification_status": "agent_visual_source_review",
+          "use": "Thyroid nodules are managed according to dedicated ultrasound features and size-based TI-RADS thresholds that determine follow-up or FNA rather than by CT detection alone.",
+          "applicability_limit": "The CT report supplies neither nodule size nor sonographic risk features; this source supports a separate thyroid workup and does not connect the nodule to FUO."
+        }
+      ]
+    }
+  ],
+  "method": {
+    "clinical_input_projection_used": true,
+    "breadth_pass_before_bundle_comparison": true,
+    "grounding_pass": true,
+    "critic_pass": true,
+    "fresh_session_blinded": true,
+    "limitations": [
+      "Перший зріз містить один консультаційний документ без повної клінічної хронології.",
+      "Частина лабораторних одиниць і степенів пошкоджена OCR або відсутня в джерелі.",
+      "Гіпотези є кандидатами для лікарського розгляду; діагноз і лікування не встановлені."
+    ],
+    "controlled_run": {
+      "status": "verified",
+      "run_id": "20260818T144722292110Z-CASE011-controlled-82bb99baf6d1",
+      "method_id": "HB-CONTROLLED-SYNTHESIS",
+      "method_version": "2.5.0",
+      "protocol_sha256": "83dd6e18838981c16743458f7b903edb3be7c330e10b5b50b0948d2b0beac38d",
+      "critic_independent": true,
+      "unresolved_critical": 0,
+      "pass_receipts": {
+        "breadth": "abef37448681d6220111bbc55e5753f2e269364ef43b1c0d4a491030a264f49f",
+        "grounding": "2261521dad2d754b33105a20aae4b373e14d9f5665f8a70ff810fe66535eb1ce",
+        "reconciliation": "a65792d0e33285d6b81002b6a5d4f91fe11120599615ef0bcb70a6b10b9aa087",
+        "critic": "9a08b9a7dec4d1bbde84184b35eef6036187c01e18445cd888785ce110096d7e"
+      }
+    }
+  },
+  "comparison_to_previous": [
+    {
+      "previous_id": null,
+      "current_id": "H1",
+      "status": "added",
+      "reason": "Перший контрольований синтез Case011; гематологічна неоплазія лишається кандидатною об’єднавчою гілкою."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H2",
+      "status": "added",
+      "reason": "Окульта або частково пролікована інфекція збережена як обов’язкова гілка виключення."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H3",
+      "status": "added",
+      "reason": "Still-подібний автозапальний процес можливий лише після перевірки фенотипу й альтернатив."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H4",
+      "status": "added",
+      "reason": "Large-vessel vasculitis додано як умовний віково релевантний кандидат."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H5",
+      "status": "added",
+      "reason": "ANA-асоційоване автоімунне захворювання додано без прирівнювання ANA до діагнозу."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H6",
+      "status": "added",
+      "reason": "HLH/MAS додано як небезпечний для пропуску стан із недостатніми поточними даними."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H7",
+      "status": "added",
+      "reason": "Солідна пухлина та інцидентний вузол щитоподібної залози розведені як окрема гілка."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H8",
+      "status": "added",
+      "reason": "Лікарська гарячка додана як зворотна гіпотеза, що залежить від часової історії препаратів."
+    }
+  ],
+  "safety": {
+    "candidate_only": true,
+    "diagnosis_not_established": true,
+    "treatment_directives_present": false,
+    "limitations": [
+      "Не починати етіологічно спрямовану терапію з цього кандидата без лікарського рішення.",
+      "Інфекція, malignancy та HLH/MAS не закриті.",
+      "Вузол щитоподібної залози розглядається окремо й не оголошений причиною FUO.",
+      "Evidence sources обґрунтовують перевірки, а не діагноз конкретного пацієнта."
+    ]
+  },
+  "decision_readiness": {
+    "status": "insufficient_evidence",
+    "rationale": "Наявні дані дозволяють сформувати пріоритетний диференціальний ряд і безпечний workup, але не виділити один діагноз без локалізації осередку, інфекційного виключення, HLH/MAS screen і тканинного підтвердження за наявності target.",
+    "blocked_actions": [
+      "Встановлення остаточного діагнозу",
+      "Початок імуносупресивної терапії",
+      "Ескалація антибактеріальної терапії без нового інфекційного обґрунтування",
+      "Онкогематологічне або тиреоїдне лікування без морфології"
+    ],
+    "required_next_information": [
+      "HLH/MAS quick screen і динаміка",
+      "Focused infection workup",
+      "Whole-body localisation і biopsy target",
+      "Still/vasculitis/autoimmune phenotype",
+      "Thyroid US/TI-RADS",
+      "Повторні лабораторні результати з повними одиницями в межах HLH/MAS screen"
+    ]
+  },
+  "use_limit": "Не починати етіологічно спрямовану терапію з цього кандидата без лікарського рішення. Інфекція, malignancy та HLH/MAS не закриті. Вузол щитоподібної залози розглядається окремо й не оголошений причиною FUO. Evidence sources обґрунтовують перевірки, а не діагноз конкретного пацієнта."
+}
