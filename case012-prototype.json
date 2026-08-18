@@ -8,9 +8,9 @@
     "bundle_sha256": "36a5fc7d2930169e1bce97dfe3361326c0692fb3f8c80a1daac896b4f921a07d",
     "reasoning_revision_id": "RR-CASE012-b4ec97302ee1",
     "reasoning_revision_sha256": "03e771e8ed294416d7fb99931179c93a3264d803e15086339931257d11fd27e6",
-    "clinical_copy_schema": "hematoboard.public-clinical-copy/generated-1.0.0",
-    "clinical_copy_sha256": "72f3a6db7463e7a538a55b878f142d5f890be402df0fd96c80e4ac8c3a5cfa3e",
-    "clinical_copy_origin": "canonical_generated_projection",
+    "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
+    "clinical_copy_sha256": "426808d9f4d4fe85d63151501bad79a0650061208ed98a774457ffef39e5a52c",
+    "clinical_copy_origin": "curated_optional_override",
     "clinical_input_sha256": "7af9fe772544761dad02cdc3ac0784c57ee1e35a530e3a6d435ee37a14b19810",
     "evidence_review_status": "pass",
     "evidence_review_modes": [
@@ -24,7 +24,7 @@
   "case": {
     "id": "CASE012",
     "title": "Знеособлений клінічний пакет · source ledger прийнято",
-    "overview_brief": "Демографічні дані не перенесено до minimum-necessary source layer.. Вік, bulky FDG-активна передня медіастинальна маса, надключичні вузли, B-симптоми, LDH 612 та компресія SVC/дихальних шляхів утворюють сумісний патерн.",
+    "overview_brief": "Чоловік, 36 років. Протягом двох місяців прогресують задишка при навантаженні, сухий кашель і тиск за грудниною. Виявлено масивне ФДГ-активне утворення переднього середостіння 12,5 × 9,0 × 15,0 см із компресією верхньої порожнистої вени, трахеї та правого головного бронха; гістологічний висновок очікується.",
     "generated": "2026-08-18",
     "governance": "Source ledger сформовано лише після об'єднаної людської звірки сканів, структурованого тексту, приватності та hash-derived координатного G4. Гіпотези й лікувальні рішення до канонічного ledger не внесено.",
     "demographics": "Демографічні дані не перенесено до minimum-necessary source layer.",
@@ -37,8 +37,8 @@
       "id": "H1",
       "rank": 1,
       "label": "Первинна медіастинальна великоклітинна B-клітинна лімфома",
-      "clinical_role": "Провідний тканинно не підтверджений кандидат.",
-      "rationale": "Вік, bulky FDG-активна передня медіастинальна маса, надключичні вузли, B-симптоми, LDH 612 та компресія SVC/дихальних шляхів утворюють сумісний патерн.",
+      "clinical_role": "Провідний кандидат без тканинного підтвердження",
+      "rationale": "Вік, масивне ФДГ-активне утворення переднього середостіння, надключичні вузли, B-симптоми, підвищений ЛДГ і компресія верхньої порожнистої вени та дихальних шляхів утворюють узгоджений патерн. Остаточна класифікація потребує достатнього біопсійного матеріалу.",
       "support_refs": [
         "F001",
         "F002",
@@ -56,17 +56,17 @@
         "F019"
       ],
       "missing_evidence": [
-        "Адекватна тканина",
-        "Морфологія та B-клітинний імунophenotype",
-        "Дослідження для розмежування PMBCL, cHL і grey-zone entity"
+        "Достатній біопсійний матеріал із життєздатної ділянки.",
+        "Морфологія та B-клітинний імунофенотип.",
+        "Ознаки для розмежування PMBCL, класичної лімфоми Ходжкіна та сіро-зонної лімфоми."
       ],
       "applicability_limits": [
-        "Клініко-радіологічний патерн не є діагнозом",
-        "SUVmax 24 не визначає гістологію"
+        "Клінічний та радіологічний патерн не встановлює діагноз.",
+        "SUVmax 24 не визначає гістологічний тип пухлини."
       ],
       "discriminating_checks": [
-        "Безпечна architecture-preserving біопсія",
-        "Експертна гематопатологічна класифікація"
+        "Безпечна біопсія зі збереженням архітектури тканини.",
+        "Експертна гематопатологічна класифікація."
       ],
       "short_label": "Первинна медіастинальна великоклітинна B-клітинна лімфома",
       "counts": {
@@ -271,8 +271,8 @@
       "id": "H2",
       "rank": 2,
       "label": "Класична лімфома Ходжкіна, імовірно нодулярно-склерозуючий патерн",
-      "clinical_role": "Близька медіастинальна альтернатива, що потребує морфології.",
-      "rationale": "Молодий вік, B-симптоми, bulky mediastinal presentation і шийно-надключичні вузли сумісні з cHL.",
+      "clinical_role": "Близька медіастинальна альтернатива, що потребує морфології",
+      "rationale": "Молодий вік, B-симптоми, масивне ураження середостіння та шийно-надключичні вузли сумісні з класичною лімфомою Ходжкіна. ПЕТ/КТ не розрізняє її з PMBCL.",
       "support_refs": [
         "F001",
         "F004",
@@ -286,17 +286,17 @@
         "F019"
       ],
       "missing_evidence": [
-        "Морфологія",
-        "Імунophenotype для cHL/PMBCL/grey-zone розмежування"
+        "Морфологія достатнього зразка.",
+        "Імунофенотип для розмежування з PMBCL і сіро-зонною лімфомою."
       ],
       "applicability_limits": [
-        "PET/CT не розрізняє cHL і PMBCL",
-        "Вік і B-симптоми неспецифічні"
+        "ФДГ-активність не визначає гістологічний тип.",
+        "Вік і B-симптоми неспецифічні."
       ],
       "discriminating_checks": [
-        "Адекватна тканина з узгодженою pathology triage"
+        "Біопсія з наперед узгодженою обробкою матеріалу."
       ],
-      "short_label": "Класична лімфома Ходжкіна, імовірно нодулярно-склерозуючий патерн",
+      "short_label": "Класична лімфома Ходжкіна",
       "counts": {
         "support": 6,
         "refute": 0,
@@ -431,8 +431,8 @@
       "id": "H3",
       "rank": 3,
       "label": "T-лімфобластна лімфома",
-      "clinical_role": "Небезпечна лімфоїдна альтернатива у молодого чоловіка з компресійною медіастинальною масою.",
-      "rationale": "Передня медіастинальна маса й компресія центральних дихальних шляхів у 36-річного чоловіка сумісні, але поточний OCR-CBC не дозволяє надійно оцінити периферичний компонент.",
+      "clinical_role": "Небезпечна лімфоїдна альтернатива у молодого чоловіка",
+      "rationale": "Передня медіастинальна маса з компресією центральних дихальних шляхів у молодого чоловіка сумісна з T-лімфобластною лімфомою. Пошкоджені одиниці загального аналізу крові не дозволяють надійно оцінити периферичний компонент.",
       "support_refs": [
         "F001",
         "F011",
@@ -445,17 +445,17 @@
         "F017"
       ],
       "missing_evidence": [
-        "Точний CBC з одиницями та мазок",
-        "TdT/T-lineage flow/IHC",
-        "Оцінка marrow за показаннями після tissue result"
+        "Повторний загальний аналіз крові з точними одиницями та мазок.",
+        "ІГХ і проточна цитометрія з маркерами T-лімфобластного процесу.",
+        "Оцінка кісткового мозку за клініко-патологічними показаннями."
       ],
       "applicability_limits": [
-        "Нормальний або майже нормальний CBC не виключає lymphoma-presentation",
-        "Немає поточного lineage evidence"
+        "Відсутність виразних змін у загальному аналізі крові не виключає лімфомний варіант.",
+        "Даних про клітинну лінію поки немає."
       ],
       "discriminating_checks": [
-        "Tissue flow/IHC",
-        "Периферична кров і marrow лише за клініко-патологічними показаннями"
+        "Проточна цитометрія та ІГХ біопсійного матеріалу.",
+        "Дослідження периферичної крові й кісткового мозку за показаннями."
       ],
       "short_label": "T-лімфобластна лімфома",
       "counts": {
@@ -575,8 +575,8 @@
       "id": "H4",
       "rank": 4,
       "label": "Медіастинальна герміногенна пухлина",
-      "clinical_role": "Обов’язкова неблімфоїдна альтернатива передньої медіастинальної маси.",
-      "rationale": "Стать, вік і локалізація вимагають AFP та beta-hCG; морфологія маси ще невідома.",
+      "clinical_role": "Обов’язкова неблімфоїдна альтернатива",
+      "rationale": "Стать, вік і передня медіастинальна локалізація потребують перевірки герміногенної пухлини за допомогою AFP, β-ХГЛ і морфології.",
       "support_refs": [
         "F001",
         "F011"
@@ -587,18 +587,17 @@
         "F018"
       ],
       "missing_evidence": [
-        "AFP",
-        "beta-hCG",
-        "Огляд/УЗД яєчок за клінічним рішенням",
-        "Морфологія"
+        "AFP і β-ХГЛ.",
+        "Огляд або УЗД яєчок за клінічним рішенням.",
+        "Морфологічне підтвердження."
       ],
       "applicability_limits": [
-        "Нормальні маркери не виключають усі GCT",
-        "Лімфовузловий патерн робить лімфому більш цілісною, але не закриває GCT"
+        "Нормальні пухлинні маркери не виключають усі герміногенні пухлини.",
+        "Лімфовузловий патерн краще узгоджується з лімфомою, але не закриває цю гілку."
       ],
       "discriminating_checks": [
-        "AFP і beta-hCG",
-        "Tissue classification"
+        "Визначення AFP і β-ХГЛ у сироватці.",
+        "Класифікація біопсійного матеріалу."
       ],
       "short_label": "Медіастинальна герміногенна пухлина",
       "counts": {
@@ -684,8 +683,8 @@
       "id": "H5",
       "rank": 5,
       "label": "Тимічна епітеліальна пухлина",
-      "clinical_role": "Тканинно залежна солідна альтернатива.",
-      "rationale": "Передня медіастинальна локалізація сумісна з TET; виражені B-симптоми та metabolically active nodal disease більше підтримують lymphoid process, але не виключають TET.",
+      "clinical_role": "Солідна альтернатива, залежна від морфології",
+      "rationale": "Передня медіастинальна локалізація сумісна з тимічною епітеліальною пухлиною. B-симптоми та активні шийно-надключичні вузли краще підтримують лімфоїдний процес, але не виключають тимічну пухлину.",
       "support_refs": [
         "F011",
         "F012",
@@ -698,15 +697,15 @@
         "F018"
       ],
       "missing_evidence": [
-        "Морфологія",
-        "Клінічні ознаки thymic-associated syndromes",
-        "Оцінка invasion/resectability у MDT"
+        "Морфологічний висновок.",
+        "Оцінка симптомів, асоційованих із патологією тимуса.",
+        "Мультидисциплінарна оцінка інвазії та резектабельності."
       ],
       "applicability_limits": [
-        "CT/PET не встановлюють точний thymic histology"
+        "КТ і ПЕТ/КТ не встановлюють точний гістологічний тип тимічної пухлини."
       ],
       "discriminating_checks": [
-        "Tissue classification після процедурної оцінки ризику"
+        "Класифікація тканини після процедурної оцінки ризику."
       ],
       "short_label": "Тимічна епітеліальна пухлина",
       "counts": {
@@ -826,8 +825,8 @@
       "id": "H6",
       "rank": 6,
       "label": "Інша або медіастинальна сіро-зонна лімфома",
-      "clinical_role": "Рідша лімфоїдна гілка, яку не можна звести до PMBCL або cHL без достатньої тканини.",
-      "rationale": "Bulky mediastinal mass і nodal FDG activity допускають entity з перекриттям морфології та phenotype.",
+      "clinical_role": "Рідша лімфоїдна гілка з морфологічним перекриттям",
+      "rationale": "Масивне утворення середостіння та активні лімфовузли допускають іншу лімфому або процес із проміжними ознаками PMBCL і класичної лімфоми Ходжкіна.",
       "support_refs": [
         "F011",
         "F014",
@@ -839,15 +838,15 @@
         "F019"
       ],
       "missing_evidence": [
-        "Архітектура тканини",
-        "Розширений IHC/flow",
-        "FISH/molecular tests за morphology-driven показаннями"
+        "Архітектура тканини.",
+        "Розширена ІГХ і проточна цитометрія.",
+        "FISH або молекулярні дослідження за морфологічними показаннями."
       ],
       "applicability_limits": [
-        "Це резервна класифікаційна гілка, а не клінічний діагноз"
+        "Це резервна класифікаційна гілка, а не встановлений діагноз."
       ],
       "discriminating_checks": [
-        "Експертний hematopathology review"
+        "Експертний гематопатологічний перегляд."
       ],
       "short_label": "Інша або медіастинальна сіро-зонна лімфома",
       "counts": {
@@ -950,8 +949,8 @@
       "id": "H7",
       "rank": 7,
       "label": "Гранулематозна або інфекційна медіастинальна хвороба",
-      "clinical_role": "Потенційно зворотний імітатор, нині слабше підтриманий за неопластичні гілки.",
-      "rationale": "Некроз, B-симптоми та дрібні легеневі вогнища можуть траплятися при TB/fungal або іншому гранулематозному процесі, але велика конгломератна mass і nodal pattern потребують tissue distinction.",
+      "clinical_role": "Потенційно зворотний імітатор, підтриманий слабше",
+      "rationale": "Некроз, B-симптоми та дрібні легеневі вогнища можуть траплятися при туберкульозі, грибковій інфекції або іншому гранулематозному процесі. Велику конгломератну масу потрібно розрізнити за тканиною.",
       "support_refs": [
         "F004",
         "F011",
@@ -963,18 +962,18 @@
         "F019"
       ],
       "missing_evidence": [
-        "Епідеміологічні експозиції",
-        "Мікробіологія/спеціальні фарбування на tissue за показаннями",
-        "Морфологія"
+        "Епідеміологічний анамнез.",
+        "Мікробіологічні дослідження та спеціальні фарбування тканини за показаннями.",
+        "Морфологія."
       ],
       "applicability_limits": [
-        "FDG uptake і некроз неспецифічні",
-        "Немає наданих exposure або microbiology data"
+        "ФДГ-активність і некроз неспецифічні.",
+        "Епідеміологічні та мікробіологічні дані не наведені."
       ],
       "discriminating_checks": [
-        "Tissue with pathology and microbiology triage when clinically indicated"
+        "Патологічна та мікробіологічна обробка біопсійного матеріалу за показаннями."
       ],
-      "short_label": "Гранулематозна або інфекційна медіастинальна хвороба",
+      "short_label": "Гранулематозне або інфекційне ураження середостіння",
       "counts": {
         "support": 3,
         "refute": 0,
@@ -1645,8 +1644,8 @@
       "year": null,
       "location": "Exact PDF SHA-256 26d6eb966fd1fe50d4f5bba686a6286ece915b9fc67b5cca837b6107bec9b2df, PDF page 13; visual render SHA-256 b294f3eb7b7fa5b15b2ec840083c9268e2e482c679862725581a9542d907ec35",
       "verification_status": "agent_visual_source_review",
-      "use": "PMBCL commonly presents in young adults as a locally invasive anterior mediastinal mass and can cause respiratory symptoms or superior vena cava syndrome; morphology can overlap with nodular-sclerosis Hodgkin lymphoma and mediastinal grey-zone lymphoma.",
-      "applicability_limit": "The case pattern is strongly compatible but not diagnostic. The NCI summary cannot replace adequate tissue, immunophenotyping and expert classification."
+      "use": "Опис NCI підтримує PMBCL як провідний кандидат за віком, передньою медіастинальною масою, респіраторними симптомами та компресією верхньої порожнистої вени.",
+      "applicability_limit": "Клінічний патерн не замінює морфологію, ІГХ і експертну класифікацію."
     },
     {
       "id": "E-CAND-2",
@@ -1656,8 +1655,8 @@
       "year": null,
       "location": "Type of biopsy, recommendations 1.1.1-1.1.4 in exact downloaded HTML SHA-256 b646b082bd5b4696d10398ecbebd24cd44fa6d4a4f5a96d15b9f64bff6e8d492",
       "verification_status": "agent_visual_source_review",
-      "use": "Excision biopsy is preferred when feasible for suspected NHL; core biopsy is reasonable when surgical risk outweighs benefit, with maximal cores and conservation of tissue for further analysis.",
-      "applicability_limit": "Biopsy route depends on airway/SVC risk and the safest accessible target. An accessible supraclavicular node may be preferable to a higher-risk mediastinal approach, but clinicians must decide."
+      "use": "NICE підтримує ексцизійну біопсію за можливості або достатню core-біопсію, коли операційний ризик вищий, із збереженням матеріалу для додаткових досліджень.",
+      "applicability_limit": "Спосіб і мішень біопсії визначають з урахуванням компресії дихальних шляхів та верхньої порожнистої вени."
     },
     {
       "id": "E-CAND-3",
@@ -1667,8 +1666,8 @@
       "year": null,
       "location": "SVCS assessment and treatment section in exact downloaded HTML SHA-256 6f206611948b322b729a86f4344abdb0fdd9db462ea0b23c7b7ff2a7015a3258",
       "verification_status": "agent_visual_source_review",
-      "use": "In adults, diagnostic assessment can usually precede tumour-directed treatment, but significant airway obstruction or cerebral edema are emergency exceptions requiring immediate clinical action.",
-      "applicability_limit": "The record documents anatomic tracheal/right-main-bronchus and SVC compression plus dyspnea, but not stridor, facial or upper-limb edema, orthopnea, syncope, neurologic findings or dynamic deterioration; current clinical severity must be examined directly."
+      "use": "NCI визначає виражену обструкцію дихальних шляхів або церебральний набряк як невідкладні винятки, коли втручання може передувати завершенню діагностики.",
+      "applicability_limit": "У пакеті немає даних про стридор, ортопное, набряк обличчя або рук, синкопе, неврологічні симптоми чи динамічне погіршення."
     },
     {
       "id": "E-CAND-4",
@@ -1678,8 +1677,8 @@
       "year": 2023,
       "location": "Structured abstract Results and Discussion in exact PubMed XML SHA-256 b20bf6c4660c33c102e7a24157b2128c99e798f5d06b625f89ae174174f0b780",
       "verification_status": "agent_visual_source_review",
-      "use": "TLS may occur spontaneously or after anticancer treatment and requires attention to potassium, phosphate, calcium, uric acid and renal complications rather than uric acid alone.",
-      "applicability_limit": "Bulky FDG-avid disease, LDH elevation and uric acid 410 increase concern, but missing potassium, phosphate, calcium and serial renal values prevent case-specific risk classification."
+      "use": "Консенсус щодо синдрому лізису пухлини підтримує контроль калію, фосфату, кальцію, сечової кислоти та функції нирок до й під час протипухлинного лікування.",
+      "applicability_limit": "Без повного набору електролітів і серійних показників функції нирок індивідуальний рівень ризику не визначений."
     },
     {
       "id": "E-CAND-5",
@@ -1689,8 +1688,8 @@
       "year": 2010,
       "location": "Extragonadal/mediastinal germ-cell tumour recommendations in exact downloaded full article SHA-256 c5cd99e64e0e52456039e074e6ce51c6e6d5f87b693dcc2e5bf2bd1e54c75689",
       "verification_status": "agent_visual_source_review",
-      "use": "AFP and hCG are established serum markers for adult male germ-cell tumours; in a male with an anterior mediastinal primary they can materially classify or exclude pure-seminoma interpretations, while stable cases usually still require histopathology.",
-      "applicability_limit": "Normal markers would not exclude every germ-cell tumour; marker results do not replace tissue in a stable patient."
+      "use": "Рекомендації ASCO підтримують AFP і β-ХГЛ як ключові маркери герміногенних пухлин у чоловіків із передньою медіастинальною масою.",
+      "applicability_limit": "Нормальні маркери не виключають усі герміногенні пухлини й не замінюють гістологічне дослідження."
     },
     {
       "id": "E-CAND-6",
@@ -1700,8 +1699,8 @@
       "year": null,
       "location": "Clinical presentation, B symptoms and staging sections in exact downloaded HTML SHA-256 a8f3769d8c2be81bcb050e90106d1cf8fd1ea3e7e8f0f9629aa70e945cb0fb59",
       "verification_status": "agent_visual_source_review",
-      "use": "Hodgkin lymphoma frequently involves nodes above the diaphragm and mediastinal nodes; B symptoms and bulky disease affect assessment, and PET/CT supports staging after histologic diagnosis.",
-      "applicability_limit": "The age, B symptoms, cervical/supraclavicular nodes and bulky mediastinal disease fit, but PET avidity and SUV cannot distinguish Hodgkin lymphoma from PMBCL or other FDG-avid entities."
+      "use": "Огляд NCI зберігає класичну лімфому Ходжкіна як близьку альтернативу за медіастинальним ураженням, B-симптомами та наддіафрагмальними вузлами.",
+      "applicability_limit": "ПЕТ/КТ не розрізняє класичну лімфому Ходжкіна, PMBCL та інші ФДГ-активні процеси."
     },
     {
       "id": "E-CAND-7",
@@ -1711,8 +1710,8 @@
       "year": null,
       "location": "Diagnostic Evaluation and mediastinal differential section in exact downloaded HTML SHA-256 8a6600739a08db4ec2a2b591786c6cd68d9d282c45f8fabcbed945d501f36955",
       "verification_status": "agent_visual_source_review",
-      "use": "Thymic epithelial tumours are part of the anterior mediastinal differential, and CT helps define size, location and invasion but has limited ability to determine exact histology.",
-      "applicability_limit": "This preserves thymic tumour as a tissue-dependent alternative; the nodal pattern and systemic symptoms make a lymphoid process more cohesive but do not exclude it."
+      "use": "Огляд NCI зберігає тимічну епітеліальну пухлину в диференціальному ряду передньої медіастинальної маси та підтримує оцінку інвазії за КТ.",
+      "applicability_limit": "Візуалізація не встановлює точний гістологічний тип і не замінює дослідження тканини."
     }
   ],
   "source_traces": [
@@ -1899,7 +1898,7 @@
   "critical_gaps": [
     {
       "id": "G1",
-      "text": "Не визначена клінічна тяжкість SVC/airway compression: немає стридору, positional symptoms, набряку верхньої половини тіла, синкопе, неврологічних ознак і динаміки оксигенації.",
+      "text": "Не визначено клінічну тяжкість компресії верхньої порожнистої вени та дихальних шляхів: немає даних про стридор, позиційні симптоми, набряк верхньої половини тіла, синкопе, неврологічні ознаки й динаміку оксигенації.",
       "evidence_refs": [
         "E-CAND-3"
       ],
@@ -1912,14 +1911,14 @@
           "year": null,
           "location": "SVCS assessment and treatment section in exact downloaded HTML SHA-256 6f206611948b322b729a86f4344abdb0fdd9db462ea0b23c7b7ff2a7015a3258",
           "verification_status": "agent_visual_source_review",
-          "use": "In adults, diagnostic assessment can usually precede tumour-directed treatment, but significant airway obstruction or cerebral edema are emergency exceptions requiring immediate clinical action.",
-          "applicability_limit": "The record documents anatomic tracheal/right-main-bronchus and SVC compression plus dyspnea, but not stridor, facial or upper-limb edema, orthopnea, syncope, neurologic findings or dynamic deterioration; current clinical severity must be examined directly."
+          "use": "NCI визначає виражену обструкцію дихальних шляхів або церебральний набряк як невідкладні винятки, коли втручання може передувати завершенню діагностики.",
+          "applicability_limit": "У пакеті немає даних про стридор, ортопное, набряк обличчя або рук, синкопе, неврологічні симптоми чи динамічне погіршення."
         }
       ]
     },
     {
       "id": "G2",
-      "text": "Немає повного TLS baseline: калію, фосфату, кальцію, eGFR/креатиніну в динаміці, повторної сечової кислоти та діурезу.",
+      "text": "Немає повної базової оцінки ризику синдрому лізису пухлини: калію, фосфату, кальцію, динаміки креатиніну та розрахункової швидкості клубочкової фільтрації, повторної сечової кислоти й діурезу.",
       "evidence_refs": [
         "E-CAND-4"
       ],
@@ -1932,14 +1931,14 @@
           "year": 2023,
           "location": "Structured abstract Results and Discussion in exact PubMed XML SHA-256 b20bf6c4660c33c102e7a24157b2128c99e798f5d06b625f89ae174174f0b780",
           "verification_status": "agent_visual_source_review",
-          "use": "TLS may occur spontaneously or after anticancer treatment and requires attention to potassium, phosphate, calcium, uric acid and renal complications rather than uric acid alone.",
-          "applicability_limit": "Bulky FDG-avid disease, LDH elevation and uric acid 410 increase concern, but missing potassium, phosphate, calcium and serial renal values prevent case-specific risk classification."
+          "use": "Консенсус щодо синдрому лізису пухлини підтримує контроль калію, фосфату, кальцію, сечової кислоти та функції нирок до й під час протипухлинного лікування.",
+          "applicability_limit": "Без повного набору електролітів і серійних показників функції нирок індивідуальний рівень ризику не визначений."
         }
       ]
     },
     {
       "id": "G3",
-      "text": "Біопсія в роботі, але не відомі target, метод, procedural-risk plan, adequacy та морфологічний результат.",
+      "text": "Біопсія в роботі, але не вказані мішень, спосіб, план процедурної безпеки, достатність матеріалу та морфологічний результат.",
       "evidence_refs": [
         "E-CAND-1",
         "E-CAND-2",
@@ -1955,8 +1954,8 @@
           "year": null,
           "location": "Exact PDF SHA-256 26d6eb966fd1fe50d4f5bba686a6286ece915b9fc67b5cca837b6107bec9b2df, PDF page 13; visual render SHA-256 b294f3eb7b7fa5b15b2ec840083c9268e2e482c679862725581a9542d907ec35",
           "verification_status": "agent_visual_source_review",
-          "use": "PMBCL commonly presents in young adults as a locally invasive anterior mediastinal mass and can cause respiratory symptoms or superior vena cava syndrome; morphology can overlap with nodular-sclerosis Hodgkin lymphoma and mediastinal grey-zone lymphoma.",
-          "applicability_limit": "The case pattern is strongly compatible but not diagnostic. The NCI summary cannot replace adequate tissue, immunophenotyping and expert classification."
+          "use": "Опис NCI підтримує PMBCL як провідний кандидат за віком, передньою медіастинальною масою, респіраторними симптомами та компресією верхньої порожнистої вени.",
+          "applicability_limit": "Клінічний патерн не замінює морфологію, ІГХ і експертну класифікацію."
         },
         {
           "id": "E-CAND-2",
@@ -1966,8 +1965,8 @@
           "year": null,
           "location": "Type of biopsy, recommendations 1.1.1-1.1.4 in exact downloaded HTML SHA-256 b646b082bd5b4696d10398ecbebd24cd44fa6d4a4f5a96d15b9f64bff6e8d492",
           "verification_status": "agent_visual_source_review",
-          "use": "Excision biopsy is preferred when feasible for suspected NHL; core biopsy is reasonable when surgical risk outweighs benefit, with maximal cores and conservation of tissue for further analysis.",
-          "applicability_limit": "Biopsy route depends on airway/SVC risk and the safest accessible target. An accessible supraclavicular node may be preferable to a higher-risk mediastinal approach, but clinicians must decide."
+          "use": "NICE підтримує ексцизійну біопсію за можливості або достатню core-біопсію, коли операційний ризик вищий, із збереженням матеріалу для додаткових досліджень.",
+          "applicability_limit": "Спосіб і мішень біопсії визначають з урахуванням компресії дихальних шляхів та верхньої порожнистої вени."
         },
         {
           "id": "E-CAND-6",
@@ -1977,8 +1976,8 @@
           "year": null,
           "location": "Clinical presentation, B symptoms and staging sections in exact downloaded HTML SHA-256 a8f3769d8c2be81bcb050e90106d1cf8fd1ea3e7e8f0f9629aa70e945cb0fb59",
           "verification_status": "agent_visual_source_review",
-          "use": "Hodgkin lymphoma frequently involves nodes above the diaphragm and mediastinal nodes; B symptoms and bulky disease affect assessment, and PET/CT supports staging after histologic diagnosis.",
-          "applicability_limit": "The age, B symptoms, cervical/supraclavicular nodes and bulky mediastinal disease fit, but PET avidity and SUV cannot distinguish Hodgkin lymphoma from PMBCL or other FDG-avid entities."
+          "use": "Огляд NCI зберігає класичну лімфому Ходжкіна як близьку альтернативу за медіастинальним ураженням, B-симптомами та наддіафрагмальними вузлами.",
+          "applicability_limit": "ПЕТ/КТ не розрізняє класичну лімфому Ходжкіна, PMBCL та інші ФДГ-активні процеси."
         },
         {
           "id": "E-CAND-7",
@@ -1988,14 +1987,14 @@
           "year": null,
           "location": "Diagnostic Evaluation and mediastinal differential section in exact downloaded HTML SHA-256 8a6600739a08db4ec2a2b591786c6cd68d9d282c45f8fabcbed945d501f36955",
           "verification_status": "agent_visual_source_review",
-          "use": "Thymic epithelial tumours are part of the anterior mediastinal differential, and CT helps define size, location and invasion but has limited ability to determine exact histology.",
-          "applicability_limit": "This preserves thymic tumour as a tissue-dependent alternative; the nodal pattern and systemic symptoms make a lymphoid process more cohesive but do not exclude it."
+          "use": "Огляд NCI зберігає тимічну епітеліальну пухлину в диференціальному ряду передньої медіастинальної маси та підтримує оцінку інвазії за КТ.",
+          "applicability_limit": "Візуалізація не встановлює точний гістологічний тип і не замінює дослідження тканини."
         }
       ]
     },
     {
       "id": "G4",
-      "text": "Немає заздалегідь узгодженої triage тканини для histology, flow, IHC і додаткових досліджень.",
+      "text": "Не узгоджено наперед обробку тканини для гістології, проточної цитометрії, ІГХ та додаткових досліджень.",
       "evidence_refs": [
         "E-CAND-1",
         "E-CAND-2"
@@ -2009,8 +2008,8 @@
           "year": null,
           "location": "Exact PDF SHA-256 26d6eb966fd1fe50d4f5bba686a6286ece915b9fc67b5cca837b6107bec9b2df, PDF page 13; visual render SHA-256 b294f3eb7b7fa5b15b2ec840083c9268e2e482c679862725581a9542d907ec35",
           "verification_status": "agent_visual_source_review",
-          "use": "PMBCL commonly presents in young adults as a locally invasive anterior mediastinal mass and can cause respiratory symptoms or superior vena cava syndrome; morphology can overlap with nodular-sclerosis Hodgkin lymphoma and mediastinal grey-zone lymphoma.",
-          "applicability_limit": "The case pattern is strongly compatible but not diagnostic. The NCI summary cannot replace adequate tissue, immunophenotyping and expert classification."
+          "use": "Опис NCI підтримує PMBCL як провідний кандидат за віком, передньою медіастинальною масою, респіраторними симптомами та компресією верхньої порожнистої вени.",
+          "applicability_limit": "Клінічний патерн не замінює морфологію, ІГХ і експертну класифікацію."
         },
         {
           "id": "E-CAND-2",
@@ -2020,14 +2019,14 @@
           "year": null,
           "location": "Type of biopsy, recommendations 1.1.1-1.1.4 in exact downloaded HTML SHA-256 b646b082bd5b4696d10398ecbebd24cd44fa6d4a4f5a96d15b9f64bff6e8d492",
           "verification_status": "agent_visual_source_review",
-          "use": "Excision biopsy is preferred when feasible for suspected NHL; core biopsy is reasonable when surgical risk outweighs benefit, with maximal cores and conservation of tissue for further analysis.",
-          "applicability_limit": "Biopsy route depends on airway/SVC risk and the safest accessible target. An accessible supraclavicular node may be preferable to a higher-risk mediastinal approach, but clinicians must decide."
+          "use": "NICE підтримує ексцизійну біопсію за можливості або достатню core-біопсію, коли операційний ризик вищий, із збереженням матеріалу для додаткових досліджень.",
+          "applicability_limit": "Спосіб і мішень біопсії визначають з урахуванням компресії дихальних шляхів та верхньої порожнистої вени."
         }
       ]
     },
     {
       "id": "G5",
-      "text": "Не наведено AFP і beta-hCG для медіастинальної герміногенної гілки.",
+      "text": "Не наведено AFP і β-ХГЛ для оцінки медіастинальної герміногенної пухлини.",
       "evidence_refs": [
         "E-CAND-5"
       ],
@@ -2040,8 +2039,8 @@
           "year": 2010,
           "location": "Extragonadal/mediastinal germ-cell tumour recommendations in exact downloaded full article SHA-256 c5cd99e64e0e52456039e074e6ce51c6e6d5f87b693dcc2e5bf2bd1e54c75689",
           "verification_status": "agent_visual_source_review",
-          "use": "AFP and hCG are established serum markers for adult male germ-cell tumours; in a male with an anterior mediastinal primary they can materially classify or exclude pure-seminoma interpretations, while stable cases usually still require histopathology.",
-          "applicability_limit": "Normal markers would not exclude every germ-cell tumour; marker results do not replace tissue in a stable patient."
+          "use": "Рекомендації ASCO підтримують AFP і β-ХГЛ як ключові маркери герміногенних пухлин у чоловіків із передньою медіастинальною масою.",
+          "applicability_limit": "Нормальні маркери не виключають усі герміногенні пухлини й не замінюють гістологічне дослідження."
         }
       ]
     }
@@ -2049,11 +2048,11 @@
   "workup": [
     {
       "id": "W1",
-      "title": "Негайно визначити клінічну тяжкість SVC і центральної airway compression",
-      "rationale": "Документувати стридор, ортопное/непереносимість положення лежачи, прогресуючу гіпоксемію, набряк обличчя/шиї/рук, венозні колатералі, синкопе, гіпотензію та неврологічні ознаки; це визначає, чи може діагностична оцінка безпечно передувати втручанню.",
+      "title": "Негайно визначити тяжкість компресії верхньої порожнистої вени та дихальних шляхів",
+      "rationale": "Документувати стридор, ортопное або непереносимість положення лежачи, прогресуючу гіпоксемію, набряк обличчя, шиї чи рук, венозні колатералі, синкопе, гіпотензію та неврологічні ознаки. Це визначає, чи може діагностичне обстеження безпечно передувати втручанню.",
       "priority": "critical",
       "necessity": "urgent_if_triggered",
-      "trigger": "Є стридор або наростаюча центральна обструкція дихальних шляхів, прогресуюча гіпоксемія, церебральний набряк/неврологічне погіршення, синкопе чи гемодинамічна нестабільність.",
+      "trigger": "Стридор, наростаюча центральна обструкція дихальних шляхів, прогресуюча гіпоксемія, церебральний набряк або неврологічне погіршення, синкопе чи гемодинамічна нестабільність.",
       "discriminates": [],
       "evidence_refs": [
         "E-CAND-3"
@@ -2067,15 +2066,15 @@
           "year": null,
           "location": "SVCS assessment and treatment section in exact downloaded HTML SHA-256 6f206611948b322b729a86f4344abdb0fdd9db462ea0b23c7b7ff2a7015a3258",
           "verification_status": "agent_visual_source_review",
-          "use": "In adults, diagnostic assessment can usually precede tumour-directed treatment, but significant airway obstruction or cerebral edema are emergency exceptions requiring immediate clinical action.",
-          "applicability_limit": "The record documents anatomic tracheal/right-main-bronchus and SVC compression plus dyspnea, but not stridor, facial or upper-limb edema, orthopnea, syncope, neurologic findings or dynamic deterioration; current clinical severity must be examined directly."
+          "use": "NCI визначає виражену обструкцію дихальних шляхів або церебральний набряк як невідкладні винятки, коли втручання може передувати завершенню діагностики.",
+          "applicability_limit": "У пакеті немає даних про стридор, ортопное, набряк обличчя або рук, синкопе, неврологічні симптоми чи динамічне погіршення."
         }
       ]
     },
     {
       "id": "W2",
-      "title": "Закрити базову оцінку ризику TLS до протипухлинного лікування",
-      "rationale": "Повторити креатинін/eGFR, калій, фосфат, кальцій, сечову кислоту й LDH у динаміці та документувати діурез/гідратаційний стан; поточних значень недостатньо для tiering.",
+      "title": "Завершити базову оцінку ризику синдрому лізису пухлини",
+      "rationale": "Повторити креатинін і розрахункову швидкість клубочкової фільтрації, калій, фосфат, кальцій, сечову кислоту та ЛДГ у динаміці; документувати діурез і стан гідратації. Поточних даних недостатньо для визначення рівня ризику.",
       "priority": "critical",
       "necessity": "classification_exclusion_required",
       "trigger": null,
@@ -2092,15 +2091,15 @@
           "year": 2023,
           "location": "Structured abstract Results and Discussion in exact PubMed XML SHA-256 b20bf6c4660c33c102e7a24157b2128c99e798f5d06b625f89ae174174f0b780",
           "verification_status": "agent_visual_source_review",
-          "use": "TLS may occur spontaneously or after anticancer treatment and requires attention to potassium, phosphate, calcium, uric acid and renal complications rather than uric acid alone.",
-          "applicability_limit": "Bulky FDG-avid disease, LDH elevation and uric acid 410 increase concern, but missing potassium, phosphate, calcium and serial renal values prevent case-specific risk classification."
+          "use": "Консенсус щодо синдрому лізису пухлини підтримує контроль калію, фосфату, кальцію, сечової кислоти та функції нирок до й під час протипухлинного лікування.",
+          "applicability_limit": "Без повного набору електролітів і серійних показників функції нирок індивідуальний рівень ризику не визначений."
         }
       ]
     },
     {
       "id": "W3",
-      "title": "Отримати адекватну тканину з найбезпечнішого життєздатного доступного осередку",
-      "rationale": "Оцінити шийно-надключичний вузол порівняно з некротичною медіастинальною масою; за можливості зберегти архітектуру та не покладатися лише на цитологію. Маршрут біопсії має враховувати airway/SVC procedural risk.",
+      "title": "Отримати достатню тканину з найбезпечнішого життєздатного осередку",
+      "rationale": "Порівняти доступність шийно-надключичного вузла й некротичної медіастинальної маси. За можливості зберегти архітектуру тканини та не покладатися лише на цитологію; спосіб біопсії має враховувати ризик компресії дихальних шляхів і верхньої порожнистої вени.",
       "priority": "critical",
       "necessity": "classification_exclusion_required",
       "trigger": null,
@@ -2128,8 +2127,8 @@
           "year": null,
           "location": "Exact PDF SHA-256 26d6eb966fd1fe50d4f5bba686a6286ece915b9fc67b5cca837b6107bec9b2df, PDF page 13; visual render SHA-256 b294f3eb7b7fa5b15b2ec840083c9268e2e482c679862725581a9542d907ec35",
           "verification_status": "agent_visual_source_review",
-          "use": "PMBCL commonly presents in young adults as a locally invasive anterior mediastinal mass and can cause respiratory symptoms or superior vena cava syndrome; morphology can overlap with nodular-sclerosis Hodgkin lymphoma and mediastinal grey-zone lymphoma.",
-          "applicability_limit": "The case pattern is strongly compatible but not diagnostic. The NCI summary cannot replace adequate tissue, immunophenotyping and expert classification."
+          "use": "Опис NCI підтримує PMBCL як провідний кандидат за віком, передньою медіастинальною масою, респіраторними симптомами та компресією верхньої порожнистої вени.",
+          "applicability_limit": "Клінічний патерн не замінює морфологію, ІГХ і експертну класифікацію."
         },
         {
           "id": "E-CAND-2",
@@ -2139,8 +2138,8 @@
           "year": null,
           "location": "Type of biopsy, recommendations 1.1.1-1.1.4 in exact downloaded HTML SHA-256 b646b082bd5b4696d10398ecbebd24cd44fa6d4a4f5a96d15b9f64bff6e8d492",
           "verification_status": "agent_visual_source_review",
-          "use": "Excision biopsy is preferred when feasible for suspected NHL; core biopsy is reasonable when surgical risk outweighs benefit, with maximal cores and conservation of tissue for further analysis.",
-          "applicability_limit": "Biopsy route depends on airway/SVC risk and the safest accessible target. An accessible supraclavicular node may be preferable to a higher-risk mediastinal approach, but clinicians must decide."
+          "use": "NICE підтримує ексцизійну біопсію за можливості або достатню core-біопсію, коли операційний ризик вищий, із збереженням матеріалу для додаткових досліджень.",
+          "applicability_limit": "Спосіб і мішень біопсії визначають з урахуванням компресії дихальних шляхів та верхньої порожнистої вени."
         },
         {
           "id": "E-CAND-6",
@@ -2150,8 +2149,8 @@
           "year": null,
           "location": "Clinical presentation, B symptoms and staging sections in exact downloaded HTML SHA-256 a8f3769d8c2be81bcb050e90106d1cf8fd1ea3e7e8f0f9629aa70e945cb0fb59",
           "verification_status": "agent_visual_source_review",
-          "use": "Hodgkin lymphoma frequently involves nodes above the diaphragm and mediastinal nodes; B symptoms and bulky disease affect assessment, and PET/CT supports staging after histologic diagnosis.",
-          "applicability_limit": "The age, B symptoms, cervical/supraclavicular nodes and bulky mediastinal disease fit, but PET avidity and SUV cannot distinguish Hodgkin lymphoma from PMBCL or other FDG-avid entities."
+          "use": "Огляд NCI зберігає класичну лімфому Ходжкіна як близьку альтернативу за медіастинальним ураженням, B-симптомами та наддіафрагмальними вузлами.",
+          "applicability_limit": "ПЕТ/КТ не розрізняє класичну лімфому Ходжкіна, PMBCL та інші ФДГ-активні процеси."
         },
         {
           "id": "E-CAND-7",
@@ -2161,15 +2160,15 @@
           "year": null,
           "location": "Diagnostic Evaluation and mediastinal differential section in exact downloaded HTML SHA-256 8a6600739a08db4ec2a2b591786c6cd68d9d282c45f8fabcbed945d501f36955",
           "verification_status": "agent_visual_source_review",
-          "use": "Thymic epithelial tumours are part of the anterior mediastinal differential, and CT helps define size, location and invasion but has limited ability to determine exact histology.",
-          "applicability_limit": "This preserves thymic tumour as a tissue-dependent alternative; the nodal pattern and systemic symptoms make a lymphoid process more cohesive but do not exclude it."
+          "use": "Огляд NCI зберігає тимічну епітеліальну пухлину в диференціальному ряду передньої медіастинальної маси та підтримує оцінку інвазії за КТ.",
+          "applicability_limit": "Візуалізація не встановлює точний гістологічний тип і не замінює дослідження тканини."
         }
       ]
     },
     {
       "id": "W4",
-      "title": "Попередньо узгодити pathology triage біопсійного матеріалу",
-      "rationale": "Перед забором визначити потребу в fresh/fixed tissue, histology, flow cytometry, IHC та за morphology-driven показаннями FISH/molecular і мікробіологічних дослідженнях, щоб не втратити діагностичний матеріал.",
+      "title": "Наперед узгодити обробку біопсійного матеріалу",
+      "rationale": "До забору визначити розподіл свіжого та фіксованого матеріалу для гістології, проточної цитометрії, ІГХ, а за морфологічними показаннями — FISH, молекулярних і мікробіологічних досліджень.",
       "priority": "high",
       "necessity": "key_discriminator",
       "trigger": null,
@@ -2195,8 +2194,8 @@
           "year": null,
           "location": "Exact PDF SHA-256 26d6eb966fd1fe50d4f5bba686a6286ece915b9fc67b5cca837b6107bec9b2df, PDF page 13; visual render SHA-256 b294f3eb7b7fa5b15b2ec840083c9268e2e482c679862725581a9542d907ec35",
           "verification_status": "agent_visual_source_review",
-          "use": "PMBCL commonly presents in young adults as a locally invasive anterior mediastinal mass and can cause respiratory symptoms or superior vena cava syndrome; morphology can overlap with nodular-sclerosis Hodgkin lymphoma and mediastinal grey-zone lymphoma.",
-          "applicability_limit": "The case pattern is strongly compatible but not diagnostic. The NCI summary cannot replace adequate tissue, immunophenotyping and expert classification."
+          "use": "Опис NCI підтримує PMBCL як провідний кандидат за віком, передньою медіастинальною масою, респіраторними симптомами та компресією верхньої порожнистої вени.",
+          "applicability_limit": "Клінічний патерн не замінює морфологію, ІГХ і експертну класифікацію."
         },
         {
           "id": "E-CAND-2",
@@ -2206,15 +2205,15 @@
           "year": null,
           "location": "Type of biopsy, recommendations 1.1.1-1.1.4 in exact downloaded HTML SHA-256 b646b082bd5b4696d10398ecbebd24cd44fa6d4a4f5a96d15b9f64bff6e8d492",
           "verification_status": "agent_visual_source_review",
-          "use": "Excision biopsy is preferred when feasible for suspected NHL; core biopsy is reasonable when surgical risk outweighs benefit, with maximal cores and conservation of tissue for further analysis.",
-          "applicability_limit": "Biopsy route depends on airway/SVC risk and the safest accessible target. An accessible supraclavicular node may be preferable to a higher-risk mediastinal approach, but clinicians must decide."
+          "use": "NICE підтримує ексцизійну біопсію за можливості або достатню core-біопсію, коли операційний ризик вищий, із збереженням матеріалу для додаткових досліджень.",
+          "applicability_limit": "Спосіб і мішень біопсії визначають з урахуванням компресії дихальних шляхів та верхньої порожнистої вени."
         }
       ]
     },
     {
       "id": "W5",
-      "title": "Визначити AFP і beta-hCG",
-      "rationale": "Маркери потрібні для розмежування медіастинальної GCT-гілки; нормальний результат не замінює tissue diagnosis.",
+      "title": "Визначити AFP і β-ХГЛ",
+      "rationale": "Маркери потрібні для оцінки медіастинальної герміногенної пухлини; нормальний результат не замінює гістологічне дослідження.",
       "priority": "high",
       "necessity": "classification_exclusion_required",
       "trigger": null,
@@ -2236,8 +2235,8 @@
           "year": 2010,
           "location": "Extragonadal/mediastinal germ-cell tumour recommendations in exact downloaded full article SHA-256 c5cd99e64e0e52456039e074e6ce51c6e6d5f87b693dcc2e5bf2bd1e54c75689",
           "verification_status": "agent_visual_source_review",
-          "use": "AFP and hCG are established serum markers for adult male germ-cell tumours; in a male with an anterior mediastinal primary they can materially classify or exclude pure-seminoma interpretations, while stable cases usually still require histopathology.",
-          "applicability_limit": "Normal markers would not exclude every germ-cell tumour; marker results do not replace tissue in a stable patient."
+          "use": "Рекомендації ASCO підтримують AFP і β-ХГЛ як ключові маркери герміногенних пухлин у чоловіків із передньою медіастинальною масою.",
+          "applicability_limit": "Нормальні маркери не виключають усі герміногенні пухлини й не замінюють гістологічне дослідження."
         }
       ]
     }
@@ -2318,27 +2317,27 @@
     "diagnosis_not_established": true,
     "treatment_directives_present": false,
     "limitations": [
-      "Негайну клінічну оцінку компресії не можна замінити цим документом.",
-      "Не починати етіологічно спрямоване лікування з цього кандидата без лікарського рішення.",
-      "Evidence sources обґрунтовують перевірки, а не діагноз конкретного пацієнта.",
-      "Clinician acceptance ще не виконаний."
+      "Цей матеріал не замінює негайної клінічної оцінки компресії.",
+      "Етіологічно спрямоване лікування потребує окремого рішення лікаря.",
+      "Зовнішні джерела обґрунтовують перевірки, а не діагноз конкретного пацієнта.",
+      "Рішення лікаря ще не записане."
     ]
   },
   "decision_readiness": {
     "status": "insufficient_evidence",
-    "rationale": "Клініко-радіологічний патерн пріоритезує PMBCL та інші лімфоми, але гістологічна класифікація відсутня; одночасно не закриті SVC/airway severity, TLS baseline і germ-cell markers.",
+    "rationale": "Клінічний і радіологічний патерн насамперед підтримує PMBCL та інші лімфоми, але гістологічної класифікації ще немає. Окремо потрібно визначити тяжкість компресії верхньої порожнистої вени й дихальних шляхів, ризик синдрому лізису пухлини та маркери герміногенної пухлини.",
     "blocked_actions": [
-      "Встановлення остаточного гістологічного діагнозу",
-      "Вибір протипухлинної схеми з цього кандидата",
-      "Седація або інвазивна біопсія без процедурної оцінки компресійного ризику",
-      "Виключення GCT, T-LBL, TET, cHL або інфекційного mimic без tissue/marker evidence"
+      "Встановлення остаточного гістологічного діагнозу.",
+      "Вибір протипухлинного лікування з цього кандидата.",
+      "Седація або інвазивна біопсія без оцінки ризику компресії.",
+      "Виключення ключових альтернатив без морфології та пухлинних маркерів."
     ],
     "required_next_information": [
-      "Клінічна severity-оцінка SVC/airway compression",
-      "Повний TLS baseline",
-      "Адекватна tissue diagnosis з pathology triage",
-      "AFP і beta-hCG"
+      "Клінічна оцінка тяжкості компресії верхньої порожнистої вени та дихальних шляхів.",
+      "Повна базова оцінка ризику синдрому лізису пухлини.",
+      "Достатній біопсійний матеріал із наперед узгодженою обробкою.",
+      "AFP і β-ХГЛ."
     ]
   },
-  "use_limit": "Негайну клінічну оцінку компресії не можна замінити цим документом. Не починати етіологічно спрямоване лікування з цього кандидата без лікарського рішення. Evidence sources обґрунтовують перевірки, а не діагноз конкретного пацієнта. Clinician acceptance ще не виконаний."
+  "use_limit": "Матеріал підготовлено для клінічної перевірки. Він не встановлює діагноз, не визначає лікування й не є записаним рішенням лікаря."
 }
