@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.0.2.0] - 2026-08-18
+
+### Added
+
+- CASE013 is now available in the case selector with all 33 reviewed observations, 21 quantitative measurements, six differential candidates, five evidence sources, and the verified workup projection.
+
+### Changed
+
+- CASE013 presents classic hairy cell leukemia as a working candidate while keeping morphology, full immunophenotyping, myeloma exclusion, numb-chin evaluation, treatment, and clinician acceptance explicitly unresolved.
+- The source drawer now shows source detail or interpretation only when it adds information beyond the displayed result.
+
+### Fixed
+
+- Removed repeated qualitative text and the empty trailing cell from the source drawer while retaining distinct compound clinical context.
+- Added public source routing for NCCN multiple-myeloma guidance and the numb-chin case series used by CASE013.
+
 ## [0.0.1.0] - 2026-08-18
 
 ### Changed
