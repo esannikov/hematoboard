@@ -9,7 +9,7 @@
     "reasoning_revision_id": "RR-CASE011-49e7d293e0d9",
     "reasoning_revision_sha256": "200d7d31b918033a3ac503e9d72f1092fe677accfce607062834a0ed3264570d",
     "clinical_copy_schema": "hematoboard.public-clinical-copy/generated-1.0.0",
-    "clinical_copy_sha256": "c9b4b10e3456aa1d462695b2b041f895db070f945e9301ff25a094e8199eacce",
+    "clinical_copy_sha256": "50bfaa727fdca01b3fabf782b8df38010bdffbead307dbe825002525db2498ec",
     "clinical_copy_origin": "canonical_generated_projection",
     "clinical_input_sha256": "560d57a149be55b79938b7f6ac0a60c3c90e2f6d53ef435166557ed4b3b1f05f",
     "evidence_review_status": "pass",
@@ -24,7 +24,7 @@
   "case": {
     "id": "CASE011",
     "title": "Знеособлений клінічний пакет · source ledger прийнято",
-    "overview_brief": "Демографічні дані не перенесено до minimum-necessary source layer.. Лихоманка, нічна пітливість, спленомегалія й підвищений ЛДГ/запальні маркери утворюють сумісний патерн; відсутність явних цитопеній або описаної лімфаденопатії знижує специфічність.",
+    "overview_brief": "Чоловік, 55 років. Лихоманка, нічна пітливість, спленомегалія й підвищений ЛДГ/запальні маркери утворюють сумісний патерн; відсутність явних цитопеній або описаної лімфаденопатії знижує специфічність.",
     "generated": "2026-08-18",
     "governance": "Source ledger сформовано лише після об'єднаної людської звірки сканів, структурованого тексту, приватності та hash-derived координатного G4. Гіпотези й лікувальні рішення до канонічного ledger не внесено.",
     "demographics": "Демографічні дані не перенесено до minimum-necessary source layer.",
