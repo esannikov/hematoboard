@@ -3,15 +3,15 @@
   "generated_from": {
     "case_key": "case011",
     "case_id": "CASE011",
-    "bundle_id": "CASE011@f23c06faa5a0",
-    "bundle_revision": "CASE011@f23c06faa5a0",
-    "bundle_sha256": "dfec3aaa8af817bcaad4f8f5a4b79b8d1e78bc5c27e204110febb0f3ef55d205",
-    "reasoning_revision_id": "RR-CASE011-49e7d293e0d9",
-    "reasoning_revision_sha256": "200d7d31b918033a3ac503e9d72f1092fe677accfce607062834a0ed3264570d",
-    "clinical_copy_schema": "hematoboard.public-clinical-copy/generated-1.0.0",
-    "clinical_copy_sha256": "50bfaa727fdca01b3fabf782b8df38010bdffbead307dbe825002525db2498ec",
-    "clinical_copy_origin": "canonical_generated_projection",
-    "clinical_input_sha256": "560d57a149be55b79938b7f6ac0a60c3c90e2f6d53ef435166557ed4b3b1f05f",
+    "bundle_id": "CASE011@fb164b4283ed",
+    "bundle_revision": "CASE011@fb164b4283ed",
+    "bundle_sha256": "6e15c189839e96b29524e8faabe945f000e5cb96f0370c28755d44715b02a630",
+    "reasoning_revision_id": "RR-CASE011-96d768527729",
+    "reasoning_revision_sha256": "eae923f04abe8fc89498e9bef78dcd99905a1bfde4d17b420d624f08e7bbcd69",
+    "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
+    "clinical_copy_sha256": "9889ca597812d683d923c09ae00347358d3a119ebaffb51459bee098a9ba35e4",
+    "clinical_copy_origin": "curated_optional_override",
+    "clinical_input_sha256": "45fd4869dd494704734305e53d0e82b9cf56e71e6a9081ab06ff98dc42373c43",
     "evidence_review_status": "pass",
     "evidence_review_modes": [
       "agent_visual_source_review"
@@ -24,10 +24,10 @@
   "case": {
     "id": "CASE011",
     "title": "Знеособлений клінічний пакет · source ledger прийнято",
-    "overview_brief": "Чоловік, 55 років. Лихоманка, нічна пітливість, спленомегалія й підвищений ЛДГ/запальні маркери утворюють сумісний патерн; відсутність явних цитопеній або описаної лімфаденопатії знижує специфічність.",
+    "overview_brief": "Чоловік, 55 років. Тривала гарячка до 38 °C, нічна пітливість, незначна спленомегалія, підвищений ЛДГ і легка анемія утворюють сумісний патерн. Першою робочою гіпотезою є прихований лімфопроліферативний процес, але інфекційні, автоімунні, автозапальні та інші пухлинні причини залишаються активними.",
     "generated": "2026-08-18",
     "governance": "Source ledger сформовано лише після об'єднаної людської звірки сканів, структурованого тексту, приватності та hash-derived координатного G4. Гіпотези й лікувальні рішення до канонічного ledger не внесено.",
-    "demographics": "Демографічні дані не перенесено до minimum-necessary source layer.",
+    "demographics": "Чоловік, 55 років",
     "source": "Знеособлений source layer із приватним hash-pinned PDF/OCR/crop provenance.",
     "signal": "Source layer прийнято; candidate synthesis формується окремою незмінною ревізією.",
     "discriminating_step": "Лікарська перевірка окремого candidate synthesis після завершення незалежних reasoning passes."
@@ -36,125 +36,392 @@
     {
       "id": "H1",
       "rank": 1,
-      "label": "Прихований гематологічний неопластичний процес",
-      "clinical_role": "Провідний, але суто попередній кандидат для активного виключення; lesion або tissue evidence відсутні.",
-      "rationale": "Лихоманка, нічна пітливість, спленомегалія й підвищений ЛДГ/запальні маркери утворюють сумісний патерн; відсутність явних цитопеній або описаної лімфаденопатії знижує специфічність.",
+      "label": "Прихований лімфопроліферативний процес",
+      "clinical_role": "Провідний робочий кандидат для активної локалізації та морфологічної перевірки; не остаточний діагноз.",
+      "rationale": "Тривала гарячка до 38 °C, нічна пітливість, незначна спленомегалія, помірно підвищений ЛДГ і легка анемія утворюють сумісний онкогематологічний патерн; відсутність описаної лімфаденопатії або цитопеній знижує специфічність, але не усуває кандидата.",
       "support_refs": [
         "F002",
         "F010",
-        "F016"
+        "F024",
+        "F037"
       ],
       "refute_refs": [],
       "neutral_refs": [
-        "F013",
-        "F015"
+        "F011",
+        "F014",
+        "F023",
+        "F025",
+        "F026",
+        "F027",
+        "F028",
+        "F029",
+        "F030",
+        "F031",
+        "F032",
+        "F033",
+        "F034"
       ],
       "missing_evidence": [
-        "Повний огляд вузлових зон",
-        "PET/CT або інша локалізація активного осередку",
-        "Морфологія адекватної тканини"
+        "Повний огляд усіх груп лімфатичних вузлів і візуалізація всього тіла.",
+        "Морфологія адекватної тканини.",
+        "Повна формула крові, мазок і динаміка ЛДГ."
       ],
       "applicability_limits": [
-        "B-симптоми не є специфічними для лімфоми",
-        "GELTAMO source описує підтверджену фолікулярну лімфому"
+        "B-симптоми та спленомегалія неспецифічні",
+        "Збережені клітинні лінії не виключають лімфому"
       ],
       "discriminating_checks": [
-        "Whole-body FDG-PET/CT після первинного FUO-workup",
-        "Біопсія доступного підозрілого осередку"
+        "FDG-ПЕТ/КТ після базового обстеження при гарячці неясного генезу.",
+        "Біопсія доступного підозрілого осередку."
       ],
-      "short_label": "Прихований гематологічний неопластичний процес",
+      "short_label": "Прихований лімфопроліферативний процес",
       "counts": {
-        "support": 3,
+        "support": 4,
         "refute": 0,
-        "neutral": 2
+        "neutral": 13
       },
       "support_facts": [
         {
           "id": "F002",
           "kind": "clinical_note",
+          "domain": "other",
           "display": "лихоманку неясного генезу",
           "value": "лихоманку неясного генезу: 38 °C.",
           "unit": "°C",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "лихоманку неясного генезу (температура до 38°C) та нічну пітливість",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
           "id": "F010",
-          "kind": "diagnostic_interpretation",
-          "display": "Біохімічні показники",
-          "value": "Біохімічні показники: ЛДГ 410,8 Од/л, В.-мікроглобулін 2,28 мг/л, АЛТ 24 Од/л, АСТ 24 Од/л, Сечова кислота 297 мкмоль/л, ПСА 0,307 нг/мл.",
-          "unit": "—",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "ЛДГ",
+          "value": "ЛДГ: 410.8 Од/л.",
+          "unit": "Од/л",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": null,
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
-          "id": "F016",
-          "kind": "imaging_finding",
-          "display": "Незначно виражена спленомегалія",
-          "value": "Незначно виражена спленомегалія: Незначно виражена спленомегалія.",
-          "unit": "—",
+          "id": "F024",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "гемоглобін",
+          "value": "гемоглобін: 121 г/л.",
+          "unit": "г/л",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
-          "effective_at": "2026-04-16",
-          "source_reported_at": null,
-          "source_date_role": null,
-          "page": 1,
-          "source_fragment_id": "FRAG-ABAB64BB696B-001",
-          "structured_row_id": null,
-          "human_verified": true
-        }
-      ],
-      "refute_facts": [],
-      "neutral_facts": [
-        {
-          "id": "F013",
-          "kind": "diagnostic_interpretation",
-          "display": "Загальний аналіз крові від 31.07.2026",
-          "value": "Загальний аналіз крові від 31.07.2026: лейкоцити 8.25×10/л, гемоглобін 121 г/л, еритроцити 4,86×1012/л, тромбоцити 279×10/л.",
-          "unit": "—",
-          "reference": "—",
-          "comparator": null,
-          "interpretation": null,
+          "source_detail": null,
           "effective_at": "2026-07-31",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
-          "id": "F015",
+          "id": "F037",
           "kind": "imaging_finding",
-          "display": "вузлове утворення лівої частки щитоподібної залози",
-          "value": "вузлове утворення лівої частки щитоподібної залози: вузлове утворення лівої частки щитоподібної залози.",
+          "domain": "imaging",
+          "display": "Незначно виражена спленомегалія",
+          "value": "Незначно виражена спленомегалія: Незначно виражена спленомегалія.",
           "unit": "—",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "Незначно виражена спленомегалія",
           "effective_at": "2026-04-16",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F011",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "В.-мікроглобулін",
+          "value": "В.-мікроглобулін: 2.28 мг/л.",
+          "unit": "мг/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F014",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "Сечова кислота",
+          "value": "Сечова кислота: 297 мкмоль/л.",
+          "unit": "мкмоль/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F023",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лейкоцити",
+          "value": "лейкоцити: 8.25 ×10/л.",
+          "unit": "×10/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_source_corrupted",
+          "human_verified": true
+        },
+        {
+          "id": "F025",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "еритроцити",
+          "value": "еритроцити: 4.86 ×1012/л.",
+          "unit": "×1012/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F026",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "тромбоцити",
+          "value": "тромбоцити: 279 ×10/л.",
+          "unit": "×10/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_source_corrupted",
+          "human_verified": true
+        },
+        {
+          "id": "F027",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "глюкоза",
+          "value": "глюкоза: 4.98.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F028",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "креатинін",
+          "value": "креатинін: 79.95.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F029",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "сечовина",
+          "value": "сечовина: 5.18.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F030",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "ЛФ",
+          "value": "ЛФ: 70.3.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F031",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "АСТ",
+          "value": "АСТ: 15.96.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F032",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "ГГТ",
+          "value": "ГГТ: 15.4.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F033",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "АЛТ",
+          "value": "АЛТ: 10.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F034",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "білірубін прямий",
+          "value": "білірубін прямий: 1.37.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
           "human_verified": true
         }
       ]
@@ -163,143 +430,245 @@
       "id": "H2",
       "rank": 2,
       "label": "Окульта або частково пролікована інфекція",
-      "clinical_role": "Обов’язкова гілка виключення перед будь-якою імуносупресивною інтерпретацією.",
-      "rationale": "Високе системне запалення й попереднє лікування з підозрою на бактеріальну інфекцію сумісні з прихованим осередком; низький прокальцитонін і негативний CMV ПЛР звужують лише окремі компоненти спектра.",
+      "clinical_role": "Обов'язкова гілка виключення до імуносупресивної інтерпретації.",
+      "rationale": "Гарячка й екстремальні піки CRP сумісні з прихованим інфекційним осередком; низький прокальцитонін, негативний CMV PCR і відсутність встановленого джерела після меропенему/ванкоміцину зменшують, але не закривають імовірність, особливо після антибіотиків.",
       "support_refs": [
         "F002",
-        "F003",
-        "F005"
+        "F004",
+        "F005",
+        "F006"
       ],
-      "refute_refs": [],
+      "refute_refs": [
+        "F003",
+        "F021",
+        "F022"
+      ],
       "neutral_refs": [
         "F007",
-        "F011",
-        "F012"
+        "F023",
+        "F026"
       ],
       "missing_evidence": [
-        "Посіви крові до антибіотиків або після контрольованої паузи",
-        "Ехокардіографія за клінічної підозри",
-        "HIV/HBV/HCV/EBV/TB та експозиційний анамнез"
+        "Серійні культури та експозиційний анамнез",
+        "Ехокардіографія за підтриманої підозри",
+        "TB/HIV/HBV/HCV/EBV та локалізація глибокого вогнища"
       ],
       "applicability_limits": [
-        "Немає серцевих або емболічних підказок для ендокардиту",
-        "Попередні антибіотики знижують чутливість культур"
+        "Немає описаних серцевих чи емболічних ознак",
+        "Попередні антибіотики можуть знизити чутливість культур"
       ],
       "discriminating_checks": [
-        "Серійні культури й focused infection review",
-        "TTE/TOE лише за підтриманої підозри",
-        "PET/CT для локалізації прихованого осередку"
+        "Цільова повторна оцінка інфекційної гілки."
       ],
       "short_label": "Окульта або частково пролікована інфекція",
       "counts": {
-        "support": 3,
-        "refute": 0,
+        "support": 4,
+        "refute": 3,
         "neutral": 3
       },
       "support_facts": [
         {
           "id": "F002",
           "kind": "clinical_note",
+          "domain": "other",
           "display": "лихоманку неясного генезу",
           "value": "лихоманку неясного генезу: 38 °C.",
           "unit": "°C",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "лихоманку неясного генезу (температура до 38°C) та нічну пітливість",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
-          "id": "F003",
-          "kind": "clinical_note",
-          "display": "антибактеріальну терапію (меропенем, ванкоміцин)",
-          "value": "антибактеріальну терапію (меропенем, ванкоміцин): переконливої причини гарячки встановити не вдалося.",
-          "unit": "—",
+          "id": "F004",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "С-реактивний білок",
+          "value": "С-реактивний білок: 217.97 мг/л.",
+          "unit": "мг/л",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
-          "effective_at": null,
+          "source_detail": null,
+          "effective_at": "2026-04-15",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
           "id": "F005",
-          "kind": "clinical_note",
+          "kind": "measurement",
+          "domain": "lab",
           "display": "С-реактивний білок",
           "value": "С-реактивний білок: 673.1 мг/л.",
           "unit": "мг/л",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": null,
           "effective_at": "2026-05-23",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
-        }
-      ],
-      "refute_facts": [],
-      "neutral_facts": [
+        },
         {
-          "id": "F007",
-          "kind": "clinical_note",
+          "id": "F006",
+          "kind": "measurement",
+          "domain": "lab",
           "display": "С-реактивний білок",
-          "value": "С-реактивний білок: 57.9 мг/л.",
+          "value": "С-реактивний білок: 399 мг/л.",
           "unit": "мг/л",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
-          "effective_at": "2026-06-29",
+          "source_detail": null,
+          "effective_at": "2026-06-08",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
-        },
+        }
+      ],
+      "refute_facts": [
         {
-          "id": "F011",
-          "kind": "diagnostic_interpretation",
-          "display": "Імунологічні та ревматологічні дослідження",
-          "value": "Імунологічні та ревматологічні дослідження: ANA — позитивні, титр 1:320, Anti-CCP |gG <8 Од/мл - негативні, ANCA - негативні, |gA 0,06 г/л, Прокальцитонін 0,06 нг/мл.",
+          "id": "F003",
+          "kind": "clinical_note",
+          "domain": "other",
+          "display": "антибактеріальну терапію (меропенем, ванкоміцин)",
+          "value": "антибактеріальну терапію (меропенем, ванкоміцин): переконливої причини гарячки встановити не вдалося.",
           "unit": "—",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "переконливої причини гарячки встановити не вдалося",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
-          "id": "F012",
+          "id": "F021",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "Прокальцитонін",
+          "value": "Прокальцитонін: 0.06 нг/мл.",
+          "unit": "нг/мл",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F022",
           "kind": "negative_finding",
+          "domain": "negative",
           "display": "CMV ДНК (ПЛР)",
           "value": "CMV ДНК (ПЛР): не виявлено.",
           "unit": "—",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "не виявлено",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ],
+      "neutral_facts": [
+        {
+          "id": "F007",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "С-реактивний білок",
+          "value": "С-реактивний білок: 57.9 мг/л.",
+          "unit": "мг/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-06-29",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F023",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лейкоцити",
+          "value": "лейкоцити: 8.25 ×10/л.",
+          "unit": "×10/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_source_corrupted",
+          "human_verified": true
+        },
+        {
+          "id": "F026",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "тромбоцити",
+          "value": "тромбоцити: 279 ×10/л.",
+          "unit": "×10/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_source_corrupted",
           "human_verified": true
         }
       ]
@@ -308,106 +677,220 @@
       "id": "H3",
       "rank": 3,
       "label": "Still-подібне системне автозапальне захворювання",
-      "clinical_role": "Кандидат після виключення інфекції та злоякісного процесу.",
-      "rationale": "Гарячка, дуже високий CRP/ШОЕ і низький прокальцитонін допускають стерильне запалення, але типові висип, артралгія/артрит, нейтрофільний лейкоцитоз і феритин не надані.",
+      "clinical_role": "Робоча альтернатива після паралельної перевірки інфекції та злоякісного процесу.",
+      "rationale": "Хвилеподібна гарячка, дуже високі CRP/ШОЕ і низький прокальцитонін допускають стерильне запалення; типові висип, артралгія/артрит, нейтрофільний лейкоцитоз і феритин не надані.",
       "support_refs": [
         "F002",
-        "F005"
+        "F005",
+        "F008",
+        "F009",
+        "F021"
       ],
       "refute_refs": [],
       "neutral_refs": [
-        "F011",
-        "F013"
+        "F016",
+        "F017",
+        "F018",
+        "F019"
       ],
       "missing_evidence": [
-        "Температурний патерн",
-        "Висип, артралгія/артрит і біль у горлі",
-        "Феритин та його динаміка"
+        "Повний клінічний фенотип хвороби Стілла і динаміка феритину."
       ],
       "applicability_limits": [
         "Жодна наявна ознака не є специфічною",
-        "ANA 1:320 не підтримує автоматично Still’s disease"
+        "Позитивний ANA не доводить і не повністю виключає цей кандидат"
       ],
       "discriminating_checks": [
-        "Феритин і повний Still-фенотип",
-        "Явне виключення інфекції, malignancy та іншого IMID"
+        "Клінічна перевірка ознак хвороби Стілла та серійне визначення феритину."
       ],
       "short_label": "Still-подібне системне автозапальне захворювання",
       "counts": {
-        "support": 2,
+        "support": 5,
         "refute": 0,
-        "neutral": 2
+        "neutral": 4
       },
       "support_facts": [
         {
           "id": "F002",
           "kind": "clinical_note",
+          "domain": "other",
           "display": "лихоманку неясного генезу",
           "value": "лихоманку неясного генезу: 38 °C.",
           "unit": "°C",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "лихоманку неясного генезу (температура до 38°C) та нічну пітливість",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
           "id": "F005",
-          "kind": "clinical_note",
+          "kind": "measurement",
+          "domain": "lab",
           "display": "С-реактивний білок",
           "value": "С-реактивний білок: 673.1 мг/л.",
           "unit": "мг/л",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": null,
           "effective_at": "2026-05-23",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
-        }
-      ],
-      "refute_facts": [],
-      "neutral_facts": [
+        },
         {
-          "id": "F011",
-          "kind": "diagnostic_interpretation",
-          "display": "Імунологічні та ревматологічні дослідження",
-          "value": "Імунологічні та ревматологічні дослідження: ANA — позитивні, титр 1:320, Anti-CCP |gG <8 Од/мл - негативні, ANCA - негативні, |gA 0,06 г/л, Прокальцитонін 0,06 нг/мл.",
-          "unit": "—",
+          "id": "F008",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "ШОЕ",
+          "value": "ШОЕ: 62 мм/год.",
+          "unit": "мм/год",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-06-20",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F009",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "ШОЕ",
+          "value": "ШОЕ: 66 мм/год.",
+          "unit": "мм/год",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-06-29",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F021",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "Прокальцитонін",
+          "value": "Прокальцитонін: 0.06 нг/мл.",
+          "unit": "нг/мл",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
-        },
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
         {
-          "id": "F013",
+          "id": "F016",
           "kind": "diagnostic_interpretation",
-          "display": "Загальний аналіз крові від 31.07.2026",
-          "value": "Загальний аналіз крові від 31.07.2026: лейкоцити 8.25×10/л, гемоглобін 121 г/л, еритроцити 4,86×1012/л, тромбоцити 279×10/л.",
+          "domain": "diagnostic",
+          "display": "ANA",
+          "value": "ANA: позитивні.",
           "unit": "—",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
-          "effective_at": "2026-07-31",
+          "source_detail": "позитивні",
+          "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F017",
+          "kind": "clinical_note",
+          "domain": "other",
+          "display": "титр 1:320",
+          "value": "титр 1:320: 1:320.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "1:320",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F018",
+          "kind": "negative_finding",
+          "domain": "negative",
+          "display": "Anti-CCP |gG",
+          "value": "Anti-CCP |gG: < негативні.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": "<",
+          "interpretation": null,
+          "source_detail": "негативні",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F019",
+          "kind": "negative_finding",
+          "domain": "negative",
+          "display": "ANCA",
+          "value": "ANCA: негативні.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "негативні",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         }
       ]
@@ -417,31 +900,31 @@
       "rank": 4,
       "label": "Васкуліт великих судин",
       "clinical_role": "Умовний віково релевантний імітатор FUO.",
-      "rationale": "Вік понад 50 років, гарячка й висока ШОЕ/CRP сумісні, але відсутні дані про краніальні, зорові, щелепні, поліміалгічні або судинні симптоми.",
+      "rationale": "Вік 55 років, гарячка та високі ШОЕ/CRP сумісні, але краніальні, зорові, щелепні, поліміалгічні чи судинні прояви не описані.",
       "support_refs": [
         "F001",
         "F002",
+        "F008",
         "F009"
       ],
       "refute_refs": [],
       "neutral_refs": [
-        "F011"
+        "F019"
       ],
       "missing_evidence": [
         "Спрямований судинний анамнез і огляд",
-        "Пульсовий/тисковий асиметричний патерн",
-        "Експертна візуалізація за наявності pretest probability"
+        "Пульсовий і тисковий патерн"
       ],
       "applicability_limits": [
-        "Негативний ANCA не оцінює large-vessel vasculitis",
-        "Саме підвищення маркерів не створює показання до imaging"
+        "Негативний ANCA не виключає large-vessel vasculitis",
+        "Саме підвищення маркерів не створює достатню pretest probability"
       ],
       "discriminating_checks": [
-        "Temporal/axillary ultrasound або FDG-PET/MRI лише за клінічної підозри"
+        "Експертна візуалізація лише за підтриманої клінічної підозри"
       ],
       "short_label": "Васкуліт великих судин",
       "counts": {
-        "support": 3,
+        "support": 4,
         "refute": 0,
         "neutral": 1
       },
@@ -449,72 +932,104 @@
         {
           "id": "F001",
           "kind": "clinical_note",
+          "domain": "other",
           "display": "Чоловік, 55 років",
           "value": "Чоловік, 55 років: Чоловік, 55 років.",
           "unit": "—",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "Чоловік, 55 років",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
           "id": "F002",
           "kind": "clinical_note",
+          "domain": "other",
           "display": "лихоманку неясного генезу",
           "value": "лихоманку неясного генезу: 38 °C.",
           "unit": "°C",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "лихоманку неясного генезу (температура до 38°C) та нічну пітливість",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F008",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "ШОЕ",
+          "value": "ШОЕ: 62 мм/год.",
+          "unit": "мм/год",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-06-20",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
           "id": "F009",
-          "kind": "clinical_note",
+          "kind": "measurement",
+          "domain": "lab",
           "display": "ШОЕ",
           "value": "ШОЕ: 66 мм/год.",
           "unit": "мм/год",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": null,
           "effective_at": "2026-06-29",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         }
       ],
       "refute_facts": [],
       "neutral_facts": [
         {
-          "id": "F011",
-          "kind": "diagnostic_interpretation",
-          "display": "Імунологічні та ревматологічні дослідження",
-          "value": "Імунологічні та ревматологічні дослідження: ANA — позитивні, титр 1:320, Anti-CCP |gG <8 Од/мл - негативні, ANCA - негативні, |gA 0,06 г/л, Прокальцитонін 0,06 нг/мл.",
+          "id": "F019",
+          "kind": "negative_finding",
+          "domain": "negative",
+          "display": "ANCA",
+          "value": "ANCA: негативні.",
           "unit": "—",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "негативні",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         }
       ]
@@ -523,68 +1038,179 @@
       "id": "H5",
       "rank": 5,
       "label": "ANA-асоційоване системне автоімунне захворювання",
-      "clinical_role": "Альтернатива, що потребує органного підтвердження.",
-      "rationale": "ANA 1:320 є сигналом для контекстної перевірки, але без dsDNA/ENA, комплементу, сечового синдрому, цитопеній або специфічних органних проявів не пояснює FUO самостійно.",
+      "clinical_role": "Альтернатива, що потребує органного фенотипу.",
+      "rationale": "ANA 1:320 є сигналом для контекстної перевірки, але без dsDNA/ENA, комплементу, сечового синдрому, цитопеній або специфічних органних проявів не пояснює гарячку самостійно.",
       "support_refs": [
-        "F011"
+        "F016",
+        "F017"
       ],
-      "refute_refs": [],
+      "refute_refs": [
+        "F018",
+        "F019"
+      ],
       "neutral_refs": [
-        "F002"
+        "F002",
+        "F023",
+        "F026"
       ],
       "missing_evidence": [
-        "dsDNA/ENA, C3/C4",
-        "Аналіз сечі та протеїнурія",
-        "Спрямований огляд шкіри, суглобів, серозних оболонок і нервової системи"
+        "Патерн ANA, антитіла до двоспіральної ДНК, ENA, C3 і C4."
       ],
       "applicability_limits": [
-        "Позитивний ANA має обмежену специфічність без сумісного фенотипу"
+        "ANA має обмежену специфічність без сумісного фенотипу"
       ],
       "discriminating_checks": [
-        "Органно спрямована автоімунна перевірка"
+        "Органно спрямована автоімунна оцінка"
       ],
       "short_label": "ANA-асоційоване системне автоімунне захворювання",
       "counts": {
-        "support": 1,
-        "refute": 0,
-        "neutral": 1
+        "support": 2,
+        "refute": 2,
+        "neutral": 3
       },
       "support_facts": [
         {
-          "id": "F011",
+          "id": "F016",
           "kind": "diagnostic_interpretation",
-          "display": "Імунологічні та ревматологічні дослідження",
-          "value": "Імунологічні та ревматологічні дослідження: ANA — позитивні, титр 1:320, Anti-CCP |gG <8 Од/мл - негативні, ANCA - негативні, |gA 0,06 г/л, Прокальцитонін 0,06 нг/мл.",
+          "domain": "diagnostic",
+          "display": "ANA",
+          "value": "ANA: позитивні.",
           "unit": "—",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "позитивні",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F017",
+          "kind": "clinical_note",
+          "domain": "other",
+          "display": "титр 1:320",
+          "value": "титр 1:320: 1:320.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "1:320",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         }
       ],
-      "refute_facts": [],
+      "refute_facts": [
+        {
+          "id": "F018",
+          "kind": "negative_finding",
+          "domain": "negative",
+          "display": "Anti-CCP |gG",
+          "value": "Anti-CCP |gG: < негативні.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": "<",
+          "interpretation": null,
+          "source_detail": "негативні",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F019",
+          "kind": "negative_finding",
+          "domain": "negative",
+          "display": "ANCA",
+          "value": "ANCA: негативні.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "негативні",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ],
       "neutral_facts": [
         {
           "id": "F002",
           "kind": "clinical_note",
+          "domain": "other",
           "display": "лихоманку неясного генезу",
           "value": "лихоманку неясного генезу: 38 °C.",
           "unit": "°C",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "лихоманку неясного генезу (температура до 38°C) та нічну пітливість",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F023",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лейкоцити",
+          "value": "лейкоцити: 8.25 ×10/л.",
+          "unit": "×10/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_source_corrupted",
+          "human_verified": true
+        },
+        {
+          "id": "F026",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "тромбоцити",
+          "value": "тромбоцити: 279 ×10/л.",
+          "unit": "×10/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_source_corrupted",
           "human_verified": true
         }
       ]
@@ -594,122 +1220,178 @@
       "rank": 6,
       "label": "HLH/MAS",
       "clinical_role": "Небезпечний для пропуску синдром, нині не підтверджений.",
-      "rationale": "Гарячка й спленомегалія є двома елементами патерну; надані CBC і біохімія не демонструють очевидних цитопеній або органної дисфункції, але феритин, тригліцериди, фібриноген і коагуляція відсутні.",
+      "rationale": "Гарячка й спленомегалія входять до можливого гіперзапального патерну. Наявні лейкоцити й тромбоцити не демонструють явних цитопеній, але їхні одиниці пошкоджені у джерелі; феритин, тригліцериди, фібриноген і коагуляція не наведені.",
       "support_refs": [
         "F002",
-        "F016"
+        "F037"
       ],
       "refute_refs": [],
       "neutral_refs": [
-        "F005",
+        "F012",
         "F013",
-        "F014"
+        "F023",
+        "F024",
+        "F026"
       ],
       "missing_evidence": [
-        "Феритин у динаміці",
-        "Серійні CBC, тригліцериди, фібриноген, коагуляція",
-        "HScore і пошук тригера за наявності патерну"
+        "Феритин і серійний CBC з валідними одиницями",
+        "Тригліцериди, фібриноген, коагуляція та органна динаміка"
       ],
       "applicability_limits": [
         "Окремі критерії неспецифічні",
-        "Нормальний одиничний CBC не закриває ранній синдром"
+        "Одиничний CBC не закриває еволюційний синдром"
       ],
       "discriminating_checks": [
-        "HLH/MAS quick screen і серійний тренд"
+        "Швидка скринінгова оцінка HLH/MAS та розрахунок HScore у відповідному клінічному контексті."
       ],
       "short_label": "HLH/MAS",
       "counts": {
         "support": 2,
         "refute": 0,
-        "neutral": 3
+        "neutral": 5
       },
       "support_facts": [
         {
           "id": "F002",
           "kind": "clinical_note",
+          "domain": "other",
           "display": "лихоманку неясного генезу",
           "value": "лихоманку неясного генезу: 38 °C.",
           "unit": "°C",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "лихоманку неясного генезу (температура до 38°C) та нічну пітливість",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
-          "id": "F016",
+          "id": "F037",
           "kind": "imaging_finding",
+          "domain": "imaging",
           "display": "Незначно виражена спленомегалія",
           "value": "Незначно виражена спленомегалія: Незначно виражена спленомегалія.",
           "unit": "—",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "Незначно виражена спленомегалія",
           "effective_at": "2026-04-16",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         }
       ],
       "refute_facts": [],
       "neutral_facts": [
         {
-          "id": "F005",
-          "kind": "clinical_note",
-          "display": "С-реактивний білок",
-          "value": "С-реактивний білок: 673.1 мг/л.",
-          "unit": "мг/л",
+          "id": "F012",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "АЛТ",
+          "value": "АЛТ: 24 Од/л.",
+          "unit": "Од/л",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
-          "effective_at": "2026-05-23",
+          "source_detail": null,
+          "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
           "id": "F013",
-          "kind": "diagnostic_interpretation",
-          "display": "Загальний аналіз крові від 31.07.2026",
-          "value": "Загальний аналіз крові від 31.07.2026: лейкоцити 8.25×10/л, гемоглобін 121 г/л, еритроцити 4,86×1012/л, тромбоцити 279×10/л.",
-          "unit": "—",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "АСТ",
+          "value": "АСТ: 24 Од/л.",
+          "unit": "Од/л",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
-          "effective_at": "2026-07-31",
+          "source_detail": null,
+          "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
-          "id": "F014",
-          "kind": "diagnostic_interpretation",
-          "display": "Біохімічний аналіз крові від 31.07.2026",
-          "value": "Біохімічний аналіз крові від 31.07.2026: глюкоза - 4.98, креатинін — 79.95, сечовина - 5.18, ЛФ - 70.3, АСТ — 15.96, ГГТ — 15.4, АЛТ - 10, білірубін прямий - 1.37, білок загальний - 70.88.",
-          "unit": "—",
+          "id": "F023",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лейкоцити",
+          "value": "лейкоцити: 8.25 ×10/л.",
+          "unit": "×10/л",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": null,
           "effective_at": "2026-07-31",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "unit_source_corrupted",
+          "human_verified": true
+        },
+        {
+          "id": "F024",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "гемоглобін",
+          "value": "гемоглобін: 121 г/л.",
+          "unit": "г/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F026",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "тромбоцити",
+          "value": "тромбоцити: 279 ×10/л.",
+          "unit": "×10/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_source_corrupted",
           "human_verified": true
         }
       ]
@@ -719,49 +1401,53 @@
       "rank": 7,
       "label": "Солідна пухлина або паранеопластичне запалення",
       "clinical_role": "Неопластична альтернатива без локалізованого осередку.",
-      "rationale": "Тривала гарячка може супроводжувати солідну пухлину, але надана CT не показує переконливого злоякісного осередку; thyroid-вузол не прирівнюється до причини FUO.",
+      "rationale": "Тривала гарячка може супроводжувати солідну пухлину; вузол щитоподібної залози потребує окремої оцінки, але сам по собі не пояснює синдром.",
       "support_refs": [
         "F002"
       ],
       "refute_refs": [],
       "neutral_refs": [
         "F015",
-        "F017",
-        "F018"
+        "F036",
+        "F038",
+        "F039"
       ],
       "missing_evidence": [
-        "Whole-body metabolic localisation",
-        "Доступний осередок для морфології"
+        "Візуалізація всього тіла.",
+        "Морфологія підозрілого осередку."
       ],
       "applicability_limits": [
-        "FUO і високий CRP неспецифічні",
-        "Наявний CT не локалізував переконливу солідну пухлину"
+        "FUO і CRP неспецифічні",
+        "Немає описаного переконливого пухлинного осередку"
       ],
       "discriminating_checks": [
-        "Whole-body FDG-PET/CT та морфологія лише за наявності target"
+        "FDG-ПЕТ/КТ і морфологія лише після визначення підозрілого осередку."
       ],
       "short_label": "Солідна пухлина або паранеопластичне запалення",
       "counts": {
         "support": 1,
         "refute": 0,
-        "neutral": 3
+        "neutral": 4
       },
       "support_facts": [
         {
           "id": "F002",
           "kind": "clinical_note",
+          "domain": "other",
           "display": "лихоманку неясного генезу",
           "value": "лихоманку неясного генезу: 38 °C.",
           "unit": "°C",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "лихоманку неясного генезу (температура до 38°C) та нічну пітливість",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         }
       ],
@@ -769,53 +1455,82 @@
       "neutral_facts": [
         {
           "id": "F015",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "ПСА",
+          "value": "ПСА: 0.307 нг/мл.",
+          "unit": "нг/мл",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F036",
           "kind": "imaging_finding",
+          "domain": "imaging",
           "display": "вузлове утворення лівої частки щитоподібної залози",
           "value": "вузлове утворення лівої частки щитоподібної залози: вузлове утворення лівої частки щитоподібної залози.",
           "unit": "—",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "вузлове утворення лівої частки щитоподібної залози",
           "effective_at": "2026-04-16",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
-          "id": "F017",
+          "id": "F038",
           "kind": "imaging_finding",
+          "domain": "imaging",
           "display": "Ліпоматоз паренхіми підшлункової залози",
           "value": "Ліпоматоз паренхіми підшлункової залози: Ліпоматоз паренхіми підшлункової залози.",
           "unit": "—",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "Ліпоматоз паренхіми підшлункової залози",
           "effective_at": "2026-04-16",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         },
         {
-          "id": "F018",
+          "id": "F039",
           "kind": "imaging_finding",
+          "domain": "imaging",
           "display": "зміни хребта",
           "value": "зміни хребта: зміни хребта.",
           "unit": "—",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "зміни хребта",
           "effective_at": "2026-04-16",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         }
       ]
@@ -824,8 +1539,8 @@
       "id": "H8",
       "rank": 8,
       "label": "Лікарська гарячка",
-      "clinical_role": "Потенційно зворотна, але слабо підтримана гіпотеза без окремого workup-рішення.",
-      "rationale": "Є експозиція до меропенему й ванкоміцину, але немає точної хронології початку, припинення, повторного підйому температури, висипу, еозинофілії або органних реакцій.",
+      "clinical_role": "Потенційно зворотна, але слабо підтримана гіпотеза.",
+      "rationale": "Є експозиція до меропенему й ванкоміцину, але немає повної хронології початку/припинення, висипу, еозинофілії або органної реакції.",
       "support_refs": [
         "F003"
       ],
@@ -835,15 +1550,13 @@
       ],
       "missing_evidence": [
         "Повна медикаментозна хронологія",
-        "Температура/CRP після зміни препаратів",
         "Еозинофіли, висип і органна токсичність"
       ],
       "applicability_limits": [
-        "Сам факт антибіотикотерапії не доводить лікарську гарячку",
-        "Окремого proposition-level джерела для workup не відібрано"
+        "Антибіотична експозиція могла бути наслідком, а не причиною гарячки"
       ],
       "discriminating_checks": [
-        "Лікарська оцінка часової відповідності після отримання повної історії"
+        "Лікарський review із часовим зіставленням"
       ],
       "short_label": "Лікарська гарячка",
       "counts": {
@@ -855,18 +1568,21 @@
         {
           "id": "F003",
           "kind": "clinical_note",
+          "domain": "other",
           "display": "антибактеріальну терапію (меропенем, ванкоміцин)",
           "value": "антибактеріальну терапію (меропенем, ванкоміцин): переконливої причини гарячки встановити не вдалося.",
           "unit": "—",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": "переконливої причини гарячки встановити не вдалося",
           "effective_at": null,
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
           "human_verified": true
         }
       ],
@@ -874,19 +1590,247 @@
       "neutral_facts": [
         {
           "id": "F007",
-          "kind": "clinical_note",
+          "kind": "measurement",
+          "domain": "lab",
           "display": "С-реактивний білок",
           "value": "С-реактивний білок: 57.9 мг/л.",
           "unit": "мг/л",
           "reference": "—",
           "comparator": null,
           "interpretation": null,
+          "source_detail": null,
           "effective_at": "2026-06-29",
           "source_reported_at": null,
           "source_date_role": null,
           "page": 1,
           "source_fragment_id": "FRAG-ABAB64BB696B-001",
           "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H9",
+      "rank": 9,
+      "label": "Multicentric Castleman disease",
+      "clinical_role": "Умовна лімфопроліферативна альтернатива, не робочий діагноз.",
+      "rationale": "Гарячка, дуже високий CRP, легка анемія й спленомегалія частково перекривають minor criteria, але немає задокументованих збільшених вузлів у двох станціях або характерної гістології.",
+      "support_refs": [
+        "F002",
+        "F004",
+        "F005",
+        "F024",
+        "F037"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F020",
+        "F023",
+        "F026",
+        "F035"
+      ],
+      "missing_evidence": [
+        "Multicentric lymphadenopathy",
+        "Excisional/incisional node histology",
+        "HHV-8/LANA та виключення міміків"
+      ],
+      "applicability_limits": [
+        "Наявні системні ознаки неспецифічні",
+        "Без multicentric nodes і histology критерії не виконані"
+      ],
+      "discriminating_checks": [
+        "Перегляд візуалізації всього тіла для пошуку кількох груп збільшених вузлів.",
+        "Адекватна біопсія лімфатичного вузла лише після визначення цілі."
+      ],
+      "short_label": "Multicentric Castleman disease",
+      "counts": {
+        "support": 5,
+        "refute": 0,
+        "neutral": 4
+      },
+      "support_facts": [
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "domain": "other",
+          "display": "лихоманку неясного генезу",
+          "value": "лихоманку неясного генезу: 38 °C.",
+          "unit": "°C",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "лихоманку неясного генезу (температура до 38°C) та нічну пітливість",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F004",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "С-реактивний білок",
+          "value": "С-реактивний білок: 217.97 мг/л.",
+          "unit": "мг/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-04-15",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F005",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "С-реактивний білок",
+          "value": "С-реактивний білок: 673.1 мг/л.",
+          "unit": "мг/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-23",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F024",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "гемоглобін",
+          "value": "гемоглобін: 121 г/л.",
+          "unit": "г/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F037",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "Незначно виражена спленомегалія",
+          "value": "Незначно виражена спленомегалія: Незначно виражена спленомегалія.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "Незначно виражена спленомегалія",
+          "effective_at": "2026-04-16",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F020",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "|gA",
+          "value": "|gA: 0.06 г/л.",
+          "unit": "г/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "analyte_source_corrupted",
+          "human_verified": true
+        },
+        {
+          "id": "F023",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лейкоцити",
+          "value": "лейкоцити: 8.25 ×10/л.",
+          "unit": "×10/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_source_corrupted",
+          "human_verified": true
+        },
+        {
+          "id": "F026",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "тромбоцити",
+          "value": "тромбоцити: 279 ×10/л.",
+          "unit": "×10/л",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_source_corrupted",
+          "human_verified": true
+        },
+        {
+          "id": "F035",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "білок загальний",
+          "value": "білок загальний: 70.88.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-07-31",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-ABAB64BB696B-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
           "human_verified": true
         }
       ]
@@ -904,17 +1848,77 @@
       "relation": "support"
     },
     {
-      "evidence_ref": "F016",
+      "evidence_ref": "F024",
       "hypothesis_id": "H1",
       "relation": "support"
     },
     {
-      "evidence_ref": "F013",
+      "evidence_ref": "F037",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F011",
       "hypothesis_id": "H1",
       "relation": "neutral"
     },
     {
-      "evidence_ref": "F015",
+      "evidence_ref": "F014",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F023",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F025",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F026",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F027",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F028",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F029",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F030",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F031",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F032",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F033",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F034",
       "hypothesis_id": "H1",
       "relation": "neutral"
     },
@@ -924,7 +1928,7 @@
       "relation": "support"
     },
     {
-      "evidence_ref": "F003",
+      "evidence_ref": "F004",
       "hypothesis_id": "H2",
       "relation": "support"
     },
@@ -932,6 +1936,26 @@
       "evidence_ref": "F005",
       "hypothesis_id": "H2",
       "relation": "support"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H2",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F021",
+      "hypothesis_id": "H2",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F022",
+      "hypothesis_id": "H2",
+      "relation": "refute"
     },
     {
       "evidence_ref": "F007",
@@ -939,12 +1963,12 @@
       "relation": "neutral"
     },
     {
-      "evidence_ref": "F011",
+      "evidence_ref": "F023",
       "hypothesis_id": "H2",
       "relation": "neutral"
     },
     {
-      "evidence_ref": "F012",
+      "evidence_ref": "F026",
       "hypothesis_id": "H2",
       "relation": "neutral"
     },
@@ -959,12 +1983,37 @@
       "relation": "support"
     },
     {
-      "evidence_ref": "F011",
+      "evidence_ref": "F008",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F009",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F021",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F016",
       "hypothesis_id": "H3",
       "relation": "neutral"
     },
     {
-      "evidence_ref": "F013",
+      "evidence_ref": "F017",
+      "hypothesis_id": "H3",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F018",
+      "hypothesis_id": "H3",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F019",
       "hypothesis_id": "H3",
       "relation": "neutral"
     },
@@ -979,22 +2028,52 @@
       "relation": "support"
     },
     {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
       "evidence_ref": "F009",
       "hypothesis_id": "H4",
       "relation": "support"
     },
     {
-      "evidence_ref": "F011",
+      "evidence_ref": "F019",
       "hypothesis_id": "H4",
       "relation": "neutral"
     },
     {
-      "evidence_ref": "F011",
+      "evidence_ref": "F016",
       "hypothesis_id": "H5",
       "relation": "support"
     },
     {
+      "evidence_ref": "F017",
+      "hypothesis_id": "H5",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F018",
+      "hypothesis_id": "H5",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F019",
+      "hypothesis_id": "H5",
+      "relation": "refute"
+    },
+    {
       "evidence_ref": "F002",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F023",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F026",
       "hypothesis_id": "H5",
       "relation": "neutral"
     },
@@ -1004,12 +2083,12 @@
       "relation": "support"
     },
     {
-      "evidence_ref": "F016",
+      "evidence_ref": "F037",
       "hypothesis_id": "H6",
       "relation": "support"
     },
     {
-      "evidence_ref": "F005",
+      "evidence_ref": "F012",
       "hypothesis_id": "H6",
       "relation": "neutral"
     },
@@ -1019,7 +2098,17 @@
       "relation": "neutral"
     },
     {
-      "evidence_ref": "F014",
+      "evidence_ref": "F023",
+      "hypothesis_id": "H6",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F024",
+      "hypothesis_id": "H6",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F026",
       "hypothesis_id": "H6",
       "relation": "neutral"
     },
@@ -1034,12 +2123,17 @@
       "relation": "neutral"
     },
     {
-      "evidence_ref": "F017",
+      "evidence_ref": "F036",
       "hypothesis_id": "H7",
       "relation": "neutral"
     },
     {
-      "evidence_ref": "F018",
+      "evidence_ref": "F038",
+      "hypothesis_id": "H7",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F039",
       "hypothesis_id": "H7",
       "relation": "neutral"
     },
@@ -1052,313 +2146,832 @@
       "evidence_ref": "F007",
       "hypothesis_id": "H8",
       "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H9",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F004",
+      "hypothesis_id": "H9",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H9",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F024",
+      "hypothesis_id": "H9",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F037",
+      "hypothesis_id": "H9",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F020",
+      "hypothesis_id": "H9",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F023",
+      "hypothesis_id": "H9",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F026",
+      "hypothesis_id": "H9",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F035",
+      "hypothesis_id": "H9",
+      "relation": "neutral"
     }
   ],
   "observations": [
     {
       "id": "OBS-ABAB64BB696B-001",
       "kind": "clinical_note",
+      "domain": "other",
       "display": "Чоловік, 55 років",
       "value": "Чоловік, 55 років",
       "unit": "—",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": "Чоловік, 55 років",
       "effective_at": null,
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
       "id": "OBS-ABAB64BB696B-002",
       "kind": "clinical_note",
+      "domain": "other",
       "display": "лихоманку неясного генезу",
       "value": 38,
       "unit": "°C",
       "reference": "—",
       "comparator": null,
       "interpretation": "нічну пітливість",
+      "source_detail": "лихоманку неясного генезу (температура до 38°C) та нічну пітливість",
       "effective_at": null,
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
       "id": "OBS-ABAB64BB696B-003",
       "kind": "clinical_note",
+      "domain": "other",
       "display": "антибактеріальну терапію (меропенем, ванкоміцин)",
       "value": "переконливої причини гарячки встановити не вдалося",
       "unit": "—",
       "reference": "—",
       "comparator": null,
       "interpretation": "переконливої причини гарячки встановити не вдалося",
+      "source_detail": "переконливої причини гарячки встановити не вдалося",
       "effective_at": null,
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
       "id": "OBS-ABAB64BB696B-004",
-      "kind": "clinical_note",
+      "kind": "measurement",
+      "domain": "lab",
       "display": "С-реактивний білок",
       "value": 217.97,
       "unit": "мг/л",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": null,
       "effective_at": "2026-04-15",
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
       "id": "OBS-ABAB64BB696B-005",
-      "kind": "clinical_note",
+      "kind": "measurement",
+      "domain": "lab",
       "display": "С-реактивний білок",
       "value": 673.1,
       "unit": "мг/л",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": null,
       "effective_at": "2026-05-23",
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
       "id": "OBS-ABAB64BB696B-006",
-      "kind": "clinical_note",
+      "kind": "measurement",
+      "domain": "lab",
       "display": "С-реактивний білок",
       "value": 399,
       "unit": "мг/л",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": null,
       "effective_at": "2026-06-08",
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
       "id": "OBS-ABAB64BB696B-007",
-      "kind": "clinical_note",
+      "kind": "measurement",
+      "domain": "lab",
       "display": "С-реактивний білок",
       "value": 57.9,
       "unit": "мг/л",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": null,
       "effective_at": "2026-06-29",
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
       "id": "OBS-ABAB64BB696B-008",
-      "kind": "clinical_note",
+      "kind": "measurement",
+      "domain": "lab",
       "display": "ШОЕ",
       "value": 62,
       "unit": "мм/год",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": null,
       "effective_at": "2026-06-20",
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
       "id": "OBS-ABAB64BB696B-009",
-      "kind": "clinical_note",
+      "kind": "measurement",
+      "domain": "lab",
       "display": "ШОЕ",
       "value": 66,
       "unit": "мм/год",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": null,
       "effective_at": "2026-06-29",
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
       "id": "OBS-ABAB64BB696B-010",
-      "kind": "diagnostic_interpretation",
-      "display": "Біохімічні показники",
-      "value": "ЛДГ 410,8 Од/л, В.-мікроглобулін 2,28 мг/л, АЛТ 24 Од/л, АСТ 24 Од/л, Сечова кислота 297 мкмоль/л, ПСА 0,307 нг/мл",
-      "unit": "—",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "ЛДГ",
+      "value": 410.8,
+      "unit": "Од/л",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": null,
       "effective_at": null,
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
       "id": "OBS-ABAB64BB696B-011",
-      "kind": "diagnostic_interpretation",
-      "display": "Імунологічні та ревматологічні дослідження",
-      "value": "ANA — позитивні, титр 1:320, Anti-CCP |gG <8 Од/мл - негативні, ANCA - негативні, |gA 0,06 г/л, Прокальцитонін 0,06 нг/мл",
-      "unit": "—",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "В.-мікроглобулін",
+      "value": 2.28,
+      "unit": "мг/л",
       "reference": "—",
       "comparator": null,
-      "interpretation": "ANA — позитивні",
+      "interpretation": null,
+      "source_detail": null,
       "effective_at": null,
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
       "id": "OBS-ABAB64BB696B-012",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "АЛТ",
+      "value": 24,
+      "unit": "Од/л",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-013",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "АСТ",
+      "value": 24,
+      "unit": "Од/л",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-014",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "Сечова кислота",
+      "value": 297,
+      "unit": "мкмоль/л",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-015",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "ПСА",
+      "value": 0.307,
+      "unit": "нг/мл",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-016",
+      "kind": "diagnostic_interpretation",
+      "domain": "diagnostic",
+      "display": "ANA",
+      "value": "позитивні",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "позитивні",
+      "source_detail": "позитивні",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-017",
+      "kind": "clinical_note",
+      "domain": "other",
+      "display": "титр 1:320",
+      "value": "1:320",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": "1:320",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-018",
       "kind": "negative_finding",
+      "domain": "negative",
+      "display": "Anti-CCP |gG",
+      "value": "негативні",
+      "unit": "—",
+      "reference": "—",
+      "comparator": "<",
+      "interpretation": null,
+      "source_detail": "негативні",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-019",
+      "kind": "negative_finding",
+      "domain": "negative",
+      "display": "ANCA",
+      "value": "негативні",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": "негативні",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-020",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "|gA",
+      "value": 0.06,
+      "unit": "г/л",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "analyte_source_corrupted",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-021",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "Прокальцитонін",
+      "value": 0.06,
+      "unit": "нг/мл",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-022",
+      "kind": "negative_finding",
+      "domain": "negative",
       "display": "CMV ДНК (ПЛР)",
       "value": "не виявлено",
       "unit": "—",
       "reference": "—",
       "comparator": null,
       "interpretation": "не виявлено",
+      "source_detail": "не виявлено",
       "effective_at": null,
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
-      "id": "OBS-ABAB64BB696B-013",
-      "kind": "diagnostic_interpretation",
-      "display": "Загальний аналіз крові від 31.07.2026",
-      "value": "лейкоцити 8.25×10/л, гемоглобін 121 г/л, еритроцити 4,86×1012/л, тромбоцити 279×10/л",
-      "unit": "—",
+      "id": "OBS-ABAB64BB696B-023",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "лейкоцити",
+      "value": 8.25,
+      "unit": "×10/л",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": null,
       "effective_at": "2026-07-31",
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "unit_source_corrupted",
       "human_verified": true
     },
     {
-      "id": "OBS-ABAB64BB696B-014",
-      "kind": "diagnostic_interpretation",
-      "display": "Біохімічний аналіз крові від 31.07.2026",
-      "value": "глюкоза - 4.98, креатинін — 79.95, сечовина - 5.18, ЛФ - 70.3, АСТ — 15.96, ГГТ — 15.4, АЛТ - 10, білірубін прямий - 1.37, білок загальний - 70.88",
-      "unit": "—",
+      "id": "OBS-ABAB64BB696B-024",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "гемоглобін",
+      "value": 121,
+      "unit": "г/л",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": null,
       "effective_at": "2026-07-31",
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
-      "id": "OBS-ABAB64BB696B-015",
+      "id": "OBS-ABAB64BB696B-025",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "еритроцити",
+      "value": 4.86,
+      "unit": "×1012/л",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-026",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "тромбоцити",
+      "value": 279,
+      "unit": "×10/л",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_source_corrupted",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-027",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "глюкоза",
+      "value": 4.98,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-028",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "креатинін",
+      "value": 79.95,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-029",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "сечовина",
+      "value": 5.18,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-030",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "ЛФ",
+      "value": 70.3,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-031",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "АСТ",
+      "value": 15.96,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-032",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "ГГТ",
+      "value": 15.4,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-033",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "АЛТ",
+      "value": 10,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-034",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "білірубін прямий",
+      "value": 1.37,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-035",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "білок загальний",
+      "value": 70.88,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-07-31",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-ABAB64BB696B-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-ABAB64BB696B-036",
       "kind": "imaging_finding",
+      "domain": "imaging",
       "display": "вузлове утворення лівої частки щитоподібної залози",
       "value": "вузлове утворення лівої частки щитоподібної залози",
       "unit": "—",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": "вузлове утворення лівої частки щитоподібної залози",
       "effective_at": "2026-04-16",
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
-      "id": "OBS-ABAB64BB696B-016",
+      "id": "OBS-ABAB64BB696B-037",
       "kind": "imaging_finding",
+      "domain": "imaging",
       "display": "Незначно виражена спленомегалія",
       "value": "Незначно виражена спленомегалія",
       "unit": "—",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": "Незначно виражена спленомегалія",
       "effective_at": "2026-04-16",
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
-      "id": "OBS-ABAB64BB696B-017",
+      "id": "OBS-ABAB64BB696B-038",
       "kind": "imaging_finding",
+      "domain": "imaging",
       "display": "Ліпоматоз паренхіми підшлункової залози",
       "value": "Ліпоматоз паренхіми підшлункової залози",
       "unit": "—",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": "Ліпоматоз паренхіми підшлункової залози",
       "effective_at": "2026-04-16",
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     },
     {
-      "id": "OBS-ABAB64BB696B-018",
+      "id": "OBS-ABAB64BB696B-039",
       "kind": "imaging_finding",
+      "domain": "imaging",
       "display": "зміни хребта",
       "value": "зміни хребта",
       "unit": "—",
       "reference": "—",
       "comparator": null,
       "interpretation": null,
+      "source_detail": "зміни хребта",
       "effective_at": "2026-04-16",
       "source_reported_at": null,
       "source_date_role": null,
       "page": 1,
       "source_fragment_id": "FRAG-ABAB64BB696B-001",
       "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
       "human_verified": true
     }
   ],
@@ -1366,13 +2979,13 @@
     {
       "id": "E-CAND-1",
       "type": "guideline",
-      "title": "Peñalver FJ et al. Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma—GELTAMO 2025. Cancers. 2026;18(3):395. doi:10.3390/cancers18030395",
-      "url": "https://doi.org/10.3390/cancers18030395",
-      "year": 2025,
-      "location": "Exact PDF SHA-256 ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744, PDF page 3, sections 2.3 Recommendations and 3.1 Staging; visual render SHA-256 165cee25f8061633e17f2eb1384117121a47b199bad312170c89c3be15fb4b6c",
+      "title": "NCCN Clinical Practice Guidelines in Oncology: B-Cell Lymphomas. Version 4.2026",
+      "url": "https://www.nccn.org/guidelines/category_1",
+      "year": 2026,
+      "location": "Exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd, printed/PDF page 14, node DIAG-1; visual render SHA-256 6f995454601f13242a5a4296dab0d47b8246b621ffbf3413ccc91cf86c8e6fb4",
       "verification_status": "agent_visual_source_review",
-      "use": "Unexplained fever and night sweats are B symptoms relevant to lymphoma assessment, while diagnosis requires tissue and excisional biopsy of accessible involved tissue is preferred for follicular lymphoma.",
-      "applicability_limit": "This is a follicular-lymphoma guideline, not a rule that B symptoms establish lymphoma in this patient; it supports symptom recognition and tissue-confirmation strategy only after a lesion is found."
+      "use": "NCCN підтримує отримання тканини зі збереженням архітектури для остаточної класифікації підозрюваної B-клітинної лімфоми; однієї тонкоголкової аспірації недостатньо.",
+      "applicability_limit": "Це обґрунтовує спосіб біопсії лише після визначення підозрілого осередку й не доводить лімфому за B-симптомами."
     },
     {
       "id": "E-CAND-2",
@@ -1380,10 +2993,10 @@
       "title": "Hess S et al. EANM consensus document on the use of [18F]FDG PET/CT in fever and inflammation of unknown origin. Eur J Nucl Med Mol Imaging. 2024;51(9):2597-2613. PMID:38676736. doi:10.1007/s00259-024-06732-8",
       "url": "https://doi.org/10.1007/s00259-024-06732-8",
       "year": 2024,
-      "location": "Abstract Results/Conclusion and diagnostic-strategy Figure 1 in the open consensus article",
+      "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; abstract Results/Conclusion and diagnostic-strategy Figure 1",
       "verification_status": "agent_visual_source_review",
-      "use": "FDG-PET/CT has a defined role in FUO/IUO after appropriate preliminary assessment; across the reviewed evidence it was diagnostically helpful in roughly 50–60% and a positive scan can guide a subsequent diagnostic procedure.",
-      "applicability_limit": "FDG uptake is nonspecific and PET/CT does not replace cultures, focused history, examination or tissue diagnosis; yield depends on patient selection and prior workup."
+      "use": "Консенсус EANM підтримує FDG-ПЕТ/КТ після належного початкового обстеження при гарячці неясного генезу для локалізації осередку та вибору цільової процедури.",
+      "applicability_limit": "Накопичення FDG неспецифічне; дослідження не замінює культури, цільовий анамнез, огляд або морфологію."
     },
     {
       "id": "E-CAND-3",
@@ -1391,10 +3004,10 @@
       "title": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J. 2023;44(39):3948-4042. PMID:37622656. doi:10.1093/eurheartj/ehad193",
       "url": "https://doi.org/10.1093/eurheartj/ehad193",
       "year": 2023,
-      "location": "Sections 5.3 Microbiological diagnosis and 5.4 Imaging techniques; ESC diagnostic algorithms",
+      "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; sections 5.3 Microbiological diagnosis and 5.4 Imaging techniques",
       "verification_status": "agent_visual_source_review",
-      "use": "When infective endocarditis is suspected, multiple blood-culture sets should be obtained before new antibiotics when feasible, echocardiography is central, and CT/nuclear imaging is added when standard assessment remains inconclusive or prosthetic/device disease is suspected.",
-      "applicability_limit": "The case provides no murmur, embolic sign, valve/device history or culture results; prior broad-spectrum antibiotics may reduce culture yield, so this source supports a targeted exclusion pathway rather than a positive diagnosis."
+      "use": "Настанова ESC підтримує кілька наборів культур крові до нових антибіотиків, коли це можливо, та ехокардіографію при обґрунтованій підозрі на інфекційний ендокардит.",
+      "applicability_limit": "У пакеті немає шуму, емболічних ознак, клапанного чи пристроєвого анамнезу або результатів культур; це шлях виключення, а не позитивний діагноз."
     },
     {
       "id": "E-CAND-4",
@@ -1402,10 +3015,10 @@
       "title": "Fautrel B et al. EULAR/PReS recommendations for the diagnosis and management of Still’s disease. Ann Rheum Dis. 2024;83(12):1614-1627. PMID:39317417. PMCID:PMC11672000. doi:10.1136/ard-2024-225851",
       "url": "https://doi.org/10.1136/ard-2024-225851",
       "year": 2024,
-      "location": "Recommendation statement RS3 and RS10; diagnosis and MAS sections",
+      "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; recommendation statements RS3 and RS10",
       "verification_status": "agent_visual_source_review",
-      "use": "Still’s disease is supported by a pattern of clinical and biological findings, none specific in isolation; infection, malignancy and other immune-mediated diseases must be considered. Persistent fever with splenomegaly makes ferritin trend, cell counts, liver tests, coagulation activation, triglycerides and related MAS features important to assess.",
-      "applicability_limit": "This patient lacks the typical rash, arthritis/arthralgia, neutrophilic leukocytosis and ferritin data; positive ANA further weakens any shortcut to Still’s disease."
+      "use": "Рекомендації EULAR/PReS визначають хворобу Стілла за сукупністю клінічних ознак і вимагають паралельно перевіряти інфекцію, злоякісні та інші імунозапальні причини.",
+      "applicability_limit": "У пакеті не описані типовий висип, артрит чи артралгії, нейтрофільний лейкоцитоз і феритин; позитивний ANA не встановлює інше автоімунне захворювання."
     },
     {
       "id": "E-CAND-5",
@@ -1413,10 +3026,10 @@
       "title": "Cox MF et al. Diagnosis and investigation of suspected haemophagocytic lymphohistiocytosis in adults: 2023 HiHASC consensus guideline. Lancet Rheumatol. 2024;6:e51-e62. PMID:38258680. doi:10.1016/S2665-9913(23)00273-4",
       "url": "https://doi.org/10.1016/S2665-9913(23)00273-4",
       "year": 2023,
-      "location": "Summary of overall approach; Initial evaluation and quick screen tests; HLH criteria and scoring systems",
+      "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; initial evaluation, quick screen tests, criteria and scoring sections",
       "verification_status": "agent_visual_source_review",
-      "use": "Adult HLH evaluation should use a low threshold to check the three Fs—fever, falling blood counts and raised ferritin—serially, with triglycerides, fibrinogen, liver/coagulation tests and parallel search for the trigger; HScore can support but not replace clinical judgment.",
-      "applicability_limit": "Current data show fever and mild splenomegaly but no documented falling counts, organ failure or ferritin; this consensus supports screening and urgency triggers, not an HLH conclusion."
+      "use": "Консенсус щодо HLH у дорослих підтримує серійну оцінку гарячки, клітин крові й феритину разом із тригліцеридами, фібриногеном, печінковими показниками, коагуляцією та пошуком тригера.",
+      "applicability_limit": "Є гарячка та незначна спленомегалія, але немає доведеної динаміки цитопеній, органної недостатності чи феритину; це обґрунтовує скринінг, а не висновок HLH."
     },
     {
       "id": "E-CAND-6",
@@ -1424,10 +3037,10 @@
       "title": "Dejaco C et al. EULAR recommendations for the use of imaging in large vessel vasculitis in clinical practice: 2023 update. Ann Rheum Dis. 2024;83(6):741-751. PMID:37550004. doi:10.1136/ard-2023-224543",
       "url": "https://doi.org/10.1136/ard-2023-224543",
       "year": 2023,
-      "location": "Table 1, Overarching principle A, Recommendations 1–3",
+      "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; Table 1, overarching principle A, recommendations 1–3",
       "verification_status": "agent_visual_source_review",
-      "use": "Suspected giant-cell arteritis should receive early expert imaging; ultrasound is first-line for temporal and axillary arteries, while FDG-PET or MRI can assess extracranial large-vessel disease and may reveal other serious causes in atypical systemic presentations.",
-      "applicability_limit": "There are no cranial, visual, jaw or polymyalgia symptoms in the supplied record; large-vessel imaging is a discriminator only if focused history/examination sustains clinical suspicion."
+      "use": "Рекомендації EULAR підтримують ранню експертну візуалізацію при клінічно обґрунтованій підозрі на васкуліт великих судин: УЗД скроневих і пахвових артерій, FDG-ПЕТ або МРТ залежно від патерну.",
+      "applicability_limit": "Краніальні, зорові, щелепні або ревматичні симптоми не наведені; спеціальна візуалізація доречна лише після цільового анамнезу й огляду."
     },
     {
       "id": "E-CAND-7",
@@ -1435,17 +3048,28 @@
       "title": "Tessler FN et al. ACR Thyroid Imaging, Reporting and Data System (TI-RADS): White Paper. J Am Coll Radiol. 2017;14(5):587-595. PMID:28372962. doi:10.1016/j.jacr.2017.01.046",
       "url": "https://doi.org/10.1016/j.jacr.2017.01.046",
       "year": 2017,
-      "location": "Abstract and ACR TI-RADS assessment/management categories",
+      "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; ACR TI-RADS assessment and management categories",
       "verification_status": "agent_visual_source_review",
-      "use": "Thyroid nodules are managed according to dedicated ultrasound features and size-based TI-RADS thresholds that determine follow-up or FNA rather than by CT detection alone.",
-      "applicability_limit": "The CT report supplies neither nodule size nor sonographic risk features; this source supports a separate thyroid workup and does not connect the nodule to FUO."
+      "use": "ACR TI-RADS підтримує окрему оцінку вузла щитоподібної залози за УЗ-ознаками та розміром для вибору спостереження або тонкоголкової аспірації.",
+      "applicability_limit": "Розмір і сонографічні ознаки вузла не наведені; випадкова КТ-знахідка сама по собі не пояснює гарячку."
+    },
+    {
+      "id": "E-CAND-8",
+      "type": "guideline",
+      "title": "NCCN Clinical Practice Guidelines in Oncology: Castleman Disease. Version 2.2026",
+      "url": "https://www.nccn.org/guidelines/category_1",
+      "year": 2026,
+      "location": "Exact PDF SHA-256 c4054e7c9a7b85e24a111c4f2b92fcdd0ec075aa02f4ceb454202a248386c107; printed/PDF pages 6 (CD-1) and 14 (CD-B 1 of 2); visual render SHA-256 e3b11c843ac23a7a96011728986e2478311c4b285453aa62efd2ae82751c39eb and 0c195bdb71d479d2f782a86ba6cc2d402c7b232d70293eceb6eaf7f43b50a6cd",
+      "verification_status": "agent_visual_source_review",
+      "use": "NCCN вимагає сумісної гістології лімфатичного вузла, ураження щонайменше двох зон і виключення інфекційних, автоімунних, автозапальних та злоякісних імітаторів для ідіопатичної мультицентричної хвороби Каслмана.",
+      "applicability_limit": "У пакеті немає багатозональної лімфаденопатії або сумісної гістології; це умовна альтернатива, а не робочий діагноз."
     }
   ],
   "source_traces": [
     {
       "source_id": "E-CAND-1",
       "via_type": "critical_gap",
-      "via_id": "G3",
+      "via_id": "G1",
       "role": "grounds_open_gap",
       "target_hypothesis_ids": []
     },
@@ -1456,37 +3080,28 @@
       "role": "grounds_discriminator",
       "target_hypothesis_ids": [
         "H1",
-        "H2",
-        "H4",
-        "H7"
-      ]
-    },
-    {
-      "source_id": "E-CAND-1",
-      "via_type": "workup",
-      "via_id": "W4",
-      "role": "grounds_discriminator",
-      "target_hypothesis_ids": [
-        "H1"
+        "H7",
+        "H9"
       ]
     },
     {
       "source_id": "E-CAND-2",
       "via_type": "critical_gap",
-      "via_id": "G3",
+      "via_id": "G1",
       "role": "grounds_open_gap",
       "target_hypothesis_ids": []
     },
     {
       "source_id": "E-CAND-2",
       "via_type": "workup",
-      "via_id": "W3",
+      "via_id": "W2",
       "role": "grounds_discriminator",
       "target_hypothesis_ids": [
         "H1",
         "H2",
         "H4",
-        "H7"
+        "H7",
+        "H9"
       ]
     },
     {
@@ -1499,19 +3114,18 @@
     {
       "source_id": "E-CAND-3",
       "via_type": "workup",
-      "via_id": "W2",
+      "via_id": "W1",
       "role": "grounds_discriminator",
       "target_hypothesis_ids": [
         "H2",
         "H3",
-        "H4",
         "H5"
       ]
     },
     {
       "source_id": "E-CAND-4",
       "via_type": "critical_gap",
-      "via_id": "G1",
+      "via_id": "G3",
       "role": "grounds_open_gap",
       "target_hypothesis_ids": []
     },
@@ -1525,7 +3139,7 @@
     {
       "source_id": "E-CAND-4",
       "via_type": "workup",
-      "via_id": "W5",
+      "via_id": "W4",
       "role": "grounds_discriminator",
       "target_hypothesis_ids": [
         "H1",
@@ -1537,7 +3151,7 @@
     {
       "source_id": "E-CAND-4",
       "via_type": "workup",
-      "via_id": "W6",
+      "via_id": "W5",
       "role": "grounds_discriminator",
       "target_hypothesis_ids": [
         "H6"
@@ -1546,7 +3160,7 @@
     {
       "source_id": "E-CAND-4",
       "via_type": "workup",
-      "via_id": "W7",
+      "via_id": "W6",
       "role": "grounds_discriminator",
       "target_hypothesis_ids": [
         "H1",
@@ -1558,14 +3172,14 @@
     {
       "source_id": "E-CAND-5",
       "via_type": "critical_gap",
-      "via_id": "G1",
+      "via_id": "G3",
       "role": "grounds_open_gap",
       "target_hypothesis_ids": []
     },
     {
       "source_id": "E-CAND-5",
       "via_type": "workup",
-      "via_id": "W5",
+      "via_id": "W4",
       "role": "grounds_discriminator",
       "target_hypothesis_ids": [
         "H1",
@@ -1577,7 +3191,7 @@
     {
       "source_id": "E-CAND-5",
       "via_type": "workup",
-      "via_id": "W6",
+      "via_id": "W5",
       "role": "grounds_discriminator",
       "target_hypothesis_ids": [
         "H6"
@@ -1593,7 +3207,7 @@
     {
       "source_id": "E-CAND-6",
       "via_type": "workup",
-      "via_id": "W8",
+      "via_id": "W7",
       "role": "grounds_discriminator",
       "target_hypothesis_ids": [
         "H2",
@@ -1611,15 +3225,112 @@
     {
       "source_id": "E-CAND-7",
       "via_type": "workup",
+      "via_id": "W8",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H7"
+      ]
+    },
+    {
+      "source_id": "E-CAND-8",
+      "via_type": "critical_gap",
+      "via_id": "G7",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-8",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H4",
+        "H7",
+        "H9"
+      ]
+    },
+    {
+      "source_id": "E-CAND-8",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H7",
+        "H9"
+      ]
+    },
+    {
+      "source_id": "E-CAND-8",
+      "via_type": "workup",
       "via_id": "W9",
       "role": "grounds_discriminator",
-      "target_hypothesis_ids": []
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3",
+        "H9"
+      ]
     }
   ],
   "critical_gaps": [
     {
       "id": "G1",
-      "text": "Немає валідованого повторного HLH/MAS screen із феритином, тригліцеридами, фібриногеном, коагуляцією, повними одиницями та серійною динамікою клітин.",
+      "text": "Немає візуалізації всього тіла або морфологічно підтвердженої цілі для біопсії.",
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-2"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "guideline",
+          "title": "NCCN Clinical Practice Guidelines in Oncology: B-Cell Lymphomas. Version 4.2026",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "Exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd, printed/PDF page 14, node DIAG-1; visual render SHA-256 6f995454601f13242a5a4296dab0d47b8246b621ffbf3413ccc91cf86c8e6fb4",
+          "verification_status": "agent_visual_source_review",
+          "use": "NCCN підтримує отримання тканини зі збереженням архітектури для остаточної класифікації підозрюваної B-клітинної лімфоми; однієї тонкоголкової аспірації недостатньо.",
+          "applicability_limit": "Це обґрунтовує спосіб біопсії лише після визначення підозрілого осередку й не доводить лімфому за B-симптомами."
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "consensus",
+          "title": "Hess S et al. EANM consensus document on the use of [18F]FDG PET/CT in fever and inflammation of unknown origin. Eur J Nucl Med Mol Imaging. 2024;51(9):2597-2613. PMID:38676736. doi:10.1007/s00259-024-06732-8",
+          "url": "https://doi.org/10.1007/s00259-024-06732-8",
+          "year": 2024,
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; abstract Results/Conclusion and diagnostic-strategy Figure 1",
+          "verification_status": "agent_visual_source_review",
+          "use": "Консенсус EANM підтримує FDG-ПЕТ/КТ після належного початкового обстеження при гарячці неясного генезу для локалізації осередку та вибору цільової процедури.",
+          "applicability_limit": "Накопичення FDG неспецифічне; дослідження не замінює культури, цільовий анамнез, огляд або морфологію."
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "text": "Не наведено серійних культур, цільової оцінки можливих джерел інфекції та ехокардіографії за показаннями.",
+      "evidence_refs": [
+        "E-CAND-3"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J. 2023;44(39):3948-4042. PMID:37622656. doi:10.1093/eurheartj/ehad193",
+          "url": "https://doi.org/10.1093/eurheartj/ehad193",
+          "year": 2023,
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; sections 5.3 Microbiological diagnosis and 5.4 Imaging techniques",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова ESC підтримує кілька наборів культур крові до нових антибіотиків, коли це можливо, та ехокардіографію при обґрунтованій підозрі на інфекційний ендокардит.",
+          "applicability_limit": "У пакеті немає шуму, емболічних ознак, клапанного чи пристроєвого анамнезу або результатів культур; це шлях виключення, а не позитивний діагноз."
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "text": "Немає валідованої скринінгової оцінки HLH/MAS із повними одиницями та серійною динамікою.",
       "evidence_refs": [
         "E-CAND-4",
         "E-CAND-5"
@@ -1631,10 +3342,10 @@
           "title": "Fautrel B et al. EULAR/PReS recommendations for the diagnosis and management of Still’s disease. Ann Rheum Dis. 2024;83(12):1614-1627. PMID:39317417. PMCID:PMC11672000. doi:10.1136/ard-2024-225851",
           "url": "https://doi.org/10.1136/ard-2024-225851",
           "year": 2024,
-          "location": "Recommendation statement RS3 and RS10; diagnosis and MAS sections",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; recommendation statements RS3 and RS10",
           "verification_status": "agent_visual_source_review",
-          "use": "Still’s disease is supported by a pattern of clinical and biological findings, none specific in isolation; infection, malignancy and other immune-mediated diseases must be considered. Persistent fever with splenomegaly makes ferritin trend, cell counts, liver tests, coagulation activation, triglycerides and related MAS features important to assess.",
-          "applicability_limit": "This patient lacks the typical rash, arthritis/arthralgia, neutrophilic leukocytosis and ferritin data; positive ANA further weakens any shortcut to Still’s disease."
+          "use": "Рекомендації EULAR/PReS визначають хворобу Стілла за сукупністю клінічних ознак і вимагають паралельно перевіряти інфекцію, злоякісні та інші імунозапальні причини.",
+          "applicability_limit": "У пакеті не описані типовий висип, артрит чи артралгії, нейтрофільний лейкоцитоз і феритин; позитивний ANA не встановлює інше автоімунне захворювання."
         },
         {
           "id": "E-CAND-5",
@@ -1642,68 +3353,16 @@
           "title": "Cox MF et al. Diagnosis and investigation of suspected haemophagocytic lymphohistiocytosis in adults: 2023 HiHASC consensus guideline. Lancet Rheumatol. 2024;6:e51-e62. PMID:38258680. doi:10.1016/S2665-9913(23)00273-4",
           "url": "https://doi.org/10.1016/S2665-9913(23)00273-4",
           "year": 2023,
-          "location": "Summary of overall approach; Initial evaluation and quick screen tests; HLH criteria and scoring systems",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; initial evaluation, quick screen tests, criteria and scoring sections",
           "verification_status": "agent_visual_source_review",
-          "use": "Adult HLH evaluation should use a low threshold to check the three Fs—fever, falling blood counts and raised ferritin—serially, with triglycerides, fibrinogen, liver/coagulation tests and parallel search for the trigger; HScore can support but not replace clinical judgment.",
-          "applicability_limit": "Current data show fever and mild splenomegaly but no documented falling counts, organ failure or ferritin; this consensus supports screening and urgency triggers, not an HLH conclusion."
-        }
-      ]
-    },
-    {
-      "id": "G2",
-      "text": "Не наведено серійних культур крові, focused exposure review та ехокардіографії за показаннями.",
-      "evidence_refs": [
-        "E-CAND-3"
-      ],
-      "sources": [
-        {
-          "id": "E-CAND-3",
-          "type": "guideline",
-          "title": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J. 2023;44(39):3948-4042. PMID:37622656. doi:10.1093/eurheartj/ehad193",
-          "url": "https://doi.org/10.1093/eurheartj/ehad193",
-          "year": 2023,
-          "location": "Sections 5.3 Microbiological diagnosis and 5.4 Imaging techniques; ESC diagnostic algorithms",
-          "verification_status": "agent_visual_source_review",
-          "use": "When infective endocarditis is suspected, multiple blood-culture sets should be obtained before new antibiotics when feasible, echocardiography is central, and CT/nuclear imaging is added when standard assessment remains inconclusive or prosthetic/device disease is suspected.",
-          "applicability_limit": "The case provides no murmur, embolic sign, valve/device history or culture results; prior broad-spectrum antibiotics may reduce culture yield, so this source supports a targeted exclusion pathway rather than a positive diagnosis."
-        }
-      ]
-    },
-    {
-      "id": "G3",
-      "text": "Немає whole-body metabolic localisation або морфологічно підтвердженого biopsy target.",
-      "evidence_refs": [
-        "E-CAND-1",
-        "E-CAND-2"
-      ],
-      "sources": [
-        {
-          "id": "E-CAND-1",
-          "type": "guideline",
-          "title": "Peñalver FJ et al. Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma—GELTAMO 2025. Cancers. 2026;18(3):395. doi:10.3390/cancers18030395",
-          "url": "https://doi.org/10.3390/cancers18030395",
-          "year": 2025,
-          "location": "Exact PDF SHA-256 ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744, PDF page 3, sections 2.3 Recommendations and 3.1 Staging; visual render SHA-256 165cee25f8061633e17f2eb1384117121a47b199bad312170c89c3be15fb4b6c",
-          "verification_status": "agent_visual_source_review",
-          "use": "Unexplained fever and night sweats are B symptoms relevant to lymphoma assessment, while diagnosis requires tissue and excisional biopsy of accessible involved tissue is preferred for follicular lymphoma.",
-          "applicability_limit": "This is a follicular-lymphoma guideline, not a rule that B symptoms establish lymphoma in this patient; it supports symptom recognition and tissue-confirmation strategy only after a lesion is found."
-        },
-        {
-          "id": "E-CAND-2",
-          "type": "consensus",
-          "title": "Hess S et al. EANM consensus document on the use of [18F]FDG PET/CT in fever and inflammation of unknown origin. Eur J Nucl Med Mol Imaging. 2024;51(9):2597-2613. PMID:38676736. doi:10.1007/s00259-024-06732-8",
-          "url": "https://doi.org/10.1007/s00259-024-06732-8",
-          "year": 2024,
-          "location": "Abstract Results/Conclusion and diagnostic-strategy Figure 1 in the open consensus article",
-          "verification_status": "agent_visual_source_review",
-          "use": "FDG-PET/CT has a defined role in FUO/IUO after appropriate preliminary assessment; across the reviewed evidence it was diagnostically helpful in roughly 50–60% and a positive scan can guide a subsequent diagnostic procedure.",
-          "applicability_limit": "FDG uptake is nonspecific and PET/CT does not replace cultures, focused history, examination or tissue diagnosis; yield depends on patient selection and prior workup."
+          "use": "Консенсус щодо HLH у дорослих підтримує серійну оцінку гарячки, клітин крові й феритину разом із тригліцеридами, фібриногеном, печінковими показниками, коагуляцією та пошуком тригера.",
+          "applicability_limit": "Є гарячка та незначна спленомегалія, але немає доведеної динаміки цитопеній, органної недостатності чи феритину; це обґрунтовує скринінг, а не висновок HLH."
         }
       ]
     },
     {
       "id": "G4",
-      "text": "Не описано повний Still/IMID-фенотип: fever pattern, rash, arthralgia/arthritis, neutrophils, ferritin та органні автоімунні ознаки.",
+      "text": "Не описано повний фенотип хвороби Стілла чи іншого імунозапального захворювання.",
       "evidence_refs": [
         "E-CAND-4"
       ],
@@ -1714,16 +3373,16 @@
           "title": "Fautrel B et al. EULAR/PReS recommendations for the diagnosis and management of Still’s disease. Ann Rheum Dis. 2024;83(12):1614-1627. PMID:39317417. PMCID:PMC11672000. doi:10.1136/ard-2024-225851",
           "url": "https://doi.org/10.1136/ard-2024-225851",
           "year": 2024,
-          "location": "Recommendation statement RS3 and RS10; diagnosis and MAS sections",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; recommendation statements RS3 and RS10",
           "verification_status": "agent_visual_source_review",
-          "use": "Still’s disease is supported by a pattern of clinical and biological findings, none specific in isolation; infection, malignancy and other immune-mediated diseases must be considered. Persistent fever with splenomegaly makes ferritin trend, cell counts, liver tests, coagulation activation, triglycerides and related MAS features important to assess.",
-          "applicability_limit": "This patient lacks the typical rash, arthritis/arthralgia, neutrophilic leukocytosis and ferritin data; positive ANA further weakens any shortcut to Still’s disease."
+          "use": "Рекомендації EULAR/PReS визначають хворобу Стілла за сукупністю клінічних ознак і вимагають паралельно перевіряти інфекцію, злоякісні та інші імунозапальні причини.",
+          "applicability_limit": "У пакеті не описані типовий висип, артрит чи артралгії, нейтрофільний лейкоцитоз і феритин; позитивний ANA не встановлює інше автоімунне захворювання."
         }
       ]
     },
     {
       "id": "G5",
-      "text": "Не наведено focused симптомів або огляду для оцінки pretest probability large-vessel vasculitis.",
+      "text": "Не наведено цільової клінічної оцінки ймовірності васкуліту великих судин до спеціальної візуалізації.",
       "evidence_refs": [
         "E-CAND-6"
       ],
@@ -1734,16 +3393,16 @@
           "title": "Dejaco C et al. EULAR recommendations for the use of imaging in large vessel vasculitis in clinical practice: 2023 update. Ann Rheum Dis. 2024;83(6):741-751. PMID:37550004. doi:10.1136/ard-2023-224543",
           "url": "https://doi.org/10.1136/ard-2023-224543",
           "year": 2023,
-          "location": "Table 1, Overarching principle A, Recommendations 1–3",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; Table 1, overarching principle A, recommendations 1–3",
           "verification_status": "agent_visual_source_review",
-          "use": "Suspected giant-cell arteritis should receive early expert imaging; ultrasound is first-line for temporal and axillary arteries, while FDG-PET or MRI can assess extracranial large-vessel disease and may reveal other serious causes in atypical systemic presentations.",
-          "applicability_limit": "There are no cranial, visual, jaw or polymyalgia symptoms in the supplied record; large-vessel imaging is a discriminator only if focused history/examination sustains clinical suspicion."
+          "use": "Рекомендації EULAR підтримують ранню експертну візуалізацію при клінічно обґрунтованій підозрі на васкуліт великих судин: УЗД скроневих і пахвових артерій, FDG-ПЕТ або МРТ залежно від патерну.",
+          "applicability_limit": "Краніальні, зорові, щелепні або ревматичні симптоми не наведені; спеціальна візуалізація доречна лише після цільового анамнезу й огляду."
         }
       ]
     },
     {
       "id": "G6",
-      "text": "Вузол щитоподібної залози не має розміру, TSH, УЗД/TI-RADS або FNA-рішення.",
+      "text": "Вузол щитоподібної залози не має розміру, ТТГ, УЗД, TI-RADS або рішення щодо тонкоголкової аспірації.",
       "evidence_refs": [
         "E-CAND-7"
       ],
@@ -1754,26 +3413,45 @@
           "title": "Tessler FN et al. ACR Thyroid Imaging, Reporting and Data System (TI-RADS): White Paper. J Am Coll Radiol. 2017;14(5):587-595. PMID:28372962. doi:10.1016/j.jacr.2017.01.046",
           "url": "https://doi.org/10.1016/j.jacr.2017.01.046",
           "year": 2017,
-          "location": "Abstract and ACR TI-RADS assessment/management categories",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; ACR TI-RADS assessment and management categories",
           "verification_status": "agent_visual_source_review",
-          "use": "Thyroid nodules are managed according to dedicated ultrasound features and size-based TI-RADS thresholds that determine follow-up or FNA rather than by CT detection alone.",
-          "applicability_limit": "The CT report supplies neither nodule size nor sonographic risk features; this source supports a separate thyroid workup and does not connect the nodule to FUO."
+          "use": "ACR TI-RADS підтримує окрему оцінку вузла щитоподібної залози за УЗ-ознаками та розміром для вибору спостереження або тонкоголкової аспірації.",
+          "applicability_limit": "Розмір і сонографічні ознаки вузла не наведені; випадкова КТ-знахідка сама по собі не пояснює гарячку."
+        }
+      ]
+    },
+    {
+      "id": "G7",
+      "text": "Не встановлено багатозональну лімфаденопатію або гістологію, сумісну з хворобою Каслмана.",
+      "evidence_refs": [
+        "E-CAND-8"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-8",
+          "type": "guideline",
+          "title": "NCCN Clinical Practice Guidelines in Oncology: Castleman Disease. Version 2.2026",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "Exact PDF SHA-256 c4054e7c9a7b85e24a111c4f2b92fcdd0ec075aa02f4ceb454202a248386c107; printed/PDF pages 6 (CD-1) and 14 (CD-B 1 of 2); visual render SHA-256 e3b11c843ac23a7a96011728986e2478311c4b285453aa62efd2ae82751c39eb and 0c195bdb71d479d2f782a86ba6cc2d402c7b232d70293eceb6eaf7f43b50a6cd",
+          "verification_status": "agent_visual_source_review",
+          "use": "NCCN вимагає сумісної гістології лімфатичного вузла, ураження щонайменше двох зон і виключення інфекційних, автоімунних, автозапальних та злоякісних імітаторів для ідіопатичної мультицентричної хвороби Каслмана.",
+          "applicability_limit": "У пакеті немає багатозональної лімфаденопатії або сумісної гістології; це умовна альтернатива, а не робочий діагноз."
         }
       ]
     }
   ],
   "workup": [
     {
-      "id": "W2",
-      "title": "Переоцінити інфекційну гілку перед імуносупресивною інтерпретацією",
-      "rationale": "Зібрати focused exposure/physical review, отримати культури до нових антибіотиків коли клінічно можливо та виконати TTE/TOE лише за підтриманої підозри на IE; рішення щодо чинних антибіотиків належить лікарю.",
+      "id": "W1",
+      "title": "Переоцінити інфекційну гілку",
+      "rationale": "Focused exposure/physical review, культури до нових антибіотиків коли клінічно можливо та TTE/TOE лише за підтриманої підозри; рішення щодо антибіотиків належить лікарю.",
       "priority": "high",
       "necessity": "classification_exclusion_required",
       "trigger": null,
       "discriminates": [
         "H2",
         "H3",
-        "H4",
         "H5"
       ],
       "evidence_refs": [
@@ -1786,17 +3464,17 @@
           "title": "Delgado V et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J. 2023;44(39):3948-4042. PMID:37622656. doi:10.1093/eurheartj/ehad193",
           "url": "https://doi.org/10.1093/eurheartj/ehad193",
           "year": 2023,
-          "location": "Sections 5.3 Microbiological diagnosis and 5.4 Imaging techniques; ESC diagnostic algorithms",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; sections 5.3 Microbiological diagnosis and 5.4 Imaging techniques",
           "verification_status": "agent_visual_source_review",
-          "use": "When infective endocarditis is suspected, multiple blood-culture sets should be obtained before new antibiotics when feasible, echocardiography is central, and CT/nuclear imaging is added when standard assessment remains inconclusive or prosthetic/device disease is suspected.",
-          "applicability_limit": "The case provides no murmur, embolic sign, valve/device history or culture results; prior broad-spectrum antibiotics may reduce culture yield, so this source supports a targeted exclusion pathway rather than a positive diagnosis."
+          "use": "Настанова ESC підтримує кілька наборів культур крові до нових антибіотиків, коли це можливо, та ехокардіографію при обґрунтованій підозрі на інфекційний ендокардит.",
+          "applicability_limit": "У пакеті немає шуму, емболічних ознак, клапанного чи пристроєвого анамнезу або результатів культур; це шлях виключення, а не позитивний діагноз."
         }
       ]
     },
     {
-      "id": "W3",
-      "title": "Whole-body FDG-PET/CT для локалізації активного осередку",
-      "rationale": "Після неінформативної CT і тривалого FUO PET/CT може вибрати напрям між інфекцією, васкулітом і неоплазією та знайти biopsy target.",
+      "id": "W2",
+      "title": "FDG-ПЕТ/КТ усього тіла для локалізації",
+      "rationale": "Після базового неінформативного обстеження при гарячці неясного генезу дослідження може знайти активний осередок і визначити ціль для біопсії між інфекційною, пухлинною та судинною гілками.",
       "priority": "high",
       "necessity": "key_discriminator",
       "trigger": null,
@@ -1804,76 +3482,91 @@
         "H1",
         "H2",
         "H4",
-        "H7"
+        "H7",
+        "H9"
       ],
       "evidence_refs": [
-        "E-CAND-1",
-        "E-CAND-2"
+        "E-CAND-2",
+        "E-CAND-8"
       ],
       "sources": [
-        {
-          "id": "E-CAND-1",
-          "type": "guideline",
-          "title": "Peñalver FJ et al. Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma—GELTAMO 2025. Cancers. 2026;18(3):395. doi:10.3390/cancers18030395",
-          "url": "https://doi.org/10.3390/cancers18030395",
-          "year": 2025,
-          "location": "Exact PDF SHA-256 ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744, PDF page 3, sections 2.3 Recommendations and 3.1 Staging; visual render SHA-256 165cee25f8061633e17f2eb1384117121a47b199bad312170c89c3be15fb4b6c",
-          "verification_status": "agent_visual_source_review",
-          "use": "Unexplained fever and night sweats are B symptoms relevant to lymphoma assessment, while diagnosis requires tissue and excisional biopsy of accessible involved tissue is preferred for follicular lymphoma.",
-          "applicability_limit": "This is a follicular-lymphoma guideline, not a rule that B symptoms establish lymphoma in this patient; it supports symptom recognition and tissue-confirmation strategy only after a lesion is found."
-        },
         {
           "id": "E-CAND-2",
           "type": "consensus",
           "title": "Hess S et al. EANM consensus document on the use of [18F]FDG PET/CT in fever and inflammation of unknown origin. Eur J Nucl Med Mol Imaging. 2024;51(9):2597-2613. PMID:38676736. doi:10.1007/s00259-024-06732-8",
           "url": "https://doi.org/10.1007/s00259-024-06732-8",
           "year": 2024,
-          "location": "Abstract Results/Conclusion and diagnostic-strategy Figure 1 in the open consensus article",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; abstract Results/Conclusion and diagnostic-strategy Figure 1",
           "verification_status": "agent_visual_source_review",
-          "use": "FDG-PET/CT has a defined role in FUO/IUO after appropriate preliminary assessment; across the reviewed evidence it was diagnostically helpful in roughly 50–60% and a positive scan can guide a subsequent diagnostic procedure.",
-          "applicability_limit": "FDG uptake is nonspecific and PET/CT does not replace cultures, focused history, examination or tissue diagnosis; yield depends on patient selection and prior workup."
+          "use": "Консенсус EANM підтримує FDG-ПЕТ/КТ після належного початкового обстеження при гарячці неясного генезу для локалізації осередку та вибору цільової процедури.",
+          "applicability_limit": "Накопичення FDG неспецифічне; дослідження не замінює культури, цільовий анамнез, огляд або морфологію."
+        },
+        {
+          "id": "E-CAND-8",
+          "type": "guideline",
+          "title": "NCCN Clinical Practice Guidelines in Oncology: Castleman Disease. Version 2.2026",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "Exact PDF SHA-256 c4054e7c9a7b85e24a111c4f2b92fcdd0ec075aa02f4ceb454202a248386c107; printed/PDF pages 6 (CD-1) and 14 (CD-B 1 of 2); visual render SHA-256 e3b11c843ac23a7a96011728986e2478311c4b285453aa62efd2ae82751c39eb and 0c195bdb71d479d2f782a86ba6cc2d402c7b232d70293eceb6eaf7f43b50a6cd",
+          "verification_status": "agent_visual_source_review",
+          "use": "NCCN вимагає сумісної гістології лімфатичного вузла, ураження щонайменше двох зон і виключення інфекційних, автоімунних, автозапальних та злоякісних імітаторів для ідіопатичної мультицентричної хвороби Каслмана.",
+          "applicability_limit": "У пакеті немає багатозональної лімфаденопатії або сумісної гістології; це умовна альтернатива, а не робочий діагноз."
         }
       ]
     },
     {
-      "id": "W4",
+      "id": "W3",
       "title": "Отримати адекватну тканину з підозрілого осередку",
-      "rationale": "Морфологія потрібна до встановлення лімфоми; excision biopsy бажана, якщо PET/US знаходить доступну підозрілу тканину.",
+      "rationale": "Для лімфоми й хвороби Каслмана бажана ексцизійна або інцизійна біопсія; однієї тонкоголкової аспірації недостатньо.",
       "priority": "high",
       "necessity": "conditional_adjunct",
-      "trigger": "PET/CT, УЗД або огляд виявляє доступний підозрілий вузол чи іншу тканину для біопсії.",
+      "trigger": "Огляд, УЗД або PET/CT виявляє доступний підозрілий лімфовузол чи іншу тканину.",
       "discriminates": [
-        "H1"
+        "H1",
+        "H7",
+        "H9"
       ],
       "evidence_refs": [
-        "E-CAND-1"
+        "E-CAND-1",
+        "E-CAND-8"
       ],
       "sources": [
         {
           "id": "E-CAND-1",
           "type": "guideline",
-          "title": "Peñalver FJ et al. Guidelines for Diagnosis, Treatment, and Follow-Up of Patients with Follicular Lymphoma—GELTAMO 2025. Cancers. 2026;18(3):395. doi:10.3390/cancers18030395",
-          "url": "https://doi.org/10.3390/cancers18030395",
-          "year": 2025,
-          "location": "Exact PDF SHA-256 ded51f5b423eeda474b9af5d0a98e2ab5e035a30321f0ec71f2a4f25cde0f744, PDF page 3, sections 2.3 Recommendations and 3.1 Staging; visual render SHA-256 165cee25f8061633e17f2eb1384117121a47b199bad312170c89c3be15fb4b6c",
+          "title": "NCCN Clinical Practice Guidelines in Oncology: B-Cell Lymphomas. Version 4.2026",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "Exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd, printed/PDF page 14, node DIAG-1; visual render SHA-256 6f995454601f13242a5a4296dab0d47b8246b621ffbf3413ccc91cf86c8e6fb4",
           "verification_status": "agent_visual_source_review",
-          "use": "Unexplained fever and night sweats are B symptoms relevant to lymphoma assessment, while diagnosis requires tissue and excisional biopsy of accessible involved tissue is preferred for follicular lymphoma.",
-          "applicability_limit": "This is a follicular-lymphoma guideline, not a rule that B symptoms establish lymphoma in this patient; it supports symptom recognition and tissue-confirmation strategy only after a lesion is found."
+          "use": "NCCN підтримує отримання тканини зі збереженням архітектури для остаточної класифікації підозрюваної B-клітинної лімфоми; однієї тонкоголкової аспірації недостатньо.",
+          "applicability_limit": "Це обґрунтовує спосіб біопсії лише після визначення підозрілого осередку й не доводить лімфому за B-симптомами."
+        },
+        {
+          "id": "E-CAND-8",
+          "type": "guideline",
+          "title": "NCCN Clinical Practice Guidelines in Oncology: Castleman Disease. Version 2.2026",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "Exact PDF SHA-256 c4054e7c9a7b85e24a111c4f2b92fcdd0ec075aa02f4ceb454202a248386c107; printed/PDF pages 6 (CD-1) and 14 (CD-B 1 of 2); visual render SHA-256 e3b11c843ac23a7a96011728986e2478311c4b285453aa62efd2ae82751c39eb and 0c195bdb71d479d2f782a86ba6cc2d402c7b232d70293eceb6eaf7f43b50a6cd",
+          "verification_status": "agent_visual_source_review",
+          "use": "NCCN вимагає сумісної гістології лімфатичного вузла, ураження щонайменше двох зон і виключення інфекційних, автоімунних, автозапальних та злоякісних імітаторів для ідіопатичної мультицентричної хвороби Каслмана.",
+          "applicability_limit": "У пакеті немає багатозональної лімфаденопатії або сумісної гістології; це умовна альтернатива, а не робочий діагноз."
         }
       ]
     },
     {
-      "id": "W5",
-      "title": "Повторити валідований HLH/MAS quick screen",
-      "rationale": "Нові лабораторні результати з повними одиницями та серійною динамікою феритину, CBC, тригліцеридів, фібриногену, LFT/LDH і коагуляції потрібні для оцінки патерну, а не пошкоджених історичних полів.",
+      "id": "W4",
+      "title": "Швидка скринінгова оцінка HLH/MAS із валідними одиницями",
+      "rationale": "Повторити серійний загальний аналіз крові, феритин, тригліцериди, фібриноген, печінкові показники, ЛДГ і коагуляцію; пошкоджені у джерелі одиниці не відновлювати.",
       "priority": "high",
       "necessity": "classification_exclusion_required",
       "trigger": null,
       "discriminates": [
-        "H3",
-        "H6",
         "H1",
-        "H2"
+        "H2",
+        "H3",
+        "H6"
       ],
       "evidence_refs": [
         "E-CAND-4",
@@ -1886,10 +3579,10 @@
           "title": "Fautrel B et al. EULAR/PReS recommendations for the diagnosis and management of Still’s disease. Ann Rheum Dis. 2024;83(12):1614-1627. PMID:39317417. PMCID:PMC11672000. doi:10.1136/ard-2024-225851",
           "url": "https://doi.org/10.1136/ard-2024-225851",
           "year": 2024,
-          "location": "Recommendation statement RS3 and RS10; diagnosis and MAS sections",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; recommendation statements RS3 and RS10",
           "verification_status": "agent_visual_source_review",
-          "use": "Still’s disease is supported by a pattern of clinical and biological findings, none specific in isolation; infection, malignancy and other immune-mediated diseases must be considered. Persistent fever with splenomegaly makes ferritin trend, cell counts, liver tests, coagulation activation, triglycerides and related MAS features important to assess.",
-          "applicability_limit": "This patient lacks the typical rash, arthritis/arthralgia, neutrophilic leukocytosis and ferritin data; positive ANA further weakens any shortcut to Still’s disease."
+          "use": "Рекомендації EULAR/PReS визначають хворобу Стілла за сукупністю клінічних ознак і вимагають паралельно перевіряти інфекцію, злоякісні та інші імунозапальні причини.",
+          "applicability_limit": "У пакеті не описані типовий висип, артрит чи артралгії, нейтрофільний лейкоцитоз і феритин; позитивний ANA не встановлює інше автоімунне захворювання."
         },
         {
           "id": "E-CAND-5",
@@ -1897,20 +3590,20 @@
           "title": "Cox MF et al. Diagnosis and investigation of suspected haemophagocytic lymphohistiocytosis in adults: 2023 HiHASC consensus guideline. Lancet Rheumatol. 2024;6:e51-e62. PMID:38258680. doi:10.1016/S2665-9913(23)00273-4",
           "url": "https://doi.org/10.1016/S2665-9913(23)00273-4",
           "year": 2023,
-          "location": "Summary of overall approach; Initial evaluation and quick screen tests; HLH criteria and scoring systems",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; initial evaluation, quick screen tests, criteria and scoring sections",
           "verification_status": "agent_visual_source_review",
-          "use": "Adult HLH evaluation should use a low threshold to check the three Fs—fever, falling blood counts and raised ferritin—serially, with triglycerides, fibrinogen, liver/coagulation tests and parallel search for the trigger; HScore can support but not replace clinical judgment.",
-          "applicability_limit": "Current data show fever and mild splenomegaly but no documented falling counts, organ failure or ferritin; this consensus supports screening and urgency triggers, not an HLH conclusion."
+          "use": "Консенсус щодо HLH у дорослих підтримує серійну оцінку гарячки, клітин крові й феритину разом із тригліцеридами, фібриногеном, печінковими показниками, коагуляцією та пошуком тригера.",
+          "applicability_limit": "Є гарячка та незначна спленомегалія, але немає доведеної динаміки цитопеній, органної недостатності чи феритину; це обґрунтовує скринінг, а не висновок HLH."
         }
       ]
     },
     {
-      "id": "W6",
+      "id": "W5",
       "title": "Термінова оцінка гіперзапального синдрому",
-      "rationale": "Швидка ескалація потрібна лише якщо виникає динамічний HLH/MAS-патерн із органною загрозою.",
+      "rationale": "Негайна клінічна ескалація лише за динамічного HLH/MAS-патерну з органною загрозою.",
       "priority": "critical",
       "necessity": "urgent_if_triggered",
-      "trigger": "Наростає феритин, падають клітини крові, з’являються гіпофібриногенемія, коагулопатія, печінкова або інша органна дисфункція.",
+      "trigger": "Наростає феритин, падають клітини крові, виникають гіпофібриногенемія, коагулопатія, печінкова або інша органна дисфункція.",
       "discriminates": [
         "H6"
       ],
@@ -1925,10 +3618,10 @@
           "title": "Fautrel B et al. EULAR/PReS recommendations for the diagnosis and management of Still’s disease. Ann Rheum Dis. 2024;83(12):1614-1627. PMID:39317417. PMCID:PMC11672000. doi:10.1136/ard-2024-225851",
           "url": "https://doi.org/10.1136/ard-2024-225851",
           "year": 2024,
-          "location": "Recommendation statement RS3 and RS10; diagnosis and MAS sections",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; recommendation statements RS3 and RS10",
           "verification_status": "agent_visual_source_review",
-          "use": "Still’s disease is supported by a pattern of clinical and biological findings, none specific in isolation; infection, malignancy and other immune-mediated diseases must be considered. Persistent fever with splenomegaly makes ferritin trend, cell counts, liver tests, coagulation activation, triglycerides and related MAS features important to assess.",
-          "applicability_limit": "This patient lacks the typical rash, arthritis/arthralgia, neutrophilic leukocytosis and ferritin data; positive ANA further weakens any shortcut to Still’s disease."
+          "use": "Рекомендації EULAR/PReS визначають хворобу Стілла за сукупністю клінічних ознак і вимагають паралельно перевіряти інфекцію, злоякісні та інші імунозапальні причини.",
+          "applicability_limit": "У пакеті не описані типовий висип, артрит чи артралгії, нейтрофільний лейкоцитоз і феритин; позитивний ANA не встановлює інше автоімунне захворювання."
         },
         {
           "id": "E-CAND-5",
@@ -1936,24 +3629,24 @@
           "title": "Cox MF et al. Diagnosis and investigation of suspected haemophagocytic lymphohistiocytosis in adults: 2023 HiHASC consensus guideline. Lancet Rheumatol. 2024;6:e51-e62. PMID:38258680. doi:10.1016/S2665-9913(23)00273-4",
           "url": "https://doi.org/10.1016/S2665-9913(23)00273-4",
           "year": 2023,
-          "location": "Summary of overall approach; Initial evaluation and quick screen tests; HLH criteria and scoring systems",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; initial evaluation, quick screen tests, criteria and scoring sections",
           "verification_status": "agent_visual_source_review",
-          "use": "Adult HLH evaluation should use a low threshold to check the three Fs—fever, falling blood counts and raised ferritin—serially, with triglycerides, fibrinogen, liver/coagulation tests and parallel search for the trigger; HScore can support but not replace clinical judgment.",
-          "applicability_limit": "Current data show fever and mild splenomegaly but no documented falling counts, organ failure or ferritin; this consensus supports screening and urgency triggers, not an HLH conclusion."
+          "use": "Консенсус щодо HLH у дорослих підтримує серійну оцінку гарячки, клітин крові й феритину разом із тригліцеридами, фібриногеном, печінковими показниками, коагуляцією та пошуком тригера.",
+          "applicability_limit": "Є гарячка та незначна спленомегалія, але немає доведеної динаміки цитопеній, органної недостатності чи феритину; це обґрунтовує скринінг, а не висновок HLH."
         }
       ]
     },
     {
-      "id": "W7",
-      "title": "Перевірити повний Still-фенотип без передчасного закриття",
-      "rationale": "Документувати fever pattern, rash, arthralgia/arthritis, neutrophils, ferritin і виключені mimics.",
+      "id": "W6",
+      "title": "Перевірити Still-фенотип",
+      "rationale": "Документувати характер гарячки, висип, артралгії чи артрит, нейтрофіли й феритин, паралельно перевіряючи інфекційні та пухлинні імітатори.",
       "priority": "medium",
       "necessity": "key_discriminator",
       "trigger": null,
       "discriminates": [
         "H3",
-        "H2",
         "H1",
+        "H2",
         "H5"
       ],
       "evidence_refs": [
@@ -1966,20 +3659,20 @@
           "title": "Fautrel B et al. EULAR/PReS recommendations for the diagnosis and management of Still’s disease. Ann Rheum Dis. 2024;83(12):1614-1627. PMID:39317417. PMCID:PMC11672000. doi:10.1136/ard-2024-225851",
           "url": "https://doi.org/10.1136/ard-2024-225851",
           "year": 2024,
-          "location": "Recommendation statement RS3 and RS10; diagnosis and MAS sections",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; recommendation statements RS3 and RS10",
           "verification_status": "agent_visual_source_review",
-          "use": "Still’s disease is supported by a pattern of clinical and biological findings, none specific in isolation; infection, malignancy and other immune-mediated diseases must be considered. Persistent fever with splenomegaly makes ferritin trend, cell counts, liver tests, coagulation activation, triglycerides and related MAS features important to assess.",
-          "applicability_limit": "This patient lacks the typical rash, arthritis/arthralgia, neutrophilic leukocytosis and ferritin data; positive ANA further weakens any shortcut to Still’s disease."
+          "use": "Рекомендації EULAR/PReS визначають хворобу Стілла за сукупністю клінічних ознак і вимагають паралельно перевіряти інфекцію, злоякісні та інші імунозапальні причини.",
+          "applicability_limit": "У пакеті не описані типовий висип, артрит чи артралгії, нейтрофільний лейкоцитоз і феритин; позитивний ANA не встановлює інше автоімунне захворювання."
         }
       ]
     },
     {
-      "id": "W8",
+      "id": "W7",
       "title": "Умовна візуалізація великих судин",
-      "rationale": "Temporal/axillary ultrasound або FDG-PET/MRI доречні лише після focused history/exam, що підвищує pretest probability.",
+      "rationale": "УЗД скроневих і пахвових артерій або FDG-ПЕТ/МРТ доречні лише після цільової клінічної оцінки, що підвищує попередню ймовірність васкуліту.",
       "priority": "medium",
       "necessity": "conditional_adjunct",
-      "trigger": "Є краніальні, зорові, щелепні, поліміалгічні, пульсові або інші судинні ознаки чи PET-патерн, сумісний із LVV.",
+      "trigger": "Є краніальні, зорові, щелепні, поліміалгічні, пульсові або інші судинні ознаки чи сумісний PET-патерн.",
       "discriminates": [
         "H4",
         "H2",
@@ -1995,21 +3688,23 @@
           "title": "Dejaco C et al. EULAR recommendations for the use of imaging in large vessel vasculitis in clinical practice: 2023 update. Ann Rheum Dis. 2024;83(6):741-751. PMID:37550004. doi:10.1136/ard-2023-224543",
           "url": "https://doi.org/10.1136/ard-2023-224543",
           "year": 2023,
-          "location": "Table 1, Overarching principle A, Recommendations 1–3",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; Table 1, overarching principle A, recommendations 1–3",
           "verification_status": "agent_visual_source_review",
-          "use": "Suspected giant-cell arteritis should receive early expert imaging; ultrasound is first-line for temporal and axillary arteries, while FDG-PET or MRI can assess extracranial large-vessel disease and may reveal other serious causes in atypical systemic presentations.",
-          "applicability_limit": "There are no cranial, visual, jaw or polymyalgia symptoms in the supplied record; large-vessel imaging is a discriminator only if focused history/examination sustains clinical suspicion."
+          "use": "Рекомендації EULAR підтримують ранню експертну візуалізацію при клінічно обґрунтованій підозрі на васкуліт великих судин: УЗД скроневих і пахвових артерій, FDG-ПЕТ або МРТ залежно від патерну.",
+          "applicability_limit": "Краніальні, зорові, щелепні або ревматичні симптоми не наведені; спеціальна візуалізація доречна лише після цільового анамнезу й огляду."
         }
       ]
     },
     {
-      "id": "W9",
+      "id": "W8",
       "title": "Окремо стратифікувати вузол щитоподібної залози",
-      "rationale": "TSH та УЗД з TI-RADS визначають спостереження або FNA; CT-згадка не доводить причину FUO.",
+      "rationale": "TSH та УЗД/TI-RADS визначають follow-up або FNA; знахідка не прирівнюється до причини гарячки.",
       "priority": "medium",
       "necessity": "conditional_adjunct",
-      "trigger": "Вузол лишається неохарактеризованим після стабілізації основного FUO-workup або має клінічно підозрілі ознаки.",
-      "discriminates": [],
+      "trigger": "Вузол лишається неохарактеризованим або має підозрілі ознаки після стабілізації основного обстеження при гарячці неясного генезу.",
+      "discriminates": [
+        "H7"
+      ],
       "evidence_refs": [
         "E-CAND-7"
       ],
@@ -2020,10 +3715,40 @@
           "title": "Tessler FN et al. ACR Thyroid Imaging, Reporting and Data System (TI-RADS): White Paper. J Am Coll Radiol. 2017;14(5):587-595. PMID:28372962. doi:10.1016/j.jacr.2017.01.046",
           "url": "https://doi.org/10.1016/j.jacr.2017.01.046",
           "year": 2017,
-          "location": "Abstract and ACR TI-RADS assessment/management categories",
+          "location": "Previously verified case-scoped source artifact 46fe865c0f07feffba0d036e7639db9e8498b63357c045fb5e1e011d79e9e49f; ACR TI-RADS assessment and management categories",
           "verification_status": "agent_visual_source_review",
-          "use": "Thyroid nodules are managed according to dedicated ultrasound features and size-based TI-RADS thresholds that determine follow-up or FNA rather than by CT detection alone.",
-          "applicability_limit": "The CT report supplies neither nodule size nor sonographic risk features; this source supports a separate thyroid workup and does not connect the nodule to FUO."
+          "use": "ACR TI-RADS підтримує окрему оцінку вузла щитоподібної залози за УЗ-ознаками та розміром для вибору спостереження або тонкоголкової аспірації.",
+          "applicability_limit": "Розмір і сонографічні ознаки вузла не наведені; випадкова КТ-знахідка сама по собі не пояснює гарячку."
+        }
+      ]
+    },
+    {
+      "id": "W9",
+      "title": "Перевірити передумови хвороби Каслмана",
+      "rationale": "Шукати збільшені вузли щонайменше у двох анатомічних зонах; після визначення цілі потрібні адекватна гістологія, HHV-8/LANA та виключення інфекційних, автоімунних і злоякісних імітаторів.",
+      "priority": "medium",
+      "necessity": "conditional_adjunct",
+      "trigger": "Візуалізація демонструє multicentric lymphadenopathy або доступний вузол із клінічно релевантним патерном.",
+      "discriminates": [
+        "H9",
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "evidence_refs": [
+        "E-CAND-8"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-8",
+          "type": "guideline",
+          "title": "NCCN Clinical Practice Guidelines in Oncology: Castleman Disease. Version 2.2026",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "Exact PDF SHA-256 c4054e7c9a7b85e24a111c4f2b92fcdd0ec075aa02f4ceb454202a248386c107; printed/PDF pages 6 (CD-1) and 14 (CD-B 1 of 2); visual render SHA-256 e3b11c843ac23a7a96011728986e2478311c4b285453aa62efd2ae82751c39eb and 0c195bdb71d479d2f782a86ba6cc2d402c7b232d70293eceb6eaf7f43b50a6cd",
+          "verification_status": "agent_visual_source_review",
+          "use": "NCCN вимагає сумісної гістології лімфатичного вузла, ураження щонайменше двох зон і виключення інфекційних, автоімунних, автозапальних та злоякісних імітаторів для ідіопатичної мультицентричної хвороби Каслмана.",
+          "applicability_limit": "У пакеті немає багатозональної лімфаденопатії або сумісної гістології; це умовна альтернатива, а не робочий діагноз."
         }
       ]
     }
@@ -2035,74 +3760,81 @@
     "critic_pass": true,
     "fresh_session_blinded": true,
     "limitations": [
-      "Перший зріз містить один консультаційний документ без повної клінічної хронології.",
-      "Частина лабораторних одиниць і степенів пошкоджена OCR або відсутня в джерелі.",
+      "Опрацьовано всі 39 атомарних фактів одного консультаційного документа; повної клінічної хронології та первинних результатів усіх попередніх обстежень немає.",
+      "Одиниці для F023 і F026 source-corrupted, а для F027-F035 unit_not_recorded; вони не відновлювалися й не використовувалися для числової клінічної класифікації.",
+      "Нормальні або неінтерпретовані без референсів F011-F015, F020-F021, F023-F035 не виключають неоплазію, інфекцію, автозапалення чи HLH/MAS.",
       "Гіпотези є кандидатами для лікарського розгляду; діагноз і лікування не встановлені."
     ],
     "controlled_run": {
       "status": "verified",
-      "run_id": "20260818T144722292110Z-CASE011-controlled-82bb99baf6d1",
+      "run_id": "20260818T173156763807Z-CASE011-controlled-330a72df6068",
       "method_id": "HB-CONTROLLED-SYNTHESIS",
-      "method_version": "2.5.0",
-      "protocol_sha256": "83dd6e18838981c16743458f7b903edb3be7c330e10b5b50b0948d2b0beac38d",
+      "method_version": "2.5.1",
+      "protocol_sha256": "e05b3310bf1d886b961c90ffd3a48962500f0cca9a32cd5460ec0041a46b6662",
       "critic_independent": true,
       "unresolved_critical": 0,
       "pass_receipts": {
-        "breadth": "abef37448681d6220111bbc55e5753f2e269364ef43b1c0d4a491030a264f49f",
-        "grounding": "2261521dad2d754b33105a20aae4b373e14d9f5665f8a70ff810fe66535eb1ce",
-        "reconciliation": "a65792d0e33285d6b81002b6a5d4f91fe11120599615ef0bcb70a6b10b9aa087",
-        "critic": "9a08b9a7dec4d1bbde84184b35eef6036187c01e18445cd888785ce110096d7e"
+        "breadth": "6e7a276e6057af07bcb15ecae590f57d651fb8a9b99049d6a99ff4d94fbd86e9",
+        "grounding": "3ee71316d4521dee3f5a8a9b2b07613f55bff62077e4ff8c2a390b55fad3865f",
+        "reconciliation": "9bf2d606dab0967ea199fef9e99da9e83f7f5cb632af0d94528b7ee4bdb1a55f",
+        "critic": "6f92761d0757a1d65d430bac0e9c90fa92a7b6573cb82209f4d0289d45b79990"
       }
     }
   },
   "comparison_to_previous": [
     {
-      "previous_id": null,
+      "previous_id": "H1",
       "current_id": "H1",
-      "status": "added",
-      "reason": "Перший контрольований синтез Case011; гематологічна неоплазія лишається кандидатною об’єднавчою гілкою."
+      "status": "retained",
+      "reason": "Прихований лімфопроліферативний процес лишається першою робочою гіпотезою; оновлений ledger посилює фактологічну повноту, але не створює морфологічного підтвердження."
     },
     {
-      "previous_id": null,
+      "previous_id": "H2",
       "current_id": "H2",
-      "status": "added",
-      "reason": "Окульта або частково пролікована інфекція збережена як обов’язкова гілка виключення."
+      "status": "retained",
+      "reason": "Окульта або частково пролікована інфекція лишається обов'язковою гілкою виключення."
     },
     {
-      "previous_id": null,
+      "previous_id": "H3",
       "current_id": "H3",
-      "status": "added",
-      "reason": "Still-подібний автозапальний процес можливий лише після перевірки фенотипу й альтернатив."
+      "status": "retained",
+      "reason": "Still-подібне автозапалення збережене після явної фіксації відсутніх фенотипових даних."
     },
     {
-      "previous_id": null,
+      "previous_id": "H4",
       "current_id": "H4",
-      "status": "added",
-      "reason": "Large-vessel vasculitis додано як умовний віково релевантний кандидат."
+      "status": "retained",
+      "reason": "Васкуліт великих судин лишається умовним імітатором за наявності відповідного клінічного сигналу."
     },
     {
-      "previous_id": null,
+      "previous_id": "H5",
       "current_id": "H5",
-      "status": "added",
-      "reason": "ANA-асоційоване автоімунне захворювання додано без прирівнювання ANA до діагнозу."
+      "status": "retained",
+      "reason": "ANA-асоційована автоімунна гілка збережена без прирівнювання ANA 1:320 до діагнозу."
     },
     {
-      "previous_id": null,
+      "previous_id": "H6",
       "current_id": "H6",
-      "status": "added",
-      "reason": "HLH/MAS додано як небезпечний для пропуску стан із недостатніми поточними даними."
+      "status": "retained",
+      "reason": "HLH/MAS лишається небезпечним для пропуску синдромом із чітким quick-screen та urgency trigger."
     },
     {
-      "previous_id": null,
+      "previous_id": "H7",
       "current_id": "H7",
-      "status": "added",
-      "reason": "Солідна пухлина та інцидентний вузол щитоподібної залози розведені як окрема гілка."
+      "status": "retained",
+      "reason": "Солідна пухлина лишається неопластичною альтернативою без локалізованого осередку."
+    },
+    {
+      "previous_id": "H8",
+      "current_id": "H8",
+      "status": "retained",
+      "reason": "Лікарська гарячка лишається потенційно зворотною, але слабо підтриманою гіпотезою."
     },
     {
       "previous_id": null,
-      "current_id": "H8",
+      "current_id": "H9",
       "status": "added",
-      "reason": "Лікарська гарячка додана як зворотна гіпотеза, що залежить від часової історії препаратів."
+      "reason": "Castleman disease додано як окрему умовну лімфопроліферативну альтернативу після exact-page grounding; відсутність multicentric lymphadenopathy та гістології суттєво обмежує її."
     }
   ],
   "safety": {
@@ -2110,29 +3842,28 @@
     "diagnosis_not_established": true,
     "treatment_directives_present": false,
     "limitations": [
-      "Не починати етіологічно спрямовану терапію з цього кандидата без лікарського рішення.",
-      "Інфекція, malignancy та HLH/MAS не закриті.",
-      "Вузол щитоподібної залози розглядається окремо й не оголошений причиною FUO.",
-      "Evidence sources обґрунтовують перевірки, а не діагноз конкретного пацієнта."
+      "Не починати етіологічно спрямоване лікування лише на підставі цього кандидата без рішення лікаря.",
+      "Інфекційний процес, злоякісне захворювання та HLH/MAS не виключені.",
+      "Зовнішні джерела обґрунтовують перевірки, а не діагноз конкретного пацієнта."
     ]
   },
   "decision_readiness": {
-    "status": "insufficient_evidence",
-    "rationale": "Наявні дані дозволяють сформувати пріоритетний диференціальний ряд і безпечний workup, але не виділити один діагноз без локалізації осередку, інфекційного виключення, HLH/MAS screen і тканинного підтвердження за наявності target.",
+    "status": "candidate_available",
+    "rationale": "Наявний клінічний патерн відповідально дозволяє поставити прихований лімфопроліферативний процес першим робочим кандидатом: тривала гарячка, нічна пітливість, спленомегалія, підвищений ЛДГ і легка анемія утворюють узгоджену гілку. Це не остаточний діагноз: інфекція й інші міміки лишаються активними, а гістологічна класифікація потребує локалізації та адекватної тканини.",
     "blocked_actions": [
-      "Встановлення остаточного діагнозу",
-      "Початок імуносупресивної терапії",
-      "Ескалація антибактеріальної терапії без нового інфекційного обґрунтування",
-      "Онкогематологічне або тиреоїдне лікування без морфології"
+      "Встановлення остаточного діагнозу або підтипу лімфоми.",
+      "Початок протипухлинного чи імуносупресивного лікування.",
+      "Ескалація антибактеріальної терапії без нового інфекційного обґрунтування.",
+      "Стадіювання або визначення лікувальної готовності без морфології та рішення лікаря."
     ],
     "required_next_information": [
-      "HLH/MAS quick screen і динаміка",
-      "Focused infection workup",
-      "Whole-body localisation і biopsy target",
-      "Still/vasculitis/autoimmune phenotype",
-      "Thyroid US/TI-RADS",
-      "Повторні лабораторні результати з повними одиницями в межах HLH/MAS screen"
+      "Цільова повторна оцінка інфекційної гілки",
+      "Візуалізація всього тіла для локалізації та визначення цілі для біопсії",
+      "Адекватне гістологічне дослідження з додатковими методами для класифікації",
+      "Швидка скринінгова оцінка HLH/MAS із валідними одиницями",
+      "Клінічні ознаки хвороби Стілла, автоімунного захворювання та васкуліту",
+      "Окрема оцінка вузла за допомогою УЗД щитоподібної залози та TI-RADS"
     ]
   },
-  "use_limit": "Не починати етіологічно спрямовану терапію з цього кандидата без лікарського рішення. Інфекція, malignancy та HLH/MAS не закриті. Вузол щитоподібної залози розглядається окремо й не оголошений причиною FUO. Evidence sources обґрунтовують перевірки, а не діагноз конкретного пацієнта."
+  "use_limit": "Це кандидатний матеріал для перевірки лікарем. Він не встановлює діагноз і не визначає лікування."
 }
