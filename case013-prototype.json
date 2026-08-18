@@ -1,0 +1,3493 @@
+{
+  "schema_version": "hematoboard.public-dashboard-fixture/2.1.0",
+  "generated_from": {
+    "case_key": "case013",
+    "case_id": "CASE013",
+    "bundle_id": "CASE013@5af8de644566",
+    "bundle_revision": "CASE013@5af8de644566",
+    "bundle_sha256": "7ca13c7becc0a983798c4126ed399a68c62f72cb0a6a6529a3fa62862933f7e1",
+    "reasoning_revision_id": "RR-CASE013-2aa18c01945b",
+    "reasoning_revision_sha256": "840d278c9e60a92300501c39b9a43e2232dff12e3061dee65a4bb0d94d45f7dd",
+    "clinical_copy_schema": "hematoboard.public-clinical-copy/1.1.0",
+    "clinical_copy_sha256": "915aaabc70622bbc19e87b33bae3dd270cd65f4edaeefe7733a9f7c7969f43e4",
+    "clinical_copy_origin": "curated_optional_override",
+    "clinical_input_sha256": "03803d36f02d75addaf58b37798342df22b50728c1ecc0ad1d3499162b620e54",
+    "evidence_review_status": "pass",
+    "evidence_review_modes": [
+      "agent_visual_source_review"
+    ],
+    "evidence_review_binding": "embedded",
+    "source_date_context_schema": "hematoboard.source_date_context/1.0",
+    "method_verification": "verified",
+    "clinician_accepted": false
+  },
+  "case": {
+    "id": "CASE013",
+    "title": "Знеособлений клінічний пакет · source ledger прийнято",
+    "overview_brief": "Чоловік, 52 роки. Із 2023 року відзначає м’язовий біль та епізоди оніміння підборіддя і ясен. У кістковому мозку виявлено зрілу B-клітинну популяцію 22% і BRAF V600E; описані поширені зміни кісток та інфільтрація кісткового мозку. Сукупність даних ставить класичний волосатоклітинний лейкоз першим робочим кандидатом, але потребує морфологічного й імунофенотипового підтвердження.",
+    "generated": "2026-08-18",
+    "governance": "Source ledger сформовано лише після об'єднаної людської звірки сканів, структурованого тексту, приватності та hash-derived координатного G4. Гіпотези й лікувальні рішення до канонічного ledger не внесено.",
+    "demographics": "Чоловік, 52 роки",
+    "source": "Знеособлений source layer із приватним hash-pinned PDF/OCR/crop provenance.",
+    "signal": "Source layer прийнято; candidate synthesis формується окремою незмінною ревізією.",
+    "discriminating_step": "Лікарська перевірка окремого candidate synthesis після завершення незалежних reasoning passes."
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "rank": 1,
+      "label": "Класичний волосатоклітинний лейкоз (HCL) з кістковомозковим ураженням",
+      "clinical_role": "Провідний робочий кандидат без морфологічного підтвердження",
+      "rationale": "Зріла B-клітинна популяція 22%, BRAF V600E, відносний лімфоцитоз і поширене ураження кісткового мозку утворюють узгоджений патерн. Назву легкого ланцюга не встановлено, бо відповідне поле джерела пошкоджене.",
+      "support_refs": [
+        "F006",
+        "F007",
+        "F008",
+        "F009",
+        "F010",
+        "F017",
+        "F019",
+        "F027",
+        "F029",
+        "F031",
+        "F032"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F001",
+        "F002",
+        "F003",
+        "F004",
+        "F005",
+        "F011",
+        "F012",
+        "F013",
+        "F014",
+        "F015",
+        "F016",
+        "F018",
+        "F020",
+        "F021",
+        "F022",
+        "F023",
+        "F024",
+        "F025",
+        "F026",
+        "F028",
+        "F030",
+        "F033"
+      ],
+      "missing_evidence": [
+        "Морфологія периферичної крові та кісткового мозку.",
+        "Повна панель CD11c, CD25, CD103, CD123 та annexin A1.",
+        "Метод і матеріал дослідження BRAF V600E."
+      ],
+      "applicability_limits": [
+        "BRAF V600E не є самодостатнім діагнозом.",
+        "Немає повної морфологічної та імунофенотипової класифікації.",
+        "Пошкоджене поле не дозволяє назвати легкий ланцюг."
+      ],
+      "discriminating_checks": [
+        "Морфологія, ІГХ та проточна цитометрія кісткового мозку.",
+        "Повна панель для розмежування з іншими малими B-клітинними неоплазіями."
+      ],
+      "short_label": "Класичний волосатоклітинний лейкоз",
+      "counts": {
+        "support": 11,
+        "refute": 0,
+        "neutral": 22
+      },
+      "support_facts": [
+        {
+          "id": "F006",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "патологічні зміни кісткового мозку",
+          "value": "патологічні зміни кісткового мозку: патологічні зміни кісткового мозку.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "патологічні зміни кісткового мозку",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F007",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "популяцію В-лімфоцитів",
+          "value": "популяцію В-лімфоцитів: 22 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "з експресією CD19, CD20, CD10, CD22, CD11c, CD25, CD103, HLA-DR",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F008",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "переважання експресії легких ланцюгів імуноглобулінів",
+          "value": "переважання експресії легких ланцюгів імуноглобулінів: ? (?/? ? 75%/25%).",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "? (?/? ? 75%/25%)",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "analyte_source_corrupted",
+          "human_verified": true
+        },
+        {
+          "id": "F009",
+          "kind": "negative_finding",
+          "domain": "negative",
+          "display": "Експресія маркерів Т-клітинної, NK-клітинної, мієлоїдної та бластної ліній не виявлена",
+          "value": "Експресія маркерів Т-клітинної, NK-клітинної, мієлоїдної та бластної ліній не виявлена: не виявлена.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "не виявлена",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "мутації BRAF V600E",
+          "value": "мутації BRAF V600E: наявність мутації BRAF V600E.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "наявність мутації BRAF V600E",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F017",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "нейтрофіли",
+          "value": "нейтрофіли: 32.2 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F019",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лімфоцити",
+          "value": "лімфоцити: 60.2 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F027",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "нейтрофіли",
+          "value": "нейтрофіли: 40.5 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F029",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лімфоцити",
+          "value": "лімфоцити: 52.4 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F031",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+          "value": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків: поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+          "effective_at": "2026-07-27",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F032",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "специфічному ураженню кісткового мозку",
+          "value": "специфічному ураженню кісткового мозку: лейкемічна інфільтрація / лейкемічні депозити.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "лейкемічна інфільтрація / лейкемічні депозити",
+          "effective_at": "2026-07-27",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F001",
+          "kind": "clinical_note",
+          "domain": "other",
+          "display": "Чоловік, 52 роки",
+          "value": "Чоловік, 52 роки: Чоловік, 52 роки.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "Чоловік, 52 роки",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "domain": "other",
+          "display": "періодичні болі в м’язах проксимальних відділів ніг та рук",
+          "value": "періодичні болі в м’язах проксимальних відділів ніг та рук: періодичні болі в м’язах проксимальних відділів ніг та рук.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "періодичні болі в м’язах проксимальних відділів ніг та рук",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F003",
+          "kind": "clinical_note",
+          "domain": "other",
+          "display": "епізоди оніміння підборіддя та ділянки ясен праворуч",
+          "value": "епізоди оніміння підборіддя та ділянки ясен праворуч: епізоди оніміння підборіддя та ділянки ясен праворуч.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "епізоди оніміння підборіддя та ділянки ясен праворуч",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F004",
+          "kind": "clinical_note",
+          "domain": "other",
+          "display": "відчуття внутрішнього дискомфорту від літа 2023 року",
+          "value": "відчуття внутрішнього дискомфорту від літа 2023 року: відчуття внутрішнього дискомфорту від літа 2023 року.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "відчуття внутрішнього дискомфорту від літа 2023 року",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F005",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "дифузний остеопороз кісток черепа",
+          "value": "дифузний остеопороз кісток черепа: дифузний остеопороз кісток черепа, більш виражений в ділянці основи черепа, пірамідок скроневих кісток, потиличної кістки.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "дифузний остеопороз кісток черепа, більш виражений в ділянці основи черепа, пірамідок скроневих кісток, потиличної кістки",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F011",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лейкоцити",
+          "value": "лейкоцити: 6.3.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F012",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "еритроцити",
+          "value": "еритроцити: 4.93.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F013",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "гемоглобін",
+          "value": "гемоглобін: 149.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F014",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "гематокрит",
+          "value": "гематокрит: 42.8.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F015",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "тромбоцити",
+          "value": "тромбоцити: 254.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F016",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "нейтрофіли",
+          "value": "нейтрофіли: 2.03.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F018",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лімфоцити",
+          "value": "лімфоцити: 3.79.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F020",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "ШОЕ",
+          "value": "ШОЕ: 47 мм/год.",
+          "unit": "мм/год",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F021",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лейкоцити",
+          "value": "лейкоцити: 5.36.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F022",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "еритроцити",
+          "value": "еритроцити: 4.57.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F023",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "гемоглобін",
+          "value": "гемоглобін: 144.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F024",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "гематокрит",
+          "value": "гематокрит: 40.4.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F025",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "тромбоцити",
+          "value": "тромбоцити: 215.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F026",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "нейтрофіли",
+          "value": "нейтрофіли: 2.17.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F028",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лімфоцити",
+          "value": "лімфоцити: 2.81.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F030",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "ШОЕ",
+          "value": "ШОЕ: 54 мм/год.",
+          "unit": "мм/год",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F033",
+          "kind": "negative_finding",
+          "domain": "negative",
+          "display": "Структурних переконливих даних за первинний запальний сакроліт не виявлено",
+          "value": "Структурних переконливих даних за первинний запальний сакроліт не виявлено: не виявлено.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "не виявлено",
+          "effective_at": "2026-07-27",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H2",
+      "rank": 2,
+      "label": "Інша зріла B-клітинна неоплазія, насамперед SMZL або інша мала B-клітинна лімфома/лейкоз",
+      "clinical_role": "Близька класифікаційна альтернатива",
+      "rationale": "Клональна B-клітинна ознака та інфільтрація кісткового мозку сумісні з лімфомою маргінальної зони селезінки або іншою малою B-клітинною лімфомою/лейкозом. Без повної панелі й морфології ці процеси не можна надійно відокремити від волосатоклітинного лейкозу.",
+      "support_refs": [
+        "F006",
+        "F007",
+        "F008",
+        "F009",
+        "F031",
+        "F032"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F010",
+        "F017",
+        "F019",
+        "F027",
+        "F029"
+      ],
+      "missing_evidence": [
+        "Повний B-клітинний імунофенотип.",
+        "Дані про селезінку та лімфатичні вузли.",
+        "Морфологія кісткового мозку."
+      ],
+      "applicability_limits": [
+        "BRAF V600E зміщує пріоритет до волосатоклітинного лейкозу, але не завершує класифікацію."
+      ],
+      "discriminating_checks": [
+        "Інтегрована морфологія, проточна цитометрія, ІГХ та молекулярна кореляція."
+      ],
+      "short_label": "Інша зріла B-клітинна неоплазія",
+      "counts": {
+        "support": 6,
+        "refute": 0,
+        "neutral": 5
+      },
+      "support_facts": [
+        {
+          "id": "F006",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "патологічні зміни кісткового мозку",
+          "value": "патологічні зміни кісткового мозку: патологічні зміни кісткового мозку.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "патологічні зміни кісткового мозку",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F007",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "популяцію В-лімфоцитів",
+          "value": "популяцію В-лімфоцитів: 22 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "з експресією CD19, CD20, CD10, CD22, CD11c, CD25, CD103, HLA-DR",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F008",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "переважання експресії легких ланцюгів імуноглобулінів",
+          "value": "переважання експресії легких ланцюгів імуноглобулінів: ? (?/? ? 75%/25%).",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "? (?/? ? 75%/25%)",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "analyte_source_corrupted",
+          "human_verified": true
+        },
+        {
+          "id": "F009",
+          "kind": "negative_finding",
+          "domain": "negative",
+          "display": "Експресія маркерів Т-клітинної, NK-клітинної, мієлоїдної та бластної ліній не виявлена",
+          "value": "Експресія маркерів Т-клітинної, NK-клітинної, мієлоїдної та бластної ліній не виявлена: не виявлена.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "не виявлена",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F031",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+          "value": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків: поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+          "effective_at": "2026-07-27",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F032",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "специфічному ураженню кісткового мозку",
+          "value": "специфічному ураженню кісткового мозку: лейкемічна інфільтрація / лейкемічні депозити.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "лейкемічна інфільтрація / лейкемічні депозити",
+          "effective_at": "2026-07-27",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F010",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "мутації BRAF V600E",
+          "value": "мутації BRAF V600E: наявність мутації BRAF V600E.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "наявність мутації BRAF V600E",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F017",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "нейтрофіли",
+          "value": "нейтрофіли: 32.2 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F019",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лімфоцити",
+          "value": "лімфоцити: 60.2 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F027",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "нейтрофіли",
+          "value": "нейтрофіли: 40.5 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F029",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "лімфоцити",
+          "value": "лімфоцити: 52.4 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H3",
+      "rank": 3,
+      "label": "Плазмоклітинна неоплазія / множинна мієлома",
+      "clinical_role": "Небезпечна для пропуску кісткова альтернатива",
+      "rationale": "Біль, синдром онімілого підборіддя, зміни кісток черепа та МРТ-ознаки інфільтрації кісткового мозку потребують виключення плазмоклітинного процесу.",
+      "support_refs": [
+        "F002",
+        "F003",
+        "F005",
+        "F006",
+        "F031"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F007",
+        "F008",
+        "F010",
+        "F013",
+        "F023"
+      ],
+      "missing_evidence": [
+        "Електрофорез та імунофіксація білків сироватки й сечі, кількісні імуноглобуліни та вільні легкі ланцюги сироватки.",
+        "Кальцій і функція нирок.",
+        "Частка та клональність плазматичних клітин кісткового мозку.",
+        "Характер кісткових уражень."
+      ],
+      "applicability_limits": [
+        "Пошкоджене поле не можна трактувати як визначену рестрикцію легкого ланцюга.",
+        "Інфільтрація без плазмоклітинної морфології не встановлює мієлому."
+      ],
+      "discriminating_checks": [
+        "Перевірка моноклонального білка, вільних легких ланцюгів та морфології кісткового мозку.",
+        "Перевірка подій, що визначають мієлому."
+      ],
+      "short_label": "Плазмоклітинна неоплазія або множинна мієлома",
+      "counts": {
+        "support": 5,
+        "refute": 0,
+        "neutral": 5
+      },
+      "support_facts": [
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "domain": "other",
+          "display": "періодичні болі в м’язах проксимальних відділів ніг та рук",
+          "value": "періодичні болі в м’язах проксимальних відділів ніг та рук: періодичні болі в м’язах проксимальних відділів ніг та рук.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "періодичні болі в м’язах проксимальних відділів ніг та рук",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F003",
+          "kind": "clinical_note",
+          "domain": "other",
+          "display": "епізоди оніміння підборіддя та ділянки ясен праворуч",
+          "value": "епізоди оніміння підборіддя та ділянки ясен праворуч: епізоди оніміння підборіддя та ділянки ясен праворуч.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "епізоди оніміння підборіддя та ділянки ясен праворуч",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F005",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "дифузний остеопороз кісток черепа",
+          "value": "дифузний остеопороз кісток черепа: дифузний остеопороз кісток черепа, більш виражений в ділянці основи черепа, пірамідок скроневих кісток, потиличної кістки.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "дифузний остеопороз кісток черепа, більш виражений в ділянці основи черепа, пірамідок скроневих кісток, потиличної кістки",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F006",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "патологічні зміни кісткового мозку",
+          "value": "патологічні зміни кісткового мозку: патологічні зміни кісткового мозку.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "патологічні зміни кісткового мозку",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F031",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+          "value": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків: поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+          "effective_at": "2026-07-27",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F007",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "популяцію В-лімфоцитів",
+          "value": "популяцію В-лімфоцитів: 22 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "з експресією CD19, CD20, CD10, CD22, CD11c, CD25, CD103, HLA-DR",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F008",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "переважання експресії легких ланцюгів імуноглобулінів",
+          "value": "переважання експресії легких ланцюгів імуноглобулінів: ? (?/? ? 75%/25%).",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "? (?/? ? 75%/25%)",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "analyte_source_corrupted",
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "мутації BRAF V600E",
+          "value": "мутації BRAF V600E: наявність мутації BRAF V600E.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "наявність мутації BRAF V600E",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F013",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "гемоглобін",
+          "value": "гемоглобін: 149.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        },
+        {
+          "id": "F023",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "гемоглобін",
+          "value": "гемоглобін: 144.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "unit_not_recorded",
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H4",
+      "rank": 4,
+      "label": "Інша гематологічна неоплазія з інфільтрацією кісткового мозку",
+      "clinical_role": "Резервна гематологічна гілка",
+      "rationale": "Радіологічний опис допускає лейкемічну інфільтрацію. Негативні T-, NK-, мієлоїдні та бластні маркери послаблюють окремі гілки, але неповна панель не дозволяє остаточно їх виключити.",
+      "support_refs": [
+        "F006",
+        "F031",
+        "F032"
+      ],
+      "refute_refs": [
+        "F009"
+      ],
+      "neutral_refs": [
+        "F007",
+        "F010"
+      ],
+      "missing_evidence": [
+        "Морфологія і повна панель клітинної лінії."
+      ],
+      "applicability_limits": [
+        "Радіологічний висновок є інтерпретацією, а не гістологічним діагнозом."
+      ],
+      "discriminating_checks": [
+        "Трепанобіопсія з ІГХ і проточною цитометрією."
+      ],
+      "short_label": "Інша гематологічна неоплазія з інфільтрацією кісткового мозку",
+      "counts": {
+        "support": 3,
+        "refute": 1,
+        "neutral": 2
+      },
+      "support_facts": [
+        {
+          "id": "F006",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "патологічні зміни кісткового мозку",
+          "value": "патологічні зміни кісткового мозку: патологічні зміни кісткового мозку.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "патологічні зміни кісткового мозку",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F031",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+          "value": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків: поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+          "effective_at": "2026-07-27",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F032",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "специфічному ураженню кісткового мозку",
+          "value": "специфічному ураженню кісткового мозку: лейкемічна інфільтрація / лейкемічні депозити.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "лейкемічна інфільтрація / лейкемічні депозити",
+          "effective_at": "2026-07-27",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [
+        {
+          "id": "F009",
+          "kind": "negative_finding",
+          "domain": "negative",
+          "display": "Експресія маркерів Т-клітинної, NK-клітинної, мієлоїдної та бластної ліній не виявлена",
+          "value": "Експресія маркерів Т-клітинної, NK-клітинної, мієлоїдної та бластної ліній не виявлена: не виявлена.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "не виявлена",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ],
+      "neutral_facts": [
+        {
+          "id": "F007",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "популяцію В-лімфоцитів",
+          "value": "популяцію В-лімфоцитів: 22 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "з експресією CD19, CD20, CD10, CD22, CD11c, CD25, CD103, HLA-DR",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "мутації BRAF V600E",
+          "value": "мутації BRAF V600E: наявність мутації BRAF V600E.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "наявність мутації BRAF V600E",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H5",
+      "rank": 5,
+      "label": "Метастатична або інша негематологічна злоякісна інфільтрація кісток",
+      "clinical_role": "Небезпечний імітатор іншого механізму",
+      "rationale": "Синдром онімілого підборіддя та поширене ураження кісткового мозку можуть супроводжувати злоякісну інфільтрацію іншого походження, якщо гематологічна класифікація не підтвердиться.",
+      "support_refs": [
+        "F003",
+        "F005",
+        "F031"
+      ],
+      "refute_refs": [],
+      "neutral_refs": [
+        "F007",
+        "F008",
+        "F010"
+      ],
+      "missing_evidence": [
+        "Клінічний огляд, цільова візуалізація та тканинна верифікація."
+      ],
+      "applicability_limits": [
+        "Даних про первинну солідну пухлину немає."
+      ],
+      "discriminating_checks": [
+        "Тканинна діагностика найбільш інформативного осередку."
+      ],
+      "short_label": "Метастатична або інша негематологічна злоякісна інфільтрація",
+      "counts": {
+        "support": 3,
+        "refute": 0,
+        "neutral": 3
+      },
+      "support_facts": [
+        {
+          "id": "F003",
+          "kind": "clinical_note",
+          "domain": "other",
+          "display": "епізоди оніміння підборіддя та ділянки ясен праворуч",
+          "value": "епізоди оніміння підборіддя та ділянки ясен праворуч: епізоди оніміння підборіддя та ділянки ясен праворуч.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "епізоди оніміння підборіддя та ділянки ясен праворуч",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F005",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "дифузний остеопороз кісток черепа",
+          "value": "дифузний остеопороз кісток черепа: дифузний остеопороз кісток черепа, більш виражений в ділянці основи черепа, пірамідок скроневих кісток, потиличної кістки.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "дифузний остеопороз кісток черепа, більш виражений в ділянці основи черепа, пірамідок скроневих кісток, потиличної кістки",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F031",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+          "value": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків: поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+          "effective_at": "2026-07-27",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [],
+      "neutral_facts": [
+        {
+          "id": "F007",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "популяцію В-лімфоцитів",
+          "value": "популяцію В-лімфоцитів: 22 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "з експресією CD19, CD20, CD10, CD22, CD11c, CD25, CD103, HLA-DR",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F008",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "переважання експресії легких ланцюгів імуноглобулінів",
+          "value": "переважання експресії легких ланцюгів імуноглобулінів: ? (?/? ? 75%/25%).",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "? (?/? ? 75%/25%)",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "analyte_source_corrupted",
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "мутації BRAF V600E",
+          "value": "мутації BRAF V600E: наявність мутації BRAF V600E.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "наявність мутації BRAF V600E",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ]
+    },
+    {
+      "id": "H6",
+      "rank": 6,
+      "label": "Запальний, інфекційний або метаболічний супутній процес",
+      "clinical_role": "Менш імовірний імітатор або другий процес",
+      "rationale": "Міалгії, ШОЕ 47 і 54 мм/год та остеопороз можуть мати додаткове запальне або метаболічне пояснення, але не пояснюють клональну B-клітинну ознаку й BRAF V600E.",
+      "support_refs": [
+        "F002",
+        "F005",
+        "F020",
+        "F030"
+      ],
+      "refute_refs": [
+        "F033"
+      ],
+      "neutral_refs": [
+        "F006",
+        "F007",
+        "F010",
+        "F031"
+      ],
+      "missing_evidence": [
+        "Клінічно спрямована оцінка інфекції, запалення та метаболізму кістки."
+      ],
+      "applicability_limits": [
+        "Відсутність сакроілеїту не виключає всі запальні стани."
+      ],
+      "discriminating_checks": [
+        "Додаткові дослідження лише за клінічними показаннями."
+      ],
+      "short_label": "Запальний, інфекційний або метаболічний супутній процес",
+      "counts": {
+        "support": 4,
+        "refute": 1,
+        "neutral": 4
+      },
+      "support_facts": [
+        {
+          "id": "F002",
+          "kind": "clinical_note",
+          "domain": "other",
+          "display": "періодичні болі в м’язах проксимальних відділів ніг та рук",
+          "value": "періодичні болі в м’язах проксимальних відділів ніг та рук: періодичні болі в м’язах проксимальних відділів ніг та рук.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "періодичні болі в м’язах проксимальних відділів ніг та рук",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F005",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "дифузний остеопороз кісток черепа",
+          "value": "дифузний остеопороз кісток черепа: дифузний остеопороз кісток черепа, більш виражений в ділянці основи черепа, пірамідок скроневих кісток, потиличної кістки.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "дифузний остеопороз кісток черепа, більш виражений в ділянці основи черепа, пірамідок скроневих кісток, потиличної кістки",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F020",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "ШОЕ",
+          "value": "ШОЕ: 47 мм/год.",
+          "unit": "мм/год",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F030",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "ШОЕ",
+          "value": "ШОЕ: 54 мм/год.",
+          "unit": "мм/год",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": null,
+          "effective_at": "2026-05-19",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ],
+      "refute_facts": [
+        {
+          "id": "F033",
+          "kind": "negative_finding",
+          "domain": "negative",
+          "display": "Структурних переконливих даних за первинний запальний сакроліт не виявлено",
+          "value": "Структурних переконливих даних за первинний запальний сакроліт не виявлено: не виявлено.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "не виявлено",
+          "effective_at": "2026-07-27",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ],
+      "neutral_facts": [
+        {
+          "id": "F006",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "патологічні зміни кісткового мозку",
+          "value": "патологічні зміни кісткового мозку: патологічні зміни кісткового мозку.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "патологічні зміни кісткового мозку",
+          "effective_at": null,
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F007",
+          "kind": "measurement",
+          "domain": "lab",
+          "display": "популяцію В-лімфоцитів",
+          "value": "популяцію В-лімфоцитів: 22 %.",
+          "unit": "%",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "з експресією CD19, CD20, CD10, CD22, CD11c, CD25, CD103, HLA-DR",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F010",
+          "kind": "diagnostic_interpretation",
+          "domain": "diagnostic",
+          "display": "мутації BRAF V600E",
+          "value": "мутації BRAF V600E: наявність мутації BRAF V600E.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "наявність мутації BRAF V600E",
+          "effective_at": "2025-12-11",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        },
+        {
+          "id": "F031",
+          "kind": "imaging_finding",
+          "domain": "imaging",
+          "display": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+          "value": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків: поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків.",
+          "unit": "—",
+          "reference": "—",
+          "comparator": null,
+          "interpretation": null,
+          "source_detail": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+          "effective_at": "2026-07-27",
+          "source_reported_at": null,
+          "source_date_role": null,
+          "page": 1,
+          "source_fragment_id": "FRAG-0B9BFB06C869-001",
+          "structured_row_id": null,
+          "assertion_status": "recorded_candidate",
+          "human_verified": true
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F007",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F009",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F017",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F019",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F027",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F029",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F031",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F032",
+      "hypothesis_id": "H1",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F001",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F004",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F011",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F012",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F013",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F014",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F015",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F016",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F018",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F020",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F021",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F022",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F023",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F024",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F025",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F026",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F028",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F030",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F033",
+      "hypothesis_id": "H1",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F007",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F009",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F031",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F032",
+      "hypothesis_id": "H2",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F017",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F019",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F027",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F029",
+      "hypothesis_id": "H2",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F031",
+      "hypothesis_id": "H3",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F007",
+      "hypothesis_id": "H3",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H3",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H3",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F013",
+      "hypothesis_id": "H3",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F023",
+      "hypothesis_id": "H3",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F031",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F032",
+      "hypothesis_id": "H4",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F009",
+      "hypothesis_id": "H4",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F007",
+      "hypothesis_id": "H4",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H4",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F003",
+      "hypothesis_id": "H5",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H5",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F031",
+      "hypothesis_id": "H5",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F007",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F008",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H5",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F002",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F005",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F020",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F030",
+      "hypothesis_id": "H6",
+      "relation": "support"
+    },
+    {
+      "evidence_ref": "F033",
+      "hypothesis_id": "H6",
+      "relation": "refute"
+    },
+    {
+      "evidence_ref": "F006",
+      "hypothesis_id": "H6",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F007",
+      "hypothesis_id": "H6",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F010",
+      "hypothesis_id": "H6",
+      "relation": "neutral"
+    },
+    {
+      "evidence_ref": "F031",
+      "hypothesis_id": "H6",
+      "relation": "neutral"
+    }
+  ],
+  "observations": [
+    {
+      "id": "OBS-0B9BFB06C869-001",
+      "kind": "clinical_note",
+      "domain": "other",
+      "display": "Чоловік, 52 роки",
+      "value": "Чоловік, 52 роки",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": "Чоловік, 52 роки",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-002",
+      "kind": "clinical_note",
+      "domain": "other",
+      "display": "періодичні болі в м’язах проксимальних відділів ніг та рук",
+      "value": "періодичні болі в м’язах проксимальних відділів ніг та рук",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": "періодичні болі в м’язах проксимальних відділів ніг та рук",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-003",
+      "kind": "clinical_note",
+      "domain": "other",
+      "display": "епізоди оніміння підборіддя та ділянки ясен праворуч",
+      "value": "епізоди оніміння підборіддя та ділянки ясен праворуч",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": "епізоди оніміння підборіддя та ділянки ясен праворуч",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-004",
+      "kind": "clinical_note",
+      "domain": "other",
+      "display": "відчуття внутрішнього дискомфорту від літа 2023 року",
+      "value": "відчуття внутрішнього дискомфорту від літа 2023 року",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": "відчуття внутрішнього дискомфорту від літа 2023 року",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-005",
+      "kind": "imaging_finding",
+      "domain": "imaging",
+      "display": "дифузний остеопороз кісток черепа",
+      "value": "дифузний остеопороз кісток черепа, більш виражений в ділянці основи черепа, пірамідок скроневих кісток, потиличної кістки",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "МРТ головного мозку від 05.2024 року та МСКТ черепа від 02.2025 року",
+      "source_detail": "дифузний остеопороз кісток черепа, більш виражений в ділянці основи черепа, пірамідок скроневих кісток, потиличної кістки",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-006",
+      "kind": "imaging_finding",
+      "domain": "imaging",
+      "display": "патологічні зміни кісткового мозку",
+      "value": "патологічні зміни кісткового мозку",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "розцінені як прояви системного процесу",
+      "source_detail": "патологічні зміни кісткового мозку",
+      "effective_at": null,
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-007",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "популяцію В-лімфоцитів",
+      "value": 22,
+      "unit": "%",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "з експресією CD19, CD20, CD10, CD22, CD11c, CD25, CD103, HLA-DR",
+      "source_detail": "з експресією CD19, CD20, CD10, CD22, CD11c, CD25, CD103, HLA-DR",
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-008",
+      "kind": "diagnostic_interpretation",
+      "domain": "diagnostic",
+      "display": "переважання експресії легких ланцюгів імуноглобулінів",
+      "value": "? (?/? ? 75%/25%)",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "переважання експресії легких ланцюгів імуноглобулінів",
+      "source_detail": "? (?/? ? 75%/25%)",
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "analyte_source_corrupted",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-009",
+      "kind": "negative_finding",
+      "domain": "negative",
+      "display": "Експресія маркерів Т-клітинної, NK-клітинної, мієлоїдної та бластної ліній не виявлена",
+      "value": "не виявлена",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": "не виявлена",
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-010",
+      "kind": "diagnostic_interpretation",
+      "domain": "diagnostic",
+      "display": "мутації BRAF V600E",
+      "value": "наявність мутації BRAF V600E",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": "наявність мутації BRAF V600E",
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-011",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "лейкоцити",
+      "value": 6.3,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-012",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "еритроцити",
+      "value": 4.93,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-013",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "гемоглобін",
+      "value": 149,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-014",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "гематокрит",
+      "value": 42.8,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-015",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "тромбоцити",
+      "value": 254,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-016",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "нейтрофіли",
+      "value": 2.03,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-017",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "нейтрофіли",
+      "value": 32.2,
+      "unit": "%",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-018",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "лімфоцити",
+      "value": 3.79,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-019",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "лімфоцити",
+      "value": 60.2,
+      "unit": "%",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-020",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "ШОЕ",
+      "value": 47,
+      "unit": "мм/год",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2025-12-11",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-021",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "лейкоцити",
+      "value": 5.36,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-05-19",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-022",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "еритроцити",
+      "value": 4.57,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-05-19",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-023",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "гемоглобін",
+      "value": 144,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-05-19",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-024",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "гематокрит",
+      "value": 40.4,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-05-19",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-025",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "тромбоцити",
+      "value": 215,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-05-19",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-026",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "нейтрофіли",
+      "value": 2.17,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-05-19",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-027",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "нейтрофіли",
+      "value": 40.5,
+      "unit": "%",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-05-19",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-028",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "лімфоцити",
+      "value": 2.81,
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-05-19",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "unit_not_recorded",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-029",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "лімфоцити",
+      "value": 52.4,
+      "unit": "%",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-05-19",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-030",
+      "kind": "measurement",
+      "domain": "lab",
+      "display": "ШОЕ",
+      "value": 54,
+      "unit": "мм/год",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": null,
+      "effective_at": "2026-05-19",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-031",
+      "kind": "imaging_finding",
+      "domain": "imaging",
+      "display": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+      "value": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "МР-картина",
+      "source_detail": "поширеної неоднорідної вогнищево-дифузної інфільтрації кісткового мозку крижа та клубових кісток з обох боків",
+      "effective_at": "2026-07-27",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-032",
+      "kind": "diagnostic_interpretation",
+      "domain": "diagnostic",
+      "display": "специфічному ураженню кісткового мозку",
+      "value": "лейкемічна інфільтрація / лейкемічні депозити",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": "зміни першочергово може відповідати специфічному ураженню кісткового мозку",
+      "source_detail": "лейкемічна інфільтрація / лейкемічні депозити",
+      "effective_at": "2026-07-27",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    },
+    {
+      "id": "OBS-0B9BFB06C869-033",
+      "kind": "negative_finding",
+      "domain": "negative",
+      "display": "Структурних переконливих даних за первинний запальний сакроліт не виявлено",
+      "value": "не виявлено",
+      "unit": "—",
+      "reference": "—",
+      "comparator": null,
+      "interpretation": null,
+      "source_detail": "не виявлено",
+      "effective_at": "2026-07-27",
+      "source_reported_at": null,
+      "source_date_role": null,
+      "page": 1,
+      "source_fragment_id": "FRAG-0B9BFB06C869-001",
+      "structured_row_id": null,
+      "assertion_status": "recorded_candidate",
+      "human_verified": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "E-CAND-1",
+      "type": "guideline",
+      "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas; exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+      "url": "https://www.nccn.org/guidelines/category_1",
+      "year": 2026,
+      "location": "b-cell.pdf, PDF page 114, node NHODG-A 4 OF 8; visual render SHA-256 2ab1b40a52ae3e8e0e5a2e3139ca374db931e2fca4a6e57f2c7407b0f2c350e3",
+      "verification_status": "agent_visual_source_review",
+      "use": "Настанова підтримує склад морфологічної та імунофенотипової панелі для розмежування волосатоклітинного лейкозу з іншими малими B-клітинними неоплазіями.",
+      "applicability_limit": "Панель не класифікує цього пацієнта без морфології та повних результатів маркерів."
+    },
+    {
+      "id": "E-CAND-2",
+      "type": "guideline",
+      "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas; exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+      "url": "https://www.nccn.org/guidelines/category_1",
+      "year": 2026,
+      "location": "b-cell.pdf, PDF page 43, node SMZL-1; visual render SHA-256 ed63c252cf61c65217d26f6b19926d1dbb9739a3562b65924525712bbb87b89c",
+      "verification_status": "agent_visual_source_review",
+      "use": "Настанова підтримує окрему перевірку лімфоми маргінальної зони селезінки та інтегровану клініко-морфологічну кореляцію.",
+      "applicability_limit": "Джерело не доводить цю альтернативу й не дозволяє переносити критерії лікування до кандидата."
+    },
+    {
+      "id": "E-CAND-3",
+      "type": "guideline",
+      "title": "NCCN Guidelines Version 5.2026: Multiple Myeloma; exact PDF SHA-256 aa07e56116ba7976013584fe39f6f7120e68272437a87df4f1204cd664e35683",
+      "url": "https://www.nccn.org/guidelines/category_1",
+      "year": 2026,
+      "location": "myeloma.pdf, PDF page 53, node MS-3; visual render SHA-256 46cadd0534ac6b19dcb5008309e0d5f9e37659625b9cf3c0a2bfbe785f6cb597",
+      "verification_status": "agent_visual_source_review",
+      "use": "Настанова визначає базове обстеження при підозрі на множинну мієлому: показники крові, кальцій і функцію нирок, дослідження моноклонального білка, вільних легких ланцюгів і кісткового мозку.",
+      "applicability_limit": "Пошкоджене поле легкого ланцюга не можна використовувати як доказ плазмоклітинної рестрикції."
+    },
+    {
+      "id": "E-CAND-4",
+      "type": "guideline",
+      "title": "NCCN Guidelines Version 5.2026: Multiple Myeloma; exact PDF SHA-256 aa07e56116ba7976013584fe39f6f7120e68272437a87df4f1204cd664e35683",
+      "url": "https://www.nccn.org/guidelines/category_1",
+      "year": 2026,
+      "location": "myeloma.pdf, PDF page 16, node MYEL-A; visual render SHA-256 12d507ba97e71221e2348838e76b3b1c996b9567d9039b84bc014eac5d210bac",
+      "verification_status": "agent_visual_source_review",
+      "use": "Настанова визначає морфологічні та клінічні події, потрібні для встановлення активної множинної мієломи.",
+      "applicability_limit": "Опис інфільтрації без плазмоклітинної морфології та атрибуції не встановлює мієлому."
+    },
+    {
+      "id": "E-CAND-5",
+      "type": "pmid",
+      "title": "Lossos A, Siegal T. Numb chin syndrome in cancer patients: etiology, response to treatment, and prognostic significance. Neurology. 1992;42(6):1181-1184. PMID:1603345. doi:10.1212/wnl.42.6.1181; exact artifact SHA-256 e96dc3c9e37075b514833fe933a9e826b4508a8a7b7742a7d2f4dc2b3fbe73f8",
+      "url": "https://doi.org/10.1212/wnl.42.6.1181",
+      "year": 1992,
+      "location": "Exact MEDLINE text artifact, abstract paragraph beginning 'We retrospectively evaluated 42 consecutive cancer patients'",
+      "verification_status": "agent_visual_source_review",
+      "use": "Ретроспективна серія підтримує цільовий пошук анатомічної онкологічної причини синдрому онімілого підборіддя з урахуванням нижньої щелепи, основи черепа та лептоменінгеального поширення.",
+      "applicability_limit": "Це давня серія лише онкологічних пацієнтів; вона не визначає етіологію цього пацієнта, не встановлює універсальної терміновості та не вимагає однакового набору досліджень для всіх."
+    }
+  ],
+  "source_traces": [
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G2",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W1",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-1",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3"
+      ]
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "critical_gap",
+      "via_id": "G1",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "critical_gap",
+      "via_id": "G2",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "workup",
+      "via_id": "W1",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H4"
+      ]
+    },
+    {
+      "source_id": "E-CAND-2",
+      "via_type": "workup",
+      "via_id": "W5",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H6"
+      ]
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "critical_gap",
+      "via_id": "G3",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "critical_gap",
+      "via_id": "G4",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H3"
+      ]
+    },
+    {
+      "source_id": "E-CAND-3",
+      "via_type": "workup",
+      "via_id": "W3",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H2",
+        "H3"
+      ]
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "critical_gap",
+      "via_id": "G4",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-4",
+      "via_type": "workup",
+      "via_id": "W2",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H3"
+      ]
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "critical_gap",
+      "via_id": "G5",
+      "role": "grounds_open_gap",
+      "target_hypothesis_ids": []
+    },
+    {
+      "source_id": "E-CAND-5",
+      "via_type": "workup",
+      "via_id": "W4",
+      "role": "grounds_discriminator",
+      "target_hypothesis_ids": [
+        "H1",
+        "H3",
+        "H5"
+      ]
+    }
+  ],
+  "critical_gaps": [
+    {
+      "id": "G1",
+      "text": "Немає морфології та повної панелі для розмежування волосатоклітинного лейкозу з іншими малими B-клітинними неоплазіями.",
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-2"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas; exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "b-cell.pdf, PDF page 114, node NHODG-A 4 OF 8; visual render SHA-256 2ab1b40a52ae3e8e0e5a2e3139ca374db931e2fca4a6e57f2c7407b0f2c350e3",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова підтримує склад морфологічної та імунофенотипової панелі для розмежування волосатоклітинного лейкозу з іншими малими B-клітинними неоплазіями.",
+          "applicability_limit": "Панель не класифікує цього пацієнта без морфології та повних результатів маркерів."
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas; exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "b-cell.pdf, PDF page 43, node SMZL-1; visual render SHA-256 ed63c252cf61c65217d26f6b19926d1dbb9739a3562b65924525712bbb87b89c",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова підтримує окрему перевірку лімфоми маргінальної зони селезінки та інтегровану клініко-морфологічну кореляцію.",
+          "applicability_limit": "Джерело не доводить цю альтернативу й не дозволяє переносити критерії лікування до кандидата."
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "text": "Не вказані метод і матеріал дослідження BRAF V600E.",
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-2"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas; exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "b-cell.pdf, PDF page 114, node NHODG-A 4 OF 8; visual render SHA-256 2ab1b40a52ae3e8e0e5a2e3139ca374db931e2fca4a6e57f2c7407b0f2c350e3",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова підтримує склад морфологічної та імунофенотипової панелі для розмежування волосатоклітинного лейкозу з іншими малими B-клітинними неоплазіями.",
+          "applicability_limit": "Панель не класифікує цього пацієнта без морфології та повних результатів маркерів."
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas; exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "b-cell.pdf, PDF page 43, node SMZL-1; visual render SHA-256 ed63c252cf61c65217d26f6b19926d1dbb9739a3562b65924525712bbb87b89c",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова підтримує окрему перевірку лімфоми маргінальної зони селезінки та інтегровану клініко-морфологічну кореляцію.",
+          "applicability_limit": "Джерело не доводить цю альтернативу й не дозволяє переносити критерії лікування до кандидата."
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "text": "Позначення легкого ланцюга пошкоджене; тип ланцюга не встановлений.",
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-3"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas; exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "b-cell.pdf, PDF page 114, node NHODG-A 4 OF 8; visual render SHA-256 2ab1b40a52ae3e8e0e5a2e3139ca374db931e2fca4a6e57f2c7407b0f2c350e3",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова підтримує склад морфологічної та імунофенотипової панелі для розмежування волосатоклітинного лейкозу з іншими малими B-клітинними неоплазіями.",
+          "applicability_limit": "Панель не класифікує цього пацієнта без морфології та повних результатів маркерів."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 5.2026: Multiple Myeloma; exact PDF SHA-256 aa07e56116ba7976013584fe39f6f7120e68272437a87df4f1204cd664e35683",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "myeloma.pdf, PDF page 53, node MS-3; visual render SHA-256 46cadd0534ac6b19dcb5008309e0d5f9e37659625b9cf3c0a2bfbe785f6cb597",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова визначає базове обстеження при підозрі на множинну мієлому: показники крові, кальцій і функцію нирок, дослідження моноклонального білка, вільних легких ланцюгів і кісткового мозку.",
+          "applicability_limit": "Пошкоджене поле легкого ланцюга не можна використовувати як доказ плазмоклітинної рестрикції."
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "text": "Немає даних про моноклональний білок, вільні легкі ланцюги, кальцій, функцію нирок і плазмоклітинну морфологію для виключення мієломи.",
+      "evidence_refs": [
+        "E-CAND-3",
+        "E-CAND-4"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 5.2026: Multiple Myeloma; exact PDF SHA-256 aa07e56116ba7976013584fe39f6f7120e68272437a87df4f1204cd664e35683",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "myeloma.pdf, PDF page 53, node MS-3; visual render SHA-256 46cadd0534ac6b19dcb5008309e0d5f9e37659625b9cf3c0a2bfbe785f6cb597",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова визначає базове обстеження при підозрі на множинну мієлому: показники крові, кальцій і функцію нирок, дослідження моноклонального білка, вільних легких ланцюгів і кісткового мозку.",
+          "applicability_limit": "Пошкоджене поле легкого ланцюга не можна використовувати як доказ плазмоклітинної рестрикції."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 5.2026: Multiple Myeloma; exact PDF SHA-256 aa07e56116ba7976013584fe39f6f7120e68272437a87df4f1204cd664e35683",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "myeloma.pdf, PDF page 16, node MYEL-A; visual render SHA-256 12d507ba97e71221e2348838e76b3b1c996b9567d9039b84bc014eac5d210bac",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова визначає морфологічні та клінічні події, потрібні для встановлення активної множинної мієломи.",
+          "applicability_limit": "Опис інфільтрації без плазмоклітинної морфології та атрибуції не встановлює мієлому."
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "text": "Не визначена анатомічна причина синдрому онімілого підборіддя.",
+      "evidence_refs": [
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Lossos A, Siegal T. Numb chin syndrome in cancer patients: etiology, response to treatment, and prognostic significance. Neurology. 1992;42(6):1181-1184. PMID:1603345. doi:10.1212/wnl.42.6.1181; exact artifact SHA-256 e96dc3c9e37075b514833fe933a9e826b4508a8a7b7742a7d2f4dc2b3fbe73f8",
+          "url": "https://doi.org/10.1212/wnl.42.6.1181",
+          "year": 1992,
+          "location": "Exact MEDLINE text artifact, abstract paragraph beginning 'We retrospectively evaluated 42 consecutive cancer patients'",
+          "verification_status": "agent_visual_source_review",
+          "use": "Ретроспективна серія підтримує цільовий пошук анатомічної онкологічної причини синдрому онімілого підборіддя з урахуванням нижньої щелепи, основи черепа та лептоменінгеального поширення.",
+          "applicability_limit": "Це давня серія лише онкологічних пацієнтів; вона не визначає етіологію цього пацієнта, не встановлює універсальної терміновості та не вимагає однакового набору досліджень для всіх."
+        }
+      ]
+    }
+  ],
+  "workup": [
+    {
+      "id": "W1",
+      "title": "Отримати інтегровану морфологічну й імунофенотипову класифікацію B-клітинного процесу",
+      "rationale": "Переглянути мазок і матеріал кісткового мозку; виконати повну панель малих B-клітинних неоплазій та підтвердити BRAF V600E у відомому матеріалі відомим методом.",
+      "priority": "critical",
+      "necessity": "classification_exclusion_required",
+      "trigger": null,
+      "discriminates": [
+        "H1",
+        "H2",
+        "H4"
+      ],
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-2"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas; exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "b-cell.pdf, PDF page 114, node NHODG-A 4 OF 8; visual render SHA-256 2ab1b40a52ae3e8e0e5a2e3139ca374db931e2fca4a6e57f2c7407b0f2c350e3",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова підтримує склад морфологічної та імунофенотипової панелі для розмежування волосатоклітинного лейкозу з іншими малими B-клітинними неоплазіями.",
+          "applicability_limit": "Панель не класифікує цього пацієнта без морфології та повних результатів маркерів."
+        },
+        {
+          "id": "E-CAND-2",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas; exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "b-cell.pdf, PDF page 43, node SMZL-1; visual render SHA-256 ed63c252cf61c65217d26f6b19926d1dbb9739a3562b65924525712bbb87b89c",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова підтримує окрему перевірку лімфоми маргінальної зони селезінки та інтегровану клініко-морфологічну кореляцію.",
+          "applicability_limit": "Джерело не доводить цю альтернативу й не дозволяє переносити критерії лікування до кандидата."
+        }
+      ]
+    },
+    {
+      "id": "W2",
+      "title": "Виключити плазмоклітинну неоплазію",
+      "rationale": "Дослідити моноклональний білок, кількісні імуноглобуліни, вільні легкі ланцюги сироватки, кальцій, функцію нирок, плазматичні клітини кісткового мозку та характер кісткових уражень.",
+      "priority": "high",
+      "necessity": "key_discriminator",
+      "trigger": null,
+      "discriminates": [
+        "H3",
+        "H1"
+      ],
+      "evidence_refs": [
+        "E-CAND-3",
+        "E-CAND-4"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 5.2026: Multiple Myeloma; exact PDF SHA-256 aa07e56116ba7976013584fe39f6f7120e68272437a87df4f1204cd664e35683",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "myeloma.pdf, PDF page 53, node MS-3; visual render SHA-256 46cadd0534ac6b19dcb5008309e0d5f9e37659625b9cf3c0a2bfbe785f6cb597",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова визначає базове обстеження при підозрі на множинну мієлому: показники крові, кальцій і функцію нирок, дослідження моноклонального білка, вільних легких ланцюгів і кісткового мозку.",
+          "applicability_limit": "Пошкоджене поле легкого ланцюга не можна використовувати як доказ плазмоклітинної рестрикції."
+        },
+        {
+          "id": "E-CAND-4",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 5.2026: Multiple Myeloma; exact PDF SHA-256 aa07e56116ba7976013584fe39f6f7120e68272437a87df4f1204cd664e35683",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "myeloma.pdf, PDF page 16, node MYEL-A; visual render SHA-256 12d507ba97e71221e2348838e76b3b1c996b9567d9039b84bc014eac5d210bac",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова визначає морфологічні та клінічні події, потрібні для встановлення активної множинної мієломи.",
+          "applicability_limit": "Опис інфільтрації без плазмоклітинної морфології та атрибуції не встановлює мієлому."
+        }
+      ]
+    },
+    {
+      "id": "W3",
+      "title": "Звірити пошкоджене поле легкого ланцюга та поля загального аналізу крові без одиниць",
+      "rationale": "Зберігати пошкоджене позначення дослівно до повторної перевірки джерела; не виводити тип рестрикції й не додавати одиниці без джерела.",
+      "priority": "high",
+      "necessity": "key_discriminator",
+      "trigger": null,
+      "discriminates": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "evidence_refs": [
+        "E-CAND-1",
+        "E-CAND-3"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-1",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas; exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "b-cell.pdf, PDF page 114, node NHODG-A 4 OF 8; visual render SHA-256 2ab1b40a52ae3e8e0e5a2e3139ca374db931e2fca4a6e57f2c7407b0f2c350e3",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова підтримує склад морфологічної та імунофенотипової панелі для розмежування волосатоклітинного лейкозу з іншими малими B-клітинними неоплазіями.",
+          "applicability_limit": "Панель не класифікує цього пацієнта без морфології та повних результатів маркерів."
+        },
+        {
+          "id": "E-CAND-3",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 5.2026: Multiple Myeloma; exact PDF SHA-256 aa07e56116ba7976013584fe39f6f7120e68272437a87df4f1204cd664e35683",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "myeloma.pdf, PDF page 53, node MS-3; visual render SHA-256 46cadd0534ac6b19dcb5008309e0d5f9e37659625b9cf3c0a2bfbe785f6cb597",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова визначає базове обстеження при підозрі на множинну мієлому: показники крові, кальцій і функцію нирок, дослідження моноклонального білка, вільних легких ланцюгів і кісткового мозку.",
+          "applicability_limit": "Пошкоджене поле легкого ланцюга не можна використовувати як доказ плазмоклітинної рестрикції."
+        }
+      ]
+    },
+    {
+      "id": "W4",
+      "title": "Оцінити синдром онімілого підборіддя",
+      "rationale": "Провести клінічний неврологічний і стоматологічно-щелепний огляд та визначити потребу в цільовій візуалізації для пошуку інфільтрації або компресії.",
+      "priority": "high",
+      "necessity": "key_discriminator",
+      "trigger": null,
+      "discriminates": [
+        "H1",
+        "H3",
+        "H5"
+      ],
+      "evidence_refs": [
+        "E-CAND-5"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-5",
+          "type": "pmid",
+          "title": "Lossos A, Siegal T. Numb chin syndrome in cancer patients: etiology, response to treatment, and prognostic significance. Neurology. 1992;42(6):1181-1184. PMID:1603345. doi:10.1212/wnl.42.6.1181; exact artifact SHA-256 e96dc3c9e37075b514833fe933a9e826b4508a8a7b7742a7d2f4dc2b3fbe73f8",
+          "url": "https://doi.org/10.1212/wnl.42.6.1181",
+          "year": 1992,
+          "location": "Exact MEDLINE text artifact, abstract paragraph beginning 'We retrospectively evaluated 42 consecutive cancer patients'",
+          "verification_status": "agent_visual_source_review",
+          "use": "Ретроспективна серія підтримує цільовий пошук анатомічної онкологічної причини синдрому онімілого підборіддя з урахуванням нижньої щелепи, основи черепа та лептоменінгеального поширення.",
+          "applicability_limit": "Це давня серія лише онкологічних пацієнтів; вона не визначає етіологію цього пацієнта, не встановлює універсальної терміновості та не вимагає однакового набору досліджень для всіх."
+        }
+      ]
+    },
+    {
+      "id": "W5",
+      "title": "Оцінити запальний, інфекційний або метаболічний другий процес за показаннями",
+      "rationale": "Додаткові дослідження потрібні лише якщо огляд, анамнез або тканинна діагностика залишають цю гілку активною.",
+      "priority": "conditional",
+      "necessity": "conditional_adjunct",
+      "trigger": "Є клінічні ознаки інфекції, системного запалення або окрема потреба оцінити метаболічне захворювання кісток після класифікації основного процесу.",
+      "discriminates": [
+        "H6",
+        "H1"
+      ],
+      "evidence_refs": [
+        "E-CAND-2"
+      ],
+      "sources": [
+        {
+          "id": "E-CAND-2",
+          "type": "guideline",
+          "title": "NCCN Guidelines Version 4.2026: B-Cell Lymphomas; exact PDF SHA-256 c32f9c96483b40a603720db1dbb9cbdf79b5f68224766d2d2f416e29a2fde8fd",
+          "url": "https://www.nccn.org/guidelines/category_1",
+          "year": 2026,
+          "location": "b-cell.pdf, PDF page 43, node SMZL-1; visual render SHA-256 ed63c252cf61c65217d26f6b19926d1dbb9739a3562b65924525712bbb87b89c",
+          "verification_status": "agent_visual_source_review",
+          "use": "Настанова підтримує окрему перевірку лімфоми маргінальної зони селезінки та інтегровану клініко-морфологічну кореляцію.",
+          "applicability_limit": "Джерело не доводить цю альтернативу й не дозволяє переносити критерії лікування до кандидата."
+        }
+      ]
+    }
+  ],
+  "method": {
+    "clinical_input_projection_used": true,
+    "breadth_pass_before_bundle_comparison": true,
+    "grounding_pass": true,
+    "critic_pass": true,
+    "fresh_session_blinded": true,
+    "limitations": [
+      "Наявні 33 F# та 33 спостережень з одного знеособленого джерельного пакета; остаточної морфологічної класифікації немає.",
+      "Позначення легкого ланцюга у F008 пошкоджене й дослівно збережене як ?; його не нормалізовано.",
+      "Одиниці для частини ЗАК не записані; їх не додано і кількісні висновки, що залежать від одиниць, не зроблено.",
+      "Кандидат потребує незалежної критики та рішення лікаря."
+    ],
+    "controlled_run": {
+      "status": "verified",
+      "run_id": "20260818T192145700822Z-CASE013-controlled-b6977cf1e87b",
+      "method_id": "HB-CONTROLLED-SYNTHESIS",
+      "method_version": "2.5.1",
+      "protocol_sha256": "e05b3310bf1d886b961c90ffd3a48962500f0cca9a32cd5460ec0041a46b6662",
+      "critic_independent": true,
+      "unresolved_critical": 0,
+      "pass_receipts": {
+        "breadth": "95ff4a7043a152e63e589a82b7d6ca8fc583466f56586b7f5db5fbc70e78123d",
+        "grounding": "7506e924e0667cf9a200b121243bc9b0d7a1d4dbc39bbf0d166584baa6ed8d7a",
+        "reconciliation": "28e7644faa3256f67fec05ed8be71fc64be12431f8b33699c98445cd6ab92b54",
+        "critic": "537b414b3f5a4b6d1260293c401064684b0fcd25225562fa86743ad53b73207d"
+      }
+    }
+  },
+  "comparison_to_previous": [
+    {
+      "previous_id": null,
+      "current_id": "H1",
+      "status": "added",
+      "reason": "HCL сформовано як провідний робочий кандидат."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H2",
+      "status": "added",
+      "reason": "Іншу зрілу B-клітинну неоплазію збережено як близьку альтернативу."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H3",
+      "status": "added",
+      "reason": "Плазмоклітинну неоплазію збережено як кісткову must-not-miss альтернативу."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H4",
+      "status": "added",
+      "reason": "Іншу гематологічну неоплазію збережено до lineage classification."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H5",
+      "status": "added",
+      "reason": "Негематологічну злоякісну інфільтрацію збережено до тканинної оцінки."
+    },
+    {
+      "previous_id": null,
+      "current_id": "H6",
+      "status": "added",
+      "reason": "Запальний, інфекційний або метаболічний другий процес збережено за показаннями."
+    }
+  ],
+  "safety": {
+    "candidate_only": true,
+    "diagnosis_not_established": true,
+    "treatment_directives_present": false,
+    "limitations": [
+      "Цей кандидат не замінює рішення лікаря.",
+      "Зовнішні джерела обґрунтовують перевірки, а не діагноз конкретного пацієнта.",
+      "Незалежна технічна критика не є клінічним прийняттям.",
+      "Рішення лікаря ще не записане."
+    ]
+  },
+  "decision_readiness": {
+    "status": "candidate_available",
+    "rationale": "Сукупність B-клітинної популяції, BRAF V600E, відносного лімфоцитозу та поширеного ураження кісткового мозку дозволяє поставити класичний волосатоклітинний лейкоз першим робочим кандидатом. Остаточний діагноз і лікування потребують морфології, повної панелі та рішення лікаря.",
+    "blocked_actions": [
+      "Встановлення остаточної нозології або підтипу.",
+      "Вибір чи початок протипухлинного лікування лише з цього кандидата.",
+      "Відновлення назви легкого ланцюга або додавання відсутніх одиниць загального аналізу крові без джерела.",
+      "Виключення мієломи, іншої B-клітинної неоплазії або негематологічної інфільтрації без відповідних перевірок."
+    ],
+    "required_next_information": [
+      "Морфологія периферичної крові та кісткового мозку.",
+      "Повна імунофенотипова панель для волосатоклітинного лейкозу та інших B-клітинних неоплазій.",
+      "Метод і матеріал дослідження BRAF V600E.",
+      "Відновлення точного поля легкого ланцюга на рівні джерела без припущень.",
+      "Дослідження моноклонального білка й вільних легких ланцюгів, кальцій та функція нирок.",
+      "Клінічна оцінка синдрому онімілого підборіддя."
+    ]
+  },
+  "use_limit": "Матеріал підготовлено для клінічної перевірки. Він не встановлює діагноз, не визначає лікування й не є записаним рішенням лікаря."
+}
