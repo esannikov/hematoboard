@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.3.1] - 2026-08-19
+
+### Changed
+
+- Renamed the long-form surface to `Клінічна історія міркування`.
+- Rephrased the complete CASE002 and CASE003 narratives with direct affirmative syntax and removed every `не … а …` and `а не` construction from the visible article.
+
+### Safety
+
+- Candidate hashes, clinical projections, hypothesis order, relations, evidence identities, and clinician status remain identical to v0.1.3.0.
+
 ## [0.1.3.0] - 2026-08-19
 
 ### Changed
