@@ -1,0 +1,41 @@
+{
+  "schema_version": "hematoboard.public-case-index/1.0.0",
+  "cases": [
+    {
+      "key": "case006",
+      "case_id": "CASE006"
+    },
+    {
+      "key": "case007",
+      "case_id": "CASE007"
+    },
+    {
+      "key": "case008",
+      "case_id": "CASE008"
+    },
+    {
+      "key": "case009",
+      "case_id": "CASE009"
+    },
+    {
+      "key": "case010",
+      "case_id": "CASE010"
+    },
+    {
+      "key": "case010v2",
+      "case_id": "CASE010V2"
+    },
+    {
+      "key": "case011",
+      "case_id": "CASE011"
+    },
+    {
+      "key": "case012",
+      "case_id": "CASE012"
+    },
+    {
+      "key": "case013",
+      "case_id": "CASE013"
+    }
+  ]
+}

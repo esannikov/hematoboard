@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.1.0.0] - 2026-08-19
+
+### Added
+
+- The public dashboard now starts with V2-clean CASE002 and CASE003, whose displayed identifiers follow the numbers recorded in the source DOCX files.
+- Added a final clinician-facing “Лог міркувань” section: clinical pattern, leading working hypothesis, differential, source/critic review, and required next information.
+- Added compact source-library and technical-receipt disclosures beneath the main reading path.
+
+### Changed
+
+- Patient facts are presented as clinical prose with source-fragment buttons; internal fact IDs and machine coverage sectors are no longer shown in the clinician reading path.
+- Repeated evidence entries are grouped by publication, while exact source locations and applicability notes remain available on demand.
+- The first-generation selector and release receipt are retained under `archive/v1/`; legacy case payloads remain available as archived files.
+
+### Safety
+
+- CASE002 and CASE003 remain candidate-only, projection-verified, language-clean packages with no clinician acceptance recorded.
+- Internal CASE012/CASE013 identities and exact candidate hashes remain unchanged in provenance; public aliases do not rewrite clinical or reasoning artifacts.
+
 ## [0.0.2.0] - 2026-08-18
 
 ### Added
