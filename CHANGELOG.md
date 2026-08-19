@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.3.0] - 2026-08-19
+
+### Changed
+
+- Replaced the eight-stage reasoning-card sequence with one continuous clinical narrative for CASE002 and CASE003.
+- Integrated patient findings, differential changes, guideline propositions, independent criticism, and decision conditions into the same causal story.
+- Rendered the reasoning log as a single long-form reading surface with a 74-character measure, paragraph rhythm, compact source notes, and responsive typography.
+- Removed repeated interface formulas, stage labels, internal identifiers, and contrast constructions built around `не … а …` or `а не` from the clinician narrative.
+
+### Safety
+
+- The release changes the derived public narrative and its presentation contract. Candidate hashes, hypothesis order, typed relations, source identities, clinical readiness, and clinician-acceptance state remain unchanged.
+
 ## [0.1.2.0] - 2026-08-19
 
 ### Changed
