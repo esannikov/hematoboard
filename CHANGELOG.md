@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.1.2.0] - 2026-08-19
+
+### Changed
+
+- Expanded the clinician reasoning log for CASE002 and CASE003 into an eight-stage decision history: first reading, blind differential, source questions, accepted and rejected evidence, reconciliation, ranking, independent criticism, and the stopping rule.
+- Replaced fact codes and machine statuses in the main reading path with patient findings written as clinical prose; internal archive IDs and candidate hashes are no longer displayed in the log receipt.
+- Added progressive disclosure to each stage so the complete decision audit remains available without turning the initial view into an uninterrupted wall of text.
+- Converted source addresses to human-readable page numbers while retaining the underlying provenance in the immutable candidate package.
+
+### Fixed
+
+- CASE002 now shows the first failed critic pass, all four corrections, and the successful repeat review instead of only the final result.
+- CASE003 now exposes all eleven blind differential directions, six offline-guideline searches, forty-eight reviewed source fragments, their final reconciliation, and the separate language-cleaning pass.
+
+### Safety
+
+- This release changes only the derived public reasoning projection. It does not run a new synthesis, change hypothesis order, alter clinical relations, or record clinician acceptance.
+
 ## [0.1.1.0] - 2026-08-19
 
 ### Fixed
