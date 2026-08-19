@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.1.0] - 2026-08-19
+
+### Fixed
+
+- Restored the accepted V1 overview composition: leading hypothesis, source-linked supporting facts, limiting evidence, and interactive differential counts.
+- Restored the Clinical Spine timeline with a stable event monitor, category lanes, playhead, zoom, exact source action, dated spacing for CASE003, and document-order spacing for undated CASE002.
+- Restored the V1 fact-to-hypothesis graph with typed edges, hypothesis/fact focus, source inspection, source-trace lens, and a readable hypothesis-first mobile view.
+- Returned the canonical navigation labels `Огляд`, `Таймлайн`, `Граф`, `Дані`, `Прогалини`; the clinician reasoning log remains the final section.
+
+### Safety
+
+- The repair changes only the derived presentation and timeline capability. Candidate hashes, clinical reasoning, sources, public CASE002/CASE003 aliases, and clinician-acceptance state remain unchanged.
+
 ## [0.1.0.0] - 2026-08-19
 
 ### Added
