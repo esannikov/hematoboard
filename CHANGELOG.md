@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.1.0] - 2026-08-20
+
+### Changed
+
+- Improved the vertical rhythm and typography of the leading diagnosis card, evidence columns, differential list and graph inspector.
+- Diagnostic hypotheses now use consistent `H1`, `H2`, … labels in the overview and graph on desktop and mobile.
+
+### Fixed
+
+- Prevented long guideline and classification titles from leaving critical-gap cards.
+- Restored colored source-type chips for guidelines, classifications, evidence reviews and PubMed records.
+
 ## [0.2.0.0] - 2026-08-20
 
 ### Added
