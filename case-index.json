@@ -2,6 +2,12 @@
   "schema_version": "hematoboard.public-case-index/2.0.0",
   "cases": [
     {
+      "key": "case001",
+      "case_id": "CASE001",
+      "source_case_id": "CASE001",
+      "data_path": "case001/public-dashboard.v1.json"
+    },
+    {
       "key": "case002",
       "case_id": "CASE002",
       "source_case_id": "CASE012",
