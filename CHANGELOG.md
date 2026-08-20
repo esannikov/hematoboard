@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.1.6.0] - 2026-08-20
+
+### Added
+
+- Published the new `CASE006` from `Кейс №6.docx` after a fresh V2 breadth, nine-source grounding pass, exact-page visual review, reconciliation, bounded language repair and independent critic closure.
+- Added a 1,411-word clinician-facing reasoning history with 22 semantic blocks, grouped patient-source actions and nine accepted external supports.
+- Added `CASE006` to the V2 selector while preserving the previous generation in the versioned legacy archive.
+
+### Changed
+
+- Reset active V2 CaseScope numbering so the DOCX number, internal case ID and public selector ID match exactly.
+- `CASE002` and `CASE003` now expose canonical active IDs; their earlier reasoning IDs remain archived provenance.
+- Extended the standard unit registry with LDH, total bilirubin and dimensionless SUVmax mappings.
+- Separated clinical synthesis timing from narrative preparation, projection QA and deploy timing.
+
+### Fixed
+
+- Repair critic packets now include the prior candidate, exact changed-path manifest, protected-structure hashes and repair trace.
+- Visual review receipts now prove all selected pages, including rejected evidence candidates, before critic dispatch.
+
+### Safety
+
+- `CASE006` passed the final independent critic with 0 unresolved critical and 0 unresolved high findings. The package remains a candidate for clinician review with `projection_verified=true` and `clinician_accepted=false`.
+
 ## [0.1.5.0] - 2026-08-20
 
 ### Added
