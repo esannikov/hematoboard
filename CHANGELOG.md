@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.1.7.0] - 2026-08-20
+
+### Added
+
+- Published `CASE007` from `Кейс №7.docx` with 36 patient facts, 20 quantitative observations, five ranked hypotheses and nine exact offline source propositions.
+- Added a 1,009-word clinician-facing investigation story with 16 semantic blocks, 22 patient supports and all nine accepted external sources.
+
+### Changed
+
+- Grounding now starts from up to three diagnosis- or workup-priority pages per clinical question and expands only for a named unresolved branch or critical gap.
+- Data-only releases with an unchanged verified UI fingerprint use a desktop/mobile browser route with four representative screenshots; UI changes retain the full desktop/tablet/mobile regression route.
+- Candidate prose is screened for pipeline vocabulary before critic dispatch.
+
+### Fixed
+
+- Active V2 CaseScope now takes precedence over a same-numbered legacy archive case throughout router read-back.
+- Repair provenance records canonical candidate SHA-256 and serialized-file SHA-256 as distinct values.
+- Temporal workup wording now distinguishes pretreatment material for reconstructing initial disease from post-treatment samples that assess current or residual disease.
+
+### Safety
+
+- `CASE007` passed the final independent critic with 0 unresolved critical and 0 unresolved high findings. The package remains a candidate for clinician review with `projection_verified=true` and `clinician_accepted=false`.
+
 ## [0.1.6.0] - 2026-08-20
 
 ### Added
