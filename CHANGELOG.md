@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.1.4.0] - 2026-08-20
+
+### Added
+
+- Added seven semantic color roles to the clinical reasoning story: context, differential search, hypotheses, evidence, action, criticism, and conclusion.
+- Added visible text labels to every colored block so clinical function remains clear independently of color perception.
+- Added safe inline emphasis for hypothesis names, diagnoses, workup titles, and selected clinical discriminators.
+
+### Changed
+
+- Replaced the uninterrupted article flow with compact colored blocks while preserving the same 18-paragraph narrative and source notes.
+- Kept the established Material palette, 74-character reading measure, and responsive desktop/mobile structure.
+
+### Safety
+
+- The update changes presentation metadata and rendering. Candidate hashes, clinical projections, hypothesis order, typed relations, evidence identity, and clinician status remain unchanged.
+
 ## [0.1.3.1] - 2026-08-19
 
 ### Changed
