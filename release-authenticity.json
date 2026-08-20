@@ -75,7 +75,7 @@
       "clinical_input_sha256": "c3cd3d00ca38ba5852733886a38901076397d5f9e4241ab39c4ead23dc88b1e4",
       "candidate_sha256": "00c51cb20d82510f0dae8259f1b9474462c1da49e569b21b349ed9a4dcfe19e8",
       "public_package_sha256": "afc3385125bdc8ecbe490f2e048b9680d0ce952a41b1f6b673bfc69184749a9c",
-      "public_qa_sha256": "4d1a71b83111619290d88add868b005ec31353688b4c51253bc506c8d067dbc6",
+      "public_qa_sha256": "b727a64d760d6411b434b3a055369c1dc5b455a9d33418975891420e8660ce0a",
       "v1_clinical_views_restored": true,
       "critic_pass": true,
       "language_clean": true,
