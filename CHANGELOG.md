@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.4.1] - 2026-08-20
+
+### Fixed
+
+- Replaced repeated `Запис пацієнта` links with one `Показати опори` action per reasoning block.
+- Updated the source drawer to open every fact used by the paragraph, group them by DOCX record, and highlight matching literal fragments.
+- Replaced inactive evidence chips with plain source metadata so every visible control now performs an action.
+- Preserved keyboard focus after closing the grouped source drawer.
+
+### Safety
+
+- Clinical projections, reasoning text, candidate hashes, source bindings, and clinician status remain unchanged.
+
 ## [0.1.4.0] - 2026-08-20
 
 ### Added
