@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.2.0] - 2026-08-20
+
+### Fixed
+
+- Restored the established `Факти пацієнта → гіпотези` graph with ranked diagnostic hypotheses only; complications, concurrent conditions and data-quality findings remain in their own overview sections.
+- Replaced reasoning-log copy in the `CASE###` strip with a short deterministic patient summary built from demographics and recorded clinical facts.
+- Kept hypothesis headings to the medical diagnosis name and removed internal role rationale such as `може самостійно пояснити` from the overview and graph.
+- Removed rank-placeholder dots and made every visible hypothesis reference actionable across supporting facts, source traces, critical gaps and verification steps.
+- Routed diagnostic links to the graph and non-diagnostic clinical roles to their correct overview section.
+
+### Safety
+
+- All five published cases passed shared-shell interaction checks, full desktop/tablet/mobile projection QA, and preserved their existing clinical JSON and candidate hashes.
+
 ## [0.2.1.0] - 2026-08-20
 
 ### Changed
