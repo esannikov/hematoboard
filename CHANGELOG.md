@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.1.5.0] - 2026-08-20
+
+### Added
+
+- Published `CASE001` from `Кейс №1.docx` after a fresh V2 breadth, source-grounding, reconciliation, bounded repair and successful independent repeat review.
+- Added a 1,333-word clinician-facing investigation story with 18 semantic blocks, grouped patient-source actions and all accepted guideline supports.
+- Restored nine omitted standard Ukrainian biochemistry units with explicit inferred provenance while preserving absent dates and reference intervals.
+
+### Changed
+
+- The new V2 selector now starts with `CASE001`, followed by `CASE002` and `CASE003`; the archived legacy numbering remains separate.
+- Review packets now carry the completed grounding and exact-page visual receipts used by the critic.
+- Public timing now reports clinical synthesis and clinician-narrative preparation separately.
+
+### Fixed
+
+- Candidate QA now waits for the source drawer transition, verifies the current reasoning-log heading and captures overview, timeline, graph, drawer and reasoning-log screenshots on desktop, tablet and mobile.
+
+### Safety
+
+- `CASE001` remains a candidate for clinician review: 0 unresolved critical findings, 0 unresolved high findings, `projection_verified=true`, `clinician_accepted=false`.
+
 ## [0.1.4.1] - 2026-08-20
 
 ### Fixed
