@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.2.0.0] - 2026-08-20
+
+### Added
+
+- Added medically explicit clinical roles to every candidate item: diagnostic hypothesis, complication or clinical syndrome, concurrent condition, incidental finding, and data-quality limitation.
+- Added Ukrainian role explanations to every clinical item and separate role-aware sections in the overview, graph, timeline, gaps and clinician reasoning story.
+
+### Changed
+
+- Diagnostic rank now applies only to conditions that can explain the main clinical pattern.
+- CASE001 now shows ten ranked diagnoses, secondary HLH as a complication, humoral immune dysfunction as a concurrent condition, and the thyroid nodule as an incidental finding.
+- CASE003 now separates five ranked diagnoses from a possible second skeletal process and an analytical/data-quality issue.
+- CASE006 now shows nine ranked diagnoses; thrombus, secondary HLH and shock are complications, Castleman disease and the gastric lesion are concurrent processes, and the ovarian teratoma is an incidental finding.
+- CASE007 now separates four ranked diagnoses from a concurrent hypoplastic marrow process.
+- CASE002 retains five competing anterior-mediastinal diagnoses with medically explicit role rationales.
+
+### Fixed
+
+- Removed H-codes, evidence IDs, raw source locators and English enum values from the main clinician-facing role and workup labels.
+- Replaced the generic graph heading with `Факти пацієнта → клінічні інтерпретації` and grouped every non-diagnostic item under its own medical heading.
+- Corrected CASE001 and CASE002 narrative source bindings from aggregate signals to exact patient facts.
+
+### Safety
+
+- Every role-aware candidate passed an independent Sol critic with 0 unresolved critical and 0 unresolved high findings. All five projections remain candidate-only with `clinician_accepted=false`.
+
 ## [0.1.7.0] - 2026-08-20
 
 ### Added
