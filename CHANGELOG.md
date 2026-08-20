@@ -5,7 +5,7 @@
 ### Added
 
 - Published `CASE001` from `Кейс №1.docx` after a fresh V2 breadth, source-grounding, reconciliation, bounded repair and successful independent repeat review.
-- Added a 1,333-word clinician-facing investigation story with 18 semantic blocks, grouped patient-source actions and all accepted guideline supports.
+- Added a 1,310-word clinician-facing investigation story with 18 semantic blocks, grouped patient-source actions and all accepted guideline supports.
 - Restored nine omitted standard Ukrainian biochemistry units with explicit inferred provenance while preserving absent dates and reference intervals.
 
 ### Changed
