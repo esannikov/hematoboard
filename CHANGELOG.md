@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.2.7.0] - 2026-08-22
+
+### Changed
+
+- Restored HematoBoard V1 as the canonical clinical-cockpit composition across overview, timeline, graph, data, gaps and reasoning surfaces.
+- Rebuilt critical gaps as a compact disclosure list and diagnostic workup as a numbered, source-linked V1 card sequence.
+- Restored source-aware quantitative rows with visible reference ranges, units and source addresses without inferring temporal trends.
+- Added reproducible deep links for the selected view and hypothesis, a five-destination mobile navigation, and direct access to the reasoning narrative from the case strip.
+- Replaced arbitrary source excerpts in the case strip with the leading candidate's concise problem representation.
+
+### Preserved
+
+- Differential bars and their visual encoding remain unchanged by explicit user decision.
+- Clinical JSON, candidate hashes and `clinician_accepted=false` remain unchanged.
+
+### Verification
+
+- The shared shell passed full desktop, tablet and mobile QA for all ten public cases, with 18 screenshots per case and zero console or page-overflow findings.
+
 ## [0.2.6.2] - 2026-08-21
 
 ### Fixed
