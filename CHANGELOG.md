@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.2.4.0] - 2026-08-21
+
+### Added
+
+- Published `CASE004` from `Кейс №4.docx` after a fresh V2 differential search, exact-page source review, bounded repair and independent critic closure.
+- Added a clinician-facing reasoning history with 18 semantic blocks, 21 patient supports and all six accepted source propositions.
+- Added MCV, MCH and five anemia-panel measurements to the quantitative projection; absent panel units remain explicitly unresolved.
+
+### Changed
+
+- Prioritized a thalassemia-spectrum or other inherited hemoglobinopathy as the working candidate while retaining isolated and combined iron deficiency as active alternatives.
+- Restricted rare inherited iron-regulation, celiac, toxic and marrow investigations to their recorded clinical triggers.
+
+### Safety
+
+- `CASE004` passed the final independent critic with 0 unresolved critical and 0 unresolved high findings. The package remains candidate-only with `projection_verified=true` and `clinician_accepted=false`.
+
 ## [0.2.3.0] - 2026-08-21
 
 ### Added
