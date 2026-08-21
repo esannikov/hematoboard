@@ -20,6 +20,12 @@
       "data_path": "case003/public-dashboard.v1.json"
     },
     {
+      "key": "case004",
+      "case_id": "CASE004",
+      "source_case_id": "CASE004",
+      "data_path": "case004/public-dashboard.v1.json"
+    },
+    {
       "key": "case006",
       "case_id": "CASE006",
       "source_case_id": "CASE006",
