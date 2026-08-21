@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.2.5.0] - 2026-08-21
+
+### Added
+
+- Published `CASE009` from `Кейс №9.docx` after a fresh V2 differential search, exact-page source review, bounded clinical repair and independent critic closure.
+- Added a clinician-facing reasoning history with 19 semantic blocks and the chronology from the 2021 resected clonal plasma-cell tumor to the 2025 paracolic nodule.
+- Preserved the recorded quantitative trajectories for plasma cells, M-protein and blast cells as distinct signals with their source dates.
+
+### Changed
+
+- Calibrated the leading candidate to a suspicion of local recurrence of the previously resected clonal plasma-cell tumor while keeping definitive recurrence attribution open for tissue verification.
+- Kept plasma-cell myeloma, plasmacytic lymphomas, aggressive lymphoma, an incidental nodule and a parallel gastrointestinal process in their appropriate clinical roles.
+
+### Safety
+
+- `CASE009` passed the final independent critic with 0 unresolved critical and 0 unresolved high findings. The package remains candidate-only with `projection_verified=true` and `clinician_accepted=false`.
+
 ## [0.2.4.0] - 2026-08-21
 
 ### Added
