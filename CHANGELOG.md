@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.6.2] - 2026-08-21
+
+### Fixed
+
+- Replaced the unloaded Roboto declaration and browser-dependent fallback with one explicit system font stack across the full dashboard.
+- Normalized source typography across the overview, graph traces, critical gaps and reasoning log: 16 px titles, 14 px clinical copy and 12 px metadata, chips and actions.
+- Added computed-style QA that rejects mixed font families or role-specific size drift on desktop, tablet and mobile.
+
+### Safety
+
+- The shared shell passed full desktop, tablet and mobile QA for all ten public cases. Clinical JSON, candidate hashes and `clinician_accepted=false` remain unchanged.
+
 ## [0.2.6.1] - 2026-08-21
 
 ### Fixed
