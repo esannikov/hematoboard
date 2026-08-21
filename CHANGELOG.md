@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.6.1] - 2026-08-21
+
+### Fixed
+
+- Restored V1-style clickable source chips and working external-source actions in the overview, graph source traces and critical gaps.
+- Routed visible diagnostic-hypothesis links from supporting facts and verification surfaces directly to the selected hypothesis in the graph.
+- Removed DOI, PMID, PMCID, NCBI record IDs and SHA-256 receipts from visible source headings while preserving the exact bibliographic records in the public package.
+
+### Safety
+
+- The shared shell passed full desktop, tablet and mobile QA for all ten public cases. Clinical JSON, candidate hashes and `clinician_accepted=false` remain unchanged.
+
 ## [0.2.6.0] - 2026-08-21
 
 ### Added
