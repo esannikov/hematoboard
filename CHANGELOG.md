@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.2.3.0] - 2026-08-21
+
+### Added
+
+- Published `CASE008` from `Кейс №8.docx` after fresh V2 intake, nine-candidate differential search, exact-page source review, bounded repair and independent critic closure.
+- Added a 1,220-word clinician-facing investigation story with 20 semantic blocks, 34 patient supports and all eight accepted external sources.
+- Added a provenance-bound clinician context for procedural feasibility: biopsy of other lymph nodes is technically difficult.
+
+### Changed
+
+- Prioritized complete review and amyloid typing of available tissue before considering another technically difficult tissue-acquisition route.
+- Kept the biopsy-feasibility note separate from diagnostic evidence and included it in the clinical-input hash.
+
+### Safety
+
+- `CASE008` passed the final independent critic with 0 unresolved critical and 0 unresolved high findings. The package remains candidate-only with `projection_verified=true` and `clinician_accepted=false`.
+
 ## [0.2.2.0] - 2026-08-20
 
 ### Fixed
