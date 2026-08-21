@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.6.0] - 2026-08-21
+
+### Added
+
+- Published `CASE011` with 41 reviewed source facts, five ranked diagnostic hypotheses and three non-ranked clinical roles.
+- Added a clinician-facing reasoning history covering the splenic mass, cytopenias, marrow findings, source evidence and the tissue-verification pathway.
+
+### Changed
+
+- Prioritized a primary vascular or stromal splenic neoplasm while retaining splenic angiosarcoma, primary splenic lymphoma, an unconfirmed clonal myeloproliferative process and Gaucher disease as explicit alternatives.
+- Added public-safe DOI, PMCID, NCBI Bookshelf and CDC source links.
+
+### Safety
+
+- `CASE011` passed the final independent critic with 0 unresolved critical and 0 unresolved high findings. The package remains candidate-only with `projection_verified=true` and `clinician_accepted=false`.
+
 ## [0.2.5.0] - 2026-08-21
 
 ### Added
