@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.7.1] - 2026-08-22
+
+### Fixed
+
+- Removed detached hypothesis-chip rows and duplicate divider rhythm from the compact critical-gap list.
+- Restored V1-style evidence chips with semantic source colors and short source names inside each chip.
+- Promoted “Підтримувальні факти” and “Що обмежує висновок” to a consistent semantic and visual H2 hierarchy.
+- Normalized same-role typography inside overview infoboxes and replaced long related-hypothesis links with compact accessible chips.
+
+### Verification
+
+- Product Design screenshot-to-code QA passed against combined V1/V2 comparison sheets.
+- The shared shell passed desktop, tablet and mobile QA for all ten public cases with 18 screenshots per case.
+- Clinical JSON, candidate hashes, differential bars and `clinician_accepted=false` remain unchanged.
+
 ## [0.2.7.0] - 2026-08-22
 
 ### Changed
