@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.2.8.0] - 2026-08-22
+
+### Fixed
+
+- Restored a true undated-record registry for cases without clinical dates instead of projecting document order onto a false time axis.
+- Removed duplicate qualitative text, fixed-height timeline clipping, line clamps, render-time label shortening and silent relation limits.
+- Restored stable fact markers from source-segment indices and complete graph labels, inspector text and relation lists.
+- Exposed Reasoning as a first-class mobile destination rather than hiding it behind the case strip.
+
+### Added
+
+- Restored a detailed physician-facing decision audit alongside the clinical narrative: initial alternatives, source questions, accepted and rejected evidence, reconciliation, rank rationale, critic corrections and stopping rule.
+- Added exact method, model, revision and critic metadata in the collapsed technical receipt.
+- Added a case-independent audit-enrichment step that binds public reasoning to the unchanged candidate hash and exact controlled-run receipts.
+
+### Verification
+
+- All 40 Python tests passed; 24 Playwright regression tests passed across desktop, tablet and mobile.
+- Every one of the ten public cases passed the full 18-screenshot browser matrix with zero console errors and no page overflow.
+- `CASE011` keeps candidate SHA-256 `f02de16…949b`; `clinician_accepted=false` remains unchanged.
+
 ## [0.2.7.2] - 2026-08-22
 
 ### Architecture
