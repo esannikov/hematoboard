@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.7.2] - 2026-08-22
+
+### Architecture
+
+- Enforced the dashboard as one versioned, case-independent read-only projection shell.
+- Added exact runtime binding across public index, display/source IDs, archived scope, nested projection/candidate hashes and clinician status.
+- Expanded the protected-shell fingerprint to cover React/CSS, package/build configuration, QA scripts/tests, non-case assets and the canonical design/projection contracts.
+- Made baseline signing accept only a full passing desktop/tablet/mobile QA receipt for the exact protected-shell digest.
+- Added fail-closed projection-contract and public-release validators plus regression tests for forged receipts, unsafe output paths and stale candidate bindings.
+
+### Preserved
+
+- Per-case clinical data remains confined to validated JSON packages.
+- Clinical JSON, candidate hashes, visual design, differential bars and `clinician_accepted=false` remain unchanged.
+
 ## [0.2.7.1] - 2026-08-22
 
 ### Fixed
