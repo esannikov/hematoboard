@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.8.1] - 2026-08-22
+
+### Fixed
+
+- Restored the exact V1 timeline composition: monitor and readout for every event, dated lanes only for real clinical dates, and the compact three-column V1 document sequence for undated CASE011 records.
+- Removed the threefold repetition of unchanged qualitative facts in the source drawer while retaining exact DOCX text, source metadata and distinct structured values.
+- Replaced the graph's long all-hypothesis fact stack with compact groups for the selected hypothesis; every underlying fact, direction and source action remains available in the inspector.
+- Grouped clinical reasoning paragraphs by semantic section so repeated headings and tall one-paragraph cards no longer stretch the page.
+
+### Verification
+
+- 41 Python tests and 30 Playwright tests passed; the latter covered desktop, tablet and mobile.
+- All ten public cases passed the full 18-screenshot browser matrix with zero console errors and no page overflow.
+- Clinical packages and candidate hashes are unchanged; `CASE011` remains `f02de16…949b` with `clinician_accepted=false`.
+
 ## [0.2.8.0] - 2026-08-22
 
 ### Fixed
