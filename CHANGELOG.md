@@ -1,5 +1,37 @@
 # Changelog
 
+## [0.2.9.0] - 2026-08-23
+
+### Added
+
+- Published new active CASE013: active symptomatic IgG-kappa multiple myeloma is supported by clonal marrow plasma cells, monoclonal protein, multifocal osteolytic disease and vertebral fractures.
+- Added exact IMWG/ICC and PubMed evidence for plasma-cell versus B-cell classification; H3 now retains neutral patient links, while unsupported CD20-based exclusion was removed.
+- Added urgent clinician-facing checks for mechanical instability and spinal-cord compression risk while keeping the case candidate-only with `clinician_accepted=false`.
+
+### Restored
+
+- Ported the approved V1 EvidenceGraph engine: complete diagnostic fact-to-hypothesis topology, stable F/H nodes, typed edges, fact isolation and source-linked inspector.
+- Ported the approved V1 timeline engine: calendar bounds, adaptive month ticks, same-date collision offsets, playhead, cursor and edge-aligned horizontal event labels.
+- Kept the V1 undated branch for CASE011 and now states explicitly that zero clinical dates prevents a calendar timeline; no chronology is inferred.
+
+### Unified
+
+- Upgraded CASE001–010 to the same schema-1.1 reasoning presentation as CASE011: the original clinical narrative, eight decision-audit sections and a collapsed method receipt.
+- Preserved every projection and candidate hash while adding only receipt-derived reasoning audit fields; unavailable historical method fields remain visibly not recorded.
+- Reformatted related-hypothesis chips with complete wrapping labels and stable spacing instead of truncation.
+
+### Safety
+
+- Added a SHA-pinned `V1_ENGINE_LOCK.json` authority and included it in the protected UI fingerprint and projection-contract gate.
+- Bound the exact UI source fingerprint, verified full-QA baseline and shipped JS/CSS byte hashes into release authenticity; the validator now rejects authority or asset drift.
+- Incomplete accepted source fragments are flagged as incomplete instead of rendered as finished clinical claims. CASE011 pages 37 and 39 require a new source-bound clinical revision before their full wording can enter the public candidate.
+
+### Verification
+
+- 49 Python tests, 23 canonical Workbench tests and 36 Playwright tests passed.
+- All 11 release packages passed a full 18-screenshot desktop/tablet/mobile matrix with zero console errors and no page overflow.
+- CASE013 has exact-hash human G2 PASS and remains candidate-only; CASE012 stays local and unindexed until its separate human G2 review.
+
 ## [0.2.8.1] - 2026-08-22
 
 ### Fixed
