@@ -1,6 +1,6 @@
 {
   "schema_version": "hematoboard.public-release-authenticity/3.0.0",
-  "generated_at": "2026-08-23T09:21:46Z",
+  "generated_at": "2026-08-23T11:26:17Z",
   "dashboard_generation": "v2",
   "archive": {
     "case_index": "archive/v1/case-index.json",
@@ -169,6 +169,22 @@
       "public_package_sha256": "7e69f771d5e343f209a40b0360a1baa8c84dbe75520fe8da0db6b869ed1535d4",
       "public_qa_sha256": "afaef851ee231e00c8dd99690f9b28740b502d665f8d7d606307d6ece87e7598",
       "public_qa_receipt": "qa/case011-receipt.json",
+      "v1_clinical_views_restored": true,
+      "critic_pass": true,
+      "language_clean": true,
+      "projection_verified": true,
+      "clinician_accepted": false
+    },
+    "case012": {
+      "display_case_id": "CASE012",
+      "source_case_id": "CASE012",
+      "docx_case_number": 12,
+      "source_document_sha256": "a24109e31b34f614b0c6e654688c7386180d094ce845a3bd3e7a86a227b1ae1e",
+      "clinical_input_sha256": "6a80e92e0747fa5cfdad98b23df8882aa46a7ff7f1c8d43f0360c571f8ebb719",
+      "candidate_sha256": "56ec12ed82ad6967d8819250602a7c3da71add18c97c8408949537e61c99ea70",
+      "public_package_sha256": "6cf6bcf6aa0d265b4a6dcf4f93707996444c3d9ed3fb6698405bc68fbd96330b",
+      "public_qa_sha256": "c1b6bb462224682dc45ab487cc983c99748e26ba8e894180266d7dc920148d17",
+      "public_qa_receipt": "qa/case012-receipt.json",
       "v1_clinical_views_restored": true,
       "critic_pass": true,
       "language_clean": true,
