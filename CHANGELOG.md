@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.2.9.1] - 2026-08-23
+
+### Added
+
+- Published active CASE012 after exact-hash human G2 PASS and a protocol 2.5.3 evidence revision.
+- Expanded candidate-level retrieval to all nine breadth candidates and bound every ranked diagnosis to patient evidence and a source-backed verification path.
+- Preserved NCCN evidence under the existing exact-hash operator authorization while keeping licensed PDF bytes private and exposing only bounded bibliographic metadata in the public projection.
+
+### Corrected
+
+- Kept infection and sarcoma as active verification branches until representative tissue, lineage and microbiology resolve them.
+- Separated mechanical fracture-risk assessment from diagnostic ranking and split mandatory lineage review from conditional microbiology.
+- Added a generation-aware workbench guard so active V2 case IDs cannot silently mutate same-numbered legacy case roots.
+
+### Verification
+
+- Independent Sol critic passed all 15 checks with zero unresolved critical or high findings.
+- 52 Python tests, 23 canonical Workbench tests and the CASE012 full 18-screen browser matrix passed with zero console errors and no page overflow.
+- CASE012 remains candidate-only with `clinician_accepted=false`.
+
 ## [0.2.9.0] - 2026-08-23
 
 ### Added
