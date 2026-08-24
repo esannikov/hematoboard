@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.9.4] - 2026-08-24
+
+### System
+
+- Published the verified dashboard package for CASE015 through the simplified hash-closed release command.
+- Preserved the existing clinical candidate, UI shell and clinician gate; this release changes no accepted clinical state.
+
+### Verification
+
+- Candidate `9b2466c9628e…` passed package/schema closure and full 18-screen QA.
+- Public index, package, QA receipt, shell fingerprint and authenticity manifest are closed by exact SHA-256.
+
 ## [0.2.9.3] - 2026-08-24
 
 ### System
