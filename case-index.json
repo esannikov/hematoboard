@@ -72,6 +72,12 @@
       "case_id": "CASE013",
       "source_case_id": "CASE013",
       "data_path": "case013/public-dashboard.v1.json"
+    },
+    {
+      "key": "case014",
+      "case_id": "CASE014",
+      "source_case_id": "CASE014",
+      "data_path": "case014/public-dashboard.v1.json"
     }
   ]
 }
