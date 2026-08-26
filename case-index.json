@@ -62,6 +62,13 @@
       "data_path": "case011/public-dashboard.v1.json"
     },
     {
+      "key": "case011-v2",
+      "case_id": "CASE011-V2",
+      "source_case_id": "CASE016",
+      "data_path": "case011-v2/public-dashboard.v1.json",
+      "protocol_replay_of_case_id": "CASE011"
+    },
+    {
       "key": "case012",
       "case_id": "CASE012",
       "source_case_id": "CASE012",
