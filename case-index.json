@@ -64,7 +64,7 @@
     {
       "key": "case011-v2",
       "case_id": "CASE011-V2",
-      "source_case_id": "CASE016",
+      "source_case_id": "CASE011-V2",
       "data_path": "case011-v2/public-dashboard.v1.json",
       "protocol_replay_of_case_id": "CASE011"
     },
