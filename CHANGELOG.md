@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.9.6] - 2026-08-26
+
+### System
+
+- Published CASE011-V2 as the same canonical CaseScope in the internal registry, candidate package and public dashboard.
+- Removed the temporary source alias so the next standard case number remains unused, while preserving the clinical content and clinician gate; this release changes no accepted clinical state.
+
+### Verification
+
+- Candidate `2ba28f6903af…` passed package/schema closure and full 18-screen QA.
+- Public index, package, QA receipt, shell fingerprint and authenticity manifest are closed by exact SHA-256.
+
 ## [0.2.9.5] - 2026-08-26
 
 ### System
