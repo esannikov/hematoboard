@@ -1,10 +1,12 @@
 {
-  "schema_version": "hematoboard.v2.projection-qa/1.0",
+  "schema_version": "hematoboard.v2.projection-qa/1.1",
   "case_id": "CASE012",
   "candidate_sha256": "56ec12ed82ad6967d8819250602a7c3da71add18c97c8408949537e61c99ea70",
+  "projection_sha256": "a61fe6ab7ac37cfb97dfe9eefa16c802243298af789750347980e4f323d8bdd4",
   "public_package_sha256": "6cf6bcf6aa0d265b4a6dcf4f93707996444c3d9ed3fb6698405bc68fbd96330b",
   "qa_profile": "full",
-  "ui_source_sha256": "55eac69ff7b686d9492c65df42ecdafd5741f4bff6ce4a9f1ac3e56ee6807216",
+  "ui_source_sha256": "b2b065e16b8ec7a814bea542a0b10c906d306ec759a95ae78069c8bbdec42194",
+  "qa_tooling_sha256": "a2da02bff18d431de459b4b4804b18f63685ce37a4bce18e4d62466f04b2bfc8",
   "status": "pass",
   "viewports": {
     "desktop": true,
@@ -28,23 +30,23 @@
     },
     {
       "viewport": "desktop-timeline",
-      "sha256": "8177ef5ead30b04c72e27badfb7104149c4a289541cca181bee7209ed1fb8fb7"
+      "sha256": "92447bf64bce19fd448c3a3129e28cf2a12a89ff335a9a1cf12393161795eea4"
     },
     {
       "viewport": "desktop-graph",
-      "sha256": "445a587868a24a63aa78486d105b8bcfd25d836c4e0bb76fa1cc55d05c109f81"
+      "sha256": "1528550ad01fd8b1233a1209df08c189e351f00121ff47446338b5c933cfc7af"
     },
     {
       "viewport": "desktop-gaps",
-      "sha256": "b7e4e74df97c00ebff31c6d3427563be7bf33905a77a8270034f1fcfbaf0ee58"
+      "sha256": "30ad4bc42de46b51b22c8dac8ee5a1430af2838b899ab278fa72d4e0a95470a7"
     },
     {
       "viewport": "desktop-source-drawer",
-      "sha256": "911d48ee9d4245925b81f0ec5a7afe4d181ad41f9403f8f2bbf9a8a0eed47999"
+      "sha256": "12dc554dea8fea732eae7f30e7fd8952d0c7db1dd2b24e1f135ad11a6c334a88"
     },
     {
       "viewport": "desktop-reasoning-log",
-      "sha256": "3e607803cb250b0cddfae189a72e41034df33f514e3bf589f2cdd75235fb862a"
+      "sha256": "312cb27f94a9f8742f68a59fe404f0bc995840b701693c74ee59e5cfd71139f9"
     },
     {
       "viewport": "tablet-overview",
@@ -52,15 +54,15 @@
     },
     {
       "viewport": "tablet-timeline",
-      "sha256": "570b249ab43f8cafcfb2f272e937eeec40a3dd76c88ae54e92b86fc993cbb93f"
+      "sha256": "25b3085bc14abcd75828061cf79e38b749a0c56e84f09edd422fbff085240f34"
     },
     {
       "viewport": "tablet-graph",
-      "sha256": "02795d93391c31700f3f449065c94e0809d213e732b1b9a589ba811667cae469"
+      "sha256": "ea3cdc475c064325eb3f03d67741bf0fead5e26a44c8c73ea79bc06aa1b33278"
     },
     {
       "viewport": "tablet-gaps",
-      "sha256": "d245d353a28fa18505ed8eb926344ad939698d23ccf2871cfe8cac6b3feacf91"
+      "sha256": "772c79d0f321d1312da3da8ae062152e6e59e15a74fe0662970ff35e9d541c3a"
     },
     {
       "viewport": "tablet-source-drawer",
@@ -68,7 +70,7 @@
     },
     {
       "viewport": "tablet-reasoning-log",
-      "sha256": "6689459aaae34e45ef108a11f296e345788a3fc0fd1ab625bdc169c595b06cab"
+      "sha256": "eecbaf3c79e769fe52fd2b702527b087527ac9c3609a26950e46a3d5932e1d2f"
     },
     {
       "viewport": "mobile-overview",
@@ -76,23 +78,23 @@
     },
     {
       "viewport": "mobile-timeline",
-      "sha256": "0904c878c372b4586adc8a3381e61e827377612cf6cf1d0b4415959b4570dcdf"
+      "sha256": "0dc4012b34ceefd09844856afde35d07cadfc96fd3d2785cadf6c1a939b09d05"
     },
     {
       "viewport": "mobile-graph",
-      "sha256": "30d8b1489106190854fb7e914b7b4ad770a2ad2112744253028775a51752774f"
+      "sha256": "6670c8917c0b4042df5bd17d4fa1e82678f3d7d31641f2aa5c14a22994c0cb74"
     },
     {
       "viewport": "mobile-gaps",
-      "sha256": "de1b2b4e8f871460e87e2e92b6b6445f0803872778ea54b11f99d0a691c0d441"
+      "sha256": "6ce993b9b37b320feacfda0afdbfcbc4d4a5ef59870ec430eab502484e69ca10"
     },
     {
       "viewport": "mobile-source-drawer",
-      "sha256": "180b360a3698b58b5a9049856524ea3a0ab4a088978f441d83fe2e98df0f7189"
+      "sha256": "d1b45b942a29bba2f557b0cf8ff961dcf084bc194573337cc154987e78d0fafa"
     },
     {
       "viewport": "mobile-reasoning-log",
-      "sha256": "7ab0869b61c268e57cfb6350bfaae74601d0c0dd18f02b0df1f1a4f601bb3b08"
+      "sha256": "95ba09385893ca6e9a8a165950eedee7a259d7c2699b727060c2749954376e85"
     }
   ]
 }
