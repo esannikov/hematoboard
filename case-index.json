@@ -98,6 +98,13 @@
       "source_case_id": "CASE016",
       "data_path": "case016/public-dashboard.v1.json",
       "protocol_replay_of_case_id": null
+    },
+    {
+      "key": "case017",
+      "case_id": "CASE017",
+      "source_case_id": "CASE017",
+      "data_path": "case017/public-dashboard.v1.json",
+      "protocol_replay_of_case_id": null
     }
   ]
 }
