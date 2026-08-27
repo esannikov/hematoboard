@@ -1,10 +1,12 @@
 {
-  "schema_version": "hematoboard.v2.projection-qa/1.0",
+  "schema_version": "hematoboard.v2.projection-qa/1.1",
   "case_id": "CASE014",
   "candidate_sha256": "f3582ffd9475d0036e3b0dd1856d4b7d3854a0930a08c6ade85915530e01c668",
+  "projection_sha256": "42acd93c2b88790cd6f6402f9b4c91fad122ce153ce919fcb7968a0e4e929a6a",
   "public_package_sha256": "0cf995f127e6d04700997a357f1a5e073b56d05f8514e960999c67ec50048755",
   "qa_profile": "full",
-  "ui_source_sha256": "55eac69ff7b686d9492c65df42ecdafd5741f4bff6ce4a9f1ac3e56ee6807216",
+  "ui_source_sha256": "b2b065e16b8ec7a814bea542a0b10c906d306ec759a95ae78069c8bbdec42194",
+  "qa_tooling_sha256": "a2da02bff18d431de459b4b4804b18f63685ce37a4bce18e4d62466f04b2bfc8",
   "status": "pass",
   "viewports": {
     "desktop": true,
@@ -28,23 +30,23 @@
     },
     {
       "viewport": "desktop-timeline",
-      "sha256": "7afe467594c1d06faca01bf038cb030af57563dda5d9e677ed350a6d6ec2015b"
+      "sha256": "d87ee44c63669b0903eab1b12d79c275001b4e73c4de09b38beb555e95f798ea"
     },
     {
       "viewport": "desktop-graph",
-      "sha256": "29293a93d4997d5784982fd0959d093ee649fe6e2e7b55a72be2b93069802aab"
+      "sha256": "13c9a692869af0f4bd4f756066ebddac53dbe93b594c69ae360021c019b3b202"
     },
     {
       "viewport": "desktop-gaps",
-      "sha256": "eab9258fc90dd46e4e1f4776604aaef2fad3352b1a32531c46bfea6822a7afce"
+      "sha256": "d2c7505e981d721ebbd878ce69073bd05de21c87d169b2696051400a1e7e267a"
     },
     {
       "viewport": "desktop-source-drawer",
-      "sha256": "8ebce83394a9f92271767273ad1ae998054cd2e5b051ed923e63057774d269b7"
+      "sha256": "967d72baf9647f9dc3df0c5f133379831a16315500c6e60466cb2a71b7481630"
     },
     {
       "viewport": "desktop-reasoning-log",
-      "sha256": "ad76093b95e2ae9eaf9c4410a0a9f8df76ddc7241d9999052c6e46c3a9ddbd3d"
+      "sha256": "18fbf10cbb6a1ac9e452dcee8ecc3d824f0447e42baea2ded4959b90dcd8efe4"
     },
     {
       "viewport": "tablet-overview",
@@ -52,23 +54,23 @@
     },
     {
       "viewport": "tablet-timeline",
-      "sha256": "b07bc1d74a76cc6a1e531283c9cfd3edde1e6cc25ec9aa8c0c8eee9866fdbb1a"
+      "sha256": "bd2249c17186dd1c7865ebade1400e8536804a52a382c16230b9a6bb3a5a1da3"
     },
     {
       "viewport": "tablet-graph",
-      "sha256": "1ecc22097172a35667a3a104457abef5b4f7c9315073fbf8e5f9f59204999c3e"
+      "sha256": "416c43e633e21475df78eeb873b570493366a8ebf26b90816a0b2adf3d4fb905"
     },
     {
       "viewport": "tablet-gaps",
-      "sha256": "ac69cda8e9be8e5ecde076c3f2ec41c7f262b48ca4948c62ac01fd596c8fc99b"
+      "sha256": "67d351fe83da1f95810babd6519f9b21cf03292fddeffa5fd093317b7beac781"
     },
     {
       "viewport": "tablet-source-drawer",
-      "sha256": "65e2c2a000915012b1cf22a9eff31b219a4576246b0b52ea756c1e8b1ebc3b62"
+      "sha256": "607d28608abd0f8201e5b713eb5d73848e192618e6898ad6ed33e014afd2b905"
     },
     {
       "viewport": "tablet-reasoning-log",
-      "sha256": "b6fc5f445f2a347347fc3e0954b1f630514943211e939b7ff57b6fa3952f79fe"
+      "sha256": "2223d15bf179e657e95e2b757bcdcf1da869c539b0d146f30a20bd33700a665f"
     },
     {
       "viewport": "mobile-overview",
@@ -76,15 +78,15 @@
     },
     {
       "viewport": "mobile-timeline",
-      "sha256": "d843a79d4b01c3128b21d1d533d81c5bae5b2086c78c3701d55f5f0a0e22aa6b"
+      "sha256": "02e5ed60a986e4e465b0f2958b8e338235b9a6b8053629f148bedb976a3149b1"
     },
     {
       "viewport": "mobile-graph",
-      "sha256": "63e75847c28246a5fb2424abfa5f4b1e826f2e0713f089a697b73358778cd21c"
+      "sha256": "98d864681a525b2ec69778af39845ab5e92c2691cc3061720739edb85b6674e6"
     },
     {
       "viewport": "mobile-gaps",
-      "sha256": "b9304a5003b5414226b8e6bc9e76503baf975c0dcc92cdba012267acb0bafed6"
+      "sha256": "d6d51cf97ab67cf62b9d3aff1074c8542997fdde0e610415a54dc8ba32bc65e0"
     },
     {
       "viewport": "mobile-source-drawer",
@@ -92,7 +94,7 @@
     },
     {
       "viewport": "mobile-reasoning-log",
-      "sha256": "4493ca2d76993ff31120f9a616cc48a06181fd311fffef9e93da33534ccef9a9"
+      "sha256": "240bd75a1e696e1d5a0d6ba6d49a6dc41767bd99abf0523a62190e08c000e862"
     }
   ]
 }

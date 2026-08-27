@@ -1,10 +1,12 @@
 {
-  "schema_version": "hematoboard.v2.projection-qa/1.0",
+  "schema_version": "hematoboard.v2.projection-qa/1.1",
   "case_id": "CASE007",
   "candidate_sha256": "2bf4dd6cd715eca3d917abf87581fad093e8bb2b45d7bf2d3b97611c32a097cb",
+  "projection_sha256": "8f6deba9020f79fc2e7e25c2fbebadcd6d8fca424d96bfe3b588138f38088ca2",
   "public_package_sha256": "af3ae82f4dd07e9f08d55a621f078a67447827e5893b13da35521eac3117a4c2",
   "qa_profile": "full",
-  "ui_source_sha256": "55eac69ff7b686d9492c65df42ecdafd5741f4bff6ce4a9f1ac3e56ee6807216",
+  "ui_source_sha256": "b2b065e16b8ec7a814bea542a0b10c906d306ec759a95ae78069c8bbdec42194",
+  "qa_tooling_sha256": "a2da02bff18d431de459b4b4804b18f63685ce37a4bce18e4d62466f04b2bfc8",
   "status": "pass",
   "viewports": {
     "desktop": true,
@@ -28,23 +30,23 @@
     },
     {
       "viewport": "desktop-timeline",
-      "sha256": "1bf2d16a48c8fabfa69f0420c58faf4fb7d6586399eb298556fcaf3c371640cf"
+      "sha256": "3407298fbf8749fd2507a051ae1c90b4e30601b62288b8da89c6a8792efa9593"
     },
     {
       "viewport": "desktop-graph",
-      "sha256": "ceae6609b2ef7c3317d3184f3ca081fec814335d0a5bad127a83f4f0859e5d8a"
+      "sha256": "eeff3a843fa454cca5feb42e8238d590b9d0811c27dff73e95c543e828c13bb4"
     },
     {
       "viewport": "desktop-gaps",
-      "sha256": "3d6d602ebe797efe5ea4046e7796f18d858f69031e8e63ce82b538298f0b912d"
+      "sha256": "919bcdc3b559ab61c664d4784eee4fe86178a846d8939893319e4c5b6b052332"
     },
     {
       "viewport": "desktop-source-drawer",
-      "sha256": "f1ab9315ec5fc0539ffc8cedd9e70ae36b89cc480b6eeb3f8de62865b59d20a6"
+      "sha256": "16a0c065e0b154729d9a626c08021bfcc2cbefb6701bcee81b60cc4fdd4b31c3"
     },
     {
       "viewport": "desktop-reasoning-log",
-      "sha256": "1d893bd7590f4313837172fe12237cae23ff5207a8a3cea503c4dac55b0edf9e"
+      "sha256": "ce744f7f812bd464084ecfc7c4d061188844dd47c0d6d29df5d60488c78a240d"
     },
     {
       "viewport": "tablet-overview",
@@ -52,15 +54,15 @@
     },
     {
       "viewport": "tablet-timeline",
-      "sha256": "4cbdf620b0f1b4dd9dff3a8042afa6a75d5e109b2a106099c42f455860c67a3a"
+      "sha256": "37240c8cca3e93673de145d5281ca383e4c9c878eca4bc58f124d82ac7e9da0d"
     },
     {
       "viewport": "tablet-graph",
-      "sha256": "4a34b35f779f4acf057775d878c5167ecc80aecf18c827dc81fba8be7a34e956"
+      "sha256": "e13e3a3f4c086f0e2fd94d2e8124a2c800f9fec8582a3ab279ecbe6b9f764162"
     },
     {
       "viewport": "tablet-gaps",
-      "sha256": "f75386174fbab87692ee73c3e097974e69d385d1be18c23186eda4664bd206c8"
+      "sha256": "ca3b8192e98c80186b7ef7b7b4280bd2e444b52d526083deee1f8394f2789bec"
     },
     {
       "viewport": "tablet-source-drawer",
@@ -68,7 +70,7 @@
     },
     {
       "viewport": "tablet-reasoning-log",
-      "sha256": "5a000bc01833bb547db9ec004083d61e270ddefae31f1232e9af4f932644a3cc"
+      "sha256": "f97bf5caca29bc93a09b443130c4407f98e37ff755d31435cb2044f6fc4ece7c"
     },
     {
       "viewport": "mobile-overview",
@@ -76,23 +78,23 @@
     },
     {
       "viewport": "mobile-timeline",
-      "sha256": "d9bdc6b469641042d5059742fb2e96ab1730d7915f2ecdc2c27dd1029f0a3907"
+      "sha256": "158f818065e45d970236b8061d1e0c66399856dfa48c58e3c65ed93b9dc6cc7d"
     },
     {
       "viewport": "mobile-graph",
-      "sha256": "6c61206f846eb5cd7fa8d43a3bd604d08b1887a1bfd11c5b6d37f0966d76ff16"
+      "sha256": "9f258227ff07f540194a3884dbdd7094812a64c0dc16593872dfb8ef63d021bb"
     },
     {
       "viewport": "mobile-gaps",
-      "sha256": "4f90cbecad4cb461b5ad42ff824229af4595067c5f88027f99c6fded59103cd2"
+      "sha256": "ccc2b721c58cfa1c25d61e4ca5482ef8efab656c4e82d6e189eb50fe48c62b7c"
     },
     {
       "viewport": "mobile-source-drawer",
-      "sha256": "7c252417e03220281e7c7964318ef791e76792bbf76df38e9c6c11b5522c60c7"
+      "sha256": "5b3554f942c7d57c92327d20cb255b97082b3db5908242b98699ee1fbfff0744"
     },
     {
       "viewport": "mobile-reasoning-log",
-      "sha256": "4996310a68ec035d398adac18e5a37aebee720b344f8dde441a45612790a018a"
+      "sha256": "970f6b82e2a685da531697dc7d22f3a691e702858bc2ecea6b77db951e00361b"
     }
   ]
 }
