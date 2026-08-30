@@ -1,0 +1,6031 @@
+{
+ "schema_version": "hematoboard.v2.clinical-history-page/1.0",
+ "patient": {
+  "case_id": "CASE024",
+  "display_label": "CASE024",
+  "direct_identifiers_included": false,
+  "demographics_recorded": true,
+  "sex": "female",
+  "age_years": 61,
+  "age_as_of": "2026-03-30",
+  "reference_dependencies": {
+   "sex_dependent": 8,
+   "age_dependent": 1,
+   "resolved_for_patient": 7,
+   "not_applicable": 2
+  },
+  "period": {
+   "start": "2026-03-30",
+   "end": "2026-08-19",
+   "studies": 14,
+   "dates": 8
+  },
+  "studies": [
+   {
+    "id": "EV-ST-FDCDA56787FC7BA5",
+    "date": "2026-03-30",
+    "kind": "laboratory_panel",
+    "kind_label": "лабораторна панель",
+    "title": "Мієлограма та цитована гемограма",
+    "observation_count": 24,
+    "finding_count": 7
+   },
+   {
+    "id": "EV-ST-DECCBB880A23D109",
+    "date": "2026-04-09",
+    "kind": "laboratory_panel",
+    "kind_label": "лабораторна панель",
+    "title": "Електрофорез та імунофіксація крові та сечі",
+    "observation_count": 17,
+    "finding_count": 0
+   },
+   {
+    "id": "EV-ST-176D7E131B1E3CDC",
+    "date": "2026-04-09",
+    "kind": "laboratory_panel",
+    "kind_label": "лабораторна панель",
+    "title": "ЛДГ і кальцій",
+    "observation_count": 2,
+    "finding_count": 0
+   },
+   {
+    "id": "EV-ST-2CC125988DECAA58",
+    "date": "2026-04-22",
+    "kind": "pathology_procedure",
+    "kind_label": "патоморфологія",
+    "title": "Патоморфологічне дослідження мезентеріального утворення",
+    "observation_count": 0,
+    "finding_count": 14
+   },
+   {
+    "id": "EV-ST-5B1995981FDCFC92",
+    "date": "2026-04-23",
+    "kind": "laboratory_panel",
+    "kind_label": "лабораторна панель",
+    "title": "β2-мікроглобулін",
+    "observation_count": 1,
+    "finding_count": 0
+   },
+   {
+    "id": "EV-ST-72D72BAB7426522F",
+    "date": "2026-04-23",
+    "kind": "laboratory_panel",
+    "kind_label": "лабораторна панель",
+    "title": "Вільні легкі ланцюги крові та сечі",
+    "observation_count": 7,
+    "finding_count": 0
+   },
+   {
+    "id": "EV-ST-A6461F1E11EB7542",
+    "date": "2026-04-28",
+    "kind": "pathology_procedure",
+    "kind_label": "патоморфологія",
+    "title": "Трепанобіопсія кісткового мозку",
+    "observation_count": 0,
+    "finding_count": 3
+   },
+   {
+    "id": "EV-ST-2D7FF2926A92514F",
+    "date": "2026-07-16",
+    "kind": "imaging_study",
+    "kind_label": "візуалізація",
+    "title": "Низькодозовий КТ-остеоскринінг",
+    "observation_count": 0,
+    "finding_count": 10
+   },
+   {
+    "id": "EV-ST-481417BE286CB97E",
+    "date": "2026-08-17",
+    "kind": "laboratory_panel",
+    "kind_label": "лабораторна панель",
+    "title": "Електрофорез білкових фракцій крові та сечі",
+    "observation_count": 15,
+    "finding_count": 0
+   },
+   {
+    "id": "EV-ST-789A626F61C2F893",
+    "date": "2026-08-19",
+    "kind": "laboratory_panel",
+    "kind_label": "лабораторна панель",
+    "title": "Біохімічний аналіз",
+    "observation_count": 18,
+    "finding_count": 0
+   },
+   {
+    "id": "EV-ST-04982C78F1EF4617",
+    "date": "2026-08-19",
+    "kind": "laboratory_panel",
+    "kind_label": "лабораторна панель",
+    "title": "Глюкоза крові з вени",
+    "observation_count": 1,
+    "finding_count": 0
+   },
+   {
+    "id": "EV-ST-EC9BE96D4DEE8C1F",
+    "date": "2026-08-19",
+    "kind": "laboratory_panel",
+    "kind_label": "лабораторна панель",
+    "title": "Загальний аналіз крові",
+    "observation_count": 12,
+    "finding_count": 0
+   },
+   {
+    "id": "EV-ST-A024E4BAFC2CF95A",
+    "date": "2026-08-19",
+    "kind": "laboratory_panel",
+    "kind_label": "лабораторна панель",
+    "title": "Загальний аналіз сечі",
+    "observation_count": 11,
+    "finding_count": 0
+   },
+   {
+    "id": "EV-ST-4BDC50A73E4634ED",
+    "date": "2026-08-19",
+    "kind": "laboratory_panel",
+    "kind_label": "лабораторна панель",
+    "title": "Ревмопроби",
+    "observation_count": 2,
+    "finding_count": 0
+   }
+  ],
+  "materials": [
+   {
+    "type": "blood",
+    "label": "кров",
+    "count": 5
+   },
+   {
+    "type": "serum",
+    "label": "сироватка",
+    "count": 4
+   },
+   {
+    "type": "urine",
+    "label": "сеча",
+    "count": 3
+   },
+   {
+    "type": "bone_marrow",
+    "label": "кістковий мозок",
+    "count": 2
+   },
+   {
+    "type": "tissue",
+    "label": "тканина",
+    "count": 1
+   }
+  ],
+  "typed_findings": [
+   {
+    "type": "bone_lesion_statement",
+    "label": "вогнища в кістках",
+    "count": 6
+   },
+   {
+    "type": "mesenteric_mass_statement",
+    "label": "мезентеріальний утвір",
+    "count": 3
+   },
+   {
+    "type": "rib_fracture_statement",
+    "label": "переломи ребер",
+    "count": 3
+   },
+   {
+    "type": "renal_cyst_statement",
+    "label": "кісти нирок",
+    "count": 2
+   }
+  ],
+  "latest_study_date": "2026-08-19",
+  "latest_out_of_range": [
+   {
+    "analyte": "MCH",
+    "value": 26.0,
+    "unit": null,
+    "reference": "27–34",
+    "status": "below",
+    "specimen_type": "blood"
+   },
+   {
+    "analyte": "Альбумін",
+    "value": 54.0,
+    "unit": "г/л",
+    "reference": "35–52",
+    "status": "above",
+    "specimen_type": "blood"
+   },
+   {
+    "analyte": "Цукор",
+    "value": 6.33,
+    "unit": "ммоль/л",
+    "reference": "4.1–5.9",
+    "status": "above",
+    "specimen_type": "blood"
+   }
+  ]
+ },
+ "criteria": {
+  "guideline": "IMWG 2014",
+  "citation": "Rajkumar SV, Dimopoulos MA, Palumbo A, et al. International Myeloma Working Group updated criteria for the diagnosis of multiple myeloma. Lancet Oncol. 2014;15(12):e538–e548.",
+  "status": "unverified_criteria_set",
+  "results": [
+   {
+    "id": "CRIT-CRAB-C",
+    "set": "CRAB",
+    "letter": "C",
+    "label": "Гіперкальціємія",
+    "statement": "Кальцій сироватки понад 2,75 ммоль/л або понад 0,25 ммоль/л вище верхньої межі норми лабораторії.",
+    "comparator": ">",
+    "threshold": 2.75,
+    "unit": "ммоль/л",
+    "observed_value": 2.51,
+    "observed_date": "2026-08-19",
+    "status": "not_met",
+    "verified": false,
+    "evidence": [
+     {
+      "kind": "observation",
+      "id": "OB-RB-36E223A4EA2A9012",
+      "date": "2026-08-19",
+      "value": 2.51,
+      "unit": "ммоль/л"
+     },
+     {
+      "kind": "observation",
+      "id": "OB-RB-C93CF2AED0610869",
+      "date": "2026-04-09",
+      "value": 2.48,
+      "unit": "ммоль/л"
+     }
+    ]
+   },
+   {
+    "id": "CRIT-CRAB-R",
+    "set": "CRAB",
+    "letter": "R",
+    "label": "Ниркова недостатність",
+    "statement": "Креатинін сироватки понад 177 мкмоль/л або кліренс креатиніну нижче 40 мл/хв.",
+    "comparator": ">",
+    "threshold": 177,
+    "unit": "мкмоль/л",
+    "observed_value": 78,
+    "observed_date": "2026-08-19",
+    "status": "not_met",
+    "verified": false,
+    "evidence": [
+     {
+      "kind": "observation",
+      "id": "OB-RB-C12256D6E3880776",
+      "date": "2026-08-19",
+      "value": 78,
+      "unit": "мкмоль/л"
+     }
+    ]
+   },
+   {
+    "id": "CRIT-CRAB-A",
+    "set": "CRAB",
+    "letter": "A",
+    "label": "Анемія",
+    "statement": "Гемоглобін нижче 100 г/л або більш ніж на 20 г/л нижче нижньої межі норми лабораторії.",
+    "comparator": "<",
+    "threshold": 100,
+    "unit": "г/л",
+    "observed_value": 139,
+    "observed_date": "2026-03-30",
+    "status": "not_met",
+    "verified": false,
+    "evidence": [
+     {
+      "kind": "observation",
+      "id": "OB-RB-5C0E3DB274049B1A",
+      "date": "2026-03-30",
+      "value": 139,
+      "unit": "г/л"
+     },
+     {
+      "kind": "observation",
+      "id": "OB-RB-770F06DBAA4E7964",
+      "date": "2026-08-19",
+      "value": 142,
+      "unit": "г/л"
+     }
+    ]
+   },
+   {
+    "id": "CRIT-CRAB-B",
+    "set": "CRAB",
+    "letter": "B",
+    "label": "Ураження кісток",
+    "statement": "Щонайменше одне остеолітичне вогнище за рентгенографією скелета, КТ або ПЕТ-КТ.",
+    "comparator": ">=",
+    "threshold": 1,
+    "unit": "вогнищ",
+    "observed_value": 6.0,
+    "observed_date": "2026-04-22",
+    "status": "present_requires_attribution",
+    "verified": false,
+    "evidence": [
+     {
+      "kind": "finding",
+      "id": "FD-RB-01C1DEFA02D34876",
+      "date": "2026-04-22",
+      "text": "ОЧП,ОМТ з в/в контр. 22.04.2026 р. - Вогнищеві зміни кісток голови, хребта, плазмоцитома)."
+     },
+     {
+      "kind": "finding",
+      "id": "FD-RB-46FB8FBFF5F86962",
+      "date": "2026-07-16",
+      "text": "ВИСНОВОК: Множинно-вогнищеве ураження кісткового скелету (множинна міслома?), кількість та розміри без динаміки від 22.04.2026р. - без вираженого м'якотканинного компоненту."
+     },
+     {
+      "kind": "finding",
+      "id": "FD-RB-5D7D8FC67F5DC5D5",
+      "date": "2026-07-16",
+      "text": "В рукоятці та в тілі грудини - остеопоротичні зміни, вогнища остеолітичної деструкції не проглядаються."
+     },
+     {
+      "kind": "finding",
+      "id": "FD-RB-6A0CA26462177D39",
+      "date": "2026-07-16",
+      "text": "Хребет. в шийному відділі - в СІ до 6мм, в C2-C7 - поодинокі 3-4мм - без динаміки, в поперековому відділі - вогнища літичної деструкції, найбільш виражені зміни - в тілі хребця L2 до Ісм, без вираженого мʼякотканинного компоненту та без ознак формування компресійних переломів на момент обстеження."
+     },
+     {
+      "kind": "finding",
+      "id": "FD-RB-8362E167E38CD4D7",
+      "date": "2026-07-16",
+      "text": "Вогнища остеолітичної деструкції не проглядаються."
+     },
+     {
+      "kind": "finding",
+      "id": "FD-RB-95F719F5DDAC043B",
+      "date": "2026-07-16",
+      "text": "На серіях нативних МСКТ-сканів, МП-реконструкціях в кістковому скелеті зберігаються множинні осередки літичного пошкодження: Кістки черепа. в проекції кісток склепіння черепа - множинні літичні осередки без вираженого мʼякотканинного компоненту - лобних та тімʼяних кісток з обох сторін, в т.ч. з руйнуванням скляної пластинки - розмірами до 3-6,5мм."
+     }
+    ]
+   },
+   {
+    "id": "CRIT-SLIM-S",
+    "set": "SLiM",
+    "letter": "S",
+    "label": "Клональні плазматичні клітини кісткового мозку",
+    "statement": "Частка клональних плазматичних клітин кісткового мозку 60% і більше.",
+    "comparator": ">=",
+    "threshold": 60,
+    "unit": "%",
+    "observed_value": 1.6,
+    "observed_date": "2026-03-30",
+    "status": "not_met",
+    "verified": false,
+    "evidence": [
+     {
+      "kind": "observation",
+      "id": "OB-RB-FDFA62E0AF3B87EE",
+      "date": "2026-03-30",
+      "value": 1.6,
+      "unit": "%"
+     }
+    ]
+   },
+   {
+    "id": "CRIT-SLIM-LI",
+    "set": "SLiM",
+    "letter": "Li",
+    "label": "Співвідношення вільних легких ланцюгів",
+    "statement": "Співвідношення залучених до незалучених вільних легких ланцюгів 100 і більше за концентрації залучених від 100 мг/л. Цей поріг надрукований і в самому джерелі пацієнта.",
+    "comparator": ">=",
+    "threshold": 100,
+    "unit": "у.о.",
+    "observed_value": 1.05,
+    "observed_date": "2026-04-23",
+    "status": "not_met",
+    "verified": false,
+    "evidence": [
+     {
+      "kind": "observation",
+      "id": "OB-RB-0E1E300F7DD2D1F5",
+      "date": "2026-04-23",
+      "value": 1.05,
+      "unit": "у.о."
+     }
+    ]
+   },
+   {
+    "id": "CRIT-SLIM-M",
+    "set": "SLiM",
+    "letter": "M",
+    "label": "Вогнищеві ураження за МРТ",
+    "statement": "Більше одного вогнищевого ураження розміром від 5 мм за МРТ.",
+    "comparator": ">",
+    "threshold": 1,
+    "unit": "вогнищ",
+    "observed_value": null,
+    "observed_date": null,
+    "status": "not_evaluable",
+    "verified": false,
+    "evidence": []
+   }
+  ]
+ },
+ "preview_only": true,
+ "clinician_accepted": false,
+ "case": {
+  "id": "CASE024",
+  "graph_state_sha256": "eb5d303d58ddf5fc025ced3f4cf3fc82f6467bc12b72ed287ce6067651918dee",
+  "clinical_input_sha256": "da0cf7708bf51ec6023a43c96b1d3be4219c716f7d6dab731c71c60e604c0fae",
+  "source_document_sha256": "0845fea2be588e668544b4a5655e420cc3aeb8366ecedfa6080e14f24c154c84",
+  "authority": "human_source_reviewed_patient_graph"
+ },
+ "events": [
+  {
+   "id": "EV-ST-FDCDA56787FC7BA5",
+   "date": "2026-03-30",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 24,
+   "finding_count": 7,
+   "specimen_types": [
+    "blood",
+    "bone_marrow"
+   ],
+   "pages": [
+    2,
+    18,
+    19
+   ]
+  },
+  {
+   "id": "EV-ST-176D7E131B1E3CDC",
+   "date": "2026-04-09",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 2,
+   "finding_count": 0,
+   "specimen_types": [
+    "serum"
+   ],
+   "pages": [
+    6
+   ]
+  },
+  {
+   "id": "EV-ST-DECCBB880A23D109",
+   "date": "2026-04-09",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 17,
+   "finding_count": 0,
+   "specimen_types": [
+    "serum",
+    "urine"
+   ],
+   "pages": [
+    13
+   ]
+  },
+  {
+   "id": "EV-ST-2CC125988DECAA58",
+   "date": "2026-04-22",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 0,
+   "finding_count": 14,
+   "specimen_types": [
+    "tissue"
+   ],
+   "pages": [
+    3,
+    8
+   ]
+  },
+  {
+   "id": "EV-ST-5B1995981FDCFC92",
+   "date": "2026-04-23",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 1,
+   "finding_count": 0,
+   "specimen_types": [
+    "serum"
+   ],
+   "pages": [
+    5
+   ]
+  },
+  {
+   "id": "EV-ST-72D72BAB7426522F",
+   "date": "2026-04-23",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 7,
+   "finding_count": 0,
+   "specimen_types": [
+    "blood",
+    "urine"
+   ],
+   "pages": [
+    4
+   ]
+  },
+  {
+   "id": "EV-ST-A6461F1E11EB7542",
+   "date": "2026-04-28",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 0,
+   "finding_count": 3,
+   "specimen_types": [
+    "bone_marrow"
+   ],
+   "pages": [
+    17
+   ]
+  },
+  {
+   "id": "EV-ST-2D7FF2926A92514F",
+   "date": "2026-07-16",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 0,
+   "finding_count": 10,
+   "specimen_types": [],
+   "pages": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "EV-ST-481417BE286CB97E",
+   "date": "2026-08-17",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 15,
+   "finding_count": 0,
+   "specimen_types": [
+    "serum",
+    "urine"
+   ],
+   "pages": [
+    12
+   ]
+  },
+  {
+   "id": "EV-ST-04982C78F1EF4617",
+   "date": "2026-08-19",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 1,
+   "finding_count": 0,
+   "specimen_types": [
+    "blood"
+   ],
+   "pages": [
+    10
+   ]
+  },
+  {
+   "id": "EV-ST-4BDC50A73E4634ED",
+   "date": "2026-08-19",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 2,
+   "finding_count": 0,
+   "specimen_types": [],
+   "pages": [
+    11
+   ]
+  },
+  {
+   "id": "EV-ST-789A626F61C2F893",
+   "date": "2026-08-19",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 18,
+   "finding_count": 0,
+   "specimen_types": [
+    "blood"
+   ],
+   "pages": [
+    11
+   ]
+  },
+  {
+   "id": "EV-ST-A024E4BAFC2CF95A",
+   "date": "2026-08-19",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 11,
+   "finding_count": 0,
+   "specimen_types": [],
+   "pages": [
+    10
+   ]
+  },
+  {
+   "id": "EV-ST-EC9BE96D4DEE8C1F",
+   "date": "2026-08-19",
+   "time_basis": "pdf_visual_review",
+   "literal": null,
+   "observation_count": 12,
+   "finding_count": 0,
+   "specimen_types": [
+    "blood"
+   ],
+   "pages": [
+    10
+   ]
+  }
+ ],
+ "observations": [
+  {
+   "id": "OB-RB-00BB208F890DF78C",
+   "version_id": "COV-8F38D1AD8E9A26BAEA98485D",
+   "analyte": "Білірубін непрямий",
+   "analyte_key": "білірубін непрямий",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-BILIRUBIN_INDIRECT",
+   "concept_label": "Білірубін непрямий",
+   "value_number": 5.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "мкмоль/л",
+   "canonical_unit": "umol/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0126"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Білірубін непрямий: 5,0 мкмоль/л"
+  },
+  {
+   "id": "OB-RB-0620A52405600DE2",
+   "version_id": "COV-7AAA4D3FFE167BB4EE768552",
+   "analyte": "Еозинофільні гранулоцити",
+   "analyte_key": "еозинофільні гранулоцити",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 2.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 0.5,
+    "high": 5.8,
+    "text": "0.5–5.8",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0079",
+    "SR-0845FEA2BE58-P0103"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Еозинофільні гранулоцити: 2 %; референс 0.5–5.8."
+  },
+  {
+   "id": "OB-RB-0652B19FEEC5EFFA",
+   "version_id": "COV-8A1CE20082FF6AA2547478BE",
+   "analyte": "Феритин",
+   "analyte_key": "феритин",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-FERRITIN",
+   "concept_label": "Феритин",
+   "value_number": 178.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "мкг/л",
+   "canonical_unit": null,
+   "reference": {
+    "kind": "interval",
+    "low": 20.0,
+    "high": 200.0,
+    "text": "20–200",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0039"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Феритин: 178 мкг/л; референс 20–200."
+  },
+  {
+   "id": "OB-RB-0E1E300F7DD2D1F5",
+   "version_id": "COV-FF8BF972604C2ACA2CDC22E5",
+   "analyte": "Співвідношення залучених/незалучених вільних легких ланцюгів (iFLC/uFLC ratio)",
+   "analyte_key": "співвідношення залучених/незалучених вільних легких ланцюгів (іflс/uflс rатіо)",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-FLC_INVOLVED_RATIO",
+   "concept_label": "Співвідношення залучених/незалучених FLC",
+   "value_number": 1.05,
+   "value_text": null,
+   "comparator": null,
+   "unit": "у.о.",
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-72D72BAB7426522F",
+   "event_date": "2026-04-23",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-D5F42D460E844B28",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    4
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0009"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Співвідношення залучених/незалучених вільних легких ланцюгів (iFLC/uFLC ratio): 1.05 у.о.."
+  },
+  {
+   "id": "OB-RB-0E98695944486705",
+   "version_id": "COV-A878E0376933B29926E31EFE",
+   "analyte": "Загальний білок крові",
+   "analyte_key": "загальний білок крові",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-TOTAL_PROTEIN",
+   "concept_label": "Загальний білок",
+   "value_number": null,
+   "value_text": "Загальний білок крові: 72,40 г/л",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-2207691F6AE3F769",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0127"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Загальний білок крові: 72,40 г/л"
+  },
+  {
+   "id": "OB-RB-0F90583306855A76",
+   "version_id": "COV-6ED20F1EAF7DB232D449E24B",
+   "analyte": "Промієлоцити",
+   "analyte_key": "промієлоцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-PROMYELOCYTES",
+   "concept_label": "Промієлоцити",
+   "value_number": 0.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 1.0,
+    "high": 4.1,
+    "text": "1.0–4.1",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "below",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0074",
+    "SR-0845FEA2BE58-P0098"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Промієлоцити: 0 %; референс 1.0–4.1."
+  },
+  {
+   "id": "OB-RB-10303825CCF6F4EB",
+   "version_id": "COV-4112557D1404AB00394D977F",
+   "analyte": "Глюкоза",
+   "analyte_key": "глюкоза",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-GLUCOSE",
+   "concept_label": "Глюкоза",
+   "value_number": null,
+   "value_text": "Глюкоза: негативно",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-A024E4BAFC2CF95A",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0128"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Глюкоза: негативно"
+  },
+  {
+   "id": "OB-RB-11AB7D6C99FD6794",
+   "version_id": "COV-46FB1B22A084FAD6F6F34474",
+   "analyte": "β",
+   "analyte_key": "β",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_BETA",
+   "concept_label": "β-фракція",
+   "value_number": 3.45,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 4.4,
+    "high": 11.6,
+    "text": "4,4–11,6",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "below",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-1B50517A4D713EDB",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0048"
+   ],
+   "verification_state": "source_verified",
+   "literal": "β: 3.45 г/л; референс 4,4–11,6."
+  },
+  {
+   "id": "OB-RB-13CE68A53D646F6E",
+   "version_id": "COV-32F2725CEBEFD31C4D8D56F1",
+   "analyte": "Індекс визрівання еритрокаріоцитів",
+   "analyte_key": "індекс визрівання еритрокаріоцитів",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 1.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 0.8,
+    "high": 0.9,
+    "text": "0.8–0.9",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0092",
+    "SR-0845FEA2BE58-P0116"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Індекс визрівання еритрокаріоцитів: 1 %; референс 0.8–0.9."
+  },
+  {
+   "id": "OB-RB-148807CB3464F756",
+   "version_id": "COV-7C7380F873289A3E2E3C7078",
+   "analyte": "Лімфоцити",
+   "analyte_key": "лімфоцити",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 22.2,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 19.0,
+    "high": 37.0,
+    "text": "19,0–37,0",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-EC9BE96D4DEE8C1F",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-844AFE266264E51C",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0021"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Лімфоцити: 22.2 %; референс 19,0–37,0."
+  },
+  {
+   "id": "OB-RB-1490C8ED7BE54F41",
+   "version_id": "COV-8E7938F41A29011F07352D5D",
+   "analyte": "АсАТ",
+   "analyte_key": "асат",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-AST",
+   "concept_label": "АсАТ",
+   "value_number": 16.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "од/л",
+   "canonical_unit": "U/L",
+   "reference": {
+    "kind": "comparator",
+    "low": null,
+    "high": 31.0,
+    "text": "ч: до 35; ж: до 31",
+    "sex_dependent": true,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0034"
+   ],
+   "verification_state": "source_verified",
+   "literal": "АсАТ: 16 од/л; референс ч: до 35; ж: до 31."
+  },
+  {
+   "id": "OB-RB-149B0D33DB5448CA",
+   "version_id": "COV-F9AEF4D49A25DEC03884466E",
+   "analyte": "Епітелій перехідний",
+   "analyte_key": "епітелій перехідний",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": null,
+   "value_text": "Епітелій перехідний: поодинокі",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-A024E4BAFC2CF95A",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0129"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Епітелій перехідний: поодинокі"
+  },
+  {
+   "id": "OB-RB-16EC897581C82843",
+   "version_id": "COV-7A51DCF2AE4F5D2A5A88A90B",
+   "analyte": "γ",
+   "analyte_key": "γ",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_GAMMA",
+   "concept_label": "γ-фракція",
+   "value_number": 8.64,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 5.5,
+    "high": 13.4,
+    "text": "5,5–13,4",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-2207691F6AE3F769",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0061"
+   ],
+   "verification_state": "source_verified",
+   "literal": "γ: 8.64 г/л; референс 5,5–13,4."
+  },
+  {
+   "id": "OB-RB-1D7B96B79655B364",
+   "version_id": "COV-63DE11554D62A4761AEE47AF",
+   "analyte": "Білок",
+   "analyte_key": "білок",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": null,
+   "value_text": "Білок: негативно",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-A024E4BAFC2CF95A",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0130"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Білок: негативно"
+  },
+  {
+   "id": "OB-RB-1D91EB7B5AC1FEAB",
+   "version_id": "COV-EA7440AA77A01EAAB5BA9D72",
+   "analyte": "α1",
+   "analyte_key": "α1",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_ALPHA1",
+   "concept_label": "α1-фракція",
+   "value_number": 5.81,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 1.6,
+    "high": 6.7,
+    "text": "1,6–6,7",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-2207691F6AE3F769",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0058"
+   ],
+   "verification_state": "source_verified",
+   "literal": "α1: 5.81 г/л; референс 1,6–6,7."
+  },
+  {
+   "id": "OB-RB-2823DE15BDD70CED",
+   "version_id": "COV-23BF69F4362766313FE9D7DB",
+   "analyte": "Сечова кислота",
+   "analyte_key": "сечова кислота",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-URIC_ACID",
+   "concept_label": "Сечова кислота",
+   "value_number": 430,
+   "value_text": null,
+   "comparator": null,
+   "unit": "мкмоль/л",
+   "canonical_unit": "umol/L",
+   "reference": {
+    "kind": "sex_not_applicable",
+    "text": "ч: 208–428",
+    "low": null,
+    "high": null,
+    "sex_dependent": true,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0041"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Сечова кислота: 430 мкмоль/л; референс ч: 208–428."
+  },
+  {
+   "id": "OB-RB-2A15801E03831895",
+   "version_id": "COV-BB10BBDAEA05AB5C48BDB2AC",
+   "analyte": "Базофільні гранулоцити",
+   "analyte_key": "базофільні гранулоцити",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 0.4,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 0.0,
+    "high": 0.5,
+    "text": "0.0–0.5",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0080",
+    "SR-0845FEA2BE58-P0104"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Базофільні гранулоцити: 0.4 %; референс 0.0–0.5."
+  },
+  {
+   "id": "OB-RB-2C6660521141D15E",
+   "version_id": "COV-51FA366DE662FED2C546EE3D",
+   "analyte": "Гематокрит",
+   "analyte_key": "гематокрит",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-HEMATOCRIT",
+   "concept_label": "Гематокрит",
+   "value_number": 0.44,
+   "value_text": null,
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "interval",
+    "low": 0.4,
+    "high": 0.48,
+    "text": "0,40–0,48",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-EC9BE96D4DEE8C1F",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-844AFE266264E51C",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0023"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Гематокрит: 0.44; референс 0,40–0,48."
+  },
+  {
+   "id": "OB-RB-2CBB1EBBF19E6861",
+   "version_id": "COV-6C33C67DFD9E14E0B62D2CF5",
+   "analyte": "Моноцити",
+   "analyte_key": "моноцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-MONOCYTES",
+   "concept_label": "Моноцити",
+   "value_number": 1.2,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 0.7,
+    "high": 3.1,
+    "text": "0.7–3.1",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0084",
+    "SR-0845FEA2BE58-P0108"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Моноцити: 1.2 %; референс 0.7–3.1."
+  },
+  {
+   "id": "OB-RB-2CF083D0B0D6CE17",
+   "version_id": "COV-7D699CF485AD71EA382606B1",
+   "analyte": "Вільні легкі ланцюги Каппа (сеча)",
+   "analyte_key": "вільні легкі ланцюги каппа (сеча)",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-FLC_KAPPA",
+   "concept_label": "Вільні легкі ланцюги Каппа",
+   "value_number": 13.72,
+   "value_text": null,
+   "comparator": null,
+   "unit": "мг/л",
+   "canonical_unit": "mg/L",
+   "reference": {
+    "kind": "comparator",
+    "low": null,
+    "high": 32.9,
+    "text": "<32,90",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-72D72BAB7426522F",
+   "event_date": "2026-04-23",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-4132FDD86266A9E6",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    4
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0010"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Вільні легкі ланцюги Каппа (сеча): 13.72 мг/л; референс <32,90."
+  },
+  {
+   "id": "OB-RB-2F9C884558265DF8",
+   "version_id": "COV-02E580155C2911844A695BAF",
+   "analyte": "α2",
+   "analyte_key": "α2",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_ALPHA2",
+   "concept_label": "α2-фракція",
+   "value_number": 7.46,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 5.6,
+    "high": 12.4,
+    "text": "5,6–12,4",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-1B50517A4D713EDB",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0047"
+   ],
+   "verification_state": "source_verified",
+   "literal": "α2: 7,46 г/л; референс 5,6–12,4"
+  },
+  {
+   "id": "OB-RB-2F9ECB4D374CAF48",
+   "version_id": "COV-A6ED5585FBE198C435E13046",
+   "analyte": "Всі гранулоцитарні елементи",
+   "analyte_key": "всі гранулоцитарні елементи",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 66.8,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0081",
+    "SR-0845FEA2BE58-P0105"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Всі гранулоцитарні елементи: 66.8 %."
+  },
+  {
+   "id": "OB-RB-36E223A4EA2A9012",
+   "version_id": "COV-449B5C1D754C7EC542EE5F50",
+   "analyte": "Кальцій заг.",
+   "analyte_key": "кальцій заг.",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-CALCIUM",
+   "concept_label": "Кальцій",
+   "value_number": 2.51,
+   "value_text": null,
+   "comparator": null,
+   "unit": "ммоль/л",
+   "canonical_unit": "mmol/L",
+   "reference": {
+    "kind": "interval",
+    "low": 2.15,
+    "high": 2.57,
+    "text": "2.15–2.57",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0030"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Кальцій заг.: 2.51 ммоль/л; референс 2.15–2.57."
+  },
+  {
+   "id": "OB-RB-373ADE0B1E1A8880",
+   "version_id": "COV-6B79B8B478D5D1D4FE4086D4",
+   "analyte": "Лактатдегідрогеназа (ЛДГ)",
+   "analyte_key": "лактатдегідрогеназа (лдг)",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-LDH",
+   "concept_label": "Лактатдегідрогеназа",
+   "value_number": 168.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "Од/л",
+   "canonical_unit": "U/L",
+   "reference": {
+    "kind": "interval",
+    "low": 110.0,
+    "high": 250.0,
+    "text": "110,0–250,0",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-176D7E131B1E3CDC",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-2F3CA5B98063F961",
+   "specimen_type": "serum",
+   "specimen_literal": "кров/сироватка",
+   "pages": [
+    6
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0014"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Лактатдегідрогеназа (ЛДГ): 168 Од/л; референс 110,0–250,0."
+  },
+  {
+   "id": "OB-RB-380322A42591B302",
+   "version_id": "COV-11B5CC4C2493BDE095EB1CC4",
+   "analyte": "Загальний білок сечі",
+   "analyte_key": "загальний білок сечі",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-TOTAL_PROTEIN",
+   "concept_label": "Загальний білок",
+   "value_number": 0.01,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 0.01,
+    "high": 0.14,
+    "text": "0,01–0,14",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-A93CB400D749FCB3",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0043"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Загальний білок сечі: 0.01 г/л; референс 0,01–0,14."
+  },
+  {
+   "id": "OB-RB-425D877347252BC0",
+   "version_id": "COV-C129F1E104C46AB01B86A191",
+   "analyte": "Нейтрофільні гранулоцити сегментоядерні",
+   "analyte_key": "нейтрофільні гранулоцити сегментоядерні",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 25.6,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 13.1,
+    "high": 24.1,
+    "text": "13.1–24.1",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0078",
+    "SR-0845FEA2BE58-P0102"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Нейтрофільні гранулоцити сегментоядерні: 25.6 %; референс 13.1–24.1."
+  },
+  {
+   "id": "OB-RB-448EA2EDCA681953",
+   "version_id": "COV-BFE6D7A65375FB2426D7CD7F",
+   "analyte": "Сечовина",
+   "analyte_key": "сечовина",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-UREA",
+   "concept_label": "Сечовина",
+   "value_number": 4.2,
+   "value_text": null,
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": "mmol/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": "registry",
+   "registry_band": {
+    "low": 2.5,
+    "high": 7.5,
+    "id": "RI-UREA-ADULT-v1",
+    "source": "Merck Manual, Laboratory Reference Ranges (adult)",
+    "verified": false
+   },
+   "status": "not_comparable",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0028"
+   ],
+   "verification_state": "source_verified",
+   "literal": null
+  },
+  {
+   "id": "OB-RB-49504F198E12853F",
+   "version_id": "COV-FB92B3BADC4E2859D8ACDB30",
+   "analyte": "Вміст глюкози",
+   "analyte_key": "вміст глюкози",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-GLUCOSE",
+   "concept_label": "Глюкоза",
+   "value_number": 6.33,
+   "value_text": null,
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-04982C78F1EF4617",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-542C60676ABB00DB",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0027"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Вміст глюкози: 6.33."
+  },
+  {
+   "id": "OB-RB-4B34E30741AA68C4",
+   "version_id": "COV-0A67C21AE289C39ADE5C61F0",
+   "analyte": "M-протеїн",
+   "analyte_key": "м-протеїн",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-M_PROTEIN",
+   "concept_label": "М-протеїн",
+   "value_number": 0.001,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-EFA66E66150C692B",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0068"
+   ],
+   "verification_state": "source_verified",
+   "literal": "M-протеїн: 0.001 г/л."
+  },
+  {
+   "id": "OB-RB-4C4912FCD27B8230",
+   "version_id": "COV-4EC62AFA5F1310A6D0BBF23D",
+   "analyte": "MCH",
+   "analyte_key": "мсн",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-MCH",
+   "concept_label": "MCH",
+   "value_number": 26.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "interval",
+    "low": 27.0,
+    "high": 34.0,
+    "text": "27–34",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "below",
+   "event_id": "EV-ST-EC9BE96D4DEE8C1F",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-844AFE266264E51C",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0026"
+   ],
+   "verification_state": "source_verified",
+   "literal": "MCH: 26; референс 27–34."
+  },
+  {
+   "id": "OB-RB-4E6DC65EAFE9A979",
+   "version_id": "COV-71E3FDC7C19EEF2E959A5E24",
+   "analyte": "α2",
+   "analyte_key": "α2",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_ALPHA2",
+   "concept_label": "α2-фракція",
+   "value_number": 12.3,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 5.6,
+    "high": 12.4,
+    "text": "5,6–12,4",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-2207691F6AE3F769",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0059"
+   ],
+   "verification_state": "source_verified",
+   "literal": "α2: 12.3 г/л; референс 5,6–12,4."
+  },
+  {
+   "id": "OB-RB-50D0399D17421C95",
+   "version_id": "COV-FEF159239C75FB9D4727144A",
+   "analyte": "Еритроцити",
+   "analyte_key": "еритроцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-ERYTHROCYTES",
+   "concept_label": "Еритроцити",
+   "value_number": 5.3,
+   "value_text": null,
+   "comparator": null,
+   "unit": "Т/л",
+   "canonical_unit": null,
+   "reference": {
+    "kind": "interval",
+    "low": 3.8,
+    "high": 5.3,
+    "text": "ч: 4,0–5,5 ; ж: 3,8–5,3",
+    "sex_dependent": true,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-EC9BE96D4DEE8C1F",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-844AFE266264E51C",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0017"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Еритроцити: 5.3 Т/л; референс ч: 4,0–5,5 ; ж: 3,8–5,3."
+  },
+  {
+   "id": "OB-RB-50FDBA3F5F9457B5",
+   "version_id": "COV-EEBCDD75476A4C0FB5A2EC50",
+   "analyte": "М-протеїн",
+   "analyte_key": "м-протеїн",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-M_PROTEIN",
+   "concept_label": "М-протеїн",
+   "value_number": 5.45,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "absence_expected",
+    "low": null,
+    "high": 0.0,
+    "text": "Відсутність",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-1B50517A4D713EDB",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0050"
+   ],
+   "verification_state": "source_verified",
+   "literal": "М-протеїн: 5,45 г/л; референс Відсутність"
+  },
+  {
+   "id": "OB-RB-52A8C861602232DD",
+   "version_id": "COV-24A371C57408D45F43466B15",
+   "analyte": "Вільні легкі ланцюги Лямбда (сеча)",
+   "analyte_key": "вільні легкі ланцюги лямбда (сеча)",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-FLC_LAMBDA",
+   "concept_label": "Вільні легкі ланцюги Лямбда",
+   "value_number": 6.16,
+   "value_text": null,
+   "comparator": null,
+   "unit": "мг/л",
+   "canonical_unit": "mg/L",
+   "reference": {
+    "kind": "comparator",
+    "low": null,
+    "high": 3.79,
+    "text": "<3,79",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-72D72BAB7426522F",
+   "event_date": "2026-04-23",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-4132FDD86266A9E6",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    4
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0011"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Вільні легкі ланцюги Лямбда (сеча): 6.16 мг/л; референс <3,79."
+  },
+  {
+   "id": "OB-RB-550EA7470896E93C",
+   "version_id": "COV-89670437E900CDBA2BE266EB",
+   "analyte": "Анти-О стрептолізин",
+   "analyte_key": "анти-о стрептолізин",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": null,
+   "value_text": "Анти-О стрептолізин: 1,1; негативно",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-4BDC50A73E4634ED",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0131"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Анти-О стрептолізин: 1,1; негативно"
+  },
+  {
+   "id": "OB-RB-552AA741B4762F8D",
+   "version_id": "COV-752A2ED0772423647FF38F33",
+   "analyte": "Холестерин заг.",
+   "analyte_key": "холестерин заг.",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-CHOLESTEROL",
+   "concept_label": "Холестерин",
+   "value_number": 4.86,
+   "value_text": null,
+   "comparator": null,
+   "unit": "ммоль/л",
+   "canonical_unit": "mmol/L",
+   "reference": {
+    "kind": "interval",
+    "low": 3.6,
+    "high": 6.2,
+    "text": "3.6–6.2",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0037"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Холестерин заг.: 4.86 ммоль/л; референс 3.6–6.2."
+  },
+  {
+   "id": "OB-RB-560AA634A82BBC07",
+   "version_id": "COV-E892F9EFF31DF1D4CAE43656",
+   "analyte": "Загальний білок сечі",
+   "analyte_key": "загальний білок сечі",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-TOTAL_PROTEIN",
+   "concept_label": "Загальний білок",
+   "value_number": null,
+   "value_text": "Загальний білок сечі: 0,07 г/л",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-EFA66E66150C692B",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0132"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Загальний білок сечі: 0,07 г/л"
+  },
+  {
+   "id": "OB-RB-5C0E3DB274049B1A",
+   "version_id": "COV-C1379685F87113ACA265A9EB",
+   "analyte": "Гемоглобін",
+   "analyte_key": "гемоглобін",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-HEMOGLOBIN",
+   "concept_label": "Гемоглобін",
+   "value_number": 139,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 120.0,
+    "high": 140.0,
+    "text": "120–140",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-0533E379AD8ACC2D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    2,
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0002",
+    "SR-0845FEA2BE58-P0069",
+    "SR-0845FEA2BE58-P0093"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Гемоглобін: 139 г/л; референс 120–140."
+  },
+  {
+   "id": "OB-RB-5C3E70AF6B29F61E",
+   "version_id": "COV-DEDAE1D9A6F0D1407B5069B2",
+   "analyte": "Альбумін",
+   "analyte_key": "альбумін",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-ALBUMIN",
+   "concept_label": "Альбумін",
+   "value_number": 39.22,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 34.4,
+    "high": 45.0,
+    "text": "34,4–45,0",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-2207691F6AE3F769",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0057"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Альбумін: 39.22 г/л; референс 34,4–45,0."
+  },
+  {
+   "id": "OB-RB-5C3FB2413C35C01C",
+   "version_id": "COV-ADC9942E08785F7A1F3458D4",
+   "analyte": "α2",
+   "analyte_key": "α2",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_ALPHA2",
+   "concept_label": "α2-фракція",
+   "value_number": 0.002,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-A93CB400D749FCB3",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0053"
+   ],
+   "verification_state": "source_verified",
+   "literal": "α2: 0.002 г/л."
+  },
+  {
+   "id": "OB-RB-628EC26774089FBF",
+   "version_id": "COV-0B95657DC5E35B24F04F2777",
+   "analyte": "Тромбоцити",
+   "analyte_key": "тромбоцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-PLATELETS",
+   "concept_label": "Тромбоцити",
+   "value_number": 295,
+   "value_text": null,
+   "comparator": null,
+   "unit": "Г/л",
+   "canonical_unit": "10*9/L",
+   "reference": {
+    "kind": "interval",
+    "low": 150.0,
+    "high": 400.0,
+    "text": "150–400",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-EC9BE96D4DEE8C1F",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-844AFE266264E51C",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0018"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Тромбоцити: 295 Г/л; референс 150–400."
+  },
+  {
+   "id": "OB-RB-62D8E2B5694C158F",
+   "version_id": "COV-A877C9DE3223A12CB5CCBD7C",
+   "analyte": "Нейтрофільні гранулоцити метамієлоцити",
+   "analyte_key": "нейтрофільні гранулоцити метамієлоцити",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 9.2,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 8.0,
+    "high": 15.0,
+    "text": "8.0–15.0",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0076",
+    "SR-0845FEA2BE58-P0100"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Нейтрофільні гранулоцити метамієлоцити: 9.2 %; референс 8.0–15.0."
+  },
+  {
+   "id": "OB-RB-67889BF664F836FB",
+   "version_id": "COV-F78C584506A1EA82C9EBA6ED",
+   "analyte": "β2-мікроглобулін",
+   "analyte_key": "β2-мікроглобулін",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-B2_MICROGLOBULIN",
+   "concept_label": "β2-мікроглобулін",
+   "value_number": 2,
+   "value_text": null,
+   "comparator": null,
+   "unit": "мг/л",
+   "canonical_unit": "mg/L",
+   "reference": {
+    "kind": "interval",
+    "low": 0.8,
+    "high": 2.34,
+    "text": "0,8–2,34",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-5B1995981FDCFC92",
+   "event_date": "2026-04-23",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-5A1538FC94AAE149",
+   "specimen_type": "serum",
+   "specimen_literal": "кров/сироватка",
+   "pages": [
+    5
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0013"
+   ],
+   "verification_state": "source_verified",
+   "literal": "β2-мікроглобулін: 2 мг/л; референс 0,8–2,34."
+  },
+  {
+   "id": "OB-RB-6C5ABFBA6915A58A",
+   "version_id": "COV-951EAB17B5D4178D03683577",
+   "analyte": "Вільні легкі ланцюги Каппа (кров)",
+   "analyte_key": "вільні легкі ланцюги каппа (кров)",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-FLC_KAPPA",
+   "concept_label": "Вільні легкі ланцюги Каппа",
+   "value_number": 15.3,
+   "value_text": null,
+   "comparator": null,
+   "unit": "мг/л",
+   "canonical_unit": "mg/L",
+   "reference": {
+    "kind": "interval",
+    "low": 3.3,
+    "high": 19.4,
+    "text": "3,30–19,40",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-72D72BAB7426522F",
+   "event_date": "2026-04-23",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-D5F42D460E844B28",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    4
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0006"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Вільні легкі ланцюги Каппа (кров): 15.3 мг/л; референс 3,30–19,40."
+  },
+  {
+   "id": "OB-RB-6E626B41E9C4BAC0",
+   "version_id": "COV-3B057D0CBF9A94E4BF31856E",
+   "analyte": "γ",
+   "analyte_key": "γ",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_GAMMA",
+   "concept_label": "γ-фракція",
+   "value_number": 11.36,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 5.5,
+    "high": 13.4,
+    "text": "5,5–13,4",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-1B50517A4D713EDB",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0049"
+   ],
+   "verification_state": "source_verified",
+   "literal": "γ: 11.36 г/л; референс 5,5–13,4."
+  },
+  {
+   "id": "OB-RB-705069BE92DFEFB2",
+   "version_id": "COV-42FE58B589F1320FF3075568",
+   "analyte": "Еритробласти",
+   "analyte_key": "еритробласти",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 0.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 0.2,
+    "high": 1.1,
+    "text": "0.2–1.1",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "below",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0087",
+    "SR-0845FEA2BE58-P0111"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Еритробласти: 0 %; референс 0.2–1.1."
+  },
+  {
+   "id": "OB-RB-70BF4772D32CEADB",
+   "version_id": "COV-4CD5722C6CCD910734ADDCD9",
+   "analyte": "Альбумін",
+   "analyte_key": "альбумін",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-ALBUMIN",
+   "concept_label": "Альбумін",
+   "value_number": 44.29,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 34.4,
+    "high": 45.0,
+    "text": "34,4–45,0",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-1B50517A4D713EDB",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0045"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Альбумін: 44.29 г/л; референс 34,4–45,0."
+  },
+  {
+   "id": "OB-RB-727DDB92B27DCF1D",
+   "version_id": "COV-B6A1179CD4B658F70CBB45F2",
+   "analyte": "Питома вага",
+   "analyte_key": "питома вага",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 1.01,
+   "value_text": null,
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-A024E4BAFC2CF95A",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0133"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Питома вага: 1,010"
+  },
+  {
+   "id": "OB-RB-75327F3350C18C43",
+   "version_id": "COV-A326C798D8B408E02FDF3DAD",
+   "analyte": "Тромбоцити",
+   "analyte_key": "тромбоцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-PLATELETS",
+   "concept_label": "Тромбоцити",
+   "value_number": 366,
+   "value_text": null,
+   "comparator": null,
+   "unit": "×10⁹/л",
+   "canonical_unit": "10*9/L",
+   "reference": {
+    "kind": "interval",
+    "low": 180.0,
+    "high": 360.0,
+    "text": "180–360",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-0533E379AD8ACC2D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    2,
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0005",
+    "SR-0845FEA2BE58-P0072",
+    "SR-0845FEA2BE58-P0096"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Тромбоцити: 366 ×10⁹/л; референс 180–360."
+  },
+  {
+   "id": "OB-RB-75AC9318C7DB5C07",
+   "version_id": "COV-9DD0AC227AF1FD15CC4E8032",
+   "analyte": "Нормобласти — базофільні",
+   "analyte_key": "нормобласти — базофільні",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 0.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 1.4,
+    "high": 4.6,
+    "text": "1.4–4.6",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "below",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0088",
+    "SR-0845FEA2BE58-P0112"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Нормобласти — базофільні: 0 %; референс 1.4–4.6."
+  },
+  {
+   "id": "OB-RB-770F06DBAA4E7964",
+   "version_id": "COV-C1666E23926EBC9600E82455",
+   "analyte": "Гемоглобін",
+   "analyte_key": "гемоглобін",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-HEMOGLOBIN",
+   "concept_label": "Гемоглобін",
+   "value_number": 142,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 120.0,
+    "high": 150.0,
+    "text": "ч: 130,0–170,0 ; ж: 120,0–150,0",
+    "sex_dependent": true,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-EC9BE96D4DEE8C1F",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-844AFE266264E51C",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0016"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Гемоглобін: 142 г/л; референс ч: 130,0–170,0 ; ж: 120,0–150,0."
+  },
+  {
+   "id": "OB-RB-78178B03C22D5F6D",
+   "version_id": "COV-62968A05474D561F9A17D8D5",
+   "analyte": "Вільні легкі ланцюги Лямбда (кров)",
+   "analyte_key": "вільні легкі ланцюги лямбда (кров)",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-FLC_LAMBDA",
+   "concept_label": "Вільні легкі ланцюги Лямбда",
+   "value_number": 16.08,
+   "value_text": null,
+   "comparator": null,
+   "unit": "мг/л",
+   "canonical_unit": "mg/L",
+   "reference": {
+    "kind": "interval",
+    "low": 5.71,
+    "high": 26.3,
+    "text": "5,71–26,30",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-72D72BAB7426522F",
+   "event_date": "2026-04-23",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-D5F42D460E844B28",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    4
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0007"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Вільні легкі ланцюги Лямбда (кров): 16.08 мг/л; референс 5,71–26,30."
+  },
+  {
+   "id": "OB-RB-78BE640EBBD753C9",
+   "version_id": "COV-0A60920879EA30E3FC324096",
+   "analyte": "Колір",
+   "analyte_key": "колір",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": null,
+   "value_text": "Колір: світло-жовтий",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-A024E4BAFC2CF95A",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0134"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Колір: світло-жовтий"
+  },
+  {
+   "id": "OB-RB-7C5426BC616C19A6",
+   "version_id": "COV-B6EF4C73328D01E4D0AB5A71",
+   "analyte": "Альбумін",
+   "analyte_key": "альбумін",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-ALBUMIN",
+   "concept_label": "Альбумін",
+   "value_number": 0.038,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-EFA66E66150C692B",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0063"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Альбумін: 0.038 г/л."
+  },
+  {
+   "id": "OB-RB-7CAAEFA914CF1709",
+   "version_id": "COV-DA043A500694B01F09E58A6F",
+   "analyte": "M-протеїн",
+   "analyte_key": "м-протеїн",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-M_PROTEIN",
+   "concept_label": "М-протеїн",
+   "value_number": 0.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "absence_expected",
+    "low": null,
+    "high": 0.0,
+    "text": "Відсутність",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-A93CB400D749FCB3",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0056"
+   ],
+   "verification_state": "source_verified",
+   "literal": "M-протеїн: 0 г/л; референс Відсутність."
+  },
+  {
+   "id": "OB-RB-7DFE23DE5D2CBE74",
+   "version_id": "COV-EC1DD9E0EAF34CF26CC69AAC",
+   "analyte": "γ",
+   "analyte_key": "γ",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_GAMMA",
+   "concept_label": "γ-фракція",
+   "value_number": 0.0003,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-A93CB400D749FCB3",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0055"
+   ],
+   "verification_state": "source_verified",
+   "literal": "γ: 0.0003 г/л."
+  },
+  {
+   "id": "OB-RB-7E5D6636BC1F0390",
+   "version_id": "COV-D43AC410060F169E272A9E0C",
+   "analyte": "Діурез",
+   "analyte_key": "діурез",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 2.1,
+   "value_text": null,
+   "comparator": null,
+   "unit": "л",
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-A93CB400D749FCB3",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0044"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Діурез: 2.1 л."
+  },
+  {
+   "id": "OB-RB-7EFD2CDC727FEAC4",
+   "version_id": "COV-51D6B70014EF725D1B71127E",
+   "analyte": "Лейкоцити",
+   "analyte_key": "лейкоцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-LEUKOCYTES",
+   "concept_label": "Лейкоцити",
+   "value_number": 8.7,
+   "value_text": null,
+   "comparator": null,
+   "unit": "Г/л",
+   "canonical_unit": "10*9/L",
+   "reference": {
+    "kind": "interval",
+    "low": 4.0,
+    "high": 9.0,
+    "text": "4,0–9,0",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-EC9BE96D4DEE8C1F",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-844AFE266264E51C",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0019"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Лейкоцити: 8.7 Г/л; референс 4,0–9,0."
+  },
+  {
+   "id": "OB-RB-8227B0E31CF5FCB1",
+   "version_id": "COV-0A332015A1A4BB8656BC855F",
+   "analyte": "Сечовина",
+   "analyte_key": "сечовина",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-UREA",
+   "concept_label": "Сечовина",
+   "value_number": 4.2,
+   "value_text": null,
+   "comparator": null,
+   "unit": "ммоль/л",
+   "canonical_unit": "mmol/L",
+   "reference": {
+    "kind": "interval",
+    "low": 2.1,
+    "high": 7.1,
+    "text": "2.1–7.1",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0028"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Сечовина: 4.2 ммоль/л; референс 2.1–7.1."
+  },
+  {
+   "id": "OB-RB-8359DEB2D2260752",
+   "version_id": "COV-3DCD5962D8D082D417903C1E",
+   "analyte": "Імунофіксація сироватки",
+   "analyte_key": "імунофіксація сироватки",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": null,
+   "value_text": "Імунофіксація сироватки: моноклональний парапротеїн класу IgG-Lambda",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-2207691F6AE3F769",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0135"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Імунофіксація сироватки: моноклональний парапротеїн класу IgG-Lambda"
+  },
+  {
+   "id": "OB-RB-860705215D90110B",
+   "version_id": "COV-19EDC7ABF68DA9C5875D5D16",
+   "analyte": "Бласти",
+   "analyte_key": "бласти",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 1.2,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 0.1,
+    "high": 1.1,
+    "text": "0.1–1.1",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0073",
+    "SR-0845FEA2BE58-P0097"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Бласти: 1.2 %; референс 0.1–1.1."
+  },
+  {
+   "id": "OB-RB-86CB6C87084BC402",
+   "version_id": "COV-4E300565C0BA7BD52671973D",
+   "analyte": "Нейтрофільні гранулоцити паличкоядерні",
+   "analyte_key": "нейтрофільні гранулоцити паличкоядерні",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 18.8,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 12.8,
+    "high": 23.7,
+    "text": "12.8–23.7",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0077",
+    "SR-0845FEA2BE58-P0101"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Нейтрофільні гранулоцити паличкоядерні: 18.8 %; референс 12.8–23.7."
+  },
+  {
+   "id": "OB-RB-8A398C58DC4BAF5A",
+   "version_id": "COV-A7DA5CFF9DB6029BD981ED92",
+   "analyte": "Еритроцити",
+   "analyte_key": "еритроцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-ERYTHROCYTES",
+   "concept_label": "Еритроцити",
+   "value_number": 5.3,
+   "value_text": null,
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-EC9BE96D4DEE8C1F",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-844AFE266264E51C",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0017"
+   ],
+   "verification_state": "source_verified",
+   "literal": null
+  },
+  {
+   "id": "OB-RB-8CF5CD0E23E81EF1",
+   "version_id": "COV-A326079D5B33CD1DD41BCF4D",
+   "analyte": "Білірубін загальний",
+   "analyte_key": "білірубін загальний",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-BILIRUBIN_TOTAL",
+   "concept_label": "Білірубін загальний",
+   "value_number": 11,
+   "value_text": null,
+   "comparator": null,
+   "unit": "мкмоль/л",
+   "canonical_unit": "umol/L",
+   "reference": {
+    "kind": "interval",
+    "low": 5.0,
+    "high": 21.0,
+    "text": "5–21",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0032"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Білірубін загальний: 11 мкмоль/л; референс 5–21."
+  },
+  {
+   "id": "OB-RB-91BFEAF2FAA61BFF",
+   "version_id": "COV-F81CAEBF1297835D59686951",
+   "analyte": "β",
+   "analyte_key": "β",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_BETA",
+   "concept_label": "β-фракція",
+   "value_number": 0.009,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-EFA66E66150C692B",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0066"
+   ],
+   "verification_state": "source_verified",
+   "literal": "β: 0.009 г/л."
+  },
+  {
+   "id": "OB-RB-9375E212CD2EBC35",
+   "version_id": "COV-3BAF225D0C39A96861D7CA1C",
+   "analyte": "Коефіцієнт Каппа/Лямбда (сеча)",
+   "analyte_key": "коефіцієнт каппа/лямбда (сеча)",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-FLC_RATIO",
+   "concept_label": "Коефіцієнт Каппа/Лямбда",
+   "value_number": 2.23,
+   "value_text": null,
+   "comparator": null,
+   "unit": "у.о.",
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-72D72BAB7426522F",
+   "event_date": "2026-04-23",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-4132FDD86266A9E6",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    4
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0012"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Коефіцієнт Каппа/Лямбда (сеча): 2.23 у.о.."
+  },
+  {
+   "id": "OB-RB-9529015BEFF2CF91",
+   "version_id": "COV-284C729483B2835E76D0069F",
+   "analyte": "Лейкоцити",
+   "analyte_key": "лейкоцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-LEUKOCYTES",
+   "concept_label": "Лейкоцити",
+   "value_number": null,
+   "value_text": "Лейкоцити: 4–5 у полі зору",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-A024E4BAFC2CF95A",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0136"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Лейкоцити: 4–5 у полі зору"
+  },
+  {
+   "id": "OB-RB-95D3F645D5665EE5",
+   "version_id": "COV-4B3835F6F8BB92E7589FFEE0",
+   "analyte": "Альбумін",
+   "analyte_key": "альбумін",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-ALBUMIN",
+   "concept_label": "Альбумін",
+   "value_number": 54.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 35.0,
+    "high": 52.0,
+    "text": "35–52",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0038"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Альбумін: 54 г/л; референс 35–52."
+  },
+  {
+   "id": "OB-RB-99F338D4114A9948",
+   "version_id": "COV-6F7543DF9FAF19E443AFDCB1",
+   "analyte": "Лейко-еритроїдне співвідношення",
+   "analyte_key": "лейко-еритроїдне співвідношення",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 4.32,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "unparsed",
+    "text": "3.5–4:1.0",
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0083",
+    "SR-0845FEA2BE58-P0107"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Лейко-еритроїдне співвідношення: 4.32 %; референс 3.5–4:1.0."
+  },
+  {
+   "id": "OB-RB-9BADDEBFA18D3F81",
+   "version_id": "COV-927643C1447C52DA1493BCC0",
+   "analyte": "Лейкоцити",
+   "analyte_key": "лейкоцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-LEUKOCYTES",
+   "concept_label": "Лейкоцити",
+   "value_number": 9.5,
+   "value_text": null,
+   "comparator": null,
+   "unit": "×10⁹/л",
+   "canonical_unit": "10*9/L",
+   "reference": {
+    "kind": "interval",
+    "low": 4.0,
+    "high": 9.0,
+    "text": "4.0–9.0",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-0533E379AD8ACC2D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    2,
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0004",
+    "SR-0845FEA2BE58-P0071",
+    "SR-0845FEA2BE58-P0095"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Лейкоцити: 9.5 ×10⁹/л; референс 4.0–9.0."
+  },
+  {
+   "id": "OB-RB-A2C08B0DCB313607",
+   "version_id": "COV-2D2F480324A934585E97E7C0",
+   "analyte": "α1",
+   "analyte_key": "α1",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_ALPHA1",
+   "concept_label": "α1-фракція",
+   "value_number": 10.35,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 1.6,
+    "high": 6.7,
+    "text": "1,6–6,7",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-1B50517A4D713EDB",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0046"
+   ],
+   "verification_state": "source_verified",
+   "literal": "α1: 10,35 г/л; референс 1,6–6,7"
+  },
+  {
+   "id": "OB-RB-A341BD65F4CA1D0D",
+   "version_id": "COV-0B4DB4D25C3C8C72C491E3E7",
+   "analyte": "ГГТП",
+   "analyte_key": "ггтп",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-GGT",
+   "concept_label": "ГГТП",
+   "value_number": 22.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "од/л",
+   "canonical_unit": "U/L",
+   "reference": {
+    "kind": "comparator",
+    "low": null,
+    "high": 32.0,
+    "text": "ч: до 49; ж: до 32",
+    "sex_dependent": true,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0035"
+   ],
+   "verification_state": "source_verified",
+   "literal": "ГГТП: 22 од/л; референс ч: до 49; ж: до 32."
+  },
+  {
+   "id": "OB-RB-A48E2EEFC8BF091C",
+   "version_id": "COV-F44C53D74B333AE46AF37601",
+   "analyte": "Діурез",
+   "analyte_key": "діурез",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": null,
+   "value_text": "Діурез: 2,300 л",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-EFA66E66150C692B",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0137"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Діурез: 2,300 л"
+  },
+  {
+   "id": "OB-RB-A780FDBCAEE2EF62",
+   "version_id": "COV-D64FF6097778EB76074F9398",
+   "analyte": "Білірубін прямий",
+   "analyte_key": "білірубін прямий",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-BILIRUBIN_DIRECT",
+   "concept_label": "Білірубін прямий",
+   "value_number": 3.31,
+   "value_text": null,
+   "comparator": null,
+   "unit": "мкмоль/л",
+   "canonical_unit": "umol/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0138"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Білірубін прямий: 3,31 мкмоль/л"
+  },
+  {
+   "id": "OB-RB-A9827863CD15DA91",
+   "version_id": "COV-06E5C0298B5912CEE3B8BF2D",
+   "analyte": "Ревматоїдний фактор",
+   "analyte_key": "ревматоїдний фактор",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": null,
+   "value_text": "Ревматоїдний фактор: 2,0; негативно",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-4BDC50A73E4634ED",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0139"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Ревматоїдний фактор: 2,0; негативно"
+  },
+  {
+   "id": "OB-RB-A9E9B425C504788B",
+   "version_id": "COV-767475306E2F2AC145799CC0",
+   "analyte": "Гранулоцити",
+   "analyte_key": "гранулоцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-GRANULOCYTES",
+   "concept_label": "Гранулоцити",
+   "value_number": 73.1,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 48.5,
+    "high": 78.0,
+    "text": "48,5–78,0",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-EC9BE96D4DEE8C1F",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-844AFE266264E51C",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0025"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Гранулоцити: 73.1 %; референс 48,5–78,0."
+  },
+  {
+   "id": "OB-RB-B2D94AC53B216EF7",
+   "version_id": "COV-B8673BE85CAC11F39CDE2710",
+   "analyte": "Коефіцієнт Каппа/Лямбда (кров)",
+   "analyte_key": "коефіцієнт каппа/лямбда (кров)",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-FLC_RATIO",
+   "concept_label": "Коефіцієнт Каппа/Лямбда",
+   "value_number": 0.95,
+   "value_text": null,
+   "comparator": null,
+   "unit": "у.о.",
+   "canonical_unit": null,
+   "reference": {
+    "kind": "interval",
+    "low": 0.26,
+    "high": 1.65,
+    "text": "0,26–1,65",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-72D72BAB7426522F",
+   "event_date": "2026-04-23",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-D5F42D460E844B28",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    4
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0008"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Коефіцієнт Каппа/Лямбда (кров): 0.95 у.о.; референс 0,26–1,65."
+  },
+  {
+   "id": "OB-RB-B3B5D7B28E788F56",
+   "version_id": "COV-96147D6A90C8C36B2E6D6616",
+   "analyte": "Альбумін",
+   "analyte_key": "альбумін",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-ALBUMIN",
+   "concept_label": "Альбумін",
+   "value_number": 0.006,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-A93CB400D749FCB3",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0051"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Альбумін: 0.006 г/л."
+  },
+  {
+   "id": "OB-RB-B49EBC34AA0E8412",
+   "version_id": "COV-186EB22ACAE479241EF44662",
+   "analyte": "Феритин",
+   "analyte_key": "феритин",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-FERRITIN",
+   "concept_label": "Феритин",
+   "value_number": 178,
+   "value_text": null,
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0039"
+   ],
+   "verification_state": "source_verified",
+   "literal": null
+  },
+  {
+   "id": "OB-RB-B66D7E799BC787BA",
+   "version_id": "COV-597C54C2B82E62A9311AA41B",
+   "analyte": "Еритроцити",
+   "analyte_key": "еритроцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-ERYTHROCYTES",
+   "concept_label": "Еритроцити",
+   "value_number": null,
+   "value_text": "Еритроцити: не виявлено",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-A024E4BAFC2CF95A",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0140"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Еритроцити: не виявлено"
+  },
+  {
+   "id": "OB-RB-BB3B3784A00C3C56",
+   "version_id": "COV-180C8F4DF3F96588C1C92FEB",
+   "analyte": "α1",
+   "analyte_key": "α1",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_ALPHA1",
+   "concept_label": "α1-фракція",
+   "value_number": 0.002,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-A93CB400D749FCB3",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0052"
+   ],
+   "verification_state": "source_verified",
+   "literal": "α1: 0.002 г/л."
+  },
+  {
+   "id": "OB-RB-BD29684A44852318",
+   "version_id": "COV-963C356E70D6B728EB84B3CB",
+   "analyte": "Індекс визрівання нейтрофілів",
+   "analyte_key": "індекс визрівання нейтрофілів",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 0.45,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 0.6,
+    "high": 0.8,
+    "text": "0.6–0.8",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "below",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0082",
+    "SR-0845FEA2BE58-P0106"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Індекс визрівання нейтрофілів: 0.45 %; референс 0.6–0.8."
+  },
+  {
+   "id": "OB-RB-C064707D6DE88D81",
+   "version_id": "COV-5202CE89400646AF0D44BF14",
+   "analyte": "Фосфатаза луж.",
+   "analyte_key": "фосфатаза луж.",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-ALP",
+   "concept_label": "Фосфатаза лужна",
+   "value_number": 83.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "од/л",
+   "canonical_unit": "U/L",
+   "reference": {
+    "kind": "comparator",
+    "low": null,
+    "high": 258.0,
+    "text": "до 258",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0036"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Фосфатаза луж.: 83 од/л; референс до 258."
+  },
+  {
+   "id": "OB-RB-C12256D6E3880776",
+   "version_id": "COV-574AC8D7329FE15D93EE7156",
+   "analyte": "Креатинін",
+   "analyte_key": "креатинін",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-CREATININE",
+   "concept_label": "Креатинін",
+   "value_number": 78,
+   "value_text": null,
+   "comparator": null,
+   "unit": "мкмоль/л",
+   "canonical_unit": "umol/L",
+   "reference": {
+    "kind": "sex_not_applicable",
+    "text": "ч: 64–104",
+    "low": null,
+    "high": null,
+    "sex_dependent": true,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0029"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Креатинін: 78 мкмоль/л; референс ч: 64–104."
+  },
+  {
+   "id": "OB-RB-C1658863326ACCEA",
+   "version_id": "COV-EAE53B10ABD399051FC9E843",
+   "analyte": "Нормобласти — поліхроматофільні",
+   "analyte_key": "нормобласти — поліхроматофільні",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 9.2,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 8.9,
+    "high": 16.9,
+    "text": "8.9–16.9",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0089",
+    "SR-0845FEA2BE58-P0113"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Нормобласти — поліхроматофільні: 9.2 %; референс 8.9–16.9."
+  },
+  {
+   "id": "OB-RB-C36C749B5B95A072",
+   "version_id": "COV-F682565FBDBD798ED4086914",
+   "analyte": "Кількість сечі",
+   "analyte_key": "кількість сечі",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 80.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-A024E4BAFC2CF95A",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0141"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Кількість сечі: 80"
+  },
+  {
+   "id": "OB-RB-C3EB143AB9663D67",
+   "version_id": "COV-0C1A4974C7CD6F82173CD5D2",
+   "analyte": "Прозорість",
+   "analyte_key": "прозорість",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": null,
+   "value_text": "Прозорість: прозора",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-A024E4BAFC2CF95A",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0142"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Прозорість: прозора"
+  },
+  {
+   "id": "OB-RB-C5718C559024505B",
+   "version_id": "COV-0BA21DD63B163B6612B62A7E",
+   "analyte": "Еритроцити",
+   "analyte_key": "еритроцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-ERYTHROCYTES",
+   "concept_label": "Еритроцити",
+   "value_number": 5.1,
+   "value_text": null,
+   "comparator": null,
+   "unit": "×10¹²/л",
+   "canonical_unit": "10*12/L",
+   "reference": {
+    "kind": "interval",
+    "low": 3.7,
+    "high": 4.7,
+    "text": "3.7–4.7",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-0533E379AD8ACC2D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    2,
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0003",
+    "SR-0845FEA2BE58-P0070",
+    "SR-0845FEA2BE58-P0094"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Еритроцити: 5.1 ×10¹²/л; референс 3.7–4.7."
+  },
+  {
+   "id": "OB-RB-C6BE608D63FEF34D",
+   "version_id": "COV-FECCA20A8FAF782AED5BEB20",
+   "analyte": "АлАТ",
+   "analyte_key": "алат",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-ALT",
+   "concept_label": "АлАТ",
+   "value_number": 17.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": "од/л",
+   "canonical_unit": "U/L",
+   "reference": {
+    "kind": "comparator",
+    "low": null,
+    "high": 34.0,
+    "text": "ч: до 45; ж: до 34",
+    "sex_dependent": true,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0033"
+   ],
+   "verification_state": "source_verified",
+   "literal": "АлАТ: 17 од/л; референс ч: до 45; ж: до 34."
+  },
+  {
+   "id": "OB-RB-C7DC3583A1B8C742",
+   "version_id": "COV-2FC61722CFF819C61CD0067D",
+   "analyte": "Загальний білок",
+   "analyte_key": "загальний білок",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 84,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 60.0,
+    "high": 88.0,
+    "text": "60–88",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0040"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Загальний білок: 84 г/л; референс 60–88."
+  },
+  {
+   "id": "OB-RB-C93CF2AED0610869",
+   "version_id": "COV-A085BE29BDD4B14A4758CC83",
+   "analyte": "Кальцій",
+   "analyte_key": "кальцій",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-CALCIUM",
+   "concept_label": "Кальцій",
+   "value_number": 2.48,
+   "value_text": null,
+   "comparator": null,
+   "unit": "ммоль/л",
+   "canonical_unit": "mmol/L",
+   "reference": {
+    "kind": "interval",
+    "low": 2.2,
+    "high": 2.65,
+    "text": "2,20–2,65",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-176D7E131B1E3CDC",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-2F3CA5B98063F961",
+   "specimen_type": "serum",
+   "specimen_literal": "кров/сироватка",
+   "pages": [
+    6
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0015"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Кальцій: 2.48 ммоль/л; референс 2,20–2,65."
+  },
+  {
+   "id": "OB-RB-D391A55401E06BC5",
+   "version_id": "COV-4EFC8C2192271C0F32F3A9B4",
+   "analyte": "α1",
+   "analyte_key": "α1",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_ALPHA1",
+   "concept_label": "α1-фракція",
+   "value_number": 0.01,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-EFA66E66150C692B",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0064"
+   ],
+   "verification_state": "source_verified",
+   "literal": "α1: 0.01 г/л."
+  },
+  {
+   "id": "OB-RB-D3B3DA33EE9D2380",
+   "version_id": "COV-161028BC9C4A79FBFF51C93A",
+   "analyte": "Цукор",
+   "analyte_key": "цукор",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-GLUCOSE",
+   "concept_label": "Глюкоза",
+   "value_number": 6.33,
+   "value_text": null,
+   "comparator": null,
+   "unit": "ммоль/л",
+   "canonical_unit": "mmol/L",
+   "reference": {
+    "kind": "interval",
+    "low": 4.1,
+    "high": 5.9,
+    "text": "4.1–5.9",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-789A626F61C2F893",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-E03CD2A92B34836D",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    11
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0031"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Цукор: 6.33 ммоль/л; референс 4.1–5.9."
+  },
+  {
+   "id": "OB-RB-DBAA62FE6796D359",
+   "version_id": "COV-041AF12E405A01CC41E7F90C",
+   "analyte": "Імунофіксація сечі",
+   "analyte_key": "імунофіксація сечі",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": null,
+   "value_text": "Імунофіксація сечі: BJ-протеїн класу Lambda",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-EFA66E66150C692B",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0143"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Імунофіксація сечі: BJ-протеїн класу Lambda"
+  },
+  {
+   "id": "OB-RB-DBCB8315E9F2BC91",
+   "version_id": "COV-1F4C9BE526D8568848C9BAC9",
+   "analyte": "α2",
+   "analyte_key": "α2",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_ALPHA2",
+   "concept_label": "α2-фракція",
+   "value_number": 0.011,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-EFA66E66150C692B",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0065"
+   ],
+   "verification_state": "source_verified",
+   "literal": "α2: 0.011 г/л."
+  },
+  {
+   "id": "OB-RB-DBF0A0B5F3A2D76C",
+   "version_id": "COV-251C5EEB5A53B2054E3B115A",
+   "analyte": "M-протеїн",
+   "analyte_key": "м-протеїн",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-M_PROTEIN",
+   "concept_label": "М-протеїн",
+   "value_number": 4.35,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "absence_expected",
+    "low": null,
+    "high": 0.0,
+    "text": "Відсутність",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-2207691F6AE3F769",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0062"
+   ],
+   "verification_state": "source_verified",
+   "literal": "M-протеїн: 4.35 г/л; референс Відсутність."
+  },
+  {
+   "id": "OB-RB-DF3DF8ED0C01CE78",
+   "version_id": "COV-E90ABA1E80CBAD6537DD29D9",
+   "analyte": "ШОЕ",
+   "analyte_key": "шое",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-ESR",
+   "concept_label": "ШОЕ",
+   "value_number": 10,
+   "value_text": null,
+   "comparator": null,
+   "unit": "мм/год",
+   "canonical_unit": "mm/h",
+   "reference": {
+    "kind": "interval",
+    "low": 5.0,
+    "high": 15.0,
+    "text": "ч: 1–10 ; ж: 5–15",
+    "sex_dependent": true,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-EC9BE96D4DEE8C1F",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-844AFE266264E51C",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0020"
+   ],
+   "verification_state": "source_verified",
+   "literal": "ШОЕ: 10 мм/год; референс ч: 1–10 ; ж: 5–15."
+  },
+  {
+   "id": "OB-RB-E0ED5FBBD58953C7",
+   "version_id": "COV-66B5F6530FC5D77B420FBFFE",
+   "analyte": "Моноцити",
+   "analyte_key": "моноцити",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-MONOCYTES",
+   "concept_label": "Моноцити",
+   "value_number": 4.7,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 3.0,
+    "high": 11.0,
+    "text": "3,0–11,0",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-EC9BE96D4DEE8C1F",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-844AFE266264E51C",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0022"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Моноцити: 4.7 %; референс 3,0–11,0."
+  },
+  {
+   "id": "OB-RB-E247A84BC57BC98D",
+   "version_id": "COV-A8740AB98550BE3920C53F65",
+   "analyte": "MCV",
+   "analyte_key": "мсv",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-MCV",
+   "concept_label": "MCV",
+   "value_number": 84.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "interval",
+    "low": 75.0,
+    "high": 95.0,
+    "text": "75–95",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-EC9BE96D4DEE8C1F",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-844AFE266264E51C",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0024"
+   ],
+   "verification_state": "source_verified",
+   "literal": "MCV: 84; референс 75–95."
+  },
+  {
+   "id": "OB-RB-E3ECA9835A9C7053",
+   "version_id": "COV-2B919C864C18A7C0BA892D1B",
+   "analyte": "Всі еритроїдні елементи",
+   "analyte_key": "всі еритроїдні елементи",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 18.8,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0091",
+    "SR-0845FEA2BE58-P0115"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Всі еритроїдні елементи: 18.8 %."
+  },
+  {
+   "id": "OB-RB-E58CC06A2DB50885",
+   "version_id": "COV-684285B50F1FD1387AC6952D",
+   "analyte": "Загальний білок крові",
+   "analyte_key": "загальний білок крові",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-TOTAL_PROTEIN",
+   "concept_label": "Загальний білок",
+   "value_number": 76.93,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 62.0,
+    "high": 81.0,
+    "text": "14–60 років: 59,1–78,0; >60 років: 62.0–81.0",
+    "sex_dependent": false,
+    "age_dependent": true,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-1B50517A4D713EDB",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0042"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Загальний білок крові: 76.93 г/л; референс 14–60 років: 59,1–78,0; >60 років: 62.0–81.0."
+  },
+  {
+   "id": "OB-RB-E7242E7277EAA142",
+   "version_id": "COV-E5209FFF7F5D8D763847FFCE",
+   "analyte": "β",
+   "analyte_key": "β",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_BETA",
+   "concept_label": "β-фракція",
+   "value_number": 6.41,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "interval",
+    "low": 4.4,
+    "high": 11.6,
+    "text": "4,4–11,6",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-2207691F6AE3F769",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0060"
+   ],
+   "verification_state": "source_verified",
+   "literal": "β: 6.41 г/л; референс 4,4–11,6."
+  },
+  {
+   "id": "OB-RB-EC0EFEB50268A252",
+   "version_id": "COV-0F5234C6C7C2ECD090BE9304",
+   "analyte": "Епітелій плоский",
+   "analyte_key": "епітелій плоский",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": null,
+   "value_text": "Епітелій плоский: поодинокі",
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-A024E4BAFC2CF95A",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0144"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Епітелій плоский: поодинокі"
+  },
+  {
+   "id": "OB-RB-EDC5692DE0BF1FFA",
+   "version_id": "COV-869C12E5131735B433CCD169",
+   "analyte": "Нормобласти — оксифільні",
+   "analyte_key": "нормобласти — оксифільні",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 9.6,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 0.8,
+    "high": 5.6,
+    "text": "0.8–5.6",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0090",
+    "SR-0845FEA2BE58-P0114"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Нормобласти — оксифільні: 9.6 %; референс 0.8–5.6."
+  },
+  {
+   "id": "OB-RB-EE4D196CD79B28A8",
+   "version_id": "COV-298C88EEAE2A9128A88A4762",
+   "analyte": "β",
+   "analyte_key": "β",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_BETA",
+   "concept_label": "β-фракція",
+   "value_number": 0.0005,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-481417BE286CB97E",
+   "event_date": "2026-08-17",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-A93CB400D749FCB3",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    12
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0054"
+   ],
+   "verification_state": "source_verified",
+   "literal": "β: 0.0005 г/л."
+  },
+  {
+   "id": "OB-RB-F5E1EDA6E73E071B",
+   "version_id": "COV-05C3A3F58EB43EBA1C22AC31",
+   "analyte": "Лімфоцити",
+   "analyte_key": "лімфоцити",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 10.4,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 4.3,
+    "high": 13.7,
+    "text": "4.3–13.7",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0085",
+    "SR-0845FEA2BE58-P0109"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Лімфоцити: 10.4 %; референс 4.3–13.7."
+  },
+  {
+   "id": "OB-RB-FBDDDC4EA70FD898",
+   "version_id": "COV-908C393B6C0B486D47D3750E",
+   "analyte": "γ",
+   "analyte_key": "γ",
+   "concept_mapping": "candidate",
+   "concept_code": "HB-SPEP_GAMMA",
+   "concept_label": "γ-фракція",
+   "value_number": 0.002,
+   "value_text": null,
+   "comparator": null,
+   "unit": "г/л",
+   "canonical_unit": "g/L",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-DECCBB880A23D109",
+   "event_date": "2026-04-09",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": "SP-SM-EFA66E66150C692B",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "pages": [
+    13
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0067"
+   ],
+   "verification_state": "source_verified",
+   "literal": "γ: 0.002 г/л."
+  },
+  {
+   "id": "OB-RB-FBF71E473BFBA6C2",
+   "version_id": "COV-C755FFDC587C34C6F194D686",
+   "analyte": "pH",
+   "analyte_key": "рн",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 6.0,
+   "value_text": null,
+   "comparator": null,
+   "unit": null,
+   "canonical_unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_source": null,
+   "registry_band": null,
+   "status": "not_comparable",
+   "event_id": "EV-ST-A024E4BAFC2CF95A",
+   "event_date": "2026-08-19",
+   "clinical_time_status": "not_recorded",
+   "specimen_id": null,
+   "specimen_type": null,
+   "specimen_literal": null,
+   "pages": [
+    10
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0145"
+   ],
+   "verification_state": "source_verified",
+   "literal": "pH: 6,0"
+  },
+  {
+   "id": "OB-RB-FCB77FBE4C2A02E4",
+   "version_id": "COV-62D18B6F9083847A535AE92F",
+   "analyte": "Нейтрофільні гранулоцити мієлоцити",
+   "analyte_key": "нейтрофільні гранулоцити мієлоцити",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 10.8,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 7.0,
+    "high": 12.2,
+    "text": "7.0–12.2",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "within",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0075",
+    "SR-0845FEA2BE58-P0099"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Нейтрофільні гранулоцити мієлоцити: 10.8 %; референс 7.0–12.2."
+  },
+  {
+   "id": "OB-RB-FDFA62E0AF3B87EE",
+   "version_id": "COV-937010A8ED74299DE8B72E05",
+   "analyte": "Плазматичні клітини",
+   "analyte_key": "плазматичні клітини",
+   "concept_mapping": "unmapped",
+   "concept_code": null,
+   "concept_label": null,
+   "value_number": 1.6,
+   "value_text": null,
+   "comparator": null,
+   "unit": "%",
+   "canonical_unit": "%",
+   "reference": {
+    "kind": "interval",
+    "low": 0.0,
+    "high": 0.8,
+    "text": "0–0.8",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_source": "laboratory",
+   "registry_band": null,
+   "status": "above",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "clinical_time_status": "recorded",
+   "specimen_id": "SP-SM-B63E3EEA4109AC5E",
+   "specimen_type": "bone_marrow",
+   "specimen_literal": "пунктат кісткового мозку",
+   "pages": [
+    2,
+    18,
+    19
+   ],
+   "source_record_ids": [
+    "SR-0845FEA2BE58-P0086",
+    "SR-0845FEA2BE58-P0110"
+   ],
+   "verification_state": "source_verified",
+   "literal": "Плазматичні клітини: 1.6 %; референс 0–0.8."
+  }
+ ],
+ "series": [
+  {
+   "registry_band": null,
+   "analyte_key": "α1",
+   "label": "α1",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "unit": "г/л",
+   "reference": {
+    "kind": "interval",
+    "low": 1.6,
+    "high": 6.7,
+    "text": "1,6–6,7",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_consistent": true,
+   "printed_references": [
+    "1,6–6,7"
+   ],
+   "points": [
+    {
+     "observation_id": "OB-RB-1D91EB7B5AC1FEAB",
+     "date": "2026-04-09",
+     "value": 5.81,
+     "status": "within"
+    },
+    {
+     "observation_id": "OB-RB-A2C08B0DCB313607",
+     "date": "2026-08-17",
+     "value": 10.35,
+     "status": "above"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "α1",
+   "label": "α1",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "unit": "г/л",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_consistent": true,
+   "printed_references": [],
+   "points": [
+    {
+     "observation_id": "OB-RB-D391A55401E06BC5",
+     "date": "2026-04-09",
+     "value": 0.01,
+     "status": "not_comparable"
+    },
+    {
+     "observation_id": "OB-RB-BB3B3784A00C3C56",
+     "date": "2026-08-17",
+     "value": 0.002,
+     "status": "not_comparable"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "α2",
+   "label": "α2",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "unit": "г/л",
+   "reference": {
+    "kind": "interval",
+    "low": 5.6,
+    "high": 12.4,
+    "text": "5,6–12,4",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_consistent": true,
+   "printed_references": [
+    "5,6–12,4"
+   ],
+   "points": [
+    {
+     "observation_id": "OB-RB-4E6DC65EAFE9A979",
+     "date": "2026-04-09",
+     "value": 12.3,
+     "status": "within"
+    },
+    {
+     "observation_id": "OB-RB-2F9C884558265DF8",
+     "date": "2026-08-17",
+     "value": 7.46,
+     "status": "within"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "α2",
+   "label": "α2",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "unit": "г/л",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_consistent": true,
+   "printed_references": [],
+   "points": [
+    {
+     "observation_id": "OB-RB-DBCB8315E9F2BC91",
+     "date": "2026-04-09",
+     "value": 0.011,
+     "status": "not_comparable"
+    },
+    {
+     "observation_id": "OB-RB-5C3FB2413C35C01C",
+     "date": "2026-08-17",
+     "value": 0.002,
+     "status": "not_comparable"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "β",
+   "label": "β",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "unit": "г/л",
+   "reference": {
+    "kind": "interval",
+    "low": 4.4,
+    "high": 11.6,
+    "text": "4,4–11,6",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_consistent": true,
+   "printed_references": [
+    "4,4–11,6"
+   ],
+   "points": [
+    {
+     "observation_id": "OB-RB-E7242E7277EAA142",
+     "date": "2026-04-09",
+     "value": 6.41,
+     "status": "within"
+    },
+    {
+     "observation_id": "OB-RB-11AB7D6C99FD6794",
+     "date": "2026-08-17",
+     "value": 3.45,
+     "status": "below"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "β",
+   "label": "β",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "unit": "г/л",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_consistent": true,
+   "printed_references": [],
+   "points": [
+    {
+     "observation_id": "OB-RB-91BFEAF2FAA61BFF",
+     "date": "2026-04-09",
+     "value": 0.009,
+     "status": "not_comparable"
+    },
+    {
+     "observation_id": "OB-RB-EE4D196CD79B28A8",
+     "date": "2026-08-17",
+     "value": 0.0005,
+     "status": "not_comparable"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "γ",
+   "label": "γ",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "unit": "г/л",
+   "reference": {
+    "kind": "interval",
+    "low": 5.5,
+    "high": 13.4,
+    "text": "5,5–13,4",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_consistent": true,
+   "printed_references": [
+    "5,5–13,4"
+   ],
+   "points": [
+    {
+     "observation_id": "OB-RB-16EC897581C82843",
+     "date": "2026-04-09",
+     "value": 8.64,
+     "status": "within"
+    },
+    {
+     "observation_id": "OB-RB-6E626B41E9C4BAC0",
+     "date": "2026-08-17",
+     "value": 11.36,
+     "status": "within"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "γ",
+   "label": "γ",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "unit": "г/л",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_consistent": true,
+   "printed_references": [],
+   "points": [
+    {
+     "observation_id": "OB-RB-FBDDDC4EA70FD898",
+     "date": "2026-04-09",
+     "value": 0.002,
+     "status": "not_comparable"
+    },
+    {
+     "observation_id": "OB-RB-7DFE23DE5D2CBE74",
+     "date": "2026-08-17",
+     "value": 0.0003,
+     "status": "not_comparable"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "альбумін",
+   "label": "Альбумін",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "unit": "г/л",
+   "reference": {
+    "kind": "interval",
+    "low": 34.4,
+    "high": 45.0,
+    "text": "34,4–45,0",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_consistent": true,
+   "printed_references": [
+    "34,4–45,0"
+   ],
+   "points": [
+    {
+     "observation_id": "OB-RB-5C3E70AF6B29F61E",
+     "date": "2026-04-09",
+     "value": 39.22,
+     "status": "within"
+    },
+    {
+     "observation_id": "OB-RB-70BF4772D32CEADB",
+     "date": "2026-08-17",
+     "value": 44.29,
+     "status": "within"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "альбумін",
+   "label": "Альбумін",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "unit": "г/л",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": false
+   },
+   "reference_consistent": true,
+   "printed_references": [],
+   "points": [
+    {
+     "observation_id": "OB-RB-7C5426BC616C19A6",
+     "date": "2026-04-09",
+     "value": 0.038,
+     "status": "not_comparable"
+    },
+    {
+     "observation_id": "OB-RB-B3B5D7B28E788F56",
+     "date": "2026-08-17",
+     "value": 0.006,
+     "status": "not_comparable"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "гемоглобін",
+   "label": "Гемоглобін",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "unit": "г/л",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false
+   },
+   "reference_consistent": false,
+   "printed_references": [
+    "120–140",
+    "ч: 130,0–170,0 ; ж: 120,0–150,0"
+   ],
+   "points": [
+    {
+     "observation_id": "OB-RB-5C0E3DB274049B1A",
+     "date": "2026-03-30",
+     "value": 139,
+     "status": "within"
+    },
+    {
+     "observation_id": "OB-RB-770F06DBAA4E7964",
+     "date": "2026-08-19",
+     "value": 142,
+     "status": "within"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "еритроцити",
+   "label": "Еритроцити",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "unit": null,
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false
+   },
+   "reference_consistent": false,
+   "printed_references": [
+    "3.7–4.7",
+    "ч: 4,0–5,5 ; ж: 3,8–5,3"
+   ],
+   "points": [
+    {
+     "observation_id": "OB-RB-C5718C559024505B",
+     "date": "2026-03-30",
+     "value": 5.1,
+     "status": "above"
+    },
+    {
+     "observation_id": "OB-RB-50D0399D17421C95",
+     "date": "2026-08-19",
+     "value": 5.3,
+     "status": "within"
+    },
+    {
+     "observation_id": "OB-RB-8A398C58DC4BAF5A",
+     "date": "2026-08-19",
+     "value": 5.3,
+     "status": "not_comparable"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "лейкоцити",
+   "label": "Лейкоцити",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "unit": "Г/л",
+   "reference": {
+    "kind": "interval",
+    "low": 4.0,
+    "high": 9.0,
+    "text": "4.0–9.0",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_consistent": true,
+   "printed_references": [
+    "4,0–9,0",
+    "4.0–9.0"
+   ],
+   "points": [
+    {
+     "observation_id": "OB-RB-9BADDEBFA18D3F81",
+     "date": "2026-03-30",
+     "value": 9.5,
+     "status": "above"
+    },
+    {
+     "observation_id": "OB-RB-7EFD2CDC727FEAC4",
+     "date": "2026-08-19",
+     "value": 8.7,
+     "status": "within"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "м-протеїн",
+   "label": "М-протеїн",
+   "specimen_type": "serum",
+   "specimen_literal": "сироватка крові",
+   "unit": "г/л",
+   "reference": {
+    "kind": "absence_expected",
+    "low": null,
+    "high": 0.0,
+    "text": "Відсутність",
+    "sex_dependent": false,
+    "age_dependent": false,
+    "resolved_for_patient": true
+   },
+   "reference_consistent": true,
+   "printed_references": [
+    "Відсутність"
+   ],
+   "points": [
+    {
+     "observation_id": "OB-RB-DBF0A0B5F3A2D76C",
+     "date": "2026-04-09",
+     "value": 4.35,
+     "status": "above"
+    },
+    {
+     "observation_id": "OB-RB-50FDBA3F5F9457B5",
+     "date": "2026-08-17",
+     "value": 5.45,
+     "status": "above"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "м-протеїн",
+   "label": "M-протеїн",
+   "specimen_type": "urine",
+   "specimen_literal": "сеча",
+   "unit": "г/л",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false
+   },
+   "reference_consistent": false,
+   "printed_references": [
+    "Відсутність"
+   ],
+   "points": [
+    {
+     "observation_id": "OB-RB-4B34E30741AA68C4",
+     "date": "2026-04-09",
+     "value": 0.001,
+     "status": "not_comparable"
+    },
+    {
+     "observation_id": "OB-RB-7CAAEFA914CF1709",
+     "date": "2026-08-17",
+     "value": 0.0,
+     "status": "within"
+    }
+   ]
+  },
+  {
+   "registry_band": null,
+   "analyte_key": "тромбоцити",
+   "label": "Тромбоцити",
+   "specimen_type": "blood",
+   "specimen_literal": "кров",
+   "unit": "Г/л",
+   "reference": {
+    "kind": "none",
+    "text": null,
+    "low": null,
+    "high": null,
+    "sex_dependent": false,
+    "age_dependent": false
+   },
+   "reference_consistent": false,
+   "printed_references": [
+    "150–400",
+    "180–360"
+   ],
+   "points": [
+    {
+     "observation_id": "OB-RB-75327F3350C18C43",
+     "date": "2026-03-30",
+     "value": 366,
+     "status": "above"
+    },
+    {
+     "observation_id": "OB-RB-628EC26774089FBF",
+     "date": "2026-08-19",
+     "value": 295,
+     "status": "within"
+    }
+   ]
+  }
+ ],
+ "findings": [
+  {
+   "id": "FD-RB-01C1DEFA02D34876",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "ОЧП,ОМТ з в/в контр. 22.04.2026 р. - Вогнищеві зміни кісток голови, хребта, плазмоцитома).",
+   "finding_type": "bone_lesion_statement",
+   "pages": [
+    3,
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-0D7285F0D300377F",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "Плазмоцитома ?",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-1CF56BE756E9E6CA",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "text": "Зміст лімфоцитів та моноцитів у межах норми.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    2
+   ]
+  },
+  {
+   "id": "FD-RB-2089E18EA9CFDDE6",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "Вузлові утвори (Bosniak I).",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-2298F0EF12D93BB9",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "ПГД Nº - кістковий мозок щитоподібної залози, рекомендована консультація ендокринолога, УЗД.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-254D25E56916124B",
+   "event_id": "EV-ST-2D7FF2926A92514F",
+   "event_date": "2026-07-16",
+   "text": "Остеопоротичні зміни.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "FD-RB-2B51CCD564FAEE36",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "Множинні переломи ребер на різних етапах консолідації, дифузні вираженого остеопорозу.",
+   "finding_type": "rib_fracture_statement",
+   "pages": [
+    3,
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-377647446470B221",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "text": "Препарати нормоцелюлярні: Препарати нормоцелюлярні із збереженням мієлоїдного та еритроїдного паростків, зниженим вмістом метакаріоцитів на фоні відсутності фрагментів кістковомознового ретикулюму.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    2
+   ]
+  },
+  {
+   "id": "FD-RB-458BB69959D0EC08",
+   "event_id": "EV-ST-2D7FF2926A92514F",
+   "event_date": "2026-07-16",
+   "text": "Переломи ребер - всі консолідовані.",
+   "finding_type": "rib_fracture_statement",
+   "pages": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "FD-RB-466BB8A8F1A85F84",
+   "event_id": "EV-ST-A6461F1E11EB7542",
+   "event_date": "2026-04-28",
+   "text": "Загальні характеристики-: Загальні характеристики- арноє від 10 до 80%, в середньому клітинність складан: 40% en geipso лення місломоноцитарного ростка до еритроїдного: 3:1. зершої Лінії: збережені у всіх комоках. зміри міспоїдних колоній: звичайні. графін: звинайна, навколо синувоїдних судин і в паратрабекулярних зонах. замість атипового розташування міспоїдних попередчике (ALIP); ні. ть клітин волинофільного ряду: нормальна зогрофія: зенчайна, в центральних відділах комірок.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    17
+   ]
+  },
+  {
+   "id": "FD-RB-46FB8FBFF5F86962",
+   "event_id": "EV-ST-2D7FF2926A92514F",
+   "event_date": "2026-07-16",
+   "text": "ВИСНОВОК: Множинно-вогнищеве ураження кісткового скелету (множинна міслома?), кількість та розміри без динаміки від 22.04.2026р. - без вираженого м'якотканинного компоненту.",
+   "finding_type": "bone_lesion_statement",
+   "pages": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "FD-RB-4B608D9BD697CF13",
+   "event_id": "EV-ST-2D7FF2926A92514F",
+   "event_date": "2026-07-16",
+   "text": "Кісти нирок - без змін.",
+   "finding_type": "renal_cyst_statement",
+   "pages": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "FD-RB-56E9E31A56BD5AEC",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "КТ ОГП,ОЧП,ОМТ з в/в контр. 22.05.2026 р.: КТ ОГП,ОЧП,ОМТ з в/в контр. 22.05.2026 р. - КТ ознаки кістозного утворення брижі Клінічні дані низхідної кишки.",
+   "finding_type": "mesenteric_mass_statement",
+   "pages": [
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-5ADBAD4166FA0059",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "text": "Диспоез не виражений.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    2
+   ]
+  },
+  {
+   "id": "FD-RB-5D7D8FC67F5DC5D5",
+   "event_id": "EV-ST-2D7FF2926A92514F",
+   "event_date": "2026-07-16",
+   "text": "В рукоятці та в тілі грудини - остеопоротичні зміни, вогнища остеолітичної деструкції не проглядаються.",
+   "finding_type": "bone_lesion_statement",
+   "pages": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "FD-RB-60503FB137C1962D",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "text": "Анаплазовані клітини не виявлені. com.ua Заключення: Переконливих даник за множинну мієлому по наданому матеріалу не виявлено.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    2
+   ]
+  },
+  {
+   "id": "FD-RB-61EA0A4527B73583",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "text": "Гемофагоцитоз не виявлений.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    2
+   ]
+  },
+  {
+   "id": "FD-RB-674BCC2B18363035",
+   "event_id": "EV-ST-2D7FF2926A92514F",
+   "event_date": "2026-07-16",
+   "text": "Утворення кореня брижі тонкої кишки зменшилося з 6,6хбем до 5х4см. з наростанням кістозної дегенерації в центрі.",
+   "finding_type": "mesenteric_mass_statement",
+   "pages": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "FD-RB-6A0CA26462177D39",
+   "event_id": "EV-ST-2D7FF2926A92514F",
+   "event_date": "2026-07-16",
+   "text": "Хребет. в шийному відділі - в СІ до 6мм, в C2-C7 - поодинокі 3-4мм - без динаміки, в поперековому відділі - вогнища літичної деструкції, найбільш виражені зміни - в тілі хребця L2 до Ісм, без вираженого мʼякотканинного компоненту та без ознак формування компресійних переломів на момент обстеження.",
+   "finding_type": "bone_lesion_statement",
+   "pages": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "FD-RB-76FAEB5066352D92",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "Мʼякотканинний утвір в брижі (більш вірогідно зміни структури 2,3.4 ребер зліва та 2 ребра справа.",
+   "finding_type": "mesenteric_mass_statement",
+   "pages": [
+    3,
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-79F9112A932B85A2",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "text": "Вміст бластів складає 1,2%.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    2
+   ]
+  },
+  {
+   "id": "FD-RB-83042A86F4F17441",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "Клінічний діагноз: Клінічний діагноз С90.20 Плазмоцитома екстрамедулярна, без згадки про ремісію Місломна хвороба?",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-8362E167E38CD4D7",
+   "event_id": "EV-ST-2D7FF2926A92514F",
+   "event_date": "2026-07-16",
+   "text": "Вогнища остеолітичної деструкції не проглядаються.",
+   "finding_type": "bone_lesion_statement",
+   "pages": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "FD-RB-9542333B3ABD270D",
+   "event_id": "EV-ST-FDCDA56787FC7BA5",
+   "event_date": "2026-03-30",
+   "text": "Вміст плазматичних клітин дещо підвищений (1,6%); плазматичні клітини без особливостей, не утворюють скупчень.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    2
+   ]
+  },
+  {
+   "id": "FD-RB-95F719F5DDAC043B",
+   "event_id": "EV-ST-2D7FF2926A92514F",
+   "event_date": "2026-07-16",
+   "text": "На серіях нативних МСКТ-сканів, МП-реконструкціях в кістковому скелеті зберігаються множинні осередки літичного пошкодження: Кістки черепа. в проекції кісток склепіння черепа - множинні літичні осередки без вираженого мʼякотканинного компоненту - лобних та тімʼяних кісток з обох сторін, в т.ч. з руйнуванням скляної пластинки - розмірами до 3-6,5мм.",
+   "finding_type": "bone_lesion_statement",
+   "pages": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "FD-RB-B35C71FB32A1E4E1",
+   "event_id": "EV-ST-2D7FF2926A92514F",
+   "event_date": "2026-07-16",
+   "text": "Консолідовані переломи ребер з обох сторін, свіжих переломів не виявлено.",
+   "finding_type": "rib_fracture_statement",
+   "pages": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "FD-RB-BDBB720506C41BD5",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "Утвори обох наднирників, більш імовірно, аденоми.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-CB2B540CA883C60A",
+   "event_id": "EV-ST-A6461F1E11EB7542",
+   "event_date": "2026-04-28",
+   "text": "Еритропое»- жі еритроїдних колоній: нечіти зміси еритроїдних колоній: зенчайні. деритролова: відсутній тад колоній присутні всі порохідні форми нормобластв reAl-L вність ознак мегалобластоїдного кровстворення: немає.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    17
+   ]
+  },
+  {
+   "id": "FD-RB-DD627CBB69EE9A83",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "Імуногістохімічне дослідження: Імуногістохімічне дослідження Недоцільно.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-E561DFD2BC3499A7",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "Фрагменти стінки кітозного утворення: Фрагменти сірої тканини 1,0 см в діаметрі, частково вкриті слизовою, весь матеріал взятий. вогнищево-дифузною лімфоїдноклітинною інфільтрацією з наявністю плазматичних Фрагменти стінки кітозного утворення представлені зрілою фіброзною тканиною, з [Патоморфологічний клітин та возинофілів, скупченнями ксантомних клітин, на більному протязі без висновок наявності вистілки, з ділянками ангоматозу, частково вистілка представлена перитонеальної інклюзійної кісти з явищами хронічного запалення.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-EF9460BD8DF03A37",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "Кісти обох нирок.",
+   "finding_type": "renal_cyst_statement",
+   "pages": [
+    3,
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-F4137AD96070B423",
+   "event_id": "EV-ST-A6461F1E11EB7542",
+   "event_date": "2026-04-28",
+   "text": "28.04.2026. -Лімфоїдні і плазмоцитарні інфільтрати, гранульоми, опасисті клітини: зість лімфоїних клітини, що розташовуються інтерстиціально: нормальна! -Лімфоїдні і плазмоцитарні інфільтрати, гранульоми, опасисті клітини одулярні скупчення лімфоїдних клітик: присутні посдиною скупчення. герпретація нодулярних скупчень: реактивні зташування нодулярних скупчень: в центрі комірок 800 33 00 75 исрузні но літрати з лімфо дних клітин, підсутні. нутрішньосинусоідальні інфільтрати: відсутні. кість плазматичних клітин: нормальна. 33 00 75 зиблизний відсоток пезвиятичних клітин: 2% актер розташування плазматичних клітин: переадино перисикусо дальний Сть ПаСИ КІТи пОДІЛаЛЬна алогічна характеристика плазматичних клітин: звичайної морфології. поділ опасистих клітин: дифузно розташовні Індивідуальні клітини. 0 800 талогина карактеристика оласистих клітин, заичниної мордолони. яшність відчутного збільшення бластів: ні позити заліза: не визначаються. - Деповити заліза- SL 00 E2 008 0 домінка ступена фіброзу за Європейським консенсусом: МГ-0 - рожидані грамі ретикулінові полок",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    17
+   ]
+  },
+  {
+   "id": "FD-RB-F8C4CB0E938BF476",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "Гепатомегалія, дифузний стеатоз печінки.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    8
+   ]
+  },
+  {
+   "id": "FD-RB-FD486B6325EA672C",
+   "event_id": "EV-ST-2CC125988DECAA58",
+   "event_date": "2026-04-22",
+   "text": "Гепатомегалія, дифузний стеатогепагоз.",
+   "finding_type": "source_clinical_statement",
+   "pages": [
+    3,
+    8
+   ]
+  }
+ ],
+ "completeness": {
+  "observations": 110,
+  "numeric_values": 95,
+  "text_values": 15,
+  "reference_ranges": 70,
+  "comparable_values": 67,
+  "out_of_range": 20,
+  "unknown_observation_times": 76,
+  "mapped_concepts": 76,
+  "series_count": 16
+ }
+}
