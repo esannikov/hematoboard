@@ -1,0 +1,17 @@
+{
+  "schema_version": "hematoboard.v2.publication-review-hold/1.0",
+  "status": "active",
+  "case_id": "CASE024",
+  "case_key": "case024",
+  "source_document_sha256": "0845fea2be588e668544b4a5655e420cc3aeb8366ecedfa6080e14f24c154c84",
+  "clinical_input_sha256": "da0cf7708bf51ec6023a43c96b1d3be4219c716f7d6dab731c71c60e604c0fae",
+  "candidate_sha256": "69426ea5ebb5d15d97a854423909a9f4f69a0da7ce7c6e81f3f77c9498aef1e1",
+  "prior_public_package_sha256": "fd3657a9d72858b25e93c1589d21a8307bc881a5e891c944ca612afebc83148c",
+  "reasons": [
+    "source_transcription_fidelity",
+    "unrouted_evidence_retrieval"
+  ],
+  "created_at": "2026-08-30T19:48:33.126318+00:00",
+  "authorized_by_user": true,
+  "authorization_basis": "Explicit user instruction on 2026-08-30 to implement and publish the CASE024 review hold"
+}
