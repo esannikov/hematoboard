@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.9.13] - 2026-08-30
+
+### System
+
+- Published an exact review hold for CASE024; the candidate remains immutable while source and evidence revisions are pending.
+- Updated the verified UI shell for protocol-replay labels while preserving the clinical candidate and clinician gate; this release changes no accepted clinical state.
+
+### Verification
+
+- Candidate `69426ea5ebb5…` passed package/schema closure and full release QA.
+- Public index, package, QA receipt, shell fingerprint and authenticity manifest are closed by exact SHA-256.
+
 ## [0.2.9.12] - 2026-08-30
 
 ### System
