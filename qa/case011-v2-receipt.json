@@ -5,8 +5,8 @@
   "projection_sha256": "9387a20c14ff12258b2204a222ea260895aaf7ff52a541dd5c949fe3d45b4bec",
   "public_package_sha256": "8dfba62612ce350f29fdb7c743934c4e51b757ca08277a0b983b26af2f578cea",
   "qa_profile": "full",
-  "ui_source_sha256": "a32d9e5ebb9bd03396c6990b63a9a5b44fb1c9aecd7310a2261cfb4691d3343d",
-  "qa_tooling_sha256": "237130eea966d0f0c6e8d965911aa42b75b6408f9a69452c7d37a99c693196df",
+  "ui_source_sha256": "84082aac494c03c5922a1dbefa997578d8472fc92ce2f394d7dd0c3eeabba248",
+  "qa_tooling_sha256": "8a02f694e32846e731044c2a074a1b63404c9ee28c8ad441bb384010c55c93a4",
   "status": "pass",
   "viewports": {
     "desktop": true,
@@ -26,7 +26,7 @@
   "screenshots": [
     {
       "viewport": "desktop-overview",
-      "sha256": "5564cf9099eaf9ae39fc5a2cb994afb46100742fa551daddf62da795506e5c4a"
+      "sha256": "d96db1b8e3fcecb407843639b36756b40c89255cfd1b6d8806650b3bac217b45"
     },
     {
       "viewport": "desktop-timeline",
@@ -34,23 +34,23 @@
     },
     {
       "viewport": "desktop-graph",
-      "sha256": "07680205057f881b420db73ddd6be7b11b01d9ca95510f54b20dd40d94a9d7de"
+      "sha256": "08f48c6824681e18febe3b95dae28c857278a97c0ee085fa3e5df411d19ee3fd"
     },
     {
       "viewport": "desktop-gaps",
-      "sha256": "d0f1ee047fef316e762ad00478490b32878f6634859e6029c165a511ada3a5bf"
+      "sha256": "c459869bc2a39fdef954cc72f677bb96f8d6b91e408b997841caef1134dad4f5"
     },
     {
       "viewport": "desktop-source-drawer",
-      "sha256": "b233e3bf16e23121d2df86fb29d0d940f4c0668a9ed16e4e89be58af0fde0e56"
+      "sha256": "3c254f17a25c82535ff2dab18cce4e89b542ed41ba36fc0890eb850c142f1cad"
     },
     {
       "viewport": "desktop-reasoning-log",
-      "sha256": "09affea1224bc33fa32879e9455a20ca29537137886df80e20c73f548ac355b9"
+      "sha256": "8302b93cd283962610ed3eaf8c2fde1c0a2f5962a4cd0aeccd208c88e469d9f2"
     },
     {
       "viewport": "tablet-overview",
-      "sha256": "fd164afac47c1ecf09287e2f445f8e7fc798d3a8b367b81a0b342d75b9973c08"
+      "sha256": "332738a7bae58ff59fd7216e7ebb9f249178021931df9d6a0fe402ae69b274f6"
     },
     {
       "viewport": "tablet-timeline",
@@ -58,15 +58,15 @@
     },
     {
       "viewport": "tablet-graph",
-      "sha256": "d4a46587369ffe86a5b9120ba21e99ff941b9352e26c8a9bda4a9a4d430a897a"
+      "sha256": "47fef99c178423bf1a6bc691a33d50ff6c6e22f9f036da9afda96d744d021aa6"
     },
     {
       "viewport": "tablet-gaps",
-      "sha256": "fd2314426558908109a570c4dd03bc9fb04af541d1023dcef9dfbc1c2c5db804"
+      "sha256": "bb751c3d538f5b25273b03e22168ae4ef2c5564b47437a948ee4ce642215c87b"
     },
     {
       "viewport": "tablet-source-drawer",
-      "sha256": "755432db1f6d7aec6eb55ca0ebb49890bda29210c34931dd76bd4d085cee2455"
+      "sha256": "92e596ccb27b3ec64a15dfc632f71ac04864625e51f499a2facba0dff91ed4c9"
     },
     {
       "viewport": "tablet-reasoning-log",
@@ -74,19 +74,19 @@
     },
     {
       "viewport": "mobile-overview",
-      "sha256": "ce2034b234e07410f1f3d19464b00b9980667da4775f81619a8907939e3bca3b"
+      "sha256": "3bb5f61c9ef5c623f07354c44a708e27a7233a20581e4ba7db660aa200a2d9ea"
     },
     {
       "viewport": "mobile-timeline",
-      "sha256": "0babb6b0cbc249af6075ffba2e69c89a1bc6f3d3db706de623bce3a5511303e6"
+      "sha256": "57d8b26606e4b6094a628282f9affa565059895e9b279c3ac11aeb129945d313"
     },
     {
       "viewport": "mobile-graph",
-      "sha256": "8571838ab566f5d91a0f8665a53e9839d98c0dc635ecbba455e7f92d21fb5b77"
+      "sha256": "04a5efecf26ca639ba6d745319f018bd4982283db450dad5ef0b7d153068fd1e"
     },
     {
       "viewport": "mobile-gaps",
-      "sha256": "06d18460854bb6f2adcea3561b59d51152dc4dfb79bb2896458c9bcd505a0d96"
+      "sha256": "ac554375669a7002d1978c2d138dc35d73034747b8aa632e03ec0a3cba14fe44"
     },
     {
       "viewport": "mobile-source-drawer",
@@ -94,7 +94,7 @@
     },
     {
       "viewport": "mobile-reasoning-log",
-      "sha256": "fc7037e798e027b8b9ded2121889facac5a0e4c57bf932cca2e5135cc5999257"
+      "sha256": "fd434091d2e9d5f3a6963e3084d49eb3e7502a9b72f96420e2757853cdee8a19"
     }
   ]
 }
