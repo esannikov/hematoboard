@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.9.15] - 2026-08-31
+
+### System
+
+- Rebuilt all 18 clinician-facing packages with collision-safe reference rendering: medical B6/B12/G2 tokens stay intact, while legacy candidate references render as quoted labels.
+- Added explicit `patient_graph` or `legacy_flat_compatibility` provenance to every package without changing the visible UI.
+- Preserved every clinical Candidate, Projection, Patient Graph and clinician gate; this release changes no accepted clinical state.
+
+### Verification
+
+- All 18 Candidate hashes and Projection payloads remained unchanged.
+- All 18 packages passed semantic text validation and full desktop/tablet/mobile browser QA; CASE024 passed the extended 21-screen route.
+- Public index, packages, QA receipts, unchanged shell fingerprint and authenticity manifest are closed by exact SHA-256.
+
 ## [0.2.9.14] - 2026-08-30
 
 ### System
