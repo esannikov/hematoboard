@@ -1,6 +1,6 @@
 {
   "schema_version": "hematoboard.public-release-authenticity/3.0.0",
-  "generated_at": "2026-08-31T12:56:23.349211Z",
+  "generated_at": "2026-08-31T15:50:17.625931Z",
   "dashboard_generation": "v2",
   "archive": {
     "case_index": "archive/v1/case-index.json",
@@ -8,7 +8,7 @@
   },
   "shell": {
     "ui_source_sha256": "3ba2319535210903defdfb8ac41c5498900a87857b66a43f2ff536b6316d39f5",
-    "verified_ui_baseline_sha256": "c2f13d548eaccbdcb28e175d1577025659ece1be6a9a93e8891b11dd53ac5bfc",
+    "verified_ui_baseline_sha256": "09ed95b1f03a173570629228874ea12a8ee514c61e7dd6db3404afbe8ddefa4b",
     "assets": {
       "assets/index-BxM9RhQG.js": "1bf0ffdbd697f26e0d7a203319887174f1aaf7c5f04a40c4c6f49a32ddcae744",
       "assets/index-EybUSeyn.css": "132ac83490c5288ed15cccfac1c14581851422db4bfaacf557a083a6a72dcc85"
@@ -305,10 +305,10 @@
       "protocol_replay_of_case_id": null,
       "publication_authorized_by_user": true,
       "source_document_sha256": "0845fea2be588e668544b4a5655e420cc3aeb8366ecedfa6080e14f24c154c84",
-      "clinical_input_sha256": "1f35f4f1484dac5ab0c197e51378e8411085a9f8ee19214967704b3d84200d67",
-      "candidate_sha256": "9ae9da988f5aab8eda5b90f4fa488b00bb82151d5ad24744d389636dd8c1955f",
-      "public_package_sha256": "84f65af4096c8b94005810e33f59d2980f8946cb51e0f1c7fe2186e929340609",
-      "public_qa_sha256": "0db8a0c8355d13476a8d7941cbf26848cc7929c0baf6f035659fce31b2c5d95a",
+      "clinical_input_sha256": "be497ed133bb2cf61c389b52582e0be1514d034b0150b81ca731eab051f7fe80",
+      "candidate_sha256": "3eb1b863bd1ecca6ccd51c75e4a1f86f11fa1944dddf7296810214261353b00f",
+      "public_package_sha256": "41295cd7c8857bb256a6155235dd7cfe10e9acbd0f6778de18dcceb8a4e93afb",
+      "public_qa_sha256": "56c184946919b3464d2728dd60f5731efc8040b8f1457704ee62edcfc3300504",
       "public_qa_receipt": "qa/case024-receipt.json",
       "v1_clinical_views_restored": true,
       "critic_pass": true,
