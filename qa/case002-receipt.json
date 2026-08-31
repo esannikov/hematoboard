@@ -5,8 +5,8 @@
   "projection_sha256": "35e66e2e0744ed920407e02da161647268eaf2e7121d7ec6ec332c27628c10f8",
   "public_package_sha256": "86d7b318cb1dff620d6f932bbe4f6ed700d933468592a12ab205c4bb2415f088",
   "qa_profile": "full",
-  "ui_source_sha256": "84082aac494c03c5922a1dbefa997578d8472fc92ce2f394d7dd0c3eeabba248",
-  "qa_tooling_sha256": "8a02f694e32846e731044c2a074a1b63404c9ee28c8ad441bb384010c55c93a4",
+  "ui_source_sha256": "909669b5598c6d57830eb759728a750d80b4df1d0682ff1b34072a06c5e4891a",
+  "qa_tooling_sha256": "545c3a3352837c26f79f3473f9b41131a1a5dbf664654ff42cdf4c85e10f6062",
   "status": "pass",
   "viewports": {
     "desktop": true,
@@ -30,7 +30,7 @@
     },
     {
       "viewport": "desktop-timeline",
-      "sha256": "cea382c5a005410a87fbdb0f4dead6a76dc5317fceb34bb92a532a25906937e3"
+      "sha256": "80f3339dca2a64177882947b49ef32e30f6d0d5f55a53a61b0e63623092cb07a"
     },
     {
       "viewport": "desktop-graph",
@@ -38,11 +38,11 @@
     },
     {
       "viewport": "desktop-gaps",
-      "sha256": "c03682127df08e22846459e82f3f4fbc8ab98e88a92c71308abc23691955e231"
+      "sha256": "2b0189f517c74ab88fec06a902b7906f89b2535e77e4e4788fd65f2a50afea7d"
     },
     {
       "viewport": "desktop-source-drawer",
-      "sha256": "255276a21e1e290f071c5f5c54cffbbc4bfa8be30ddf47ba704198ad366ab163"
+      "sha256": "fb3eac51be6b1da9cf4c409a71af92ddd3404a58c7dd035cad8d32114f1950a2"
     },
     {
       "viewport": "desktop-reasoning-log",
@@ -62,7 +62,7 @@
     },
     {
       "viewport": "tablet-gaps",
-      "sha256": "6a39bbf7273b609e79e1f9ae29f1e599dc9ff97708a373143c2e92fd24faf62c"
+      "sha256": "3272139e8b86b19c27d6738f014c1c589cbbf64b9f0a1d907ef529fee3503e99"
     },
     {
       "viewport": "tablet-source-drawer",
@@ -78,15 +78,15 @@
     },
     {
       "viewport": "mobile-timeline",
-      "sha256": "f831a10504678fcb5db649547d2049ec689d37e2e8f0c483afaaf233a7180a10"
+      "sha256": "321e183270a19c2a7b7bff580d3bccf6dcecc96353648522c5bdacca3db210a3"
     },
     {
       "viewport": "mobile-graph",
-      "sha256": "9fb98ef8abab1a990a83d8fd9b833330bba29264e870d59f0a013d86cfab706f"
+      "sha256": "5b5daa269982fb11e17bfc5ed090e72a23724c0861418ae0fb01a75c98516af5"
     },
     {
       "viewport": "mobile-gaps",
-      "sha256": "5156adcd3a815b106e003748c9228ca0c4aa663ddb5c9f666a7e311099fc13c2"
+      "sha256": "de53f3f27502a08b6a2d14b5d496041a339bd189e64f083dce88cf0e2454b53f"
     },
     {
       "viewport": "mobile-source-drawer",
