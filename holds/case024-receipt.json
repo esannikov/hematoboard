@@ -4,13 +4,13 @@
   "case_id": "CASE024",
   "case_key": "case024",
   "source_document_sha256": "0845fea2be588e668544b4a5655e420cc3aeb8366ecedfa6080e14f24c154c84",
-  "clinical_input_sha256": "be497ed133bb2cf61c389b52582e0be1514d034b0150b81ca731eab051f7fe80",
-  "candidate_sha256": "3eb1b863bd1ecca6ccd51c75e4a1f86f11fa1944dddf7296810214261353b00f",
-  "prior_public_package_sha256": "78fe0d2bb2c41975c9282858568745807e52c9fd2dac9cbeefba8125150d5c47",
+  "clinical_input_sha256": "f3ebbfe2c5909ea78378d7a818473a657e7dcb8608a50547fbb402d4d19ff116",
+  "candidate_sha256": "543b264d876cda348786ad25becd9b893d9d0405c30842a06a2c34cad1a8370f",
+  "prior_public_package_sha256": "b9ce8034b2fad9502b1251e12030d8016737f08181322f85a04b24e4aef388ff",
   "reasons": [
-    "source_transcription_fidelity"
+    "ranked_hypothesis_without_support"
   ],
-  "created_at": "2026-09-01T05:16:35.533402+00:00",
+  "created_at": "2026-09-01T15:19:43.042007+00:00",
   "authorized_by_user": true,
-  "authorization_basis": "Користувач погодив виправлення матеріалу, референсу й дослівної транскрипції CASE024 та наказав: запускай"
+  "authorization_basis": "Користувач прямо наказав виправити правило rank requires support, опублікувати hold і запустити одну role revision CASE024."
 }
