@@ -111,8 +111,7 @@
       "case_id": "CASE024",
       "source_case_id": "CASE024",
       "data_path": "case024/public-dashboard.v1.json",
-      "protocol_replay_of_case_id": null,
-      "review_hold": true
+      "protocol_replay_of_case_id": null
     }
   ]
 }
