@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.9.32] - 2026-09-02
+
+### System
+
+- Published the verified dashboard package for CASE024 through the simplified hash-closed release command.
+- Updated the verified UI shell for protocol-replay labels while preserving the clinical candidate and clinician gate; this release changes no accepted clinical state.
+
+### Verification
+
+- Candidate `26c78b0f1f99…` passed package/schema closure and full release QA.
+- Public index, package, QA receipt, shell fingerprint and authenticity manifest are closed by exact SHA-256.
+
 ## [0.2.9.31] - 2026-09-02
 
 ### System
