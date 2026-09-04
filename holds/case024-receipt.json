@@ -5,12 +5,12 @@
   "case_key": "case024",
   "source_document_sha256": "0845fea2be588e668544b4a5655e420cc3aeb8366ecedfa6080e14f24c154c84",
   "clinical_input_sha256": "f3ebbfe2c5909ea78378d7a818473a657e7dcb8608a50547fbb402d4d19ff116",
-  "candidate_sha256": "543b264d876cda348786ad25becd9b893d9d0405c30842a06a2c34cad1a8370f",
-  "prior_public_package_sha256": "b9ce8034b2fad9502b1251e12030d8016737f08181322f85a04b24e4aef388ff",
+  "candidate_sha256": "26c78b0f1f995becb097d11488b79d01429807fa973387431735d3871d41ea07",
+  "prior_public_package_sha256": "f2986fe5303951214553b0cfec8ff684dd53377ec840828487844e076eda2aac",
   "reasons": [
-    "ranked_hypothesis_without_support"
+    "justification_graph_semantics_revision"
   ],
-  "created_at": "2026-09-01T15:19:43.042007+00:00",
+  "created_at": "2026-09-04T20:56:37.119773+00:00",
   "authorized_by_user": true,
-  "authorization_basis": "Користувач прямо наказав виправити правило rank requires support, опублікувати hold і запустити одну role revision CASE024."
+  "authorization_basis": "Користувач відповів «так» на точне запитання про публікацію позначки «Перегляд кандидата призупинено» для CASE024 у цьому завданні 2026-09-04; Candidate 26c78b0f1f995becb097d11488b79d01429807fa973387431735d3871d41ea07."
 }

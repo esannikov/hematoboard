@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.9.33] - 2026-09-04
+
+### System
+
+- Published an exact review hold for CASE024; the candidate remains immutable while source and evidence revisions are pending.
+- Preserved the existing clinical candidate, UI shell and clinician gate; this release changes no accepted clinical state.
+
+### Verification
+
+- Candidate `26c78b0f1f99…` passed package/schema closure and full release QA.
+- Public index, package, QA receipt, shell fingerprint and authenticity manifest are closed by exact SHA-256.
+
 ## [0.2.9.32] - 2026-09-02
 
 ### System
