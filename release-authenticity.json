@@ -1,6 +1,6 @@
 {
   "schema_version": "hematoboard.public-release-authenticity/3.0.0",
-  "generated_at": "2026-09-09T15:39:26.972370Z",
+  "generated_at": "2026-09-09T15:42:45.325097Z",
   "dashboard_generation": "v2",
   "archive": {
     "case_index": "archive/v1/case-index.json",
@@ -8,7 +8,7 @@
   },
   "shell": {
     "ui_source_sha256": "bfc0877ef7119ac2da345845aebdc2b28130aec5fd3e53069cd6f68db6bcd011",
-    "verified_ui_baseline_sha256": "8bb1630b4364899eebcd47f06dfa305f71275bf30fa0a507df803f2f0cec9687",
+    "verified_ui_baseline_sha256": "37f678611c6dc711649138deddd5ec125b8a4c3d301d442ab724368251f7110e",
     "assets": {
       "assets/index-BeE_4BMG.css": "0b46cca8d63461a59e08c54ec0296d96f8dbf239d68e83906c369b54758d18ab",
       "assets/index-JG70t4Er.js": "9fdc763242594db3eabf7b730c0c99f0fb5f9bc5580741b63fe31515fd62439f"
@@ -306,8 +306,8 @@
       "source_document_sha256": "0845fea2be588e668544b4a5655e420cc3aeb8366ecedfa6080e14f24c154c84",
       "clinical_input_sha256": "93b5478c19b7a946b30526f2ea36c9e88a87d84b131c51e7d0ac6566c0d46e4d",
       "candidate_sha256": "fb9c503358dc9633a1d17e37797e2627615b2cf1d2e4935345f5fee48d9003ff",
-      "public_package_sha256": "0df196dca2709013d0475b3996511d4e062927bec4ef50f95d483ddb4426b9b5",
-      "public_qa_sha256": "ddb7e7f560d82b401e226273df227a71eded14f9df504b3fcf7a95ac262eb4f7",
+      "public_package_sha256": "6de897e6e1b33c35df1b03ccaf15d9b19ff8cce612ded48bb3970b24d6bc7cf1",
+      "public_qa_sha256": "91ab152c4f106991d499f3aaa3752e0da70ddb66c13acf36bd0060f587abc802",
       "public_qa_receipt": "qa/case024-receipt.json",
       "v1_clinical_views_restored": true,
       "critic_pass": true,
