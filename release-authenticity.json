@@ -1,6 +1,6 @@
 {
   "schema_version": "hematoboard.public-release-authenticity/3.0.0",
-  "generated_at": "2026-09-05T20:11:20.791333Z",
+  "generated_at": "2026-09-09T11:11:36.830857Z",
   "dashboard_generation": "v2",
   "archive": {
     "case_index": "archive/v1/case-index.json",
@@ -306,14 +306,22 @@
       "source_document_sha256": "0845fea2be588e668544b4a5655e420cc3aeb8366ecedfa6080e14f24c154c84",
       "clinical_input_sha256": "eb16f11104a09415a71b33b938d84714d78904c6323bbc6c72e66b2c4286e708",
       "candidate_sha256": "af8a751b28022ae02ce335f31f1a53bd21a7dcf7f9fe6d807b11140a0452ddbb",
-      "public_package_sha256": "e66ed2645575028c2ff9d211dcb87f473b18cc2a02b030bd07a2eceef9832a7e",
-      "public_qa_sha256": "21c30bccffc684ecd1982b9f9ccf24c02516745a256c01f44868614eacffcf84",
+      "public_package_sha256": "49c46d47cec5ea79ea216e6885fdaa238eb8f4920466d689ed155537776eb829",
+      "public_qa_sha256": "dd18f4ddc6dee0dcbaabc9aa680a19fa15fa638d6b9b607167bf0d3aff3d8c11",
       "public_qa_receipt": "qa/case024-receipt.json",
       "v1_clinical_views_restored": true,
       "critic_pass": true,
       "language_clean": true,
       "projection_verified": true,
-      "clinician_accepted": false
+      "clinician_accepted": false,
+      "review_hold": {
+        "status": "revision_required",
+        "reasons": [
+          "justification_graph_semantics_revision"
+        ],
+        "receipt_sha256": "d0e0e4f1401ef0c6395436b09c89da8a2a2f1828f9e4988bf7ebde01814e55bf",
+        "receipt": "holds/case024-receipt.json"
+      }
     }
   }
 }
