@@ -5,8 +5,8 @@
   "projection_sha256": "9387a20c14ff12258b2204a222ea260895aaf7ff52a541dd5c949fe3d45b4bec",
   "public_package_sha256": "8dfba62612ce350f29fdb7c743934c4e51b757ca08277a0b983b26af2f578cea",
   "qa_profile": "full",
-  "ui_source_sha256": "8098df9380f1b0e2e753ceeab4bb77e9bb22af39338eb37cb80fc17ab7bb9f95",
-  "qa_tooling_sha256": "0244d2c22bbab31a6c15de14d7cf11b82adf0369343a37d74a1275b180cd3556",
+  "ui_source_sha256": "5d7f669d3ccd0b4b06ef489d92db9e72f165f7888f767c61a8262fa7d60adcd8",
+  "qa_tooling_sha256": "10deba91a8bd5af11ffcba720d42db0054806ecff95e5cd8d174326821a14b45",
   "status": "pass",
   "viewports": {
     "desktop": true,
@@ -30,43 +30,43 @@
     },
     {
       "viewport": "desktop-timeline",
-      "sha256": "ba007dd8c09d8cf52bb89aec9aa1d01780a36a20115f6d63293db038d214bcda"
+      "sha256": "5c56fe63ccadc5f786bcfc63c15039e54c5d8f14767e33e083d43ec43c6343e4"
     },
     {
       "viewport": "desktop-graph",
-      "sha256": "13dca4dc54c162e5de631f3587dd5cfae3e601ce3103063aba17792f994b387d"
+      "sha256": "35f60da80e8b67d3faf28445c1ef69224462f5e400838769806a6a809b56c360"
     },
     {
       "viewport": "desktop-gaps",
-      "sha256": "d3fa22b7099132367c5738ad76d6d390508ff65e9a608864df26e0248a723ba8"
+      "sha256": "415408c2ef6e984feb5a6e7d774af05fbdeeb9be5932da09e516b6da9f6d82d8"
     },
     {
       "viewport": "desktop-source-drawer",
-      "sha256": "08ecb1edb66bd1a2b7cc2f5404df42abc8bc18c42c1a6637610c0b2b58667477"
+      "sha256": "1d49da63cfd3dd982662600964d7f70d3015230a9cf74c6b984aba2cc2d13662"
     },
     {
       "viewport": "desktop-reasoning-log",
-      "sha256": "26074f46f67cb18c8cc4a92b5c006edbba250d6a9c2369f8a0d8686f787417a6"
+      "sha256": "237b56915f86d8ff772915e06481a7d873c69e6978531b3abb4692dae9e4b5a5"
     },
     {
       "viewport": "tablet-overview",
-      "sha256": "1c4621bb591c2338f504c9a93d6c7103b3f994816cdd4f1b22b717d828a9894a"
+      "sha256": "9b0c04d854deae609e3c9ea95a6e36e82137d09b17ee5fb1e4bc7ba1fe562573"
     },
     {
       "viewport": "tablet-timeline",
-      "sha256": "5715dda47180f89ee6e46d76370aef20650b5575ce7aa68d10256f71d3655eda"
+      "sha256": "5ae07ba60ce1a2cbeb2c720907d0d0d1ef40d22218a9145748a38d18d89b916f"
     },
     {
       "viewport": "tablet-graph",
-      "sha256": "b5c3aa66de202117605bf0dfe383723aa91c8b14662d489838728c0719dae485"
+      "sha256": "34c5f542aaedb424d3c03cda8374cba2ff86d6f2be73ad9716a94abb0115eb0e"
     },
     {
       "viewport": "tablet-gaps",
-      "sha256": "f57f7672314b4f4c96c7c0cd060a963dbe003287a3694b34a1d93f5f3c01ab57"
+      "sha256": "1a07f07fb9cba1e66aa706a0cc937eb90b80b614ea9f15c4be4e9d6c29573f28"
     },
     {
       "viewport": "tablet-source-drawer",
-      "sha256": "02f00e2ca831f797bdcedf6e396a4550bde1b6a0c1624c5b8e5e2bcd977772ea"
+      "sha256": "d6ac6a7bf4fb9bac9644a3ab550ebfb3a5e21bc4e1978f56a779bb41f593ff97"
     },
     {
       "viewport": "tablet-reasoning-log",
@@ -74,23 +74,23 @@
     },
     {
       "viewport": "mobile-overview",
-      "sha256": "90ac4ba628040ed3eac2269f0e264f1fd4e752f2551612b65950b8d17b121617"
+      "sha256": "e8c79385df6d30a9a0abf3b3aa0da28e07e5edf5437e83b384ede719e40fb53e"
     },
     {
       "viewport": "mobile-timeline",
-      "sha256": "adc6d5fcde4ac3d70ccdb98cfb5afb71b97949c719b400ae89eb615af9c430bc"
+      "sha256": "60ec292f76576be5cc8d1ac7f7d802fede3361f0bf1885cc23e667c1bec0f88a"
     },
     {
       "viewport": "mobile-graph",
-      "sha256": "c4bfa5ccbe2c877df7442bffe5ec14be4acadb13a8a33b6593021c6c3ba01ac5"
+      "sha256": "a68cbf3f0e1bc72fd24c5e644a86cb1587b873f8001c2cb9d15f3f659148326a"
     },
     {
       "viewport": "mobile-gaps",
-      "sha256": "8898a17f3cb927c3fc38adfd7d13adc0488f23dd72ba2a7a9e928d2e8a70871a"
+      "sha256": "dd662b00524739c5030740aa8b74ce075082478cb87807616c02218ea876b3f6"
     },
     {
       "viewport": "mobile-source-drawer",
-      "sha256": "000ff93951ddc96ac3fb459c5a0c18fbdfba7f828f490d692cd8931a14f980a6"
+      "sha256": "16b99a444833d59925db98f933c28e01156c27471ddd944642346c1965e10916"
     },
     {
       "viewport": "mobile-reasoning-log",
