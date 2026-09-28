@@ -5,8 +5,8 @@
   "projection_sha256": "3160164f254a883ef935218c4b83d0a0dd41b39d0606985c0296ce73fb24e3ee",
   "public_package_sha256": "c54f65a3b83882ddc80288002791ae0a544a179ab609cfd03516e0d170ad5e26",
   "qa_profile": "full",
-  "ui_source_sha256": "5d7f669d3ccd0b4b06ef489d92db9e72f165f7888f767c61a8262fa7d60adcd8",
-  "qa_tooling_sha256": "10deba91a8bd5af11ffcba720d42db0054806ecff95e5cd8d174326821a14b45",
+  "ui_source_sha256": "562f44b3d096bb56cff54b69d4cdbc8f00d723b330bc7d93c648c4816f472c02",
+  "qa_tooling_sha256": "9af2135672bb36dabb6c0682bcb101216ff4ed5f61def34aa708b6aef42d95eb",
   "status": "pass",
   "viewports": {
     "desktop": true,
@@ -26,75 +26,107 @@
   "screenshots": [
     {
       "viewport": "desktop-overview",
-      "sha256": "043a7f62cbcf2b4f5b8284acf5934ff47620385ed70c2f9b3e594bd576c06213"
+      "sha256": "7c615ea17b55e4d3a7e4efa6cdc19df606b568e8a6c0f5d514ba9f2eff25de9b"
+    },
+    {
+      "viewport": "desktop-comparison-arguments",
+      "sha256": "ce4c1d3c6267ebbe9ba95d2b135f2d3253f60ef8c16b88fa00db0a63a4621e1f"
+    },
+    {
+      "viewport": "desktop-comparison-uncertainties",
+      "sha256": "e7ca5c9fca700d035c765583f85f18de64a3f762ffa40740647b8ed5dcab984e"
+    },
+    {
+      "viewport": "desktop-comparison-workup",
+      "sha256": "7f1ae292c6c07bc19cbe6d657b5b0f15d0438c2cbbb69a24c18fcd465895b177"
     },
     {
       "viewport": "desktop-timeline",
-      "sha256": "5d34a392ad66a1e249daa9c95d9b1e499ae32d8f5c84ad84bbdcbedab9f07541"
+      "sha256": "45697cb48450d5b532310d483431c68f4b23dbe948ae461a6e47e9dc5352c6d2"
+    },
+    {
+      "viewport": "desktop-graph-nodes-1",
+      "sha256": "f8d602b31595b67af9e290c010fef47e3da43905c8d033345d290896f3b575ce"
+    },
+    {
+      "viewport": "desktop-graph-nodes-2",
+      "sha256": "c13a7ee8b81c8fd3aa52e9c338a2d70e651438827c15ebead11e21900ce5535f"
     },
     {
       "viewport": "desktop-graph",
-      "sha256": "7ccc13e3cd219c1e2b2681a60fe0679851a2655cef199ce1ec34ac5b57b8a503"
+      "sha256": "b59d048a7bac57bf9e4451506297e7f9e1e68ce05066eea93d623c7190ffb712"
     },
     {
       "viewport": "desktop-gaps",
-      "sha256": "6afa23bf9ec1200da8698a09f207d4927652bb47c751a39b575fac260f6fc0ce"
+      "sha256": "722a0709926c550f3c90a25049540a034255fcb420793f859101dec75515147e"
     },
     {
       "viewport": "desktop-source-drawer",
-      "sha256": "83144e614af996fac3b7ceea9f957cdbe6aeaf2df6d14706ba6bbb46297a69d2"
+      "sha256": "4c31219cb5101e161157dcbe59bf9ba6fb8048195e34d1fd083e022488881c1a"
     },
     {
       "viewport": "desktop-reasoning-log",
-      "sha256": "d824ed05d098b22e0888beaa87694ac551e2847f6106d23be9b924ff45b65db5"
+      "sha256": "f00ac679ab005da36922f99f33bfaba4c838f52b7d6c50139773869fa027143e"
     },
     {
       "viewport": "tablet-overview",
-      "sha256": "ec9e3c556148b08a91443faca468c3c6cb8215974def193c003f8dc572500ae9"
+      "sha256": "0fc9f9749290cf00b6892687255d40d8976d54ab0349441337b31a803a9f27cf"
     },
     {
       "viewport": "tablet-timeline",
-      "sha256": "c740597bb47ed50398546078cc5afcd75bc34b7d396fcdbf4a19822a7d905d0d"
+      "sha256": "e8986f08a5ab25148071183288baade83662ec90825e5933f108dd8495e5bf41"
+    },
+    {
+      "viewport": "tablet-graph-nodes-1",
+      "sha256": "68823da19fb13bceb76ce24d13c1a809c3115915244bf38f01e9a0101d260c5b"
+    },
+    {
+      "viewport": "tablet-graph-nodes-2",
+      "sha256": "72731fa26e7bbff1be611ff9175506709bbe40fa3676041b0514951aef0b8838"
     },
     {
       "viewport": "tablet-graph",
-      "sha256": "9244fc6e118ede5043026dc705114abab2e39b3e97d656562848291d5a52e438"
+      "sha256": "491e4f47ceee36bc3fdcf2523333aeb526a7c8e0556098dbdc880be8f0da8ea6"
     },
     {
       "viewport": "tablet-gaps",
-      "sha256": "25c1ed1ca153e21a6088cf14026a4242724f428ab4b6c34d0f249b80bfda2616"
+      "sha256": "686f72096201c63bbeb95b106290ec04dda85a9701a9322f52dd3ea9c88ee2b5"
     },
     {
       "viewport": "tablet-source-drawer",
-      "sha256": "f83fa14d901078ef3f25fbbf53b8e52eaf4798fa13b0cc854f16740cc902dbd6"
+      "sha256": "dbc54b288d32c691cc6785ea522728432fcf917d319a406592351353f7c2ea50"
     },
     {
       "viewport": "tablet-reasoning-log",
-      "sha256": "90e70f8ef70a4c3e177093706bb1c5a358f7090c3dd54d313419ce5ca729103a"
+      "sha256": "aed6c55dd001f1e22180e505777d538b0b47e3ca91c001f4c7c6fee8c80ae2f9"
     },
     {
       "viewport": "mobile-overview",
-      "sha256": "87e141b9d434046ef2666c236e1a732df64b41736d5b613df26c859bc33d4bd6"
+      "sha256": "4d27e22d3f4df5c015668a5474fbebd3cb1f20af2b2cf5c79263e13c04dcab96"
+    },
+    {
+      "viewport": "mobile-comparison-arguments",
+      "sha256": "670d01d2ded8dc867caa381714f78bbde809c67196a6965ae75e0fa2d02cdc1c"
     },
     {
       "viewport": "mobile-timeline",
-      "sha256": "5f08d8f16909b1de690ab6f05f4eb2f122a67e84866a9437f507475313cb9a43"
+      "sha256": "79418fd2a955f0e9b85239b17aee91bb13a6dc233291563a709cd9288f9846e7"
     },
     {
       "viewport": "mobile-graph",
-      "sha256": "571a533ab4657ffb1165dd1f84dce46b08d60269a1c1a4651aadee3feb92b64d"
+      "sha256": "a3b8429e384eae24d46a1dfc6064dda54b78439f24c0b208a2b736ed937cd4a9"
     },
     {
       "viewport": "mobile-gaps",
-      "sha256": "ec7efd1c0dc4f264a1693708ab381e16342dc1ff5cd285cee5173b7818ea6f57"
+      "sha256": "54e782f7b4096201e8ce50603ca15a42678dfe45fd06c7c01781f9006accdd07"
     },
     {
       "viewport": "mobile-source-drawer",
-      "sha256": "262c000f25c1db8f6ddd2f2de4ac0ae08c4d7e2baf1f234ed757cab0f6a3def7"
+      "sha256": "da5f73763260341a1616fb65bc2a0a4e5f5d8c5f2faed8e1f6bc608745135e5d"
     },
     {
       "viewport": "mobile-reasoning-log",
-      "sha256": "9acda98ce5964114d52c640f1c4f50babc7d72ada15901bedc89b1f0f9a09dfc"
+      "sha256": "9ba5e5a70f8073bb26b35649b418deb1b1a43c66495a22c2d91d250cf4eaaabf"
     }
   ]
 }

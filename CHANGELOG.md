@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.9.40] - 2026-09-28
+
+### System
+
+- Published the verified dashboard package for CASE025 through the simplified hash-closed release command.
+- Updated the verified shared interface while preserving clinical candidates and their clinician-review status.
+
+### Verification
+
+- Candidate `123346da58ca…` passed package/schema closure and full release QA.
+- Public index, package, QA receipt, shell fingerprint and authenticity manifest are closed by exact SHA-256.
+
 ## [0.2.9.39] - 2026-09-09
 
 ### System
