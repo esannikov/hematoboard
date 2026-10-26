@@ -5,7 +5,8 @@
       "key": "case001",
       "case_id": "CASE001",
       "source_case_id": "CASE001",
-      "data_path": "case001/public-dashboard.v1.json"
+      "data_path": "case001/public-dashboard.v1.json",
+      "protocol_replay_of_case_id": null
     },
     {
       "key": "case002",
@@ -41,7 +42,8 @@
       "key": "case008",
       "case_id": "CASE008",
       "source_case_id": "CASE008",
-      "data_path": "case008/public-dashboard.v1.json"
+      "data_path": "case008/public-dashboard.v1.json",
+      "protocol_replay_of_case_id": null
     },
     {
       "key": "case009",
@@ -118,6 +120,13 @@
       "case_id": "CASE025",
       "source_case_id": "CASE025",
       "data_path": "case025/public-dashboard.v1.json",
+      "protocol_replay_of_case_id": null
+    },
+    {
+      "key": "case026",
+      "case_id": "CASE026",
+      "source_case_id": "CASE026",
+      "data_path": "case026/public-dashboard.v1.json",
       "protocol_replay_of_case_id": null
     }
   ]
