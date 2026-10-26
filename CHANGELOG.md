@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.9.42] - 2026-10-26
+
+### System
+
+- Apply the shared clinician interface to all published cases.
+- Publish the saved, independently reviewed CASE001, CASE008, CASE026 candidates without new synthesis.
+- Preserve historical candidates for the remaining cases and keep inactive graph drafts local.
+- Show delegated technical source review and missing human/clinician acceptance explicitly.
+
+### Verification
+
+- Full desktop, tablet and mobile QA for every published package.
+- Exact candidate, source, package and shell hashes; one narrowly pinned publication exception.
+
 ## [0.2.9.41] - 2026-09-29
 
 ### System
