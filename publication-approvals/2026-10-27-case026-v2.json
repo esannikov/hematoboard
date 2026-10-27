@@ -1,0 +1,25 @@
+{
+  "authorization_basis": "Користувач прямо доручив 27.10.2026: «опублікуй онлайн поточну версію всіх кейсів і в новому дизайні як зараз є, CASE026-V2 заміняє публичний Case026 - залишаємо одну останню версію». Дозвіл на публікацію не означає людської звірки джерел або прийняття клінічного висновку лікарем.",
+  "authorized_at": "2026-10-27T13:12:31.531850+00:00",
+  "authorized_by_user": true,
+  "clinician_accepted": false,
+  "entries": [
+    {
+      "candidate_sha256": "9aeacc57275ee2e4d898f9796da049af3aa6a963976fdba8ecb86626833c9654",
+      "case_id": "CASE026-V2",
+      "clinical_input_sha256": "3c94983f20e3d0890fb6c7775f00bbc49bc1ff1b7ff0b7529a83548d3940bcb0",
+      "source_document_sha256": "e61230c40020060cf51efa71cb6c6c094d18859326907f947ffbbac24dabf355",
+      "source_receipt_sha256": "6ea9511d8756b4a8d4d306bf766081641c6e201a0e489a7ba948b83a74a757ca",
+      "supersedes": {
+        "candidate_sha256": "4617dda0a7ab121199402a2b9c4066c2e28913beaf001bfe1a202a271f53adac",
+        "case_id": "CASE026",
+        "clinical_input_sha256": "dca1de16cececcf4ca7b164073c34a5c7e490f4364240592bcd35598cc7eba60",
+        "source_document_sha256": "6d960e7d3c0adb4b48abc1321bf9824534764f47c1ec05f4ac5233c4fb99f37c"
+      },
+      "supersedes_public_case_id": "CASE026"
+    }
+  ],
+  "human_verified": false,
+  "id": "2026-10-27-case026-v2-publication",
+  "schema_version": "hematoboard.source-publication-approval/1.0"
+}
