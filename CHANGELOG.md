@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.9.44] - 2026-10-29
+
+### System
+
+- Published the verified dashboard package for CASE027 through the simplified hash-closed release command.
+- Preserved the existing clinical candidate, UI shell and clinician gate; this release changes no accepted clinical state.
+
+### Verification
+
+- Candidate `13f8058765f6…` passed package/schema closure and full release QA.
+- Public index, package, QA receipt, shell fingerprint and authenticity manifest are closed by exact SHA-256.
+
 ## [0.2.9.43] - 2026-10-27
 
 ### System

@@ -1,0 +1,156 @@
+{
+  "schema_version": "hematoboard.v2.projection-qa/1.1",
+  "case_id": "CASE027",
+  "candidate_sha256": "13f8058765f602f11ddc0dc09f8a807117108fd79735da5b8c45ccda420cd361",
+  "projection_sha256": "46623b3f077b1f29900b278f1bf4cdf8fed8489fec782117af062901c12eeb52",
+  "public_package_sha256": "f57ba7f5e4ed8a287d6ff32b5b34d0a0db60f3ea92b9b53ff4ce681e6a33d41a",
+  "qa_profile": "full",
+  "ui_source_sha256": "97fe4a720141652b6b57b821a50499812ec69302b6e66e98493af3b0b8535aac",
+  "qa_tooling_sha256": "0795327bf20d9aab47f4c1732f2a928aa883c2de50f64ac0cb10abfee0a5da66",
+  "status": "pass",
+  "viewports": {
+    "desktop": true,
+    "tablet": true,
+    "mobile": true
+  },
+  "surfaces": {
+    "overview": true,
+    "timeline": true,
+    "graph": true,
+    "data": true,
+    "gaps": true,
+    "source_drawer": true
+  },
+  "console_errors": 0,
+  "page_overflow": false,
+  "screenshots": [
+    {
+      "viewport": "desktop-clinical-brief",
+      "sha256": "4801ad42827d65276af5a21171c7da853d7903fafe113656cb273fe2d8413676"
+    },
+    {
+      "viewport": "desktop-overview",
+      "sha256": "c77f3064104c2e7d1438e6ec5f7be174fee5332e856b8bdfde2f646f4528da9e"
+    },
+    {
+      "viewport": "desktop-comparison-arguments",
+      "sha256": "8efd00b2eed147c6abfae2b7b754edb76495ef5cf8dd22d96a8d1d5b885c3bb4"
+    },
+    {
+      "viewport": "desktop-comparison-uncertainties",
+      "sha256": "912810c1e2f3795270c0100f856109a5f131febe6ca1c7a1029cb2b7d4aa0189"
+    },
+    {
+      "viewport": "desktop-comparison-workup",
+      "sha256": "eac0170cfdb36b3770fe100f54f6e53342dd2673440c41d49caeb7d7972752fe"
+    },
+    {
+      "viewport": "desktop-timeline",
+      "sha256": "4f2ff72ded55bb6822a98b9cdce0a9f9a854336934c504345d94a1260d4f98a4"
+    },
+    {
+      "viewport": "desktop-graph-nodes-1",
+      "sha256": "63e960c395226cc4f894df6243c132523c7313e23738e617583dbfa5e57b021d"
+    },
+    {
+      "viewport": "desktop-graph-nodes-2",
+      "sha256": "a51a719309e3ada3cd4fbf0042c75d82c6d7aa8893732f0a95b16455c9d05c2c"
+    },
+    {
+      "viewport": "desktop-graph",
+      "sha256": "62c032aa7de023aacccf34bb5791563cc213befa13432eec325e1f87149d2c42"
+    },
+    {
+      "viewport": "desktop-gaps",
+      "sha256": "b098a84acd7da77f7cb62d2abfdb6a3bb02b6548f63b3df1728f7ee83190d416"
+    },
+    {
+      "viewport": "desktop-history",
+      "sha256": "c624402f8ae82e77f44a50f39a57938f85817503d033fd39132257de9a0aed8a"
+    },
+    {
+      "viewport": "desktop-source-drawer",
+      "sha256": "6be20edcba9c0bf05cb3cb72b7bf3d70195ece86e0da448d823ac26b41a13435"
+    },
+    {
+      "viewport": "desktop-reasoning-log",
+      "sha256": "c851a2e88ef78f78686c05810c8686e0c15cc63e7f987e27dc9dc44af7530e01"
+    },
+    {
+      "viewport": "tablet-clinical-brief",
+      "sha256": "c20bd1d43354bd5675a540947c80d02905ebb13948800bb1db268e80ddc87e3d"
+    },
+    {
+      "viewport": "tablet-overview",
+      "sha256": "dd27775a278b11b4f9a552de625fe379c1403624bc42411c5ce4ca1088fadd9b"
+    },
+    {
+      "viewport": "tablet-timeline",
+      "sha256": "bc278f9288f2b01ec5d1fc3784e607b98f4a38b50fb6d198c59876f7319c2fb1"
+    },
+    {
+      "viewport": "tablet-graph-nodes-1",
+      "sha256": "39e4d54f2d617a71f55c11193513e708dd5ae71e05717ac41eeb59f9ad8398e9"
+    },
+    {
+      "viewport": "tablet-graph-nodes-2",
+      "sha256": "a8cca8a343781f17cb3e935b10570f828dda05eb60c61a2a1119ed3f0c436c19"
+    },
+    {
+      "viewport": "tablet-graph",
+      "sha256": "6751c6c92a95093c8ece30640b388349b948a9145f959a29e6c19f00e75594b2"
+    },
+    {
+      "viewport": "tablet-gaps",
+      "sha256": "796a12bbc0ce089734d2dfc8c7d49ecdc414d20ffa4f1990c8b47099d527d62f"
+    },
+    {
+      "viewport": "tablet-history",
+      "sha256": "13342806cc25640e2bcffa5c541f1d3b45cf58cd5477936aedf588cdc4286e56"
+    },
+    {
+      "viewport": "tablet-source-drawer",
+      "sha256": "e035cf16abbbfe514f849f87b69ae987469acad345e3df3efbdad676c398809e"
+    },
+    {
+      "viewport": "tablet-reasoning-log",
+      "sha256": "d7ea7026b84d46f94c05390859eb25c85179e82ef669442bcca1afe5e0b545d2"
+    },
+    {
+      "viewport": "mobile-clinical-brief",
+      "sha256": "10600157a847ab9c65d764bb4115f5c7a25cd493a936fdb0de912fa4f5904d3d"
+    },
+    {
+      "viewport": "mobile-overview",
+      "sha256": "a563a5667e25143538728bb10d0452efd2348b717ee41e66813b2bb39435191e"
+    },
+    {
+      "viewport": "mobile-comparison-arguments",
+      "sha256": "ed561b74aff79130096a27b5084275bfd35ea640136926cbddf5cc326dfcbc54"
+    },
+    {
+      "viewport": "mobile-timeline",
+      "sha256": "de7fcc987a9ba76d34df859a75f6f5e583aeac1e337f605d1a342c7cdafb394d"
+    },
+    {
+      "viewport": "mobile-graph",
+      "sha256": "4039844b02065228dfd4cc9bf406d49c69622a85cffb8ab2670236bc6b8ba0f5"
+    },
+    {
+      "viewport": "mobile-gaps",
+      "sha256": "5be26ccd37ff58c77fe68919b8d7fcc69cadc72550e4d4f01584a569320cead2"
+    },
+    {
+      "viewport": "mobile-history",
+      "sha256": "a2fdc9b1d3e4effd1111297bffd234898204db83c9876c1710b709185e2f6c7a"
+    },
+    {
+      "viewport": "mobile-source-drawer",
+      "sha256": "3a95befc341a45626616eaadaab16225a7b8e61f545603d2ae20e1a4795235ca"
+    },
+    {
+      "viewport": "mobile-reasoning-log",
+      "sha256": "a29e567e17f415aeea9bd8a92109bf117e650102906ed115e1c10b7eb00341dc"
+    }
+  ]
+}
