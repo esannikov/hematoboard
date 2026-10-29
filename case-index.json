@@ -122,6 +122,13 @@
       "source_case_id": "CASE026-V2",
       "data_path": "case026/public-dashboard.v1.json",
       "protocol_replay_of_case_id": null
+    },
+    {
+      "key": "case027",
+      "case_id": "CASE027",
+      "source_case_id": "CASE027",
+      "data_path": "case027/public-dashboard.v1.json",
+      "protocol_replay_of_case_id": null
     }
   ]
 }
