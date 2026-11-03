@@ -5,8 +5,8 @@
   "projection_sha256": "8ebd17cac74713e67505f6ca02e89b2305a01c7084fbef0550eea6250e5c6bb7",
   "public_package_sha256": "0cc08ac41b27d0ddb5929d83a6c99ca8929db0ab3d1dceb5a786d232e82056fe",
   "qa_profile": "full",
-  "ui_source_sha256": "e2dd055255e064d2fe9d2c7f18d5a5dc175eac69b4d6b3ccddb8a8986075f556",
-  "qa_tooling_sha256": "725ee66b32dea28391c0b61c7f192e42ac39ef4df99c6e6c89c82cc2617c7e29",
+  "ui_source_sha256": "1d68404410d26558a5d82f6390e7b1e4db7cbb77caf10d0b39670cb94c8067fd",
+  "qa_tooling_sha256": "87fe7ef36c671d499173c65e3bf39a326166ef8a36bee3a135d9b266414cfda9",
   "status": "pass",
   "viewports": {
     "desktop": true,
@@ -30,7 +30,7 @@
     },
     {
       "viewport": "desktop-overview",
-      "sha256": "f5c06fc7dffb56d274d574706a49b4520ae89842027a67de6c842460e663925a"
+      "sha256": "dcb71d06ddf0571ca1d26a5b81bab3835b500691faec8aafee91eb5bb3764dd9"
     },
     {
       "viewport": "desktop-comparison-arguments",
@@ -46,7 +46,7 @@
     },
     {
       "viewport": "desktop-timeline",
-      "sha256": "e83b000c196030a87c6ba748140f907694c8f99033d7398d99ad97b397e223f6"
+      "sha256": "5de2432769d9e1011d4a375ed13fb7e0013b7352343083498b855f3e5f3d66a5"
     },
     {
       "viewport": "desktop-graph-nodes-1",
@@ -62,15 +62,15 @@
     },
     {
       "viewport": "desktop-gaps",
-      "sha256": "3a33a72ae7422e1a78efe72b0484df1b7a6becf8c57e0b86e809b15b4ed7fd98"
+      "sha256": "fbad284cea6977cc9ed67ddba901ef098d55d4204f586aff4864270aff2651bc"
     },
     {
       "viewport": "desktop-source-drawer",
-      "sha256": "971c09945c94942e487acc40dedf180195d55ecef7cad03b11265ac177fc6957"
+      "sha256": "6ffccaebbccf9448910b05a8e64963ef600948678c54c61e2161a13c68245cbf"
     },
     {
       "viewport": "desktop-reasoning-log",
-      "sha256": "2d4144af47c7a05235e9c73872c1424a16f9d29fa24bec9fec4734c757072bc8"
+      "sha256": "21d6577e4d6ec9c4afea8d61b3b08d86e5f4f4f7ec76946073531a755d8e8cda"
     },
     {
       "viewport": "tablet-clinical-brief",
@@ -78,11 +78,11 @@
     },
     {
       "viewport": "tablet-overview",
-      "sha256": "bc396987ea827b4ea0e3352e0bebffb475d153b6c66dbb097b550fb331c2ce72"
+      "sha256": "e0fd981448b91b0f7640c9e6ce8485bcfa365ccbb0cb21463758424135b3d9c8"
     },
     {
       "viewport": "tablet-timeline",
-      "sha256": "f566ebf20817e9fa08d1a6631bb3d34f0d1bc0d44e72c669327c9c0d1c62ecc6"
+      "sha256": "7f5c281675a6265d5b04c2bbd01c815dad37e2e924b013e785135bfab1357bdf"
     },
     {
       "viewport": "tablet-graph-nodes-1",
@@ -94,11 +94,11 @@
     },
     {
       "viewport": "tablet-graph",
-      "sha256": "eb9b27c088c860a2372c3f1da8381adddcb5571759b13cbffef6daa2d1e8648e"
+      "sha256": "6d5f3ecede50700c31a8f355354f989d5d1a41307c21c7348842a7b23f0ccea3"
     },
     {
       "viewport": "tablet-gaps",
-      "sha256": "0112f7403c215e08eecfed3991dfbd289a1f1866761186d817dc89089e363315"
+      "sha256": "82d7500076c00b553e1471cd1f9b2e1394f0462e3d2a0797635ba6fbf5475df2"
     },
     {
       "viewport": "tablet-source-drawer",
@@ -106,7 +106,7 @@
     },
     {
       "viewport": "tablet-reasoning-log",
-      "sha256": "82110be6e3663b58a0f3d137662465f71c9903a27196fc302ef684302794f194"
+      "sha256": "4fb18c900edb1d209ccf1940206c508c9a4b3f05f1e04e73ca852041ee6fe85f"
     },
     {
       "viewport": "mobile-clinical-brief",
@@ -114,7 +114,7 @@
     },
     {
       "viewport": "mobile-overview",
-      "sha256": "fd179957ed7c70c85544855caf3aa63fc26540fc1d16265d9523fc9478e2658c"
+      "sha256": "749ae930b8e54740a721a6d9472722a39fe2095202293380c83ae4b1f6d94a6c"
     },
     {
       "viewport": "mobile-comparison-arguments",
@@ -122,15 +122,15 @@
     },
     {
       "viewport": "mobile-timeline",
-      "sha256": "1c36f892f4288ae62eabaf147104729fb7e024dae06bb7469ffc7c2a6f374885"
+      "sha256": "ab1ac721843389f16e51bc75dfcb3437305ac721591d6fcb5cb2fd5fae74319c"
     },
     {
       "viewport": "mobile-graph",
-      "sha256": "ce083da5375effa0f300d85a3c68168c3068bef6359455b0953db5b74fa080e7"
+      "sha256": "f9d53f6e5352884482442c801e50ca520e217be3682c8363f3f5137baa78f1fa"
     },
     {
       "viewport": "mobile-gaps",
-      "sha256": "c2d5bceca893349e5d2ed5987d1b8bc7fff368f53909807d44ee29140e86add6"
+      "sha256": "ce1fb445240431fc4a708da5b5495ad222f5edccf94c3f6debfbd244a3b58312"
     },
     {
       "viewport": "mobile-source-drawer",
