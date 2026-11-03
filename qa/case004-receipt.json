@@ -5,8 +5,8 @@
   "projection_sha256": "ba20d3747cb0caa68866cdb78e2573eabe7dd202ed4c0e2c5343f6a20a4742ed",
   "public_package_sha256": "9829b46e97fe80c65e5f495adbb111e06184faf53313a28e2d28b777270d1557",
   "qa_profile": "full",
-  "ui_source_sha256": "97fe4a720141652b6b57b821a50499812ec69302b6e66e98493af3b0b8535aac",
-  "qa_tooling_sha256": "2ce1dd226b99435d9eb74635316e6255035bd031a5c477f67a36728867eca891",
+  "ui_source_sha256": "e2dd055255e064d2fe9d2c7f18d5a5dc175eac69b4d6b3ccddb8a8986075f556",
+  "qa_tooling_sha256": "725ee66b32dea28391c0b61c7f192e42ac39ef4df99c6e6c89c82cc2617c7e29",
   "status": "pass",
   "viewports": {
     "desktop": true,
@@ -30,7 +30,7 @@
     },
     {
       "viewport": "desktop-overview",
-      "sha256": "fe2a249cc9d401c3d9951c52a754943064e6798daf975b91ae8f8536884d11b4"
+      "sha256": "978d2ea6ac1a79d59630671da555b8a6471c11cc67972a77d6c0bdfbc094fbe5"
     },
     {
       "viewport": "desktop-comparison-arguments",
@@ -46,7 +46,7 @@
     },
     {
       "viewport": "desktop-timeline",
-      "sha256": "2ed2db71bdf6d5878f10cf32fe97bb3cbf83c0ff54bf98fafece23425312b069"
+      "sha256": "b2c3e9d032d05db306b1fa47b352bdf0a8406b2e492c3275ef5e33e69fa8f38c"
     },
     {
       "viewport": "desktop-graph-nodes-1",
@@ -62,15 +62,15 @@
     },
     {
       "viewport": "desktop-gaps",
-      "sha256": "172ed94120425d80745a5cdb8ab667f89013b399b62230556b3f21c236c53907"
+      "sha256": "9751b5a2f95ed86d61224d6ab509f28d8de9eba3c4fdef24bb19a1dd9819d54c"
     },
     {
       "viewport": "desktop-source-drawer",
-      "sha256": "67204eb505f09b597525f4e75a2034eb897cc314f5962f0e054c4056535de87e"
+      "sha256": "9805c0e0bf1645260a4df5220533da3b60ee1d99449372d7a892f4fd604ff34d"
     },
     {
       "viewport": "desktop-reasoning-log",
-      "sha256": "1eb7ad9af25d31ab1b5290d0978f770ba175a289da3d93dc5885fca8ec38a8df"
+      "sha256": "357e4caadaa5ebf00d965f8e26ea0cf70669dc9a9c5484de1caaca49899c08a1"
     },
     {
       "viewport": "tablet-clinical-brief",
@@ -78,11 +78,11 @@
     },
     {
       "viewport": "tablet-overview",
-      "sha256": "4ce10ff01504c226606c5226926114b41b4018cecdddf79175c0f1eb545d691c"
+      "sha256": "d3b56026c64c389cea1d25d7cee78162f1853034c87a7f2e1af451aa2b355afe"
     },
     {
       "viewport": "tablet-timeline",
-      "sha256": "b16bf9792c9c1699d75c2a19c44466dcfce9895aa78045e7851fb6b6fcd8fbe9"
+      "sha256": "aed4ce4a0d8bba8219a6c0a5cb2b616e2ceaebcfc9a68fd937f7813ce567aa09"
     },
     {
       "viewport": "tablet-graph-nodes-1",
@@ -98,7 +98,7 @@
     },
     {
       "viewport": "tablet-gaps",
-      "sha256": "96fd39b4203bb2cff4a8fefedcc702b6180622af4f45cc28b5a2cc0b6e2b8573"
+      "sha256": "f3d04922a46e760f5e3120c3cf03584562c609e81ef36c2fee08fc6581a7978d"
     },
     {
       "viewport": "tablet-source-drawer",
@@ -106,7 +106,7 @@
     },
     {
       "viewport": "tablet-reasoning-log",
-      "sha256": "0f3b9a2d9bb97effa7f6db3939bbd7c75691bd440be7d0859eba0cd96ee3156c"
+      "sha256": "a0157d8d952e8779bd9ea820b186a84e841181a3b86a59e7bbbc7efdac5a6167"
     },
     {
       "viewport": "mobile-clinical-brief",
@@ -114,7 +114,7 @@
     },
     {
       "viewport": "mobile-overview",
-      "sha256": "dbe2a585d84a39298249768ad23e807ab14cf46e968ebc138968bf328ed5104f"
+      "sha256": "8fc59ee9365f2492c9f1c36bd8eb81790e64a575bea13420734921185eee135e"
     },
     {
       "viewport": "mobile-comparison-arguments",
@@ -122,15 +122,15 @@
     },
     {
       "viewport": "mobile-timeline",
-      "sha256": "eca100d70c50e73b305aaad000b445a855b3401754e879f68e8dece30f2880df"
+      "sha256": "4f2289f363e819b083cb9cf6876c26df432fb3dd7058f73c7f32f418b9ec50ae"
     },
     {
       "viewport": "mobile-graph",
-      "sha256": "a185da071f7f18d46067591de0de86552c6cbd7386ac880609bbebfe76d810bb"
+      "sha256": "1f398afa6f16adf33496439c90c4d801726df5e8a4ba4be542ce75d7084a644a"
     },
     {
       "viewport": "mobile-gaps",
-      "sha256": "566ac13560aae8d11298210963c3f1e555a45b01082ca09e70f4e521eedcec7e"
+      "sha256": "5a24edc08c8a616889ca35878210af325cecefb79c884ce551bafbde865740e2"
     },
     {
       "viewport": "mobile-source-drawer",
