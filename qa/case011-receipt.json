@@ -5,7 +5,7 @@
   "projection_sha256": "cb11a7be5cf603253d8b3d974e399e69f553996fdff97d537f23b4d890223bf4",
   "public_package_sha256": "18a015798994f85cdf9bf6fafdaf1f5f03f16d8c5f5a9459a09b957c0dcd2598",
   "qa_profile": "full",
-  "ui_source_sha256": "1d68404410d26558a5d82f6390e7b1e4db7cbb77caf10d0b39670cb94c8067fd",
+  "ui_source_sha256": "80b5da3bb9f09dd7ddb6ba56bad4a52d764a48f756f8ee4c4f6b471fdd649beb",
   "qa_tooling_sha256": "87fe7ef36c671d499173c65e3bf39a326166ef8a36bee3a135d9b266414cfda9",
   "status": "pass",
   "viewports": {
@@ -30,7 +30,7 @@
     },
     {
       "viewport": "desktop-overview",
-      "sha256": "5da370f909b2bb2f68ca764ed2496439916b4e85bbf95001a3a641fa268fcf66"
+      "sha256": "e73bb09aefea1a8ff2087ae4ac1aee1671a7df3086f5984da47a54ed134df86d"
     },
     {
       "viewport": "desktop-comparison-arguments",
@@ -46,7 +46,7 @@
     },
     {
       "viewport": "desktop-timeline",
-      "sha256": "460008d73ff7e9e335174864e9ed2f71ea5da2846274bb482a8c6a6203fe2169"
+      "sha256": "ed785a229b80ee8e778c667be857b3baf257d7624216ce7ec340c4ea29ebc3d2"
     },
     {
       "viewport": "desktop-graph-nodes-1",
@@ -62,7 +62,7 @@
     },
     {
       "viewport": "desktop-gaps",
-      "sha256": "75d563597a08c261989c037814fbf95d58c4200788e9a3c206d7bae7d46c4407"
+      "sha256": "5e8eb06e4f3ab5db258fb62c4e2edb2ecbbbf64b7bb9f76a47f5cb0d78966eb8"
     },
     {
       "viewport": "desktop-history",
@@ -74,7 +74,7 @@
     },
     {
       "viewport": "desktop-reasoning-log",
-      "sha256": "f528c122d5ce6ef6b39270dbc0f9fa9f7ee5f5b9e2b11283a3c692e35f5c4954"
+      "sha256": "cb1c3a15fd723d9ab9998352e6b5b3cbd1e82610d6c7322ff59fb6114c6f4538"
     },
     {
       "viewport": "tablet-clinical-brief",
@@ -82,11 +82,11 @@
     },
     {
       "viewport": "tablet-overview",
-      "sha256": "953570c63d32d4513c4a0eadbe896f7ddfe1f0890ebc95651f4043a2cb3e6b60"
+      "sha256": "0470a37fa60f2bd360f2d1e4af85758d497240e428e1f9da31c4dda4e17ee585"
     },
     {
       "viewport": "tablet-timeline",
-      "sha256": "d0bfafed4ebcc8f79dd355896fd338935b5d1ee58d52f358eb4985d1f7ff9b53"
+      "sha256": "8df247d89bf01fac515226facff486892add3f02c2928974c24e99e44bd951f8"
     },
     {
       "viewport": "tablet-graph-nodes-1",
@@ -102,11 +102,11 @@
     },
     {
       "viewport": "tablet-gaps",
-      "sha256": "38e606ddd336780f757cf385daede0b23085286750a218122b7f8caebed0d361"
+      "sha256": "0bb85d30167a7409e16f25bf1de162cf964a3816f0732f112b93370057f281df"
     },
     {
       "viewport": "tablet-history",
-      "sha256": "3af5469b27233e726750a35d50ceebd6831d9256c09d1140cc406c852da79fc0"
+      "sha256": "f74a523374572ebf562c41a11d73918c4a351c1eb0e55cee2478a2bb982bcc47"
     },
     {
       "viewport": "tablet-source-drawer",
@@ -114,7 +114,7 @@
     },
     {
       "viewport": "tablet-reasoning-log",
-      "sha256": "1ce14974da47a3cd8d90039817bdb82255c519ba2d11aa5b07e16d0af0432ff4"
+      "sha256": "69efb085ce6ffad9db341e2a27397c3c50d61b1731cf03406a7e1cb1a47e1de1"
     },
     {
       "viewport": "mobile-clinical-brief",
@@ -122,7 +122,7 @@
     },
     {
       "viewport": "mobile-overview",
-      "sha256": "680a6733c00b3dd71e91eea0e416281588717c9b078a5240ed562890811598a0"
+      "sha256": "52c7410861fe20de8fc83c7bdaaf5a858f4e2ac87701ed04cd65d7b1a59019dc"
     },
     {
       "viewport": "mobile-comparison-arguments",
@@ -130,15 +130,15 @@
     },
     {
       "viewport": "mobile-timeline",
-      "sha256": "1d6de419f1b06afd1bfbb39bdfe21b93e06ff3a3a2d4bc3f64df266f8364b5d5"
+      "sha256": "8ec560b0d0ba40772050fe3ea3794c050f7867535b86b53052d8b7a69264254b"
     },
     {
       "viewport": "mobile-graph",
-      "sha256": "295e82eae2163030d025b1c8340149274e3d2ea64f445010a6ad497932c0683f"
+      "sha256": "de3c5420f7acb4f2c659d39fb1a0025c88708b38d54d4f00b27808cb6f6ebbf8"
     },
     {
       "viewport": "mobile-gaps",
-      "sha256": "6d58ac4b9f45ab4d8f70ca3f629da2a1f639e0cc9eb9bebb91b88d3260ceeaa9"
+      "sha256": "e4c81500f8b83a4b2e48977c78f4421000857a70c21776dfc833e834777be790"
     },
     {
       "viewport": "mobile-history",
