@@ -11,7 +11,17 @@
       "transcript_sha256": "a13f766b81f4398828c64c53c6bbeff19d30f009f82d193666681fb44e1d55f8",
       "duration_seconds": 308.035875,
       "mime_type": "audio/mpeg",
-      "synthetic_voice": true
+      "synthetic_voice": true,
+      "video": {
+        "duration_seconds": 308.041667,
+        "mime_type": "video/mp4",
+        "video_path": "video/case027-0d95d9609d3b.mp4",
+        "video_sha256": "0d95d9609d3bd3e9ade63c709ec24d98dfcfad214475d5547920bf89e49c7755",
+        "poster_path": "video/case027-d5adef144ffc.png",
+        "poster_sha256": "d5adef144ffc6d47c62cf64d95967df1f4f98d6b235bcb181c862a93d6b6dcf3",
+        "subtitles_path": "video/case027-23007493acf1.vtt",
+        "subtitles_sha256": "23007493acf15c07ff10e9f0fb61f2b4c0a11bef97ca233759045b16c0634a07"
+      }
     }
   ]
 }
