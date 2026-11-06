@@ -1,0 +1,17 @@
+{
+  "schema_version": "hematoboard.audio-briefings/2.0",
+  "briefings": [
+    {
+      "case_id": "CASE027",
+      "candidate_sha256": "13f8058765f602f11ddc0dc09f8a807117108fd79735da5b8c45ccda420cd361",
+      "public_package_sha256": "458b624e85fc8f35d8f2f0ef4c3f1156a890bf1910d6615093ecb6ef84fbafe5",
+      "audio_path": "audio/case027-bb547ce3b285.mp3",
+      "audio_sha256": "bb547ce3b285c43888c3856962c5cb7bc82b2290a85fc85685f961022c518e2f",
+      "transcript_path": "audio/case027-a13f766b81f4.txt",
+      "transcript_sha256": "a13f766b81f4398828c64c53c6bbeff19d30f009f82d193666681fb44e1d55f8",
+      "duration_seconds": 308.035875,
+      "mime_type": "audio/mpeg",
+      "synthetic_voice": true
+    }
+  ]
+}
